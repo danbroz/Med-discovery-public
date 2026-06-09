@@ -1,0 +1,138 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                                key                                                label    node_type                                                                                                                                         description                                         atlas_region region_identifier                                                    centroid_mni  volume_mm3                           feature_summary
+           neurodegenerative_burden                             Neurodegenerative Burden        input                                                  Aggregate burden from Alzheimer-like, Lewy-body, or other progressive neurodegenerative pathology.                                                 None              None                                                            None         NaN                                      None
+             cerebrovascular_burden                               Cerebrovascular Burden        input                                                                  Burden from lacunes, ischemic injury, white matter disease, or strategic infarcts.                                                 None              None                                                            None         NaN                                      None
+      traumatic_brain_injury_burden                        Traumatic Brain Injury Burden        input                                                     History or residual burden from traumatic brain injury contributing to later cognitive decline.                                                 None              None                                                            None         NaN                                      None
+        substance_medication_burden                          Substance Medication Burden        input                                                     Cognitive burden from alcohol, other medications, or medication effects noted as possible etiologies.                                                 None              None                                                            None         NaN                                      None
+            systemic_medical_burden                              Systemic Medical Burden        input                                                                             Burden from systemic medical conditions capable of degrading cognition.                                                 None              None                                                            None         NaN                                      None
+                polygenic_liability                                  Polygenic Liability        input                                                                    Broad heritable risk for neurodegenerative and cognitive-vulnerability pathways.                                                 None              None                                                            None         NaN                                      None
+               apoe_related_ad_risk                                 Apoe Related Ad Risk        input                                                                      Alzheimer-related inherited risk signal centered on late-onset susceptibility.                                                 None              None                                                            None         NaN                                      None
+       frontotemporal_mutation_load                         Frontotemporal Mutation Load        input                                                                Familial frontotemporal degeneration liability when a causative mutation is present.                                                 None              None                                                            None         NaN                                      None
+          nmda_protective_treatment                            Nmda Protective Treatment        input                                              Protective NMDA-modulating treatment support, analogous to memantine-style anti-excitotoxic buffering.                                                 None              None                                                            None         NaN                                      None
+                        hippocampus                               CA1 (Hippocampus) left       region Direct atlas anchor for medial temporal memory circuitry highlighted as especially vulnerable in amnestic MND and prodromal Alzheimer-like disease.                               CA1 (Hippocampus) left              None  (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+                  entorhinal_cortex Area EC (Hippocampal Region, Entorhinal Cortex) left       region           Direct atlas anchor for entorhinal involvement emphasized in early amnestic presentations and strongly linked to episodic memory decline. Area EC (Hippocampal Region, Entorhinal Cortex) left              None (-23.430706521739125, -14.559782608695656, -31.705163043478258)       736.0  receptors=no; genes=yes; connectivity=no
+posterior_cingulate_precuneus_proxy                                   Area 7M (SPL) left region_proxy                                                     Conservative default-mode proxy for the posterior cingulate/precuneus hub named in the chapter.                                   Area 7M (SPL) left              None    (-2.0948905109489004, -74.50608272506082, 40.06812652068126)       411.0  receptors=no; genes=yes; connectivity=no
+
+=== Edges (head) ===
+                       source                       target                                                                          relation mnd_change
+     neurodegenerative_burden glutamatergic_excitotoxicity                    degenerative pathology can amplify excitotoxic neuronal stress  increased
+       cerebrovascular_burden glutamatergic_excitotoxicity                ischemic injury contributes to glutamate-linked excitotoxic damage  increased
+traumatic_brain_injury_burden glutamatergic_excitotoxicity                                   traumatic injury can drive excitotoxic cascades  increased
+    nmda_protective_treatment glutamatergic_excitotoxicity                           NMDA-modulating treatment can buffer excitotoxic burden  decreased
+ glutamatergic_excitotoxicity  synaptic_plasticity_failure excitotoxic stress impairs the synaptic plasticity needed for learning and memory  increased
+         apoe_related_ad_risk medial_temporal_degeneration    Alzheimer-related genetic liability raises early medial temporal vulnerability  increased
+     neurodegenerative_burden medial_temporal_degeneration      prodromal Alzheimer-like pathology drives hippocampal and entorhinal atrophy  increased
+  synaptic_plasticity_failure medial_temporal_degeneration                        synaptic failure undermines medial temporal memory systems  increased
+ medial_temporal_degeneration                  hippocampus                                 medial temporal pathology burdens the hippocampus  increased
+ medial_temporal_degeneration            entorhinal_cortex                           medial temporal pathology burdens the entorhinal cortex  increased
+ medial_temporal_degeneration          dmn_disconnectivity                        medial temporal pathology weakens the default mode network  increased
+      vascular_network_injury          dmn_disconnectivity                        vascular lesions can degrade large-scale network coherence  increased
+
+=== Region resolution ===
+                           node_key  resolved                                                                                                               requested_candidates                                        resolved_name identifier
+                        hippocampus      True                    [CA1 (Hippocampus) left, HC-Subiculum (Hippocampus) left, DG (Hippocampus) left, hippocampus left, hippocampus]                               CA1 (Hippocampus) left       None
+                  entorhinal_cortex      True                                             [Entorhinal Cortex left, entorhinal cortex, Area 28 left, Area 28/34 left, entorhinal] Area EC (Hippocampal Region, Entorhinal Cortex) left       None
+posterior_cingulate_precuneus_proxy      True                                     [Area 7M (SPL) left, Area 7P (SPL) left, Area hPO1 (POS) left, precuneus, posterior cingulate]                                   Area 7M (SPL) left       None
+            medial_prefrontal_proxy      True                         [Area s32 (sACC) left, Area p32 (pACC) left, Area Fp1 (FPole) left, Area 9 left, medial prefrontal cortex]                                 Area s32 (sACC) left       None
+         parietal_association_proxy      True [Area PGp (IPL) left, Area PFm (IPL) left, Area 7P (SPL) left, Area 7M (SPL) left, inferior parietal, parietal association cortex]                                  Area PGp (IPL) left       None
+                 frontal_lobe_proxy      True                                                  [Area 46 left, Area 9 left, Area 45 (IFG) left, Area 44 (IFG) left, frontal lobe]                                   Area 45 (IFG) left       None
+                temporal_lobe_proxy      True                            [Area Ph1 (PhG) left, Area Ph2 (PhG) left, Area TE 3 (STG) left, Area TE 2.2 (STG) left, temporal lobe]                                  Area Ph1 (PhG) left       None
+
+=== Example connectivity subgraph ===
+                                     hippocampus  entorhinal_cortex  posterior_cingulate_precuneus_proxy  medial_prefrontal_proxy  parietal_association_proxy  frontal_lobe_proxy  temporal_lobe_proxy
+hippocampus                             1685.400            166.100                                7.665                    0.510                      34.125               1.410              137.690
+entorhinal_cortex                        166.100             39.425                                1.020                    0.050                       1.080               0.080                5.240
+posterior_cingulate_precuneus_proxy        7.665              1.020                              210.470                    1.810                      43.985               1.860                5.545
+medial_prefrontal_proxy                    0.510              0.050                                1.810                 3880.340                       2.285               1.525                1.100
+parietal_association_proxy                34.125              1.080                               43.985                    2.285                   12793.430             108.160               29.660
+frontal_lobe_proxy                         1.410              0.080                                1.860                    1.525                     108.160            4180.905                1.670
+temporal_lobe_proxy                      137.690              5.240                                5.545                    1.100                      29.660               1.670             2234.515
+
+=== Example receptor table (first non-empty region) ===
+[hippocampus]
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== Example gene table (first non-empty region) ===
+[hippocampus]
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   APOE    9.794787   3.076652           24    -0.133046    1.012628
+    APP    8.450583   4.134041           24     0.480300    0.776828
+   BDNF    5.638438   2.851173           16     0.533731    1.414835
+C9orf72    5.705275   0.943880           24    -0.882687    0.899620
+  GRIN1    8.941981   3.626345           32     0.919053    0.852285
+ GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+    GRN    9.272825   2.300087           16    -0.615250    0.652381
+   MAPT    7.835247   3.535210           32    -0.083059    1.049538
+  PSEN1    6.200662   0.874773           16    -0.557312    0.695054
+  PSEN2    7.092328   2.228513           40    -0.504413    0.972737
+
+=== Example connectivity profile (first non-empty region) ===
+No connectivity profile available in this environment.
+
+=== Simulation example ===
+
+[inputs]
+neurodegenerative_burden         0.65
+apoe_related_ad_risk             0.55
+polygenic_liability              0.45
+cerebrovascular_burden           0.30
+nmda_protective_treatment        0.20
+systemic_medical_burden          0.12
+traumatic_brain_injury_burden    0.10
+substance_medication_burden      0.08
+frontotemporal_mutation_load     0.05
+
+[latents]
+medial_temporal_degeneration            0.4018
+temporal_parietal_association_spread    0.3631
+dmn_disconnectivity                     0.2997
+synaptic_plasticity_failure             0.2897
+episodic_memory_circuit_failure         0.2791
+glutamatergic_excitotoxicity            0.2739
+frontotemporal_lobar_degeneration       0.2518
+multidomain_network_inefficiency        0.2089
+vascular_network_injury                 0.1809
+executive_language_network_failure      0.1567
+white_matter_burden                     0.1338
+
+[regional_state]
+entorhinal_cortex                      0.3138
+hippocampus                            0.3042
+temporal_lobe_proxy                    0.2573
+parietal_association_proxy             0.2295
+posterior_cingulate_precuneus_proxy    0.2256
+medial_prefrontal_proxy                0.1844
+frontal_lobe_proxy                     0.1676
+
+[symptoms]
+progression_vulnerability             0.3216
+episodic_memory_impairment            0.2728
+multidomain_cognitive_decline         0.1848
+language_behavior_change              0.1666
+executive_inefficiency                0.1456
+processing_speed_attention_deficit    0.1265
+
+[phenotypes]
+amnestic_mnd_profile                    0.2976
+default_mode_disconnectivity_profile    0.2456
+mixed_multidomain_profile               0.2384
+frontotemporal_mnd_profile              0.2108
+vascular_mnd_profile                    0.1677

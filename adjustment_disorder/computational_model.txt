@@ -1,0 +1,95 @@
+
+=== NODES ===
+                     key      node_type atlas_region centroid_mni feature_summary
+           life_stressor          input         None         None            None
+    biological_diathesis          input         None         None            None
+  early_life_programming          input         None         None            None
+        coping_resources          input         None         None            None
+                amygdala         region         None         None      unresolved
+             hippocampus         region         None         None      unresolved
+                    pacc         region         None         None      unresolved
+                    sacc         region         None         None      unresolved
+                     acc         region         None         None      unresolved
+                     pfc         region         None         None      unresolved
+                hpa_axis latent_biology         None         None            None
+             epigenetics latent_biology         None         None            None
+            inflammation latent_biology         None         None            None
+           noradrenaline latent_biology         None         None            None
+                dopamine latent_biology         None         None            None
+         anxious_arousal        symptom         None         None            None
+          depressed_mood        symptom         None         None            None
+               anhedonia        symptom         None         None            None
+        somatic_distress        symptom         None         None            None
+     impaired_adaptation        symptom         None         None            None
+    executive_dyscontrol        symptom         None         None            None
+emotional_overreactivity        symptom         None         None            None
+
+=== EDGES ===
+                source                   target                                                    relation                 ad_change
+         life_stressor                 amygdala           increases threat appraisal and emotional salience                 increased
+         life_stressor                 hpa_axis                         loads acute stress-response systems                 increased
+         life_stressor            noradrenaline                    raises sympathetic arousal and vigilance                 increased
+         life_stressor             inflammation           can trigger stress-linked inflammatory signalling                 increased
+  biological_diathesis                 hpa_axis                   raises vulnerability of stress regulation  increased susceptibility
+  biological_diathesis            noradrenaline                         raises trait arousal susceptibility  increased susceptibility
+  biological_diathesis                 dopamine                      raises reward/motivation vulnerability  increased susceptibility
+early_life_programming              epigenetics                        programs long-term stress reactivity  increased susceptibility
+early_life_programming                 hpa_axis                  calibrates later stress-response set-point  increased susceptibility
+      coping_resources                     pacc                 supports regulatory recovery and adaptation                protective
+      coping_resources      impaired_adaptation                           buffers the failure of adaptation                protective
+           epigenetics                 hpa_axis                          biases glucocorticoid responsivity              dysregulated
+           epigenetics                      pfc                       can alter stress-sensitive plasticity        reduced resilience
+          inflammation           depressed_mood                    promotes low mood and sickness behaviour                 increased
+          inflammation         somatic_distress                  promotes fatigue and bodily symptom burden                 increased
+              hpa_axis              hippocampus          impairs contextual appraisal and adaptive learning          reduced function
+              hpa_axis                      pfc                      weakens executive control under stress          reduced function
+              hpa_axis                     pacc                      weakens top-down regulation of emotion          reduced function
+         noradrenaline          anxious_arousal     increases vigilance, anxiety, and physiological arousal                 increased
+         noradrenaline         somatic_distress             amplifies autonomic and physical symptom burden                 increased
+              dopamine                anhedonia                     reduces reward sensitivity and pleasure                 increased
+              dopamine      impaired_adaptation        reduces motivation for flexible goal-directed coping                 increased
+              amygdala          anxious_arousal                     drives threat-reactive affective output                 increased
+              amygdala emotional_overreactivity                 amplifies emotional salience and reactivity                 increased
+           hippocampus      impaired_adaptation reduced contextualization impairs adaptive stress appraisal reduced contextualization
+                  pacc                 amygdala                         normally exerts top-down regulation        reduced inhibition
+                  sacc                 amygdala                      normally supports emotional regulation        reduced inhibition
+                   acc     executive_dyscontrol                     reduced conflict monitoring and control                 increased
+                   acc emotional_overreactivity                 reduced regulation of stress-linked emotion                 increased
+                   pfc     executive_dyscontrol          reduced planning, flexibility, and problem-solving                 increased
+                   pfc                 amygdala normally provides cognitive control over emotional salience        reduced inhibition
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== HIPPOCAMPUS : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PACC : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== PACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== PFC : top structural connectivity ===
+No connectivity profile available for this node.

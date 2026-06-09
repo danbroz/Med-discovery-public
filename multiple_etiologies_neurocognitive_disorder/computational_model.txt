@@ -1,0 +1,157 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                      key                                                   label      node_type                                                                                                                  description                                            atlas_region                                                                              region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+           cerebrovascular_disease_burden                          Cerebrovascular Disease Burden          input Vascular lesion burden and chronic small-vessel injury contributing to white-matter damage and subcortical cognitive slowing                                                    None                                                                                           None                                                           None         NaN                                      None
+            traumatic_brain_injury_burden                           Traumatic Brain Injury Burden          input                                                 Focal contusion and diffuse axonal injury burden from traumatic brain injury                                                    None                                                                                           None                                                           None         NaN                                      None
+            metabolic_inflammatory_burden                           Metabolic Inflammatory Burden          input                                        Metabolic disturbance and neuroinflammatory load increasing distributed neural stress                                                    None                                                                                           None                                                           None         NaN                                      None
+                    chronic_stress_burden                                   Chronic Stress Burden          input                                Chronic psychosocial stress that can dysregulate glutamatergic signaling and weaken cognition                                                    None                                                                                           None                                                           None         NaN                                      None
+            psychiatric_genetic_liability                           Psychiatric Genetic Liability          input                               Inherited liability from affective, psychotic, personality, or substance-related comorbid risk                                                    None                                                                                           None                                                           None         NaN                                      None
+             neurodevelopmental_liability                            Neurodevelopmental Liability          input                                 Neurodevelopmental vulnerability from autism / ADHD-like developmental circuitry differences                                                    None                                                                                           None                                                           None         NaN                                      None
+                     substance_use_burden                                    Substance Use Burden          input                                        Addictive or neurotoxic exposure burden worsening cognitive and motivational outcomes                                                    None                                                                                           None                                                           None         NaN                                      None
+ medial_temporal_neurodegenerative_burden                Medial Temporal Neurodegenerative Burden          input                                             Amnestic / Alzheimer-like medial temporal process contributing to memory decline                                                    None                                                                                           None                                                           None         NaN                                      None
+  frontotemporal_neurodegenerative_burden                 Frontotemporal Neurodegenerative Burden          input                                     Frontal and temporal degenerative burden contributing to behavioral and executive change                                                    None                                                                                           None                                                           None         NaN                                      None
+                        cognitive_reserve                                       Cognitive Reserve          input                                                          Protective reserve buffering clinical expression of mixed pathology                                                    None                                                                                           None                                                           None         NaN                                      None
+               etiology_treatment_support                              Etiology Treatment Support          input                                      Correction or management of underlying medical, psychiatric, and lifestyle contributors                                                    None                                                                                           None                                                           None         NaN                                      None
+                              hippocampus                                  CA1 (Hippocampus) left   region_proxy                                                                       Atlas-backed proxy node for a chapter-grounded circuit                                  CA1 (Hippocampus) left                                 JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_CA1_HIPPOCAMPUS_LEFT (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+                                      ofc                                     Area Fo4 (OFC) left   region_proxy                                                                       Atlas-backed proxy node for a chapter-grounded circuit                                     Area Fo4 (OFC) left                                    JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_FO4_OFC_LEFT   (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0  receptors=no; genes=yes; connectivity=no
+                              pfc_control                                      Area 45 (IFG) left   region_proxy                                                                       Atlas-backed proxy node for a chapter-grounded circuit                                      Area 45 (IFG) left                                     JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_45_IFG_LEFT  (-52.591273128969895, 29.535211267605632, 12.254073460370066)      3621.0 receptors=yes; genes=yes; connectivity=no
+               temporal_association_proxy                                    Area Te 3 (STG) left   region_proxy                                                                       Atlas-backed proxy node for a chapter-grounded circuit                                    Area Te 3 (STG) left                                   JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_TE_3_STG_LEFT (-63.756468797564686, -10.335616438356169, 0.6689497716894977)      3942.0  receptors=no; genes=yes; connectivity=no
+                      basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left   region_proxy                                                                       Atlas-backed proxy node for a chapter-grounded circuit FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_FUCD_VENTRAL_STRIATUM_FUNDUS_OF_CAUDATE_NUCLEUS_LEFT   (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0  receptors=no; genes=yes; connectivity=no
+                         cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left   region_proxy                                                                       Atlas-backed proxy node for a chapter-grounded circuit              Nfast (Cerebellum, Fastigial Nucleus) left              JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_NFAST_CEREBELLUM_FASTIGIAL_NUCLEUS_LEFT  (-4.769230769230774, -55.121794871794876, -29.47435897435897)       156.0  receptors=no; genes=yes; connectivity=no
+             mixed_pathology_accumulation                            Mixed Pathology Accumulation latent_biology                    Cumulative burden produced by interacting vascular, traumatic, metabolic, stress, and psychiatric insults                                                    None                                                                                           None                                                           None         NaN                                      None
+       glutamatergic_excitotoxic_pressure                      Glutamatergic Excitotoxic Pressure latent_biology                               Excitatory overload and excitotoxic damage pressure from stroke, TBI, inflammation, and stress                                                    None                                                                                           None                                                           None         NaN                                      None
+                gabaergic_inhibitory_loss                               Gabaergic Inhibitory Loss latent_biology                              Reduced inhibitory control and excitation / inhibition imbalance worsening cognitive regulation                                                    None                                                                                           None                                                           None         NaN                                      None
+               white_matter_disconnection                              White Matter Disconnection latent_biology                                                Distributed disconnection from white-matter disease and diffuse axonal injury                                                    None                                                                                           None                                                           None         NaN                                      None
+                    stress_affective_load                                   Stress Affective Load latent_biology                                           Stress-linked affective and motivational burden interacting with cognitive decline                                                    None                                                                                           None                                                           None         NaN                                      None
+    medial_temporal_memory_system_failure                   Medial Temporal Memory System Failure latent_biology                                                       Hippocampal / medial temporal dysfunction supporting memory impairment                                                    None                                                                                           None                                                           None         NaN                                      None
+           frontosubcortical_loop_failure                          Frontosubcortical Loop Failure latent_biology                       Breakdown of frontal-subcortical loops supporting executive control, motivation, and psychomotor speed                                                    None                                                                                           None                                                           None         NaN                                      None
+frontotemporal_behavioral_control_failure               Frontotemporal Behavioral Control Failure latent_biology                            Failure of frontal-temporal behavioral regulation associated with disinhibition and social change                                                    None                                                                                           None                                                           None         NaN                                      None
+               distributed_circuit_burden                              Distributed Circuit Burden latent_biology                                   Net systems-level circuit dysfunction representing the mixed-etiology final common pathway                                                    None                                                                                           None                                                           None         NaN                                      None
+               episodic_memory_impairment                              Episodic Memory Impairment        symptom                                                                     Memory deficits in the amnestic / medial temporal domain                                                    None                                                                                           None                                                           None         NaN                                      None
+                    executive_dysfunction                                   Executive Dysfunction        symptom                                                    Impairment in planning, set shifting, organization, and cognitive control                                                    None                                                                                           None                                                           None         NaN                                      None
+                      psychomotor_slowing                                     Psychomotor Slowing        symptom                                                                     Subcortical-style slowing of mental and motor processing                                                    None                                                                                           None                                                           None         NaN                                      None
+                 behavioral_disinhibition                                Behavioral Disinhibition        symptom                                                  Social / behavioral dyscontrol often linked to frontal-temporal dysfunction                                                    None                                                                                           None                                                           None         NaN                                      None
+
+=== Edges ===
+                                   source                                    target                                                                               relation ncdme_change
+           cerebrovascular_disease_burden              mixed_pathology_accumulation                            adds vascular lesion burden to the cumulative syndrome load    increased
+            traumatic_brain_injury_burden              mixed_pathology_accumulation                   adds focal and diffuse injury burden to the cumulative syndrome load    increased
+            metabolic_inflammatory_burden              mixed_pathology_accumulation                     adds systemic physiological stress to the cumulative syndrome load    increased
+                    chronic_stress_burden              mixed_pathology_accumulation                      adds chronic psychosocial stress to the cumulative disease burden    increased
+            psychiatric_genetic_liability              mixed_pathology_accumulation                     contributes inherited vulnerability from comorbid psychiatric risk    increased
+                     substance_use_burden              mixed_pathology_accumulation                   adds addictive / neurotoxic burden that worsens later-life cognition    increased
+           cerebrovascular_disease_burden        glutamatergic_excitotoxic_pressure                        vascular injury can drive glutamate-mediated excitotoxic damage    increased
+            traumatic_brain_injury_burden        glutamatergic_excitotoxic_pressure                                       TBI can produce excitotoxic glutamatergic injury    increased
+                    chronic_stress_burden        glutamatergic_excitotoxic_pressure          chronic stress dysregulates glutamate and increases hippocampal vulnerability    increased
+            psychiatric_genetic_liability                 gabaergic_inhibitory_loss                   comorbid psychiatric liability can weaken inhibitory control systems    increased
+             neurodevelopmental_liability                 gabaergic_inhibitory_loss          neurodevelopmental liability contributes to excitation / inhibition imbalance    increased
+           cerebrovascular_disease_burden                white_matter_disconnection    white-matter hyperintensities and vascular injury disrupt large-scale communication    increased
+            traumatic_brain_injury_burden                white_matter_disconnection                                 diffuse axonal injury disconnects distributed circuits    increased
+                    chronic_stress_burden                     stress_affective_load                    sustains affective and neuroendocrine burden that worsens cognition    increased
+            psychiatric_genetic_liability                     stress_affective_load                           genetic diathesis can amplify stress-linked affective burden    increased
+ medial_temporal_neurodegenerative_burden     medial_temporal_memory_system_failure                                             loads amnestic medial temporal dysfunction    increased
+       glutamatergic_excitotoxic_pressure     medial_temporal_memory_system_failure                                excitotoxic stress worsens hippocampal memory circuitry    increased
+               white_matter_disconnection            frontosubcortical_loop_failure                                        disconnects frontal-subcortical executive loops    increased
+                gabaergic_inhibitory_loss            frontosubcortical_loop_failure                                   weakens inhibitory control within executive circuits    increased
+  frontotemporal_neurodegenerative_burden frontotemporal_behavioral_control_failure                    loads frontal and temporal systems supporting behavioral regulation    increased
+                    stress_affective_load frontotemporal_behavioral_control_failure                      affective burden worsens behavioral regulation and social control    increased
+    medial_temporal_memory_system_failure                               hippocampus                                maps medial temporal dysfunction onto hippocampal state    increased
+frontotemporal_behavioral_control_failure                                       ofc                                          loads orbitofrontal behavioral control burden    increased
+           frontosubcortical_loop_failure                               pfc_control                                              loads frontal executive-control circuitry    increased
+frontotemporal_behavioral_control_failure                temporal_association_proxy                        loads temporal systems involved in frontotemporal presentations    increased
+           frontosubcortical_loop_failure                       basal_ganglia_proxy                       loads basal ganglia hubs within executive and motivational loops    increased
+               white_matter_disconnection                          cerebellum_proxy                 propagates distributed disconnection into cerebellar-cognitive systems    increased
+                              hippocampus                episodic_memory_impairment                                         hippocampal dysfunction drives memory deficits    increased
+                              pfc_control                     executive_dysfunction                                  prefrontal control failure impairs executive function    increased
+                      basal_ganglia_proxy                       psychomotor_slowing                           basal ganglia dysfunction contributes to psychomotor slowing    increased
+                                      ofc                  behavioral_disinhibition                         orbitofrontal dysfunction contributes to disinhibited behavior    increased
+                      basal_ganglia_proxy                         apathy_depression basal ganglia and frontal-subcortical dysfunction contributes to apathy and depression    increased
+               distributed_circuit_burden               global_cognitive_impairment                           mixed systems burden converges on broad cognitive impairment    increased
+               etiology_treatment_support                distributed_circuit_burden              reduces overall burden by correcting or buffering contributing etiologies    decreased
+
+=== Resolved regions ===
+- hippocampus: CA1 (Hippocampus) left
+- ofc: Area Fo4 (OFC) left
+- pfc_control: Area 45 (IFG) left
+- temporal_association_proxy: Area Te 3 (STG) left
+- basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+- cerebellum_proxy: Nfast (Cerebellum, Fastigial Nucleus) left
+
+=== Feature availability ===
+- hippocampus: receptors=True, genes=True, connectivity=False
+- ofc: receptors=False, genes=True, connectivity=False
+- pfc_control: receptors=True, genes=True, connectivity=False
+- temporal_association_proxy: receptors=False, genes=True, connectivity=False
+- basal_ganglia_proxy: receptors=False, genes=True, connectivity=False
+- cerebellum_proxy: receptors=False, genes=True, connectivity=False
+
+=== Example connectivity among resolved circuit nodes ===
+No circuit connectivity matrix available in this environment.
+
+=== Receptor fingerprint sample: hippocampus ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== Example simulation ===
+
+INPUTS
+cerebrovascular_disease_burden              0.70
+metabolic_inflammatory_burden               0.55
+psychiatric_genetic_liability               0.55
+medial_temporal_neurodegenerative_burden    0.50
+chronic_stress_burden                       0.50
+cognitive_reserve                           0.45
+etiology_treatment_support                  0.40
+traumatic_brain_injury_burden               0.35
+frontotemporal_neurodegenerative_burden     0.35
+neurodevelopmental_liability                0.30
+substance_use_burden                        0.25
+
+LATENTS
+glutamatergic_excitotoxic_pressure           0.4345
+mixed_pathology_accumulation                 0.4310
+white_matter_disconnection                   0.4090
+medial_temporal_memory_system_failure        0.3776
+gabaergic_inhibitory_loss                    0.3530
+stress_affective_load                        0.3510
+distributed_circuit_burden                   0.3197
+frontosubcortical_loop_failure               0.3176
+frontotemporal_behavioral_control_failure    0.2608
+
+REGIONAL_STATE
+basal_ganglia_proxy           0.3640
+cerebellum_proxy              0.3624
+hippocampus                   0.3298
+temporal_association_proxy    0.3112
+pfc_control                   0.2514
+ofc                           0.2282
+
+SYMPTOMS
+psychomotor_slowing            0.3740
+apathy_depression              0.3026
+episodic_memory_impairment     0.2691
+global_cognitive_impairment    0.2590
+executive_dysfunction          0.2588
+behavioral_disinhibition       0.1905
+
+PHENOTYPES
+subcortical_vascular_profile            0.3514
+stress_complicated_mixed_ncd_profile    0.3359
+amnestic_mixed_profile                  0.2860
+frontotemporal_behavioral_profile       0.2581

@@ -1,0 +1,176 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                     key      node_type           atlas_region                                                  centroid_mni                          feature_summary
+              sleep_state_serotonin_drop          input                   None                                                          None                                     None
+            gaba_glycine_inhibitory_load          input                   None                                                          None                                     None
+       circadian_hypothalamic_disruption          input                   None                                                          None                                     None
+            white_matter_disconnectivity          input                   None                                                          None                                     None
+genetic_channel_plasticity_vulnerability          input                   None                                                          None                                     None
+                     homeostatic_support          input                   None                                                          None                                     None
+                   brainstem_raphe_proxy         region                   None                                                          None                               unresolved
+                      hypothalamus_proxy         region                   None                                                          None                               unresolved
+                                  insula         region Area Id2 (Insula) left  (-41.03048780487805, -11.955792682926827, 5.373475609756099) receptors=no; genes=yes; connectivity=no
+                                amygdala         region     LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+     serotonergic_respiratory_underdrive latent_biology                   None                                                          None                                     None
+        inhibitory_brainstem_suppression latent_biology                   None                                                          None                                     None
+       respiratory_motoneuron_underdrive latent_biology                   None                                                          None                                     None
+           chemosensory_response_deficit latent_biology                   None                                                          None                                     None
+            apneic_threshold_instability latent_biology                   None                                                          None                                     None
+         circadian_hypothalamic_mismatch latent_biology                   None                                                          None                                     None
+             synaptic_plasticity_failure latent_biology                   None                                                          None                                     None
+                 network_disconnectivity latent_biology                   None                                                          None                                     None
+   autonomic_interoceptive_dysregulation latent_biology                   None                                                          None                                     None
+                    central_apnea_events        symptom                   None                                                          None                                     None
+             unstable_ventilatory_rhythm        symptom                   None                                                          None                                     None
+                   chemosensory_blunting        symptom                   None                                                          None                                     None
+                   arousal_fragmentation        symptom                   None                                                          None                                     None
+                   autonomic_instability        symptom                   None                                                          None                                     None
+                      daytime_sleepiness        symptom                   None                                                          None                                     None
+
+=== EDGES ===
+                                  source                                target                                                                     relation               csa_change
+              sleep_state_serotonin_drop   serotonergic_respiratory_underdrive             reduces excitatory serotonergic respiratory support during sleep                increased
+              sleep_state_serotonin_drop     respiratory_motoneuron_underdrive can lower respiratory motor output below threshold in vulnerable individuals                increased
+            gaba_glycine_inhibitory_load      inhibitory_brainstem_suppression           increases inhibitory suppression of respiratory pattern generation                increased
+       circadian_hypothalamic_disruption       circadian_hypothalamic_mismatch                disrupts state-appropriate respiratory timing and homeostasis                increased
+            white_matter_disconnectivity               network_disconnectivity        reduces coherent communication across the respiratory control network                increased
+genetic_channel_plasticity_vulnerability           synaptic_plasticity_failure      raises vulnerability in excitability and adaptive plasticity mechanisms increased susceptibility
+genetic_channel_plasticity_vulnerability         chemosensory_response_deficit                          may impair chemical-respiratory response thresholds increased susceptibility
+                     homeostatic_support          apneic_threshold_instability                              buffers instability around the apneic threshold               protective
+                     homeostatic_support                 arousal_fragmentation                                buffers repeated respiratory-related arousals               protective
+                     homeostatic_support                    daytime_sleepiness                                 reduces daytime burden from sleep disruption               protective
+     serotonergic_respiratory_underdrive                 brainstem_raphe_proxy   reflects impaired serotonergic modulation of brainstem respiratory control  increased dysregulation
+     serotonergic_respiratory_underdrive     respiratory_motoneuron_underdrive                                    reduces drive to respiratory motor output                increased
+        inhibitory_brainstem_suppression                 brainstem_raphe_proxy                suppresses rhythmic respiratory output in brainstem circuitry  increased dysregulation
+        inhibitory_brainstem_suppression     respiratory_motoneuron_underdrive                                 suppresses downstream respiratory motor tone                increased
+         circadian_hypothalamic_mismatch                    hypothalamus_proxy                    burdens hypothalamic circadian and homeostatic regulation  increased dysregulation
+         circadian_hypothalamic_mismatch           unstable_ventilatory_rhythm                  promotes mismatch between sleep state and respiratory drive                increased
+             synaptic_plasticity_failure         chemosensory_response_deficit                                      impairs adaptive respiratory plasticity                increased
+             synaptic_plasticity_failure          apneic_threshold_instability                                reduces stable adaptation to metabolic demand                increased
+                 network_disconnectivity                 brainstem_raphe_proxy                                 weakens integration with respiratory centers  increased dysregulation
+                 network_disconnectivity                    hypothalamus_proxy                                     weakens circadian-autonomic coordination  increased dysregulation
+                 network_disconnectivity                                insula                          weakens interoceptive/autonomic regulation pathways  increased dysregulation
+                 network_disconnectivity                              amygdala                   weakens stable modulation of emotional-autonomic responses  increased dysregulation
+                 network_disconnectivity autonomic_interoceptive_dysregulation              disconnectivity destabilizes autonomic/interoceptive regulation                increased
+   autonomic_interoceptive_dysregulation                                insula                             loads insular interoceptive-autonomic processing  increased dysregulation
+   autonomic_interoceptive_dysregulation                              amygdala                          loads autonomic-affective modulation of respiration  increased dysregulation
+   autonomic_interoceptive_dysregulation                 autonomic_instability                    promotes autonomic irregularity around respiratory events                increased
+           chemosensory_response_deficit                  central_apnea_events                           poor chemical responsiveness promotes apnea events                increased
+           chemosensory_response_deficit                 chemosensory_blunting                           produces blunted effective chemosensory reactivity                increased
+       respiratory_motoneuron_underdrive                  central_apnea_events                                      reduces respiratory effort during sleep                increased
+            apneic_threshold_instability                  central_apnea_events                         oscillation near threshold promotes recurrent apneas                increased
+            apneic_threshold_instability           unstable_ventilatory_rhythm                                     drives rhythmic instability during sleep                increased
+                                amygdala                 arousal_fragmentation      autonomic-affective respiratory instability can worsen sleep continuity                increased
+                    central_apnea_events                 arousal_fragmentation                                              recurrent apneas fragment sleep                increased
+                   arousal_fragmentation                    daytime_sleepiness                                     fragmented sleep produces daytime burden                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                        Area Id2 (Insula) left  LB (Amygdala) left
+Area Id2 (Insula) left                 222.795                0.00
+LB (Amygdala) left                       0.000              244.57
+
+=== BRAINSTEM_RAPHE_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== BRAINSTEM_RAPHE_PROXY : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== BRAINSTEM_RAPHE_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HYPOTHALAMUS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== HYPOTHALAMUS_PROXY : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== HYPOTHALAMUS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== INSULA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== INSULA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    4.729900   2.530311            2    -0.038500    0.231507
+ CRHR1    5.466525   1.610954            4    -0.199675    1.125053
+ FKBP5    4.803125   2.333933            4     0.253425    0.410734
+GABRA2    7.055635   1.562411           26    -0.082250    0.379582
+GABRB2    8.311900   1.600748            2     0.693200    0.001697
+  GAD1    8.558917   1.965973           18     0.153550    0.222405
+ GLRA1    1.653850   0.927512            2    -0.146250    0.534219
+  GLRB    8.231900   0.102813            2     0.310150    0.155210
+ GRIA1    7.124925   1.690085            4    -0.279625    0.161835
+ GRIA2    8.639475   1.884020            4    -0.151950    0.230855
+GRIN2B    5.728300   1.579824            3     0.323100    0.095957
+ HTR1A    3.428700   2.236920            3    -0.225467    0.595516
+ NR3C1    9.528620   1.026047            5     0.349160    0.176434
+SLC1A1    7.027350   1.894268            2    -0.110700    0.301793
+SLC6A4    1.441464   0.672104           11    -0.153591    0.234768
+  TPH2    2.132450   0.386575            2    -0.210600    0.156412
+
+=== INSULA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+ GLRA1    1.628250   0.677781           14    -0.293336    0.423749
+  GLRB    7.911686   0.445303           14    -0.486814    0.953959
+ GRIA1    9.049907   1.628641           28     1.274593    0.531052
+ GRIA2   10.029093   1.610879           28     1.287429    0.465225
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A1    7.480636   0.903997           14     0.140714    1.025792
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+serotonergic_respiratory_underdrive      0.4350
+circadian_hypothalamic_mismatch          0.3525
+synaptic_plasticity_failure              0.3275
+inhibitory_brainstem_suppression         0.3250
+network_disconnectivity                  0.3155
+respiratory_motoneuron_underdrive        0.2812
+chemosensory_response_deficit            0.2397
+autonomic_interoceptive_dysregulation    0.2252
+apneic_threshold_instability             0.1911
+
+=== REGIONAL STATE ===
+brainstem_raphe_proxy    0.3308
+hypothalamus_proxy       0.2017
+insula                   0.1644
+amygdala                 0.1317
+
+=== SYMPTOMS ===
+unstable_ventilatory_rhythm    0.1981
+central_apnea_events           0.1627
+chemosensory_blunting          0.1527
+autonomic_instability          0.1345
+arousal_fragmentation          0.0818
+daytime_sleepiness             0.0665
+
+=== PHENOTYPES ===
+serotonergic_underdrive_profile       0.2905
+circadian_hypothalamic_profile        0.2181
+disconnectivity_profile               0.2003
+inhibitory_oversuppression_profile    0.1992

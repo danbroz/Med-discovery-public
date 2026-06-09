@@ -1,0 +1,236 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 12) ===
+                               key                              label    node_type                                                                                                                                               description         atlas_region region_identifier                                                centroid_mni  volume_mm3                          feature_summary
+                     disease_stage                      Disease Stage        input                                                                   Overall neurodegenerative progression burden increasing frontotemporal circuit failure.                 None              None                                                        None         NaN                                     None
+             familial_genetic_load              Familial Genetic Load        input                                                              Familial or inherited vulnerability reflecting the substantial heritable component of FTNCD.                 None              None                                                        None         NaN                                     None
+               mapt_tauopathy_load                Mapt Tauopathy Load        input                                                                                          Tau-related molecular burden linked to MAPT-associated FTLD-tau.                 None              None                                                        None         NaN                                     None
+          tdp43_proteinopathy_load           Tdp43 Proteinopathy Load        input                                                                                       TDP-43-related molecular burden contributing to FTLD heterogeneity.                 None              None                                                        None         NaN                                     None
+            fus_proteinopathy_load             Fus Proteinopathy Load        input                                                                                          FUS-related molecular burden contributing to FTLD heterogeneity.                 None              None                                                        None         NaN                                     None
+  right_frontoinsular_predominance   Right Frontoinsular Predominance        input                                              Bias toward the right frontal / insular / anterior cingulate / anterior temporal pattern typical of bvFTNCD.                 None              None                                                        None         NaN                                     None
+left_language_network_predominance Left Language Network Predominance        input                                                  Bias toward left-lateralized language-network vulnerability across primary progressive aphasia variants.                 None              None                                                        None         NaN                                     None
+    anterior_temporal_predominance     Anterior Temporal Predominance        input                                                          Bias toward anterior temporal involvement, especially relevant to semantic-predominant patterns.                 None              None                                                        None         NaN                                     None
+         nigrostriatal_involvement          Nigrostriatal Involvement        input                                                          Additional nigrostriatal dopamine-system burden linked to parkinsonism and motivational slowing.                 None              None                                                        None         NaN                                     None
+                 cognitive_reserve                  Cognitive Reserve        input                                                                                Protective reserve buffering symptom expression despite biological burden.                 None              None                                                        None         NaN                                     None
+    structured_environment_support     Structured Environment Support        input                                                               Protective caregiver structure and external routines that can reduce behavioral dyscontrol.                 None              None                                                        None         NaN                                     None
+         right_orbitofrontal_proxy               Area Fo4 (OFC) right region_proxy Right-lateralized orbitofrontal proxy for the behavioral-variant pattern of disinhibition, reward-control disturbance, and erratic behavioral regulation. Area Fo4 (OFC) right              None (31.96124523506988, 54.92757306226176, -15.474587039390087)      1574.0 receptors=no; genes=no; connectivity=yes
+
+=== Edge count ===
+34
+
+=== Resolved regions ===
+- right_orbitofrontal_proxy: Area Fo4 (OFC) right
+- right_insula_proxy: Area Ig2 (Insula) right
+- anterior_cingulate_proxy: Area s24 (sACC) right
+- right_anterior_temporal_proxy: Area EC (Hippocampal Region, Entorhinal Cortex) right
+- striatum_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) right
+- left_posterior_frontoinsular_proxy: Area 44 (IFG) left
+- left_anterior_temporal_language_proxy: Area EC (Hippocampal Region, Entorhinal Cortex) left
+- left_posterior_temporal_inferior_parietal_proxy: Area TPJ (STG, SMG) left
+
+=== Connectivity among resolved circuit nodes ===
+                            source                                          target    value
+          anterior_cingulate_proxy                                  striatum_proxy 1036.180
+left_posterior_frontoinsular_proxy left_posterior_temporal_inferior_parietal_proxy  318.685
+         right_orbitofrontal_proxy                                  striatum_proxy  251.780
+         right_orbitofrontal_proxy                        anterior_cingulate_proxy   10.280
+                    striatum_proxy              left_posterior_frontoinsular_proxy    1.935
+         right_orbitofrontal_proxy              left_posterior_frontoinsular_proxy    1.435
+                right_insula_proxy left_posterior_temporal_inferior_parietal_proxy    0.880
+          anterior_cingulate_proxy              left_posterior_frontoinsular_proxy    0.680
+          anterior_cingulate_proxy                   right_anterior_temporal_proxy    0.665
+     right_anterior_temporal_proxy                                  striatum_proxy    0.535
+
+=== Example receptor / gene / connectivity tables ===
+
+Node: right_orbitofrontal_proxy
+  receptors rows: 0
+  genes rows: 0
+  connectivity rows: 15
+
+Node: anterior_cingulate_proxy
+  receptors rows: 0
+  genes rows: 14
+  connectivity rows: 15
+
+Node: left_posterior_frontoinsular_proxy
+  receptors rows: 16
+  genes rows: 14
+  connectivity rows: 15
+
+=== Variant biases ===
+behavioral_variant_bias    0.686
+language_variant_bias      0.377
+semantic_variant_bias      0.460
+posterior_language_bias    0.329
+
+=== Latent biology ===
+ftld_proteinopathy_burden                      0.418
+frontotemporal_degeneration                    0.559
+frontotemporal_hypometabolism                  0.527
+medial_frontal_subcortical_dopamine_failure    0.513
+orbitofrontal_striatal_discontrol              0.552
+salience_social_circuit_breakdown              0.596
+language_network_breakdown                     0.477
+
+=== Regional state ===
+right_orbitofrontal_proxy                          0.548
+right_insula_proxy                                 0.568
+anterior_cingulate_proxy                           0.529
+right_anterior_temporal_proxy                      0.572
+striatum_proxy                                     0.483
+left_posterior_frontoinsular_proxy                 0.456
+left_anterior_temporal_language_proxy              0.476
+left_posterior_temporal_inferior_parietal_proxy    0.436
+
+=== Symptoms ===
+apathy_inertia                     0.423
+disinhibition_impulsivity          0.479
+repetitive_stereotyped_behavior    0.456
+executive_dysfunction              0.488
+social_emotional_blunting          0.526
+nonfluent_aphasia                  0.423
+semantic_loss                      0.458
+logopenic_language_impairment      0.418
+parkinsonism                       0.372
+
+=== Phenotypes ===
+behavioral_variant_ftncd_profile    0.475
+pnfa_profile                        0.456
+semantic_dementia_profile           0.487
+lvppa_profile                       0.444
+motor_parkinsonian_profile          0.426
+language_variant_mean               0.462
+frontotemporal_imaging_signature    0.552
+overall_ftncd_burden                0.487
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 12) ===
+                               key                              label    node_type                                                                                                                                               description         atlas_region region_identifier                                                centroid_mni  volume_mm3                          feature_summary
+                     disease_stage                      Disease Stage        input                                                                   Overall neurodegenerative progression burden increasing frontotemporal circuit failure.                 None              None                                                        None         NaN                                     None
+             familial_genetic_load              Familial Genetic Load        input                                                              Familial or inherited vulnerability reflecting the substantial heritable component of FTNCD.                 None              None                                                        None         NaN                                     None
+               mapt_tauopathy_load                Mapt Tauopathy Load        input                                                                                          Tau-related molecular burden linked to MAPT-associated FTLD-tau.                 None              None                                                        None         NaN                                     None
+          tdp43_proteinopathy_load           Tdp43 Proteinopathy Load        input                                                                                       TDP-43-related molecular burden contributing to FTLD heterogeneity.                 None              None                                                        None         NaN                                     None
+            fus_proteinopathy_load             Fus Proteinopathy Load        input                                                                                          FUS-related molecular burden contributing to FTLD heterogeneity.                 None              None                                                        None         NaN                                     None
+  right_frontoinsular_predominance   Right Frontoinsular Predominance        input                                              Bias toward the right frontal / insular / anterior cingulate / anterior temporal pattern typical of bvFTNCD.                 None              None                                                        None         NaN                                     None
+left_language_network_predominance Left Language Network Predominance        input                                                  Bias toward left-lateralized language-network vulnerability across primary progressive aphasia variants.                 None              None                                                        None         NaN                                     None
+    anterior_temporal_predominance     Anterior Temporal Predominance        input                                                          Bias toward anterior temporal involvement, especially relevant to semantic-predominant patterns.                 None              None                                                        None         NaN                                     None
+         nigrostriatal_involvement          Nigrostriatal Involvement        input                                                          Additional nigrostriatal dopamine-system burden linked to parkinsonism and motivational slowing.                 None              None                                                        None         NaN                                     None
+                 cognitive_reserve                  Cognitive Reserve        input                                                                                Protective reserve buffering symptom expression despite biological burden.                 None              None                                                        None         NaN                                     None
+    structured_environment_support     Structured Environment Support        input                                                               Protective caregiver structure and external routines that can reduce behavioral dyscontrol.                 None              None                                                        None         NaN                                     None
+         right_orbitofrontal_proxy               Area Fo4 (OFC) right region_proxy Right-lateralized orbitofrontal proxy for the behavioral-variant pattern of disinhibition, reward-control disturbance, and erratic behavioral regulation. Area Fo4 (OFC) right              None (31.96124523506988, 54.92757306226176, -15.474587039390087)      1574.0 receptors=no; genes=no; connectivity=yes
+
+=== Edge count ===
+34
+
+=== Resolved regions ===
+- right_orbitofrontal_proxy: Area Fo4 (OFC) right
+- right_insula_proxy: Area Ig3 (Insula) right
+- anterior_cingulate_proxy: Area s24 (sACC) right
+- right_anterior_temporal_proxy: Area EC (Hippocampal Region, Entorhinal Cortex) right
+- striatum_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) right
+- left_posterior_frontoinsular_proxy: Area 44 (IFG) left
+- left_anterior_temporal_language_proxy: Area EC (Hippocampal Region, Entorhinal Cortex) left
+- left_posterior_temporal_inferior_parietal_proxy: Area TPJ (STG, SMG) left
+
+=== Connectivity among resolved circuit nodes ===
+                            source                                          target    value
+          anterior_cingulate_proxy                                  striatum_proxy 1036.180
+left_posterior_frontoinsular_proxy left_posterior_temporal_inferior_parietal_proxy  318.685
+         right_orbitofrontal_proxy                                  striatum_proxy  251.780
+         right_orbitofrontal_proxy                        anterior_cingulate_proxy   10.280
+                    striatum_proxy              left_posterior_frontoinsular_proxy    1.935
+         right_orbitofrontal_proxy              left_posterior_frontoinsular_proxy    1.435
+          anterior_cingulate_proxy              left_posterior_frontoinsular_proxy    0.680
+          anterior_cingulate_proxy                   right_anterior_temporal_proxy    0.665
+     right_anterior_temporal_proxy                                  striatum_proxy    0.535
+         right_orbitofrontal_proxy                   right_anterior_temporal_proxy    0.245
+
+=== Example receptor / gene / connectivity tables ===
+
+Node: right_orbitofrontal_proxy
+  receptors rows: 0
+  genes rows: 0
+  connectivity rows: 15
+
+Node: anterior_cingulate_proxy
+  receptors rows: 0
+  genes rows: 14
+  connectivity rows: 15
+
+Node: left_posterior_frontoinsular_proxy
+  receptors rows: 16
+  genes rows: 14
+  connectivity rows: 15
+
+=== Variant biases ===
+behavioral_variant_bias    0.686
+language_variant_bias      0.377
+semantic_variant_bias      0.460
+posterior_language_bias    0.329
+
+=== Latent biology ===
+ftld_proteinopathy_burden                      0.418
+frontotemporal_degeneration                    0.559
+frontotemporal_hypometabolism                  0.527
+medial_frontal_subcortical_dopamine_failure    0.513
+orbitofrontal_striatal_discontrol              0.552
+salience_social_circuit_breakdown              0.596
+language_network_breakdown                     0.477
+
+=== Regional state ===
+right_orbitofrontal_proxy                          0.548
+right_insula_proxy                                 0.568
+anterior_cingulate_proxy                           0.529
+right_anterior_temporal_proxy                      0.572
+striatum_proxy                                     0.483
+left_posterior_frontoinsular_proxy                 0.456
+left_anterior_temporal_language_proxy              0.476
+left_posterior_temporal_inferior_parietal_proxy    0.436
+
+=== Symptoms ===
+apathy_inertia                     0.423
+disinhibition_impulsivity          0.479
+repetitive_stereotyped_behavior    0.456
+executive_dysfunction              0.488
+social_emotional_blunting          0.526
+nonfluent_aphasia                  0.423
+semantic_loss                      0.458
+logopenic_language_impairment      0.418
+parkinsonism                       0.372
+
+=== Phenotypes ===
+behavioral_variant_ftncd_profile    0.475
+pnfa_profile                        0.456
+semantic_dementia_profile           0.487
+lvppa_profile                       0.444
+motor_parkinsonian_profile          0.426
+language_variant_mean               0.462
+frontotemporal_imaging_signature    0.552
+overall_ftncd_burden                0.487

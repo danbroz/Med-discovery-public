@@ -1,0 +1,147 @@
+Building Delusional Disorder scaffold...
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+Nodes:
+                                    key      node_type                                       atlas_region                           feature_summary
+               psychosis_polygenic_load          input                                               None                                      None
+               affective_polygenic_load          input                                               None                                      None
+     late_life_structural_vulnerability          input                                               None                                      None
+              focal_neurological_insult          input                                               None                                      None
+                stimulant_dopamine_load          input                                               None                                      None
+                   affective_state_load          input                                               None                                      None
+                d2_antagonist_treatment          input                                               None                                      None
+        serotonergic_adjuvant_treatment          input                                               None                                      None
+            pfc_belief_evaluation_proxy         region                                 Area 45 (IFG) left receptors=yes; genes=yes; connectivity=no
+             temporal_association_proxy         region                               Area Te 3 (STG) left  receptors=no; genes=yes; connectivity=no
+                            hippocampus         region                             CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                               amygdala         region                                 LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                striatal_salience_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)  receptors=no; genes=yes; connectivity=no
+     parietal_body_representation_proxy         region                                Area PFt (IPL) left receptors=yes; genes=yes; connectivity=no
+         dopaminergic_aberrant_salience latent_biology                                               None                                      None
+serotonergic_affective_modulation_shift latent_biology                                               None                                      None
+ fronto_striatal_limbic_dysconnectivity latent_biology                                               None                                      None
+        hippocampal_context_instability latent_biology                                               None                                      None
+                  limbic_threat_tagging latent_biology                                               None                                      None
+              belief_evaluation_failure latent_biology                                               None                                      None
+         body_representation_distortion latent_biology                                               None                                      None
+                     fixed_false_belief        symptom                                               None                                      None
+                paranoid_interpretation        symptom                                               None                                      None
+                        belief_rigidity        symptom                                               None                                      None
+                    depressive_distress        symptom                                               None                                      None
+           somatic_delusional_intensity        symptom                                               None                                      None
+
+Edges:
+                                 source                                  target                                                                         relation dd_change
+               psychosis_polygenic_load          dopaminergic_aberrant_salience                    raises vulnerability to psychosis-like salience misassignment increased
+               psychosis_polygenic_load  fronto_striatal_limbic_dysconnectivity         adds distributed circuit liability across schizophrenia-spectrum systems increased
+               affective_polygenic_load serotonergic_affective_modulation_shift                                  supports mood-linked serotonergic dysregulation increased
+     late_life_structural_vulnerability         hippocampal_context_instability                                 increases memory-context fragility in later life increased
+     late_life_structural_vulnerability  fronto_striatal_limbic_dysconnectivity                adds structural burden to distributed psychosis-relevant circuits increased
+              focal_neurological_insult  fronto_striatal_limbic_dysconnectivity lesions can precipitate delusional syndromes through focal or network disruption increased
+              focal_neurological_insult          body_representation_distortion   neurological damage can distort body representation and somatic belief content increased
+                stimulant_dopamine_load          dopaminergic_aberrant_salience                            dopamine excess promotes paranoid delusional ideation increased
+                   affective_state_load serotonergic_affective_modulation_shift               current mood burden amplifies serotonergic-affective dysregulation increased
+                d2_antagonist_treatment          dopaminergic_aberrant_salience                           D2 blockade dampens psychosis-linked salience overload decreased
+        serotonergic_adjuvant_treatment serotonergic_affective_modulation_shift                    serotonergic support reduces affective and cognitive coloring decreased
+         dopaminergic_aberrant_salience                 striatal_salience_proxy                                          drives salience-related striatal burden increased
+ fronto_striatal_limbic_dysconnectivity             pfc_belief_evaluation_proxy                          weakens frontal belief evaluation and cognitive control increased
+ fronto_striatal_limbic_dysconnectivity              temporal_association_proxy                 disrupts temporal-lobe integration of context and interpretation increased
+        hippocampal_context_instability                             hippocampus                                   loads the memory-context node with instability increased
+                  limbic_threat_tagging                                amygdala                                               amplifies limbic affective tagging increased
+         body_representation_distortion      parietal_body_representation_proxy                                              loads body-representation circuitry increased
+serotonergic_affective_modulation_shift                   limbic_threat_tagging                         colors salience with affective threat and emotional bias increased
+         dopaminergic_aberrant_salience               belief_evaluation_failure                     repeated salience errors destabilize flexible belief testing increased
+        hippocampal_context_instability               belief_evaluation_failure                            context-memory impairment weakens plausibility checks increased
+              belief_evaluation_failure                      fixed_false_belief             failure to revise implausible beliefs supports delusional conviction increased
+                striatal_salience_proxy                      fixed_false_belief                  aberrant salience pushes neutral events into delusional meaning increased
+                               amygdala                 paranoid_interpretation                affective threat tagging biases interpretation toward persecution increased
+             temporal_association_proxy                 paranoid_interpretation   misintegration of social or contextual cues promotes suspicious meaning-making increased
+            pfc_belief_evaluation_proxy                         belief_rigidity                           poor evaluative flexibility hardens delusional beliefs increased
+                            hippocampus                         belief_rigidity     memory-context disturbance helps sustain a self-consistent delusional system increased
+serotonergic_affective_modulation_shift                     depressive_distress                              mood dysregulation increases depressive comorbidity increased
+     parietal_body_representation_proxy            somatic_delusional_intensity                      body-schema distortion increases somatic delusional content increased
+                     fixed_false_belief                         belief_rigidity                               once formed, fixed beliefs become harder to update increased
+
+Circuit connectivity among resolved region nodes:
+                                    pfc_belief_evaluation_proxy  temporal_association_proxy  hippocampus  amygdala  striatal_salience_proxy  parietal_body_representation_proxy
+pfc_belief_evaluation_proxy                                 NaN                         NaN          NaN       NaN                      NaN                                 NaN
+temporal_association_proxy                                  NaN                         NaN          NaN       NaN                      NaN                                 NaN
+hippocampus                                                 NaN                         NaN          NaN       NaN                      NaN                                 NaN
+amygdala                                                    NaN                         NaN          NaN       NaN                      NaN                                 NaN
+striatal_salience_proxy                                     NaN                         NaN          NaN       NaN                      NaN                                 NaN
+parietal_body_representation_proxy                          NaN                         NaN          NaN       NaN                      NaN                                 NaN
+
+Example receptor fingerprint for hippocampus:
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+Example gene summary for amygdala:
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+CACNA1C    8.106348   2.033784           21     0.538729    0.710266
+   COMT    6.458171   3.351996           42    -0.164479    1.545434
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+ GRIN2A    7.592200   1.317997           35     0.497814    0.602324
+  HTR2A    6.457724   2.230421          175     0.172246    0.678875
+ SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+ SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+ZNF804A    2.758914   1.166878            7    -0.829486    1.391992
+
+Simulation example:
+
+[inputs]
+psychosis_polygenic_load              0.65
+affective_polygenic_load              0.40
+late_life_structural_vulnerability    0.35
+focal_neurological_insult             0.10
+stimulant_dopamine_load               0.20
+affective_state_load                  0.45
+d2_antagonist_treatment               0.55
+serotonergic_adjuvant_treatment       0.30
+
+[latents]
+dopaminergic_aberrant_salience             0.1935
+serotonergic_affective_modulation_shift    0.2575
+fronto_striatal_limbic_dysconnectivity     0.2748
+hippocampal_context_instability            0.2457
+limbic_threat_tagging                      0.1858
+belief_evaluation_failure                  0.1149
+body_representation_distortion             0.1862
+
+[regional_state]
+pfc_belief_evaluation_proxy           0.0189
+temporal_association_proxy            0.2104
+hippocampus                           0.1872
+amygdala                              0.1440
+striatal_salience_proxy               0.0248
+parietal_body_representation_proxy    0.1463
+
+[symptoms]
+fixed_false_belief              0.0905
+paranoid_interpretation         0.1276
+belief_rigidity                 0.0926
+depressive_distress             0.2439
+somatic_delusional_intensity    0.1287
+
+[phenotypes]
+systematized_delusion_profile       0.0831
+persecutory_profile                 0.1113
+somatic_profile                     0.1040
+affective_overlap_profile           0.1809
+late_onset_vulnerability_profile    0.1868
+circumscribed_delusion_profile      0.0213

@@ -1,0 +1,109 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 12) ===
+                                       key                                      label node_type                                                                                                                       description           atlas_region region_identifier                                                  centroid_mni  volume_mm3                            feature_summary
+                     genetic_vulnerability                      Genetic Vulnerability     input                            Heritable liability to anxiety, fear reactivity, serotonergic dysregulation, and phobic vulnerability.                   None              None                                                          None         NaN                                       None
+              traumatic_fear_learning_load               Traumatic Fear Learning Load     input                               Conditioned fear learning from direct aversive experience linked to a specific object or situation.                   None              None                                                          None         NaN                                       None
+              chronic_stress_sensitization               Chronic Stress Sensitization     input                                                Ongoing stress burden that sensitizes fear, autonomic, and neuroendocrine systems.                   None              None                                                          None         NaN                                       None
+                       phobic_cue_exposure                        Phobic Cue Exposure     input                                                               Current exposure intensity to the feared cue, object, or situation.                   None              None                                                          None         NaN                                       None
+           panic_biological_susceptibility            Panic Biological Susceptibility     input                                      Inherited or trait-like vulnerability to panic-like physiological surges during fear states.                   None              None                                                          None         NaN                                       None
+blood_injection_injury_vasovagal_liability Blood Injection Injury Vasovagal Liability     input                   Subtype-specific tendency toward vasovagal autonomic reactions and fainting in blood-injection-injury contexts.                   None              None                                                          None         NaN                                       None
+                   safety_learning_support                    Safety Learning Support     input                               Protective safety learning, coping structure, and regulatory support that reduce phobic expression.                   None              None                                                          None         NaN                                       None
+            serotonergic_treatment_support             Serotonergic Treatment Support     input                            Protective serotonergic treatment support that can reduce fear-circuit dysregulation and hyperarousal.                   None              None                                                          None         NaN                                       None
+                                  amygdala                         LB (Amygdala) left    region                                                          Amygdala anchor for rapid threat valuation and exaggerated phobic alarm.     LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=yes
+                               hippocampus                      DG (Hippocampus) left    region                             Hippocampal anchor for contextual memory of fear and retrieval of where-and-when threat associations.  DG (Hippocampus) left              None (-28.04093567251462, -16.444444444444443, -20.46783625730994)       171.0 receptors=yes; genes=yes; connectivity=yes
+                                    insula                     Area Id9 (Insula) left    region                           Insular anchor for interoceptive detection of bodily alarm and subjective awareness of fear physiology. Area Id9 (Insula) left              None  (-40.638081395348834, 6.7761627906976685, -8.58430232558139)       688.0   receptors=no; genes=no; connectivity=yes
+                                       acc                       Area p32 (pACC) left    region Anterior cingulate anchor for distress, conflict processing, and the tension between fear-driven escape and external constraints.   Area p32 (pACC) left              None   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0  receptors=no; genes=yes; connectivity=yes
+
+=== Edge count ===
+33
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- hippocampus: DG (Hippocampus) left
+- insula: Area Id9 (Insula) left
+- acc: Area p32 (pACC) left
+- medial_prefrontal_control_proxy: Area s32 (sACC) left
+- thalamic_relay_proxy: ZI (Thalamus, zona incerta) left
+- visual_cortex_proxy: Area hOc1 (V1, 17, CalcS) left
+
+=== Connectivity among resolved circuit nodes ===
+                         source                          target    value
+                            acc medial_prefrontal_control_proxy 2821.785
+                            acc             visual_cortex_proxy   19.650
+                         insula             visual_cortex_proxy   17.315
+           thalamic_relay_proxy             visual_cortex_proxy    9.880
+medial_prefrontal_control_proxy             visual_cortex_proxy    7.580
+                            acc            thalamic_relay_proxy    5.170
+                       amygdala                     hippocampus    5.165
+                         insula                             acc    3.965
+                       amygdala             visual_cortex_proxy    1.695
+                    hippocampus             visual_cortex_proxy    1.135
+
+=== Example receptor / gene / connectivity tables ===
+
+Node: amygdala
+  receptors rows: 0
+  genes rows: 14
+  connectivity rows: 15
+
+Node: hippocampus
+  receptors rows: 14
+  genes rows: 14
+  connectivity rows: 15
+
+Node: insula
+  receptors rows: 0
+  genes rows: 0
+  connectivity rows: 15
+
+Node: acc
+  receptors rows: 0
+  genes rows: 14
+  connectivity rows: 15
+
+=== Latent biology ===
+serotonergic_dysregulation            0.394
+crf_stress_amplification              0.607
+cck_acute_fear_susceptibility         0.547
+dopamine_avoidance_reinforcement      0.617
+contextual_fear_generalization        0.615
+prefrontal_fear_regulation_failure    0.456
+amygdala_threat_bias                  0.654
+autonomic_fight_flight_activation     0.571
+interoceptive_alarm_gain              0.494
+vasovagal_response_tendency           0.332
+
+=== Regional state ===
+amygdala                           0.602
+hippocampus                        0.583
+insula                             0.561
+acc                                0.550
+medial_prefrontal_control_proxy    0.382
+thalamic_relay_proxy               0.716
+visual_cortex_proxy                0.740
+hypothalamus_proxy                 0.582
+locus_coeruleus_proxy              0.546
+
+=== Symptoms ===
+overwhelming_fear           0.522
+autonomic_hyperarousal      0.547
+panic_like_somatic_alarm    0.521
+anticipatory_anxiety        0.508
+avoidance                   0.509
+context_bound_triggering    0.643
+vasovagal_fainting          0.478
+
+=== Phenotypes ===
+acute_phobic_episode_profile        0.530
+avoidant_specific_phobia_profile    0.553
+blood_injection_injury_profile      0.373
+panic_somatic_profile               0.544
+fear_control_imbalance              0.511
+overall_specific_phobia_burden      0.499

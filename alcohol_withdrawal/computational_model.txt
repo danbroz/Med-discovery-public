@@ -1,0 +1,265 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                              key      node_type                               atlas_region                                                   centroid_mni                           feature_summary
+         chronic_alcohol_exposure          input                                       None                                                           None                                      None
+                 abrupt_cessation          input                                       None                                                           None                                      None
+               withdrawal_history          input                                       None                                                           None                                      None
+                genetic_liability          input                                       None                                                           None                                      None
+            medical_stabilization          input                                       None                                                           None                                      None
+                         amygdala         region                         CM (Amygdala) left (-21.968000000000004, -5.024000000000001, -14.112000000000002)  receptors=no; genes=yes; connectivity=no
+                      hippocampus         region                     CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                              acc         region                       Area p32 (pACC) left    (-6.9639365918097695, 49.28771466314399, 9.933289299867894)  receptors=no; genes=yes; connectivity=no
+                              pfc         region                      Area Fp2 (FPole) left    (-5.641685520361989, 59.519513574660635, -3.11057692307692)  receptors=no; genes=yes; connectivity=no
+                 cerebellum_proxy         region Nfast (Cerebellum, Fastigial Nucleus) left  (-4.769230769230774, -55.121794871794876, -29.47435897435897)  receptors=no; genes=yes; connectivity=no
+            gaba_a_downregulation latent_biology                                       None                                                           None                                      None
+                nmda_upregulation latent_biology                                       None                                                           None                                      None
+              receptor_plasticity latent_biology                                       None                                                           None                                      None
+                  glutamate_surge latent_biology                                       None                                                           None                                      None
+                stress_activation latent_biology                                       None                                                           None                                      None
+                         kindling latent_biology                                       None                                                           None                                      None
+         global_hyperexcitability latent_biology                                       None                                                           None                                      None
+                   excitotoxicity latent_biology                                       None                                                           None                                      None
+brainstem_autonomic_disinhibition latent_biology                                       None                                                           None                                      None
+    sleep_architecture_disruption latent_biology                                       None                                                           None                                      None
+                anxiety_agitation        symptom                                       None                                                           None                                      None
+                           tremor        symptom                                       None                                                           None                                      None
+                  autonomic_storm        symptom                                       None                                                           None                                      None
+               emotional_lability        symptom                                       None                                                           None                                      None
+             cognitive_impairment        symptom                                       None                                                           None                                      None
+                sleep_disturbance        symptom                                       None                                                           None                                      None
+                         seizures        symptom                                       None                                                           None                                      None
+            delirium_tremens_risk   complication                                       None                                                           None                                      None
+            grey_matter_loss_risk   complication                                       None                                                           None                                      None
+  post_seizure_hypoperfusion_risk   complication                                       None                                                           None                                      None
+
+=== EDGES ===
+                           source                            target                                               relation               aws_change
+         chronic_alcohol_exposure             gaba_a_downregulation       drives compensatory reduction in inhibitory tone                increased
+         chronic_alcohol_exposure                 nmda_upregulation     drives compensatory excitatory receptor adaptation                increased
+         chronic_alcohol_exposure               receptor_plasticity                     induces widespread neuroadaptation                increased
+         chronic_alcohol_exposure                 stress_activation             recruits withdrawal-related stress systems                increased
+                 abrupt_cessation                   glutamate_surge              unmasks the upregulated excitatory system                increased
+                 abrupt_cessation          global_hyperexcitability        abruptly removes alcohol's inhibitory buffering                increased
+               withdrawal_history                          kindling                  sensitizes the system across episodes                increased
+                genetic_liability                          kindling raises susceptibility to severe withdrawal progression increased susceptibility
+                genetic_liability               receptor_plasticity          modulates dependence and withdrawal liability increased susceptibility
+            medical_stabilization          global_hyperexcitability                      buffers severe excitatory rebound               protective
+            medical_stabilization                          seizures                             reduces seizure expression               protective
+            medical_stabilization                   autonomic_storm                         reduces physiologic escalation               protective
+            gaba_a_downregulation          global_hyperexcitability                           reduces inhibitory restraint                increased
+                nmda_upregulation                   glutamate_surge                    amplifies post-cessation excitation                increased
+              receptor_plasticity          global_hyperexcitability     widens instability across neurotransmitter systems                increased
+                  glutamate_surge          global_hyperexcitability                           creates excitatory dominance                increased
+                  glutamate_surge                    excitotoxicity                      increases risk of neuronal injury                increased
+                         kindling          global_hyperexcitability   progressively lowers tolerance for withdrawal stress                increased
+                         kindling                          seizures                              raises seizure propensity                increased
+                stress_activation                          amygdala        amplifies limbic threat and distress processing                increased
+                stress_activation brainstem_autonomic_disinhibition                         amplifies autonomic activation                increased
+         global_hyperexcitability                               pfc                   disrupts executive cortical function    increased dysfunction
+         global_hyperexcitability                               acc                     disrupts monitoring and regulation    increased dysfunction
+         global_hyperexcitability                       hippocampus                       burdens memory-related circuitry    increased dysfunction
+         global_hyperexcitability                  cerebellum_proxy                   burdens motor coordination circuitry    increased dysfunction
+         global_hyperexcitability brainstem_autonomic_disinhibition                         destabilizes autonomic control                increased
+         global_hyperexcitability     sleep_architecture_disruption                       disrupts normal sleep patterning                increased
+                         amygdala                 anxiety_agitation                            amplifies fear and distress                increased
+                         amygdala                emotional_lability                      destabilizes affective regulation                increased
+                              pfc              cognitive_impairment                              reduces executive control                increased
+                              acc                emotional_lability                          reduces regulatory monitoring                increased
+                              acc              cognitive_impairment                burdens conflict monitoring and control                increased
+                      hippocampus              cognitive_impairment                        burdens memory-related function                increased
+                 cerebellum_proxy                            tremor                  supports motor instability expression                increased
+brainstem_autonomic_disinhibition                   autonomic_storm                     drives severe autonomic activation                increased
+    sleep_architecture_disruption                 sleep_disturbance                         drives severe sleep disruption                increased
+         global_hyperexcitability                          seizures                        raises generalized seizure risk                increased
+         global_hyperexcitability                            tremor                              raises motor excitability                increased
+         global_hyperexcitability                 anxiety_agitation               raises subjective and behavioral arousal                increased
+                   excitotoxicity             grey_matter_loss_risk                        raises structural injury burden                increased
+                   excitotoxicity              cognitive_impairment                   burdens cortical and limbic function                increased
+                         seizures   post_seizure_hypoperfusion_risk            raises transient perfusion disturbance risk                increased
+                         seizures             delirium_tremens_risk                    marks severe complicated withdrawal                increased
+                  autonomic_storm             delirium_tremens_risk                    marks severe physiologic escalation                increased
+             cognitive_impairment             delirium_tremens_risk                      marks severe cerebral dysfunction                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                            CM (Amygdala) left  CA1 (Hippocampus) left  Area p32 (pACC) left  Area Fp2 (FPole) left  Nfast (Cerebellum, Fastigial Nucleus) left
+CM (Amygdala) left                                     652.490                   4.345                  0.34                   1.10                                         0.0
+CA1 (Hippocampus) left                                   4.345                1685.400                  3.40                   2.59                                         0.0
+Area p32 (pACC) left                                     0.340                   3.400              14215.67                6077.90                                         0.0
+Area Fp2 (FPole) left                                    1.100                   2.590               6077.90                5850.70                                         0.0
+Nfast (Cerebellum, Fastigial Nucleus) left               0.000                   0.000                  0.00                   0.00                                         0.0
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.414056   2.478638           16     0.283906    1.082305
+CACNA1C    8.164296   1.842339           24     0.668771    0.480268
+   COMT    6.315271   3.377162           48    -0.484294    1.185572
+    CRH    6.025562   1.335014           24     0.036442    0.403787
+  CRHR1    4.880644   2.230726           32    -0.189150    0.911627
+ GABRA2    8.728775   1.505915          208     1.468187    0.542623
+ GABRB2    6.709125   1.427016           16    -0.773894    0.583757
+ GABRG1    8.879054   1.318093           24     1.818421    1.005810
+   GAD1    8.572853   1.845632          144     0.271183    0.489293
+  GRIN1    8.305031   4.053515           32     0.352741    0.956750
+ GRIN2A    6.912640   1.263547           40     0.002925    0.679027
+ GRIN2B    6.707088   1.800705           24     0.911687    0.322563
+  KCNJ6    6.596279   0.819947           24    -0.150796    0.330638
+ SLC1A2    9.324856   4.364942           32     1.288725    0.720125
+ SLC1A3   10.953908   1.045249           24     0.784642    0.748716
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.638438   2.851173           16     0.533731    1.414835
+CACNA1C    7.852283   2.092200           24     0.239271    1.075985
+   COMT    6.197856   3.449950           48    -0.510062    0.804045
+    CRH    5.760146   1.631331           24    -0.189225    0.592630
+  CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+ GABRA2    8.208484   1.631502          208     0.900643    0.435795
+ GABRB2    7.984463   1.324134           16     0.411287    0.217944
+ GABRG1    7.185354   1.637620           24    -0.242850    0.828423
+   GAD1    7.796544   1.904788          144    -0.190476    0.674246
+  GRIN1    8.941981   3.626345           32     0.919053    0.852285
+ GRIN2A    8.155000   1.179632           40     0.830710    0.448826
+ GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+  KCNJ6    7.537608   1.972086           24     0.584683    1.205259
+ SLC1A2    8.569819   4.579632           32     0.220003    0.802300
+ SLC1A3   10.317396   1.157384           24    -0.307683    0.892277
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.796383   1.867844           18     0.517650    0.384825
+CACNA1C    7.882678   1.598768           27     0.297737    0.663258
+   COMT    6.481383   3.523346           54    -0.082935    0.760079
+    CRH    7.664511   1.749517           27     0.601074    0.209297
+  CRHR1    5.305375   1.668315           36     0.181675    0.672597
+ GABRA2    7.885184   1.558905          234     0.700718    0.346754
+ GABRB2    7.825428   1.171977           18     0.378006    0.297584
+ GABRG1    7.259296   1.797355           27     0.414459    0.670080
+   GAD1    8.678576   1.931858          162     0.446596    0.382195
+  GRIN1    8.367381   3.705289           36     0.249292    0.603501
+ GRIN2A    7.724773   1.291681           45     0.640651    0.325910
+ GRIN2B    6.267404   1.407140           27     0.680467    0.355488
+  KCNJ6    7.615270   0.928942           27     0.544063    0.332691
+ SLC1A2    8.232642   4.655103           36     0.445306    0.749491
+ SLC1A3   10.319004   1.744848           27     0.354856    1.009425
+
+=== PFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.584522   1.763174           32     0.378994    0.292470
+CACNA1C    7.986608   1.657229           48     0.362402    0.567703
+   COMT    6.469328   3.460309           96    -0.076757    0.783002
+    CRH    7.491665   1.831703           48     0.517102    0.276409
+  CRHR1    5.238798   1.959829           64     0.137673    0.666190
+ GABRA2    7.951337   1.493217          416     0.732192    0.294361
+ GABRB2    8.011919   1.268520           32     0.447750    0.340872
+ GABRG1    7.346529   1.557023           48     0.454846    0.399950
+   GAD1    8.682633   1.916574          288     0.364728    0.326928
+  GRIN1    8.463413   3.565612           64     0.404048    0.593031
+ GRIN2A    7.789231   1.245748           80     0.646719    0.233220
+ GRIN2B    6.431923   1.455238           48     0.697717    0.230982
+  KCNJ6    7.605673   0.738268           48     0.504988    0.259649
+ SLC1A2    8.384612   4.374398           64     0.642056    0.582219
+ SLC1A3   10.427748   1.370986           48     0.362750    0.664559
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== CEREBELLUM_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== CEREBELLUM_PROXY : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    2.167967   0.597530            6    -1.750383    0.750859
+CACNA1C    6.840844   3.169680            9    -1.035233    1.892758
+   COMT    6.463578   3.461408           18    -0.170339    0.646965
+    CRH    2.731778   0.567679            9    -1.562133    0.542024
+  CRHR1    3.933450   2.473507           12    -0.633233    0.650476
+ GABRA2    5.178208   1.732166           78    -1.783636    0.617527
+ GABRB2    7.318233   1.465854            6    -0.128717    0.642284
+ GABRG1    6.074533   1.308311            9    -1.740878    0.992631
+   GAD1    8.951193   2.019727           54     0.769041    0.560115
+  GRIN1    7.268525   4.249686           12    -0.987642    0.745877
+ GRIN2A    4.385827   1.262297           15    -1.858420    0.872411
+ GRIN2B    3.751500   1.805389            9    -1.214244    0.485970
+  KCNJ6    4.070589   1.191236            9    -2.061411    0.599036
+ SLC1A2    6.562117   3.850539           12    -1.741800    0.917142
+ SLC1A3    9.332567   0.738343            9    -1.764133    0.754867
+
+=== CEREBELLUM_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+stress_activation                    0.6025
+glutamate_surge                      0.5670
+nmda_upregulation                    0.4700
+receptor_plasticity                  0.4600
+gaba_a_downregulation                0.4350
+kindling                             0.3890
+global_hyperexcitability             0.3846
+brainstem_autonomic_disinhibition    0.3310
+excitotoxicity                       0.3051
+sleep_architecture_disruption        0.2555
+
+=== REGIONS ===
+amygdala            0.2878
+cerebellum_proxy    0.1572
+pfc                 0.1475
+hippocampus         0.1340
+acc                 0.1255
+
+=== SYMPTOMS ===
+seizures                0.3245
+anxiety_agitation       0.3161
+autonomic_storm         0.2971
+sleep_disturbance       0.2652
+tremor                  0.2201
+emotional_lability      0.1498
+cognitive_impairment    0.1399
+
+=== COMPLICATIONS ===
+grey_matter_loss_risk              0.2922
+post_seizure_hypoperfusion_risk    0.2392
+delirium_tremens_risk              0.1737
+
+=== PHENOTYPES ===
+seizure_prone_withdrawal         0.3478
+hyperexcitable_withdrawal        0.2769
+autonomic_dominant_withdrawal    0.2606
+delirium_tremens_profile         0.1804

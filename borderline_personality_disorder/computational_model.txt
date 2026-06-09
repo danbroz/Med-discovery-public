@@ -1,0 +1,298 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                           key      node_type                                       atlas_region                                                   centroid_mni                           feature_summary
+             genetic_liability          input                                               None                                                           None                                      None
+          developmental_trauma          input                                               None                                                           None                                      None
+              abandonment_cues          input                                               None                                                           None                                      None
+   chronic_invalidating_stress          input                                               None                                                           None                                      None
+             treatment_support          input                                               None                                                           None                                      None
+                      amygdala         region                                 LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                   hippocampus         region                             CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                           ofc         region                                Area Fo4 (OFC) left   (-29.001430615164523, 53.3412017167382, -15.175965665236049)  receptors=no; genes=yes; connectivity=no
+                         dlpfc         region                                Area 8v1 (MFG) left     (-35.2425934919864, 23.561923263720246, 51.07455075279262)  receptors=no; genes=yes; connectivity=no
+                           acc         region                                 Area 33 (ACC) left   (-4.092857142857142, 13.314285714285717, 25.242857142857147)  receptors=no; genes=yes; connectivity=no
+                 caudate_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)    (10.758389261744966, 16.82550335570471, -5.468839884947272)  receptors=no; genes=yes; connectivity=no
+  unstable_temperament_profile latent_biology                                               None                                                           None                                      None
+gene_environment_sensitization latent_biology                                               None                                                           None                                      None
+    serotonergic_dysregulation latent_biology                                               None                                                           None                                      None
+  dopaminergic_impulsive_drive latent_biology                                               None                                                           None                                      None
+    noradrenergic_hyperarousal latent_biology                                               None                                                           None                                      None
+      gaba_glutamate_imbalance latent_biology                                               None                                                           None                                      None
+        acc_glutamate_pressure latent_biology                                               None                                                           None                                      None
+    frontolimbic_dysregulation latent_biology                                               None                                                           None                                      None
+    negative_self_other_schema latent_biology                                               None                                                           None                                      None
+         affective_instability        symptom                                               None                                                           None                                      None
+                   impulsivity        symptom                                               None                                                           None                                      None
+              anger_reactivity        symptom                                               None                                                           None                                      None
+             abandonment_panic        symptom                                               None                                                           None                                      None
+         self_harm_suicidality        symptom                                               None                                                           None                                      None
+          identity_disturbance        symptom                                               None                                                           None                                      None
+             chronic_emptiness        symptom                                               None                                                           None                                      None
+     interpersonal_instability        symptom                                               None                                                           None                                      None
+
+=== EDGES ===
+                        source                         target                                                                       relation               bpd_change
+             genetic_liability   unstable_temperament_profile                                    loads heritable temperament vulnerabilities increased susceptibility
+             genetic_liability     serotonergic_dysregulation                 raises liability for affective and impulse-control instability increased susceptibility
+             genetic_liability   dopaminergic_impulsive_drive                           raises liability for novelty seeking and impulsivity increased susceptibility
+             genetic_liability gene_environment_sensitization                          creates vulnerability for trauma-amplified expression increased susceptibility
+          developmental_trauma gene_environment_sensitization                         amplifies biological risk through developmental stress                increased
+          developmental_trauma       gaba_glutamate_imbalance                  pushes excitation/inhibition balance toward hyperexcitability                increased
+          developmental_trauma         acc_glutamate_pressure increases stress-linked glutamatergic burden in ACC-related regulation systems                increased
+          developmental_trauma     frontolimbic_dysregulation                                impairs maturation of prefrontal-limbic control                increased
+              abandonment_cues     noradrenergic_hyperarousal                                           triggers rapid threat-linked arousal                increased
+              abandonment_cues              abandonment_panic                                     directly provokes frantic attachment panic                increased
+   chronic_invalidating_stress gene_environment_sensitization                      stabilizes biological vulnerability under repeated stress                increased
+   chronic_invalidating_stress     negative_self_other_schema                           shapes unstable, negative self-other representations                increased
+             treatment_support       gaba_glutamate_imbalance                                    buffers excitatory/inhibitory dysregulation               protective
+             treatment_support     frontolimbic_dysregulation                                              supports regulatory stabilization               protective
+             treatment_support          self_harm_suicidality                                  reduces crisis expression under dysregulation               protective
+  unstable_temperament_profile   dopaminergic_impulsive_drive                                 supports novelty seeking and unstable salience                increased
+  unstable_temperament_profile     noradrenergic_hyperarousal                             supports anxious, quick-tempered stress reactivity                increased
+gene_environment_sensitization     serotonergic_dysregulation                                             stabilizes affective vulnerability                increased
+gene_environment_sensitization     frontolimbic_dysregulation                                stabilizes trauma-linked regulatory dysfunction                increased
+    serotonergic_dysregulation          affective_instability                                  weakens modulation of intense shifting affect                increased
+    serotonergic_dysregulation                    impulsivity                                         weakens inhibitory control over action                increased
+  dopaminergic_impulsive_drive                    impulsivity                                         supports rash and exploratory behavior                increased
+    noradrenergic_hyperarousal               anger_reactivity                                      amplifies hot, stress-linked anger states                increased
+    noradrenergic_hyperarousal              abandonment_panic                            amplifies urgent threat-linked attachment responses                increased
+      gaba_glutamate_imbalance                    impulsivity                     hyperexcitability weakens emotional and behavioral braking                increased
+      gaba_glutamate_imbalance               anger_reactivity                     hyperexcitability amplifies irritability and explosiveness                increased
+      gaba_glutamate_imbalance         acc_glutamate_pressure    can concentrate stress-linked excitation in ACC-centered regulation systems                increased
+        acc_glutamate_pressure                            acc                               burdens ACC emotional/cognitive control function  increased dysregulation
+    frontolimbic_dysregulation                       amygdala                                                permits limbic hyper-reactivity  increased dysregulation
+    frontolimbic_dysregulation                    hippocampus                                   burdens context and emotional-memory systems  increased dysregulation
+    frontolimbic_dysregulation                            ofc                   reduces orbitofrontal impulse and social-behavior regulation         reduced function
+    frontolimbic_dysregulation                          dlpfc                          reduces executive control and working self-regulation         reduced function
+    frontolimbic_dysregulation                            acc                             reduces conflict monitoring and emotion regulation         reduced function
+    frontolimbic_dysregulation                  caudate_proxy            burdens subcortical action-selection and inhibitory control systems         reduced function
+                           ofc                       amygdala                                          normally provides top-down inhibition       reduced inhibition
+                         dlpfc                    impulsivity                                    reduced executive control weakens restraint                increased
+                           acc          affective_instability                             reduced ACC regulation destabilizes mood intensity                increased
+                 caudate_proxy                    impulsivity                           subcortical regulatory burden weakens action control                increased
+    negative_self_other_schema           identity_disturbance                                               destabilizes self-representation                increased
+    negative_self_other_schema              chronic_emptiness                             promotes fragmented inner continuity and emptiness                increased
+    negative_self_other_schema      interpersonal_instability                        destabilizes expectations and interpretations of others                increased
+                      amygdala          affective_instability                                   amplifies intense poorly controlled emotions                increased
+                      amygdala               anger_reactivity                                       amplifies threat-linked anger reactivity                increased
+             abandonment_panic      interpersonal_instability                                  drives frantic, unstable relational responses                increased
+             abandonment_panic          self_harm_suicidality                        can precipitate crisis behavior under attachment threat                increased
+         affective_instability          self_harm_suicidality                          intense rapidly shifting affect increases crisis risk                increased
+              anger_reactivity      interpersonal_instability               destabilizes relationships through explosive affective reactions                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    LB (Amygdala) left  CA1 (Hippocampus) left  Area Fo4 (OFC) left  Area 8v1 (MFG) left  Area 33 (ACC) left  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)
+LB (Amygdala) left                                             244.570                  64.260                0.075                0.030               0.045                                               0.075
+CA1 (Hippocampus) left                                          64.260                1685.400                1.655                2.390               1.515                                               1.610
+Area Fo4 (OFC) left                                              0.075                   1.655              698.345                6.875               2.080                                             495.015
+Area 8v1 (MFG) left                                              0.030                   2.390                6.875             6703.680             116.930                                               2.910
+Area 33 (ACC) left                                               0.045                   1.515                2.080              116.930             977.565                                              96.055
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)               0.075                   1.610              495.015                2.910              96.055                                            2794.395
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A1    7.480636   0.903997           14     0.140714    1.025792
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+ HTR2A    6.079706   2.649687          200     0.028969    0.956248
+  MAOA    5.820193   2.048195          248     0.134833    0.821787
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+SLC1A1    7.928800   0.783462           16     0.979869    0.753948
+SLC6A3    2.298956   1.516447           48    -0.208298    0.500259
+SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+  TPH2    3.547069   1.534409           16     0.467569    1.057322
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+   DBH    2.885375   0.758348           12     0.181442    0.333721
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GABRA2    7.660662   1.472412          104     0.468212    0.187486
+GABRB2    8.112538   1.295789            8     0.346513    0.091195
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+SLC1A1    7.498825   1.243019            8     0.158138    0.190438
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+  TPH2    2.649612   0.482695            8    -0.050250    0.261655
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== DLPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== DLPFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+   DBH    3.260200   0.921546           12     0.219600    0.480866
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+GABRA2    7.718805   1.556872          104     0.515174    0.284856
+GABRB2    8.222962   1.190676            8     0.599387    0.219932
+GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+ HTR1A    4.492558   1.458132           12     0.359783    0.242565
+ HTR2A    7.762873   1.981006          100     0.864402    0.640734
+  MAOA    5.384172   1.986323          124    -0.131315    0.486882
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+SLC1A1    7.465975   1.352288            8     0.323425    0.404878
+SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+  TPH2    2.896663   0.998774            8     0.060712    0.337883
+
+=== DLPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+   DBH    2.910622   0.492084            9     0.486911    0.387880
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+GABRA2    8.118859   1.598675           78     0.854947    0.291603
+GABRB2    7.977067   1.437059            6     0.287583    0.319589
+GRIN2B    6.508622   1.715237            9     0.674611    0.432203
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+ HTR2A    7.087492   2.045575           75     0.437077    0.471426
+  MAOA    5.880426   1.865243           93     0.464074    0.678755
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+SLC1A1    7.460867   1.404513            6     0.162117    0.461006
+SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+  TPH2    2.438400   0.856455            6    -0.225217    0.352445
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== CAUDATE_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== CAUDATE_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+ CRHR1    3.964031   2.379487           32    -1.035025    0.898802
+   DBH    2.234079   0.743262           24    -0.447996    0.774587
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+ FKBP5    4.906187   2.527519           32     0.287916    0.613248
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GABRB2    6.981731   1.334508           16    -0.441375    0.544187
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+ HTR1A    2.481942   1.355876           24    -0.801938    0.579867
+ HTR2A    5.073537   1.742211          200    -0.405778    0.371937
+  MAOA    5.794819   1.953550          248     0.259115    0.564867
+ NR3C1    8.892430   1.124793           40    -0.717515    0.756545
+SLC1A1    7.369725   1.119729           16     0.209775    0.544026
+SLC6A3    2.099873   1.649630           48    -0.235673    0.509298
+SLC6A4    1.711622   0.660476           88    -0.184322    0.416930
+  TPH2    1.998469   0.770223           16    -0.496944    0.347877
+
+=== CAUDATE_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+gene_environment_sensitization    0.5900
+negative_self_other_schema        0.4580
+gaba_glutamate_imbalance          0.4480
+serotonergic_dysregulation        0.4225
+noradrenergic_hyperarousal        0.3848
+acc_glutamate_pressure            0.3768
+frontolimbic_dysregulation        0.3458
+unstable_temperament_profile      0.3325
+dopaminergic_impulsive_drive      0.3298
+
+=== REGIONAL STATE ===
+amygdala         0.2172
+hippocampus      0.1781
+acc              0.1679
+dlpfc            0.1597
+caudate_proxy    0.1524
+ofc              0.1405
+
+=== SYMPTOMS ===
+abandonment_panic            0.4654
+chronic_emptiness            0.2608
+interpersonal_instability    0.2586
+affective_instability        0.2531
+impulsivity                  0.2432
+anger_reactivity             0.2356
+identity_disturbance         0.2330
+self_harm_suicidality        0.2270
+
+=== PHENOTYPES ===
+abandonment_interpersonal_profile    0.3220
+emptiness_identity_profile           0.2560
+affective_instability_profile        0.2426
+impulsive_self_damaging_profile      0.2009

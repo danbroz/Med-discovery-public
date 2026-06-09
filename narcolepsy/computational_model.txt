@@ -1,0 +1,179 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                  key      node_type                     atlas_region region_identifier                           feature_summary
+                  hla_autoimmune_risk          input                             None              None                                      None
+               infection_trigger_load          input                             None              None                                      None
+      autoimmune_encephalitis_trigger          input                             None              None                                      None
+              secondary_lesion_burden          input                             None              None                                      None
+     rare_hypocretin_pathway_mutation          input                             None              None                                      None
+               emotional_trigger_load          input                             None              None                                      None
+       comorbid_sleep_disorder_burden          input                             None              None                                      None
+               sodium_oxybate_support          input                             None              None                                      None
+                   hypothalamus_proxy         region                             None              None                                unresolved
+                       thalamus_proxy         region ZI (Thalamus, zona incerta) left              None  receptors=no; genes=yes; connectivity=no
+                 frontal_cortex_proxy         region             middle frontal gyrus              None  receptors=no; genes=yes; connectivity=no
+              brainstem_pontine_proxy         region                             None              None                                unresolved
+                          hippocampus         region           CA1 (Hippocampus) left              None receptors=yes; genes=yes; connectivity=no
+      autoimmune_hypocretin_targeting latent_biology                             None              None                                      None
+                hypocretin_deficiency latent_biology                             None              None                                      None
+            state_boundary_dyscontrol latent_biology                             None              None                                      None
+              rem_intrusion_liability latent_biology                             None              None                                      None
+        nocturnal_sleep_fragmentation latent_biology                             None              None                                      None
+       pontine_rem_atonia_instability latent_biology                             None              None                                      None
+        cataplexy_trigger_sensitivity latent_biology                             None              None                                      None
+         excessive_daytime_sleepiness        symptom                             None              None                                      None
+                            cataplexy        symptom                             None              None                                      None
+hypnagogic_hypnopompic_hallucinations        symptom                             None              None                                      None
+                      sleep_paralysis        symptom                             None              None                                      None
+            disrupted_nocturnal_sleep        symptom                             None              None                                      None
+         wake_rem_boundary_intrusions        symptom                             None              None                                      None
+
+=== EDGES ===
+                          source                                target                                                                                           relation narcolepsy_change
+             hla_autoimmune_risk       autoimmune_hypocretin_targeting                                 increases immune-mediated susceptibility to hypocretin-neuron loss         increased
+          infection_trigger_load       autoimmune_hypocretin_targeting                             can trigger autoimmune cross-reactivity and molecular-mimicry pressure         increased
+ autoimmune_encephalitis_trigger       autoimmune_hypocretin_targeting                        adds autoimmune inflammatory pressure on hypothalamic and limbic structures         increased
+rare_hypocretin_pathway_mutation                 hypocretin_deficiency                        rare direct hypocretin-system pathway defects can destabilize state control         increased
+         secondary_lesion_burden             state_boundary_dyscontrol                      secondary hypothalamic or brainstem lesions destabilize sleep-wake boundaries         increased
+         secondary_lesion_burden        pontine_rem_atonia_instability                                        brainstem and pontine lesions destabilize REM-atonia gating         increased
+  comorbid_sleep_disorder_burden         nocturnal_sleep_fragmentation                                additional sleep pathology can worsen nocturnal sleep consolidation         increased
+          sodium_oxybate_support         nocturnal_sleep_fragmentation                                          enhances slow-wave sleep and consolidates nocturnal sleep         decreased
+          sodium_oxybate_support         cataplexy_trigger_sensitivity              reduces emotional triggering of cataplexy by stabilizing nighttime sleep architecture         decreased
+ autoimmune_hypocretin_targeting                 hypocretin_deficiency                      selective hypocretin-neuron loss reduces stabilizing wake-promotion signaling         increased
+           hypocretin_deficiency             state_boundary_dyscontrol                                   destabilizes boundaries between wakefulness, NREM, and REM sleep         increased
+       state_boundary_dyscontrol               rem_intrusion_liability                                         permits REM phenomena to intrude into waking consciousness         increased
+       state_boundary_dyscontrol         nocturnal_sleep_fragmentation                                                       disrupts stable nighttime sleep architecture         increased
+       state_boundary_dyscontrol        pontine_rem_atonia_instability                                                destabilizes distributed REM-atonia control systems         increased
+          emotional_trigger_load         cataplexy_trigger_sensitivity                                                raises vulnerability to emotion-linked loss of tone         increased
+         rem_intrusion_liability         cataplexy_trigger_sensitivity                          amplifies the likelihood that REM-like atonia intrudes during wakefulness         increased
+           hypocretin_deficiency                    hypothalamus_proxy                                    maps the core narcoleptic lesion burden to hypothalamic systems         increased
+ autoimmune_hypocretin_targeting                    hypothalamus_proxy                                    adds immune injury burden to hypothalamic sleep-wake regulation         increased
+       state_boundary_dyscontrol                        thalamus_proxy                             maps distributed state-instability burden onto thalamic gating systems         increased
+   nocturnal_sleep_fragmentation                  frontal_cortex_proxy                                        chronic sleep instability burdens frontal cortical function         increased
+  pontine_rem_atonia_instability               brainstem_pontine_proxy                                maps REM-atonia gating dysfunction to pontine / brainstem circuitry         increased
+ autoimmune_encephalitis_trigger                           hippocampus secondary autoimmune narcolepsy-like states can involve mesial temporal and hippocampal structures         increased
+         secondary_lesion_burden               brainstem_pontine_proxy                        secondary structural pathology burdens pontine narcolepsy-related circuitry         increased
+              hypothalamus_proxy          excessive_daytime_sleepiness                        core hypothalamic hypocretin-system burden promotes pathological sleepiness         increased
+                  thalamus_proxy          excessive_daytime_sleepiness                         distributed state-regulation burden worsens vigilance and wake maintenance         increased
+            frontal_cortex_proxy          excessive_daytime_sleepiness                 frontal cortical burden contributes to daytime performance collapse and sleepiness         increased
+   cataplexy_trigger_sensitivity                             cataplexy                                        raises the probability of emotion-triggered atonia episodes         increased
+         rem_intrusion_liability hypnagogic_hypnopompic_hallucinations                                        produces vivid dream-like imagery at sleep-wake transitions         increased
+         rem_intrusion_liability                       sleep_paralysis                                                     permits REM atonia to persist into wakefulness         increased
+         brainstem_pontine_proxy                       sleep_paralysis                                 brainstem REM-atonia gating dysfunction worsens paralysis episodes         increased
+         brainstem_pontine_proxy hypnagogic_hypnopompic_hallucinations                            brainstem REM-state instability intensifies dream-like intrusion burden         increased
+                     hippocampus hypnagogic_hypnopompic_hallucinations                  secondary limbic involvement can accompany narcolepsy-like dream intrusion states         increased
+   nocturnal_sleep_fragmentation             disrupted_nocturnal_sleep                                  directly drives nighttime sleep disruption and poor consolidation         increased
+         rem_intrusion_liability          wake_rem_boundary_intrusions                                                   summarizes the global burden of REM-wake overlap         increased
+       state_boundary_dyscontrol          wake_rem_boundary_intrusions                                      unstable state transitions increase boundary-intrusion burden         increased
+
+=== CIRCUIT CONNECTIVITY ===
+                thalamus_proxy  hippocampus
+thalamus_proxy             NaN          NaN
+hippocampus                NaN          NaN
+
+=== RECEPTOR TABLE: hypothalamus_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: hypothalamus_proxy ===
+No gene-expression summary available.
+
+=== CONNECTIVITY PROFILE: hypothalamus_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: thalamus_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: thalamus_proxy ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  GABBR1    7.492504   1.574114           24    -0.194950    0.842108
+  GABBR2    7.981400   0.952382           16    -0.585281    0.538401
+    HCRT    7.732769   4.576732           16     1.960412    3.264197
+  HCRTR1    4.247546   2.356332           24     0.924571    1.178942
+  HCRTR2    2.839556   1.035601           16     0.954494    1.112121
+HLA-DQB1    4.360100   2.270824           16     0.779831    0.892280
+
+=== CONNECTIVITY PROFILE: thalamus_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: brainstem_pontine_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: brainstem_pontine_proxy ===
+No gene-expression summary available.
+
+=== CONNECTIVITY PROFILE: brainstem_pontine_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: hippocampus ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== GENE TABLE: hippocampus ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  GABBR1    7.824862   1.465215           24     0.291363    0.811310
+  GABBR2    9.094838   1.441736           16     0.275819    0.954133
+    HCRT    5.847569   3.992879           16    -0.373325    0.939672
+  HCRTR1    3.086396   2.108032           24    -0.577200    0.676073
+  HCRTR2    1.983919   0.722888           16    -0.196425    0.899270
+HLA-DQB1    2.334744   1.277009           16    -0.741387    0.733839
+
+=== CONNECTIVITY PROFILE: hippocampus ===
+No connectivity profile available.
+
+=== SIMULATION EXAMPLE ===
+
+--- INPUTS ---
+hla_autoimmune_risk                 0.90
+emotional_trigger_load              0.65
+infection_trigger_load              0.55
+sodium_oxybate_support              0.45
+comorbid_sleep_disorder_burden      0.18
+autoimmune_encephalitis_trigger     0.08
+secondary_lesion_burden             0.04
+rare_hypocretin_pathway_mutation    0.02
+
+--- LATENTS ---
+autoimmune_hypocretin_targeting    0.564
+hypocretin_deficiency              0.336
+cataplexy_trigger_sensitivity      0.187
+state_boundary_dyscontrol          0.120
+pontine_rem_atonia_instability     0.023
+rem_intrusion_liability            0.016
+nocturnal_sleep_fragmentation      0.000
+
+--- REGIONAL_STATE ---
+hypothalamus_proxy         0.324
+thalamus_proxy             0.072
+frontal_cortex_proxy       0.071
+hippocampus                0.040
+brainstem_pontine_proxy    0.028
+
+--- SYMPTOMS ---
+excessive_daytime_sleepiness             0.120
+cataplexy                                0.118
+wake_rem_boundary_intrusions             0.035
+hypnagogic_hypnopompic_hallucinations    0.029
+sleep_paralysis                          0.014
+disrupted_nocturnal_sleep                0.000
+
+--- PHENOTYPES ---
+narcolepsy_type1_profile                  0.070
+sleep_wake_boundary_dyscontrol_profile    0.052
+secondary_narcolepsy_like_profile         0.049
+rem_intrusion_profile                     0.049

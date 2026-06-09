@@ -1,0 +1,132 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES (head) ===
+                         key                        label      node_type                                                                                                                           description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                            feature_summary
+       genetic_vulnerability        Genetic Vulnerability          input                                                Inherited liability affecting hyperarousal, circadian stability, and sleep continuity.                   None              None                                                           None         NaN                                       None
+   circadian_gene_disruption    Circadian Gene Disruption          input                                                                    Clock-gene related vulnerability or circadian misalignment burden.                   None              None                                                           None         NaN                                       None
+    psychosocial_stress_load     Psychosocial Stress Load          input                                                                      Stress burden that amplifies arousal and HPA-axis sensitization.                   None              None                                                           None         NaN                                       None
+comorbid_sleep_disorder_load Comorbid Sleep Disorder Load          input Burden from other sleep-disrupting conditions considered in differential diagnosis, such as RLS, breathing disorders, or parasomnias.                   None              None                                                           None         NaN                                       None
+    behavioral_sleep_support     Behavioral Sleep Support          input                                                                        Protective behavioral structure and sleep-supportive routines.                   None              None                                                           None         NaN                                       None
+     circadian_stabilization      Circadian Stabilization          input                                                                          Protective circadian regularization and zeitgeber alignment.                   None              None                                                           None         NaN                                       None
+  gabaergic_hypnotic_support   Gabaergic Hypnotic Support          input                          Short-term GABA-A enhancing hypnotic support; modeled as sleep-promoting but with downstream trade-off risk.                   None              None                                                           None         NaN                                       None
+     vlpo_hypothalamus_proxy      Vlpo Hypothalamus Proxy   region_proxy                                                                                 Proxy for VLPO-centered hypothalamic sleep-promotion.                   None              None                                                           None         NaN                           unresolved proxy
+                   scn_proxy                    Scn Proxy   region_proxy                                                                                       Proxy for suprachiasmatic circadian timing hub.                   None              None                                                           None         NaN                           unresolved proxy
+                 hippocampus       CA1 (Hippocampus) left         region                                                                                          Atlas-backed hippocampal memory/stress node. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=yes
+                 pfc_control        Area Fp1 (FPole) left         region                                                                             Atlas-backed or proxy prefrontal regulatory control node.  Area Fp1 (FPole) left              None   (-19.087224753227034, 64.3421602126044, -0.8102695520121443)     10536.0  receptors=no; genes=yes; connectivity=yes
+       circadian_instability        Circadian Instability latent_biology                                                    Disordered timing signal consistent with clock-gene and SCN-related dysregulation.                   None              None                                                           None         NaN                                       None
+
+=== EDGES (head) ===
+                      source                       target                                                             relation insomnia_change  weight
+       genetic_vulnerability        circadian_instability increases susceptibility to clock-related sleep timing dysregulation       increased    0.25
+       genetic_vulnerability      ascending_arousal_drive                 biases the system toward wake-promoting hyperarousal       increased    0.18
+   circadian_gene_disruption        circadian_instability                                  destabilizes molecular clock timing       increased    0.45
+    psychosocial_stress_load     hpa_stress_sensitization                                         sensitizes stress physiology       increased    0.45
+    psychosocial_stress_load      ascending_arousal_drive                                boosts wake-promoting arousal systems       increased    0.25
+comorbid_sleep_disorder_load sleep_maintenance_difficulty                                            disrupts sleep continuity       increased    0.30
+    behavioral_sleep_support         central_hyperarousal        reduces behavioral and physiological perpetuation of insomnia       decreased   -0.20
+     circadian_stabilization        circadian_instability                           regularizes timing signals and entrainment       decreased   -0.30
+  gabaergic_hypnotic_support     gaba_sleep_drive_failure           partly compensates for impaired sleep-promoting inhibition       decreased   -0.35
+     ascending_arousal_drive     gaba_sleep_drive_failure                         opposes VLPO-centered inhibitory sleep drive       increased    0.30
+       circadian_instability                    scn_proxy                     maps to dysfunctional circadian timing hub state       increased    0.55
+    gaba_sleep_drive_failure      vlpo_hypothalamus_proxy        maps to impaired sleep-promoting hypothalamic switch function       increased    0.60
+
+=== RESOLVED REGIONS ===
+- hippocampus: CA1 (Hippocampus) left
+- pfc_control: Area Fp1 (FPole) left
+
+=== FEATURE SNAPSHOT: hippocampus ===
+Receptors:
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    7.128230   3.002379          392    -0.072726    0.732888
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+GABRG2    9.972300   1.081264           24     0.101388    0.864575
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+Connectivity:
+                          connected_region    value
+Subc (Hippocampus, Subicular complex) left 5205.660
+        Temporal-to-Parietal (GapMap) left 2875.975
+      Frontal-to-Temporal-II (GapMap) left 2118.815
+                       Area Ph2 (PhG) left 1448.100
+                      Area FG4 (FusG) left  781.135
+
+=== FEATURE SNAPSHOT: pfc_control ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    7.658536   3.129235          441     0.301159    0.453254
+GABRA2    7.655969   1.620178          234     0.567259    0.296334
+GABRB2    7.924139   1.263838           18     0.604311    0.255935
+GABRG2    9.901226   1.430486           27     0.097919    0.396769
+  GAD1    8.209122   1.936830          162     0.139208    0.345314
+Connectivity:
+                              connected_region    value
+                     Frontal-I.1 (GapMap) left 5796.395
+                        Area Fp1 (FPole) right 3365.310
+                          Area SFG3 (SFG) left 3198.165
+                          Area SFG2 (SFG) left 2825.445
+FuP (Ventral Striatum, Fundus of Putamen) left 2821.120
+
+=== FEATURE SNAPSHOT: vlpo_hypothalamus_proxy ===
+Receptors:
+<none>
+Genes:
+<none>
+Connectivity:
+<none>
+
+=== FEATURE SNAPSHOT: scn_proxy ===
+Receptors:
+<none>
+Genes:
+<none>
+Connectivity:
+<none>
+
+=== SIMULATION: LATENTS ===
+hpa_stress_sensitization            0.4265
+ascending_arousal_drive             0.3803
+circadian_instability               0.3450
+central_hyperarousal                0.2708
+hippocampal_stress_memory_burden    0.2284
+sleep_state_misperception           0.2121
+prefrontal_regulatory_burden        0.1882
+gaba_sleep_drive_failure            0.1681
+
+=== SIMULATION: SYMPTOMS ===
+sleep_initiation_difficulty               0.2031
+fragmented_poor_quality_sleep             0.1986
+executive_emotional_dysfunction           0.1876
+sleep_maintenance_difficulty              0.1818
+subjective_objective_sleep_discrepancy    0.1753
+nonrestorative_sleep                      0.1526
+daytime_impairment                        0.1478
+hypnotic_tolerance_side_effect_risk       0.0838
+
+=== SIMULATION: PHENOTYPES ===
+circadian_insomnia_profile           0.2572
+hyperarousal_insomnia_profile        0.2124
+sleep_state_misperception_profile    0.2073
+cognitive_daytime_burden             0.1711
+hypnotic_tradeoff_profile            0.1381

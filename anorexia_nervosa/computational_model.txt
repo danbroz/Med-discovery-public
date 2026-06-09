@@ -1,0 +1,223 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                              key      node_type           atlas_region                                                  centroid_mni                          feature_summary
+            genetic_vulnerability          input                   None                                                          None                                     None
+                early_life_stress          input                   None                                                          None                                     None
+              pubertal_transition          input                   None                                                          None                                     None
+                thinness_pressure          input                   None                                                          None                                     None
+          nutritional_restoration          input                   None                                                          None                                     None
+                           insula         region Area Id2 (Insula) left  (-41.03048780487805, -11.955792682926827, 5.373475609756099) receptors=no; genes=yes; connectivity=no
+                              acc         region     Area 33 (ACC) left  (-4.092857142857142, 13.314285714285717, 25.242857142857147) receptors=no; genes=yes; connectivity=no
+                            dlpfc         region    Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262) receptors=no; genes=yes; connectivity=no
+                            vmpfc         region   Area s32 (sACC) left   (-6.475282485875709, 35.7584745762712, -15.663135593220339) receptors=no; genes=yes; connectivity=no
+                         amygdala         region     LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+appetite_metabolic_susceptibility latent_biology                   None                                                          None                                     None
+     pubertal_hormone_sensitivity latent_biology                   None                                                          None                                     None
+              mesolimbic_dopamine latent_biology                   None                                                          None                                     None
+        restriction_reinforcement latent_biology                   None                                                          None                                     None
+         interoceptive_distortion latent_biology                   None                                                          None                                     None
+           thinness_overvaluation latent_biology                   None                                                          None                                     None
+                 self_discrepancy latent_biology                   None                                                          None                                     None
+                         hpa_axis latent_biology                   None                                                          None                                     None
+              malnutrition_stress latent_biology                   None                                                          None                                     None
+               restrictive_eating        symptom                   None                                                          None                                     None
+     hunger_satiety_misperception        symptom                   None                                                          None                                     None
+                 fear_weight_gain        symptom                   None                                                          None                                     None
+           body_image_discrepancy        symptom                   None                                                          None                                     None
+               anxiety_depression        symptom                   None                                                          None                                     None
+      compulsive_thinness_pursuit        symptom                   None                                                          None                                     None
+
+=== EDGES ===
+                      source                            target                                                               relation                an_change
+       genetic_vulnerability appetite_metabolic_susceptibility creates polygenic vulnerability in body-weight and appetite regulation increased susceptibility
+       genetic_vulnerability               mesolimbic_dopamine                              biases reward and motivational processing increased susceptibility
+       genetic_vulnerability            thinness_overvaluation                          may contribute to stable vulnerability traits increased susceptibility
+           early_life_stress                          hpa_axis                                 programs long-term stress responsivity                increased
+           early_life_stress          interoceptive_distortion               alters long-term physiological and behavioral regulation                increased
+         pubertal_transition      pubertal_hormone_sensitivity             activates sex-hormone-related neurodevelopmental processes                increased
+           thinness_pressure            thinness_overvaluation                                raises the subjective value of thinness                increased
+           thinness_pressure                  self_discrepancy              amplifies discrepancy between actual and ideal body state                increased
+     nutritional_restoration               malnutrition_stress                            reduces starvation-driven brain dysfunction               protective
+     nutritional_restoration                          hpa_axis                            buffers starvation-linked stress physiology               protective
+pubertal_hormone_sensitivity            thinness_overvaluation    creates a biological-developmental vulnerability around body change                increased
+         mesolimbic_dopamine         restriction_reinforcement              supports reward-circuit inversion in favor of restriction                increased
+      thinness_overvaluation         restriction_reinforcement                  makes restriction behavior more rewarding than eating                increased
+    interoceptive_distortion                            insula                         loads distorted internal-body-state processing                increased
+            self_discrepancy                               acc       drives conflict monitoring and error signaling around body state                increased
+      thinness_overvaluation                             dlpfc           biases self-control toward overcontrolled intake restriction   increased control bias
+      thinness_overvaluation                             vmpfc               biases value assignment toward thinness over homeostasis increased valuation bias
+                    hpa_axis                          amygdala                        amplifies stress-linked emotional dysregulation                increased
+         malnutrition_stress                          hpa_axis                                          perpetuates stress physiology                increased
+         malnutrition_stress          interoceptive_distortion                               distorts hunger and satiety cues further                increased
+   restriction_reinforcement                restrictive_eating                            makes restriction behavior self-reinforcing                increased
+                         acc            body_image_discrepancy                             supports persistent discrepancy monitoring                increased
+                      insula      hunger_satiety_misperception                    malfunction distorts hunger and fullness perception                increased
+                       dlpfc                restrictive_eating                       supports rigid top-down self-control over intake                increased
+                       vmpfc                restrictive_eating                       assigns higher value to thinness than to feeding                increased
+                    amygdala                anxiety_depression                   supports negative affect and emotional dysregulation                increased
+          anxiety_depression                restrictive_eating               restriction may be used as maladaptive affect regulation                increased
+      body_image_discrepancy                  fear_weight_gain                             drives fear of weight gain and body change                increased
+            fear_weight_gain                restrictive_eating                                           strengthens food restriction                increased
+          restrictive_eating               malnutrition_stress                 drives physiological stress and starvation maintenance                increased
+          restrictive_eating       compulsive_thinness_pursuit                        stabilizes the pathological pursuit of thinness                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                        Area Id2 (Insula) left  Area 33 (ACC) left  Area 8v1 (MFG) left  Area s32 (sACC) left  LB (Amygdala) left
+Area Id2 (Insula) left                      53                   0                    0                     0                   0
+Area 33 (ACC) left                           0                 522                  198                    11                   0
+Area 8v1 (MFG) left                          0                 198                 5672                     0                   0
+Area s32 (sACC) left                         0                  11                    0                  3568                   0
+LB (Amygdala) left                           0                   0                    0                     0                 276
+
+=== INSULA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== INSULA : gene panel summary ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF-AS    5.128700        NaN            1     0.013400         NaN
+C17orf69    5.281150   0.524744            2     0.066850    0.906723
+  COMTD1    7.752750   1.764585            2     0.148350    0.117875
+    DRD2    3.063580   1.809621            5    -0.407720    0.411908
+    ESR1    2.209550   1.478676            4    -0.331150    0.842996
+    ESR2    2.258500   0.208172            2     0.415300    0.313390
+   FKBP5    4.803125   2.333933            4     0.253425    0.410734
+   HTR1A    3.428700   2.236920            3    -0.225467    0.595516
+    LEPR    3.983067   0.737580            6    -0.296450    0.695761
+    MAOA    4.988548   1.874191           31    -0.382352    0.298799
+    MC4R    1.232200   0.788707            2    -0.532550    0.555150
+   NR3C1    9.528620   1.026047            5     0.349160    0.176434
+  SLC6A3    1.731550   1.757107            6    -0.303267    0.401175
+  SLC6A4    1.441464   0.672104           11    -0.153591    0.234768
+
+=== INSULA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF-AS    6.116700   0.464108            3     0.662800    0.834854
+C17orf69    5.536717   1.065147            6     0.450367    0.348159
+  COMTD1    7.739250   1.418803            6    -0.215950    0.635453
+    DRD2    3.364467   2.030234           15    -0.009313    0.489381
+    ESR1    2.398158   1.464920           12     0.310658    0.620352
+    ESR2    1.928267   0.696379            6    -0.031500    0.789583
+   FKBP5    4.949175   2.579626           12     0.084408    0.370364
+   HTR1A    4.650922   2.081012            9     0.375600    0.781548
+    LEPR    4.003222   1.105106           18    -0.694506    0.577865
+    MAOA    5.880426   1.865243           93     0.464074    0.678755
+    MC4R    2.333350   0.576982            6     0.512033    0.209155
+   NR3C1    9.432000   1.297241           15     0.012267    0.656989
+  SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+  SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== DLPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== DLPFC : gene panel summary ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF-AS    5.529875   0.117600            4    -0.158300    0.557686
+C17orf69    5.199562   1.086327            8     0.313362    0.478644
+  COMTD1    7.758938   1.310329            8     0.103350    0.339707
+    DRD2    2.842185   1.856980           20    -0.700490    0.622121
+    ESR1    2.094775   1.242816           16    -0.542725    0.763256
+    ESR2    1.899350   1.055279            8     0.032575    1.964083
+   FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+   HTR1A    4.492558   1.458132           12     0.359783    0.242565
+    LEPR    4.288608   0.874644           24    -0.156733    0.574709
+    MAOA    5.384172   1.986323          124    -0.131315    0.486882
+    MC4R    1.645225   0.444672            8    -0.299175    0.550380
+   NR3C1    9.469765   1.052399           20     0.402145    0.472749
+  SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+  SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+
+=== DLPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== VMPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== VMPFC : gene panel summary ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF-AS    5.277100   0.231559            4    -0.314800    0.388061
+C17orf69    5.369325   1.061807            8     0.124600    0.404435
+  COMTD1    7.834188   1.352420            8     0.287200    0.542249
+    DRD2    2.915430   1.897044           20    -0.561750    0.572215
+    ESR1    2.289000   1.399167           16    -0.335313    0.744175
+    ESR2    2.021237   1.080224            8    -0.285275    1.283117
+   FKBP5    4.194488   2.085606           16    -0.729075    0.456206
+   HTR1A    5.481100   1.531922           12     1.159325    0.388485
+    LEPR    3.882463   0.810340           24    -0.481275    0.544689
+    MAOA    5.965982   1.916455          124     0.512652    0.508360
+    MC4R    2.463275   0.897670            8     1.057837    1.168469
+   NR3C1    9.100105   1.057470           20    -0.302870    0.390626
+  SLC6A3    2.194996   1.626260           24    -0.219642    0.409476
+  SLC6A4    1.588675   0.452204           44    -0.417100    0.369156
+
+=== VMPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+    gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF-AS    5.562000   0.770903            7     0.139229    0.718095
+C17orf69    4.260764   1.774266           14    -1.122029    1.371017
+  COMTD1    7.090507   1.441137           14    -0.961379    0.818133
+    DRD2    3.894083   2.410057           35     0.371746    0.752121
+    ESR1    2.442882   1.446461           28     0.639107    1.225180
+    ESR2    2.179721   0.817097           14     0.423329    1.081909
+   FKBP5    5.135946   2.684673           28     0.556286    1.064947
+   HTR1A    4.510162   2.272854           21     0.317105    1.132796
+    LEPR    4.899233   1.046745           42     0.569795    0.796924
+    MAOA    6.318328   2.025589          217     0.779681    0.725249
+    MC4R    1.598650   0.719273           14    -0.236914    0.579448
+   NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+  SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+  SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+thinness_overvaluation               0.4935
+self_discrepancy                     0.3934
+pubertal_hormone_sensitivity         0.3675
+hpa_axis                             0.3030
+mesolimbic_dopamine                  0.3027
+restriction_reinforcement            0.2984
+appetite_metabolic_susceptibility    0.2950
+interoceptive_distortion             0.2803
+malnutrition_stress                  0.0651
+
+=== REGIONAL STATE ===
+amygdala    0.2770
+dlpfc       0.2414
+vmpfc       0.2224
+acc         0.1870
+insula      0.1564
+
+=== SYMPTOMS ===
+compulsive_thinness_pursuit     0.2769
+restrictive_eating              0.2289
+anxiety_depression              0.1736
+body_image_discrepancy          0.1691
+fear_weight_gain                0.1368
+hunger_satiety_misperception    0.0801
+
+=== PHENOTYPES ===
+reward_inverted_restrictive_profile    0.2770
+anxious_overcontrolled_profile         0.1736
+starvation_maintenance_profile         0.1394

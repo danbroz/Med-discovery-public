@@ -1,0 +1,126 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE SUMMARY ===
+                                key      node_type                                            atlas_region                           feature_summary  is_proxy
+                  genetic_liability          input                                                    None                                      None     False
+                 vascular_risk_load          input                                                    None                                      None     False
+            endocrine_dysregulation          input                                                    None                                      None     False
+                  medication_burden          input                                                    None                                      None     False
+        central_neurological_insult          input                                                    None                                      None     False
+              peripheral_neuropathy          input                                                    None                                      None     False
+                    depression_load          input                                                    None                                      None     False
+         seizure_limbic_instability          input                                                    None                                      None     False
+            vascular_health_support          input                                                    None                                      None     False
+        endocrine_treatment_support          input                                                    None                                      None     False
+          medication_review_support          input                                                    None                                      None     False
+             rehabilitation_support          input                                                    None                                      None     False
+             mood_treatment_support          input                                                    None                                      None     False
+                           amygdala         region                                      LB (Amygdala) left  receptors=no; genes=yes; connectivity=no     False
+                        hippocampus         region                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no     False
+                 frontal_lobe_proxy         region                                   Area Fp1 (FPole) left  receptors=no; genes=yes; connectivity=no      True
+                temporal_lobe_proxy         region                               Area Te 1.0 (HESCHL) left receptors=yes; genes=yes; connectivity=no      True
+                basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no      True
+                     thalamus_proxy         region                 MD (Thalamus, mediodorsal Nucleus) left  receptors=no; genes=yes; connectivity=no      True
+neurovascular_cavernosal_impairment latent_biology                                                    None                                      None     False
+   autonomic_erection_drive_failure latent_biology                                                    None                                      None     False
+      sympathetic_detumescence_bias latent_biology                                                    None                                      None     False
+    dopaminergic_motivation_deficit latent_biology                                                    None                                      None     False
+   serotonergic_inhibitory_pressure latent_biology                                                    None                                      None     False
+           endocrine_libido_deficit latent_biology                                                    None                                      None     False
+    frontolimbic_arousal_disruption latent_biology                                                    None                                      None     False
+         limbic_temporal_disruption latent_biology                                                    None                                      None     False
+ subcortical_vascular_disconnection latent_biology                                                    None                                      None     False
+  peripheral_neurogenic_signal_loss latent_biology                                                    None                                      None     False
+           diminished_sexual_desire        symptom                                                    None                                      None     False
+       impaired_erection_initiation        symptom                                                    None                                      None     False
+      impaired_erection_maintenance        symptom                                                    None                                      None     False
+           neurogenic_ed_expression        symptom                                                    None                                      None     False
+  vascular_depressive_ed_expression        symptom                                                    None                                      None     False
+
+=== EDGE SUMMARY ===
+                         source                              target                                                                                             relation erectile_disorder_change
+              genetic_liability                  vascular_risk_load           loads cardiovascular, hypertensive, and diabetic risk pathways that raise ED vulnerability                increased
+              genetic_liability                     depression_load loads inherited vulnerability to depressive illness that can secondarily increase sexual dysfunction                increased
+             vascular_risk_load neurovascular_cavernosal_impairment                                                reduces endothelial and vascular support for erection                increased
+        endocrine_dysregulation            endocrine_libido_deficit              lowers libido and erectile readiness through hormonal insufficiency or prolactin excess                increased
+              medication_burden    serotonergic_inhibitory_pressure                                         raises centrally mediated inhibition of arousal and erection                increased
+              medication_burden    autonomic_erection_drive_failure      impairs autonomic efficiency through antihypertensive, antipsychotic, or antidepressant effects                increased
+    central_neurological_insult     frontolimbic_arousal_disruption                                           disrupts cortical-subcortical processing of sexual stimuli                increased
+    central_neurological_insult  subcortical_vascular_disconnection                                        adds stroke-like or lesion-related relay/disconnection burden                increased
+          peripheral_neuropathy   peripheral_neurogenic_signal_loss                                         reduces peripheral neural transmission required for erection                increased
+                depression_load     dopaminergic_motivation_deficit                                                     reduces sexual motivation and incentive salience                increased
+                depression_load     frontolimbic_arousal_disruption                                          weakens mood-linked drive and regulation of sexual behavior                increased
+     seizure_limbic_instability          limbic_temporal_disruption           abnormal electrical activity in temporal-limbic structures disrupts normal sexual behavior                increased
+        vascular_health_support neurovascular_cavernosal_impairment                                improves vascular reserve and partially offsets neurovascular ED load                decreased
+    endocrine_treatment_support            endocrine_libido_deficit                                   corrects hormone-linked reduction in libido and erectile readiness                decreased
+      medication_review_support    serotonergic_inhibitory_pressure                                                               reduces medication-induced inhibitory burden                decreased
+         rehabilitation_support   peripheral_neurogenic_signal_loss                                                     partially offsets neurological disability burden                decreased
+         mood_treatment_support                     depression_load                                  reduces depressive burden that otherwise worsens sexual dysfunction                decreased
+frontolimbic_arousal_disruption                            amygdala                                        dysregulates limbic salience and emotional arousal processing                increased
+     limbic_temporal_disruption                         hippocampus                                          alters mnemonic and contextual processing of sexual stimuli                increased
+frontolimbic_arousal_disruption                  frontal_lobe_proxy                                  weakens frontal integration and control relevant to sexual response                increased
+
+=== REGION FEATURE SNAPSHOT ===
+
+[amygdala]
+      atlas_region                                                  centroid_mni                          feature_summary
+LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+genes:
+gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACE    2.100225   0.952138           28     0.435771    1.113274
+  AR    3.537295   2.196616           21     0.409014    1.523109
+BDNF    5.968729   2.109068           14     0.500329    0.552838
+COMT    6.458171   3.351996           42    -0.164479    1.545434
+DRD2    3.894083   2.410057           35     0.371746    0.752121
+
+[hippocampus]
+          atlas_region                                                   centroid_mni                           feature_summary
+CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+receptors:
+ mean  std
+  498  120
+ 1366  273
+  366  127
+  789  362
+ 1961  397
+genes:
+gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACE    2.297337   1.003661           32     0.074456    1.065641
+  AR    3.211275   2.023181           24    -0.202388    1.133973
+BDNF    5.638438   2.851173           16     0.533731    1.414835
+COMT    6.197856   3.449950           48    -0.510062    0.804045
+DRD2    3.819515   2.124018           40     0.115163    1.234718
+
+[frontal_lobe_proxy]
+         atlas_region                                                 centroid_mni                          feature_summary
+Area Fp1 (FPole) left (-19.087224753227034, 64.3421602126044, -0.8102695520121443) receptors=no; genes=yes; connectivity=no
+genes:
+gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACE    1.863986   0.779944           36    -0.493269    0.796728
+  AR    3.175800   2.049292           27    -0.413285    0.520687
+BDNF    5.234189   2.205737           18     0.236700    0.502516
+COMT    6.499183   3.591187           54     0.053743    0.773505
+DRD2    3.071669   1.778701           45    -0.620004    0.494432
+
+=== CIRCUIT CONNECTIVITY ===
+No pairwise circuit connectivity available in this runtime.
+
+=== SIMULATED SYMPTOMS ===
+vascular_depressive_ed_expression    0.3650
+impaired_erection_maintenance        0.3112
+diminished_sexual_desire             0.2988
+neurogenic_ed_expression             0.2930
+impaired_erection_initiation         0.2774
+
+=== SIMULATED PHENOTYPES ===
+vascular_endocrine_profile    0.4008
+stroke_subcortical_profile    0.3470
+overall_ed_severity           0.3021
+neurogenic_profile            0.2864
+limbic_medication_profile     0.2770

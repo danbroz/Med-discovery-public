@@ -1,0 +1,247 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                 key      node_type             atlas_region                                                  centroid_mni                           feature_summary
+genetic_neurodevelopmental_variation          input                     None                                                          None                                      None
+        psychosocial_context_quality          input                     None                                                          None                                      None
+               sensory_social_demand          input                     None                                                          None                                      None
+              predictability_support          input                     None                                                          None                                      None
+            pharmacologic_modulation          input                     None                                                          None                                      None
+                            amygdala         region       LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                 fusiform_face_proxy         region     Area FG2 (FusG) left (-43.03171774768354, -69.14861012116893, -15.246970776906629) receptors=yes; genes=yes; connectivity=no
+                           sts_proxy         region superior temporal sulcus (56.364986362258804, -12.143549853520554, -11.53288210930397)  receptors=no; genes=yes; connectivity=no
+                                mpfc         region     Area p32 (pACC) left   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)  receptors=no; genes=yes; connectivity=no
+                               dlpfc         region      Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262)  receptors=no; genes=yes; connectivity=no
+    synaptogenesis_pruning_variation latent_biology                     None                                                          None                                      None
+     excitatory_inhibitory_imbalance latent_biology                     None                                                          None                                      None
+        social_motivation_difference latent_biology                     None                                                          None                                      None
+          dopamine_reward_regulation latent_biology                     None                                                          None                                      None
+           social_brain_connectivity latent_biology                     None                                                          None                                      None
+             sensory_hyperreactivity latent_biology                     None                                                          None                                      None
+               theory_of_mind_burden latent_biology                     None                                                          None                                      None
+             executive_inflexibility latent_biology                     None                                                          None                                      None
+             routine_self_regulation latent_biology                     None                                                          None                                      None
+     social_communication_difference        symptom                     None                                                          None                                      None
+          face_processing_difference        symptom                     None                                                          None                                      None
+       dynamic_social_cue_difficulty        symptom                     None                                                          None                                      None
+              mentalizing_difficulty        symptom                     None                                                          None                                      None
+      repetitive_restricted_behavior        symptom                     None                                                          None                                      None
+             cognitive_inflexibility        symptom                     None                                                          None                                      None
+              social_anxiety_arousal        symptom                     None                                                          None                                      None
+
+=== EDGES ===
+                              source                           target                                                         relation            autism_change
+genetic_neurodevelopmental_variation synaptogenesis_pruning_variation        biases the formation and refinement of neural connections increased susceptibility
+genetic_neurodevelopmental_variation  excitatory_inhibitory_imbalance     raises vulnerability for atypical synaptic signaling balance increased susceptibility
+genetic_neurodevelopmental_variation     social_motivation_difference                        biases early social-engagement trajectory increased susceptibility
+        psychosocial_context_quality        social_brain_connectivity can support better functional coordination within social systems               protective
+        psychosocial_context_quality  social_communication_difference     can buffer practical impact of social-processing differences               protective
+               sensory_social_demand          sensory_hyperreactivity                      loads sensory and internal-state regulation                increased
+               sensory_social_demand           social_anxiety_arousal                    raises arousal in complex social environments                increased
+              predictability_support          executive_inflexibility       reduces burden from unpredictability and transition demand               protective
+              predictability_support   repetitive_restricted_behavior              can reduce need for rigid self-generated regulation               protective
+            pharmacologic_modulation       dopamine_reward_regulation                   can modulate reward-linked repetitive behavior               protective
+            pharmacologic_modulation          sensory_hyperreactivity               can reduce arousal-linked behavioral amplification               protective
+    synaptogenesis_pruning_variation        social_brain_connectivity          alters long-range coordination among social-brain nodes     altered connectivity
+     excitatory_inhibitory_imbalance          sensory_hyperreactivity              supports hypersensitivity and arousal dysregulation                increased
+        social_motivation_difference              fusiform_face_proxy     reduces spontaneous prioritization of faces as salient input         reduced salience
+        social_motivation_difference  social_communication_difference           changes developmental reinforcement of social learning     increased difference
+          dopamine_reward_regulation          routine_self_regulation      supports reward-linked repetition and routine stabilization                increased
+          dopamine_reward_regulation   repetitive_restricted_behavior                 can reinforce routines and stereotyped behaviors                increased
+           social_brain_connectivity                         amygdala      alters coordination of social-emotional salience processing         altered function
+           social_brain_connectivity              fusiform_face_proxy                  alters integration of face-related social input         altered function
+           social_brain_connectivity                        sts_proxy                        alters integration of dynamic social cues         altered function
+           social_brain_connectivity                             mpfc               alters social inference / mentalizing coordination         altered function
+           social_brain_connectivity                            dlpfc                 alters cognitive control and flexible adaptation         altered function
+             sensory_hyperreactivity                         amygdala         amplifies arousal to socially or sensorily salient input  increased dysregulation
+             sensory_hyperreactivity   repetitive_restricted_behavior        increases reliance on repetitive behaviors for regulation                increased
+             sensory_hyperreactivity           social_anxiety_arousal                raises internal arousal in demanding environments                increased
+               theory_of_mind_burden                             mpfc           loads mentalizing-related medial prefrontal processing         increased burden
+               theory_of_mind_burden           mentalizing_difficulty                   increases difficulty attributing mental states                increased
+             executive_inflexibility                            dlpfc                 loads cognitive flexibility and planning systems         increased burden
+             executive_inflexibility          cognitive_inflexibility            increases difficulty shifting strategies and routines                increased
+             routine_self_regulation   repetitive_restricted_behavior          supports routines/stimming as internal-state regulation                increased
+                            amygdala           social_anxiety_arousal             alters salience and anxiety responses to social cues                increased
+                 fusiform_face_proxy       face_processing_difference                  alters face salience and recognition processing     increased difference
+                           sts_proxy    dynamic_social_cue_difficulty    alters interpretation of gaze, gesture, and biological motion                increased
+                                mpfc           mentalizing_difficulty                         alters theory-of-mind-related processing                increased
+                               dlpfc          cognitive_inflexibility                  alters planning and flexible response selection                increased
+          face_processing_difference  social_communication_difference           changes access to a major source of social information     increased difference
+       dynamic_social_cue_difficulty  social_communication_difference                 reduces interpretation of dynamic social signals     increased difference
+              mentalizing_difficulty  social_communication_difference            reduces inference about others' intentions and states     increased difference
+              social_anxiety_arousal   repetitive_restricted_behavior        increases reliance on routines or stimming for regulation                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                      LB (Amygdala) left  Area FG2 (FusG) left  Area p32 (pACC) left  Area 8v1 (MFG) left
+LB (Amygdala) left                   276                     0                     0                    0
+Area FG2 (FusG) left                   0                 12730                     1                   33
+Area p32 (pACC) left                   0                     1                 19399                    1
+Area 8v1 (MFG) left                    0                    33                     1                 5672
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+   CHD8    7.792157   2.336141           14    -0.405636    1.201547
+CNTNAP2    7.936395   3.262874           21     0.455719    0.706554
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+ GABRB3    7.985257   0.803231           14     0.531786    0.862753
+ GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+  NLGN3    5.431621   0.322335           14     0.535343    0.728681
+ NLGN4X    6.121200   1.635297           35    -0.180991    1.380706
+  NRXN1    8.885464   0.646741           28     0.346329    0.761136
+   OXTR    5.481329   2.114813           14     0.208743    0.776505
+   RELN    4.065229   2.748429           14    -0.422193    0.527987
+  SCN2A    9.489618   1.180030           28     0.402846    0.737849
+ SHANK3    9.536964   2.157168           14     1.570457    0.684577
+ SLC6A1    8.241421   1.387015           14     0.441114    1.343008
+ SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== FUSIFORM_FACE_PROXY : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   427   65
+    kainate   490  116
+       NMDA  1315  152
+      GABAA  1933  292
+      GABAB  2329  237
+         BZ  2918  422
+         M1   499   72
+         M2   213   35
+         M3   871  172
+alpha4beta2    61   12
+
+=== FUSIFORM_FACE_PROXY : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.886870   1.687043           10     0.532230    0.276580
+   CHD8    7.893630   2.073714           10    -0.179250    0.482452
+CNTNAP2    7.901933   3.296729           15     0.527693    0.230991
+   DRD2    3.207256   1.973288           25    -0.310976    0.558136
+ GABRB3    7.982180   0.527094           10     0.516080    0.415977
+ GRIN2B    6.318053   1.598314           15     0.571587    0.289472
+  NLGN3    5.067070   0.451360           10    -0.262850    0.718965
+ NLGN4X    6.130964   1.082533           25    -0.128136    0.694206
+  NRXN1    8.990790   0.607232           20     0.492745    0.762504
+   OXTR    5.217000   1.771466           10    -0.025180    0.610685
+   RELN    4.532680   2.645281           10    -0.120320    0.583926
+  SCN2A    9.406265   1.181789           20     0.355640    0.324301
+ SHANK3    8.821810   2.188887           10     0.117550    0.375850
+ SLC6A1    8.241280   0.894620           10     0.512100    0.484978
+ SLC6A4    1.602018   0.541444           55    -0.348664    0.276486
+
+=== FUSIFORM_FACE_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== STS_PROXY : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.715193   1.784142           72     0.521478    0.401741
+   CHD8    7.888131   2.032492           72    -0.015565    0.641929
+CNTNAP2    7.638913   3.206935          108     0.352003    0.353160
+   DRD2    3.154557   1.727270          180    -0.457406    0.560895
+ GABRB3    7.945051   0.577034           72     0.518090    0.258823
+ GRIN2B    6.499372   1.428833          108     0.644357    0.255053
+  NLGN3    5.413442   0.435719           72     0.195433    0.667157
+ NLGN4X    6.272881   0.899611          180    -0.123075    0.564397
+  NRXN1    8.813235   0.602952          144     0.326970    0.480445
+   OXTR    4.990889   2.041090           72    -0.291001    0.521718
+   RELN    4.674736   2.106643           72     0.003914    0.439531
+  SCN2A    9.352169   1.124666          144     0.379058    0.295295
+ SHANK3    8.690099   1.963486           72    -0.103083    0.482811
+ SLC6A1    8.068476   0.822505           72     0.158279    0.583148
+ SLC6A4    1.762827   0.614283          396    -0.240093    0.403363
+
+=== STS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== MPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== MPFC : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.584522   1.763174           32     0.378994    0.292470
+   CHD8    7.983038   1.995421           32     0.034306    0.871198
+CNTNAP2    7.897129   3.272746           48     0.518537    0.316752
+   DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ GABRB3    8.076144   0.552429           32     0.737194    0.160872
+ GRIN2B    6.431923   1.455238           48     0.697717    0.230982
+  NLGN3    5.459166   0.429447           32     0.511331    0.801040
+ NLGN4X    6.178986   1.018695           80    -0.069390    0.621977
+  NRXN1    8.884431   0.540187           64     0.487839    0.441185
+   OXTR    5.128106   2.061371           32    -0.159934    0.586625
+   RELN    4.552416   2.260179           32    -0.138416    0.355517
+  SCN2A    9.464778   1.108531           64     0.469386    0.255414
+ SHANK3    8.673578   1.991472           32     0.069125    0.384480
+ SLC6A1    8.136294   0.977354           32     0.350997    0.665092
+ SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+
+=== MPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== DLPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== DLPFC : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.264200   2.070726            8     0.201300    0.549120
+   CHD8    7.972000   2.200665            8     0.150413    0.721750
+CNTNAP2    8.030192   3.302227           12     0.690867    0.243169
+   DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ GABRB3    7.930462   0.705903            8     0.515375    0.252971
+ GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+  NLGN3    5.335838   0.408220            8     0.218838    0.637872
+ NLGN4X    6.104310   0.984783           20    -0.286740    0.481582
+  NRXN1    8.894244   0.629487           16     0.511075    0.330596
+   OXTR    4.846925   2.148491            8    -0.512525    0.529216
+   RELN    4.425075   2.216435            8    -0.152650    0.459720
+  SCN2A    9.308450   1.104049           16     0.340631    0.242792
+ SHANK3    8.733612   2.003660            8     0.128100    0.467666
+ SLC6A1    8.030687   0.886457            8     0.198475    0.766491
+ SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+
+=== DLPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+excitatory_inhibitory_imbalance     0.4150
+dopamine_reward_regulation          0.3695
+synaptogenesis_pruning_variation    0.3250
+sensory_hyperreactivity             0.2927
+social_motivation_difference        0.2800
+social_brain_connectivity           0.1573
+routine_self_regulation             0.1238
+theory_of_mind_burden               0.0621
+executive_inflexibility             0.0479
+
+=== REGIONAL STATE ===
+amygdala               0.2021
+sts_proxy              0.1886
+fusiform_face_proxy    0.1111
+mpfc                   0.0182
+dlpfc                  0.0154
+
+=== SYMPTOMS ===
+social_anxiety_arousal             0.2189
+dynamic_social_cue_difficulty      0.1288
+social_communication_difference    0.1110
+face_processing_difference         0.0920
+repetitive_restricted_behavior     0.0536
+mentalizing_difficulty             0.0237
+cognitive_inflexibility            0.0189
+
+=== PHENOTYPES ===
+anxious_social_arousal_profile        0.1712
+sensory_routine_regulation_profile    0.1130
+social_brain_difference_profile       0.0697

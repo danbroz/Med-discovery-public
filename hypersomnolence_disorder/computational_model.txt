@@ -1,0 +1,152 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 20) ===
+                                      key                                     label      node_type                                                                                                       description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                          feature_summary
+                    genetic_vulnerability                     Genetic Vulnerability          input                                       Familial or inherited susceptibility to central hypersomnolence phenotypes.                   None              None                                                           None         NaN                                     None
+                      orexin_deficit_load                       Orexin Deficit Load          input                           Upstream hypocretin/orexin deficiency burden, especially relevant to narcolepsy type 1.                   None              None                                                           None         NaN                                     None
+       arousal_transmitter_imbalance_load        Arousal Transmitter Imbalance Load          input         Burden of dysregulation across dopamine, norepinephrine, serotonin, histamine, and acetylcholine systems.                   None              None                                                           None         NaN                                     None
+                 sleep_fragmentation_load                  Sleep Fragmentation Load          input                Burden of fragmented sleep and repeated arousals that destabilize consolidated wake-sleep control.                   None              None                                                           None         NaN                                     None
+         wake_promoting_treatment_support          Wake Promoting Treatment Support          input Protective effect of wake-promoting therapy or structured support, such as stimulant or modafinil-like treatment.                   None              None                                                           None         NaN                                     None
+                       hypothalamus_proxy                        Hypothalamus Proxy         region                                                        Atlas-backed node or proxy unresolved in this environment.                   None              None                                                           None         NaN                               unresolved
+                  brainstem_arousal_proxy                                  midbrain         region                                                                                        Atlas-backed circuit node.               midbrain              None (-7.693044354838705, -20.180443548387103, -14.356350806451616)      1984.0 receptors=no; genes=yes; connectivity=no
+                           thalamus_proxy                                  thalamus         region                                                                                        Atlas-backed circuit node.               thalamus              None  (-14.367965711564409, -20.185252797841102, 4.345265497261693)     12599.0 receptors=no; genes=yes; connectivity=no
+                                   insula                    Area Id1 (Insula) left         region                                                                                        Atlas-backed circuit node. Area Id1 (Insula) left              None   (-40.04663212435233, -18.51813471502591, -4.458549222797927)       386.0 receptors=no; genes=yes; connectivity=no
+                                      acc                    Area p24ab (pACC) left         region                                                                                        Atlas-backed circuit node. Area p24ab (pACC) left              None      (-4.228915662650607, 38.1933187294633, 4.467141292442491)      1826.0 receptors=no; genes=yes; connectivity=no
+              hypocretin_wake_instability               Hypocretin Wake Instability latent_biology                         Failure of stable wake-state maintenance due to insufficient orexin/hypocretin signaling.                   None              None                                                           None         NaN                                     None
+            monoaminergic_arousal_failure             Monoaminergic Arousal Failure latent_biology                                     Reduced arousal support from dopamine, norepinephrine, and serotonin systems.                   None              None                                                           None         NaN                                     None
+   histaminergic_cholinergic_wake_failure    Histaminergic Cholinergic Wake Failure latent_biology                                          Reduced wake-promoting support from histamine and acetylcholine systems.                   None              None                                                           None         NaN                                     None
+       thalamocortical_gating_dysfunction        Thalamocortical Gating Dysfunction latent_biology                 Disrupted thalamocortical gating and unstable sleep-wake transitions that increase fragmentation.                   None              None                                                           None         NaN                                     None
+           salience_network_dysregulation            Salience Network Dysregulation latent_biology                Reduced ability of salience circuitry to sustain alert responses to internal and external stimuli.                   None              None                                                           None         NaN                                     None
+distributed_arousal_network_dysregulation Distributed Arousal Network Dysregulation latent_biology                Network-level failure across hypothalamic, brainstem, thalamic, and salience-related wake systems.                   None              None                                                           None         NaN                                     None
+             excessive_daytime_sleepiness              Excessive Daytime Sleepiness        symptom                                                 Excessive daytime sleepiness driven by unstable wake maintenance.                   None              None                                                           None         NaN                                     None
+                     unstable_wakefulness                      Unstable Wakefulness        symptom                                                        Inability to consistently achieve and sustain wakefulness.                   None              None                                                           None         NaN                                     None
+                      sleep_fragmentation                       Sleep Fragmentation        symptom                                               Disrupted sleep continuity with repeated fragmentation or arousals.                   None              None                                                           None         NaN                                     None
+                        sleep_drunkenness                         Sleep Drunkenness        symptom                                 Difficulty transitioning from sleep to wake with prolonged grogginess or inertia.                   None              None                                                           None         NaN                                     None
+
+=== Edges ===
+                                   source                                    target                                                                   relation hypersomnolence_change
+                    genetic_vulnerability               hypocretin_wake_instability              raises vulnerability to inherited wake-regulation instability              increased
+                      orexin_deficit_load               hypocretin_wake_instability                           directly destabilizes global wake-promoting tone              increased
+       arousal_transmitter_imbalance_load             monoaminergic_arousal_failure weakens dopamine, norepinephrine, and serotonin mediated vigilance support              increased
+       arousal_transmitter_imbalance_load    histaminergic_cholinergic_wake_failure                weakens histamine and acetylcholine mediated wake promotion              increased
+                 sleep_fragmentation_load        thalamocortical_gating_dysfunction                               disrupts sensory gating and sleep continuity              increased
+              hypocretin_wake_instability                        hypothalamus_proxy             maps orexin-related instability onto hypothalamic wake control              increased
+            monoaminergic_arousal_failure                   brainstem_arousal_proxy                                          reduces ascending arousal support              increased
+   histaminergic_cholinergic_wake_failure                   brainstem_arousal_proxy                                       lowers wake-promoting brainstem tone              increased
+       thalamocortical_gating_dysfunction                            thalamus_proxy           impairs thalamic gating of sensory flow across sleep-wake states              increased
+           salience_network_dysregulation                                    insula                        reduces internal and external salience registration              increased
+           salience_network_dysregulation                                       acc                   reduces salience-related control over alerting responses              increased
+              hypocretin_wake_instability distributed_arousal_network_dysregulation                    propagates instability across the global arousal system              increased
+            monoaminergic_arousal_failure distributed_arousal_network_dysregulation                           reduces wake-stabilizing neuromodulatory support              increased
+   histaminergic_cholinergic_wake_failure distributed_arousal_network_dysregulation                            removes additional wake-promoting reinforcement              increased
+       thalamocortical_gating_dysfunction distributed_arousal_network_dysregulation             destabilizes network transitions between sleep and wakefulness              increased
+distributed_arousal_network_dysregulation                      unstable_wakefulness                                  prevents sustained wake-state maintenance              increased
+distributed_arousal_network_dysregulation              excessive_daytime_sleepiness                                shifts the system toward daytime sleepiness              increased
+       thalamocortical_gating_dysfunction                       sleep_fragmentation                                     promotes fragmented sleep architecture              increased
+           salience_network_dysregulation                      vigilance_impairment                                 reduces responsiveness to relevant stimuli              increased
+                     unstable_wakefulness                         sleep_drunkenness               makes sleep-to-wake transitions more difficult and prolonged              increased
+         wake_promoting_treatment_support             monoaminergic_arousal_failure                               partially offsets monoaminergic wake failure              decreased
+         wake_promoting_treatment_support    histaminergic_cholinergic_wake_failure           partially offsets other wake-promoting neurotransmitter deficits              decreased
+         wake_promoting_treatment_support              excessive_daytime_sleepiness                                          reduces daytime sleepiness burden              decreased
+
+=== Resolved regions ===
+- brainstem_arousal_proxy: midbrain
+- thalamus_proxy: thalamus
+- insula: Area Id1 (Insula) left
+- acc: Area p24ab (pACC) left
+
+=== Example multimodal tables ===
+
+Region: brainstem_arousal_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ARNTL    5.594383   1.451531           36    -1.361908    0.814006
+ CHAT    3.802211   2.501515           90     0.515497    1.079767
+  DBH    2.401843   0.930432           54    -0.341135    0.771358
+ DRD2    4.933710   2.542018           90     1.091881    1.126056
+ HCRT    6.469892   4.237236           36     0.337186    0.708642
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+Region: thalamus_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ARNTL    6.601590   1.672624          410    -0.217497    0.937399
+ CHAT    3.212013   2.236816         1025     0.077720    0.825530
+  DBH    2.215716   0.829900          615    -0.472405    0.823535
+ DRD2    4.591492   2.406942         1025     0.775113    0.873169
+ HCRT    6.659403   4.206868          410     0.663433    1.918137
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Simulation ===
+
+INPUTS
+genetic_vulnerability                 0.45
+orexin_deficit_load                   0.75
+arousal_transmitter_imbalance_load    0.55
+sleep_fragmentation_load              0.40
+wake_promoting_treatment_support      0.30
+
+LATENTS
+hypocretin_wake_instability                  0.4900
+monoaminergic_arousal_failure                0.4000
+histaminergic_cholinergic_wake_failure       0.3775
+thalamocortical_gating_dysfunction           0.3200
+salience_network_dysregulation               0.4125
+distributed_arousal_network_dysregulation    0.4118
+
+REGIONAL_STATE
+hypothalamus_proxy         0.3823
+brainstem_arousal_proxy    0.3139
+thalamus_proxy             0.2938
+insula                     0.3286
+acc                        0.3161
+
+SYMPTOMS
+unstable_wakefulness            0.2719
+excessive_daytime_sleepiness    0.2310
+sleep_fragmentation             0.2641
+sleep_drunkenness               0.2940
+vigilance_impairment            0.2488
+
+PHENOTYPES
+narcolepsy_type1_like_profile          0.5375
+idiopathic_hypersomnia_like_profile    0.2674
+fragmented_hypersomnolence_profile     0.2773
+
+=== Example region suggestions for 'thalamus' ===
+                                    name identifier                                parcellation
+   Rt (Thalamus, reticular Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+        ZI (Thalamus, zona incerta) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+    PUm (Thalamus, medial pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+    Li (Thalamus, limitans Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   Po (Thalamus, posterior Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   PUl (Thalamus, lateral pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  PUi (Thalamus, inferior pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  PUa (Thalamus, anterior pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+ MD (Thalamus, mediodorsal Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+AM (Thalamus, anteromedial Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)

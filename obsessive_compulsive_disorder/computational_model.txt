@@ -1,0 +1,242 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== OCD NODES (head) ===
+                              key                                                   label      node_type                                                                                                                            description                                            atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+              polygenic_liability                                     Polygenic Liability          input                       Distributed heritable vulnerability affecting monoamine regulation, emotional reactivity, and control circuitry.                                                    None              None                                                          None         NaN                                     None
+developmental_trait_vulnerability                       Developmental Trait Vulnerability          input                                   Broad developmental vulnerability contributing to enduring OCD-related control and temperament risk.                                                    None              None                                                          None         NaN                                     None
+              anxious_temperament                                     Anxious Temperament          input                                                      Trait propensity toward fearfulness, anxiety, and exaggerated threat sensitivity.                                                    None              None                                                          None         NaN                                     None
+irritability_emotional_reactivity                       Irritability Emotional Reactivity          input                                        Quick-tempered or volatile affective style that lowers the threshold for distress under stress.                                                    None              None                                                          None         NaN                                     None
+       social_avoidant_trait_load                              Social Avoidant Trait Load          input                                            Trait social avoidance and withdrawal that may share anxiety-linked vulnerability with OCD.                                                    None              None                                                          None         NaN                                     None
+        environmental_stress_load                               Environmental Stress Load          input                                              Stress burden that amplifies emotional reactivity and obsession-linked threat processing.                                                    None              None                                                          None         NaN                                     None
+      monoamine_treatment_support                             Monoamine Treatment Support          input                                  Protective monoamine-targeted treatment support representing SSRI or clomipramine-like stabilization.                                                    None              None                                                          None         NaN                                     None
+                 recovery_support                                        Recovery Support          input                               Protective structure, support, and emotion-regulation resources that buffer escalation of the OCD cycle.                                                    None              None                                                          None         NaN                                     None
+                         amygdala                                      LB (Amygdala) left         region                                               Amygdala anchor for obsession-linked fear, anxiety, dread, and emotional threat tagging.                                      LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                              ofc                                     Area Fo4 (OFC) left         region                                         Orbitofrontal anchor for threat valuation, urgency signaling, and cortical CSTC hyperactivity.                                     Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+                              acc                                    Area p32 (pACC) left         region                                       Anterior cingulate anchor for conflict monitoring, distress amplification, and compulsive drive.                                    Area p32 (pACC) left              None   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0 receptors=no; genes=yes; connectivity=no
+                            dlpfc                                                   DLPFC         region Dorsolateral prefrontal / executive-control anchor for cognitive flexibility and top-down inhibition. (unresolved in this environment)                                                    None              None                                                          None         NaN                               unresolved
+              basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left         region                                   Basal-ganglia / striatal proxy capturing the strongly implied striatal arm of CSTC loop dysfunction. FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None  (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0 receptors=no; genes=yes; connectivity=no
+                   thalamus_proxy                 MD (Thalamus, mediodorsal Nucleus) left         region                                                  Thalamic proxy capturing the relay/integration arm of the strongly implied CSTC loop.                 MD (Thalamus, mediodorsal Nucleus) left              None   (-5.862026862026866, -18.56410256410257, 7.402930402930409)       819.0 receptors=no; genes=yes; connectivity=no
+       serotonergic_dysregulation                              Serotonergic Dysregulation latent_biology                                           Maladaptive serotonin signaling consistent with the chapter's pharmacologic emphasis in OCD.                                                    None              None                                                          None         NaN                                     None
+
+=== OCD EDGES (head) ===
+                           source                            target                                                                         relation ocd_change
+              polygenic_liability        serotonergic_dysregulation              distributed heritable vulnerability increases monoamine instability  increased
+              polygenic_liability       noradrenergic_dysregulation        distributed heritable vulnerability increases anxious-arousal instability  increased
+developmental_trait_vulnerability          top_down_control_failure                    developmental vulnerability weakens stable inhibitory control  increased
+              anxious_temperament stress_sensitized_threat_response                  trait anxiety lowers threshold for exaggerated threat responses  increased
+irritability_emotional_reactivity stress_sensitized_threat_response                               emotional volatility amplifies distress reactivity  increased
+       social_avoidant_trait_load        obsessional_threat_tagging anxiety-linked social avoidance contributes to maladaptive threat interpretation  increased
+        environmental_stress_load stress_sensitized_threat_response                      stress magnifies the affective force of obsessional content  increased
+      monoamine_treatment_support        serotonergic_dysregulation          SSRI/clomipramine-like support partially stabilizes serotonin signaling  decreased
+      monoamine_treatment_support       noradrenergic_dysregulation                      monoamine-targeted treatment dampens anxious arousal burden  decreased
+                 recovery_support          top_down_control_failure             supportive regulation resources improve control over intrusive urges  decreased
+                 recovery_support stress_sensitized_threat_response                               support buffers stress-amplified threat escalation  decreased
+       serotonergic_dysregulation           cstc_loop_dysregulation        monoamine dysregulation destabilizes obsessive-compulsive circuit balance  increased
+      noradrenergic_dysregulation           cstc_loop_dysregulation        anxious arousal biases loop activity toward urgency and repetitive action  increased
+stress_sensitized_threat_response              amygdala_threat_bias               stress-sensitive fear processing heightens amygdala threat tagging  increased
+             amygdala_threat_bias        obsessional_threat_tagging      fear circuitry tags neutral thoughts and situations as dangerous and urgent  increased
+
+=== REGION RESOLUTION SUMMARY ===
+                key                                                   label                                            atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+           amygdala                                      LB (Amygdala) left                                      LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                ofc                                     Area Fo4 (OFC) left                                     Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+                acc                                    Area p32 (pACC) left                                    Area p32 (pACC) left              None   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0 receptors=no; genes=yes; connectivity=no
+              dlpfc                                                   DLPFC                                                    None              None                                                          None         NaN                               unresolved
+basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None  (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0 receptors=no; genes=yes; connectivity=no
+     thalamus_proxy                 MD (Thalamus, mediodorsal Nucleus) left                 MD (Thalamus, mediodorsal Nucleus) left              None   (-5.862026862026866, -18.56410256410257, 7.402930402930409)       819.0 receptors=no; genes=yes; connectivity=no
+
+No OFC receptor fingerprint available in this environment.
+
+=== ACC GENE PROFILE ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.265356   2.392434           48     0.171363    0.565985
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+ HTR1A    4.864731   1.657835           48     0.584969    0.515345
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+  MAOA    5.688919   1.874365          496     0.213809    0.513407
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+SLC6A2    1.402600   0.407879           32    -0.090356    0.481323
+SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+
+No DLPFC connectivity profile available in this environment.
+
+=== WITHIN-MODEL CIRCUIT CONNECTIVITY ===
+                     amygdala      ofc        acc  basal_ganglia_proxy  thalamus_proxy
+amygdala              244.570    0.075      0.075                0.075           0.000
+ofc                     0.075  698.345     20.480              495.015           0.000
+acc                     0.075   20.480  14215.670              410.810           0.005
+basal_ganglia_proxy     0.075  495.015    410.810             2794.395           0.110
+thalamus_proxy          0.000    0.000      0.005                0.110          30.615
+
+=== SIMULATION: INPUTS ===
+polygenic_liability                  0.62
+developmental_trait_vulnerability    0.45
+anxious_temperament                  0.78
+irritability_emotional_reactivity    0.52
+social_avoidant_trait_load           0.40
+environmental_stress_load            0.68
+monoamine_treatment_support          0.25
+recovery_support                     0.20
+
+=== SIMULATION: LATENT BIOLOGY ===
+stress_sensitized_threat_response      0.5850
+amygdala_threat_bias                   0.5238
+noradrenergic_dysregulation            0.4850
+obsessional_threat_tagging             0.4820
+serotonergic_dysregulation             0.4650
+cstc_loop_dysregulation                0.4376
+top_down_control_failure               0.4303
+executive_control_network_weakening    0.4264
+compulsive_neutralization_drive        0.4019
+
+=== SIMULATION: REGIONAL STATE ===
+amygdala               0.5061
+acc                    0.4180
+thalamus_proxy         0.3972
+ofc                    0.3697
+basal_ganglia_proxy    0.3469
+dlpfc                  0.3041
+
+=== SIMULATION: SYMPTOMS ===
+intrusive_obsessions          0.4637
+anxiety_dread                 0.4566
+affective_distress            0.3920
+cognitive_rigidity            0.3557
+compulsive_ritualizing        0.3401
+inhibitory_control_failure    0.3327
+
+=== SIMULATION: PHENOTYPES ===
+emotion_tagged_ocd_profile           0.4439
+anxious_obsessional_profile          0.4122
+global_ocd_burden                    0.3932
+compulsive_neutralization_profile    0.3133
+rigid_control_failure_profile        0.2952
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== OCD NODES (head) ===
+                              key                                                   label      node_type                                                                                                                            description                                            atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+              polygenic_liability                                     Polygenic Liability          input                       Distributed heritable vulnerability affecting monoamine regulation, emotional reactivity, and control circuitry.                                                    None              None                                                          None         NaN                                     None
+developmental_trait_vulnerability                       Developmental Trait Vulnerability          input                                   Broad developmental vulnerability contributing to enduring OCD-related control and temperament risk.                                                    None              None                                                          None         NaN                                     None
+              anxious_temperament                                     Anxious Temperament          input                                                      Trait propensity toward fearfulness, anxiety, and exaggerated threat sensitivity.                                                    None              None                                                          None         NaN                                     None
+irritability_emotional_reactivity                       Irritability Emotional Reactivity          input                                        Quick-tempered or volatile affective style that lowers the threshold for distress under stress.                                                    None              None                                                          None         NaN                                     None
+       social_avoidant_trait_load                              Social Avoidant Trait Load          input                                            Trait social avoidance and withdrawal that may share anxiety-linked vulnerability with OCD.                                                    None              None                                                          None         NaN                                     None
+        environmental_stress_load                               Environmental Stress Load          input                                              Stress burden that amplifies emotional reactivity and obsession-linked threat processing.                                                    None              None                                                          None         NaN                                     None
+      monoamine_treatment_support                             Monoamine Treatment Support          input                                  Protective monoamine-targeted treatment support representing SSRI or clomipramine-like stabilization.                                                    None              None                                                          None         NaN                                     None
+                 recovery_support                                        Recovery Support          input                               Protective structure, support, and emotion-regulation resources that buffer escalation of the OCD cycle.                                                    None              None                                                          None         NaN                                     None
+                         amygdala                                      LB (Amygdala) left         region                                               Amygdala anchor for obsession-linked fear, anxiety, dread, and emotional threat tagging.                                      LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                              ofc                                     Area Fo4 (OFC) left         region                                         Orbitofrontal anchor for threat valuation, urgency signaling, and cortical CSTC hyperactivity.                                     Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+                              acc                                    Area p32 (pACC) left         region                                       Anterior cingulate anchor for conflict monitoring, distress amplification, and compulsive drive.                                    Area p32 (pACC) left              None   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0 receptors=no; genes=yes; connectivity=no
+                            dlpfc                                                   DLPFC         region Dorsolateral prefrontal / executive-control anchor for cognitive flexibility and top-down inhibition. (unresolved in this environment)                                                    None              None                                                          None         NaN                               unresolved
+              basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left         region                                   Basal-ganglia / striatal proxy capturing the strongly implied striatal arm of CSTC loop dysfunction. FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None  (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0 receptors=no; genes=yes; connectivity=no
+                   thalamus_proxy                 MD (Thalamus, mediodorsal Nucleus) left         region                                                  Thalamic proxy capturing the relay/integration arm of the strongly implied CSTC loop.                 MD (Thalamus, mediodorsal Nucleus) left              None   (-5.862026862026866, -18.56410256410257, 7.402930402930409)       819.0 receptors=no; genes=yes; connectivity=no
+       serotonergic_dysregulation                              Serotonergic Dysregulation latent_biology                                           Maladaptive serotonin signaling consistent with the chapter's pharmacologic emphasis in OCD.                                                    None              None                                                          None         NaN                                     None
+
+=== OCD EDGES (head) ===
+                           source                            target                                                                         relation ocd_change
+              polygenic_liability        serotonergic_dysregulation              distributed heritable vulnerability increases monoamine instability  increased
+              polygenic_liability       noradrenergic_dysregulation        distributed heritable vulnerability increases anxious-arousal instability  increased
+developmental_trait_vulnerability          top_down_control_failure                    developmental vulnerability weakens stable inhibitory control  increased
+              anxious_temperament stress_sensitized_threat_response                  trait anxiety lowers threshold for exaggerated threat responses  increased
+irritability_emotional_reactivity stress_sensitized_threat_response                               emotional volatility amplifies distress reactivity  increased
+       social_avoidant_trait_load        obsessional_threat_tagging anxiety-linked social avoidance contributes to maladaptive threat interpretation  increased
+        environmental_stress_load stress_sensitized_threat_response                      stress magnifies the affective force of obsessional content  increased
+      monoamine_treatment_support        serotonergic_dysregulation          SSRI/clomipramine-like support partially stabilizes serotonin signaling  decreased
+      monoamine_treatment_support       noradrenergic_dysregulation                      monoamine-targeted treatment dampens anxious arousal burden  decreased
+                 recovery_support          top_down_control_failure             supportive regulation resources improve control over intrusive urges  decreased
+                 recovery_support stress_sensitized_threat_response                               support buffers stress-amplified threat escalation  decreased
+       serotonergic_dysregulation           cstc_loop_dysregulation        monoamine dysregulation destabilizes obsessive-compulsive circuit balance  increased
+      noradrenergic_dysregulation           cstc_loop_dysregulation        anxious arousal biases loop activity toward urgency and repetitive action  increased
+stress_sensitized_threat_response              amygdala_threat_bias               stress-sensitive fear processing heightens amygdala threat tagging  increased
+             amygdala_threat_bias        obsessional_threat_tagging      fear circuitry tags neutral thoughts and situations as dangerous and urgent  increased
+
+=== REGION RESOLUTION SUMMARY ===
+                key                                                   label                                            atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+           amygdala                                      LB (Amygdala) left                                      LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                ofc                                     Area Fo4 (OFC) left                                     Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+                acc                                    Area p32 (pACC) left                                    Area p32 (pACC) left              None   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0 receptors=no; genes=yes; connectivity=no
+              dlpfc                                                   DLPFC                                                    None              None                                                          None         NaN                               unresolved
+basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None  (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0 receptors=no; genes=yes; connectivity=no
+     thalamus_proxy                 MD (Thalamus, mediodorsal Nucleus) left                 MD (Thalamus, mediodorsal Nucleus) left              None   (-5.862026862026866, -18.56410256410257, 7.402930402930409)       819.0 receptors=no; genes=yes; connectivity=no
+
+No OFC receptor fingerprint available in this environment.
+
+=== ACC GENE PROFILE ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.265356   2.392434           48     0.171363    0.565985
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+ HTR1A    4.864731   1.657835           48     0.584969    0.515345
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+  MAOA    5.688919   1.874365          496     0.213809    0.513407
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+SLC6A2    1.402600   0.407879           32    -0.090356    0.481323
+SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+
+No DLPFC connectivity profile available in this environment.
+
+=== WITHIN-MODEL CIRCUIT CONNECTIVITY ===
+                     amygdala      ofc        acc  basal_ganglia_proxy  thalamus_proxy
+amygdala              244.570    0.075      0.075                0.075           0.000
+ofc                     0.075  698.345     20.480              495.015           0.000
+acc                     0.075   20.480  14215.670              410.810           0.005
+basal_ganglia_proxy     0.075  495.015    410.810             2794.395           0.110
+thalamus_proxy          0.000    0.000      0.005                0.110          30.615
+
+=== SIMULATION: INPUTS ===
+polygenic_liability                  0.62
+developmental_trait_vulnerability    0.45
+anxious_temperament                  0.78
+irritability_emotional_reactivity    0.52
+social_avoidant_trait_load           0.40
+environmental_stress_load            0.68
+monoamine_treatment_support          0.25
+recovery_support                     0.20
+
+=== SIMULATION: LATENT BIOLOGY ===
+stress_sensitized_threat_response      0.5850
+amygdala_threat_bias                   0.5238
+noradrenergic_dysregulation            0.4850
+obsessional_threat_tagging             0.4820
+serotonergic_dysregulation             0.4650
+cstc_loop_dysregulation                0.4376
+top_down_control_failure               0.4303
+executive_control_network_weakening    0.4264
+compulsive_neutralization_drive        0.4019
+
+=== SIMULATION: REGIONAL STATE ===
+amygdala               0.5061
+acc                    0.4180
+thalamus_proxy         0.3972
+ofc                    0.3697
+basal_ganglia_proxy    0.3469
+dlpfc                  0.3041
+
+=== SIMULATION: SYMPTOMS ===
+intrusive_obsessions          0.4637
+anxiety_dread                 0.4566
+affective_distress            0.3920
+cognitive_rigidity            0.3557
+compulsive_ritualizing        0.3401
+inhibitory_control_failure    0.3327
+
+=== SIMULATION: PHENOTYPES ===
+emotion_tagged_ocd_profile           0.4439
+anxious_obsessional_profile          0.4122
+global_ocd_burden                    0.3932
+compulsive_neutralization_profile    0.3133
+rigid_control_failure_profile        0.2952

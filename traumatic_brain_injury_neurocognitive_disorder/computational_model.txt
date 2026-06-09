@@ -1,0 +1,144 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                      key      node_type         atlas_region                            feature_summary
+                          injury_severity          input                 None                                       None
+               diffuse_axonal_injury_load          input                 None                                       None
+                focal_circuit_lesion_load          input                 None                                       None
+              brainstem_projection_injury          input                 None                                       None
+              hypothalamic_arousal_injury          input                 None                                       None
+                  repetitive_tbi_exposure          input                 None                                       None
+              apoe_neurodegenerative_risk          input                 None                                       None
+              epileptogenic_vulnerability          input                 None                                       None
+          neuropsychiatric_predisposition          input                 None                                       None
+                        cognitive_reserve          input                 None                                       None
+                   rehabilitation_support          input                 None                                       None
+                              pfc_control         region middle frontal gyrus   receptors=no; genes=yes; connectivity=no
+                        inferior_parietal         region  Area PGa (IPL) left receptors=yes; genes=yes; connectivity=yes
+     axonal_microstructural_disconnection latent_biology                 None                                       None
+            diaschisis_remote_suppression latent_biology                 None                                       None
+              monoaminergic_dysregulation latent_biology                 None                                       None
+               histaminergic_arousal_loss latent_biology                 None                                       None
+     frontostriatal_motivation_disruption latent_biology                 None                                       None
+          default_mode_network_disruption latent_biology                 None                                       None
+frontoparietal_control_network_disruption latent_biology                 None                                       None
+           sleep_wake_network_instability latent_biology                 None                                       None
+    neurotransmitter_switching_plasticity latent_biology                 None                                       None
+       tau_neurodegenerative_acceleration latent_biology                 None                                       None
+           post_traumatic_epileptogenesis latent_biology                 None                                       None
+                    executive_dysfunction        symptom                 None                                       None
+                     attention_dyscontrol        symptom                 None                                       None
+               processing_speed_reduction        symptom                 None                                       None
+                        memory_impairment        symptom                 None                                       None
+                depression_anxiety_burden        symptom                 None                                       None
+                   apathy_motivation_loss        symptom                 None                                       None
+       hypersomnia_sleep_wake_disturbance        symptom                 None                                       None
+         personality_change_disinhibition        symptom                 None                                       None
+                   seizure_susceptibility        symptom                 None                                       None
+
+=== Edges ===
+                              source                                    target                                                                         relation tbi_ncd_change
+                     injury_severity      axonal_microstructural_disconnection            increases diffuse communication failure and microscopic axonal burden      increased
+          diffuse_axonal_injury_load      axonal_microstructural_disconnection                            directly loads distributed white-matter disconnection      increased
+           focal_circuit_lesion_load             diaschisis_remote_suppression causes remote functional depression through deafferentation of connected regions      increased
+         brainstem_projection_injury               monoaminergic_dysregulation              disrupts dopamine, norepinephrine, and serotonin projection systems      increased
+         hypothalamic_arousal_injury                histaminergic_arousal_loss                                       reduces wake-promoting histaminergic drive      increased
+             repetitive_tbi_exposure        tau_neurodegenerative_acceleration          raises chronic tau-related neurodegenerative risk after repeated injury      increased
+         apoe_neurodegenerative_risk        tau_neurodegenerative_acceleration          increases poorer long-term outcome and dementia vulnerability after TBI      increased
+         epileptogenic_vulnerability            post_traumatic_epileptogenesis                   amplifies seizure risk from injury-driven excitability changes      increased
+             repetitive_tbi_exposure     neurotransmitter_switching_plasticity           chronic stimulation may alter circuit chemistry and polarity over time      increased
+     neuropsychiatric_predisposition                 depression_anxiety_burden                                 can be unmasked or amplified by traumatic injury      increased
+axonal_microstructural_disconnection           default_mode_network_disruption                   reduces coherent communication across the default mode network      increased
+axonal_microstructural_disconnection frontoparietal_control_network_disruption                                    reduces executive control network integration      increased
+       diaschisis_remote_suppression           default_mode_network_disruption                         extends focal damage into connected large-scale networks      increased
+       diaschisis_remote_suppression frontoparietal_control_network_disruption                     depresses remote executive-control nodes after focal lesions      increased
+         monoaminergic_dysregulation      frontostriatal_motivation_disruption                        impairs dopaminergic motivational and executive circuitry      increased
+         monoaminergic_dysregulation            sleep_wake_network_instability                       contributes to arousal and sleep disturbances after injury      increased
+          histaminergic_arousal_loss            sleep_wake_network_instability                              reduces stable wakefulness and promotes hypersomnia      increased
+frontostriatal_motivation_disruption                               pfc_control                   reduces frontal control and motivated goal-directed regulation   dysregulated
+
+=== Region suggestions for 'parietal' ===
+                    name identifier                                parcellation
+           parietal lobe       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+      parietal operculum       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+superior parietal lobule       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+inferior parietal lobule       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Pairwise circuit connectivity ===
+No connectivity matrix could be resolved in this environment.
+
+=== Example receptor table: pfc_control ===
+No receptor data available.
+
+=== Example gene table: inferior_parietal ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  APOE    9.666440   2.877532           30    -0.280983    0.540095
+  BDNF    5.512195   1.670124           20     0.399825    0.418075
+  COMT    6.484923   3.336686           60    -0.136998    0.740592
+   DBH    3.179690   1.049352           30     0.314290    0.619658
+  DRD2    3.150748   1.803678           50    -0.417298    0.628162
+   HDC    3.024825   1.525070           20    -0.021275    0.410025
+  MAPT    8.553675   3.506777           40     0.656670    0.543064
+ SCN1A    7.450350   1.288199           30     0.275663    0.364335
+SLC6A3    2.436997   1.649615           60    -0.019880    0.541378
+SLC6A4    1.849013   0.556302          110    -0.186385    0.431053
+
+=== Example connectivity profile: pfc_control ===
+No connectivity profile available.
+
+=== Simulation example ===
+
+INPUTS
+diffuse_axonal_injury_load         0.78
+injury_severity                    0.72
+repetitive_tbi_exposure            0.60
+apoe_neurodegenerative_risk        0.58
+focal_circuit_lesion_load          0.55
+rehabilitation_support             0.52
+hypothalamic_arousal_injury        0.48
+brainstem_projection_injury        0.42
+neuropsychiatric_predisposition    0.40
+cognitive_reserve                  0.38
+epileptogenic_vulnerability        0.35
+
+LATENTS
+axonal_microstructural_disconnection         0.6010
+tau_neurodegenerative_acceleration           0.5161
+post_traumatic_epileptogenesis               0.4826
+diaschisis_remote_suppression                0.4784
+monoaminergic_dysregulation                  0.4502
+default_mode_network_disruption              0.3764
+frontoparietal_control_network_disruption    0.3738
+neurotransmitter_switching_plasticity        0.3694
+histaminergic_arousal_loss                   0.3680
+frontostriatal_motivation_disruption         0.3506
+sleep_wake_network_instability               0.3013
+
+REGIONAL_STATE
+inferior_parietal    0.3161
+pfc_control          0.2485
+
+SYMPTOMS
+seizure_susceptibility                0.4230
+memory_impairment                     0.4083
+processing_speed_reduction            0.3768
+apathy_motivation_loss                0.2801
+attention_dyscontrol                  0.2777
+personality_change_disinhibition      0.2685
+hypersomnia_sleep_wake_disturbance    0.2645
+executive_dysfunction                 0.2629
+depression_anxiety_burden             0.2588
+
+PHENOTYPES
+progressive_risk_profile                       0.4491
+functional_reserve_buffer                      0.4430
+multidomain_cognitive_profile                  0.3314
+overall_tbi_neurocognitive_disorder_profile    0.3042
+sleep_wake_profile                             0.2829
+affective_behavioral_profile                   0.2691

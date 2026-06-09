@@ -1,0 +1,1144 @@
+
+=== NODE TABLE (key fields) ===
+                                  key      node_type                                            atlas_region region_identifier                          feature_summary
+                genetic_vulnerability          input                                                                                                                   
+           alpha_synucleinopathy_load          input                                                                                                                   
+       lysosomal_clearance_impairment          input                                                                                                                   
+           alzheimer_copathology_load          input                                                                                                                   
+    dopaminergic_replacement_pressure          input                                                                                                                   
+               d2_antagonist_exposure          input                                                                                                                   
+          cholinergic_reserve_support          input                                                                                                                   
+           low_d2_antagonism_strategy          input                                                                                                                   
+               substantia_nigra_proxy         region     SNC (Midbrain, Substantia Nigra pars compacta) left                    receptors=no; genes=no; connectivity=no
+                       striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                    receptors=no; genes=no; connectivity=no
+                locus_coeruleus_proxy         region                                                                                                         unresolved
+           dorsal_vagal_nucleus_proxy         region                                                                                                         unresolved
+        nucleus_basalis_meynert_proxy         region                                         basal forebrain                    receptors=no; genes=no; connectivity=no
+                             amygdala         region                                      LB (Amygdala) left                    receptors=no; genes=no; connectivity=no
+                parahippocampal_proxy         region    Area EC (Hippocampal Region, Entorhinal Cortex) left                    receptors=no; genes=no; connectivity=no
+                      cingulate_proxy         region                                  Area p24ab (pACC) left                    receptors=no; genes=no; connectivity=no
+                               insula         region                                  Area Id1 (Insula) left                    receptors=no; genes=no; connectivity=no
+                 frontal_cortex_proxy         region                                                                                                         unresolved
+                temporal_cortex_proxy         region                               Area Te 1.0 (HESCHL) left                   receptors=yes; genes=no; connectivity=no
+              occipital_visual_cortex         region                          Area hOc1 (V1, 17, CalcS) left                   receptors=yes; genes=no; connectivity=no
+            sensorimotor_cortex_proxy         region                                    Area 4a (PreCG) left                    receptors=no; genes=no; connectivity=no
+       lysosomal_proteostasis_failure latent_biology                                                                                                                   
+               alpha_synuclein_spread latent_biology                                                                                                                   
+           mixed_proteinopathy_burden latent_biology                                                                                                                   
+                  cholinergic_deficit latent_biology                                                                                                                   
+                 dopaminergic_deficit latent_biology                                                                                                                   
+    noradrenergic_arousal_instability latent_biology                                                                                                                   
+ limbic_cortical_synaptic_dysfunction latent_biology                                                                                                                   
+      autonomic_network_dysregulation latent_biology                                                                                                                   
+              occipital_alpha_slowing latent_biology                                                                                                                   
+mesocorticolimbic_psychosis_liability latent_biology                                                                                                                   
+              neuroleptic_sensitivity latent_biology                                                                                                                   
+                         parkinsonism        symptom                                                                                                                   
+               cognitive_fluctuations        symptom                                                                                                                   
+                visual_hallucinations        symptom                                                                                                                   
+                  delusions_psychosis        symptom                                                                                                                   
+                executive_dysfunction        symptom                                                                                                                   
+              visuospatial_impairment        symptom                                                                                                                   
+                autonomic_dysfunction        symptom                                                                                                                   
+               sleep_wake_disturbance        symptom                                                                                                                   
+       neuroleptic_sensitivity_crisis        symptom                                                                                                                   
+
+=== EDGE TABLE ===
+                               source                                target                                                                                                 relation lbd_change
+                genetic_vulnerability        lysosomal_proteostasis_failure                                can increase vulnerability of synuclein-handling and proteostasis systems  increased
+                genetic_vulnerability                alpha_synuclein_spread                                           can bias baseline susceptibility to Lewy pathology progression  increased
+                genetic_vulnerability                   cholinergic_deficit                                                                can reduce reserve in cholinergic systems  increased
+       lysosomal_clearance_impairment        lysosomal_proteostasis_failure                                                            directly worsens synuclein clearance capacity  increased
+           alpha_synucleinopathy_load                alpha_synuclein_spread                                                drives widespread Lewy pathology and synaptic dysfunction  increased
+               alpha_synuclein_spread                  dopaminergic_deficit                                        degenerates nigrostriatal and mesocorticolimbic dopamine pathways  increased
+               alpha_synuclein_spread                   cholinergic_deficit                                            damages cholinergic nuclei and cortical cholinergic signaling  increased
+               alpha_synuclein_spread     noradrenergic_arousal_instability                              impairs brainstem arousal systems including locus-coeruleus-type regulation  increased
+               alpha_synuclein_spread  limbic_cortical_synaptic_dysfunction spreads into limbic and cortical territories including temporal, insular, cingulate, and frontal regions  increased
+               alpha_synuclein_spread       autonomic_network_dysregulation                                                       involves dorsal vagal and related autonomic nuclei  increased
+           alzheimer_copathology_load            mixed_proteinopathy_burden                                                             adds amyloid/tau pressure to synucleinopathy  increased
+           mixed_proteinopathy_burden  limbic_cortical_synaptic_dysfunction                                                  worsens cortical cognitive decline and disease severity  increased
+           mixed_proteinopathy_burden                 executive_dysfunction                                                                    accelerates cortical cognitive burden  increased
+           mixed_proteinopathy_burden                cognitive_fluctuations                                            contributes to more severe and faster cognitive deterioration  increased
+                 dopaminergic_deficit                substantia_nigra_proxy                                           is anchored by degeneration of substantia-nigra-type circuitry  increased
+                 dopaminergic_deficit                        striatum_proxy                                                        reduces effective striatal dopaminergic signaling  increased
+                  cholinergic_deficit         nucleus_basalis_meynert_proxy                                                  is anchored by basal forebrain cholinergic degeneration  increased
+ limbic_cortical_synaptic_dysfunction                              amygdala                                             burdens limbic structures implicated in psychiatric symptoms  increased
+ limbic_cortical_synaptic_dysfunction                 parahippocampal_proxy                                 burdens medial temporal regions implicated in memory-related dysfunction  increased
+ limbic_cortical_synaptic_dysfunction                       cingulate_proxy                                   burdens cingulate systems relevant to attention and executive function  increased
+ limbic_cortical_synaptic_dysfunction                                insula                        burdens insular circuitry contributing to interoceptive and autonomic integration  increased
+ limbic_cortical_synaptic_dysfunction                  frontal_cortex_proxy                              burdens frontal systems contributing to executive dysfunction and psychosis  increased
+ limbic_cortical_synaptic_dysfunction                 temporal_cortex_proxy                                   burdens temporal cortical systems implicated in cognition and behavior  increased
+              occipital_alpha_slowing               occipital_visual_cortex                                               maps posterior slowing onto visual cortical network burden  increased
+    noradrenergic_arousal_instability                 locus_coeruleus_proxy                                                           reflects brainstem arousal system degeneration  increased
+      autonomic_network_dysregulation            dorsal_vagal_nucleus_proxy                                                           reflects dorsal vagal/autonomic network burden  increased
+              occipital_alpha_slowing               visuospatial_impairment                                  posterior slowing contributes to attention and visuospatial dysfunction  increased
+                  cholinergic_deficit                 visual_hallucinations                                            greater cholinergic depletion is linked to hallucination risk  increased
+                 dopaminergic_deficit                          parkinsonism                                             nigrostriatal degeneration produces parkinsonian motor signs  increased
+                 dopaminergic_deficit mesocorticolimbic_psychosis_liability                                  mesocorticolimbic dopamine disruption contributes to psychiatric burden  increased
+                  cholinergic_deficit                cognitive_fluctuations                                                 cholinergic failure destabilizes attention and cognition  increased
+mesocorticolimbic_psychosis_liability                   delusions_psychosis                                                          drives hallucination-delusion spectrum symptoms  increased
+      autonomic_network_dysregulation                 autonomic_dysfunction                                                             produces visceral and regulatory instability  increased
+    noradrenergic_arousal_instability                sleep_wake_disturbance                                                            destabilizes sleep-wake and vigilance systems  increased
+    dopaminergic_replacement_pressure mesocorticolimbic_psychosis_liability                                         can improve motor function while exacerbating psychotic symptoms  increased
+               d2_antagonist_exposure               neuroleptic_sensitivity                                        directly increases the risk of catastrophic D2-blockade reactions  increased
+                 dopaminergic_deficit               neuroleptic_sensitivity                    already depleted postsynaptic dopamine signaling heightens sensitivity to D2 blockade  increased
+              neuroleptic_sensitivity        neuroleptic_sensitivity_crisis                      drives worsening parkinsonism, confusion, autonomic dysfunction, and mortality risk  increased
+          cholinergic_reserve_support                   cholinergic_deficit                                                              buffers against severe cholinergic collapse  decreased
+          cholinergic_reserve_support               occipital_alpha_slowing                                               buffers posterior attentional-visual network deterioration  decreased
+           low_d2_antagonism_strategy               neuroleptic_sensitivity                            reduces severe D2-blockade burden when antipsychotic treatment is unavoidable  decreased
+
+=== REGION: substantia_nigra_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: striatum_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: locus_coeruleus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: dorsal_vagal_nucleus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: nucleus_basalis_meynert_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: parahippocampal_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: cingulate_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: insula ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: frontal_cortex_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: temporal_cortex_proxy ===
+Receptors:
+receptor  mean  std
+    AMPA   364   77
+ kainate   372   90
+    NMDA   856  200
+mGluR2_3  2298  331
+   GABAA  1518  281
+   GABAB  1995  484
+      BZ  2404  658
+      M1   459   62
+      M2   216   38
+      M3   910  180
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: occipital_visual_cortex ===
+Receptors:
+   receptor  mean  std
+       AMPA   500  223
+    kainate   260  239
+       NMDA  1348  320
+      GABAA  2508  828
+      GABAB  2187  274
+         BZ  3882 1761
+         M1   661  123
+         M2   390   35
+         M3   524  395
+alpha4beta2    48   14
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: sensorimotor_cortex_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+<no circuit connectivity available>
+
+=== SIMULATION: example mixed motor-cognitive LBD phenotype ===
+
+INPUTS
+genetic_vulnerability                0.55
+alpha_synucleinopathy_load           0.70
+lysosomal_clearance_impairment       0.50
+alzheimer_copathology_load           0.35
+dopaminergic_replacement_pressure    0.30
+d2_antagonist_exposure               0.15
+cholinergic_reserve_support          0.15
+low_d2_antagonism_strategy           0.25
+
+LATENTS
+lysosomal_proteostasis_failure           0.4150
+alpha_synuclein_spread                   0.5096
+mixed_proteinopathy_burden               0.3391
+cholinergic_deficit                      0.3736
+dopaminergic_deficit                     0.4262
+noradrenergic_arousal_instability        0.2676
+limbic_cortical_synaptic_dysfunction     0.3207
+autonomic_network_dysregulation          0.3360
+occipital_alpha_slowing                  0.2512
+mesocorticolimbic_psychosis_liability    0.3103
+neuroleptic_sensitivity                  0.2221
+
+REGIONAL_STATE
+substantia_nigra_proxy           0.3806
+striatum_proxy                   0.2893
+locus_coeruleus_proxy            0.2805
+dorsal_vagal_nucleus_proxy       0.3270
+nucleus_basalis_meynert_proxy    0.3498
+amygdala                         0.2999
+parahippocampal_proxy            0.3154
+cingulate_proxy                  0.2682
+insula                           0.2517
+frontal_cortex_proxy             0.3144
+temporal_cortex_proxy            0.2728
+occipital_visual_cortex          0.2350
+sensorimotor_cortex_proxy        0.2838
+
+SYMPTOMS
+parkinsonism                      0.2552
+cognitive_fluctuations            0.2539
+visual_hallucinations             0.2921
+delusions_psychosis               0.2401
+executive_dysfunction             0.3322
+visuospatial_impairment           0.2451
+autonomic_dysfunction             0.2672
+sleep_wake_disturbance            0.2454
+neuroleptic_sensitivity_crisis    0.1748
+
+PHENOTYPES
+parkinsonian_lbd_profile                     0.3378
+cholinergic_visual_cognitive_profile         0.2905
+fluctuating_cognition_profile                0.2879
+autonomic_sleep_burden_profile               0.2939
+neuroleptic_sensitive_psychosis_profile      0.2323
+mixed_proteinopathy_rapid_decline_profile    0.2926
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (key fields) ===
+                                  key      node_type                                            atlas_region region_identifier                           feature_summary
+                genetic_vulnerability          input                                                                                                                    
+           alpha_synucleinopathy_load          input                                                                                                                    
+       lysosomal_clearance_impairment          input                                                                                                                    
+           alzheimer_copathology_load          input                                                                                                                    
+    dopaminergic_replacement_pressure          input                                                                                                                    
+               d2_antagonist_exposure          input                                                                                                                    
+          cholinergic_reserve_support          input                                                                                                                    
+           low_d2_antagonism_strategy          input                                                                                                                    
+               substantia_nigra_proxy         region     SNC (Midbrain, Substantia Nigra pars compacta) left                    receptors=no; genes=yes; connectivity=no
+                       striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                    receptors=no; genes=yes; connectivity=no
+                locus_coeruleus_proxy         region                                                                                                          unresolved
+           dorsal_vagal_nucleus_proxy         region                                                                                                          unresolved
+        nucleus_basalis_meynert_proxy         region                                         basal forebrain                    receptors=no; genes=yes; connectivity=no
+                             amygdala         region                                      LB (Amygdala) left                    receptors=no; genes=yes; connectivity=no
+                parahippocampal_proxy         region    Area EC (Hippocampal Region, Entorhinal Cortex) left                    receptors=no; genes=yes; connectivity=no
+                      cingulate_proxy         region                                  Area p24ab (pACC) left                    receptors=no; genes=yes; connectivity=no
+                               insula         region                                  Area Id1 (Insula) left                    receptors=no; genes=yes; connectivity=no
+                 frontal_cortex_proxy         region                                     Area 8v1 (MFG) left                    receptors=no; genes=yes; connectivity=no
+                temporal_cortex_proxy         region                               Area Te 1.0 (HESCHL) left                   receptors=yes; genes=yes; connectivity=no
+              occipital_visual_cortex         region                          Area hOc1 (V1, 17, CalcS) left                   receptors=yes; genes=yes; connectivity=no
+            sensorimotor_cortex_proxy         region                                    Area 4a (PreCG) left                    receptors=no; genes=yes; connectivity=no
+       lysosomal_proteostasis_failure latent_biology                                                                                                                    
+               alpha_synuclein_spread latent_biology                                                                                                                    
+           mixed_proteinopathy_burden latent_biology                                                                                                                    
+                  cholinergic_deficit latent_biology                                                                                                                    
+                 dopaminergic_deficit latent_biology                                                                                                                    
+    noradrenergic_arousal_instability latent_biology                                                                                                                    
+ limbic_cortical_synaptic_dysfunction latent_biology                                                                                                                    
+      autonomic_network_dysregulation latent_biology                                                                                                                    
+              occipital_alpha_slowing latent_biology                                                                                                                    
+mesocorticolimbic_psychosis_liability latent_biology                                                                                                                    
+              neuroleptic_sensitivity latent_biology                                                                                                                    
+                         parkinsonism        symptom                                                                                                                    
+               cognitive_fluctuations        symptom                                                                                                                    
+                visual_hallucinations        symptom                                                                                                                    
+                  delusions_psychosis        symptom                                                                                                                    
+                executive_dysfunction        symptom                                                                                                                    
+              visuospatial_impairment        symptom                                                                                                                    
+                autonomic_dysfunction        symptom                                                                                                                    
+               sleep_wake_disturbance        symptom                                                                                                                    
+       neuroleptic_sensitivity_crisis        symptom                                                                                                                    
+
+=== EDGE TABLE ===
+                               source                                target                                                                                                 relation lbd_change
+                genetic_vulnerability        lysosomal_proteostasis_failure                                can increase vulnerability of synuclein-handling and proteostasis systems  increased
+                genetic_vulnerability                alpha_synuclein_spread                                           can bias baseline susceptibility to Lewy pathology progression  increased
+                genetic_vulnerability                   cholinergic_deficit                                                                can reduce reserve in cholinergic systems  increased
+       lysosomal_clearance_impairment        lysosomal_proteostasis_failure                                                            directly worsens synuclein clearance capacity  increased
+           alpha_synucleinopathy_load                alpha_synuclein_spread                                                drives widespread Lewy pathology and synaptic dysfunction  increased
+               alpha_synuclein_spread                  dopaminergic_deficit                                        degenerates nigrostriatal and mesocorticolimbic dopamine pathways  increased
+               alpha_synuclein_spread                   cholinergic_deficit                                            damages cholinergic nuclei and cortical cholinergic signaling  increased
+               alpha_synuclein_spread     noradrenergic_arousal_instability                              impairs brainstem arousal systems including locus-coeruleus-type regulation  increased
+               alpha_synuclein_spread  limbic_cortical_synaptic_dysfunction spreads into limbic and cortical territories including temporal, insular, cingulate, and frontal regions  increased
+               alpha_synuclein_spread       autonomic_network_dysregulation                                                       involves dorsal vagal and related autonomic nuclei  increased
+           alzheimer_copathology_load            mixed_proteinopathy_burden                                                             adds amyloid/tau pressure to synucleinopathy  increased
+           mixed_proteinopathy_burden  limbic_cortical_synaptic_dysfunction                                                  worsens cortical cognitive decline and disease severity  increased
+           mixed_proteinopathy_burden                 executive_dysfunction                                                                    accelerates cortical cognitive burden  increased
+           mixed_proteinopathy_burden                cognitive_fluctuations                                            contributes to more severe and faster cognitive deterioration  increased
+                 dopaminergic_deficit                substantia_nigra_proxy                                           is anchored by degeneration of substantia-nigra-type circuitry  increased
+                 dopaminergic_deficit                        striatum_proxy                                                        reduces effective striatal dopaminergic signaling  increased
+                  cholinergic_deficit         nucleus_basalis_meynert_proxy                                                  is anchored by basal forebrain cholinergic degeneration  increased
+ limbic_cortical_synaptic_dysfunction                              amygdala                                             burdens limbic structures implicated in psychiatric symptoms  increased
+ limbic_cortical_synaptic_dysfunction                 parahippocampal_proxy                                 burdens medial temporal regions implicated in memory-related dysfunction  increased
+ limbic_cortical_synaptic_dysfunction                       cingulate_proxy                                   burdens cingulate systems relevant to attention and executive function  increased
+ limbic_cortical_synaptic_dysfunction                                insula                        burdens insular circuitry contributing to interoceptive and autonomic integration  increased
+ limbic_cortical_synaptic_dysfunction                  frontal_cortex_proxy                              burdens frontal systems contributing to executive dysfunction and psychosis  increased
+ limbic_cortical_synaptic_dysfunction                 temporal_cortex_proxy                                   burdens temporal cortical systems implicated in cognition and behavior  increased
+              occipital_alpha_slowing               occipital_visual_cortex                                               maps posterior slowing onto visual cortical network burden  increased
+    noradrenergic_arousal_instability                 locus_coeruleus_proxy                                                           reflects brainstem arousal system degeneration  increased
+      autonomic_network_dysregulation            dorsal_vagal_nucleus_proxy                                                           reflects dorsal vagal/autonomic network burden  increased
+              occipital_alpha_slowing               visuospatial_impairment                                  posterior slowing contributes to attention and visuospatial dysfunction  increased
+                  cholinergic_deficit                 visual_hallucinations                                            greater cholinergic depletion is linked to hallucination risk  increased
+                 dopaminergic_deficit                          parkinsonism                                             nigrostriatal degeneration produces parkinsonian motor signs  increased
+                 dopaminergic_deficit mesocorticolimbic_psychosis_liability                                  mesocorticolimbic dopamine disruption contributes to psychiatric burden  increased
+                  cholinergic_deficit                cognitive_fluctuations                                                 cholinergic failure destabilizes attention and cognition  increased
+mesocorticolimbic_psychosis_liability                   delusions_psychosis                                                          drives hallucination-delusion spectrum symptoms  increased
+      autonomic_network_dysregulation                 autonomic_dysfunction                                                             produces visceral and regulatory instability  increased
+    noradrenergic_arousal_instability                sleep_wake_disturbance                                                            destabilizes sleep-wake and vigilance systems  increased
+    dopaminergic_replacement_pressure mesocorticolimbic_psychosis_liability                                         can improve motor function while exacerbating psychotic symptoms  increased
+               d2_antagonist_exposure               neuroleptic_sensitivity                                        directly increases the risk of catastrophic D2-blockade reactions  increased
+                 dopaminergic_deficit               neuroleptic_sensitivity                    already depleted postsynaptic dopamine signaling heightens sensitivity to D2 blockade  increased
+              neuroleptic_sensitivity        neuroleptic_sensitivity_crisis                      drives worsening parkinsonism, confusion, autonomic dysfunction, and mortality risk  increased
+          cholinergic_reserve_support                   cholinergic_deficit                                                              buffers against severe cholinergic collapse  decreased
+          cholinergic_reserve_support               occipital_alpha_slowing                                               buffers posterior attentional-visual network deterioration  decreased
+           low_d2_antagonism_strategy               neuroleptic_sensitivity                            reduces severe D2-blockade burden when antipsychotic treatment is unavoidable  decreased
+
+=== REGION: substantia_nigra_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    8.574200   0.670553            4     1.110775    0.705544
+  APOE   10.194150   3.385389           12     0.910850    1.656239
+   APP    8.290942   4.306196           12     0.317608    0.822206
+  BDNF    3.725550   1.805586            8    -0.947850    0.440796
+  CHAT    3.376310   2.572560           20     0.331220    0.774309
+CHRNA4    5.878144   1.954663           16     1.019262    1.005976
+  DRD2    5.387710   2.650629           20     1.612610    1.240540
+   GBA    6.100725   2.784962           12    -0.092667    0.814046
+ LRRK2    6.587750   1.537612           12     0.589592    1.040175
+  MAPT    7.420038   3.629556           16    -0.823969    0.700481
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: striatum_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    7.726983   0.659656            6     0.479300    0.663697
+  APOE   10.815506   3.204302           18     1.235383    0.605139
+   APP    7.993878   3.967354           18     0.003878    0.636282
+  BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  CHAT    4.209460   1.516398           30     1.021533    1.018103
+CHRNA4    4.100083   2.075967           24    -0.833908    1.346658
+  DRD2    6.119210   2.344979           30     2.320237    1.023981
+   GBA    5.968833   2.517709           18    -0.238406    0.811733
+ LRRK2    6.216400   1.270977           18     0.146339    0.768381
+  MAPT    7.290142   3.640419           24    -0.935500    0.789139
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: locus_coeruleus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: dorsal_vagal_nucleus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: nucleus_basalis_meynert_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    8.052644   0.979793           16     0.942294    0.902890
+  APOE   10.511633   3.308444           48     0.801402    0.845408
+   APP    8.079206   4.079750           48     0.048235    0.909946
+  BDNF    4.032009   2.287191           32    -0.652800    0.918358
+  CHAT    3.253457   2.207485           80     0.277263    1.295183
+CHRNA4    4.482580   2.013465           64    -0.424155    0.891069
+  DRD2    4.056102   2.268749           80     0.463432    0.846305
+   GBA    5.795138   2.503351           48    -0.429610    0.959379
+ LRRK2    6.223358   1.529609           48    -0.089565    0.803588
+  MAPT    7.322048   3.295221           64    -0.695203    0.976862
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.839157   0.411761            7    -0.518371    0.245508
+  APOE   10.641848   3.222123           21     1.131200    1.026849
+   APP    8.210148   3.979486           21     0.188186    1.097200
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  CHAT    2.866706   2.193904           35     0.015974    0.657465
+CHRNA4    4.603889   2.020430           28    -0.231596    1.000382
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+   GBA    5.988548   2.690311           21    -0.182990    0.854636
+ LRRK2    6.117948   1.369920           21    -0.130110    0.668472
+  MAPT    7.817021   3.504319           28    -0.331725    1.009493
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: parahippocampal_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.330300   0.662135            2    -1.011100    0.329512
+  APOE    9.595817   3.054282            6     0.208450    0.204366
+   APP    8.136517   4.154127            6     0.120150    0.765968
+  BDNF    6.087300   1.935932            4     0.511800    0.231806
+  CHAT    2.478860   2.057809           10    -0.207620    0.711842
+CHRNA4    5.086213   1.790775            8     0.306988    0.801578
+  DRD2    2.954510   2.053681           10    -0.453320    0.620986
+   GBA    6.634733   2.466979            6     0.876050    0.390116
+ LRRK2    6.093367   1.254960            6    -0.373967    0.391410
+  MAPT    9.013225   3.961038            8     0.906737    0.685346
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: cingulate_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.372100   0.442748            3    -0.764233    0.284800
+  APOE    9.985233   3.081154            9     0.097278    0.403419
+   APP    8.145611   3.942715            9     0.133167    0.405381
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+  CHAT    2.673780   1.740839           15    -0.343147    0.592254
+CHRNA4    4.870217   1.830160           12    -0.251283    0.477380
+  DRD2    2.950413   1.689432           15    -0.634413    0.582728
+   GBA    6.402200   2.450750            9     0.820778    0.598004
+ LRRK2    6.396944   1.244621            9     0.313300    0.271664
+  MAPT    8.773192   3.812683           12     0.896650    0.519626
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: insula ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.453300   0.452756            3    -0.790700    0.261017
+  APOE    9.377167   3.133109            9    -0.449022    0.976710
+   APP    8.203356   4.060257            9     0.300522    1.187067
+  BDNF    6.670433   1.636444            6     0.926267    0.206763
+  CHAT    2.774793   1.825454           15     0.018800    0.640747
+CHRNA4    4.466367   1.802506           12    -0.213367    0.692484
+  DRD2    3.639480   1.851429           15     0.251373    0.616119
+   GBA    6.283844   2.608520            9     0.354633    0.800523
+ LRRK2    6.577811   1.277939            9     0.469967    0.521512
+  MAPT    7.776650   3.597696           12    -0.390617    0.757056
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: frontal_cortex_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.674050   0.367970            4    -0.630075    0.164918
+  APOE    9.031708   2.895685           12    -0.443875    0.530776
+   APP    8.669400   3.754305           12     0.752400    0.968812
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  CHAT    2.307535   1.789788           20    -0.624155    0.405684
+CHRNA4    5.112337   1.688571           16    -0.062650    0.568504
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+   GBA    6.329367   2.498867           12     0.541375    0.429899
+ LRRK2    6.531558   1.147490           12     0.505767    0.330772
+  MAPT    8.656081   3.715757           16     0.704875    0.601975
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: temporal_cortex_proxy ===
+Receptors:
+receptor  mean  std
+    AMPA   364   77
+ kainate   372   90
+    NMDA   856  200
+mGluR2_3  2298  331
+   GABAA  1518  281
+   GABAB  1995  484
+      BZ  2404  658
+      M1   459   62
+      M2   216   38
+      M3   910  180
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.631600        NaN            1    -0.205900         NaN
+  APOE   10.258933   3.751712            3     0.418767    0.082173
+   APP    8.562533   5.012310            3     0.212233    0.335619
+  BDNF    5.290300   2.285935            2     0.291100    0.269973
+  CHAT    2.361400   1.412872            5    -0.814400    0.529741
+CHRNA4    5.172375   1.648694            4    -0.076950    0.529518
+  DRD2    3.142360   1.604648            5    -0.509160    0.270374
+   GBA    5.570167   3.486032            3    -0.144900    0.924535
+ LRRK2    7.272900   1.247690            3     1.006767    0.245573
+  MAPT    8.154700   4.225688            4     0.358850    0.463819
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: occipital_visual_cortex ===
+Receptors:
+   receptor  mean  std
+       AMPA   500  223
+    kainate   260  239
+       NMDA  1348  320
+      GABAA  2508  828
+      GABAB  2187  274
+         BZ  3882 1761
+         M1   661  123
+         M2   390   35
+         M3   524  395
+alpha4beta2    48   14
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.544706   0.452930           34    -0.733524    0.434272
+  APOE    8.903191   2.956801          102    -0.770011    0.920588
+   APP    7.909797   3.740529          102    -0.246625    0.885248
+  BDNF    5.169266   2.012292           68     0.100531    0.656146
+  CHAT    2.408134   1.673662          170    -0.440127    0.503965
+CHRNA4    4.630668   1.699686          136    -0.449535    0.708131
+  DRD2    2.852616   1.669951          170    -0.638293    0.470715
+   GBA    5.768233   2.462042          102    -0.490136    0.781965
+ LRRK2    6.713256   1.564988          102     0.840892    1.429684
+  MAPT    8.174006   3.522702          136     0.092161    0.812139
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: sensorimotor_cortex_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.908080   0.362742            5    -0.417940    0.233946
+  APOE    8.979433   2.692155           15    -0.637820    0.409843
+   APP    8.150700   3.724451           15     0.198620    0.580560
+  BDNF    4.819860   1.923501           10    -0.114840    0.460691
+  CHAT    2.520036   1.912740           25    -0.290624    0.392149
+CHRNA4    4.959175   1.861682           20     0.053465    0.643188
+  DRD2    3.038716   1.848771           25    -0.415092    0.416177
+   GBA    6.548727   2.130502           15     0.685567    0.627074
+ LRRK2    6.367740   1.141806           15     0.299940    0.587900
+  MAPT    8.704610   3.729595           20     0.709215    0.886626
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+<no circuit connectivity available>
+
+=== SIMULATION: example mixed motor-cognitive LBD phenotype ===
+
+INPUTS
+genetic_vulnerability                0.55
+alpha_synucleinopathy_load           0.70
+lysosomal_clearance_impairment       0.50
+alzheimer_copathology_load           0.35
+dopaminergic_replacement_pressure    0.30
+d2_antagonist_exposure               0.15
+cholinergic_reserve_support          0.15
+low_d2_antagonism_strategy           0.25
+
+LATENTS
+lysosomal_proteostasis_failure           0.4150
+alpha_synuclein_spread                   0.5096
+mixed_proteinopathy_burden               0.3391
+cholinergic_deficit                      0.3736
+dopaminergic_deficit                     0.4262
+noradrenergic_arousal_instability        0.2676
+limbic_cortical_synaptic_dysfunction     0.3207
+autonomic_network_dysregulation          0.3360
+occipital_alpha_slowing                  0.2512
+mesocorticolimbic_psychosis_liability    0.3103
+neuroleptic_sensitivity                  0.2221
+
+REGIONAL_STATE
+substantia_nigra_proxy           0.3806
+striatum_proxy                   0.2893
+locus_coeruleus_proxy            0.2805
+dorsal_vagal_nucleus_proxy       0.3270
+nucleus_basalis_meynert_proxy    0.3498
+amygdala                         0.2999
+parahippocampal_proxy            0.3154
+cingulate_proxy                  0.2682
+insula                           0.2517
+frontal_cortex_proxy             0.3144
+temporal_cortex_proxy            0.2728
+occipital_visual_cortex          0.2350
+sensorimotor_cortex_proxy        0.2838
+
+SYMPTOMS
+parkinsonism                      0.2552
+cognitive_fluctuations            0.2539
+visual_hallucinations             0.2921
+delusions_psychosis               0.2401
+executive_dysfunction             0.3322
+visuospatial_impairment           0.2451
+autonomic_dysfunction             0.2672
+sleep_wake_disturbance            0.2454
+neuroleptic_sensitivity_crisis    0.1748
+
+PHENOTYPES
+parkinsonian_lbd_profile                     0.3378
+cholinergic_visual_cognitive_profile         0.2905
+fluctuating_cognition_profile                0.2879
+autonomic_sleep_burden_profile               0.2939
+neuroleptic_sensitive_psychosis_profile      0.2323
+mixed_proteinopathy_rapid_decline_profile    0.2926
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (key fields) ===
+                                  key      node_type                                            atlas_region region_identifier                           feature_summary  is_proxy
+                genetic_vulnerability          input                                                                                                                         False
+           alpha_synucleinopathy_load          input                                                                                                                         False
+       lysosomal_clearance_impairment          input                                                                                                                         False
+           alzheimer_copathology_load          input                                                                                                                         False
+    dopaminergic_replacement_pressure          input                                                                                                                         False
+               d2_antagonist_exposure          input                                                                                                                         False
+          cholinergic_reserve_support          input                                                                                                                         False
+           low_d2_antagonism_strategy          input                                                                                                                         False
+               substantia_nigra_proxy         region     SNC (Midbrain, Substantia Nigra pars compacta) left                    receptors=no; genes=yes; connectivity=no      True
+                       striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                    receptors=no; genes=yes; connectivity=no      True
+                locus_coeruleus_proxy         region                                                                                               proxy_only_unresolved      True
+           dorsal_vagal_nucleus_proxy         region                                                                                               proxy_only_unresolved      True
+        nucleus_basalis_meynert_proxy         region                             Ch 4 (Basal Forebrain) left                    receptors=no; genes=yes; connectivity=no      True
+                             amygdala         region                                      LB (Amygdala) left                    receptors=no; genes=yes; connectivity=no     False
+                parahippocampal_proxy         region    Area EC (Hippocampal Region, Entorhinal Cortex) left                    receptors=no; genes=yes; connectivity=no      True
+                      cingulate_proxy         region                                  Area p24ab (pACC) left                    receptors=no; genes=yes; connectivity=no      True
+                               insula         region                                  Area Id1 (Insula) left                    receptors=no; genes=yes; connectivity=no     False
+                 frontal_cortex_proxy         region                                      Area 45 (IFG) left                   receptors=yes; genes=yes; connectivity=no      True
+                temporal_cortex_proxy         region                                    Area Te 3 (STG) left                    receptors=no; genes=yes; connectivity=no      True
+              occipital_visual_cortex         region                          Area hOc1 (V1, 17, CalcS) left                   receptors=yes; genes=yes; connectivity=no     False
+            sensorimotor_cortex_proxy         region                                    Area 4a (PreCG) left                    receptors=no; genes=yes; connectivity=no      True
+       lysosomal_proteostasis_failure latent_biology                                                                                                                         False
+               alpha_synuclein_spread latent_biology                                                                                                                         False
+           mixed_proteinopathy_burden latent_biology                                                                                                                         False
+                  cholinergic_deficit latent_biology                                                                                                                         False
+                 dopaminergic_deficit latent_biology                                                                                                                         False
+    noradrenergic_arousal_instability latent_biology                                                                                                                         False
+ limbic_cortical_synaptic_dysfunction latent_biology                                                                                                                         False
+      autonomic_network_dysregulation latent_biology                                                                                                                         False
+              occipital_alpha_slowing latent_biology                                                                                                                         False
+mesocorticolimbic_psychosis_liability latent_biology                                                                                                                         False
+              neuroleptic_sensitivity latent_biology                                                                                                                         False
+                         parkinsonism        symptom                                                                                                                         False
+               cognitive_fluctuations        symptom                                                                                                                         False
+                visual_hallucinations        symptom                                                                                                                         False
+                  delusions_psychosis        symptom                                                                                                                         False
+                executive_dysfunction        symptom                                                                                                                         False
+              visuospatial_impairment        symptom                                                                                                                         False
+                autonomic_dysfunction        symptom                                                                                                                         False
+               sleep_wake_disturbance        symptom                                                                                                                         False
+       neuroleptic_sensitivity_crisis        symptom                                                                                                                         False
+
+=== EDGE TABLE ===
+                               source                                target                                                                                                 relation lbd_change
+                genetic_vulnerability        lysosomal_proteostasis_failure                                can increase vulnerability of synuclein-handling and proteostasis systems  increased
+                genetic_vulnerability                alpha_synuclein_spread                                           can bias baseline susceptibility to Lewy pathology progression  increased
+                genetic_vulnerability                   cholinergic_deficit                                                                can reduce reserve in cholinergic systems  increased
+       lysosomal_clearance_impairment        lysosomal_proteostasis_failure                                                            directly worsens synuclein clearance capacity  increased
+           alpha_synucleinopathy_load                alpha_synuclein_spread                                                drives widespread Lewy pathology and synaptic dysfunction  increased
+               alpha_synuclein_spread                  dopaminergic_deficit                                        degenerates nigrostriatal and mesocorticolimbic dopamine pathways  increased
+               alpha_synuclein_spread                   cholinergic_deficit                                            damages cholinergic nuclei and cortical cholinergic signaling  increased
+               alpha_synuclein_spread     noradrenergic_arousal_instability                              impairs brainstem arousal systems including locus-coeruleus-type regulation  increased
+               alpha_synuclein_spread  limbic_cortical_synaptic_dysfunction spreads into limbic and cortical territories including temporal, insular, cingulate, and frontal regions  increased
+               alpha_synuclein_spread       autonomic_network_dysregulation                                                       involves dorsal vagal and related autonomic nuclei  increased
+           alzheimer_copathology_load            mixed_proteinopathy_burden                                                             adds amyloid/tau pressure to synucleinopathy  increased
+           mixed_proteinopathy_burden  limbic_cortical_synaptic_dysfunction                                                  worsens cortical cognitive decline and disease severity  increased
+           mixed_proteinopathy_burden                 executive_dysfunction                                                                    accelerates cortical cognitive burden  increased
+           mixed_proteinopathy_burden                cognitive_fluctuations                                            contributes to more severe and faster cognitive deterioration  increased
+                 dopaminergic_deficit                substantia_nigra_proxy                                           is anchored by degeneration of substantia-nigra-type circuitry  increased
+                 dopaminergic_deficit                        striatum_proxy                                                        reduces effective striatal dopaminergic signaling  increased
+                 dopaminergic_deficit                          parkinsonism                                             produces parkinsonian motor signs through nigrostriatal loss  increased
+                 dopaminergic_deficit mesocorticolimbic_psychosis_liability                                  mesocorticolimbic dopamine disruption contributes to psychiatric burden  increased
+                  cholinergic_deficit         nucleus_basalis_meynert_proxy                                                  is anchored by basal forebrain cholinergic degeneration  increased
+                  cholinergic_deficit                 visual_hallucinations                                            greater cholinergic depletion is linked to hallucination risk  increased
+                  cholinergic_deficit                cognitive_fluctuations                                                 cholinergic failure destabilizes attention and cognition  increased
+ limbic_cortical_synaptic_dysfunction                              amygdala                                             burdens limbic structures implicated in psychiatric symptoms  increased
+ limbic_cortical_synaptic_dysfunction                 parahippocampal_proxy                                 burdens medial temporal regions implicated in memory-related dysfunction  increased
+ limbic_cortical_synaptic_dysfunction                       cingulate_proxy                                   burdens cingulate systems relevant to attention and executive function  increased
+ limbic_cortical_synaptic_dysfunction                                insula                        burdens insular circuitry contributing to interoceptive and autonomic integration  increased
+ limbic_cortical_synaptic_dysfunction                  frontal_cortex_proxy                              burdens frontal systems contributing to executive dysfunction and psychosis  increased
+ limbic_cortical_synaptic_dysfunction                 temporal_cortex_proxy                                   burdens temporal cortical systems implicated in cognition and behavior  increased
+              occipital_alpha_slowing               occipital_visual_cortex                                               maps posterior slowing onto visual cortical network burden  increased
+              occipital_alpha_slowing               visuospatial_impairment                                  posterior slowing contributes to attention and visuospatial dysfunction  increased
+    noradrenergic_arousal_instability                 locus_coeruleus_proxy                                                           reflects brainstem arousal system degeneration  increased
+    noradrenergic_arousal_instability                sleep_wake_disturbance                                                             contributes to sleep and arousal instability  increased
+      autonomic_network_dysregulation            dorsal_vagal_nucleus_proxy                                                           reflects dorsal vagal/autonomic network burden  increased
+      autonomic_network_dysregulation                 autonomic_dysfunction                                                produces autonomic instability and visceral dysregulation  increased
+mesocorticolimbic_psychosis_liability                   delusions_psychosis                                                          drives hallucination-delusion spectrum symptoms  increased
+               d2_antagonist_exposure               neuroleptic_sensitivity                            raises risk of severe neuroleptic sensitivity in a dopamine-depleted disorder  increased
+    dopaminergic_replacement_pressure                          parkinsonism                                            can partially reduce motor burden by supporting dopamine tone  decreased
+    dopaminergic_replacement_pressure                 visual_hallucinations                                      can increase perceptual and psychotic burden in vulnerable patients  increased
+          cholinergic_reserve_support                   cholinergic_deficit                                    buffers cognitive-perceptual burden by preserving cholinergic reserve  decreased
+           low_d2_antagonism_strategy               neuroleptic_sensitivity                                           reduces sensitivity-crisis risk by limiting D2 blockade burden  decreased
+              neuroleptic_sensitivity        neuroleptic_sensitivity_crisis                                                   can precipitate severe deterioration under D2 blockade  increased
+
+=== REGION: substantia_nigra_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    8.574200   0.670553            4     1.110775    0.705544
+ APOE   10.194150   3.385389           12     0.910850    1.656239
+  APP    8.290942   4.306196           12     0.317608    0.822206
+ CHAT    3.376310   2.572560           20     0.331220    0.774309
+  DBH    2.352808   0.992835           12    -0.169983    0.797095
+ DRD2    5.387710   2.650629           20     1.612610    1.240540
+  GBA    6.100725   2.784962           12    -0.092667    0.814046
+LRRK2    6.587750   1.537612           12     0.589592    1.040175
+ MAPT    7.420037   3.629556           16    -0.823969    0.700481
+PSEN1    7.654288   1.097700            8     1.108213    0.878923
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: striatum_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    7.726983   0.659656            6     0.479300    0.663697
+ APOE   10.815506   3.204302           18     1.235383    0.605139
+  APP    7.993878   3.967354           18     0.003878    0.636282
+ CHAT    4.209460   1.516398           30     1.021533    1.018103
+  DBH    2.154417   0.747833           18    -0.469878    0.733881
+ DRD2    6.119210   2.344979           30     2.320237    1.023981
+  GBA    5.968833   2.517709           18    -0.238406    0.811733
+LRRK2    6.216400   1.270977           18     0.146339    0.768381
+ MAPT    7.290142   3.640419           24    -0.935500    0.789139
+PSEN1    6.593008   1.196995           12    -0.398750    0.774852
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: locus_coeruleus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: dorsal_vagal_nucleus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: nucleus_basalis_meynert_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    7.395029   0.974608            7     0.371500    0.974392
+ APOE   10.530981   3.491549           21     0.567548    1.082358
+  APP    8.530829   4.080242           21     0.640424    0.873333
+ CHAT    3.769614   2.628846           35     0.644534    1.774095
+  DBH    2.084071   0.652500           21    -0.498429    0.916907
+ DRD2    3.958400   2.181972           35     0.390791    0.778936
+  GBA    5.691938   2.488863           21    -0.413024    1.068545
+LRRK2    6.477233   1.661561           21     0.229510    0.880282
+ MAPT    7.494289   3.389850           28    -0.388368    0.985354
+PSEN1    6.355136   1.018624           14    -0.448036    0.820069
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.839157   0.411761            7    -0.518371    0.245508
+ APOE   10.641848   3.222123           21     1.131200    1.026849
+  APP    8.210148   3.979486           21     0.188186    1.097200
+ CHAT    2.866706   2.193904           35     0.015974    0.657465
+  DBH    2.221610   1.005047           21    -0.238133    0.810462
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+  GBA    5.988548   2.690311           21    -0.182990    0.854636
+LRRK2    6.117948   1.369920           21    -0.130110    0.668472
+ MAPT    7.817021   3.504319           28    -0.331725    1.009493
+PSEN1    6.552357   1.204320           14    -0.539621    0.696878
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: parahippocampal_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.330300   0.662135            2    -1.011100    0.329512
+ APOE    9.595817   3.054282            6     0.208450    0.204366
+  APP    8.136517   4.154127            6     0.120150    0.765968
+ CHAT    2.478860   2.057809           10    -0.207620    0.711842
+  DBH    2.476150   0.873257            6    -0.029550    0.520786
+ DRD2    2.954510   2.053681           10    -0.453320    0.620986
+  GBA    6.634733   2.466979            6     0.876050    0.390116
+LRRK2    6.093367   1.254960            6    -0.373967    0.391410
+ MAPT    9.013225   3.961038            8     0.906737    0.685346
+PSEN1    6.984975   1.259913            4    -0.021225    0.647098
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: cingulate_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.372100   0.442748            3    -0.764233    0.284800
+ APOE    9.985233   3.081154            9     0.097278    0.403419
+  APP    8.145611   3.942715            9     0.133167    0.405381
+ CHAT    2.673780   1.740839           15    -0.343147    0.592254
+  DBH    3.156300   1.163959            9     0.184722    0.789541
+ DRD2    2.950413   1.689432           15    -0.634413    0.582728
+  GBA    6.402200   2.450750            9     0.820778    0.598004
+LRRK2    6.396944   1.244621            9     0.313300    0.271664
+ MAPT    8.773192   3.812683           12     0.896650    0.519626
+PSEN1    6.571283   1.433474            6    -0.331683    0.564171
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: insula ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.453300   0.452756            3    -0.790700    0.261017
+ APOE    9.377167   3.133109            9    -0.449022    0.976710
+  APP    8.203356   4.060257            9     0.300522    1.187067
+ CHAT    2.774793   1.825454           15     0.018800    0.640747
+  DBH    2.894089   0.801965            9     0.529411    0.657225
+ DRD2    3.639480   1.851429           15     0.251373    0.616119
+  GBA    6.283844   2.608520            9     0.354633    0.800523
+LRRK2    6.577811   1.277939            9     0.469967    0.521512
+ MAPT    7.776650   3.597696           12    -0.390617    0.757056
+PSEN1    6.985450   1.235358            6    -0.118567    0.528130
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: frontal_cortex_proxy ===
+Receptors:
+   receptor  mean  std
+       AMPA   472  379
+    kainate   434  264
+       NMDA  1078   40
+      GABAA  1515  283
+      GABAB  1428 1197
+         BZ  2038 1372
+         M1   676  493
+         M2   215  162
+         M3   420   20
+alpha4beta2    47   49
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.576567   0.249862            9    -0.591544    0.151209
+ APOE    9.246378   2.910791           27    -0.587774    0.738678
+  APP    7.943533   3.758703           27    -0.220981    0.875521
+ CHAT    2.625129   1.740904           45    -0.336880    0.545161
+  DBH    3.141063   1.074061           27     0.339344    0.780856
+ DRD2    2.945380   1.742219           45    -0.608476    0.634670
+  GBA    6.372778   2.426781           27     0.730056    0.610006
+LRRK2    6.416530   1.140518           27     0.203078    0.512120
+ MAPT    8.565314   3.609986           36     0.663350    0.719008
+PSEN1    6.589339   1.478501           18    -0.168811    0.665044
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: temporal_cortex_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.542969   0.266224           16    -0.605419    0.330714
+ APOE    9.522081   2.954322           48    -0.383425    0.742154
+  APP    8.087469   3.670477           48     0.037679    0.789760
+ CHAT    2.577385   1.789598           80    -0.251974    0.646072
+  DBH    3.198037   1.116758           48     0.367498    0.690213
+ DRD2    3.079085   1.870010           80    -0.413101    0.522889
+  GBA    6.165146   2.391103           48     0.288894    0.577171
+LRRK2    6.522742   1.178765           48     0.358350    0.551552
+ MAPT    8.603406   3.619195           64     0.577742    0.735194
+PSEN1    6.683375   1.209164           32    -0.274531    0.487778
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: occipital_visual_cortex ===
+Receptors:
+   receptor  mean  std
+       AMPA   500  223
+    kainate   260  239
+       NMDA  1348  320
+      GABAA  2508  828
+      GABAB  2187  274
+         BZ  3882 1761
+         M1   661  123
+         M2   390   35
+         M3   524  395
+alpha4beta2    48   14
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.544706   0.452930           34    -0.733524    0.434272
+ APOE    8.903191   2.956801          102    -0.770011    0.920588
+  APP    7.909797   3.740529          102    -0.246625    0.885248
+ CHAT    2.408134   1.673662          170    -0.440127    0.503965
+  DBH    2.710438   0.912757          102    -0.097212    0.676855
+ DRD2    2.852616   1.669951          170    -0.638293    0.470715
+  GBA    5.768233   2.462042          102    -0.490136    0.781965
+LRRK2    6.713256   1.564988          102     0.840892    1.429684
+ MAPT    8.174006   3.522702          136     0.092161    0.812139
+PSEN1    6.432572   1.192429           68    -0.577306    0.531887
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: sensorimotor_cortex_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ACHE    6.908080   0.362742            5    -0.417940    0.233946
+ APOE    8.979433   2.692155           15    -0.637820    0.409843
+  APP    8.150700   3.724451           15     0.198620    0.580560
+ CHAT    2.520036   1.912740           25    -0.290624    0.392149
+  DBH    3.182287   0.756219           15     0.461473    0.506598
+ DRD2    3.038716   1.848771           25    -0.415092    0.416177
+  GBA    6.548727   2.130502           15     0.685567    0.627074
+LRRK2    6.367740   1.141806           15     0.299940    0.587900
+ MAPT    8.704610   3.729595           20     0.709215    0.886626
+PSEN1    6.898100   1.289095           10     0.023030    0.391383
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+ substantia_nigra_proxy  striatum_proxy  nucleus_basalis_meynert_proxy  amygdala  parahippocampal_proxy  cingulate_proxy  insula  frontal_cortex_proxy  temporal_cortex_proxy  occipital_visual_cortex  sensorimotor_cortex_proxy
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+                    NaN             NaN                            NaN       NaN                    NaN              NaN     NaN                   NaN                    NaN                      NaN                        NaN
+
+=== SIMULATION: example mixed motor-cognitive LBD phenotype ===
+
+INPUTS
+genetic_vulnerability                0.55
+alpha_synucleinopathy_load           0.70
+lysosomal_clearance_impairment       0.50
+alzheimer_copathology_load           0.35
+dopaminergic_replacement_pressure    0.30
+d2_antagonist_exposure               0.15
+cholinergic_reserve_support          0.15
+low_d2_antagonism_strategy           0.25
+
+LATENTS
+lysosomal_proteostasis_failure           0.4150
+alpha_synuclein_spread                   0.5096
+mixed_proteinopathy_burden               0.3391
+cholinergic_deficit                      0.3736
+dopaminergic_deficit                     0.4262
+noradrenergic_arousal_instability        0.2676
+limbic_cortical_synaptic_dysfunction     0.3207
+autonomic_network_dysregulation          0.3360
+occipital_alpha_slowing                  0.2512
+mesocorticolimbic_psychosis_liability    0.3103
+neuroleptic_sensitivity                  0.2221
+
+REGIONAL_STATE
+substantia_nigra_proxy           0.3806
+striatum_proxy                   0.2893
+locus_coeruleus_proxy            0.2805
+dorsal_vagal_nucleus_proxy       0.3270
+nucleus_basalis_meynert_proxy    0.3498
+amygdala                         0.2999
+parahippocampal_proxy            0.3154
+cingulate_proxy                  0.2682
+insula                           0.2517
+frontal_cortex_proxy             0.3144
+temporal_cortex_proxy            0.2728
+occipital_visual_cortex          0.2350
+sensorimotor_cortex_proxy        0.2838
+
+SYMPTOMS
+parkinsonism                      0.2552
+cognitive_fluctuations            0.2539
+visual_hallucinations             0.2921
+delusions_psychosis               0.2401
+executive_dysfunction             0.3322
+visuospatial_impairment           0.2451
+autonomic_dysfunction             0.2672
+sleep_wake_disturbance            0.2454
+neuroleptic_sensitivity_crisis    0.1748
+
+PHENOTYPES
+parkinsonian_lbd_profile                     0.3378
+cholinergic_visual_cognitive_profile         0.2905
+fluctuating_cognition_profile                0.2879
+autonomic_sleep_burden_profile               0.2939
+neuroleptic_sensitive_psychosis_profile      0.2323
+mixed_proteinopathy_rapid_decline_profile    0.2926

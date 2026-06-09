@@ -1,0 +1,185 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                key      node_type        atlas_region                                                  centroid_mni                          feature_summary
+           clock_gene_vulnerability          input                None                                                          None                                     None
+    light_dark_zeitgeber_disruption          input                None                                                          None                                     None
+           shift_work_social_jetlag          input                None                                                          None                                     None
+psychiatric_circadian_vulnerability          input                None                                                          None                                     None
+              chronotherapy_support          input                None                                                          None                                     None
+                 hypothalamus_proxy         region                None                                                          None                               unresolved
+            brainstem_arousal_proxy         region                None                                                          None                               unresolved
+                pfc_cognition_proxy         region Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262) receptors=no; genes=yes; connectivity=no
+             amygdala_emotion_proxy         region  LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+    clock_gene_feedback_instability latent_biology                None                                                          None                                     None
+         phase_response_abnormality latent_biology                None                                                          None                                     None
+          light_entrainment_failure latent_biology                None                                                          None                                     None
+    monoaminergic_phase_desynchrony latent_biology                None                                                          None                                     None
+ sleep_state_transition_instability latent_biology                None                                                          None                                     None
+       peripheral_clock_desynchrony latent_biology                None                                                          None                                     None
+     circadian_network_misalignment latent_biology                None                                                          None                                     None
+ mood_cognition_network_instability latent_biology                None                                                          None                                     None
+   autonomic_metabolic_misalignment latent_biology                None                                                          None                                     None
+           sleep_phase_misalignment        symptom                None                                                          None                                     None
+           insomnia_at_desired_time        symptom                None                                                          None                                     None
+                 daytime_sleepiness        symptom                None                                                          None                                     None
+                   mood_instability        symptom                None                                                          None                                     None
+             cognitive_inefficiency        symptom                None                                                          None                                     None
+            autonomic_dysregulation        symptom                None                                                          None                                     None
+    metabolic_cardiovascular_strain        symptom                None                                                          None                                     None
+
+=== EDGES ===
+                             source                             target                                                              relation             crswd_change
+           clock_gene_vulnerability    clock_gene_feedback_instability                    raises vulnerability in core molecular clock loops increased susceptibility
+           clock_gene_vulnerability         phase_response_abnormality                can alter intrinsic period length or light sensitivity increased susceptibility
+    light_dark_zeitgeber_disruption          light_entrainment_failure  reduces effective alignment of the internal clock to the environment                increased
+           shift_work_social_jetlag       peripheral_clock_desynchrony                              mismatches central and peripheral clocks                increased
+           shift_work_social_jetlag     circadian_network_misalignment             creates persistent temporal mismatch across brain systems                increased
+psychiatric_circadian_vulnerability    monoaminergic_phase_desynchrony amplifies sensitivity of mood/arousal systems to circadian disruption                increased
+psychiatric_circadian_vulnerability mood_cognition_network_instability       amplifies downstream mood and cognition effects of misalignment                increased
+              chronotherapy_support          light_entrainment_failure                              improves entrainment to the external day               protective
+              chronotherapy_support     circadian_network_misalignment                                    supports network resynchronization               protective
+              chronotherapy_support           sleep_phase_misalignment                                     reduces phase misalignment burden               protective
+    clock_gene_feedback_instability                 hypothalamus_proxy                            loads SCN/hypothalamic timekeeping systems  increased dysregulation
+    clock_gene_feedback_instability     circadian_network_misalignment        destabilizes temporal organization across the circadian system                increased
+         phase_response_abnormality          light_entrainment_failure                        abnormal phase shifting undermines entrainment                increased
+         phase_response_abnormality           sleep_phase_misalignment             shifts or destabilizes sleep phase relative to clock time                increased
+          light_entrainment_failure           sleep_phase_misalignment                      failure of entrainment drives phase misalignment                increased
+     circadian_network_misalignment    monoaminergic_phase_desynchrony                  misaligns arousal-promoting neurotransmitter rhythms                increased
+     circadian_network_misalignment mood_cognition_network_instability     temporal disorganization destabilizes mood and cognition networks                increased
+    monoaminergic_phase_desynchrony            brainstem_arousal_proxy                    burdens raphe/locus-coeruleus-like arousal systems  increased dysregulation
+    monoaminergic_phase_desynchrony sleep_state_transition_instability                       destabilizes wake/NREM/REM transition chemistry                increased
+    monoaminergic_phase_desynchrony                   mood_instability                       links circadian disruption to dysregulated mood                increased
+    monoaminergic_phase_desynchrony           insomnia_at_desired_time          misaligned arousal systems can disturb intended sleep timing                increased
+ sleep_state_transition_instability           insomnia_at_desired_time         unstable sleep-state transitions undermine consolidated sleep                increased
+ sleep_state_transition_instability                 daytime_sleepiness              unstable sleep architecture increases daytime sleepiness                increased
+       peripheral_clock_desynchrony   autonomic_metabolic_misalignment                       desynchronizes systemic physiology from the SCN                increased
+       peripheral_clock_desynchrony    metabolic_cardiovascular_strain     persistent central-peripheral mismatch increases long-term strain                increased
+ mood_cognition_network_instability                pfc_cognition_proxy                       burdens suprapontine cognition-control networks  increased dysregulation
+ mood_cognition_network_instability             amygdala_emotion_proxy                          burdens emotion-linked circadian sensitivity  increased dysregulation
+ mood_cognition_network_instability                   mood_instability                         drives circadian-linked affective instability                increased
+ mood_cognition_network_instability             cognitive_inefficiency                  drives unstable cognition and executive inefficiency                increased
+   autonomic_metabolic_misalignment            autonomic_dysregulation              produces autonomic consequences of circadian desynchrony                increased
+   autonomic_metabolic_misalignment    metabolic_cardiovascular_strain               supports downstream metabolic and cardiovascular burden                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                     Area 8v1 (MFG) left  LB (Amygdala) left
+Area 8v1 (MFG) left              6703.68                0.03
+LB (Amygdala) left                  0.03              244.57
+
+=== HYPOTHALAMUS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== HYPOTHALAMUS_PROXY : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== HYPOTHALAMUS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== BRAINSTEM_AROUSAL_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== BRAINSTEM_AROUSAL_PROXY : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== BRAINSTEM_AROUSAL_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC_COGNITION_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_COGNITION_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    7.673975   1.081022            8     0.749463    0.232813
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+ CLOCK    5.054917   0.772547           12     0.598017    0.556231
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+  CRY1    5.015000   0.452323            8    -0.158250    0.413621
+  CRY2    6.810142   2.930266           12     0.570442    0.346170
+   DBH    3.260200   0.921546           12     0.219600    0.480866
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+ NR1D1    7.272238   1.246447            8     0.362313    0.408180
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+  PER1    6.741100   1.408492            8     0.636275    0.373228
+  PER2    7.135987   1.628135            8     0.574075    0.300298
+  PER3    6.167967   1.036262           12    -0.188525    0.586257
+  RORA    9.204937   0.527658            8    -0.307412    0.228025
+SLC6A2    1.237313   0.282436            8    -0.367688    0.175513
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+  TPH2    2.896663   0.998774            8     0.060712    0.337883
+
+=== PFC_COGNITION_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== AMYGDALA_EMOTION_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA_EMOTION_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    6.646557   1.704315           14    -0.521721    0.777743
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+ CLOCK    4.697633   0.997899           21    -0.280457    1.220060
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+  CRY1    4.553529   0.805681           14    -1.120750    0.737206
+  CRY2    6.355695   3.256625           21    -0.035971    1.012584
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ NR1D1    7.118714   1.581713           14    -0.027193    0.749288
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+  PER1    5.794843   1.632248           14    -1.144214    0.912811
+  PER2    6.869900   1.506681           14    -0.354464    0.726666
+  PER3    6.105662   1.111622           21    -0.659829    1.205104
+  RORA    8.894657   0.890710           14    -0.764307    0.477400
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA_EMOTION_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+peripheral_clock_desynchrony          0.430650
+light_entrainment_failure             0.403250
+phase_response_abnormality            0.375000
+circadian_network_misalignment        0.299312
+clock_gene_feedback_instability       0.295000
+monoaminergic_phase_desynchrony       0.274759
+autonomic_metabolic_misalignment      0.265590
+mood_cognition_network_instability    0.233449
+sleep_state_transition_instability    0.206028
+
+=== REGIONAL STATE ===
+hypothalamus_proxy         0.177578
+brainstem_arousal_proxy    0.144847
+pfc_cognition_proxy        0.119949
+amygdala_emotion_proxy     0.114594
+
+=== SYMPTOMS ===
+metabolic_cardiovascular_strain    0.315190
+sleep_phase_misalignment           0.240274
+autonomic_dysregulation            0.122957
+daytime_sleepiness                 0.116765
+insomnia_at_desired_time           0.115316
+mood_instability                   0.112102
+cognitive_inefficiency             0.086187
+
+=== PHENOTYPES ===
+shift_work_misalignment_profile    0.286022
+phase_delay_advance_profile        0.283936
+non_entrained_clock_profile        0.279354
+mood_linked_circadian_profile      0.163760

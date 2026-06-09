@@ -1,0 +1,303 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                             key      node_type                                            atlas_region region_identifier                           feature_summary
+                      familial_genetic_liability          input                                                    None              None                                      None
+                neurodevelopmental_vulnerability          input                                                    None              None                                      None
+                       environmental_stress_load          input                                                    None              None                                      None
+                              resilience_support          input                                                    None              None                                      None
+                  atypical_antipsychotic_support          input                                                    None              None                                      None
+                                           dlpfc         region                                                    None              None                                unresolved
+                                             ofc         region                                     Area Fo4 (OFC) left              None  receptors=no; genes=yes; connectivity=no
+                                            mpfc         region                                            frontal pole              None  receptors=no; genes=yes; connectivity=no
+                                             acc         region                                    Area p32 (pACC) left              None  receptors=no; genes=yes; connectivity=no
+                                     hippocampus         region                                  CA1 (Hippocampus) left              None receptors=yes; genes=yes; connectivity=no
+                                  thalamus_proxy         region                        ZI (Thalamus, zona incerta) left              None  receptors=no; genes=yes; connectivity=no
+                             basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None  receptors=no; genes=yes; connectivity=no
+                           temporal_cortex_proxy         region                               Area Te 1.0 (HESCHL) left              None receptors=yes; genes=yes; connectivity=no
+                                cerebellum_proxy         region              Nfast (Cerebellum, Fastigial Nucleus) left              None  receptors=no; genes=yes; connectivity=no
+             schizotaxic_neurointegrative_defect latent_biology                                                    None              None                                      None
+           serotonergic_modulatory_dysregulation latent_biology                                                    None              None                                      None
+               glutamatergic_excitation_pressure latent_biology                                                    None              None                                      None
+                  gaba_interneuron_disinhibition latent_biology                                                    None              None                                      None
+             dopaminergic_salience_dysregulation latent_biology                                                    None              None                                      None
+            early_information_processing_deficit latent_biology                                                    None              None                                      None
+frontotemporal_thalamocerebellar_dysconnectivity latent_biology                                                    None              None                                      None
+                 negative_symptom_circuit_burden latent_biology                                                    None              None                                      None
+                       positive_psychosis_burden        symptom                                                    None              None                                      None
+                         negative_symptom_burden        symptom                                                    None              None                                      None
+                       cognitive_disorganization        symptom                                                    None              None                                      None
+             attention_working_memory_impairment        symptom                                                    None              None                                      None
+                           executive_dysfunction        symptom                                                    None              None                                      None
+
+=== EDGES ===
+                                          source                                           target                                                                                     relation schizophreniform_change
+                      familial_genetic_liability              schizotaxic_neurointegrative_defect   loads inherited schizophrenia-spectrum vulnerability into a latent neurointegrative defect               increased
+                neurodevelopmental_vulnerability              schizotaxic_neurointegrative_defect          contributes developmental instability affecting connectivity and circuit maturation               increased
+                       environmental_stress_load              schizotaxic_neurointegrative_defect              adds stress pressure that can unmask or intensify latent spectrum vulnerability               increased
+                              resilience_support              schizotaxic_neurointegrative_defect                        buffers clinical expression of the underlying neurointegrative defect               decreased
+             schizotaxic_neurointegrative_defect            serotonergic_modulatory_dysregulation creates susceptibility to dysregulated serotonin modulation of cortical and striatal systems               increased
+             schizotaxic_neurointegrative_defect                glutamatergic_excitation_pressure     creates excitatory vulnerability through altered synaptic and receptor-level development               increased
+             schizotaxic_neurointegrative_defect                   gaba_interneuron_disinhibition                contributes to reduced inhibitory tone in hippocampal and prefrontal circuits               increased
+               glutamatergic_excitation_pressure                   gaba_interneuron_disinhibition              adds excitatory stress that worsens inhibitory failure and cortical instability               increased
+           serotonergic_modulatory_dysregulation              dopaminergic_salience_dysregulation                        modulates frontal and striatal dopamine pathways toward dysregulation               increased
+               glutamatergic_excitation_pressure              dopaminergic_salience_dysregulation               feeds dopaminergic instability through broader excitation-inhibition imbalance               increased
+                  gaba_interneuron_disinhibition              dopaminergic_salience_dysregulation                        reduces inhibitory buffering and permits downstream salience overload               increased
+                  atypical_antipsychotic_support            serotonergic_modulatory_dysregulation                reduces 5-HT2A-linked dysregulation through atypical antipsychotic antagonism               decreased
+                  atypical_antipsychotic_support              dopaminergic_salience_dysregulation                           reduces D2-linked salience overload through antipsychotic blockade               decreased
+                  gaba_interneuron_disinhibition             early_information_processing_deficit                        reduces signal-to-noise and impairs very early information processing               increased
+               glutamatergic_excitation_pressure             early_information_processing_deficit                            adds cortical instability that worsens early processing precision               increased
+             schizotaxic_neurointegrative_defect frontotemporal_thalamocerebellar_dysconnectivity creates distributed vulnerability across frontal, temporal, thalamic, and cerebellar systems               increased
+                  gaba_interneuron_disinhibition frontotemporal_thalamocerebellar_dysconnectivity                                    destabilizes long-range cortical-subcortical coordination               increased
+             dopaminergic_salience_dysregulation frontotemporal_thalamocerebellar_dysconnectivity                 pushes distributed salience and relay systems toward further dysconnectivity               increased
+                              resilience_support frontotemporal_thalamocerebellar_dysconnectivity                                         partially buffers distributed dysconnectivity burden               decreased
+frontotemporal_thalamocerebellar_dysconnectivity                  negative_symptom_circuit_burden           burdens distributed cortical-subcortical systems tied to initiation and motivation               increased
+           serotonergic_modulatory_dysregulation                  negative_symptom_circuit_burden         contributes to broader cortical-subcortical symptom burden beyond positive psychosis               increased
+frontotemporal_thalamocerebellar_dysconnectivity                                            dlpfc                         maps dysconnectivity onto dorsolateral prefrontal executive circuits               increased
+frontotemporal_thalamocerebellar_dysconnectivity                                              ofc                                maps dysconnectivity onto orbital frontal regulatory circuits               increased
+frontotemporal_thalamocerebellar_dysconnectivity                                             mpfc                                maps dysconnectivity onto medial frontal integration circuits               increased
+frontotemporal_thalamocerebellar_dysconnectivity                                              acc             maps dysconnectivity onto anterior cingulate monitoring and integration circuits               increased
+                  gaba_interneuron_disinhibition                                      hippocampus        burdens hippocampal inhibitory control and contributes to medial temporal dysfunction               increased
+frontotemporal_thalamocerebellar_dysconnectivity                                   thalamus_proxy                          maps distributed relay and gating dysfunction onto thalamic systems               increased
+             dopaminergic_salience_dysregulation                              basal_ganglia_proxy                        maps dopaminergic imbalance onto striatal and basal ganglia circuitry               increased
+frontotemporal_thalamocerebellar_dysconnectivity                            temporal_cortex_proxy                    maps network burden onto temporal lobe subregions implicated in psychosis               increased
+frontotemporal_thalamocerebellar_dysconnectivity                                 cerebellum_proxy                        maps distributed dysconnectivity onto cerebellar coordination systems               increased
+             dopaminergic_salience_dysregulation                        positive_psychosis_burden                                            drives aberrant salience and psychotic expression               increased
+                 negative_symptom_circuit_burden                          negative_symptom_burden                                         drives blunting, amotivation, and reduced initiation               increased
+            early_information_processing_deficit                        cognitive_disorganization                           reduces coherent filtering and integration of incoming information               increased
+                                           dlpfc              attention_working_memory_impairment                                  prefrontal dysfunction burdens attention and working memory               increased
+                                     hippocampus              attention_working_memory_impairment                         medial temporal dysfunction burdens memory contribution to cognition               increased
+                                           dlpfc                            executive_dysfunction                            frontal dysfunction weakens planning, flexibility, and inhibition               increased
+                                             acc                            executive_dysfunction                      cingulate dysfunction burdens conflict monitoring and cognitive control               increased
+
+=== CIRCUIT CONNECTIVITY ===
+                       ofc  acc  hippocampus  thalamus_proxy  basal_ganglia_proxy  temporal_cortex_proxy  cerebellum_proxy
+ofc                    NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+acc                    NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+hippocampus            NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+thalamus_proxy         NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+basal_ganglia_proxy    NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+temporal_cortex_proxy  NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+cerebellum_proxy       NaN  NaN          NaN             NaN                  NaN                    NaN               NaN
+
+=== RECEPTOR TABLE: dlpfc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: dlpfc ===
+No gene-expression summary available.
+
+=== CONNECTIVITY PROFILE: dlpfc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: ofc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: ofc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+  DRD1    3.868336   1.457157           80     0.324408    0.507301
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  GAD1    8.635429   1.878978           72     0.180461    0.206737
+GRIN2A    7.903750   1.183122           20     0.653370    0.125193
+  GRM3    8.888158   0.273479           12     0.411125    0.241453
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+  RELN    4.674087   2.410303            8    -0.126438    0.229692
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+
+=== CONNECTIVITY PROFILE: ofc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: mpfc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: mpfc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.448104   3.531289          180    -0.061604    0.734556
+  DRD1    3.628737   1.533802          600     0.168275    0.681191
+  DRD2    2.970208   1.685149          150    -0.670198    0.494191
+  GAD1    8.422561   1.930356          540     0.309777    0.372554
+GRIN2A    7.941208   1.187910          150     0.805417    0.269389
+  GRM3    9.100948   0.548012           90     0.433201    0.473550
+ HTR2A    7.524517   2.090334          750     0.739979    0.399564
+  RELN    4.704982   2.100450           60     0.069165    0.472497
+SLC6A3    2.162632   1.532407          180    -0.342971    0.392093
+
+=== CONNECTIVITY PROFILE: mpfc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: acc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: acc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+  DRD1    4.006743   1.505281          320     0.441164    0.581172
+  DRD2    3.052440   1.858398           80    -0.471081    0.500034
+  GAD1    8.682633   1.916574          288     0.364728    0.326928
+GRIN2A    7.789231   1.245748           80     0.646719    0.233220
+  GRM3    9.163388   0.457944           48     0.560527    0.416123
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+  RELN    4.552416   2.260179           32    -0.138416    0.355517
+SLC6A3    2.090293   1.704914           96    -0.166331    0.456316
+
+=== CONNECTIVITY PROFILE: acc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: hippocampus ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== GENE TABLE: hippocampus ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+  DRD1    3.877214   2.075648          160     0.344794    1.437270
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+GRIN2A    8.155000   1.179632           40     0.830710    0.448826
+  GRM3    8.282113   0.680127           24    -0.345617    0.591539
+ HTR2A    6.079706   2.649687          200     0.028969    0.956248
+  RELN    3.678500   2.104563           16    -0.649238    0.896137
+SLC6A3    2.298956   1.516447           48    -0.208298    0.500259
+
+=== CONNECTIVITY PROFILE: hippocampus ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: thalamus_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: thalamus_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.827440   3.667711           48     0.302381    1.424946
+  DRD1    2.438649   1.528787          160    -0.582302    0.738248
+  DRD2    4.756305   2.505212           40     0.980560    0.913045
+  GAD1    8.048958   2.320105          144     0.032626    1.152170
+GRIN2A    5.320582   1.328220           40    -1.059965    0.516711
+  GRM3    8.843571   1.043609           24    -0.041392    1.172152
+ HTR2A    5.627839   2.126183          200    -0.216665    0.670260
+  RELN    4.020581   2.448693           16    -0.425775    0.620512
+SLC6A3    4.617246   3.260550           48     1.993027    2.701039
+
+=== CONNECTIVITY PROFILE: thalamus_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: basal_ganglia_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: basal_ganglia_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.334303   3.508445           36    -0.298369    1.144405
+  DRD1    5.954111   2.430015          120     2.015426    1.523818
+  DRD2    6.119210   2.344979           30     2.320237    1.023981
+  GAD1    9.070838   1.815833          108     0.735861    0.339088
+GRIN2A    5.264640   1.210019           30    -1.214530    0.468893
+  GRM3    9.179706   0.671396           18     0.569228    0.736330
+ HTR2A    5.122333   1.672406          150    -0.381103    0.276388
+  RELN    5.437983   2.518936           12     0.387358    0.528795
+SLC6A3    1.960617   1.684585           36    -0.279892    0.496073
+
+=== CONNECTIVITY PROFILE: basal_ganglia_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: temporal_cortex_proxy ===
+receptor  mean  std
+    AMPA   364   77
+ kainate   372   90
+    NMDA   856  200
+mGluR2_3  2298  331
+   GABAA  1518  281
+   GABAB  1995  484
+      BZ  2404  658
+      M1   459   62
+      M2   216   38
+      M3   910  180
+
+=== GENE TABLE: temporal_cortex_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.486167   3.908275            6     0.319150    0.549426
+  DRD1    4.295620   1.775487           20     0.448510    0.580290
+  DRD2    3.142360   1.604648            5    -0.509160    0.270374
+  GAD1    7.816306   1.896848           18    -0.032244    0.356678
+GRIN2A    8.259740   1.037461            5     0.661860    0.097070
+  GRM3    9.069567   0.209089            3     0.711533    0.063442
+ HTR2A    7.770504   2.133386           25     0.798888    0.249085
+  RELN    3.520300   2.628882            2    -0.784850    0.032456
+SLC6A3    2.534333   1.997380            6    -0.091917    0.437478
+
+=== CONNECTIVITY PROFILE: temporal_cortex_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: cerebellum_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: cerebellum_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  COMT    6.463578   3.461408           18    -0.170339    0.646965
+  DRD1    2.536858   1.310429           60    -0.581005    0.638006
+  DRD2    3.502913   1.628612           15     0.156460    0.760818
+  GAD1    8.951193   2.019727           54     0.769041    0.560115
+GRIN2A    4.385827   1.262297           15    -1.858420    0.872411
+  GRM3    9.163522   0.681162            9     0.349900    0.434994
+ HTR2A    5.546272   1.977216           75    -0.335907    0.446198
+  RELN    3.675300   1.817165            6    -0.750200    0.476839
+SLC6A3    2.339972   1.538445           18    -0.088089    0.303472
+
+=== CONNECTIVITY PROFILE: cerebellum_proxy ===
+No connectivity profile available.
+
+=== SIMULATION EXAMPLE ===
+
+--- INPUTS ---
+familial_genetic_liability          0.78
+neurodevelopmental_vulnerability    0.70
+environmental_stress_load           0.52
+atypical_antipsychotic_support      0.20
+resilience_support                  0.18
+
+--- LATENTS ---
+schizotaxic_neurointegrative_defect                 0.580
+frontotemporal_thalamocerebellar_dysconnectivity    0.363
+gaba_interneuron_disinhibition                      0.297
+dopaminergic_salience_dysregulation                 0.280
+glutamatergic_excitation_pressure                   0.275
+early_information_processing_deficit                0.226
+serotonergic_modulatory_dysregulation               0.224
+negative_symptom_circuit_burden                     0.222
+
+--- REGIONAL_STATE ---
+dlpfc                    0.272
+hippocampus              0.233
+thalamus_proxy           0.223
+ofc                      0.221
+acc                      0.214
+temporal_cortex_proxy    0.212
+mpfc                     0.202
+basal_ganglia_proxy      0.200
+cerebellum_proxy         0.174
+
+--- SYMPTOMS ---
+executive_dysfunction                  0.203
+cognitive_disorganization              0.199
+attention_working_memory_impairment    0.194
+positive_psychosis_burden              0.181
+negative_symptom_burden                0.157
+
+--- PHENOTYPES ---
+dysconnectivity_profile             0.253
+negative_symptom_profile            0.210
+cortical_disorganization_profile    0.199
+acute_schizophreniform_profile      0.194

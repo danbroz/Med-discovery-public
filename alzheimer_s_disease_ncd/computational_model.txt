@@ -1,0 +1,91 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 14) ===
+                                   key                                                label      node_type                                                                                                                               description                                         atlas_region region_identifier                                                    centroid_mni  volume_mm3                           feature_summary
+               late_life_sporadic_risk                              Late Life Sporadic Risk          input Late-onset sporadic Alzheimer's risk load reflecting the complex interaction of aging, genetics, and environment described in the chapter                                                 None              None                                                            None         NaN                                      None
+                          apoe_e4_load                                         Apoe E4 Load          input                              APOE ε4-associated burden affecting amyloid aggregation, clearance, synaptic function, and neuroinflammation                                                 None              None                                                            None         NaN                                      None
+  familial_amyloidogenic_mutation_load                 Familial Amyloidogenic Mutation Load          input                                          Rare APP / PSEN1 / PSEN2 mutation burden used to model high-confidence amyloid-pathway causality                                                 None              None                                                            None         NaN                                      None
+amyloid_clearance_production_imbalance               Amyloid Clearance Production Imbalance          input                                                     Imbalance between Aβ production and clearance, especially for Aβ42-prone accumulation                                                 None              None                                                            None         NaN                                      None
+                    pathology_duration                                   Pathology Duration          input                                                     Accumulated preclinical-to-clinical disease duration capturing gradual burden accrual                                                 None              None                                                            None         NaN                                      None
+             cognitive_reserve_support                            Cognitive Reserve Support          input                             Protective reserve / compensatory capacity moderating translation from pathology to overt clinical impairment                                                 None              None                                                            None         NaN                                      None
+                           hippocampus                               CA1 (Hippocampus) left         region                                                                                                                 Atlas-backed circuit node                               CA1 (Hippocampus) left              None  (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+                     entorhinal_cortex Area EC (Hippocampal Region, Entorhinal Cortex) left         region                                                                                                                 Atlas-backed circuit node Area EC (Hippocampal Region, Entorhinal Cortex) left              None (-23.430706521739125, -14.559782608695656, -31.705163043478258)       736.0  receptors=no; genes=yes; connectivity=no
+   posterior_cingulate_precuneus_proxy                  Posterior Cingulate Precuneus Proxy   region_proxy                                                                                 Atlas-backed circuit proxy unresolved in this environment                                                 None              None                                                            None         NaN                                unresolved
+        medial_prefrontal_cortex_proxy                                 Area p32 (pACC) left   region_proxy                                                                                                                Atlas-backed circuit proxy                                 Area p32 (pACC) left              None     (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0  receptors=no; genes=yes; connectivity=no
+         lateral_temporal_cortex_proxy                                 Area Te 3 (STG) left   region_proxy                                                                                                                Atlas-backed circuit proxy                                 Area Te 3 (STG) left              None  (-63.756468797564686, -10.335616438356169, 0.6689497716894977)      3942.0  receptors=no; genes=yes; connectivity=no
+        inferior_parietal_cortex_proxy                                  Area PGp (IPL) left   region_proxy                                                                                                                Atlas-backed circuit proxy                                  Area PGp (IPL) left              None    (-44.18055555555556, -75.48958333333334, 31.076016865079367)      8064.0 receptors=yes; genes=yes; connectivity=no
+       amyloidogenic_genetic_liability                      Amyloidogenic Genetic Liability latent_biology                                        Inherited amyloid-pathway risk spanning APOE-mediated clearance burden and rare APP/PSEN mutations                                                 None              None                                                            None         NaN                                      None
+          amyloid_beta_oligomer_burden                         Amyloid Beta Oligomer Burden latent_biology                                                          Neurotoxic soluble Aβ oligomer accumulation producing early synaptotoxic effects                                                 None              None                                                            None         NaN                                      None
+
+=== Edges (first 14) ===
+                                source                             target                                                                relation ad_change
+               late_life_sporadic_risk    amyloidogenic_genetic_liability                         contributes background late-onset vulnerability increased
+                          apoe_e4_load    amyloidogenic_genetic_liability raises inherited burden through impaired clearance and aggregation bias increased
+  familial_amyloidogenic_mutation_load    amyloidogenic_genetic_liability                        adds rare high-penetrance amyloid-pathway burden increased
+amyloid_clearance_production_imbalance       amyloid_beta_oligomer_burden                                     permits progressive Aβ accumulation increased
+       amyloidogenic_genetic_liability       amyloid_beta_oligomer_burden                promotes aggregation and persistence of toxic Aβ species increased
+                    pathology_duration       amyloid_beta_oligomer_burden                  captures long preclinical accrual of amyloid pathology increased
+                          apoe_e4_load neuroinflammation_clearance_stress                               worsens inflammatory and clearance burden increased
+          amyloid_beta_oligomer_burden neuroinflammation_clearance_stress                               triggers inflammatory and injury cascades increased
+          amyloid_beta_oligomer_burden  tau_neurofibrillary_tangle_burden                    drives downstream tau pathology in the cascade model increased
+                    pathology_duration  tau_neurofibrillary_tangle_burden        allows tau burden and clinical relevance to accumulate over time increased
+  familial_amyloidogenic_mutation_load  tau_neurofibrillary_tangle_burden         supports downstream tau burden through amyloidogenic mechanisms increased
+          amyloid_beta_oligomer_burden             synaptic_disconnection                  directly disrupts synaptic transmission and plasticity increased
+     tau_neurofibrillary_tangle_burden             synaptic_disconnection      tracks neuronal dysfunction and loss more closely than plaque load increased
+    neuroinflammation_clearance_stress             synaptic_disconnection                     adds injury pressure to already vulnerable circuits increased
+
+=== Resolved region keys ===
+['hippocampus', 'entorhinal_cortex', 'medial_prefrontal_cortex_proxy', 'lateral_temporal_cortex_proxy', 'inferior_parietal_cortex_proxy']
+
+=== Receptor table: hippocampus ===
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+
+=== Gene table: hippocampus ===
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ABCA7    4.373200   2.164948           16    -0.198087    0.908252
+ APOE    9.794787   3.076652           24    -0.133046    1.012628
+  APP    8.450583   4.134041           24     0.480300    0.776828
+BACE1    8.197337   2.444814           24    -0.700271    0.545050
+ BDNF    5.638438   2.851173           16     0.533731    1.414835
+
+=== Connectivity profile: hippocampus ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Simulated latents ===
+amyloid_beta_oligomer_burden          0.6125
+amyloidogenic_genetic_liability       0.4650
+default_mode_network_disconnection    0.3927
+distributed_cortical_atrophy          0.5038
+inhibitory_excitatory_synapse_loss    0.5061
+medial_temporal_neurodegeneration     0.5374
+network_hyperexcitability             0.4649
+neuroinflammation_clearance_stress    0.5569
+synaptic_disconnection                0.5310
+tau_neurofibrillary_tangle_burden     0.5435
+
+=== Simulated symptoms ===
+default_mode_cognitive_disruption    0.3123
+episodic_memory_impairment           0.4231
+functional_impairment                0.2525
+global_cognitive_decline             0.3201
+memory_consolidation_failure         0.4106
+memory_led_mci                       0.3191
+
+=== Phenotype summary ===
+amnestic_mci_profile                     0.4398
+hyperexcitable_disconnective_profile     0.4737
+major_neurocognitive_disorder_profile    0.3472
+preclinical_biological_ad_profile        0.4003

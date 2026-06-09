@@ -1,0 +1,474 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                          key                                                   label      node_type                                                                                           description                                            atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary  is_proxy
+               alpha_synuclein_lewy_pathology                          Alpha Synuclein Lewy Pathology          input Accumulation of alpha-synuclein into Lewy bodies and Lewy neurites with phenotype-linked progression.                                                    None              None                                                           None         NaN                                      None     False
+                        genetic_vulnerability                                   Genetic Vulnerability          input                    Familial or monogenic liability, especially involving SNCA and LRRK2-related risk.                                                    None              None                                                           None         NaN                                      None     False
+                     dopaminergic_neuron_loss                                Dopaminergic Neuron Loss          input                      Foundational loss of dopaminergic neurons in the substantia nigra pars compacta.                                                    None              None                                                           None         NaN                                      None     False
+                   brainstem_to_cortex_spread                              Brainstem To Cortex Spread          input                   Topographic neurodegenerative spread from brainstem to limbic and cortical systems.                                                    None              None                                                           None         NaN                                      None     False
+         substantia_nigra_pars_compacta_proxy     SNC (Midbrain, Substantia Nigra pars compacta) left         region           Proxy for the substantia nigra pars compacta, the chapter's foundational PD pathology node.     SNC (Midbrain, Substantia Nigra pars compacta) left              None  (-9.530708661417322, -23.46771653543307, -14.792125984251967)       635.0  receptors=no; genes=yes; connectivity=no      True
+                        locus_coeruleus_proxy                                   Locus Coeruleus Proxy         region                        Proxy for the locus coeruleus, the chapter's key noradrenergic brainstem node.                                                    None              None                                                           None         NaN                                unresolved      True
+                                  hippocampus                                  CA1 (Hippocampus) left         region                                           Hippocampal atrophy anchor named explicitly in the chapter.                                  CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no     False
+             frontal_association_cortex_proxy                                      Area 45 (IFG) left         region                          Proxy for frontal cortical atrophy burden and executive-network involvement.                                      Area 45 (IFG) left              None  (-52.591273128969895, 29.535211267605632, 12.254073460370066)      3621.0 receptors=yes; genes=yes; connectivity=no      True
+            temporal_association_cortex_proxy                                    Area Te 3 (STG) left         region                  Proxy for temporal cortical atrophy burden linked to memory and network dysfunction.                                    Area Te 3 (STG) left              None (-63.756468797564686, -10.335616438356169, 0.6689497716894977)      3942.0  receptors=no; genes=yes; connectivity=no      True
+            parietal_association_cortex_proxy                                     Area PGp (IPL) left         region                Proxy for parietal cortical atrophy burden and frontoparietal attentional dysfunction.                                     Area PGp (IPL) left              None   (-44.18055555555556, -75.48958333333334, 31.076016865079367)      8064.0 receptors=yes; genes=yes; connectivity=no      True
+                          basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left         region               Proxy for the basal ganglia side of the chapter's basal ganglia-thalamo-cortical loops. FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None   (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0  receptors=no; genes=yes; connectivity=no      True
+          widespread_neurodegenerative_spread                     Widespread Neurodegenerative Spread latent_biology       Distributed pathology extending beyond classic motor circuits into limbic and cortical systems.                                                    None              None                                                           None         NaN                                      None     False
+                      noradrenergic_depletion                                 Noradrenergic Depletion latent_biology     Loss of locus coeruleus norepinephrine signaling affecting arousal, mood, and executive function.                                                    None              None                                                           None         NaN                                      None     False
+                      cholinergic_dysfunction                                 Cholinergic Dysfunction latent_biology                           Non-dopaminergic cholinergic dysfunction contributing to cognitive decline.                                                    None              None                                                           None         NaN                                      None     False
+                     serotonergic_dysfunction                                Serotonergic Dysfunction latent_biology                             Serotonergic pathway dysfunction contributing to neuropsychiatric burden.                                                    None              None                                                           None         NaN                                      None     False
+                      cortical_atrophy_burden                                 Cortical Atrophy Burden latent_biology        Frontal, temporal, parietal, and hippocampal atrophy burden associated with cognitive decline.                                                    None              None                                                           None         NaN                                      None     False
+basal_ganglia_thalamocortical_dysconnectivity           Basal Ganglia Thalamocortical Dysconnectivity latent_biology                                          Disrupted basal ganglia-thalamo-cortical loop communication.                                                    None              None                                                           None         NaN                                      None     False
+         default_mode_network_dysconnectivity                    Default Mode Network Dysconnectivity latent_biology                            Resting-state disorganization within default mode network-related systems.                                                    None              None                                                           None         NaN                                      None     False
+     frontoparietal_attention_dysconnectivity                Frontoparietal Attention Dysconnectivity latent_biology                                               Disrupted frontoparietal attentional control circuitry.                                                    None              None                                                           None         NaN                                      None     False
+                 frontolimbic_dysconnectivity                            Frontolimbic Dysconnectivity latent_biology                         Altered fronto-limbic connectivity linked to depression, anxiety, and apathy.                                                    None              None                                                           None         NaN                                      None     False
+                        executive_dysfunction                                   Executive Dysfunction        symptom                          Executive impairment associated with frontal and frontoparietal dysfunction.                                                    None              None                                                           None         NaN                                      None     False
+                attention_arousal_instability                           Attention Arousal Instability        symptom         Instability of attention and arousal linked to noradrenergic and attentional-network failure.                                                    None              None                                                           None         NaN                                      None     False
+                            memory_impairment                                       Memory Impairment        symptom                           Mnemonic impairment associated with hippocampal and temporal-system burden.                                                    None              None                                                           None         NaN                                      None     False
+                      neuropsychiatric_burden                                 Neuropsychiatric Burden        symptom             Depression, anxiety, and apathy burden linked to fronto-limbic and monoaminergic changes.                                                    None              None                                                           None         NaN                                      None     False
+
+=== Edges ===
+                                  source                                        target                                                                                 relation pd_ncd_change
+                   genetic_vulnerability                alpha_synuclein_lewy_pathology                     familial or monogenic risk can bias core synuclein-related pathology     increased
+                   genetic_vulnerability                      dopaminergic_neuron_loss                       genetic liability contributes to PD-related neuronal vulnerability     increased
+          alpha_synuclein_lewy_pathology           widespread_neurodegenerative_spread                        Lewy pathology progression tracks the evolving clinical phenotype     increased
+              brainstem_to_cortex_spread           widespread_neurodegenerative_spread             pathology extends anatomically from brainstem to limbic and cortical systems     increased
+     widespread_neurodegenerative_spread                       noradrenergic_depletion               distributed degeneration affects the locus coeruleus norepinephrine system     increased
+     widespread_neurodegenerative_spread                       cholinergic_dysfunction                    distributed degeneration recruits cholinergic systems beyond dopamine     increased
+     widespread_neurodegenerative_spread                      serotonergic_dysfunction                   distributed degeneration recruits serotonergic systems beyond dopamine     increased
+                dopaminergic_neuron_loss          substantia_nigra_pars_compacta_proxy                  foundational SNc pathology is expressed as substantia nigra dysfunction     increased
+                 noradrenergic_depletion                         locus_coeruleus_proxy                   noradrenergic depletion is expressed in the locus coeruleus proxy node     increased
+          alpha_synuclein_lewy_pathology                       cortical_atrophy_burden               progressive pathology contributes to cortical and hippocampal degeneration     increased
+     widespread_neurodegenerative_spread                       cortical_atrophy_burden                disease spread drives frontal, temporal, parietal, and hippocampal burden     increased
+                dopaminergic_neuron_loss basal_ganglia_thalamocortical_dysconnectivity                      dopaminergic loss disrupts basal ganglia-thalamo-cortical circuitry     increased
+     widespread_neurodegenerative_spread          default_mode_network_dysconnectivity                    distributed pathology yields widespread resting-state disorganization     increased
+     widespread_neurodegenerative_spread      frontoparietal_attention_dysconnectivity                                        distributed pathology disrupts attention networks     increased
+     widespread_neurodegenerative_spread                  frontolimbic_dysconnectivity                               distributed pathology disrupts fronto-limbic communication     increased
+                   locus_coeruleus_proxy                 attention_arousal_instability                               LC dysfunction undermines attention and arousal regulation     increased
+                   locus_coeruleus_proxy                       neuropsychiatric_burden                             LC degeneration is linked to depression, anxiety, and apathy     increased
+                   locus_coeruleus_proxy           postural_instability_related_burden noradrenergic deficits contribute to postural instability refractory to dopamine therapy     increased
+        frontal_association_cortex_proxy                         executive_dysfunction                                       frontal cortical burden worsens executive function     increased
+       parietal_association_cortex_proxy                 attention_arousal_instability                parietal attentional-system burden contributes to attentional instability     increased
+       temporal_association_cortex_proxy                             memory_impairment                             temporal cortical burden contributes to mnemonic dysfunction     increased
+                             hippocampus                             memory_impairment                                     hippocampal atrophy contributes to memory impairment     increased
+                     basal_ganglia_proxy                         executive_dysfunction                                     disrupted subcortical loops impair executive control     increased
+frontoparietal_attention_dysconnectivity                         executive_dysfunction                       frontoparietal disruption is associated with executive dysfunction     increased
+            frontolimbic_dysconnectivity                       neuropsychiatric_burden             fronto-limbic dysconnectivity contributes to depression, anxiety, and apathy     increased
+    default_mode_network_dysconnectivity                      global_cognitive_decline                  default mode disorganization contributes to broad cognitive dysfunction     increased
+                   executive_dysfunction                      global_cognitive_decline                         executive impairment contributes to global neurocognitive burden     increased
+           attention_arousal_instability                      global_cognitive_decline                      attentional instability contributes to global neurocognitive burden     increased
+                       memory_impairment                      global_cognitive_decline                            memory impairment contributes to global neurocognitive burden     increased
+
+=== Resolved regions ===
+- substantia_nigra_pars_compacta_proxy: SNC (Midbrain, Substantia Nigra pars compacta) left
+- hippocampus: CA1 (Hippocampus) left
+- frontal_association_cortex_proxy: Area 45 (IFG) left
+- temporal_association_cortex_proxy: Area Te 3 (STG) left
+- parietal_association_cortex_proxy: Area PGp (IPL) left
+- basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== Circuit connectivity ===
+                                      substantia_nigra_pars_compacta_proxy  hippocampus  frontal_association_cortex_proxy  temporal_association_cortex_proxy  parietal_association_cortex_proxy  basal_ganglia_proxy
+substantia_nigra_pars_compacta_proxy                                12.565        0.065                             0.165                              0.690                              7.445                0.020
+hippocampus                                                          0.065     1685.400                             1.410                              3.045                             34.125                1.610
+frontal_association_cortex_proxy                                     0.165        1.410                          4180.905                             59.890                            108.160                6.910
+temporal_association_cortex_proxy                                    0.690        3.045                            59.890                           3902.045                            566.235                0.670
+parietal_association_cortex_proxy                                    7.445       34.125                           108.160                            566.235                          12793.430                8.050
+basal_ganglia_proxy                                                  0.020        1.610                             6.910                              0.670                              8.050             2794.395
+
+=== Receptor fingerprints (head) ===
+
+[substantia_nigra_pars_compacta_proxy]
+<no receptor fingerprint>
+
+[locus_coeruleus_proxy]
+<no receptor fingerprint>
+
+[hippocampus]
+ mean  std
+  498  120
+ 1366  273
+  366  127
+  789  362
+ 1961  397
+
+[frontal_association_cortex_proxy]
+ mean  std
+  472  379
+  434  264
+ 1078   40
+ 1515  283
+ 1428 1197
+
+[temporal_association_cortex_proxy]
+<no receptor fingerprint>
+
+[parietal_association_cortex_proxy]
+  mean    std
+ 428.0  242.0
+ 518.0  360.0
+1081.0  313.0
+3416.0 1572.0
+1847.0  767.0
+
+[basal_ganglia_proxy]
+<no receptor fingerprint>
+
+=== Gene summaries (head) ===
+
+[substantia_nigra_pars_compacta_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    8.574200   0.670553            4     1.110775    0.705544
+  CHAT    3.376310   2.572560           20     0.331220    0.774309
+   DBH    2.352808   0.992835           12    -0.169983    0.797095
+ LRRK2    6.587750   1.537612           12     0.589592    1.040175
+SLC6A2    1.362450   0.385239            8    -0.088612    0.216657
+
+[locus_coeruleus_proxy]
+<no gene summary>
+
+[hippocampus]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.612700   0.767578            8    -0.513100    0.824840
+  CHAT    2.870032   2.066771           40    -0.164502    0.645836
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+ LRRK2    6.313350   1.326013           24     0.008875    0.854397
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+
+[frontal_association_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.576567   0.249862            9    -0.591544    0.151209
+  CHAT    2.625129   1.740904           45    -0.336880    0.545161
+   DBH    3.141063   1.074061           27     0.339344    0.780856
+ LRRK2    6.416530   1.140518           27     0.203078    0.512120
+SLC6A2    1.519750   0.423379           18    -0.238478    0.486089
+
+[temporal_association_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.542969   0.266224           16    -0.605419    0.330714
+  CHAT    2.577385   1.789598           80    -0.251974    0.646072
+   DBH    3.198037   1.116758           48     0.367498    0.690213
+ LRRK2    6.522742   1.178765           48     0.358350    0.551552
+SLC6A2    1.366147   0.380508           32    -0.273369    0.452559
+
+[parietal_association_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.370036   0.334733           11    -0.888800    0.261419
+  CHAT    2.483945   1.698640           55    -0.463636    0.533528
+   DBH    3.089794   1.129181           33     0.109076    0.763684
+ LRRK2    6.458130   1.266081           33     0.464006    0.442414
+SLC6A2    1.518705   0.268104           22    -0.250468    0.372732
+
+[basal_ganglia_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    7.726983   0.659656            6     0.479300    0.663697
+  CHAT    4.209460   1.516398           30     1.021533    1.018103
+   DBH    2.154417   0.747833           18    -0.469878    0.733881
+ LRRK2    6.216400   1.270977           18     0.146339    0.768381
+SLC6A2    1.461367   0.486896           12    -0.060608    0.507452
+
+=== Connectivity profiles (head) ===
+
+[substantia_nigra_pars_compacta_proxy]
+<no connectivity profile>
+
+[locus_coeruleus_proxy]
+<no connectivity profile>
+
+[hippocampus]
+<no connectivity profile>
+
+[frontal_association_cortex_proxy]
+<no connectivity profile>
+
+[temporal_association_cortex_proxy]
+<no connectivity profile>
+
+[parietal_association_cortex_proxy]
+<no connectivity profile>
+
+[basal_ganglia_proxy]
+<no connectivity profile>
+
+=== Simulation: inputs ===
+alpha_synuclein_lewy_pathology    0.75
+genetic_vulnerability             0.45
+dopaminergic_neuron_loss          0.70
+brainstem_to_cortex_spread        0.65
+
+=== Simulation: latents ===
+widespread_neurodegenerative_spread              0.6725
+noradrenergic_depletion                          0.6451
+cholinergic_dysfunction                          0.6551
+serotonergic_dysfunction                         0.6540
+cortical_atrophy_burden                          0.6833
+basal_ganglia_thalamocortical_dysconnectivity    0.6949
+default_mode_network_dysconnectivity             0.6682
+frontoparietal_attention_dysconnectivity         0.6660
+frontolimbic_dysconnectivity                     0.6613
+
+=== Simulation: regional state ===
+substantia_nigra_pars_compacta_proxy    0.7125
+locus_coeruleus_proxy                   0.6533
+hippocampus                             0.6768
+frontal_association_cortex_proxy        0.6726
+temporal_association_cortex_proxy       0.6733
+parietal_association_cortex_proxy       0.6742
+basal_ganglia_proxy                     0.7047
+
+=== Simulation: symptoms ===
+executive_dysfunction                  0.6719
+attention_arousal_instability          0.6605
+memory_impairment                      0.6752
+neuropsychiatric_burden                0.6592
+postural_instability_related_burden    0.6879
+global_cognitive_decline               0.6722
+
+=== Simulation: phenotypes ===
+mild_pd_neurocognitive_profile           0.6692
+major_pd_neurocognitive_profile          0.6758
+frontolimbic_neuropsychiatric_profile    0.6579
+brainstem_cortical_spread_profile        0.6760
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                          key                                                   label      node_type                                                                                           description                                            atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary  is_proxy
+               alpha_synuclein_lewy_pathology                          Alpha Synuclein Lewy Pathology          input Accumulation of alpha-synuclein into Lewy bodies and Lewy neurites with phenotype-linked progression.                                                    None              None                                                           None         NaN                                      None     False
+                        genetic_vulnerability                                   Genetic Vulnerability          input                    Familial or monogenic liability, especially involving SNCA and LRRK2-related risk.                                                    None              None                                                           None         NaN                                      None     False
+                     dopaminergic_neuron_loss                                Dopaminergic Neuron Loss          input                      Foundational loss of dopaminergic neurons in the substantia nigra pars compacta.                                                    None              None                                                           None         NaN                                      None     False
+                   brainstem_to_cortex_spread                              Brainstem To Cortex Spread          input                   Topographic neurodegenerative spread from brainstem to limbic and cortical systems.                                                    None              None                                                           None         NaN                                      None     False
+         substantia_nigra_pars_compacta_proxy     SNC (Midbrain, Substantia Nigra pars compacta) left         region           Proxy for the substantia nigra pars compacta, the chapter's foundational PD pathology node.     SNC (Midbrain, Substantia Nigra pars compacta) left              None  (-9.530708661417322, -23.46771653543307, -14.792125984251967)       635.0  receptors=no; genes=yes; connectivity=no      True
+                        locus_coeruleus_proxy                                   Locus Coeruleus Proxy         region                        Proxy for the locus coeruleus, the chapter's key noradrenergic brainstem node.                                                    None              None                                                           None         NaN                                unresolved      True
+                                  hippocampus                                  CA1 (Hippocampus) left         region                                           Hippocampal atrophy anchor named explicitly in the chapter.                                  CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no     False
+             frontal_association_cortex_proxy                                      Area 45 (IFG) left         region                          Proxy for frontal cortical atrophy burden and executive-network involvement.                                      Area 45 (IFG) left              None  (-52.591273128969895, 29.535211267605632, 12.254073460370066)      3621.0 receptors=yes; genes=yes; connectivity=no      True
+            temporal_association_cortex_proxy                                    Area Te 3 (STG) left         region                  Proxy for temporal cortical atrophy burden linked to memory and network dysfunction.                                    Area Te 3 (STG) left              None (-63.756468797564686, -10.335616438356169, 0.6689497716894977)      3942.0  receptors=no; genes=yes; connectivity=no      True
+            parietal_association_cortex_proxy                                     Area PGp (IPL) left         region                Proxy for parietal cortical atrophy burden and frontoparietal attentional dysfunction.                                     Area PGp (IPL) left              None   (-44.18055555555556, -75.48958333333334, 31.076016865079367)      8064.0 receptors=yes; genes=yes; connectivity=no      True
+                          basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left         region               Proxy for the basal ganglia side of the chapter's basal ganglia-thalamo-cortical loops. FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None   (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0  receptors=no; genes=yes; connectivity=no      True
+          widespread_neurodegenerative_spread                     Widespread Neurodegenerative Spread latent_biology       Distributed pathology extending beyond classic motor circuits into limbic and cortical systems.                                                    None              None                                                           None         NaN                                      None     False
+                      noradrenergic_depletion                                 Noradrenergic Depletion latent_biology     Loss of locus coeruleus norepinephrine signaling affecting arousal, mood, and executive function.                                                    None              None                                                           None         NaN                                      None     False
+                      cholinergic_dysfunction                                 Cholinergic Dysfunction latent_biology                           Non-dopaminergic cholinergic dysfunction contributing to cognitive decline.                                                    None              None                                                           None         NaN                                      None     False
+                     serotonergic_dysfunction                                Serotonergic Dysfunction latent_biology                             Serotonergic pathway dysfunction contributing to neuropsychiatric burden.                                                    None              None                                                           None         NaN                                      None     False
+                      cortical_atrophy_burden                                 Cortical Atrophy Burden latent_biology        Frontal, temporal, parietal, and hippocampal atrophy burden associated with cognitive decline.                                                    None              None                                                           None         NaN                                      None     False
+basal_ganglia_thalamocortical_dysconnectivity           Basal Ganglia Thalamocortical Dysconnectivity latent_biology                                          Disrupted basal ganglia-thalamo-cortical loop communication.                                                    None              None                                                           None         NaN                                      None     False
+         default_mode_network_dysconnectivity                    Default Mode Network Dysconnectivity latent_biology                            Resting-state disorganization within default mode network-related systems.                                                    None              None                                                           None         NaN                                      None     False
+     frontoparietal_attention_dysconnectivity                Frontoparietal Attention Dysconnectivity latent_biology                                               Disrupted frontoparietal attentional control circuitry.                                                    None              None                                                           None         NaN                                      None     False
+                 frontolimbic_dysconnectivity                            Frontolimbic Dysconnectivity latent_biology                         Altered fronto-limbic connectivity linked to depression, anxiety, and apathy.                                                    None              None                                                           None         NaN                                      None     False
+                        executive_dysfunction                                   Executive Dysfunction        symptom                          Executive impairment associated with frontal and frontoparietal dysfunction.                                                    None              None                                                           None         NaN                                      None     False
+                attention_arousal_instability                           Attention Arousal Instability        symptom         Instability of attention and arousal linked to noradrenergic and attentional-network failure.                                                    None              None                                                           None         NaN                                      None     False
+                            memory_impairment                                       Memory Impairment        symptom                           Mnemonic impairment associated with hippocampal and temporal-system burden.                                                    None              None                                                           None         NaN                                      None     False
+                      neuropsychiatric_burden                                 Neuropsychiatric Burden        symptom             Depression, anxiety, and apathy burden linked to fronto-limbic and monoaminergic changes.                                                    None              None                                                           None         NaN                                      None     False
+
+=== Edges ===
+                                  source                                        target                                                                                 relation pd_ncd_change
+                   genetic_vulnerability                alpha_synuclein_lewy_pathology                     familial or monogenic risk can bias core synuclein-related pathology     increased
+                   genetic_vulnerability                      dopaminergic_neuron_loss                       genetic liability contributes to PD-related neuronal vulnerability     increased
+          alpha_synuclein_lewy_pathology           widespread_neurodegenerative_spread                        Lewy pathology progression tracks the evolving clinical phenotype     increased
+              brainstem_to_cortex_spread           widespread_neurodegenerative_spread             pathology extends anatomically from brainstem to limbic and cortical systems     increased
+     widespread_neurodegenerative_spread                       noradrenergic_depletion               distributed degeneration affects the locus coeruleus norepinephrine system     increased
+     widespread_neurodegenerative_spread                       cholinergic_dysfunction                    distributed degeneration recruits cholinergic systems beyond dopamine     increased
+     widespread_neurodegenerative_spread                      serotonergic_dysfunction                   distributed degeneration recruits serotonergic systems beyond dopamine     increased
+                dopaminergic_neuron_loss          substantia_nigra_pars_compacta_proxy                  foundational SNc pathology is expressed as substantia nigra dysfunction     increased
+                 noradrenergic_depletion                         locus_coeruleus_proxy                   noradrenergic depletion is expressed in the locus coeruleus proxy node     increased
+          alpha_synuclein_lewy_pathology                       cortical_atrophy_burden               progressive pathology contributes to cortical and hippocampal degeneration     increased
+     widespread_neurodegenerative_spread                       cortical_atrophy_burden                disease spread drives frontal, temporal, parietal, and hippocampal burden     increased
+                dopaminergic_neuron_loss basal_ganglia_thalamocortical_dysconnectivity                      dopaminergic loss disrupts basal ganglia-thalamo-cortical circuitry     increased
+     widespread_neurodegenerative_spread          default_mode_network_dysconnectivity                    distributed pathology yields widespread resting-state disorganization     increased
+     widespread_neurodegenerative_spread      frontoparietal_attention_dysconnectivity                                        distributed pathology disrupts attention networks     increased
+     widespread_neurodegenerative_spread                  frontolimbic_dysconnectivity                               distributed pathology disrupts fronto-limbic communication     increased
+                   locus_coeruleus_proxy                 attention_arousal_instability                               LC dysfunction undermines attention and arousal regulation     increased
+                   locus_coeruleus_proxy                       neuropsychiatric_burden                             LC degeneration is linked to depression, anxiety, and apathy     increased
+                   locus_coeruleus_proxy           postural_instability_related_burden noradrenergic deficits contribute to postural instability refractory to dopamine therapy     increased
+        frontal_association_cortex_proxy                         executive_dysfunction                                       frontal cortical burden worsens executive function     increased
+       parietal_association_cortex_proxy                 attention_arousal_instability                parietal attentional-system burden contributes to attentional instability     increased
+       temporal_association_cortex_proxy                             memory_impairment                             temporal cortical burden contributes to mnemonic dysfunction     increased
+                             hippocampus                             memory_impairment                                     hippocampal atrophy contributes to memory impairment     increased
+                     basal_ganglia_proxy                         executive_dysfunction                                     disrupted subcortical loops impair executive control     increased
+frontoparietal_attention_dysconnectivity                         executive_dysfunction                       frontoparietal disruption is associated with executive dysfunction     increased
+            frontolimbic_dysconnectivity                       neuropsychiatric_burden             fronto-limbic dysconnectivity contributes to depression, anxiety, and apathy     increased
+    default_mode_network_dysconnectivity                      global_cognitive_decline                  default mode disorganization contributes to broad cognitive dysfunction     increased
+                   executive_dysfunction                      global_cognitive_decline                         executive impairment contributes to global neurocognitive burden     increased
+           attention_arousal_instability                      global_cognitive_decline                      attentional instability contributes to global neurocognitive burden     increased
+                       memory_impairment                      global_cognitive_decline                            memory impairment contributes to global neurocognitive burden     increased
+
+=== Resolved regions ===
+- substantia_nigra_pars_compacta_proxy: SNC (Midbrain, Substantia Nigra pars compacta) left
+- hippocampus: CA1 (Hippocampus) left
+- frontal_association_cortex_proxy: Area 45 (IFG) left
+- temporal_association_cortex_proxy: Area Te 3 (STG) left
+- parietal_association_cortex_proxy: Area PGp (IPL) left
+- basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== Circuit connectivity ===
+                                      substantia_nigra_pars_compacta_proxy  hippocampus  frontal_association_cortex_proxy  temporal_association_cortex_proxy  parietal_association_cortex_proxy  basal_ganglia_proxy
+substantia_nigra_pars_compacta_proxy                                12.565        0.065                             0.165                              0.690                              7.445                0.020
+hippocampus                                                          0.065     1685.400                             1.410                              3.045                             34.125                1.610
+frontal_association_cortex_proxy                                     0.165        1.410                          4180.905                             59.890                            108.160                6.910
+temporal_association_cortex_proxy                                    0.690        3.045                            59.890                           3902.045                            566.235                0.670
+parietal_association_cortex_proxy                                    7.445       34.125                           108.160                            566.235                          12793.430                8.050
+basal_ganglia_proxy                                                  0.020        1.610                             6.910                              0.670                              8.050             2794.395
+
+=== Receptor fingerprints (head) ===
+
+[substantia_nigra_pars_compacta_proxy]
+<no receptor fingerprint>
+
+[locus_coeruleus_proxy]
+<no receptor fingerprint>
+
+[hippocampus]
+ mean  std
+  498  120
+ 1366  273
+  366  127
+  789  362
+ 1961  397
+
+[frontal_association_cortex_proxy]
+ mean  std
+  472  379
+  434  264
+ 1078   40
+ 1515  283
+ 1428 1197
+
+[temporal_association_cortex_proxy]
+<no receptor fingerprint>
+
+[parietal_association_cortex_proxy]
+  mean    std
+ 428.0  242.0
+ 518.0  360.0
+1081.0  313.0
+3416.0 1572.0
+1847.0  767.0
+
+[basal_ganglia_proxy]
+<no receptor fingerprint>
+
+=== Gene summaries (head) ===
+
+[substantia_nigra_pars_compacta_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    8.574200   0.670553            4     1.110775    0.705544
+  CHAT    3.376310   2.572560           20     0.331220    0.774309
+   DBH    2.352808   0.992835           12    -0.169983    0.797095
+ LRRK2    6.587750   1.537612           12     0.589592    1.040175
+SLC6A2    1.362450   0.385239            8    -0.088612    0.216657
+
+[locus_coeruleus_proxy]
+<no gene summary>
+
+[hippocampus]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.612700   0.767578            8    -0.513100    0.824840
+  CHAT    2.870032   2.066771           40    -0.164502    0.645836
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+ LRRK2    6.313350   1.326013           24     0.008875    0.854397
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+
+[frontal_association_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.576567   0.249862            9    -0.591544    0.151209
+  CHAT    2.625129   1.740904           45    -0.336880    0.545161
+   DBH    3.141063   1.074061           27     0.339344    0.780856
+ LRRK2    6.416530   1.140518           27     0.203078    0.512120
+SLC6A2    1.519750   0.423379           18    -0.238478    0.486089
+
+[temporal_association_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.542969   0.266224           16    -0.605419    0.330714
+  CHAT    2.577385   1.789598           80    -0.251974    0.646072
+   DBH    3.198037   1.116758           48     0.367498    0.690213
+ LRRK2    6.522742   1.178765           48     0.358350    0.551552
+SLC6A2    1.366147   0.380508           32    -0.273369    0.452559
+
+[parietal_association_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    6.370036   0.334733           11    -0.888800    0.261419
+  CHAT    2.483945   1.698640           55    -0.463636    0.533528
+   DBH    3.089794   1.129181           33     0.109076    0.763684
+ LRRK2    6.458130   1.266081           33     0.464006    0.442414
+SLC6A2    1.518705   0.268104           22    -0.250468    0.372732
+
+[basal_ganglia_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  ACHE    7.726983   0.659656            6     0.479300    0.663697
+  CHAT    4.209460   1.516398           30     1.021533    1.018103
+   DBH    2.154417   0.747833           18    -0.469878    0.733881
+ LRRK2    6.216400   1.270977           18     0.146339    0.768381
+SLC6A2    1.461367   0.486896           12    -0.060608    0.507452
+
+=== Connectivity profiles (head) ===
+
+[substantia_nigra_pars_compacta_proxy]
+<no connectivity profile>
+
+[locus_coeruleus_proxy]
+<no connectivity profile>
+
+[hippocampus]
+<no connectivity profile>
+
+[frontal_association_cortex_proxy]
+<no connectivity profile>
+
+[temporal_association_cortex_proxy]
+<no connectivity profile>
+
+[parietal_association_cortex_proxy]
+<no connectivity profile>
+
+[basal_ganglia_proxy]
+<no connectivity profile>
+
+=== Simulation: inputs ===
+alpha_synuclein_lewy_pathology    0.75
+genetic_vulnerability             0.45
+dopaminergic_neuron_loss          0.70
+brainstem_to_cortex_spread        0.65
+
+=== Simulation: latents ===
+widespread_neurodegenerative_spread              0.6725
+noradrenergic_depletion                          0.6451
+cholinergic_dysfunction                          0.6551
+serotonergic_dysfunction                         0.6540
+cortical_atrophy_burden                          0.6833
+basal_ganglia_thalamocortical_dysconnectivity    0.6949
+default_mode_network_dysconnectivity             0.6682
+frontoparietal_attention_dysconnectivity         0.6660
+frontolimbic_dysconnectivity                     0.6613
+
+=== Simulation: regional state ===
+substantia_nigra_pars_compacta_proxy    0.7125
+locus_coeruleus_proxy                   0.6533
+hippocampus                             0.6768
+frontal_association_cortex_proxy        0.6726
+temporal_association_cortex_proxy       0.6733
+parietal_association_cortex_proxy       0.6742
+basal_ganglia_proxy                     0.7047
+
+=== Simulation: symptoms ===
+executive_dysfunction                  0.6719
+attention_arousal_instability          0.6605
+memory_impairment                      0.6752
+neuropsychiatric_burden                0.6592
+postural_instability_related_burden    0.6879
+global_cognitive_decline               0.6722
+
+=== Simulation: phenotypes ===
+mild_pd_neurocognitive_profile           0.6692
+major_pd_neurocognitive_profile          0.6758
+frontolimbic_neuropsychiatric_profile    0.6579
+brainstem_cortical_spread_profile        0.6760

@@ -1,0 +1,178 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                key      node_type  is_proxy           atlas_region                           feature_summary
+            traumatic_exposure_load          input     False                   None                                      None
+             early_life_trauma_load          input     False                   None                                      None
+   genetic_epigenetic_vulnerability          input     False                   None                                      None
+                ongoing_stress_load          input     False                   None                                      None
+                   recovery_support          input     False                   None                                      None
+                           amygdala         region     False     LB (Amygdala) left receptors=yes; genes=yes; connectivity=no
+                        hippocampus         region     False CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                  pfc_control_proxy         region      True   Area p32 (pACC) left  receptors=no; genes=yes; connectivity=no
+             ventral_striatum_proxy         region      True       ventral striatum  receptors=no; genes=yes; connectivity=no
+glucocorticoid_epigenetic_embedding latent_biology     False                   None                                      None
+     catecholaminergic_hyperarousal latent_biology     False                   None                                      None
+             neuroimmune_activation latent_biology     False                   None                                      None
+synaptic_plasticity_apoptosis_shift latent_biology     False                   None                                      None
+      fear_memory_overconsolidation latent_biology     False                   None                                      None
+  dopaminergic_reward_dysregulation latent_biology     False                   None                                      None
+         frontolimbic_disconnection latent_biology     False                   None                                      None
+   autobiographical_context_failure latent_biology     False                   None                                      None
+       physiological_alarm_symptoms        symptom     False                   None                                      None
+              danger_misattribution        symptom     False                   None                                      None
+         fear_extinction_resistance        symptom     False                   None                                      None
+             intrusive_hot_memories        symptom     False                   None                                      None
+        present_time_reexperiencing        symptom     False                   None                                      None
+                          anhedonia        symptom     False                   None                                      None
+        substance_use_vulnerability        symptom     False                   None                                      None
+
+=== EDGES ===
+                             source                              target                                                                  relation ptsd_change
+            traumatic_exposure_load      catecholaminergic_hyperarousal                            drives persistent physiological alarm activity   increased
+                ongoing_stress_load      catecholaminergic_hyperarousal                            sustains chronic arousal and stress reactivity   increased
+             early_life_trauma_load glucocorticoid_epigenetic_embedding    promotes durable trauma-linked methylation and stress-system embedding   increased
+   genetic_epigenetic_vulnerability glucocorticoid_epigenetic_embedding             raises susceptibility to persistent stress-regulation changes   increased
+             early_life_trauma_load              neuroimmune_activation                      amplifies trauma-related immune and molecular burden   increased
+            traumatic_exposure_load synaptic_plasticity_apoptosis_shift         induces molecular shifts in plasticity and cell-survival pathways   increased
+glucocorticoid_epigenetic_embedding synaptic_plasticity_apoptosis_shift  translates embedded stress vulnerability into lasting circuit remodeling   increased
+             neuroimmune_activation synaptic_plasticity_apoptosis_shift            adds molecular pressure on plasticity and structural integrity   increased
+     catecholaminergic_hyperarousal       fear_memory_overconsolidation                  strengthens traumatic fear traces and weakens extinction   increased
+     catecholaminergic_hyperarousal   dopaminergic_reward_dysregulation                   perturbs stress-sensitive dopaminergic reward circuitry   increased
+      fear_memory_overconsolidation          frontolimbic_disconnection               biases the circuit toward threat-dominant memory processing   increased
+synaptic_plasticity_apoptosis_shift          frontolimbic_disconnection                 contributes to altered connectivity and structural burden   increased
+         frontolimbic_disconnection    autobiographical_context_failure              weakens contextual integration of emotional memory fragments   increased
+      fear_memory_overconsolidation    autobiographical_context_failure            allows hot memories to dominate over coherent narrative memory   increased
+         frontolimbic_disconnection                            amygdala                                   permits greater limbic alarm reactivity   increased
+   autobiographical_context_failure                         hippocampus                reflects contextual-memory burden and impaired integration   increased
+         frontolimbic_disconnection                   pfc_control_proxy             reduces effective prefrontal contextualization and inhibition   increased
+  dopaminergic_reward_dysregulation              ventral_striatum_proxy                                  loads mesocorticolimbic reward circuitry   increased
+     catecholaminergic_hyperarousal        physiological_alarm_symptoms                                  produces sustained somatic alarm signals   increased
+       physiological_alarm_symptoms               danger_misattribution                  encourages interpreting bodily alarm as immediate threat   increased
+      fear_memory_overconsolidation          fear_extinction_resistance                                  makes fear memories harder to extinguish   increased
+      fear_memory_overconsolidation              intrusive_hot_memories                 generates intrusive context-free emotional/sensory traces   increased
+   autobiographical_context_failure         present_time_reexperiencing prevents the traumatic event from being experienced as safely in the past   increased
+  dopaminergic_reward_dysregulation                           anhedonia                       reduces reward responsiveness and pleasure capacity   increased
+                          anhedonia         substance_use_vulnerability     can increase maladaptive reward seeking and coping through substances   increased
+                   recovery_support          frontolimbic_disconnection                                       buffers circuit-level dysregulation   decreased
+                   recovery_support    autobiographical_context_failure                       supports safer contextualization of trauma memories   decreased
+                   recovery_support        physiological_alarm_symptoms                                      reduces destabilizing arousal burden   decreased
+
+=== CIRCUIT CONNECTIVITY (resolved region pairs) ===
+No circuit connectivity matrix could be resolved in this environment.
+
+=== AMYGDALA GENE SUMMARY ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BCL2    5.286168   1.732909           28     0.284118    0.882218
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+ CASP3    6.409681   1.881025           21    -0.255057    0.909704
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+   IL6    2.392836   1.012524           14     0.173964    1.127447
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A2    9.187107   4.754858           28     1.474525    0.830116
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+
+=== AMYGDALA CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== HIPPOCAMPUS GENE SUMMARY ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BCL2    4.883597   1.576680           32    -0.229147    1.072214
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+ CASP3    6.271642   1.994975           24    -0.215617    0.827696
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+   IL6    2.201325   0.696271           16    -0.270200    0.945900
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+SLC1A2    8.569819   4.579632           32     0.220003    0.802300
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+
+=== HIPPOCAMPUS CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== PFC_CONTROL_PROXY GENE SUMMARY ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BCL2    5.294033   1.525600           64     0.387733    0.488811
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+ CASP3    6.173865   1.948678           48    -0.460523    0.589042
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+  DRD2    3.052440   1.858398           80    -0.471081    0.500034
+GRIN2B    6.431923   1.455238           48     0.697717    0.230982
+   IL6    2.468644   0.836864           32     0.209894    0.906095
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+SLC1A2    8.384612   4.374398           64     0.642056    0.582219
+SLC6A2    1.402600   0.407879           32    -0.090356    0.481323
+
+=== PFC_CONTROL_PROXY CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== VENTRAL_STRIATUM_PROXY GENE SUMMARY ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BCL2    5.336595   1.633048           80     0.403071    0.804644
+  BDNF    3.009257   2.293641           40    -1.185732    1.237663
+ CASP3    6.331332   1.948879           60    -0.138102    0.933673
+  COMT    6.402036   3.593712          120    -0.059620    1.034789
+  DRD2    5.426011   2.496559          100     1.577181    1.050432
+GRIN2B    5.862947   2.148731           60     0.315608    0.719515
+   IL6    2.128415   0.749332           40    -0.192690    0.841840
+ NR3C1    8.979819   1.178522          100    -0.595447    0.953983
+SLC1A2    8.858217   4.364429           80     0.931356    0.863236
+SLC6A2    1.471218   0.478246           40    -0.110840    0.531207
+
+=== VENTRAL_STRIATUM_PROXY CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== SIMULATION OUTPUT ===
+
+[inputs]
+traumatic_exposure_load             0.80
+ongoing_stress_load                 0.65
+early_life_trauma_load              0.60
+genetic_epigenetic_vulnerability    0.55
+recovery_support                    0.20
+
+[latents]
+catecholaminergic_hyperarousal         0.5566
+fear_memory_overconsolidation          0.5272
+glucocorticoid_epigenetic_embedding    0.5180
+neuroimmune_activation                 0.5166
+synaptic_plasticity_apoptosis_shift    0.5095
+dopaminergic_reward_dysregulation      0.4755
+frontolimbic_disconnection             0.4064
+autobiographical_context_failure       0.3895
+
+[regional_state]
+amygdala                  0.4411
+hippocampus               0.3960
+ventral_striatum_proxy    0.3797
+pfc_control_proxy         0.3544
+
+[symptoms]
+physiological_alarm_symptoms    0.4374
+fear_extinction_resistance      0.4095
+intrusive_hot_memories          0.3805
+substance_use_vulnerability     0.3525
+danger_misattribution           0.3479
+anhedonia                       0.3372
+present_time_reexperiencing     0.3062
+
+[phenotypes]
+developmental_embedding_profile       0.5147
+frontolimbic_disconnection_profile    0.3995
+hyperarousal_profile                  0.3983
+reward_numbing_profile                0.3884
+overall_ptsd_burden                   0.3742
+reexperiencing_profile                0.3587
+
+=== OPTIONAL USAGE ===
+# model.assign_mni_point((-24, -6, -18)).head()  # amygdala-like point
+# mask = model.region_mask('hippocampus')

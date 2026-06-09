@@ -1,0 +1,143 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES (head) ===
+                             key                            label node_type                                                                                             description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                            feature_summary
+           genetic_vulnerability            Genetic Vulnerability     input    Heritable vulnerability contributing to persistent mood dysregulation and chronic depressive burden.                   None              None                                                           None         NaN                                       None
+     chronic_psychosocial_stress      Chronic Psychosocial Stress     input                     Sustained psychosocial stress load that can maintain chronic depressive physiology.                   None              None                                                           None         NaN                                       None
+       adverse_life_event_burden        Adverse Life Event Burden     input              Accumulated adverse experiences that amplify mood-disorder risk in vulnerable individuals.                   None              None                                                           None         NaN                                       None
+          early_onset_trait_load           Early Onset Trait Load     input Trait-like early-onset dysthymic vulnerability linked to neuroticism and enduring negative affectivity.                   None              None                                                           None         NaN                                       None
+       late_onset_somatic_burden        Late Onset Somatic Burden     input              Later-life somatic or cerebrovascular burden that can worsen chronic depressive circuitry.                   None              None                                                           None         NaN                                       None
+                recovery_support                 Recovery Support     input        Protective treatment, structure, and psychosocial support that can reduce chronic dysregulation.                   None              None                                                           None         NaN                                       None
+       dopamine_targeted_support        Dopamine Targeted Support     input          Reward- and motivation-oriented support consistent with dopamine-modulating treatment effects.                   None              None                                                           None         NaN                                       None
+glutamatergic_plasticity_support Glutamatergic Plasticity Support     input                              Plasticity-oriented support consistent with NMDA/glutamatergic modulation.                   None              None                                                           None         NaN                                       None
+                     pfc_control            Area Fp1 (FPole) left    region                                               Atlas-backed or proxy prefrontal regulatory control node.  Area Fp1 (FPole) left              None   (-19.087224753227034, 64.3421602126044, -0.8102695520121443)     10536.0  receptors=no; genes=yes; connectivity=yes
+                             acc             Area p32 (pACC) left    region                                                  Anterior cingulate affective/conflict regulation node.   Area p32 (pACC) left              None    (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0  receptors=no; genes=yes; connectivity=yes
+                     hippocampus           CA1 (Hippocampus) left    region                                                Atlas-backed hippocampal stress-memory and context node. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=yes
+                        amygdala               LB (Amygdala) left    region                                                  Atlas-backed limbic salience and negative-affect node.     LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=yes
+
+=== EDGES (head) ===
+                          source                      target                                                      relation pdd_change  weight
+           genetic_vulnerability dopaminergic_reward_deficit                 raises persistent reward-system vulnerability  increased    0.26
+           genetic_vulnerability    glutamate_gaba_imbalance      increases baseline neurotransmitter-system vulnerability  increased    0.18
+           genetic_vulnerability    hpa_stress_sensitization amplifies biological susceptibility to chronic stress effects  increased    0.16
+     chronic_psychosocial_stress    hpa_stress_sensitization                        sensitizes sustained stress physiology  increased    0.42
+       adverse_life_event_burden    hpa_stress_sensitization    adds cumulative adversity burden to chronic stress systems  increased    0.30
+          early_onset_trait_load  trait_negative_affect_bias                     reinforces enduring negative-affect style  increased    0.45
+       late_onset_somatic_burden  frontolimbic_dysregulation     adds somatic and cerebrovascular burden to mood circuitry  increased    0.22
+                recovery_support    hpa_stress_sensitization       reduces physiological perpetuation of depressive burden  decreased   -0.20
+       dopamine_targeted_support dopaminergic_reward_deficit         partly compensates for reward and motivation deficits  decreased   -0.30
+glutamatergic_plasticity_support    glutamate_gaba_imbalance            partly offsets excitation-inhibition dysregulation  decreased   -0.30
+        hpa_stress_sensitization      neuroplasticity_burden               erodes adaptive plasticity under chronic stress  increased    0.28
+        hpa_stress_sensitization    glutamate_gaba_imbalance     biases excitation-inhibition balance toward dysregulation  increased    0.24
+
+=== RESOLVED REGIONS ===
+- pfc_control: Area Fp1 (FPole) left
+- acc: Area p32 (pACC) left
+- hippocampus: CA1 (Hippocampus) left
+- amygdala: LB (Amygdala) left
+
+=== FEATURE SNAPSHOT: pfc_control ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.234189   2.205737           18     0.236700    0.502516
+ COMT    6.499183   3.591187           54     0.053743    0.773505
+ DRD2    3.071669   1.778701           45    -0.620004    0.494432
+ DRD3    1.951621   1.069458           63    -0.383517    0.551884
+FKBP5    4.062900   2.010703           36    -0.269953    0.658346
+Connectivity:
+                              connected_region    value
+                     Frontal-I.1 (GapMap) left 5796.395
+                        Area Fp1 (FPole) right 3365.310
+                          Area SFG3 (SFG) left 3198.165
+                          Area SFG2 (SFG) left 2825.445
+FuP (Ventral Striatum, Fundus of Putamen) left 2821.120
+
+=== FEATURE SNAPSHOT: acc ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.584522   1.763174           32     0.378994    0.292470
+ COMT    6.469328   3.460309           96    -0.076757    0.783002
+ DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ DRD3    1.869045   1.062574          112    -0.228134    0.617752
+FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+Connectivity:
+                  connected_region    value
+Frontal-to-Occipital (GapMap) left 8621.615
+             Area Fp2 (FPole) left 6077.900
+         Frontal-I.2 (GapMap) left 4613.875
+             Area p24c (pACC) left 4145.075
+              Area s32 (sACC) left 2821.785
+
+=== FEATURE SNAPSHOT: hippocampus ===
+Receptors:
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.638438   2.851173           16     0.533731    1.414835
+ COMT    6.197856   3.449950           48    -0.510062    0.804045
+ DRD2    3.819515   2.124018           40     0.115163    1.234718
+ DRD3    2.324175   1.146700           56     0.009480    1.151966
+FKBP5    5.287750   2.991862           32     0.558866    1.301838
+Connectivity:
+                          connected_region    value
+Subc (Hippocampus, Subicular complex) left 5205.660
+        Temporal-to-Parietal (GapMap) left 2875.975
+      Frontal-to-Temporal-II (GapMap) left 2118.815
+                       Area Ph2 (PhG) left 1448.100
+                      Area FG4 (FusG) left  781.135
+
+=== FEATURE SNAPSHOT: amygdala ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+ DRD3    2.195912   0.927252           49     0.395627    0.817122
+FKBP5    5.135946   2.684673           28     0.556286    1.064947
+Connectivity:
+                          connected_region    value
+        Temporal-to-Parietal (GapMap) left 6605.220
+Subc (Hippocampus, Subicular complex) left  525.285
+      Frontal-to-Temporal-II (GapMap) left  125.815
+                        IF (Amygdala) left   66.800
+                    CA1 (Hippocampus) left   64.260
+
+=== SIMULATION: LATENTS ===
+hpa_stress_sensitization       0.4740
+trait_negative_affect_bias     0.4063
+dopaminergic_reward_deficit    0.3723
+glutamate_gaba_imbalance       0.3532
+frontolimbic_dysregulation     0.3051
+neuroplasticity_burden         0.2909
+
+=== SIMULATION: SYMPTOMS ===
+stress_sensitive_persistence              0.3555
+chronic_depressed_mood                    0.3055
+functional_impairment                     0.2632
+affective_cognitive_control_difficulty    0.2549
+apathy_low_motivation                     0.2102
+anhedonia                                 0.2048
+
+=== SIMULATION: PHENOTYPES ===
+early_onset_trait_profile        0.4078
+stress_sensitized_pdd_profile    0.3913
+frontolimbic_pdd_profile         0.2862
+anhedonic_pdd_profile            0.2533
+late_onset_somatic_profile       0.2437

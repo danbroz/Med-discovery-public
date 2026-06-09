@@ -1,0 +1,133 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                               key      node_type                              label              atlas_region                           feature_summary
+           polygenic_vulnerability          input            Polygenic Vulnerability                      None                                      None
+               stress_anxiety_load          input                Stress Anxiety Load                      None                                      None
+            glans_hypersensitivity          input             Glans Hypersensitivity                      None                                      None
+          pelvic_floor_dysfunction          input           Pelvic Floor Dysfunction                      None                                      None
+     accelerated_neural_conduction          input      Accelerated Neural Conduction                      None                                      None
+   cortical_stimulus_amplification          input    Cortical Stimulus Amplification                      None                                      None
+            ssri_treatment_support          input             Ssri Treatment Support                      None                                      None
+         stress_regulation_support          input          Stress Regulation Support                      None                                      None
+        behavioral_control_support          input         Behavioral Control Support                      None                                      None
+                          amygdala         region                 LB (Amygdala) left        LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                       hippocampus         region             CA1 (Hippocampus) left    CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                   cingulate_gyrus         region             Area p24ab (pACC) left    Area p24ab (pACC) left  receptors=no; genes=yes; connectivity=no
+      temporal_limbic_cortex_proxy   region_proxy          Area Te 1.0 (HESCHL) left Area Te 1.0 (HESCHL) left receptors=yes; genes=yes; connectivity=no
+             frontal_control_proxy   region_proxy               middle frontal gyrus      middle frontal gyrus  receptors=no; genes=yes; connectivity=no
+   reduced_serotonergic_inhibition latent_biology    Reduced Serotonergic Inhibition                      None                                      None
+        somatosensory_trigger_gain latent_biology         Somatosensory Trigger Gain                      None                                      None
+      stress_arousal_amplification latent_biology       Stress Arousal Amplification                      None                                      None
+     limbic_temporal_dysregulation latent_biology      Limbic Temporal Dysregulation                      None                                      None
+frontal_inhibitory_control_failure latent_biology Frontal Inhibitory Control Failure                      None                                      None
+          rapid_reflex_propagation latent_biology           Rapid Reflex Propagation                      None                                      None
+         low_ejaculatory_threshold latent_biology          Low Ejaculatory Threshold                      None                                      None
+                 rapid_ejaculation        symptom                  Rapid Ejaculation                      None                                      None
+                   loss_of_control        symptom                    Loss Of Control                      None                                      None
+              anticipatory_anxiety        symptom               Anticipatory Anxiety                      None                                      None
+                emotional_distress        symptom                 Emotional Distress                      None                                      None
+               relationship_burden        symptom                Relationship Burden                      None                                      None
+
+=== Edges ===
+                            source                             target                                                                 relation premature_ejaculation_change
+           polygenic_vulnerability    reduced_serotonergic_inhibition               can bias baseline inhibitory serotonergic control downward                    increased
+           polygenic_vulnerability          low_ejaculatory_threshold              can establish a lifelong low threshold for rapid completion                    increased
+            glans_hypersensitivity         somatosensory_trigger_gain                                      raises salience of genital triggers                    increased
+   cortical_stimulus_amplification         somatosensory_trigger_gain                             amplifies cortical impact of genital stimuli                    increased
+     accelerated_neural_conduction           rapid_reflex_propagation                                       speeds sensory-reflex transmission                    increased
+          pelvic_floor_dysfunction           rapid_reflex_propagation                         destabilizes ejaculatory timing and coordination                    increased
+               stress_anxiety_load       stress_arousal_amplification         raises autonomic and emotional arousal around sexual performance                    increased
+      stress_arousal_amplification                           amygdala                              heightens limbic threat/salience reactivity                    increased
+      stress_arousal_amplification      limbic_temporal_dysregulation destabilizes emotional-autonomic coordination in temporal-limbic systems                    increased
+     limbic_temporal_dysregulation       temporal_limbic_cortex_proxy                               loads the temporal-limbic response network                    increased
+     limbic_temporal_dysregulation                        hippocampus          alters contextual-emotional regulation within the limbic system                    increased
+     limbic_temporal_dysregulation frontal_inhibitory_control_failure                reduces effective top-down restraint from frontal systems                    increased
+frontal_inhibitory_control_failure              frontal_control_proxy                           expresses as weakened frontal inhibitory state                    increased
+frontal_inhibitory_control_failure                    cingulate_gyrus                  loads cingulate control and conflict-monitoring systems                    increased
+        somatosensory_trigger_gain           rapid_reflex_propagation          converts amplified sensory input into faster reflex progression                    increased
+   reduced_serotonergic_inhibition          low_ejaculatory_threshold                    removes inhibitory delay from the ejaculatory process                    increased
+          rapid_reflex_propagation          low_ejaculatory_threshold                                  further shortens the path to completion                    increased
+         low_ejaculatory_threshold                  rapid_ejaculation                                                directly shortens latency                    increased
+          rapid_reflex_propagation                  rapid_ejaculation                   speeds the sensory-autonomic transition to ejaculation                    increased
+frontal_inhibitory_control_failure                    loss_of_control                        weakens voluntary delay and inhibitory regulation                    increased
+      stress_arousal_amplification               anticipatory_anxiety                          promotes performance-linked anxious expectation                    increased
+                 rapid_ejaculation                 emotional_distress                       persistent rapid latency increases distress burden                    increased
+                   loss_of_control                 emotional_distress                              subjective lack of control increases burden                    increased
+                 rapid_ejaculation                relationship_burden           rapid ejaculation can impair sexual and relational functioning                    increased
+                emotional_distress                relationship_burden                                  distress amplifies interpersonal strain                    increased
+            ssri_treatment_support    reduced_serotonergic_inhibition                               restores inhibitory serotonergic restraint                    decreased
+         stress_regulation_support       stress_arousal_amplification                               reduces stress-driven autonomic escalation                    decreased
+        behavioral_control_support frontal_inhibitory_control_failure                       supports top-down control and emotional regulation                    decreased
+
+=== Example receptor profile: amygdala ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Example gene profile: frontal_control_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.543831   1.790812           26     0.359869    0.356919
+  COMT    6.389353   3.412489           78    -0.126738    0.817040
+ HTR1A    4.744900   1.375999           39     0.545600    0.363951
+ HTR1B    2.428554   0.965706           39    -0.160779    0.777084
+ HTR2C    3.323567   1.497745          559    -0.480868    0.365271
+  MAOA    5.355275   1.893046          403    -0.120967    0.499040
+SLC6A4    1.611074   0.648223          143    -0.283518    0.327580
+  TPH2    2.543431   0.922288           26    -0.155365    0.379073
+
+=== Example connectivity profile: cingulate_gyrus ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity summary ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Simulation: inputs ===
+polygenic_vulnerability            0.65
+stress_anxiety_load                0.75
+glans_hypersensitivity             0.80
+pelvic_floor_dysfunction           0.55
+accelerated_neural_conduction      0.75
+cortical_stimulus_amplification    0.70
+ssri_treatment_support             0.35
+stress_regulation_support          0.20
+behavioral_control_support         0.20
+
+=== Simulation: latents ===
+reduced_serotonergic_inhibition       0.5500
+somatosensory_trigger_gain            0.7475
+stress_arousal_amplification          0.5925
+limbic_temporal_dysregulation         0.6244
+frontal_inhibitory_control_failure    0.5530
+rapid_reflex_propagation              0.6736
+low_ejaculatory_threshold             0.6210
+
+=== Simulation: regional_state ===
+amygdala                        0.6311
+hippocampus                     0.6462
+cingulate_gyrus                 0.5858
+temporal_limbic_cortex_proxy    0.6562
+frontal_control_proxy           0.5852
+
+=== Simulation: symptoms ===
+rapid_ejaculation       0.6566
+loss_of_control         0.5871
+anticipatory_anxiety    0.6102
+emotional_distress      0.6151
+relationship_burden     0.6265
+
+=== Simulation: phenotypes ===
+constitutional_rapid_reflex_profile    0.6149
+stress_reactive_pe_profile             0.6226
+sensory_hyperreactive_profile          0.6835
+control_breakdown_profile              0.5851

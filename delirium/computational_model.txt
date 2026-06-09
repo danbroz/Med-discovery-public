@@ -1,0 +1,146 @@
+
+=== Building atlas-backed scaffold ===
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+Nodes:
+                          key      node_type                                            atlas_region                           feature_summary
+         acute_medical_stress          input                                                    None                                      None
+       infection_inflammation          input                                                    None                                      None
+         metabolic_disruption          input                                                    None                                      None
+       substance_intoxication          input                                                    None                                      None
+         substance_withdrawal          input                                                    None                                      None
+        sleep_wake_disruption          input                                                    None                                      None
+         psychological_stress          input                                                    None                                      None
+                 advanced_age          input                                                    None                                      None
+baseline_cognitive_impairment          input                                                    None                                      None
+        genetic_vulnerability          input                                                    None                                      None
+      physiologic_restoration          input                                                    None                                      None
+            sleep_restoration          input                                                    None                                      None
+                  pfc_control         region                                      Area 45 (IFG) left receptors=yes; genes=yes; connectivity=no
+           parietal_attention         region                                      Area 7A (SPL) left receptors=yes; genes=yes; connectivity=no
+               thalamus_proxy         region                        ZI (Thalamus, zona incerta) left  receptors=no; genes=yes; connectivity=no
+          basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no
+                  hippocampus         region                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+        locus_coeruleus_proxy         region                                                    None                                unresolved
+         low_brain_resilience latent_biology                                                    None                                      None
+   cerebral_metabolic_failure latent_biology                                                    None                                      None
+ neuroinflammatory_activation latent_biology                                                    None                                      None
+       hpa_axis_dysregulation latent_biology                                                    None                                      None
+       cholinergic_deficiency latent_biology                                                    None                                      None
+   dopaminergic_dysregulation latent_biology                                                    None                                      None
+   noradrenergic_hyperarousal latent_biology                                                    None                                      None
+   gaba_glutamate_instability latent_biology                                                    None                                      None
+       network_disintegration latent_biology                                                    None                                      None
+       attentional_impairment        symptom                                                    None                                      None
+          arousal_fluctuation        symptom                                                    None                                      None
+               disorientation        symptom                                                    None                                      None
+            memory_impairment        symptom                                                    None                                      None
+       perceptual_disturbance        symptom                                                    None                                      None
+                    agitation        symptom                                                    None                                      None
+          psychomotor_slowing        symptom                                                    None                                      None
+  sleep_wake_cycle_disruption        symptom                                                    None                                      None
+
+Edges (first 18):
+                       source                       target                                                                    relation delirium_change
+         acute_medical_stress   cerebral_metabolic_failure                    acute illness or surgery strains cerebral energy balance       increased
+       infection_inflammation neuroinflammatory_activation                       systemic inflammation amplifies neuroimmune signaling       increased
+         metabolic_disruption   cerebral_metabolic_failure                             metabolic disturbance impairs neuronal function       increased
+       substance_intoxication   dopaminergic_dysregulation                      intoxication perturbs salience and transmitter balance       increased
+         substance_withdrawal   gaba_glutamate_instability                               withdrawal produces central hyperexcitability       increased
+         substance_withdrawal   noradrenergic_hyperarousal                            withdrawal increases autonomic and arousal drive       increased
+        sleep_wake_disruption       hpa_axis_dysregulation                                  sleep loss magnifies stress-hormone burden       increased
+         psychological_stress       hpa_axis_dysregulation        anxiety and fear related to hospitalization activate stress pathways       increased
+                 advanced_age         low_brain_resilience                                           age lowers reserve and resilience       increased
+baseline_cognitive_impairment         low_brain_resilience                                      pre-existing impairment lowers reserve       increased
+        genetic_vulnerability         low_brain_resilience             host molecular liability shapes vulnerability to decompensation       increased
+         low_brain_resilience       cholinergic_deficiency lower reserve permits cholinergic attentional collapse with smaller insults       increased
+   cerebral_metabolic_failure       cholinergic_deficiency                      metabolic stress impairs integrative neurotransmission       increased
+       cholinergic_deficiency   dopaminergic_dysregulation               loss of cholinergic balance favors dopaminergic misregulation       increased
+         acute_medical_stress       hpa_axis_dysregulation            physiological stress activates the HPA axis and cortisol release       increased
+ neuroinflammatory_activation       network_disintegration                     inflammation destabilizes distributed brain integration       increased
+       cholinergic_deficiency       network_disintegration                               attention-supporting cholinergic systems fail       increased
+   gaba_glutamate_instability       network_disintegration               excitation-inhibition imbalance fragments coherent processing       increased
+
+Hippocampus receptor fingerprint:
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+
+PFC-control gene summary:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ APOE    9.246378   2.910791           27    -0.587774    0.738678
+ BDNF    5.458628   1.916819           18     0.350511    0.619580
+ CHAT    2.625129   1.740904           45    -0.336880    0.545161
+CHRM1    5.627478   2.344112           27     0.512256    0.557024
+CHRM2    3.526156   1.685864          198    -0.160748    0.549661
+
+No parietal attention connectivity profile available in this environment.
+
+Within-model circuit connectivity:
+                     pfc_control  parietal_attention  thalamus_proxy  basal_ganglia_proxy  hippocampus
+pfc_control             4180.905              61.405          13.225                6.910         1.41
+parietal_attention        61.405           20402.250          51.320                7.830        16.31
+thalamus_proxy            13.225              51.320        1372.320               16.035         0.16
+basal_ganglia_proxy        6.910               7.830          16.035             2794.395         1.61
+hippocampus                1.410              16.310           0.160                1.610      1685.40
+
+=== Simulation example: vulnerable older adult with medical stress ===
+
+inputs:
+advanced_age                     0.90
+acute_medical_stress             0.85
+sleep_wake_disruption            0.75
+baseline_cognitive_impairment    0.70
+infection_inflammation           0.65
+metabolic_disruption             0.55
+psychological_stress             0.45
+genetic_vulnerability            0.35
+physiologic_restoration          0.20
+sleep_restoration                0.10
+substance_intoxication           0.05
+substance_withdrawal             0.00
+
+latents:
+low_brain_resilience            0.7100
+hpa_axis_dysregulation          0.6410
+cerebral_metabolic_failure      0.6125
+neuroinflammatory_activation    0.6035
+cholinergic_deficiency          0.5012
+network_disintegration          0.4931
+noradrenergic_hyperarousal      0.4250
+dopaminergic_dysregulation      0.3202
+gaba_glutamate_instability      0.1400
+
+regional_state:
+hippocampus              0.5700
+parietal_attention       0.4301
+thalamus_proxy           0.4156
+pfc_control              0.3848
+locus_coeruleus_proxy    0.2947
+basal_ganglia_proxy      0.2753
+
+symptoms:
+memory_impairment              0.5206
+sleep_wake_cycle_disruption    0.5069
+attentional_impairment         0.4269
+disorientation                 0.4077
+psychomotor_slowing            0.3961
+arousal_fluctuation            0.3732
+perceptual_disturbance         0.3317
+agitation                      0.1945
+
+phenotypes:
+global_delirium_burden          0.4117
+hypoactive_delirium_profile     0.3881
+mixed_delirium_profile          0.3022
+hyperactive_delirium_profile    0.2868
+withdrawal_delirium_profile     0.1237

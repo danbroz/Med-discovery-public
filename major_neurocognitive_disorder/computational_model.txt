@@ -1,0 +1,169 @@
+Building Major Neurocognitive Disorder scaffold...
+
+Nodes:
+                                       key      node_type                                    atlas_region                          feature_summary
+       genetic_neurodegenerative_liability          input                                            None                                     None
+             alzheimer_like_pathology_load          input                                            None                                     None
+             frontotemporal_pathology_load          input                                            None                                     None
+           vascular_cerebrovascular_burden          input                                            None                                     None
+                    synucleinopathy_burden          input                                            None                                     None
+subcortical_genetic_neurodegeneration_load          input                                            None                                     None
+                       sleep_apnea_hypoxia          input                                            None                                     None
+        rem_sleep_behavior_disorder_burden          input                                            None                                     None
+                     sleep_hygiene_support          input                                            None                                     None
+                disease_management_support          input                                            None                                     None
+                               hippocampus         region                          CA1 (Hippocampus) left receptors=yes; genes=no; connectivity=no
+                         entorhinal_cortex         region Area EC (Hippocampal Region, Entorhinal Cortex)  receptors=no; genes=no; connectivity=no
+         temporoparietal_association_proxy         region                             Area PGp (IPL) left receptors=yes; genes=no; connectivity=no
+                         pfc_control_proxy         region                           Area Fp2 (FPole) left  receptors=no; genes=no; connectivity=no
+                   anterior_temporal_proxy         region                                   temporal lobe receptors=yes; genes=no; connectivity=no
+                        left_temporal_pole         region                                            None                               unresolved
+           left_perisylvian_language_proxy         region                              Area 44 (IFG) left receptors=yes; genes=no; connectivity=no
+                   pcc_precuneus_dmn_proxy         region                                            None                               unresolved
+                        acc_salience_proxy         region                            Area p32 (pACC) left  receptors=no; genes=no; connectivity=no
+                     insula_salience_proxy         region                          Area Id1 (Insula) left  receptors=no; genes=no; connectivity=no
+              medial_temporal_degeneration latent_biology                                            None                                     None
+       temporoparietal_association_failure latent_biology                                            None                                     None
+       frontotemporal_network_degeneration latent_biology                                            None                                     None
+        cortical_subcortical_disconnection latent_biology                                            None                                     None
+      default_mode_network_disconnectivity latent_biology                                            None                                     None
+        salience_executive_network_failure latent_biology                                            None                                     None
+            synucleinopathy_sleep_prodrome latent_biology                                            None                                     None
+            diffuse_neurocognitive_decline latent_biology                                            None                                     None
+                episodic_memory_impairment        symptom                                            None                                     None
+            executive_attention_impairment        symptom                                            None                                     None
+          behavioral_social_conduct_change        symptom                                            None                                     None
+                   semantic_knowledge_loss        symptom                                            None                                     None
+             nonfluent_language_impairment        symptom                                            None                                     None
+      diffuse_cognitive_functional_decline        symptom                                            None                                     None
+
+Edges:
+                                    source                               target                                                                           relation mnd_change
+       genetic_neurodegenerative_liability         medial_temporal_degeneration    genetic vulnerability can increase susceptibility to amnestic neurodegeneration  increased
+       genetic_neurodegenerative_liability  frontotemporal_network_degeneration        familial and heritable factors load frontal and anterior temporal syndromes  increased
+       genetic_neurodegenerative_liability       synucleinopathy_sleep_prodrome                        familial synucleinopathy-related genes raise prodromal risk  increased
+             alzheimer_like_pathology_load         medial_temporal_degeneration     Alzheimer-like disease burden first targets hippocampal and entorhinal systems  increased
+             alzheimer_like_pathology_load  temporoparietal_association_failure      Alzheimer-like progression spreads toward temporo-parietal association cortex  increased
+             frontotemporal_pathology_load  frontotemporal_network_degeneration    frontotemporal disease burden drives frontal and anterior temporal degeneration  increased
+           vascular_cerebrovascular_burden   cortical_subcortical_disconnection            infarcts and white-matter disease disrupt cortical-subcortical circuits  increased
+                    synucleinopathy_burden       synucleinopathy_sleep_prodrome synucleinopathy burden is linked to prodromal REM-sleep behavior disorder features  increased
+subcortical_genetic_neurodegeneration_load   cortical_subcortical_disconnection     subcortical and rarer genetic neurodegeneration add distributed circuit burden  increased
+subcortical_genetic_neurodegeneration_load       diffuse_neurocognitive_decline   rarer genetic and subcortical disorders can contribute directly to broad decline  increased
+                       sleep_apnea_hypoxia         medial_temporal_degeneration                             intermittent hypoxia contributes to hippocampal damage  increased
+                       sleep_apnea_hypoxia   salience_executive_network_failure                   sleep-apnea burden worsens attention and executive vulnerability  increased
+        rem_sleep_behavior_disorder_burden       synucleinopathy_sleep_prodrome                               RBD is modeled as a prodromal synucleinopathy signal  increased
+                     sleep_hygiene_support       synucleinopathy_sleep_prodrome                    sleep-focused support can reduce downstream sleep-linked burden  decreased
+                     sleep_hygiene_support   salience_executive_network_failure          better sleep management can reduce executive strain from sleep disruption  decreased
+                disease_management_support       diffuse_neurocognitive_decline                            supportive care can reduce downstream functional burden  decreased
+                disease_management_support   salience_executive_network_failure                           management support can partially reduce executive strain  decreased
+              medial_temporal_degeneration                          hippocampus                  medial temporal degeneration burdens hippocampal memory circuitry  increased
+              medial_temporal_degeneration                    entorhinal_cortex                     medial temporal degeneration burdens entorhinal gateway cortex  increased
+       temporoparietal_association_failure    temporoparietal_association_proxy                          association-network failure loads temporo-parietal cortex  increased
+       frontotemporal_network_degeneration                    pfc_control_proxy            frontotemporal disease burden impairs frontal executive control systems  increased
+       frontotemporal_network_degeneration              anterior_temporal_proxy                       frontotemporal disease burden loads anterior temporal cortex  increased
+       frontotemporal_network_degeneration                   left_temporal_pole                 semantic-dementia-like degeneration burdens the left temporal pole  increased
+       frontotemporal_network_degeneration      left_perisylvian_language_proxy                        nonfluent language variants burden left perisylvian systems  increased
+      default_mode_network_disconnectivity              pcc_precuneus_dmn_proxy                    DMN failure is centered on posterior cingulate / precuneus hubs  increased
+      default_mode_network_disconnectivity                          hippocampus                               DMN failure couples with medial temporal dysfunction  increased
+      default_mode_network_disconnectivity    temporoparietal_association_proxy                     DMN breakdown extends into temporo-parietal association cortex  increased
+        salience_executive_network_failure                   acc_salience_proxy                  salience-executive failure burdens ACC-centered control processes  increased
+        salience_executive_network_failure                insula_salience_proxy                     salience-executive failure burdens insular salience processing  increased
+        salience_executive_network_failure                    pfc_control_proxy                         executive-network failure compounds frontal control burden  increased
+        cortical_subcortical_disconnection                    pfc_control_proxy                      disconnection disrupts frontal-subcortical executive circuits  increased
+        cortical_subcortical_disconnection    temporoparietal_association_proxy                            disconnection degrades association-cortex communication  increased
+        cortical_subcortical_disconnection      left_perisylvian_language_proxy                  disconnection can impair distributed language-supporting circuits  increased
+            synucleinopathy_sleep_prodrome                insula_salience_proxy   sleep-linked synucleinopathy burden contributes to salience-system vulnerability  increased
+            synucleinopathy_sleep_prodrome                   acc_salience_proxy               prodromal synucleinopathy burden can tax attentional control systems  increased
+                               hippocampus           episodic_memory_impairment                                 hippocampal burden drives episodic-memory deficits  increased
+                         entorhinal_cortex           episodic_memory_impairment               entorhinal dysfunction compounds memory encoding / retrieval failure  increased
+                   pcc_precuneus_dmn_proxy           episodic_memory_impairment                 DMN hub disruption contributes to autobiographical-memory problems  increased
+                         pfc_control_proxy       executive_attention_impairment                 frontal control failure impairs executive and attentional function  increased
+                        acc_salience_proxy       executive_attention_impairment                      ACC burden impairs control allocation and conflict monitoring  increased
+                     insula_salience_proxy       executive_attention_impairment                    insular salience dysfunction destabilizes attentional switching  increased
+                         pfc_control_proxy     behavioral_social_conduct_change               frontal degeneration alters inhibition, judgment, and social conduct  increased
+                   anterior_temporal_proxy     behavioral_social_conduct_change          anterior temporal degeneration contributes to social / personality change  increased
+                        left_temporal_pole              semantic_knowledge_loss                              left temporal-pole atrophy is linked to semantic loss  increased
+                   anterior_temporal_proxy              semantic_knowledge_loss                 anterior temporal degeneration degrades semantic knowledge systems  increased
+           left_perisylvian_language_proxy        nonfluent_language_impairment               left perisylvian burden drives effortful nonfluent language deficits  increased
+                episodic_memory_impairment diffuse_cognitive_functional_decline                             prominent memory failure contributes to global decline  increased
+            executive_attention_impairment diffuse_cognitive_functional_decline                   executive dysfunction contributes to broad functional impairment  increased
+          behavioral_social_conduct_change diffuse_cognitive_functional_decline                            behavioral dyscontrol adds to syndrome-level disability  increased
+                   semantic_knowledge_loss diffuse_cognitive_functional_decline               semantic degradation contributes to generalized cognitive disability  increased
+             nonfluent_language_impairment diffuse_cognitive_functional_decline                 language impairment contributes to broad neurocognitive disability  increased
+
+Circuit connectivity among resolved region nodes:
+                                   hippocampus  entorhinal_cortex  temporoparietal_association_proxy  pfc_control_proxy  anterior_temporal_proxy  left_perisylvian_language_proxy  acc_salience_proxy  insula_salience_proxy
+hippocampus                                NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+entorhinal_cortex                          NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+temporoparietal_association_proxy          NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+pfc_control_proxy                          NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+anterior_temporal_proxy                    NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+left_perisylvian_language_proxy            NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+acc_salience_proxy                         NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+insula_salience_proxy                      NaN                NaN                                NaN                NaN                      NaN                              NaN                 NaN                    NaN
+
+Example receptor fingerprint for hippocampus:
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+Example simulation (mixed Alzheimer-like + sleep-apnea + mild vascular burden):
+
+Inputs:
+genetic_neurodegenerative_liability           0.55
+alzheimer_like_pathology_load                 0.75
+frontotemporal_pathology_load                 0.20
+vascular_cerebrovascular_burden               0.35
+synucleinopathy_burden                        0.15
+subcortical_genetic_neurodegeneration_load    0.10
+sleep_apnea_hypoxia                           0.45
+rem_sleep_behavior_disorder_burden            0.10
+sleep_hygiene_support                         0.40
+disease_management_support                    0.35
+
+Latent biology:
+medial_temporal_degeneration            0.4650
+temporoparietal_association_failure     0.4408
+default_mode_network_disconnectivity    0.3695
+diffuse_neurocognitive_decline          0.2732
+cortical_subcortical_disconnection      0.2300
+frontotemporal_network_degeneration     0.2175
+salience_executive_network_failure      0.1674
+synucleinopathy_sleep_prodrome          0.0975
+
+Regional burden:
+entorhinal_cortex                    0.5071
+hippocampus                          0.4514
+temporoparietal_association_proxy    0.3782
+pcc_precuneus_dmn_proxy              0.3532
+left_temporal_pole                   0.3029
+anterior_temporal_proxy              0.2559
+left_perisylvian_language_proxy      0.2519
+pfc_control_proxy                    0.2335
+insula_salience_proxy                0.2017
+acc_salience_proxy                   0.1851
+
+Symptoms:
+episodic_memory_impairment              0.4473
+diffuse_cognitive_functional_decline    0.2999
+semantic_knowledge_loss                 0.2896
+nonfluent_language_impairment           0.2404
+executive_attention_impairment          0.2362
+behavioral_social_conduct_change        0.2345
+
+Phenotypes:
+alzheimer_like_amnestic_profile           0.4426
+global_major_neurocognitive_profile       0.3031
+semantic_dementia_profile                 0.2813
+vascular_disconnection_profile            0.2778
+progressive_nonfluent_aphasia_profile     0.2388
+bvftd_like_behavioral_profile             0.2371
+synucleinopathy_sleep_prodrome_profile    0.1346

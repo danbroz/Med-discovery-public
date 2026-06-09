@@ -1,0 +1,248 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                    key      node_type                                   atlas_region                                                  centroid_mni                          feature_summary
+                  genetic_vulnerability          input                                           None                                                          None                                     None
+                      early_life_stress          input                                           None                                                          None                                     None
+                    palatable_food_cues          input                                           None                                                          None                                     None
+                 negative_affect_stress          input                                           None                                                          None                                     None
+         maternal_metabolic_programming          input                                           None                                                          None                                     None
+                       recovery_support          input                                           None                                                          None                                     None
+                               amygdala         region                             LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+                              nac_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left    (-7.25139664804469, 8.162011173184368, -8.016759776536318) receptors=no; genes=yes; connectivity=no
+                            pfc_control         region                            Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262) receptors=no; genes=yes; connectivity=no
+                                    acc         region                             Area 33 (ACC) left  (-4.092857142857142, 13.314285714285717, 25.242857142857147) receptors=no; genes=yes; connectivity=no
+                                    ofc         region                            Area Fo4 (OFC) left  (-29.001430615164523, 53.3412017167382, -15.175965665236049) receptors=no; genes=yes; connectivity=no
+         gene_environment_sensitization latent_biology                                           None                                                          None                                     None
+                 hpa_axis_dysregulation latent_biology                                           None                                                          None                                     None
+                       dopamine_wanting latent_biology                                           None                                                          None                                     None
+                          opioid_liking latent_biology                                           None                                                          None                                     None
+         endocannabinoid_appetite_drive latent_biology                                           None                                                          None                                     None
+serotonin_satiety_impulse_dysregulation latent_biology                                           None                                                          None                                     None
+                        satiety_failure latent_biology                                           None                                                          None                                     None
+            food_addiction_like_process latent_biology                                           None                                                          None                                     None
+                 emotional_eating_drive latent_biology                                           None                                                          None                                     None
+     executive_control_network_weakness latent_biology                                           None                                                          None                                     None
+                  amygdala_nac_coupling latent_biology                                           None                                                          None                                     None
+                        loss_of_control        symptom                                           None                                                          None                                     None
+                                craving        symptom                                           None                                                          None                                     None
+                           binge_eating        symptom                                           None                                                          None                                     None
+                   tolerance_escalation        symptom                                           None                                                          None                                     None
+               withdrawal_like_distress        symptom                                           None                                                          None                                     None
+                 cue_triggered_bingeing        symptom                                           None                                                          None                                     None
+              stress_triggered_bingeing        symptom                                           None                                                          None                                     None
+                       impulsive_eating        symptom                                           None                                                          None                                     None
+
+=== EDGES ===
+                                 source                                  target                                                               relation               bed_change
+                  genetic_vulnerability          gene_environment_sensitization              creates heritable vulnerability shaped by the environment increased susceptibility
+                  genetic_vulnerability                        dopamine_wanting                  raises vulnerability to reward-driven food motivation increased susceptibility
+                  genetic_vulnerability serotonin_satiety_impulse_dysregulation      raises vulnerability to satiety and impulse-control dysregulation increased susceptibility
+                  genetic_vulnerability                         satiety_failure                      raises vulnerability to impaired meal termination increased susceptibility
+                      early_life_stress          gene_environment_sensitization              induces lasting molecular changes that amplify later risk                increased
+                      early_life_stress                  hpa_axis_dysregulation                                   programs altered stress responsivity                increased
+                 negative_affect_stress                  emotional_eating_drive                                 pushes eating toward affect regulation                increased
+                    palatable_food_cues                        dopamine_wanting                                   loads incentive salience and craving                increased
+                    palatable_food_cues                   amygdala_nac_coupling                            strengthens emotional-reward cue reactivity                increased
+         maternal_metabolic_programming          gene_environment_sensitization                 can program later metabolic and appetite vulnerability                increased
+         maternal_metabolic_programming                         satiety_failure              can bias appetite-regulating systems toward dysregulation                increased
+         maternal_metabolic_programming          endocannabinoid_appetite_drive        can bias reward-appetite systems toward heightened responsivity                increased
+                       recovery_support      executive_control_network_weakness                             supports recruitment of deliberate control               protective
+                       recovery_support                            binge_eating                           buffers expression of loss-of-control eating               protective
+         gene_environment_sensitization                  hpa_axis_dysregulation                          stabilizes stress-linked eating vulnerability                increased
+                 hpa_axis_dysregulation                  emotional_eating_drive                           links stress physiology to eating for relief                increased
+                       dopamine_wanting                               nac_proxy                               loads ventral-striatal reward motivation   increased reward drive
+                       dopamine_wanting                                 craving                                  drives incentive salience and wanting                increased
+                          opioid_liking             food_addiction_like_process                         supports hedonic reinforcement of binge eating                increased
+         endocannabinoid_appetite_drive                                 craving                             enhances appetite and reward value of food                increased
+         endocannabinoid_appetite_drive                         satiety_failure                                promotes sustained drive to keep eating                increased
+serotonin_satiety_impulse_dysregulation                         satiety_failure                              weakens satiety and behavioral inhibition                increased
+serotonin_satiety_impulse_dysregulation      executive_control_network_weakness                       impairs inhibitory control over eating responses                increased
+                        satiety_failure                         loss_of_control                        weakens the ability to stop eating once started                increased
+            food_addiction_like_process                    tolerance_escalation                         supports needing more food for the same effect                increased
+            food_addiction_like_process                withdrawal_like_distress supports anxiety/irritability-like responses when intake is restricted                increased
+            food_addiction_like_process                                 craving                                 stabilizes compulsive appetitive drive                increased
+                 emotional_eating_drive                                amygdala                   loads emotional-processing circuitry during distress  increased dysregulation
+                 emotional_eating_drive               stress_triggered_bingeing                   directly promotes binge eating under negative affect                increased
+                  amygdala_nac_coupling                                amygdala              strengthens food-cue and stress-linked emotional salience  increased dysregulation
+                  amygdala_nac_coupling                               nac_proxy                          strengthens emotional-reward coupling to food  increased dysregulation
+                  amygdala_nac_coupling                  cue_triggered_bingeing         biases behavior toward emotionally amplified cue-driven eating                increased
+     executive_control_network_weakness                             pfc_control                          reflects weaker executive-control recruitment         reduced function
+     executive_control_network_weakness                                     acc          reflects weaker monitoring and inhibition of eating responses         reduced function
+     executive_control_network_weakness                         loss_of_control                                 reduces deliberate control over eating                increased
+     executive_control_network_weakness                        impulsive_eating                  biases behavior toward rapid, poorly inhibited intake                increased
+                                    ofc                                 craving            reward valuation bias can amplify desire for palatable food                increased
+                               amygdala               stress_triggered_bingeing                    emotional salience amplifies distress-driven eating                increased
+                              nac_proxy                                 craving                                         supports reward-linked wanting                increased
+                        loss_of_control                            binge_eating                                       directly promotes binge episodes                increased
+                                craving                            binge_eating                         promotes compulsive approach to palatable food                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                LB (Amygdala) left  AcbM (Ventral Striatum, Medial Accumbens) left  Area 8v1 (MFG) left  Area 33 (ACC) left  Area Fo4 (OFC) left
+LB (Amygdala) left                                         244.570                                           0.170                0.030               0.045                0.075
+AcbM (Ventral Striatum, Medial Accumbens) left               0.170                                         106.630                0.165              49.835                5.040
+Area 8v1 (MFG) left                                          0.030                                           0.165             6703.680             116.930                6.875
+Area 33 (ACC) left                                           0.045                                          49.835              116.930             977.565                2.080
+Area Fo4 (OFC) left                                          0.075                                           5.040                6.875               2.080              698.345
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  CNR1    6.723866   2.016515          623     0.654489    0.631539
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  FAAH    5.933429   0.587149           14    -0.902543    0.879666
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR2C    5.347992   1.893970          301     0.540620    0.600612
+   LEP    2.218314   1.018435           14     0.857743    1.419146
+  LEPR    4.899233   1.046745           42     0.569795    0.796924
+  MC4R    1.598650   0.719273           14    -0.236914    0.579448
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+ OPRM1    4.817310   1.361393           21     0.300824    0.894048
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== NAC_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== NAC_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  CNR1    5.973401   1.949565          534     0.196980    0.569120
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+ CRHR1    3.910475   2.688631           24    -1.034871    1.128113
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+  FAAH    6.246667   0.637182           12    -0.230242    1.020108
+ FKBP5    5.013658   2.833167           24     0.244575    0.557984
+ HTR2C    6.917095   1.829097          258     1.507890    0.653812
+   LEP    1.770275   0.795919           12     0.053933    1.094732
+  LEPR    4.540500   1.403421           36     0.206567    1.246282
+  MC4R    2.312092   1.245359           12     0.608692    1.305581
+ NR3C1    8.935243   1.194727           30    -0.789843    0.603282
+ OPRM1    5.057889   0.838272           18     0.667633    0.794928
+SLC6A3    2.300233   1.860179           36     0.111914    0.510223
+SLC6A4    1.646929   0.611654           66    -0.114265    0.397311
+
+=== NAC_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC_CONTROL : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_CONTROL : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  CNR1    5.902090   1.748277          356     0.197951    0.305180
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+  FAAH    6.227362   0.799960            8    -0.186463    0.919952
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+ HTR2C    3.249913   1.469076          172    -0.507735    0.334313
+   LEP    1.500325   0.339158            8    -0.522537    0.322776
+  LEPR    4.288608   0.874644           24    -0.156733    0.574709
+  MC4R    1.645225   0.444672            8    -0.299175    0.550380
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+ OPRM1    4.387475   0.915995           12     0.149950    0.312914
+SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+
+=== PFC_CONTROL : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  CNR1    6.790710   1.734653          267     0.774767    0.305185
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+  FAAH    6.265400   0.522310            6    -0.145817    0.571405
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+ HTR2C    3.798194   1.447032          129    -0.205276    0.299334
+   LEP    1.724417   0.620175            6    -0.041400    0.864296
+  LEPR    4.003222   1.105106           18    -0.694506    0.577865
+  MC4R    2.333350   0.576982            6     0.512033    0.209155
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+ OPRM1    4.738067   1.188948            9     0.229011    0.459535
+SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  CNR1    6.325526   1.730334          356     0.376123    0.256965
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  FAAH    6.378650   0.530601            8    -0.095388    0.546601
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+ HTR2C    3.610054   1.486189          172    -0.293813    0.282670
+   LEP    1.541125   0.415114            8    -0.078312    0.714182
+  LEPR    4.116608   0.779670           24    -0.541254    0.480498
+  MC4R    1.775875   0.615250            8    -0.020187    0.429431
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+ OPRM1    4.542500   0.719579           12    -0.053750    0.413481
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+endocannabinoid_appetite_drive             0.5075
+craving_drive_dopamine                     0.5000
+amygdala_nac_coupling                      0.4985
+food_addiction_like_process                0.4811
+gene_environment_sensitization             0.4175
+hpa_axis_dysregulation                     0.4160
+emotional_eating_drive                     0.4091
+executive_control_network_weakness         0.4030
+serotonin_satiety_impulse_dysregulation    0.3850
+opioid_liking                              0.3450
+satiety_failure                            0.3099
+
+=== REGIONAL STATE ===
+ofc            0.4810
+nac_proxy      0.3950
+amygdala       0.3012
+pfc_control    0.2264
+acc            0.1662
+
+=== SYMPTOMS ===
+craving                      0.4738
+cue_triggered_bingeing       0.4255
+withdrawal_like_distress     0.3973
+tolerance_escalation         0.3618
+loss_of_control              0.3222
+binge_eating                 0.3046
+stress_triggered_bingeing    0.2658
+impulsive_eating             0.1630
+
+=== PHENOTYPES ===
+food_addiction_like_profile      0.3864
+cue_reactive_binge_profile       0.3708
+emotional_binge_profile          0.2828
+control_deficit_binge_profile    0.2387

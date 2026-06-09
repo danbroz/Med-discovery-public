@@ -1,0 +1,147 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                   key      node_type                                   atlas_region                            feature_summary
+                 genetic_vulnerability          input                                                                                          
+             neurodevelopmental_burden          input                                                                                          
+                   chronic_stress_load          input                                                                                          
+               depressive_episode_load          input                                                                                          
+                      manic_mixed_load          input                                                                                          
+                     prodromal_decline          input                                                                                          
+       atypical_antipsychotic_coverage          input                                                                                          
+                           pfc_control         region                           middle frontal gyrus   receptors=no; genes=yes; connectivity=no
+                              amygdala         region                             LB (Amygdala) left  receptors=no; genes=yes; connectivity=yes
+                           hippocampus         region                          DG (Hippocampus) left receptors=yes; genes=yes; connectivity=yes
+                              thalamus         region               ZI (Thalamus, zona incerta) left  receptors=no; genes=yes; connectivity=yes
+                   basal_ganglia_proxy         region FuP (Ventral Striatum, Fundus of Putamen) left  receptors=no; genes=yes; connectivity=yes
+                 temporal_cortex_proxy         region                           Area Te 3 (STG) left  receptors=no; genes=yes; connectivity=yes
+          dopamine_serotonin_interplay latent_biology                                                                                          
+             noradrenergic_dysfunction latent_biology                                                                                          
+neurodevelopmental_connectivity_burden latent_biology                                                                                          
+synaptic_plasticity_resilience_failure latent_biology                                                                                          
+                hpa_axis_dysregulation latent_biology                                                                                          
+       frontolimbic_mood_dysregulation latent_biology                                                                                          
+frontostriatal_psychosis_dysregulation latent_biology                                                                                          
+          frontotemporal_disconnection latent_biology                                                                                          
+       thalamocortical_dysconnectivity latent_biology                                                                                          
+               psychotic_mood_coupling latent_biology                                                                                          
+              top_down_control_failure latent_biology                                                                                          
+                    psychotic_symptoms        symptom                                                                                          
+                  disorganized_thought        symptom                                                                                          
+      depressive_fatigue_concentration        symptom                                                                                          
+            manic_affective_activation        symptom                                                                                          
+                    emotional_lability        symptom                                                                                          
+                  cognitive_impairment        symptom                                                                                          
+           negative_symptoms_avolition        symptom                                                                                          
+           mixed_psychotic_mood_burden        symptom                                                                                          
+
+=== Edges (first 14) ===
+                                source                                 target                                                                       relation schizoaffective_change  weight
+                 genetic_vulnerability neurodevelopmental_connectivity_burden confers inherited vulnerability across psychosis and bipolar-spectrum pathways              increased    0.40
+                 genetic_vulnerability           dopamine_serotonin_interplay                                     biases coupled monoaminergic dysregulation              increased    0.25
+             neurodevelopmental_burden neurodevelopmental_connectivity_burden                    disrupts maturation, myelination, and synaptic organization              increased    0.45
+                     prodromal_decline neurodevelopmental_connectivity_burden                     signals emerging connectivity failure before full episodes              increased    0.20
+                   chronic_stress_load                 hpa_axis_dysregulation                  activates neuroendocrine stress burden relevant to depression              increased    0.45
+                   chronic_stress_load synaptic_plasticity_resilience_failure                          reduces resilience and adaptive neuroplastic response              increased    0.25
+               depressive_episode_load              noradrenergic_dysfunction                        aligns with the chapter's noradrenergic symptom cluster              increased    0.40
+               depressive_episode_load        frontolimbic_mood_dysregulation                                     drives depressive-affective circuit burden              increased    0.30
+                      manic_mixed_load        frontolimbic_mood_dysregulation                               drives bipolar-type affective circuit activation              increased    0.30
+                      manic_mixed_load           dopamine_serotonin_interplay                                increases mood-linked monoaminergic instability              increased    0.25
+                hpa_axis_dysregulation synaptic_plasticity_resilience_failure   chronic stress signaling impairs cellular resilience and adaptive plasticity              increased    0.20
+neurodevelopmental_connectivity_burden frontostriatal_psychosis_dysregulation                             impairs prefrontal-subcortical psychosis circuitry              increased    0.30
+          dopamine_serotonin_interplay frontostriatal_psychosis_dysregulation     coupled monoaminergic dysregulation intensifies psychosis-linked circuitry              increased    0.30
+neurodevelopmental_connectivity_burden           frontotemporal_disconnection                                           weakens frontal-temporal integration              increased    0.25
+
+=== Region suggestions for 'temporal' ===
+                                                                                  name identifier                                parcellation
+                                       Area PirT (PiriformCortexMesial, temporal) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+               Area PirT.Tu (PiriformCortexMesial, Piriform temporal Area, Uncus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area PirT.Tit (PiriformCortexMesial, Piriform temporal Area, Incisura temporalis) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                                         temporal lobe       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                                       temporal insula       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                               superior temporal gyrus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                              superior temporal sulcus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                            Area PirT (PiriformCortexMesial, temporal)       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                      Area PirT (PiriformCortexMesial, temporal) right       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+              Area PirT.Tu (PiriformCortexMesial, Piriform temporal Area, Uncus) right       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Example receptor / gene / connectivity tables ===
+
+[pfc_control] receptor rows: 0
+[pfc_control] gene rows: 21
+[pfc_control] connectivity rows: 0
+
+[amygdala] receptor rows: 0
+[amygdala] gene rows: 21
+[amygdala] connectivity rows: 10
+
+[hippocampus] receptor rows: 14
+[hippocampus] gene rows: 21
+[hippocampus] connectivity rows: 10
+
+[thalamus] receptor rows: 0
+[thalamus] gene rows: 21
+[thalamus] connectivity rows: 10
+
+[basal_ganglia_proxy] receptor rows: 0
+[basal_ganglia_proxy] gene rows: 21
+[basal_ganglia_proxy] connectivity rows: 10
+
+[temporal_cortex_proxy] receptor rows: 0
+[temporal_cortex_proxy] gene rows: 21
+[temporal_cortex_proxy] connectivity rows: 10
+
+=== Example simulation ===
+
+-- inputs --
+genetic_vulnerability              0.63
+neurodevelopmental_burden          0.58
+chronic_stress_load                0.55
+depressive_episode_load            0.52
+prodromal_decline                  0.45
+manic_mixed_load                   0.38
+atypical_antipsychotic_coverage    0.35
+
+-- latents --
+neurodevelopmental_connectivity_burden    0.4830
+hpa_axis_dysregulation                    0.4480
+synaptic_plasticity_resilience_failure    0.4069
+noradrenergic_dysfunction                 0.4050
+frontolimbic_mood_dysregulation           0.3772
+dopamine_serotonin_interplay              0.3660
+frontotemporal_disconnection              0.3041
+thalamocortical_dysconnectivity           0.3020
+psychotic_mood_coupling                   0.2680
+frontostriatal_psychosis_dysregulation    0.2552
+top_down_control_failure                  0.2116
+
+-- regional_state --
+hippocampus              0.3073
+amygdala                 0.2484
+temporal_cortex_proxy    0.1936
+basal_ganglia_proxy      0.1543
+thalamus                 0.1485
+pfc_control              0.1413
+
+-- symptoms --
+depressive_fatigue_concentration    0.3661
+emotional_lability                  0.2491
+manic_affective_activation          0.2282
+cognitive_impairment                0.2185
+disorganized_thought                0.1704
+mixed_psychotic_mood_burden         0.1612
+negative_symptoms_avolition         0.1541
+psychotic_symptoms                  0.0949
+
+-- phenotypes --
+depressive_type_profile             0.1924
+bipolar_type_profile                0.1739
+cognitive_disorganized_profile      0.1572
+overall_schizoaffective_severity    0.1368
+mixed_psychotic_mood_profile        0.1315

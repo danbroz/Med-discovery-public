@@ -1,0 +1,128 @@
+
+=== NODES ===
+                           key      node_type atlas_region centroid_mni feature_summary
+                 panic_history          input         None         None            None
+   temperamental_vulnerability          input         None         None            None
+          early_life_adversity          input         None         None            None
+       feared_environment_cues          input         None         None            None
+          treatment_engagement          input         None         None            None
+                      amygdala         region         None         None      unresolved
+                   hippocampus         region         None         None      unresolved
+                        insula         region         None         None      unresolved
+                          dacc         region         None         None      unresolved
+                         vmpfc         region         None         None      unresolved
+                   epigenetics latent_biology         None         None            None
+                      hpa_axis latent_biology         None         None            None
+          autonomic_reactivity latent_biology         None         None            None
+        interoceptive_salience latent_biology         None         None            None
+             threat_prediction latent_biology         None         None            None
+            avoidance_learning latent_biology         None         None            None
+neurotransmitter_dysregulation latent_biology         None         None            None
+                  panic_surges        symptom         None         None            None
+          anticipatory_anxiety        symptom         None         None            None
+                   escape_fear        symptom         None         None            None
+         agoraphobic_avoidance        symptom         None         None            None
+              home_confinement        symptom         None         None            None
+              social_isolation        symptom         None         None            None
+
+=== EDGES ===
+                        source                 target                                                relation                ago_change
+                 panic_history interoceptive_salience              makes bodily sensations more fear-relevant                 increased
+                 panic_history     avoidance_learning                  reinforces escape and safety behaviors                 increased
+   temperamental_vulnerability   autonomic_reactivity               raises baseline nervous-system reactivity  increased susceptibility
+   temperamental_vulnerability interoceptive_salience                       raises fear of anxiety sensations  increased susceptibility
+   temperamental_vulnerability      threat_prediction    biases ambiguous situations toward danger expectancy  increased susceptibility
+          early_life_adversity            epigenetics can leave long-lasting stress-related molecular changes                 increased
+                   epigenetics               hpa_axis        biases stress-response feedback and responsivity              dysregulated
+       feared_environment_cues               amygdala                        triggers fear-network activation                 increased
+       feared_environment_cues                 insula    amplifies bodily-state monitoring in feared contexts                 increased
+       feared_environment_cues                   dacc            increases anticipation and threat monitoring                 increased
+          treatment_engagement                  vmpfc              supports regulatory control and relearning                protective
+          treatment_engagement     avoidance_learning                helps weaken maladaptive avoidance loops                protective
+neurotransmitter_dysregulation   autonomic_reactivity                destabilizes anxiety and panic circuitry                 increased
+                      hpa_axis            hippocampus                      impairs contextual safety learning          reduced function
+                      hpa_axis                  vmpfc                   weakens top-down emotional regulation          reduced function
+          autonomic_reactivity           panic_surges                            drives bodily panic symptoms                 increased
+        interoceptive_salience                 insula                     loads interoceptive fear processing                 increased
+             threat_prediction                   dacc                 supports anticipatory threat monitoring                 increased
+                      amygdala           panic_surges                                  amplifies alarm output                 increased
+                      amygdala  agoraphobic_avoidance              promotes fear-driven behavioral withdrawal                 increased
+                        insula           panic_surges                  amplifies perceived bodily catastrophe                 increased
+                        insula            escape_fear           links bodily sensations to dangerous contexts                 increased
+                          dacc   anticipatory_anxiety           supports hypervigilant anticipation of threat                 increased
+                   hippocampus            escape_fear    normally helps distinguish safe from unsafe contexts reduced contextualization
+                         vmpfc               amygdala                     normally exerts top-down inhibition        reduced inhibition
+                         vmpfc     avoidance_learning    normally supports extinction and flexible relearning        reduced extinction
+                  panic_surges   anticipatory_anxiety                       make future attacks more expected                 increased
+                  panic_surges  agoraphobic_avoidance              drive avoidance of panic-linked situations                 increased
+                   escape_fear  agoraphobic_avoidance         promotes avoidance of escape-difficult contexts                 increased
+         agoraphobic_avoidance       home_confinement              shrinks behavioral range toward safe zones                 increased
+              home_confinement       social_isolation            limits participation and contact with others                 increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+No circuit submatrix available.
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== INSULA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== INSULA : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== INSULA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== DACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== DACC : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== DACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== VMPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== VMPFC : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== VMPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+threat_prediction                 0.6454
+interoceptive_salience            0.6109
+autonomic_reactivity              0.5294
+avoidance_learning                0.4174
+hpa_axis                          0.3675
+neurotransmitter_dysregulation    0.3385
+epigenetics                       0.2750
+
+=== REGION DYSFUNCTION ===
+amygdala       0.5589
+insula         0.5042
+dacc           0.4857
+hippocampus    0.2453
+vmpfc          0.2175
+
+=== SYMPTOMS ===
+anticipatory_anxiety     0.4766
+panic_surges             0.4717
+escape_fear              0.4029
+agoraphobic_avoidance    0.3769
+home_confinement         0.3026
+social_isolation         0.2418
+
+=== PHENOTYPES ===
+panic_linked_agoraphobia             0.4274
+anticipatory_avoidant_agoraphobia    0.3982
+isolation_severity                   0.2752

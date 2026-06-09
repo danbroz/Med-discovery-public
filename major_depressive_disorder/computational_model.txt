@@ -1,0 +1,236 @@
+
+=== Building atlas-backed scaffold ===
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+Nodes:
+                               key      node_type                                            atlas_region                           feature_summary
+               polygenic_liability          input                                                    None                                      None
+        parental_depression_burden          input                                                    None                                      None
+               adverse_life_stress          input                                                    None                                      None
+               chronic_stress_load          input                                                    None                                      None
+    adolescent_onset_vulnerability          input                                                    None                                      None
+       monoamine_treatment_support          input                                                    None                                      None
+   glutamatergic_treatment_support          input                                                    None                                      None
+                  recovery_support          input                                                    None                                      None
+                       pfc_control         region                                                    None                                unresolved
+                       hippocampus         region                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                          amygdala         region                                      LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                    thalamus_proxy         region                 MD (Thalamus, mediodorsal Nucleus) left  receptors=no; genes=yes; connectivity=no
+               basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no
+        serotonergic_dysregulation latent_biology                                                    None                                      None
+       noradrenergic_dysregulation latent_biology                                                    None                                      None
+          gaba_glutamate_imbalance latent_biology                                                    None                                      None
+          hpa_stress_sensitization latent_biology                                                    None                                      None
+hippocampal_neuroplasticity_burden latent_biology                                                    None                                      None
+        frontolimbic_dysregulation latent_biology                                                    None                                      None
+              dmn_overconnectivity latent_biology                                                    None                                      None
+                  depressed_affect        symptom                                                    None                                      None
+         anhedonia_motivation_loss        symptom                                                    None                                      None
+                        rumination        symptom                                                    None                                      None
+              cognitive_impairment        symptom                                                    None                                      None
+           anxiety_insomnia_burden        symptom                                                    None                                      None
+        psychomotor_somatic_burden        symptom                                                    None                                      None
+
+Edges (first 20):
+                            source                             target                                                                               relation    mdd_change
+               polygenic_liability         serotonergic_dysregulation                               heritable variation increases serotonergic vulnerability     increased
+               polygenic_liability        noradrenergic_dysregulation                              heritable variation increases noradrenergic vulnerability     increased
+               polygenic_liability           gaba_glutamate_imbalance                     genetic liability contributes to inhibitory-excitatory instability     increased
+        parental_depression_burden           hpa_stress_sensitization                 familial mood-disorder loading contributes to a lower stress threshold     increased
+        parental_depression_burden         frontolimbic_dysregulation                    familial burden increases vulnerability of mood-regulation circuits     increased
+               adverse_life_stress           hpa_stress_sensitization                    adverse life events can precipitate episodes through stress biology     increased
+               chronic_stress_load           hpa_stress_sensitization                                      sustained stress sensitizes neuroendocrine burden     increased
+    adolescent_onset_vulnerability         frontolimbic_dysregulation       developmental vulnerability increases susceptibility of mood-regulation networks     increased
+       monoamine_treatment_support         serotonergic_dysregulation                    monoamine-targeted treatment partially restores serotonin signaling     decreased
+       monoamine_treatment_support        noradrenergic_dysregulation               monoamine-targeted treatment partially restores norepinephrine signaling     decreased
+   glutamatergic_treatment_support           gaba_glutamate_imbalance                                NMDA-targeted treatment may reduce glutamatergic burden     decreased
+                  recovery_support           hpa_stress_sensitization                                        protective support buffers stress amplification     decreased
+        serotonergic_dysregulation         frontolimbic_dysregulation serotonergic disruption weakens affective regulation across prefrontal-limbic circuits     increased
+       noradrenergic_dysregulation         frontolimbic_dysregulation                noradrenergic disruption perturbs arousal and cognitive control systems     increased
+          gaba_glutamate_imbalance         frontolimbic_dysregulation                 excitatory-inhibitory imbalance destabilizes mood-regulation circuitry     increased
+          hpa_stress_sensitization hippocampal_neuroplasticity_burden                   stress biology compromises hippocampal plasticity and memory systems     increased
+        frontolimbic_dysregulation               dmn_overconnectivity          weak control networks permit excessive self-referential default-mode coupling     increased
+        frontolimbic_dysregulation                        pfc_control                              frontolimbic disruption compromises prefrontal regulation  dysregulated
+hippocampal_neuroplasticity_burden                        hippocampus                       stress-related neuroplastic burden disrupts hippocampal function  dysregulated
+          hpa_stress_sensitization                           amygdala                             stress sensitization heightens limbic emotional reactivity hyperreactive
+
+No amygdala receptor table available in this environment.
+
+No PFC-control gene table available in this environment.
+
+No hippocampus connectivity profile available in this environment.
+
+Within-model circuit connectivity:
+                     hippocampus  amygdala  thalamus_proxy  basal_ganglia_proxy
+hippocampus             1685.400    64.260           0.015                1.610
+amygdala                  64.260   244.570           0.000                0.075
+thalamus_proxy             0.015     0.000          30.615                0.110
+basal_ganglia_proxy        1.610     0.075           0.110             2794.395
+
+=== Simulation example: stress-sensitized ruminative depression ===
+
+inputs:
+chronic_stress_load                0.70
+adverse_life_stress                0.65
+parental_depression_burden         0.60
+polygenic_liability                0.55
+adolescent_onset_vulnerability     0.35
+recovery_support                   0.25
+monoamine_treatment_support        0.20
+glutamatergic_treatment_support    0.05
+
+latents:
+hpa_stress_sensitization              0.5500
+gaba_glutamate_imbalance              0.4565
+hippocampal_neuroplasticity_burden    0.4435
+dmn_overconnectivity                  0.4266
+noradrenergic_dysregulation           0.4250
+serotonergic_dysregulation            0.4025
+frontolimbic_dysregulation            0.3710
+
+regional_state:
+amygdala               0.4415
+hippocampus            0.4320
+basal_ganglia_proxy    0.3719
+thalamus_proxy         0.3675
+pfc_control            0.3080
+
+symptoms:
+anxiety_insomnia_burden       0.4009
+depressed_affect              0.3873
+rumination                    0.3866
+cognitive_impairment          0.3679
+psychomotor_somatic_burden    0.3622
+anhedonia_motivation_loss     0.3047
+
+phenotypes:
+stress_sensitized_mdd_profile      0.4407
+anxious_depression_profile         0.3765
+global_mdd_burden                  0.3679
+cognitive_affective_mdd_profile    0.3585
+ruminative_mdd_profile             0.3483
+anhedonic_motivational_profile     0.3166
+
+=== Building atlas-backed scaffold ===
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+Nodes:
+                               key      node_type                                            atlas_region                           feature_summary
+               polygenic_liability          input                                                    None                                      None
+        parental_depression_burden          input                                                    None                                      None
+               adverse_life_stress          input                                                    None                                      None
+               chronic_stress_load          input                                                    None                                      None
+    adolescent_onset_vulnerability          input                                                    None                                      None
+       monoamine_treatment_support          input                                                    None                                      None
+   glutamatergic_treatment_support          input                                                    None                                      None
+                  recovery_support          input                                                    None                                      None
+                       pfc_control         region                                                    None                                unresolved
+                       hippocampus         region                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                          amygdala         region                                      LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                    thalamus_proxy         region                 MD (Thalamus, mediodorsal Nucleus) left  receptors=no; genes=yes; connectivity=no
+               basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no
+        serotonergic_dysregulation latent_biology                                                    None                                      None
+       noradrenergic_dysregulation latent_biology                                                    None                                      None
+          gaba_glutamate_imbalance latent_biology                                                    None                                      None
+          hpa_stress_sensitization latent_biology                                                    None                                      None
+hippocampal_neuroplasticity_burden latent_biology                                                    None                                      None
+        frontolimbic_dysregulation latent_biology                                                    None                                      None
+              dmn_overconnectivity latent_biology                                                    None                                      None
+                  depressed_affect        symptom                                                    None                                      None
+         anhedonia_motivation_loss        symptom                                                    None                                      None
+                        rumination        symptom                                                    None                                      None
+              cognitive_impairment        symptom                                                    None                                      None
+           anxiety_insomnia_burden        symptom                                                    None                                      None
+        psychomotor_somatic_burden        symptom                                                    None                                      None
+
+Edges (first 20):
+                            source                             target                                                                               relation    mdd_change
+               polygenic_liability         serotonergic_dysregulation                               heritable variation increases serotonergic vulnerability     increased
+               polygenic_liability        noradrenergic_dysregulation                              heritable variation increases noradrenergic vulnerability     increased
+               polygenic_liability           gaba_glutamate_imbalance                     genetic liability contributes to inhibitory-excitatory instability     increased
+        parental_depression_burden           hpa_stress_sensitization                 familial mood-disorder loading contributes to a lower stress threshold     increased
+        parental_depression_burden         frontolimbic_dysregulation                    familial burden increases vulnerability of mood-regulation circuits     increased
+               adverse_life_stress           hpa_stress_sensitization                    adverse life events can precipitate episodes through stress biology     increased
+               chronic_stress_load           hpa_stress_sensitization                                      sustained stress sensitizes neuroendocrine burden     increased
+    adolescent_onset_vulnerability         frontolimbic_dysregulation       developmental vulnerability increases susceptibility of mood-regulation networks     increased
+       monoamine_treatment_support         serotonergic_dysregulation                    monoamine-targeted treatment partially restores serotonin signaling     decreased
+       monoamine_treatment_support        noradrenergic_dysregulation               monoamine-targeted treatment partially restores norepinephrine signaling     decreased
+   glutamatergic_treatment_support           gaba_glutamate_imbalance                                NMDA-targeted treatment may reduce glutamatergic burden     decreased
+                  recovery_support           hpa_stress_sensitization                                        protective support buffers stress amplification     decreased
+        serotonergic_dysregulation         frontolimbic_dysregulation serotonergic disruption weakens affective regulation across prefrontal-limbic circuits     increased
+       noradrenergic_dysregulation         frontolimbic_dysregulation                noradrenergic disruption perturbs arousal and cognitive control systems     increased
+          gaba_glutamate_imbalance         frontolimbic_dysregulation                 excitatory-inhibitory imbalance destabilizes mood-regulation circuitry     increased
+          hpa_stress_sensitization hippocampal_neuroplasticity_burden                   stress biology compromises hippocampal plasticity and memory systems     increased
+        frontolimbic_dysregulation               dmn_overconnectivity          weak control networks permit excessive self-referential default-mode coupling     increased
+        frontolimbic_dysregulation                        pfc_control                              frontolimbic disruption compromises prefrontal regulation  dysregulated
+hippocampal_neuroplasticity_burden                        hippocampus                       stress-related neuroplastic burden disrupts hippocampal function  dysregulated
+          hpa_stress_sensitization                           amygdala                             stress sensitization heightens limbic emotional reactivity hyperreactive
+
+No amygdala receptor table available in this environment.
+
+No PFC-control gene table available in this environment.
+
+No hippocampus connectivity profile available in this environment.
+
+Within-model circuit connectivity:
+                     hippocampus  amygdala  thalamus_proxy  basal_ganglia_proxy
+hippocampus             1685.400    64.260           0.015                1.610
+amygdala                  64.260   244.570           0.000                0.075
+thalamus_proxy             0.015     0.000          30.615                0.110
+basal_ganglia_proxy        1.610     0.075           0.110             2794.395
+
+=== Simulation example: stress-sensitized ruminative depression ===
+
+inputs:
+chronic_stress_load                0.70
+adverse_life_stress                0.65
+parental_depression_burden         0.60
+polygenic_liability                0.55
+adolescent_onset_vulnerability     0.35
+recovery_support                   0.25
+monoamine_treatment_support        0.20
+glutamatergic_treatment_support    0.05
+
+latents:
+hpa_stress_sensitization              0.5500
+gaba_glutamate_imbalance              0.4565
+hippocampal_neuroplasticity_burden    0.4435
+dmn_overconnectivity                  0.4266
+noradrenergic_dysregulation           0.4250
+serotonergic_dysregulation            0.4025
+frontolimbic_dysregulation            0.3710
+
+regional_state:
+amygdala               0.4415
+hippocampus            0.4320
+basal_ganglia_proxy    0.3719
+thalamus_proxy         0.3675
+pfc_control            0.3080
+
+symptoms:
+anxiety_insomnia_burden       0.4009
+depressed_affect              0.3873
+rumination                    0.3866
+cognitive_impairment          0.3679
+psychomotor_somatic_burden    0.3622
+anhedonia_motivation_loss     0.3047
+
+phenotypes:
+stress_sensitized_mdd_profile      0.4407
+anxious_depression_profile         0.3765
+global_mdd_burden                  0.3679
+cognitive_affective_mdd_profile    0.3585
+ruminative_mdd_profile             0.3483
+anhedonic_motivational_profile     0.3166

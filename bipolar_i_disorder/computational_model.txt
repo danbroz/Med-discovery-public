@@ -1,0 +1,291 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                         key      node_type                                       atlas_region                                                   centroid_mni                           feature_summary
+                           genetic_liability          input                                               None                                                           None                                      None
+                         psychosocial_stress          input                                               None                                                           None                                      None
+                        circadian_disruption          input                                               None                                                           None                                      None
+                         inflammatory_burden          input                                               None                                                           None                                      None
+                            recovery_support          input                                               None                                                           None                                      None
+                                    amygdala         region                                 LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                                 hippocampus         region                             CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                                         acc         region                                 Area 33 (ACC) left   (-4.092857142857142, 13.314285714285717, 25.242857142857147)  receptors=no; genes=yes; connectivity=no
+                                 pfc_control         region                                Area 8v1 (MFG) left     (-35.2425934919864, 23.561923263720246, 51.07455075279262)  receptors=no; genes=yes; connectivity=no
+                              striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)    (10.758389261744966, 16.82550335570471, -5.468839884947272)  receptors=no; genes=yes; connectivity=no
+                              thalamus_proxy         region                                           thalamus  (-14.367965711564409, -20.185252797841102, 4.345265497261693)  receptors=no; genes=yes; connectivity=no
+                      hpa_axis_dysregulation latent_biology                                               None                                                           None                                      None
+                         autonomic_imbalance latent_biology                                               None                                                           None                                      None
+                     monoamine_dysregulation latent_biology                                               None                                                           None                                      None
+                circadian_rhythm_instability latent_biology                                               None                                                           None                                      None
+                         reward_circuit_bias latent_biology                                               None                                                           None                                      None
+                      inflammatory_signaling latent_biology                                               None                                                           None                                      None
+                              bdnf_reduction latent_biology                                               None                                                           None                                      None
+                              hypofrontality latent_biology                                               None                                                           None                                      None
+cortico_limbic_striatal_thalamic_instability latent_biology                                               None                                                           None                                      None
+                            mania_activation        symptom                                               None                                                           None                                      None
+                          bipolar_depression        symptom                                               None                                                           None                                      None
+                               mood_lability        symptom                                               None                                                           None                                      None
+                   impulsivity_disinhibition        symptom                                               None                                                           None                                      None
+                           psychomotor_shift        symptom                                               None                                                           None                                      None
+                        cognitive_impairment        symptom                                               None                                                           None                                      None
+                        mixed_state_pressure        symptom                                               None                                                           None                                      None
+
+=== EDGES ===
+                                      source                       target                                                       relation          bipolar_i_change
+                           genetic_liability      monoamine_dysregulation            raises vulnerability of core transmitter regulation  increased susceptibility
+                           genetic_liability circadian_rhythm_instability          raises vulnerability of sleep-wake and rhythm control  increased susceptibility
+                           genetic_liability       hpa_axis_dysregulation             raises vulnerability of stress-response regulation  increased susceptibility
+                         psychosocial_stress       hpa_axis_dysregulation      precipitates and amplifies episode-related stress biology                 increased
+                         psychosocial_stress      monoamine_dysregulation   interacts with stress hormones to destabilize mood chemistry                 increased
+                        circadian_disruption circadian_rhythm_instability            destabilizes internal timing and episode regulation                 increased
+                        circadian_disruption             mania_activation                biases toward activation and episode escalation                 increased
+                         inflammatory_burden       inflammatory_signaling                   raises inflammatory pressure on mood systems                 increased
+                            recovery_support circadian_rhythm_instability                                 buffers sleep-wake instability                protective
+                            recovery_support       hpa_axis_dysregulation                                   buffers stress sensitization                protective
+                            recovery_support             mania_activation                      reduces escalation into severe activation                protective
+                      hpa_axis_dysregulation          autonomic_imbalance            amplifies sympathetic/parasympathetic dysregulation                 increased
+                      hpa_axis_dysregulation      monoamine_dysregulation          destabilizes mood transmitter systems bidirectionally                 increased
+                      hpa_axis_dysregulation               bdnf_reduction             reduces trophic support under repeated stress load                 increased
+                circadian_rhythm_instability          reward_circuit_bias               destabilizes arousal and reward-state regulation                 increased
+                      inflammatory_signaling               bdnf_reduction suppresses neurotrophic support in stress-sensitive structures                 increased
+                      inflammatory_signaling           bipolar_depression                                    increases depressive burden                 increased
+                     monoamine_dysregulation          reward_circuit_bias                  destabilizes motivational and arousal systems                 increased
+                     monoamine_dysregulation             mania_activation                supports elevated activation and mood expansion                 increased
+                     monoamine_dysregulation           bipolar_depression                       supports depressive burden and low drive                 increased
+                         reward_circuit_bias               striatum_proxy                       loads subcortical motivational circuitry increased activation bias
+                         reward_circuit_bias             mania_activation                     supports incentive-driven manic activation                 increased
+                              bdnf_reduction                  hippocampus             reduces trophic support in limbic memory circuitry           reduced support
+                              hypofrontality                  pfc_control              reduces executive control and top-down regulation          reduced function
+                              hypofrontality         cognitive_impairment           contributes to executive and motivational impairment                 increased
+cortico_limbic_striatal_thalamic_instability                     amygdala                       destabilizes limbic emotional reactivity   increased dysregulation
+cortico_limbic_striatal_thalamic_instability                  hippocampus         destabilizes stress-sensitive memory/context circuitry   increased dysregulation
+cortico_limbic_striatal_thalamic_instability                          acc               reduces monitoring and emotion-control stability          reduced function
+cortico_limbic_striatal_thalamic_instability                  pfc_control                       weakens distributed executive regulation          reduced function
+cortico_limbic_striatal_thalamic_instability               striatum_proxy            destabilizes motivational and psychomotor circuitry   increased dysregulation
+cortico_limbic_striatal_thalamic_instability               thalamus_proxy                 weakens relay/integration across mood networks   increased dysregulation
+                                 pfc_control                     amygdala                             normally provides top-down control        reduced inhibition
+                                    amygdala                mood_lability                  amplifies emotional intensity and instability                 increased
+                                         acc         mixed_state_pressure         weakened monitoring destabilizes mixed mood regulation                 increased
+                                 pfc_control    impulsivity_disinhibition                      reduced frontal control impairs restraint                 increased
+                              striatum_proxy            psychomotor_shift                       biases psychomotor activation or slowing                 increased
+                              striatum_proxy             mania_activation                                  supports activation and drive                 increased
+                              thalamus_proxy         cognitive_impairment               relay dysfunction weakens coordinated regulation                 increased
+                         autonomic_imbalance             mania_activation           supports sympathetic hyperactivation in manic states                 increased
+                         autonomic_imbalance                mood_lability                    increases physiologic-affective instability                 increased
+                          bipolar_depression         mixed_state_pressure         depressive burden can coexist with activation pressure                 increased
+                            mania_activation         mixed_state_pressure             manic activation can coexist with dysphoric burden                 increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    LB (Amygdala) left  CA1 (Hippocampus) left  Area 33 (ACC) left  Area 8v1 (MFG) left  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)  thalamus
+LB (Amygdala) left                                             244.570                  64.260               0.045                 0.03                                               0.075       0.0
+CA1 (Hippocampus) left                                          64.260                1685.400               1.515                 2.39                                               1.610       0.0
+Area 33 (ACC) left                                               0.045                   1.515             977.565               116.93                                              96.055       0.0
+Area 8v1 (MFG) left                                              0.030                   2.390             116.930              6703.68                                               2.910       0.0
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)               0.075                   1.610              96.055                 2.91                                            2794.395       0.0
+thalamus                                                         0.000                   0.000               0.000                 0.00                                               0.000       0.0
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    6.646557   1.704315           14    -0.521721    0.777743
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+ CLOCK    4.697633   0.997899           21    -0.280457    1.220060
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+   IL6    2.392836   1.012524           14     0.173964    1.127447
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+  PER3    6.105662   1.111622           21    -0.659829    1.205104
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+   TNF    2.985986   1.786056           14    -0.385279    0.709226
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    6.512106   1.616656           16    -0.353356    0.947564
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+ CLOCK    4.655958   1.098952           24    -0.033829    1.299742
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+   IL6    2.201325   0.696271           16    -0.270200    0.945900
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+  PER3    5.975771   0.937438           24    -0.404658    0.657684
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+   TNF    2.754838   1.271581           16    -0.514088    0.830098
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    7.228183   1.172363            6     0.148983    0.232945
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+ CLOCK    4.896578   0.793165            9     0.298011    0.756642
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+   DBH    2.910622   0.492084            9     0.486911    0.387880
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+GABRA2    8.118859   1.598675           78     0.854947    0.291603
+GRIN2B    6.508622   1.715237            9     0.674611    0.432203
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+   IL6    2.022550   0.405522            6    -0.282350    0.476819
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+  PER3    6.497433   0.925814            9     0.116056    0.552984
+SLC6A2    1.404633   0.578627            6     0.109350    0.579562
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+   TNF    3.633267   2.277348            6     0.248400    0.778812
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC_CONTROL : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_CONTROL : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    7.673975   1.081022            8     0.749463    0.232813
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+ CLOCK    5.054917   0.772547           12     0.598017    0.556231
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+   DBH    3.260200   0.921546           12     0.219600    0.480866
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+GABRA2    7.718805   1.556872          104     0.515174    0.284856
+GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+ HTR1A    4.492558   1.458132           12     0.359783    0.242565
+   IL6    2.044225   0.800203            8    -0.174187    1.077107
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+  PER3    6.167967   1.036262           12    -0.188525    0.586257
+SLC6A2    1.237313   0.282436            8    -0.367688    0.175513
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+   TNF    3.175512   1.820857            8    -0.181950    0.691111
+
+=== PFC_CONTROL : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STRIATUM_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== STRIATUM_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    6.682806   1.365245           16    -0.315362    0.637659
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+ CLOCK    4.132588   1.049402           24    -1.080650    1.106344
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+ CRHR1    3.964031   2.379487           32    -1.035025    0.898802
+   DBH    2.234079   0.743262           24    -0.447996    0.774587
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+ FKBP5    4.906187   2.527519           32     0.287916    0.613248
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+ HTR1A    2.481942   1.355876           24    -0.801938    0.579867
+   IL6    2.407769   0.821100           16     0.091775    1.022966
+ NR3C1    8.892430   1.124793           40    -0.717515    0.756545
+  PER3    6.432654   0.868091           24     0.041821    0.597780
+SLC6A2    1.516831   0.438030           16    -0.090475    0.445743
+SLC6A4    1.711622   0.660476           88    -0.184322    0.416930
+   TNF    3.420431   2.125458           16    -0.009419    1.158509
+
+=== STRIATUM_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== THALAMUS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== THALAMUS_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARNTL    6.601590   1.672624          410    -0.217497    0.937399
+  BDNF    3.585602   2.013440          410    -0.863433    0.784586
+ CLOCK    4.633074   0.850138          615    -0.048795    1.137660
+  COMT    6.696718   3.651617         1230     0.355509    1.238947
+ CRHR1    4.810321   2.511263          820     0.113186    1.037727
+   DBH    2.215716   0.829900          615    -0.472405    0.823535
+  DRD2    4.591492   2.406942         1025     0.775113    0.873169
+ FKBP5    4.833678   2.449193          820     0.330300    0.846161
+GABRA2    6.223685   1.895726         5330    -0.728558    0.760170
+GRIN2B    5.313393   2.186007          615    -0.079798    0.877520
+ HTR1A    2.629617   1.358534          615    -0.771302    0.660170
+   IL6    2.302559   0.878479          410    -0.041315    1.076752
+ NR3C1    9.353292   1.207740         1025     0.257266    0.939003
+  PER3    6.531321   1.065254          615     0.361553    0.853127
+SLC6A2    1.570577   0.496029          410    -0.214401    0.608296
+SLC6A4    1.807653   0.679452         2255    -0.203712    0.498376
+   TNF    3.454038   1.558740          410     0.092294    0.972883
+
+=== THALAMUS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+circadian_rhythm_instability                    0.4600
+hpa_axis_dysregulation                          0.4340
+monoamine_dysregulation                         0.4248
+reward_circuit_bias                             0.3024
+cortico_limbic_striatal_thalamic_instability    0.2638
+inflammatory_signaling                          0.2600
+autonomic_imbalance                             0.2599
+hypofrontality                                  0.2286
+bdnf_reduction                                  0.1995
+
+=== REGIONAL STATE ===
+amygdala          0.1791
+striatum_proxy    0.1586
+hippocampus       0.1566
+thalamus_proxy    0.1251
+acc               0.1249
+pfc_control       0.1142
+
+=== SYMPTOMS ===
+mania_activation             0.2336
+bipolar_depression           0.1955
+mixed_state_pressure         0.1757
+mood_lability                0.1540
+psychomotor_shift            0.1272
+cognitive_impairment         0.1072
+impulsivity_disinhibition    0.0905
+
+=== PHENOTYPES ===
+stress_circadian_profile       0.3364
+mixed_state_profile            0.1576
+mania_dominant_profile         0.1468
+depression_dominant_profile    0.1447

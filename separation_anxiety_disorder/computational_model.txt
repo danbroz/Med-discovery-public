@@ -1,0 +1,168 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES (head) ===
+                         key                                          label      node_type                                                                                            description                                   atlas_region region_identifier                                                   centroid_mni  volume_mm3                            feature_summary
+       genetic_vulnerability                          Genetic Vulnerability          input               Polygenic liability increasing vulnerability to fear, anxiety, and stress dysregulation.                                           None              None                                                           None         NaN                                       None
+        early_life_adversity                           Early Life Adversity          input                              Early trauma, neglect, abuse, or loss that sensitizes later anxiety risk.                                           None              None                                                           None         NaN                                       None
+stressful_family_environment                   Stressful Family Environment          input        Parental conflict, instability, or loss-related family stress that amplifies separation threat.                                           None              None                                                           None         NaN                                       None
+         anxious_temperament                            Anxious Temperament          input               Inherited or developmentally shaped anxious temperament predisposing to separation fear.                                           None              None                                                           None         NaN                                       None
+         separation_cue_load                            Separation Cue Load          input                  Current burden of separation-related cues, transitions, or attachment threat signals.                                           None              None                                                           None         NaN                                       None
+    family_stability_support                       Family Stability Support          input                        Protective caregiving stability, reassurance, and environmental safety support.                                           None              None                                                           None         NaN                                       None
+        serotonergic_support                           Serotonergic Support          input Protective support consistent with serotonergic treatment effects, such as SSRI-related normalization.                                           None              None                                                           None         NaN                                       None
+     gabaergic_acute_support                        Gabaergic Acute Support          input   Acute GABA-A enhancing anxiolytic support modeled as short-term fear inhibition with trade-off risk.                                           None              None                                                           None         NaN                                       None
+                    amygdala                             LB (Amygdala) left         region                                                            Atlas-backed fear and threat salience node.                             LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=yes
+                 hippocampus                         CA1 (Hippocampus) left         region                        Atlas-backed contextual memory and adversity-linked threat-generalization node.                         CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=yes
+                 pfc_control                          Area Fp1 (FPole) left         region                                         Atlas-backed or proxy medial/prefrontal top-down control node.                          Area Fp1 (FPole) left              None   (-19.087224753227034, 64.3421602126044, -0.8102695520121443)     10536.0  receptors=no; genes=yes; connectivity=yes
+              striatum_proxy FuP (Ventral Striatum, Fundus of Putamen) left         region                                 Proxy for CSTC striatal involvement in persistent worry/perseveration. FuP (Ventral Striatum, Fundus of Putamen) left              None  (-22.444895199459097, 7.6233941852603095, -9.231913455037187)      1479.0  receptors=no; genes=yes; connectivity=yes
+              thalamus_proxy               ZI (Thalamus, zona incerta) left         region                           Proxy for CSTC thalamic relay involvement in persistent worry/perseveration.               ZI (Thalamus, zona incerta) left              None            (-11.044642857142861, -14.5625, -6.323214285714286)       560.0  receptors=no; genes=yes; connectivity=yes
+  serotonergic_dysregulation                     Serotonergic Dysregulation latent_biology         Relative serotonergic dysfunction contributing to worry, hypervigilance, and dysphoric affect.                                           None              None                                                           None         NaN                                       None
+
+=== EDGES (head) ===
+                           source                            target                                                           relation separation_anxiety_change  weight
+            genetic_vulnerability        serotonergic_dysregulation            raises liability for serotonergic anxiety dysregulation                 increased    0.28
+            genetic_vulnerability gabaergic_fear_inhibition_failure              raises liability for impaired inhibitory fear control                 increased    0.20
+            genetic_vulnerability   stress_epigenetic_sensitization                confers vulnerability that interacts with adversity                 increased    0.18
+             early_life_adversity   stress_epigenetic_sensitization      sensitizes stress biology and long-term anxiety vulnerability                 increased    0.42
+     stressful_family_environment   stress_epigenetic_sensitization                    sustains stress-linked biological sensitization                 increased    0.34
+              anxious_temperament            attachment_threat_bias       biases the child toward perceiving separation as threatening                 increased    0.38
+              separation_cue_load            attachment_threat_bias                         amplifies salience of attachment-loss cues                 increased    0.30
+         family_stability_support            attachment_threat_bias       reduces perceived separation threat and environmental danger                 decreased   -0.25
+             serotonergic_support        serotonergic_dysregulation                  partly compensates for serotonergic dysregulation                 decreased   -0.32
+          gabaergic_acute_support gabaergic_fear_inhibition_failure           partly compensates for deficient inhibitory fear control                 decreased   -0.34
+  stress_epigenetic_sensitization        serotonergic_dysregulation  pushes anxiety circuitry toward persistent serotonergic imbalance                 increased    0.20
+  stress_epigenetic_sensitization gabaergic_fear_inhibition_failure                     weakens inhibitory control of arousal and fear                 increased    0.22
+       serotonergic_dysregulation      frontolimbic_control_failure                    weakens regulation of worry and negative affect                 increased    0.24
+gabaergic_fear_inhibition_failure      frontolimbic_control_failure permits excessive fear arousal that overwhelms cortical regulation                 increased    0.24
+
+=== RESOLVED REGIONS ===
+- amygdala: LB (Amygdala) left
+- hippocampus: CA1 (Hippocampus) left
+- pfc_control: Area Fp1 (FPole) left
+- striatum_proxy: FuP (Ventral Striatum, Fundus of Putamen) left
+- thalamus_proxy: ZI (Thalamus, zona incerta) left
+
+=== FEATURE SNAPSHOT: amygdala ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+GABRG2    9.809148   1.051943           21    -0.431229    1.114230
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+  GAD2    7.901602   1.293967          126    -0.280093    0.425723
+Connectivity:
+                          connected_region    value
+        Temporal-to-Parietal (GapMap) left 6605.220
+Subc (Hippocampus, Subicular complex) left  525.285
+      Frontal-to-Temporal-II (GapMap) left  125.815
+                        IF (Amygdala) left   66.800
+                    CA1 (Hippocampus) left   64.260
+
+=== FEATURE SNAPSHOT: hippocampus ===
+Receptors:
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    7.128230   3.002379          392    -0.072726    0.732888
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+GABRG2    9.972300   1.081264           24     0.101388    0.864575
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+  GAD2    7.856428   1.781416          144    -0.209259    1.052982
+Connectivity:
+                          connected_region    value
+Subc (Hippocampus, Subicular complex) left 5205.660
+        Temporal-to-Parietal (GapMap) left 2875.975
+      Frontal-to-Temporal-II (GapMap) left 2118.815
+                       Area Ph2 (PhG) left 1448.100
+                      Area FG4 (FusG) left  781.135
+
+=== FEATURE SNAPSHOT: pfc_control ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    7.658536   3.129235          441     0.301159    0.453254
+GABRB2    7.924139   1.263838           18     0.604311    0.255935
+GABRG2    9.901226   1.430486           27     0.097919    0.396769
+  GAD1    8.209122   1.936830          162     0.139208    0.345314
+  GAD2    8.219067   1.321527          162     0.099670    0.265452
+Connectivity:
+                              connected_region    value
+                     Frontal-I.1 (GapMap) left 5796.395
+                        Area Fp1 (FPole) right 3365.310
+                          Area SFG3 (SFG) left 3198.165
+                          Area SFG2 (SFG) left 2825.445
+FuP (Ventral Striatum, Fundus of Putamen) left 2821.120
+
+=== FEATURE SNAPSHOT: striatum_proxy ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    6.555539   2.907386          196    -0.674441    0.655593
+GABRB2    7.126125   1.588254            8    -0.529200    0.710370
+GABRG2    9.736025   1.172393           12    -0.380508    0.303891
+  GAD1    9.000999   1.970719           72     0.642828    0.536791
+  GAD2    9.493950   1.517405           72     0.925529    0.666116
+Connectivity:
+                                       connected_region    value
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 4462.355
+                                  Area Fp1 (FPole) left 2821.120
+        AcbL (Ventral Striatum, Lateral Accumbens) left 2434.255
+                                    Area Fo3 (OFC) left 2142.020
+                   Frontal-to-Temporal-II (GapMap) left 1590.675
+
+=== FEATURE SNAPSHOT: thalamus_proxy ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+GABRA1    7.363306   3.066009          392     0.083266    0.867371
+GABRB2    6.978906   1.524058           16    -0.293938    0.827007
+GABRG2   10.078529   1.180348           24     0.391158    0.899599
+  GAD1    8.048958   2.320105          144     0.032626    1.152170
+  GAD2    7.808731   1.906782          144    -0.191263    1.089636
+Connectivity:
+                                      connected_region    value
+     VIM (Thalamus, ventral intermediate Nucleus) left 3248.250
+ VLA (Thalamus, ventral lateral anterior Nucleus) left 1128.025
+VA (Thalamus, ventral anterior Nucleus (ventral)) left  657.830
+                                STN (Subthalamus) left  547.375
+                                 Area 6d1 (PreCG) left  371.750
+
+=== SIMULATION: LATENTS ===
+attachment_threat_bias               0.5180
+stress_epigenetic_sensitization      0.4570
+gabaergic_fear_inhibition_failure    0.3820
+serotonergic_dysregulation           0.3594
+frontolimbic_control_failure         0.3309
+cstc_worry_perseveration             0.3273
+
+=== SIMULATION: SYMPTOMS ===
+separation_related_fear            0.4090
+clinging_avoidant_behavior         0.3300
+anticipatory_anxiety               0.3155
+hypervigilance_persistent_worry    0.2840
+functional_impairment              0.2808
+restlessness_tension               0.2805
+dysphoric_distress                 0.2790
+benzodiazepine_tradeoff_risk       0.0661
+
+=== SIMULATION: PHENOTYPES ===
+attachment_threat_profile          0.4377
+fear_hyperarousal_profile          0.3669
+separation_anxiety_core_profile    0.3384
+worry_perseveration_profile        0.3012
+medication_tradeoff_profile        0.1808

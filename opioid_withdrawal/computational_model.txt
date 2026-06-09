@@ -1,0 +1,164 @@
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"opioid_withdrawal_model.py" 1260L, 51411B[1;1H[35mfrom[m __future__ [35mimport[m annotations
+
+[31m"""
+Opioid Withdrawal atlas-grounded siibra scaffold.
+
+This script translates a short neurobiological chapter on opioid withdrawal
+into a transparent research scaffold. It is intended for mechanistic
+exploration and atlas-backed feature querying, not for diagnosis, treatment
+selection, or prediction for any individual.
+
+Core chapter logic encoded here:
+- chronic opioid exposure induces homeostatic recalibration across opioid and
+  non-opioid transmitter systems,
+- abrupt opioid removal unmasks these adaptations and produces widespread
+  neuronal hyperexcitability,
+- glutamatergic / NMDA upregulation is a major withdrawal driver,
+- norepinephrine, dopamine, and serotonin dysregulation contribute to arousal,
+  reward disruption, and executive burden,
+- maladaptive synaptic plasticity can strengthen medication- and withdrawal-linked
+  memories that support craving and relapse,
+- hippocampal and prefrontal dysfunction contribute to cognitive deficits,
+  while amygdala and locus-coeruleus-like arousal systems plausibly amplify
+  distress during withdrawal.
+"""[m
+
+[35mimport[m warnings
+[35mfrom[m typing [35mimport[m Any, Dict, Iterable, List, Optional, Sequence, Tuple
+
+[35mimport[m pandas [38;5;130mas[m pd
+
+[38;5;130mtry[m:
+    [35mimport[m siibra
+[38;5;130mexcept[m [32mImportError[m [38;5;130mas[m exc:  [34m# pragma: no cover - runtime dependency guard[m
+    [38;5;130mraise[m [32mImportError[m([35;9H[31m"This scaffold requires the 'siibra' package. Install siibra-python and rerun."[m
+    ) [35mfrom[m exc
+
+
+OPIOID_WITHDRAWAL_GENE_PANEL = [
+    [31m"OPRM1"[m,
+    [31m"OPRK1"[m,
+    [31m"OPRD1"[m,
+    [31m"PENK"[m,
+    [31m"PDYN"[m,
+    [31m"POMC"[m,
+    [31m"GRIN1"[m,
+    [31m"GRIN2B"[m,
+    [31m"SLC1A2"[m,[49;136H1,1[11CTop[1;1H[?25h[?4m[49;1H[?2004l[>4;m[23;2t[23;1t[49;1H[K[49;1H[?1004l[?2004l[?1l>[?1049l[23;0;0t[>4;m
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                   key      node_type                                   atlas_region                                                   centroid_mni                           feature_summary
+                 genetic_vulnerability          input                                           None                                                           None                                      None
+               chronic_opioid_exposure          input                                           None                                                           None                                      None
+                 abrupt_opioid_removal          input                                           None                                                           None                                      None
+                stress_reactivity_load          input                                           None                                                           None                                      None
+               prior_withdrawal_cycles          input                                           None                                                           None                                      None
+          withdrawal_treatment_support          input                                           None                                                           None                                      None
+                      recovery_support          input                                           None                                                           None                                      None
+                           hippocampus         region                         CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                              amygdala         region                             LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                           pfc_control         region                                           None                                                           None                                unresolved
+               nucleus_accumbens_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left     (-7.25139664804469, 8.162011173184368, -8.016759776536318)  receptors=no; genes=yes; connectivity=no
+                 locus_coeruleus_proxy         region                                           None                                                           None                                unresolved
+             homeostatic_recalibration latent_biology                                           None                                                           None                                      None
+       glutamatergic_nmda_upregulation latent_biology                                           None                                                           None                                      None
+            noradrenergic_hyperarousal latent_biology                                           None                                                           None                                      None
+monoamine_reward_control_dysregulation latent_biology                                           None                                                           None                                      None
+       maladaptive_synaptic_plasticity latent_biology                                           None                                                           None                                      None
+  frontolimbic_cognitive_dysregulation latent_biology                                           None                                                           None                                      None
+          withdrawal_hyperexcitability        symptom                                           None                                                           None                                      None
+                  cognitive_impairment        symptom                                           None                                                           None                                      None
+            affective_arousal_distress        symptom                                           None                                                           None                                      None
+         craving_relapse_vulnerability        symptom                                           None                                                           None                                      None
+          protracted_withdrawal_burden        symptom                                           None                                                           None                                      None
+
+=== Edge sample ===
+                      source                                 target                                                                              relation opioid_withdrawal_change
+     chronic_opioid_exposure              homeostatic_recalibration           drives chronic compensatory adaptation across opioid and non-opioid systems                increased
+     chronic_opioid_exposure        glutamatergic_nmda_upregulation upregulates NMDA-mediated glutamatergic tone under chronic inhibitory opioid pressure                increased
+     chronic_opioid_exposure monoamine_reward_control_dysregulation                  alters dopamine and serotonin systems involved in reward and control                increased
+       genetic_vulnerability              homeostatic_recalibration                             modulates susceptibility to dependence-related adaptation                increased
+       genetic_vulnerability monoamine_reward_control_dysregulation            raises baseline vulnerability in transmitter systems and stress reactivity                increased
+      stress_reactivity_load             noradrenergic_hyperarousal                       amplifies arousal burden and stress-linked withdrawal intensity                increased
+     prior_withdrawal_cycles        maladaptive_synaptic_plasticity       strengthens withdrawal-linked learning and sensitization over repeated episodes                increased
+     prior_withdrawal_cycles        glutamatergic_nmda_upregulation              supports kindling-like amplification of excitatory withdrawal mechanisms                increased
+       abrupt_opioid_removal        glutamatergic_nmda_upregulation               unmasks compensatory glutamatergic overactivity during withdrawal onset                increased
+       abrupt_opioid_removal             noradrenergic_hyperarousal                   triggers acute arousal escalation as inhibitory opioid tone is lost                increased
+withdrawal_treatment_support        glutamatergic_nmda_upregulation                     buffers acute withdrawal physiology and excitatory overactivation                decreased
+withdrawal_treatment_support             noradrenergic_hyperarousal                                reduces autonomic and arousal burden during withdrawal                decreased
+
+=== Resolved regions ===
+- hippocampus: CA1 (Hippocampus) left
+- amygdala: LB (Amygdala) left
+- nucleus_accumbens_proxy: AcbM (Ventral Striatum, Medial Accumbens) left
+
+=== Example multimodal summaries ===
+
+[hippocampus] receptors rows=14, genes rows=19, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.638438   2.851173           16     0.533731    1.414835
+ COMT    6.197856   3.449950           48    -0.510062    0.804045
+  DBH    2.417275   0.928359           24    -0.358292    0.803196
+ DRD2    3.819515   2.124018           40     0.115163    1.234718
+FKBP5    5.287750   2.991862           32     0.558866    1.301838
+
+[amygdala] receptors rows=0, genes rows=19, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DBH    2.221610   1.005047           21    -0.238133    0.810462
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+FKBP5    5.135946   2.684673           28     0.556286    1.064947
+
+[pfc_control] receptors rows=0, genes rows=0, connectivity rows=0
+
+=== Circuit connectivity ===
+ source_key          source_region              target_key                                  target_region  value cohort         modality
+hippocampus CA1 (Hippocampus) left nucleus_accumbens_proxy AcbM (Ventral Striatum, Medial Accumbens) left    1.1    HCP StreamlineCounts
+hippocampus CA1 (Hippocampus) left                amygdala                             LB (Amygdala) left    NaN    HCP StreamlineCounts
+   amygdala     LB (Amygdala) left nucleus_accumbens_proxy AcbM (Ventral Striatum, Medial Accumbens) left    NaN    HCP StreamlineCounts
+
+=== Example simulation ===
+
+INPUTS
+genetic_vulnerability           0.55
+chronic_opioid_exposure         0.90
+abrupt_opioid_removal           0.85
+stress_reactivity_load          0.50
+prior_withdrawal_cycles         0.65
+withdrawal_treatment_support    0.30
+recovery_support                0.15
+
+LATENTS
+homeostatic_recalibration                 0.6175
+glutamatergic_nmda_upregulation           0.6360
+noradrenergic_hyperarousal                0.5322
+monoamine_reward_control_dysregulation    0.5967
+maladaptive_synaptic_plasticity           0.5962
+frontolimbic_cognitive_dysregulation      0.5035
+
+REGIONAL_STATE
+hippocampal_memory_disruption       0.6062
+amygdala_hyperreactivity            0.5758
+pfc_control_failure                 0.4565
+nucleus_accumbens_reward_deficit    0.5489
+locus_coeruleus_activation          0.5842
+
+SYMPTOMS
+withdrawal_hyperexcitability     0.6503
+cognitive_impairment             0.5493
+affective_arousal_distress       0.5841
+craving_relapse_vulnerability    0.5509
+protracted_withdrawal_burden     0.5870
+
+PHENOTYPES
+acute_hyperexcitable_withdrawal_profile    0.6235
+memory_relapse_profile                     0.5844
+cognitive_control_disruption_profile       0.5031
+stress_amplified_arousal_profile           0.5640

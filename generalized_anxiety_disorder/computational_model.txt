@@ -1,0 +1,147 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                             key                            label      node_type                                                                                       description         atlas_region region_identifier                                                  centroid_mni  volume_mm3                           feature_summary  is_proxy
+           genetic_vulnerability            Genetic Vulnerability          input        Familial and heritable liability shaping vulnerability to anxiety circuitry dysregulation.                 None              None                                                          None         NaN                                      None     False
+      environmental_trigger_load       Environmental Trigger Load          input                    Environmental and life-experience triggers acting on biological vulnerability.                 None              None                                                          None         NaN                                      None     False
+   chronic_uncontrollable_stress    Chronic Uncontrollable Stress          input                    Persistent stress burden that can weaken prefrontal control and amplify worry.                 None              None                                                          None         NaN                                      None     False
+               treatment_support                Treatment Support          input                          Protective support from treatment, structure, and regulation strategies.                 None              None                                                          None         NaN                                      None     False
+benzodiazepine_like_gaba_support Benzodiazepine Like Gaba Support          input                      Short-term GABA-enhancing pharmacologic support used as a mechanistic proxy.                 None              None                                                          None         NaN                                      None     False
+                        amygdala               LB (Amygdala) left         region                                 Threat and fear-generating limbic node emphasized by the chapter.   LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=yes     False
+                medial_pfc_proxy             Area p32 (pACC) left         region                        Proxy for medial prefrontal top-down control over limbic threat signaling. Area p32 (pACC) left              None   (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0  receptors=no; genes=yes; connectivity=no      True
+            orbitofrontal_cortex              Area Fo4 (OFC) left         region                        Orbitofrontal appraisal / regulatory node named explicitly in the chapter.  Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0  receptors=no; genes=yes; connectivity=no     False
+               gabaergic_deficit                Gabaergic Deficit latent_biology         Reduced inhibitory GABAergic tone producing disinhibition of anxiety-generating circuits.                 None              None                                                          None         NaN                                      None     False
+   stress_response_dysregulation    Stress Response Dysregulation latent_biology                     Stress-response / neuroendocrine dysregulation that sustains anxious arousal.                 None              None                                                          None         NaN                                      None     False
+    pfc_amygdala_disconnectivity     Pfc Amygdala Disconnectivity latent_biology              Weakened functional coupling between prefrontal regulatory systems and the amygdala.                 None              None                                                          None         NaN                                      None     False
+    pfc_top_down_control_failure     Pfc Top Down Control Failure latent_biology                            Impaired executive control over threat appraisal and worry regulation.                 None              None                                                          None         NaN                                      None     False
+            amygdala_threat_bias             Amygdala Threat Bias latent_biology                                   Excessive limbic threat signaling that promotes fear and worry.                 None              None                                                          None         NaN                                      None     False
+                 excessive_worry                  Excessive Worry        symptom                                   Excessive worry as a core downstream expression of the circuit.                 None              None                                                          None         NaN                                      None     False
+    difficulty_controlling_worry     Difficulty Controlling Worry        symptom                       Difficulty controlling worry, matching the chapter's core clinical feature.                 None              None                                                          None         NaN                                      None     False
+              persistent_anxiety               Persistent Anxiety        symptom                         Sustained anxiety and tension arising from chronic circuit dysregulation.                 None              None                                                          None         NaN                                      None     False
+     worry_stress_cycle_pressure      Worry Stress Cycle Pressure        symptom Self-reinforcing pressure whereby worry intensifies stress and stress further weakens regulation.                 None              None                                                          None         NaN                                      None     False
+
+=== Edges ===
+                          source                        target                                                                          relation gad_change
+           genetic_vulnerability             gabaergic_deficit                  contributes to inherited vulnerability affecting inhibitory tone  increased
+           genetic_vulnerability  pfc_amygdala_disconnectivity                   contributes to biologic vulnerability in frontolimbic circuitry  increased
+      environmental_trigger_load stress_response_dysregulation environmental triggers act on biologic vulnerability and amplify stress signaling  increased
+   chronic_uncontrollable_stress stress_response_dysregulation        persistent stress worsens neuroendocrine and stress-response dysregulation  increased
+   chronic_uncontrollable_stress  pfc_top_down_control_failure                       uncontrollable stress weakens prefrontal control over worry  increased
+               treatment_support stress_response_dysregulation                              supportive treatment can reduce stress-system burden  decreased
+benzodiazepine_like_gaba_support             gabaergic_deficit                    GABA-A enhancement partially offsets deficient inhibitory tone  decreased
+               gabaergic_deficit          amygdala_threat_bias                 reduced inhibition disinhibits fear and worry-generating circuits  increased
+   stress_response_dysregulation  pfc_amygdala_disconnectivity                                  stress burden weakens frontolimbic communication  increased
+    pfc_amygdala_disconnectivity  pfc_top_down_control_failure                        poor frontolimbic coupling undermines executive regulation  increased
+    pfc_top_down_control_failure              medial_pfc_proxy                 top-down control failure is expressed as medial PFC dysregulation  increased
+    pfc_top_down_control_failure          orbitofrontal_cortex     top-down control failure is expressed as orbitofrontal regulatory dysfunction  increased
+               gabaergic_deficit                      amygdala                          loss of inhibitory braking increases limbic excitability  increased
+            amygdala_threat_bias                      amygdala                                 threat bias manifests as amygdala hyperreactivity  increased
+    pfc_amygdala_disconnectivity                      amygdala                weaker prefrontal damping leaves amygdala signals less constrained  increased
+                        amygdala               excessive_worry                             hyperreactive fear circuitry promotes excessive worry  increased
+                medial_pfc_proxy  difficulty_controlling_worry                          medial prefrontal dysregulation impairs control of worry  increased
+            orbitofrontal_cortex               excessive_worry                    orbitofrontal dysregulation impairs realistic threat appraisal  increased
+                        amygdala            persistent_anxiety                                  limbic hyperreactivity sustains anxious distress  increased
+   stress_response_dysregulation            persistent_anxiety                              stress-system dysregulation supports chronic anxiety  increased
+                 excessive_worry   worry_stress_cycle_pressure                                            worry feeds the stress-worsening cycle  increased
+   chronic_uncontrollable_stress   worry_stress_cycle_pressure                                stress directly strengthens the worry-stress cycle  increased
+     worry_stress_cycle_pressure chronic_uncontrollable_stress                vicious cycle: worry further intensifies experienced stress burden  increased
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- medial_pfc_proxy: Area p32 (pACC) left
+- orbitofrontal_cortex: Area Fo4 (OFC) left
+
+=== Receptor fingerprints (head) ===
+
+[amygdala]
+<no receptor fingerprint>
+
+[medial_pfc_proxy]
+<no receptor fingerprint>
+
+[orbitofrontal_cortex]
+<no receptor fingerprint>
+
+=== Gene summaries (head) ===
+
+[amygdala]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+
+[medial_pfc_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+ CRHR1    5.238798   1.959829           64     0.137673    0.666190
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+GABRA1    7.893453   3.079313          784     0.347816    0.458416
+
+[orbitofrontal_cortex]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GABRA1    7.955420   3.122629          196     0.236528    0.369186
+
+=== Connectivity profiles (head) ===
+
+[amygdala]
+                          connected_region    value
+        Temporal-to-Parietal (GapMap) left 6605.220
+Subc (Hippocampus, Subicular complex) left  525.285
+      Frontal-to-Temporal-II (GapMap) left  125.815
+                        IF (Amygdala) left   66.800
+                    CA1 (Hippocampus) left   64.260
+
+[medial_pfc_proxy]
+<no connectivity profile>
+
+[orbitofrontal_cortex]
+<no connectivity profile>
+
+=== Circuit connectivity ===
+                      amygdala  medial_pfc_proxy  orbitofrontal_cortex
+amygdala               244.570             0.075                 0.075
+medial_pfc_proxy         0.075         14215.670                20.480
+orbitofrontal_cortex     0.075            20.480               698.345
+
+=== Simulation: inputs ===
+genetic_vulnerability               0.75
+environmental_trigger_load          0.55
+chronic_uncontrollable_stress       0.80
+treatment_support                   0.30
+benzodiazepine_like_gaba_support    0.15
+
+=== Simulation: latents ===
+gabaergic_deficit                0.5625
+stress_response_dysregulation    0.5475
+pfc_amygdala_disconnectivity     0.5716
+pfc_top_down_control_failure     0.5361
+amygdala_threat_bias             0.5535
+
+=== Simulation: regional state ===
+amygdala                0.5532
+medial_pfc_proxy        0.5473
+orbitofrontal_cortex    0.5520
+
+=== Simulation: symptoms ===
+excessive_worry                 0.5714
+difficulty_controlling_worry    0.5537
+persistent_anxiety              0.5585
+worry_stress_cycle_pressure     0.6698
+
+=== Simulation: phenotypes ===
+gad_core_profile                      0.5612
+stress_amplified_profile              0.5919
+frontolimbic_dysregulation_profile    0.5508

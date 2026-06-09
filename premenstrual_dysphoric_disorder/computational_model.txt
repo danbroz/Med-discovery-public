@@ -1,0 +1,121 @@
+
+=== Building atlas-backed scaffold ===
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+Nodes:
+                                 key      node_type           atlas_region                           feature_summary
+               genetic_vulnerability          input                   None                                      None
+       baseline_vulnerability_traits          input                   None                                      None
+                ovarian_steroid_flux          input                   None                                      None
+           environmental_stress_load          input                   None                                      None
+             luteal_metabolic_demand          input                   None                                      None
+                   monoamine_support          input                   None                                      None
+         cycle_stabilization_support          input                   None                                      None
+                    recovery_support          input                   None                                      None
+                            amygdala         region     LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                         hippocampus         region CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                  hypothalamus_proxy         region                   None                                unresolved
+                                 ofc         region    Area Fo4 (OFC) left  receptors=no; genes=yes; connectivity=no
+                               dlpfc         region                   None                                unresolved
+ovarian_steroid_response_sensitivity latent_biology                   None                                      None
+        serotonergic_destabilization latent_biology                   None                                      None
+           gabaergic_destabilization latent_biology                   None                                      None
+       dopaminergic_modulation_shift latent_biology                   None                                      None
+ noradrenergic_arousal_dysregulation latent_biology                   None                                      None
+      hpo_hpa_coupling_dysregulation latent_biology                   None                                      None
+   prefrontal_self_regulation_burden latent_biology                   None                                      None
+          frontolimbic_dysregulation latent_biology                   None                                      None
+                     anxiety_tension        symptom                   None                                      None
+                        irritability        symptom                   None                                      None
+                  emotional_lability        symptom                   None                                      None
+                      dysphoric_mood        symptom                   None                                      None
+            concentration_difficulty        symptom                   None                                      None
+                       forgetfulness        symptom                   None                                      None
+          impulse_control_difficulty        symptom                   None                                      None
+
+Edges (first 20):
+                              source                               target                                                                               relation   pmdd_change
+               genetic_vulnerability ovarian_steroid_response_sensitivity       heritable liability increases CNS sensitivity to cyclical ovarian steroid shifts     increased
+       baseline_vulnerability_traits ovarian_steroid_response_sensitivity stable vulnerability traits raise the likelihood of symptomatic hormone responsiveness     increased
+                ovarian_steroid_flux ovarian_steroid_response_sensitivity    normal cyclical estrogen/progesterone fluctuations act as the physiological trigger     increased
+           environmental_stress_load       hpo_hpa_coupling_dysregulation                       stress intensifies reproductive-stress endocrine coupling burden     increased
+             luteal_metabolic_demand    prefrontal_self_regulation_burden                     luteal self-regulatory demand reduces prefrontal control resources     increased
+                   monoamine_support         serotonergic_destabilization                  monoamine-targeted treatment partially stabilizes serotonin signaling     decreased
+                   monoamine_support  noradrenergic_arousal_dysregulation        monoamine-targeted treatment partially stabilizes norepinephrine-linked arousal     decreased
+         cycle_stabilization_support ovarian_steroid_response_sensitivity                 cycle stabilization reduces the impact of ovarian steroid fluctuations     decreased
+         cycle_stabilization_support       hpo_hpa_coupling_dysregulation                                 cycle stabilization dampens endocrine trigger pressure     decreased
+                    recovery_support           frontolimbic_dysregulation                                       protective supports improve regulatory buffering     decreased
+ovarian_steroid_response_sensitivity         serotonergic_destabilization                    hormone sensitivity destabilizes serotonin-linked affect regulation     increased
+ovarian_steroid_response_sensitivity            gabaergic_destabilization                hormone sensitivity perturbs inhibitory GABA-linked emotional buffering     increased
+ovarian_steroid_response_sensitivity        dopaminergic_modulation_shift       hormone sensitivity perturbs dopamine-linked motivational and salience signaling     increased
+ovarian_steroid_response_sensitivity  noradrenergic_arousal_dysregulation                     hormone sensitivity perturbs norepinephrine-linked arousal systems     increased
+                ovarian_steroid_flux       hpo_hpa_coupling_dysregulation      cyclical ovarian hormone changes engage hypothalamic reproductive-stress coupling     increased
+      hpo_hpa_coupling_dysregulation                   hypothalamus_proxy                      endocrine coupling burden centers on hypothalamic control systems  dysregulated
+      hpo_hpa_coupling_dysregulation                          hippocampus                   stress-endocrine burden compromises hippocampal cognitive regulation  dysregulated
+   prefrontal_self_regulation_burden                                  ofc                          reduced control resources compromise orbitofrontal regulation  dysregulated
+   prefrontal_self_regulation_burden                                dlpfc                         reduced control resources compromise executive control systems  dysregulated
+          frontolimbic_dysregulation                             amygdala                            weak top-down control permits exaggerated limbic reactivity hyperreactive
+
+No amygdala receptor table available in this environment.
+
+No DLPFC gene table available in this environment.
+
+No hippocampus connectivity profile available in this environment.
+
+Within-model circuit connectivity:
+             amygdala  hippocampus      ofc
+amygdala      244.570       64.260    0.075
+hippocampus    64.260     1685.400    1.655
+ofc             0.075        1.655  698.345
+
+=== Simulation example: hormone-sensitive luteal dysregulation ===
+
+inputs:
+ovarian_steroid_flux             0.80
+luteal_metabolic_demand          0.65
+baseline_vulnerability_traits    0.60
+genetic_vulnerability            0.50
+environmental_stress_load        0.45
+recovery_support                 0.25
+monoamine_support                0.15
+cycle_stabilization_support      0.05
+
+latents:
+hpo_hpa_coupling_dysregulation          0.5305
+ovarian_steroid_response_sensitivity    0.5150
+prefrontal_self_regulation_burden       0.4342
+gabaergic_destabilization               0.4327
+dopaminergic_modulation_shift           0.4255
+frontolimbic_dysregulation              0.3862
+noradrenergic_arousal_dysregulation     0.3855
+serotonergic_destabilization            0.3770
+
+regional_state:
+hypothalamus_proxy    0.4625
+amygdala              0.3433
+dlpfc                 0.3432
+hippocampus           0.3318
+ofc                   0.3038
+
+symptoms:
+emotional_lability            0.3783
+anxiety_tension               0.3417
+irritability                  0.3369
+concentration_difficulty      0.3264
+impulse_control_difficulty    0.3205
+dysphoric_mood                0.3098
+forgetfulness                 0.2773
+
+phenotypes:
+hormone_sensitive_frontolimbic_profile    0.3871
+luteal_anxious_irritable_profile          0.3523
+control_depletion_profile                 0.3504
+luteal_dysphoric_profile                  0.3433
+global_pmdd_burden                        0.3273
+cognitive_pmdd_profile                    0.3197

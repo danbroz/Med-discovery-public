@@ -1,0 +1,124 @@
+Building Vascular Neurocognitive Disorder scaffold...
+
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+NODES
+                                key      node_type                                            atlas_region                          feature_summary
+     genetic_small_vessel_liability          input                                                    None                                     None
+               vascular_risk_burden          input                                                    None                                     None
+      endothelial_inflammatory_load          input                                                    None                                     None
+             ischemic_lesion_burden          input                                                    None                                     None
+          hemorrhagic_lesion_burden          input                                                    None                                     None
+                   mixed_ad_overlap          input                                                    None                                     None
+              vascular_risk_control          input                                                    None                                     None
+                        pfc_control         region                                                    None                               unresolved
+                basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left receptors=no; genes=yes; connectivity=no
+                     thalamus_proxy         region                        ZI (Thalamus, zona incerta) left receptors=no; genes=yes; connectivity=no
+             internal_capsule_proxy         region                                                    None                               unresolved
+                         pons_proxy         region                                                    None                               unresolved
+        small_vessel_disease_burden latent_biology                                                    None                                     None
+              chronic_hypoperfusion latent_biology                                                    None                                     None
+    blood_brain_barrier_dysfunction latent_biology                                                    None                                     None
+                     lacunar_burden latent_biology                                                    None                                     None
+                         wmh_burden latent_biology                                                    None                                     None
+                  microbleed_burden latent_biology                                                    None                                     None
+neurotransmitter_pathway_disruption latent_biology                                                    None                                     None
+  frontal_subcortical_disconnection latent_biology                                                    None                                     None
+          executive_network_failure latent_biology                                                    None                                     None
+ neurovascular_degenerative_synergy latent_biology                                                    None                                     None
+              dysexecutive_syndrome        symptom                                                    None                                     None
+           processing_speed_slowing        symptom                                                    None                                     None
+             attentional_impairment        symptom                                                    None                                     None
+         cognitive_flexibility_loss        symptom                                                    None                                     None
+                   gait_disturbance        symptom                                                    None                                     None
+           global_cognitive_decline        symptom                                                    None                                     None
+
+EDGES
+                             source                              target                                                            relation vnd_change
+     genetic_small_vessel_liability         small_vessel_disease_burden   raises inherited vulnerability to cerebral small-vessel pathology  increased
+               vascular_risk_burden         small_vessel_disease_burden              loads hypertension- and metabolic-linked vessel injury  increased
+               vascular_risk_burden               chronic_hypoperfusion                promotes sustained perfusion deficits in deep tissue  increased
+      endothelial_inflammatory_load     blood_brain_barrier_dysfunction                    worsens endothelial integrity and barrier injury  increased
+      endothelial_inflammatory_load         small_vessel_disease_burden       contributes to vessel-wall damage and vascular susceptibility  increased
+             ischemic_lesion_burden                      lacunar_burden                              adds ischemic subcortical infarct load  increased
+             ischemic_lesion_burden neurotransmitter_pathway_disruption         compromises neurotransmitter pathways through tissue injury  increased
+          hemorrhagic_lesion_burden                   microbleed_burden                                        adds microhemorrhagic burden  increased
+          hemorrhagic_lesion_burden neurotransmitter_pathway_disruption              disrupts signaling pathways through hemorrhagic injury  increased
+                   mixed_ad_overlap  neurovascular_degenerative_synergy  adds mixed dementia pressure through vascular-degenerative overlap  increased
+        small_vessel_disease_burden                      lacunar_burden                          increases risk of deep perforator infarcts  increased
+        small_vessel_disease_burden                          wmh_burden                      promotes white-matter damage and leukoaraiosis  increased
+        small_vessel_disease_burden                   microbleed_burden                               marks advanced small-vessel fragility  increased
+              chronic_hypoperfusion                          wmh_burden                      drives demyelination, axonal loss, and gliosis  increased
+    blood_brain_barrier_dysfunction                          wmh_burden                        contributes to white-matter lesion formation  increased
+                     lacunar_burden                 basal_ganglia_proxy                           adds lesion burden to basal-ganglia nodes  increased
+                     lacunar_burden                      thalamus_proxy                               adds lesion burden to thalamic relays  increased
+                     lacunar_burden              internal_capsule_proxy                                 disrupts deep white-matter conduits  increased
+                     lacunar_burden                          pons_proxy                                   adds subcortical brainstem burden  increased
+                         wmh_burden              internal_capsule_proxy           reflects white-matter disconnection through deep pathways  increased
+                         wmh_burden   frontal_subcortical_disconnection                        disconnects prefrontal and subcortical loops  increased
+                  microbleed_burden   frontal_subcortical_disconnection                        adds diffuse advanced SVD burden to networks  increased
+neurotransmitter_pathway_disruption           executive_network_failure          weakens distributed circuit signaling needed for cognition  increased
+  frontal_subcortical_disconnection                         pfc_control                           reduces intact top-down executive control  decreased
+  frontal_subcortical_disconnection           executive_network_failure                       degrades loop integrity for executive control  increased
+                basal_ganglia_proxy               dysexecutive_syndrome                       contributes to subcortical executive syndrome  increased
+                     thalamus_proxy              attentional_impairment                        disrupts relay support for attentive control  increased
+             internal_capsule_proxy            processing_speed_slowing                    disconnects fast long-range information transfer  increased
+                         pons_proxy                    gait_disturbance           supports gait burden when brainstem pathways are affected  increased
+                        pfc_control               dysexecutive_syndrome                           normally supports planning and sequencing  decreased
+          executive_network_failure               dysexecutive_syndrome                           drives planning and sequencing impairment  increased
+          executive_network_failure          cognitive_flexibility_loss                           reduces set-shifting and flexible control  increased
+                         wmh_burden            processing_speed_slowing                             correlates with slowed processing speed  increased
+                         wmh_burden            global_cognitive_decline                                       adds diffuse cognitive burden  increased
+ neurovascular_degenerative_synergy            global_cognitive_decline amplifies decline when vascular and degenerative processes co-occur  increased
+              vascular_risk_control         small_vessel_disease_burden                                     reduces ongoing vascular injury  decreased
+              vascular_risk_control               chronic_hypoperfusion                 improves risk-factor control and perfusion pressure  decreased
+              vascular_risk_control                   microbleed_burden     reduces progression pressure from uncontrolled vascular disease  decreased
+
+SIMULATION EXAMPLE
+
+INPUTS
+vascular_risk_burden              0.75
+ischemic_lesion_burden            0.65
+endothelial_inflammatory_load     0.60
+genetic_small_vessel_liability    0.55
+mixed_ad_overlap                  0.35
+vascular_risk_control             0.30
+hemorrhagic_lesion_burden         0.25
+
+LATENTS
+small_vessel_disease_burden            0.5650
+chronic_hypoperfusion                  0.5588
+wmh_burden                             0.5497
+blood_brain_barrier_dysfunction        0.5347
+lacunar_burden                         0.5192
+frontal_subcortical_disconnection      0.5159
+neurotransmitter_pathway_disruption    0.5038
+executive_network_failure              0.4931
+microbleed_burden                      0.4457
+neurovascular_degenerative_synergy     0.4249
+
+REGIONAL_STATE
+thalamus_proxy            0.5449
+internal_capsule_proxy    0.5434
+basal_ganglia_proxy       0.5422
+pfc_control               0.5011
+pons_proxy                0.4866
+
+SYMPTOMS
+processing_speed_slowing      0.5267
+gait_disturbance              0.5212
+cognitive_flexibility_loss    0.5169
+dysexecutive_syndrome         0.5151
+attentional_impairment        0.4960
+global_cognitive_decline      0.4599
+
+PHENOTYPES
+vascular_progression_pressure    0.5776
+mild_vnd_expression              0.5126
+major_vnd_expression             0.4803
+mixed_dementia_profile           0.4116

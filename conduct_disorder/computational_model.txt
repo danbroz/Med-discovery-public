@@ -1,0 +1,285 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                key      node_type                                   atlas_region                                                  centroid_mni                          feature_summary
+              genetic_vulnerability          input                                           None                                                          None                                     None
+             early_adversity_trauma          input                                           None                                                          None                                     None
+        callous_unemotional_loading          input                                           None                                                          None                                     None
+       substance_disinhibition_load          input                                           None                                                          None                                     None
+            reward_seeking_pressure          input                                           None                                                          None                                     None
+                  prosocial_support          input                                           None                                                          None                                     None
+                           amygdala         region                             LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+                             insula         region                         Area Id2 (Insula) left  (-41.03048780487805, -11.955792682926827, 5.373475609756099) receptors=no; genes=yes; connectivity=no
+                                ofc         region                            Area Fo4 (OFC) left  (-29.001430615164523, 53.3412017167382, -15.175965665236049) receptors=no; genes=yes; connectivity=no
+                                acc         region                             Area 33 (ACC) left  (-4.092857142857142, 13.314285714285717, 25.242857142857147) receptors=no; genes=yes; connectivity=no
+                        pfc_control         region                            Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262) receptors=no; genes=yes; connectivity=no
+                     striatum_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left    (-7.25139664804469, 8.162011173184368, -8.016759776536318) receptors=no; genes=yes; connectivity=no
+         serotonergic_disinhibition latent_biology                                           None                                                          None                                     None
+           dopaminergic_reward_bias latent_biology                                           None                                                          None                                     None
+      hpa_axis_trauma_sensitization latent_biology                                           None                                                          None                                     None
+               epigenetic_embedding latent_biology                                           None                                                          None                                     None
+fearlessness_threat_underreactivity latent_biology                                           None                                                          None                                     None
+       empathy_distress_cue_deficit latent_biology                                           None                                                          None                                     None
+          executive_control_failure latent_biology                                           None                                                          None                                     None
+         frontolimbic_disconnection latent_biology                                           None                                                          None                                     None
+           punishment_insensitivity latent_biology                                           None                                                          None                                     None
+            reward_antisocial_drive latent_biology                                           None                                                          None                                     None
+               impulsive_aggression        symptom                                           None                                                          None                                     None
+       cruelty_property_destruction        symptom                                           None                                                          None                                     None
+              rule_violation_deceit        symptom                                           None                                                          None                                     None
+                  low_guilt_empathy        symptom                                           None                                                          None                                     None
+                       fearlessness        symptom                                           None                                                          None                                     None
+      persistent_antisocial_pattern        symptom                                           None                                                          None                                     None
+
+=== EDGES ===
+                             source                              target                                                                     relation           conduct_change
+              genetic_vulnerability          serotonergic_disinhibition                   raises vulnerability for poor serotonergic impulse control increased susceptibility
+              genetic_vulnerability            dopaminergic_reward_bias          raises vulnerability for reward-seeking and immediate gratification increased susceptibility
+              genetic_vulnerability       hpa_axis_trauma_sensitization                        raises vulnerability for stress-related dysregulation increased susceptibility
+             early_adversity_trauma       hpa_axis_trauma_sensitization                           early adversity sensitizes stress-response systems                increased
+             early_adversity_trauma                epigenetic_embedding                          adverse experience can become biologically embedded                increased
+             early_adversity_trauma          frontolimbic_disconnection                  trauma can distort maturation of emotional-control circuits                increased
+        callous_unemotional_loading fearlessness_threat_underreactivity                    supports low fear and reduced distress-cue responsiveness                increased
+        callous_unemotional_loading        empathy_distress_cue_deficit                      supports reduced guilt, empathy, and concern for others                increased
+       substance_disinhibition_load          serotonergic_disinhibition                           substances can worsen disinhibition and aggression                increased
+       substance_disinhibition_load           executive_control_failure                                  substances impair judgment and self-control                increased
+            reward_seeking_pressure            dopaminergic_reward_bias                                  loads immediate reward and salience systems                increased
+            reward_seeking_pressure             reward_antisocial_drive                              biases action selection toward immediate payoff                increased
+                  prosocial_support           executive_control_failure                                             buffers top-down control failure               protective
+                  prosocial_support       persistent_antisocial_pattern                         buffers persistence and severity of conduct symptoms               protective
+      hpa_axis_trauma_sensitization          serotonergic_disinhibition                      stress-linked dysregulation lowers aggression threshold                increased
+      hpa_axis_trauma_sensitization          frontolimbic_disconnection                   stress and trauma weaken regulatory-emotional coordination                increased
+               epigenetic_embedding           executive_control_failure  long-lasting biological changes stabilize maladaptive behavioral tendencies                increased
+               epigenetic_embedding             reward_antisocial_drive stable molecular traces may bias future responses toward antisocial patterns                increased
+         serotonergic_disinhibition                impulsive_aggression                  reduced serotonin lowers threshold for aggressive responses                increased
+           dopaminergic_reward_bias            punishment_insensitivity                high reward sensitivity can diminish learning from punishment                increased
+           dopaminergic_reward_bias             reward_antisocial_drive                      reward bias promotes immediate-gain antisocial behavior                increased
+fearlessness_threat_underreactivity                            amygdala                       maps onto amygdala-linked low fear/distress processing  increased dysregulation
+fearlessness_threat_underreactivity                        fearlessness                    supports low fearfulness and weak distress responsiveness                increased
+       empathy_distress_cue_deficit                              insula                              loads interoceptive-empathic processing systems  increased dysregulation
+       empathy_distress_cue_deficit                            amygdala                  weak distress-cue processing burdens limbic empathy systems  increased dysregulation
+       empathy_distress_cue_deficit                   low_guilt_empathy                    reduced distress-cue processing weakens guilt and empathy                increased
+         frontolimbic_disconnection                                 ofc            weakens orbitofrontal regulation of social behavior and restraint  increased dysregulation
+         frontolimbic_disconnection                                 acc                     weakens conflict/error monitoring and regulatory control  increased dysregulation
+         frontolimbic_disconnection                         pfc_control                           weakens prefrontal executive control over behavior  increased dysregulation
+         frontolimbic_disconnection           executive_control_failure                    reduced regulatory-emotional connectivity weakens control                increased
+          executive_control_failure                         pfc_control                                reflects impaired prefrontal top-down control         reduced function
+          executive_control_failure                impulsive_aggression                                   poor control promotes impulsive aggression                increased
+          executive_control_failure               rule_violation_deceit                   poor control promotes rule-breaking and deceptive behavior                increased
+           punishment_insensitivity                      striatum_proxy                                   loads reward-punishment learning circuitry  increased dysregulation
+           punishment_insensitivity               rule_violation_deceit                 weak learning from consequences promotes repeated violations                increased
+            reward_antisocial_drive                      striatum_proxy                                          loads reward and approach circuitry  increased dysregulation
+            reward_antisocial_drive        cruelty_property_destruction                              reward-seeking can dominate prosocial restraint                increased
+                                ofc               rule_violation_deceit       orbitofrontal dysfunction weakens socially appropriate decision-making                increased
+                                acc                impulsive_aggression               weakened conflict monitoring increases dysregulated aggression                increased
+                           amygdala                        fearlessness     amygdala dysfunction supports fearlessness and poor distress recognition                increased
+                             insula                   low_guilt_empathy         insula dysfunction weakens empathic/interoceptive response to others                increased
+               impulsive_aggression       persistent_antisocial_pattern               aggressive behavior contributes to persistent conduct problems                increased
+       cruelty_property_destruction       persistent_antisocial_pattern                severe destructive behavior strengthens antisocial patterning                increased
+              rule_violation_deceit       persistent_antisocial_pattern            persistent rule-breaking and deceit stabilize disorder expression                increased
+                  low_guilt_empathy       persistent_antisocial_pattern          low guilt and empathy reduce internal brakes on antisocial behavior                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                LB (Amygdala) left  Area Id2 (Insula) left  Area Fo4 (OFC) left  Area 33 (ACC) left  Area 8v1 (MFG) left  AcbM (Ventral Striatum, Medial Accumbens) left
+LB (Amygdala) left                                         244.570                   0.000                0.075               0.045                0.030                                           0.170
+Area Id2 (Insula) left                                       0.000                 222.795                0.055               0.105                1.925                                           0.005
+Area Fo4 (OFC) left                                          0.075                   0.055              698.345               2.080                6.875                                           5.040
+Area 33 (ACC) left                                           0.045                   0.105                2.080             977.565              116.930                                          49.835
+Area 8v1 (MFG) left                                          0.030                   1.925                6.875             116.930             6703.680                                           0.165
+AcbM (Ventral Striatum, Medial Accumbens) left               0.170                   0.005                5.040              49.835                0.165                                         106.630
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A1    7.480636   0.903997           14     0.140714    1.025792
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== INSULA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== INSULA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    4.729900   2.530311            2    -0.038500    0.231507
+  COMT    6.905167   3.536890            6     0.603683    0.915050
+ CRHR1    5.466525   1.610954            4    -0.199675    1.125053
+   DBH    3.621800   0.958472            3     0.357200    0.364078
+  DRD2    3.063580   1.809621            5    -0.407720    0.411908
+ FKBP5    4.803125   2.333933            4     0.253425    0.410734
+GABRA2    7.055635   1.562411           26    -0.082250    0.379582
+GABRB2    8.311900   1.600748            2     0.693200    0.001697
+  GAD1    8.558917   1.965973           18     0.153550    0.222405
+GRIN2B    5.728300   1.579824            3     0.323100    0.095957
+ HTR1A    3.428700   2.236920            3    -0.225467    0.595516
+ HTR2A    7.473748   2.100732           25     0.751560    0.306662
+ NR3C1    9.528620   1.026047            5     0.349160    0.176434
+SLC1A1    7.027350   1.894268            2    -0.110700    0.301793
+SLC6A3    1.731550   1.757107            6    -0.303267    0.401175
+SLC6A4    1.441464   0.672104           11    -0.153591    0.234768
+  TPH2    2.132450   0.386575            2    -0.210600    0.156412
+
+=== INSULA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+   DBH    2.885375   0.758348           12     0.181442    0.333721
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GABRA2    7.660662   1.472412          104     0.468212    0.187486
+GABRB2    8.112538   1.295789            8     0.346513    0.091195
+  GAD1    8.635429   1.878978           72     0.180461    0.206737
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+SLC1A1    7.498825   1.243019            8     0.158138    0.190438
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+  TPH2    2.649612   0.482695            8    -0.050250    0.261655
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+   DBH    2.910622   0.492084            9     0.486911    0.387880
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+GABRA2    8.118859   1.598675           78     0.854947    0.291603
+GABRB2    7.977067   1.437059            6     0.287583    0.319589
+  GAD1    9.063930   1.833599           54     0.606461    0.169329
+GRIN2B    6.508622   1.715237            9     0.674611    0.432203
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+ HTR2A    7.087492   2.045575           75     0.437077    0.471426
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+SLC1A1    7.460867   1.404513            6     0.162117    0.461006
+SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+  TPH2    2.438400   0.856455            6    -0.225217    0.352445
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC_CONTROL : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_CONTROL : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+   DBH    3.260200   0.921546           12     0.219600    0.480866
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+GABRA2    7.718805   1.556872          104     0.515174    0.284856
+GABRB2    8.222962   1.190676            8     0.599387    0.219932
+  GAD1    8.470140   1.869564           72     0.234585    0.268393
+GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+ HTR1A    4.492558   1.458132           12     0.359783    0.242565
+ HTR2A    7.762873   1.981006          100     0.864402    0.640734
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+SLC1A1    7.465975   1.352288            8     0.323425    0.404878
+SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+  TPH2    2.896663   0.998774            8     0.060712    0.337883
+
+=== PFC_CONTROL : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STRIATUM_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== STRIATUM_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+ CRHR1    3.910475   2.688631           24    -1.034871    1.128113
+   DBH    2.282889   1.026393           18    -0.453583    0.956592
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+ FKBP5    5.013658   2.833167           24     0.244575    0.557984
+GABRA2    7.573129   1.886217          156     0.371071    0.751154
+GABRB2    6.423383   1.459134           12    -1.109700    0.541597
+  GAD1    8.901198   2.109900          108     0.542349    0.915477
+GRIN2B    4.904022   2.339611           18    -0.280294    0.679978
+ HTR1A    3.291533   1.699841           18    -0.350967    0.768239
+ HTR2A    5.121897   1.832953          150    -0.351531    0.349620
+ NR3C1    8.935243   1.194727           30    -0.789843    0.603282
+SLC1A1    7.436192   0.912900           12     0.272358    0.471774
+SLC6A3    2.300233   1.860179           36     0.111914    0.510223
+SLC6A4    1.646929   0.611654           66    -0.114265    0.397311
+  TPH2    2.020408   0.682593           12    -0.410408    0.569456
+
+=== STRIATUM_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+empathy_distress_cue_deficit           0.4380
+serotonergic_disinhibition             0.4200
+dopaminergic_reward_bias               0.4100
+epigenetic_embedding                   0.3990
+hpa_axis_trauma_sensitization          0.3950
+fearlessness_threat_underreactivity    0.3820
+frontolimbic_disconnection             0.3490
+reward_antisocial_drive                0.3343
+punishment_insensitivity               0.2390
+executive_control_failure              0.2308
+
+=== REGIONAL STATE ===
+amygdala          0.3395
+insula            0.2320
+striatum_proxy    0.2102
+acc               0.1861
+pfc_control       0.1331
+ofc               0.1276
+
+=== SYMPTOMS ===
+low_guilt_empathy                0.3047
+impulsive_aggression             0.2856
+fearlessness                     0.2398
+cruelty_property_destruction     0.2097
+rule_violation_deceit            0.1763
+persistent_antisocial_pattern    0.1731
+
+=== PHENOTYPES ===
+trauma_embedded_conduct_profile        0.3123
+callous_unemotional_profile            0.2847
+impulsive_aggressive_profile           0.2797
+reward_driven_rule_breaking_profile    0.2107

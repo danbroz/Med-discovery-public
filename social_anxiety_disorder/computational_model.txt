@@ -1,0 +1,115 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Social Anxiety Disorder nodes ===
+                                    key                                   label      node_type                                                                                                                                          description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+                  genetic_vulnerability                   Genetic Vulnerability          input                                                        Polygenic liability influencing temperament, transmitter regulation, and stress responsivity.                   None              None                                                           None         NaN                                      None
+            behavioral_inhibition_trait             Behavioral Inhibition Trait          input                       Early-emerging shy, cautious, withdrawn temperament that increases risk for social anxiety under novelty or social evaluation.                   None              None                                                           None         NaN                                      None
+                   early_life_adversity                    Early Life Adversity          input                                    Adverse early experiences capable of biologically embedding stress sensitivity through lasting molecular changes.                   None              None                                                           None         NaN                                      None
+                  current_social_stress                   Current Social Stress          input                                                                   Current social-evaluative stress load that amplifies arousal, fear, and avoidance.                   None              None                                                           None         NaN                                      None
+                    social_novelty_load                     Social Novelty Load          input                                         Exposure to unfamiliar social situations that engages the innate novelty-fear bias described in the chapter.                   None              None                                                           None         NaN                                      None
+         serotonergic_treatment_support          Serotonergic Treatment Support          input                                         Protective serotonergic support representing SSRI-like stabilization of anxiety and negative emotional bias.                   None              None                                                           None         NaN                                      None
+                       recovery_support                        Recovery Support          input                               Protective coping, environmental support, and recovery-promoting conditions that buffer stress and improve regulation.                   None              None                                                           None         NaN                                      None
+                               amygdala                      LB (Amygdala) left         region                                              Amygdala anchor for social threat tagging, fear reactivity, and persistent response to evaluative cues.     LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=no
+                            hippocampus                  CA1 (Hippocampus) left         region                               Hippocampal anchor for stress-sensitive contextual memory and anticipatory recall of socially threatening experiences. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+                            pfc_control                             PFC_CONTROL         region Prefrontal-control proxy for top-down regulation, reappraisal, and inhibition of exaggerated social fear responses. (unresolved in this environment)                   None              None                                                           None         NaN                                unresolved
+                  locus_coeruleus_proxy                   LOCUS_COERULEUS_PROXY         region                    Locus-coeruleus proxy for noradrenergic arousal, vigilance, and autonomic symptom amplification. (unresolved in this environment)                   None              None                                                           None         NaN                                unresolved
+             serotonergic_dysregulation              Serotonergic Dysregulation latent_biology                                                        Altered serotonin signaling contributing to heightened anxiety and a negative emotional bias.                   None              None                                                           None         NaN                                      None
+             noradrenergic_hyperarousal              Noradrenergic Hyperarousal latent_biology                                                   Excess norepinephrine-linked arousal contributing to sweating, tremor, tachycardia, and vigilance.                   None              None                                                           None         NaN                                      None
+                gabaergic_disinhibition                 Gabaergic Disinhibition latent_biology                                   Reduced inhibitory buffering of fear-related circuitry, permitting neuronal hyperexcitability under social stress.                   None              None                                                           None         NaN                                      None
+        epigenetic_stress_sensitization         Epigenetic Stress Sensitization latent_biology                                                Stress-linked biological embedding of adversity that amplifies later emotional and stress reactivity.                   None              None                                                           None         NaN                                      None
+               hpa_axis_hyperreactivity                Hpa Axis Hyperreactivity latent_biology                                                 Hyper-reactive stress-axis burden that increases sensitivity to social threat and evaluative stress.                   None              None                                                           None         NaN                                      None
+             social_novelty_threat_bias              Social Novelty Threat Bias latent_biology                                                           Temperament-linked bias to treat unfamiliar social situations as threatening and avoidant.                   None              None                                                           None         NaN                                      None
+autonomic_self_monitoring_amplification Autonomic Self Monitoring Amplification latent_biology                                      Escalating focus on bodily arousal as a visible sign of anxiety, which intensifies fear of negative evaluation.                   None              None                                                           None         NaN                                      None
+        frontolimbic_regulation_failure         Frontolimbic Regulation Failure latent_biology                                   Weak top-down regulation from prefrontal systems over limbic fear reactivity, especially the PFC-amygdala pathway.                   None              None                                                           None         NaN                                      None
+            anticipatory_social_anxiety             Anticipatory Social Anxiety        symptom                                                                             Persistent anticipatory anxiety before social or performance situations.                   None              None                                                           None         NaN                                      None
+            fear_of_negative_evaluation             Fear Of Negative Evaluation        symptom                                                                                 Fear of being judged negatively, embarrassed, or exposed as anxious.                   None              None                                                           None         NaN                                      None
+             physiological_hyperarousal              Physiological Hyperarousal        symptom                                                             Autonomic anxiety symptoms such as sweating, tremor, flushing, and increased heart rate.                   None              None                                                           None         NaN                                      None
+                visible_anxiety_concern                 Visible Anxiety Concern        symptom                                                                                 Fear that bodily anxiety signs will be noticed and judged by others.                   None              None                                                           None         NaN                                      None
+           social_threat_hypervigilance            Social Threat Hypervigilance        symptom                                                                          Excess monitoring for social danger cues, criticism, or signs of rejection.                   None              None                                                           None         NaN                                      None
+                       social_avoidance                        Social Avoidance        symptom                                                                                  Avoidance or withdrawal from novel or evaluative social situations.                   None              None                                                           None         NaN                                      None
+
+=== Social Anxiety Disorder edges ===
+                                 source                          target                                                                                      relation    sad_change
+                  genetic_vulnerability      social_novelty_threat_bias     heritable liability shapes temperamental predisposition toward social fear and withdrawal     increased
+            behavioral_inhibition_trait      social_novelty_threat_bias                behavioral inhibition increases fear responses to unfamiliar social situations     increased
+                   early_life_adversity epigenetic_stress_sensitization  adverse early experience can induce lasting epigenetic changes in stress-regulation pathways     increased
+        epigenetic_stress_sensitization        hpa_axis_hyperreactivity                           biological embedding of adversity sensitizes later stress responses     increased
+                  current_social_stress        hpa_axis_hyperreactivity                                 ongoing social-evaluative stress activates stress-axis burden     increased
+                    social_novelty_load      social_novelty_threat_bias                 novel social situations engage the predisposed fear-to-unfamiliarity response     increased
+         serotonergic_treatment_support      serotonergic_dysregulation                                  SSRI-like support partially recalibrates serotonin signaling     decreased
+                       recovery_support frontolimbic_regulation_failure                                protective support improves emotional regulation and buffering     decreased
+                  genetic_vulnerability      serotonergic_dysregulation                                  genetic liability contributes to altered serotonin signaling     increased
+                  current_social_stress      noradrenergic_hyperarousal                                                stress increases norepinephrine-linked arousal     increased
+                gabaergic_disinhibition                        amygdala                                reduced inhibitory tone permits fear-circuit hyperexcitability hyperreactive
+             serotonergic_dysregulation                        amygdala  serotonergic dysregulation contributes to negative emotional bias and heightened social fear hyperreactive
+             noradrenergic_hyperarousal           locus_coeruleus_proxy                   excess arousal burden centers on locus-coeruleus-linked vigilance circuitry  hyperaroused
+               hpa_axis_hyperreactivity                     hippocampus                              stress-axis burden compromises hippocampal contextual regulation  dysregulated
+               hpa_axis_hyperreactivity                     pfc_control                                           stress burden weakens regulatory prefrontal control  dysregulated
+        frontolimbic_regulation_failure                     pfc_control                            regulatory failure reduces prefrontal inhibition of fear responses  dysregulated
+        frontolimbic_regulation_failure                        amygdala           weakened top-down control allows amygdala-mediated social fear to persist unchecked hyperreactive
+             social_novelty_threat_bias                        amygdala temperamental social-threat bias amplifies limbic salience to unfamiliar people or situations hyperreactive
+autonomic_self_monitoring_amplification     fear_of_negative_evaluation                          attention to visible bodily arousal intensifies fear of being judged     increased
+                  locus_coeruleus_proxy      physiological_hyperarousal             noradrenergic arousal drives sweating, tremor, flushing, and increased heart rate     increased
+                               amygdala     anticipatory_social_anxiety                               amygdala hyperreactivity sustains fear before social encounters     increased
+                               amygdala    social_threat_hypervigilance                          amygdala hyperreactivity increases monitoring for social threat cues     increased
+                            hippocampus     anticipatory_social_anxiety            stress-sensitive contextual memory can amplify anticipatory recall of prior threat     increased
+                            pfc_control     fear_of_negative_evaluation                    weak prefrontal regulation fails to down-regulate socially evaluative fear     increased
+                            pfc_control                social_avoidance                  reduced top-down control promotes withdrawal rather than flexible engagement     increased
+             physiological_hyperarousal         visible_anxiety_concern                              bodily symptoms become evidence of possible social embarrassment     increased
+            fear_of_negative_evaluation                social_avoidance                                       fear of judgment motivates avoidance of social exposure     increased
+
+No amygdala receptor table available in this environment.
+
+No pfc_control gene table available in this environment.
+
+No amygdala connectivity profile available in this environment.
+
+=== Within-model circuit connectivity ===
+             amygdala  hippocampus
+amygdala       244.57        64.26
+hippocampus     64.26      1685.40
+
+=== Example simulation: inputs ===
+genetic_vulnerability             0.50
+behavioral_inhibition_trait       0.75
+early_life_adversity              0.40
+current_social_stress             0.60
+social_novelty_load               0.80
+serotonergic_treatment_support    0.20
+recovery_support                  0.25
+
+=== Example simulation: latent biology ===
+serotonergic_dysregulation                 0.3925
+noradrenergic_hyperarousal                 0.5375
+gabaergic_disinhibition                    0.4925
+epigenetic_stress_sensitization            0.3900
+hpa_axis_hyperreactivity                   0.4745
+social_novelty_threat_bias                 0.5815
+autonomic_self_monitoring_amplification    0.4682
+frontolimbic_regulation_failure            0.3744
+
+=== Example simulation: regional state ===
+amygdala                 0.4390
+hippocampus              0.3713
+pfc_control              0.3261
+locus_coeruleus_proxy    0.4580
+
+=== Example simulation: symptoms ===
+anticipatory_social_anxiety     0.4595
+fear_of_negative_evaluation     0.4113
+physiological_hyperarousal      0.4561
+visible_anxiety_concern         0.4088
+social_threat_hypervigilance    0.4441
+social_avoidance                0.4474
+
+=== Example simulation: phenotypes ===
+social_threat_hyperreactivity_profile    0.4380
+inhibited_avoidant_profile               0.5372
+visible_arousal_profile                  0.4400
+global_sad_burden                        0.4379

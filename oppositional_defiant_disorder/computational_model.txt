@@ -1,0 +1,164 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                  key                                 label      node_type                                                                                                                  description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary  is_proxy
+                genetic_vulnerability                 Genetic Vulnerability          input                          Heritable liability for disruptive behavior, aggression, and related externalizing psychopathology.                   None              None                                                           None         NaN                                      None     False
+             early_life_stress_trauma              Early Life Stress Trauma          input              Early life stress, abuse, or trauma that can sensitise stress systems and disrupt emotion-regulation circuitry.                   None              None                                                           None         NaN                                      None     False
+         environmental_adversity_load          Environmental Adversity Load          input                                            Broader adverse environmental influences interacting with biologic vulnerability.                   None              None                                                           None         NaN                                      None     False
+       shared_externalizing_liability        Shared Externalizing Liability          input                                           Transdiagnostic liability shared with ADHD and conduct-disorder spectrum problems.                   None              None                                                           None         NaN                                      None     False
+                             amygdala                    LB (Amygdala) left         region                                         Threat, fear, and anger-processing limbic node explicitly emphasized by the chapter.     LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=yes     False
+             prefrontal_control_proxy                    Area 45 (IFG) left         region            Proxy for the chapter's general prefrontal control system that normally inhibits defiant or aggressive responses.     Area 45 (IFG) left              None  (-52.591273128969895, 29.535211267605632, 12.254073460370066)      3621.0 receptors=yes; genes=yes; connectivity=no      True
+                          hippocampus                CA1 (Hippocampus) left         region Conservative limbic context anchor derived from the chapter's hippocampal GABA discussion and broader limbic-system framing. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no     False
+               hpa_axis_dysregulation                Hpa Axis Dysregulation latent_biology                                       Stress-response dysregulation producing heightened stress reactivity and irritability.                   None              None                                                           None         NaN                                      None     False
+              gabaergic_disinhibition               Gabaergic Disinhibition latent_biology                        Reduced GABA-mediated inhibitory control contributing to failure to suppress inappropriate responses.                   None              None                                                           None         NaN                                      None     False
+          monoaminergic_dysregulation           Monoaminergic Dysregulation latent_biology       Broad dopamine, serotonin, and norepinephrine dysregulation linked to impulsivity, emotional lability, and aggression.                   None              None                                                           None         NaN                                      None     False
+         amygdala_pfc_disconnectivity          Amygdala Pfc Disconnectivity latent_biology                                         Weakened functional coupling between the amygdala and prefrontal regulatory systems.                   None              None                                                           None         NaN                                      None     False
+prefrontal_inhibitory_control_failure Prefrontal Inhibitory Control Failure latent_biology                                                          Breakdown of top-down behavioral inhibition and emotion regulation.                   None              None                                                           None         NaN                                      None     False
+                    threat_anger_bias                     Threat Anger Bias latent_biology                                                 Heightened threat, anger, and hostile-reactive bias in emotional processing.                   None              None                                                           None         NaN                                      None     False
+                 angry_irritable_mood                  Angry Irritable Mood        symptom                                                 Persistent angry or irritable mood downstream of frontolimbic dysregulation.                   None              None                                                           None         NaN                                      None     False
+                   emotional_lability                    Emotional Lability        symptom                                              Rapid shifts in affective state linked to monoaminergic and limbic instability.                   None              None                                                           None         NaN                                      None     False
+              impulsive_disinhibition               Impulsive Disinhibition        symptom                                                               Difficulty suppressing inappropriate or provocative responses.                   None              None                                                           None         NaN                                      None     False
+                     defiant_behavior                      Defiant Behavior        symptom                                                                       Argumentative, oppositional, or noncompliant behavior.                   None              None                                                           None         NaN                                      None     False
+                  reactive_aggression                   Reactive Aggression        symptom                                                          Reactive aggressive responding under stress, threat, or anger load.                   None              None                                                           None         NaN                                      None     False
+
+=== Edges ===
+                               source                                target                                                                                               relation odd_change
+                genetic_vulnerability           monoaminergic_dysregulation shared heritable liability likely influences the monoaminergic systems implicated by related disorders  increased
+                genetic_vulnerability               gabaergic_disinhibition                                  biologic liability may contribute to inhibitory-control vulnerability  increased
+       shared_externalizing_liability           monoaminergic_dysregulation                         ODD shares externalizing-spectrum risk with ADHD and conduct-disorder pathways  increased
+       shared_externalizing_liability prefrontal_inhibitory_control_failure                                  shared externalizing vulnerability burdens inhibitory control systems  increased
+             early_life_stress_trauma                hpa_axis_dysregulation                            early stress and trauma can produce long-term dysregulation of the HPA axis  increased
+             early_life_stress_trauma          amygdala_pfc_disconnectivity                                          childhood trauma can disrupt amygdala-prefrontal connectivity  increased
+         environmental_adversity_load                hpa_axis_dysregulation                                           adverse environmental pressures amplify stress-system burden  increased
+         environmental_adversity_load                     threat_anger_bias                                         adversity can increase threat sensitivity and angry reactivity  increased
+               hpa_axis_dysregulation          amygdala_pfc_disconnectivity                                      heightened stress reactivity weakens emotion-regulation circuitry  increased
+               hpa_axis_dysregulation                     threat_anger_bias               stress-system dysregulation contributes to irritable and aggressive phenotype expression  increased
+              gabaergic_disinhibition prefrontal_inhibitory_control_failure      reduced GABAergic braking undermines suppression of inappropriate defiant or aggressive responses  increased
+              gabaergic_disinhibition                           hippocampus                      chapter-linked hippocampal GABA changes provide an indirect limbic context anchor  increased
+          monoaminergic_dysregulation prefrontal_inhibitory_control_failure      dopamine, serotonin, and norepinephrine dysregulation contribute to impulsivity and disinhibition  increased
+          monoaminergic_dysregulation                     threat_anger_bias                           monoaminergic dysregulation contributes to emotional lability and aggression  increased
+         amygdala_pfc_disconnectivity prefrontal_inhibitory_control_failure                                             weakened frontolimbic coupling reduces top-down regulation  increased
+                    threat_anger_bias                              amygdala                                            threat and anger bias manifests as amygdala hyperreactivity  increased
+         amygdala_pfc_disconnectivity                              amygdala                          insufficient prefrontal constraint leaves amygdala reactivity less controlled  increased
+prefrontal_inhibitory_control_failure              prefrontal_control_proxy                             control failure is expressed as dysregulated prefrontal inhibitory control  increased
+                             amygdala                  angry_irritable_mood                                         heightened threat and anger processing promotes irritable mood  increased
+                          hippocampus                    emotional_lability                                          limbic-context burden can contribute to affective instability  increased
+             prefrontal_control_proxy               impulsive_disinhibition                                                 prefrontal dysregulation impairs behavioral inhibition  increased
+          monoaminergic_dysregulation                    emotional_lability                                              monoaminergic imbalance contributes to emotional lability  increased
+          monoaminergic_dysregulation                   reactive_aggression                                           monoaminergic imbalance contributes to aggression propensity  increased
+                 angry_irritable_mood                   reactive_aggression                                   irritable mood increases likelihood of reactive aggressive responses  increased
+              impulsive_disinhibition                      defiant_behavior                                       disinhibition increases oppositional and noncompliant responding  increased
+              impulsive_disinhibition                   reactive_aggression                                                disinhibited responding facilitates reactive aggression  increased
+                 angry_irritable_mood                      defiant_behavior                                       irritability increases oppositional and confrontational behavior  increased
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- prefrontal_control_proxy: Area 45 (IFG) left
+- hippocampus: CA1 (Hippocampus) left
+
+=== Receptor fingerprints (head) ===
+
+[amygdala]
+<no receptor fingerprint>
+
+[prefrontal_control_proxy]
+ mean  std
+  472  379
+  434  264
+ 1078   40
+ 1515  283
+ 1428 1197
+
+[hippocampus]
+ mean  std
+  498  120
+ 1366  273
+  366  127
+  789  362
+ 1961  397
+
+=== Gene summaries (head) ===
+
+[amygdala]
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DBH    2.221610   1.005047           21    -0.238133    0.810462
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+ DRD4    6.954405   6.242902           21     0.339352    1.290183
+FKBP5    5.135946   2.684673           28     0.556286    1.064947
+
+[prefrontal_control_proxy]
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ COMT    6.448093   3.394208           54    -0.108374    0.706085
+  DBH    3.141063   1.074061           27     0.339344    0.780856
+ DRD2    2.945380   1.742219           45    -0.608476    0.634670
+ DRD4    7.015181   6.348428           27     0.363485    0.742558
+FKBP5    4.120461   2.014089           36    -0.377017    0.385586
+
+[hippocampus]
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ COMT    6.197856   3.449950           48    -0.510062    0.804045
+  DBH    2.417275   0.928359           24    -0.358292    0.803196
+ DRD2    3.819515   2.124018           40     0.115163    1.234718
+ DRD4    6.381812   6.585266           24    -0.680638    0.900865
+FKBP5    5.287750   2.991862           32     0.558866    1.301838
+
+=== Connectivity profiles (head) ===
+
+[amygdala]
+                          connected_region    value
+        Temporal-to-Parietal (GapMap) left 6605.220
+Subc (Hippocampus, Subicular complex) left  525.285
+      Frontal-to-Temporal-II (GapMap) left  125.815
+                        IF (Amygdala) left   66.800
+                    CA1 (Hippocampus) left   64.260
+
+[prefrontal_control_proxy]
+<no connectivity profile>
+
+[hippocampus]
+<no connectivity profile>
+
+=== Circuit connectivity ===
+                          amygdala  prefrontal_control_proxy  hippocampus
+amygdala                    244.57                     0.030        64.26
+prefrontal_control_proxy      0.03                  4180.905         1.41
+hippocampus                  64.26                     1.410      1685.40
+
+=== Simulation: inputs ===
+genetic_vulnerability             0.70
+early_life_stress_trauma          0.80
+environmental_adversity_load      0.60
+shared_externalizing_liability    0.75
+
+=== Simulation: latents ===
+hpa_axis_dysregulation                   0.7150
+gabaergic_disinhibition                  0.7248
+monoaminergic_dysregulation              0.7115
+amygdala_pfc_disconnectivity             0.7255
+prefrontal_inhibitory_control_failure    0.7304
+threat_anger_bias                        0.7189
+
+=== Simulation: regional state ===
+amygdala                    0.7198
+prefrontal_control_proxy    0.7254
+hippocampus                 0.7467
+
+=== Simulation: symptoms ===
+angry_irritable_mood       0.7224
+emotional_lability         0.7227
+impulsive_disinhibition    0.7249
+defiant_behavior           0.7118
+reactive_aggression        0.7207
+
+=== Simulation: phenotypes ===
+odd_core_profile                             0.7183
+irritable_emotional_dysregulation_profile    0.7213
+externalizing_disinhibition_profile          0.7207
+trauma_stress_sensitized_profile             0.7210

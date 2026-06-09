@@ -1,0 +1,125 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                     key      node_type           atlas_region                                                   centroid_mni                           feature_summary
+         trauma_exposure          input                   None                                                           None                                      None
+biological_vulnerability          input                   None                                                           None                                      None
+    psychosocial_support          input                   None                                                           None                                      None
+                amygdala         region     LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+             hippocampus         region CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                    pacc         region   Area p32 (pACC) left    (-6.9639365918097695, 49.28771466314399, 9.933289299867894)  receptors=no; genes=yes; connectivity=no
+                    sacc         region   Area s32 (sACC) left    (-6.475282485875709, 35.7584745762712, -15.663135593220339)  receptors=no; genes=yes; connectivity=no
+                     acc         region     Area 33 (ACC) left   (-4.092857142857142, 13.314285714285717, 25.242857142857147)  receptors=no; genes=yes; connectivity=no
+                     ofc         region    Area Fo4 (OFC) left   (-29.001430615164523, 53.3412017167382, -15.175965665236049)  receptors=no; genes=yes; connectivity=no
+                hpa_axis latent_biology                   None                                                           None                                      None
+             epigenetics latent_biology                   None                                                           None                                      None
+            inflammation latent_biology                   None                                                           None                                      None
+                dopamine latent_biology                   None                                                           None                                      None
+               serotonin latent_biology                   None                                                           None                                      None
+           noradrenaline latent_biology                   None                                                           None                                      None
+            hyperarousal        symptom                   None                                                           None                                      None
+          reexperiencing        symptom                   None                                                           None                                      None
+            dissociation        symptom                   None                                                           None                                      None
+           negative_mood        symptom                   None                                                           None                                      None
+       cognitive_control        symptom                   None                                                           None                                      None
+          psychotic_like        symptom                   None                                                           None                                      None
+
+=== EDGES ===
+                  source            target                                                          relation                asd_change
+         trauma_exposure          amygdala                                  activates threat/alarm circuitry                 increased
+         trauma_exposure      inflammation                                triggers pro-inflammatory response                 increased
+         trauma_exposure       epigenetics                      induces stress-responsive regulation changes                 increased
+biological_vulnerability          hpa_axis                        raises susceptibility of stress regulation  increased susceptibility
+biological_vulnerability          amygdala                         raises sensitivity to salient threat cues  increased susceptibility
+    psychosocial_support       epigenetics                        can normalize stress-responsive regulation                protective
+    psychosocial_support              pacc                                      supports regulatory recovery                protective
+             epigenetics          hpa_axis                                  biases glucocorticoid signalling              dysregulated
+                hpa_axis       hippocampus                              impairs contextual memory regulation          reduced function
+                hpa_axis              pacc                                          weakens top-down control          reduced function
+            inflammation     negative_mood                            promotes sickness behaviour / low mood                 increased
+            inflammation cognitive_control                                        burdens executive function                 increased
+                amygdala      hyperarousal                                      drives fear and alarm output                 increased
+                amygdala    reexperiencing                              amplifies salience of traumatic cues                 increased
+             hippocampus    reexperiencing                          normally contextualizes traumatic memory reduced contextualization
+                    pacc          amygdala                               normally exerts top-down inhibition        reduced inhibition
+                    sacc          amygdala                            normally supports emotional regulation        reduced inhibition
+                     acc cognitive_control                               normally supports executive control          reduced function
+                     ofc          amygdala                          normally supports extinction / valuation        reduced inhibition
+                dopamine     negative_mood          reward / salience dysregulation contributes to anhedonia   increased dysregulation
+                dopamine    psychotic_like           aberrant salience may support severe altered perception         possible increase
+               serotonin     negative_mood                                         modulates mood regulation              dysregulated
+           noradrenaline      hyperarousal                                      supports arousal / vigilance                 increased
+                    sacc      dissociation fronto-limbic dysregulation may contribute to dissociative states                 increased
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+     gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   COMTD1    7.090507   1.441137           14    -0.961379    0.818133
+     DRD2    3.894083   2.410057           35     0.371746    0.752121
+    FKBP5    5.135946   2.684673           28     0.556286    1.064947
+    HTR2A    6.457724   2.230421          175     0.172246    0.678875
+     IL1B    3.647605   1.433646           21     0.019371    1.035487
+      IL6    2.392836   1.012524           14     0.173964    1.127447
+     MAOA    6.318328   2.025589          217     0.779681    0.725249
+    NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+   SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+TNFRSF10C    2.331150   0.843717           14     0.394079    1.007460
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+     gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   COMTD1    7.129137   1.275391           16    -0.608481    0.691883
+     DRD2    3.819515   2.124018           40     0.115163    1.234718
+    FKBP5    5.287750   2.991862           32     0.558866    1.301838
+    HTR2A    6.079706   2.649687          200     0.028969    0.956248
+     IL1B    3.228713   1.419698           24    -0.341350    0.993966
+      IL6    2.201325   0.696271           16    -0.270200    0.945900
+     MAOA    5.820193   2.048195          248     0.134833    0.821787
+    NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+   SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+TNFRSF10C    2.018038   0.507082           16    -0.272613    0.701593
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PACC : gene panel summary ===
+     gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   COMTD1    7.797122   1.313356           32     0.162822    0.450080
+     DRD2    3.052440   1.858398           80    -0.471081    0.500034
+    FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+    HTR2A    7.667605   1.955538          400     0.769739    0.286794
+     IL1B    3.896285   0.915170           48     0.196158    0.540244
+      IL6    2.468644   0.836864           32     0.209894    0.906095
+     MAOA    5.688919   1.874365          496     0.213809    0.513407
+    NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+   SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+TNFRSF10C    2.099788   0.570632           32    -0.002459    0.688267
+
+=== PACC : top structural connectivity ===
+No connectivity profile available for this node.

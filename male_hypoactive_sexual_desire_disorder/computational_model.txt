@@ -1,0 +1,113 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                    key      node_type          atlas_region                            feature_summary
+                       low_testosterone          input                                                                 
+                     hyperprolactinemia          input                                                                 
+         serotonergic_medication_burden          input                                                                 
+               dopamine_blockade_burden          input                                                                 
+              depression_anxiety_burden          input                                                                 
+                      early_life_stress          input                                                                 
+           vascular_neurological_burden          input                                                                 
+                 treatment_optimization          input                                                                 
+                            pfc_control         region          frontal pole   receptors=no; genes=yes; connectivity=no
+                               amygdala         region    LB (Amygdala) left  receptors=no; genes=yes; connectivity=yes
+                            hippocampus         region DG (Hippocampus) left receptors=yes; genes=yes; connectivity=yes
+                    androgen_deficiency latent_biology                                                                 
+                       prolactin_excess latent_biology                                                                 
+                serotonergic_inhibition latent_biology                                                                 
+            mesolimbic_dopamine_deficit latent_biology                                                                 
+                 reward_drive_reduction latent_biology                                                                 
+                 hpa_axis_dysregulation latent_biology                                                                 
+frontolimbic_motivational_dysregulation latent_biology                                                                 
+                 anhedonia_apathy_state latent_biology                                                                 
+                      low_sexual_desire        symptom                                                                 
+                       sexual_anhedonia        symptom                                                                 
+                       apathy_avolition        symptom                                                                 
+                       desire_avoidance        symptom                                                                 
+         psychotropic_nonadherence_risk        symptom                                                                 
+
+=== Edges (first 12) ===
+                        source                                  target                                              relation mhsdd_change  weight
+              low_testosterone                     androgen_deficiency                  reduces endocrine support for libido    increased    0.55
+            hyperprolactinemia                        prolactin_excess       raises prolactin-mediated suppression of desire    increased    0.55
+serotonergic_medication_burden                 serotonergic_inhibition drives serotonin-linked inhibition of sexual function    increased    0.55
+      dopamine_blockade_burden             mesolimbic_dopamine_deficit       reduces dopamine-facilitated wanting and reward    increased    0.45
+      dopamine_blockade_burden                        prolactin_excess        promotes tuberoinfundibular hyperprolactinemia    increased    0.30
+     depression_anxiety_burden frontolimbic_motivational_dysregulation                   links mood pathology to desire loss    increased    0.35
+     depression_anxiety_burden                  anhedonia_apathy_state                 adds avolition and anhedonic pressure    increased    0.30
+             early_life_stress                  hpa_axis_dysregulation            creates enduring stress-axis dysregulation    increased    0.40
+        hpa_axis_dysregulation frontolimbic_motivational_dysregulation                  amplifies mood-linked circuit burden    increased    0.25
+           androgen_deficiency                  reward_drive_reduction        lowers endocrine support for sexual motivation    increased    0.25
+              prolactin_excess             mesolimbic_dopamine_deficit        suppresses dopamine-facilitated sexual wanting    increased    0.25
+       serotonergic_inhibition                  reward_drive_reduction                   suppresses sexual reward and desire    increased    0.25
+
+=== Region suggestions for 'prefrontal' ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Example receptor / gene / connectivity tables ===
+
+[pfc_control] receptor rows: 0
+[pfc_control] gene rows: 20
+[pfc_control] connectivity rows: 0
+
+[amygdala] receptor rows: 0
+[amygdala] gene rows: 20
+[amygdala] connectivity rows: 10
+
+[hippocampus] receptor rows: 14
+[hippocampus] gene rows: 20
+[hippocampus] connectivity rows: 10
+
+=== Example simulation ===
+
+INPUTS
+low_testosterone                  0.65
+serotonergic_medication_burden    0.55
+depression_anxiety_burden         0.50
+hyperprolactinemia                0.35
+treatment_optimization            0.35
+early_life_stress                 0.30
+dopamine_blockade_burden          0.20
+vascular_neurological_burden      0.20
+
+LATENTS
+androgen_deficiency                        0.3325
+serotonergic_inhibition                    0.3275
+frontolimbic_motivational_dysregulation    0.2492
+reward_drive_reduction                     0.2357
+anhedonia_apathy_state                     0.2208
+hpa_axis_dysregulation                     0.2125
+mesolimbic_dopamine_deficit                0.1942
+prolactin_excess                           0.1800
+
+REGIONAL_STATE
+amygdala       0.2360
+pfc_control    0.2018
+hippocampus    0.1901
+
+SYMPTOMS
+psychotropic_nonadherence_risk    0.2653
+desire_avoidance                  0.2442
+sexual_anhedonia                  0.2075
+low_sexual_desire                 0.1856
+apathy_avolition                  0.1599
+
+PHENOTYPES
+serotonergic_medication_induced_profile         0.3285
+stress_depression_linked_low_desire             0.2984
+endocrine_dominant_low_desire                   0.2408
+frontolimbic_apathy_profile                     0.2059
+dopamine_blockade_hyperprolactinemia_profile    0.1900
+
+=== Example MNI assignment ===
+ input structure            centroid  volume                region  map value
+               0 (-24.0, 20.0, 32.0)     412 Area MFG4 (MFG) right   0.000421

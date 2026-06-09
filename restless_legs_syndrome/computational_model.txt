@@ -1,0 +1,191 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                        key                                                   label      node_type                                                                                             description                                            atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary  is_proxy
+                      genetic_vulnerability                                   Genetic Vulnerability          input Polygenic risk influencing iron homeostasis, dopamine signaling, limb development, and axonal guidance.                                                    None              None                                                          None         NaN                                     None     False
+                      iron_deficiency_state                                   Iron Deficiency State          input                   Iron-deficiency burden or low-ferritin state acting as a principal biological driver.                                                    None              None                                                          None         NaN                                     None     False
+             peripheral_sensorimotor_burden                          Peripheral Sensorimotor Burden          input               Peripheral nervous system contribution to the sensorimotor discomfort and movement drive.                                                    None              None                                                          None         NaN                                     None     False
+             dopaminergic_treatment_support                          Dopaminergic Treatment Support          input                                             Protective symptomatic support from dopaminergic treatment.                                                    None              None                                                          None         NaN                                     None     False
+                     iron_repletion_support                                  Iron Repletion Support          input                                    Protective support from restoring iron availability and homeostasis.                                                    None              None                                                          None         NaN                                     None     False
+                     substantia_nigra_proxy     SNC (Midbrain, Substantia Nigra pars compacta) left         region                Proxy for the substantia nigra, the chapter's main iron-deficit and dopaminergic anchor.     SNC (Midbrain, Substantia Nigra pars compacta) left              None (-9.530708661417322, -23.46771653543307, -14.792125984251967)       635.0 receptors=no; genes=yes; connectivity=no      True
+                                    putamen          FuP (Ventral Striatum, Fundus of Putamen) left         region                           Putamen node explicitly named as a basal-ganglia site of reduced iron burden.          FuP (Ventral Striatum, Fundus of Putamen) left              None (-22.444895199459097, 7.6233941852603095, -9.231913455037187)      1479.0 receptors=no; genes=yes; connectivity=no     False
+                                    caudate FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left         region             Caudate / striatal node explicitly named as part of the basal-ganglia sensorimotor circuit. FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None  (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0 receptors=no; genes=yes; connectivity=no     False
+                             thalamus_proxy                        ZI (Thalamus, zona incerta) left         region                             Proxy for the thalamic relay within cortico-striatal-thalamocortical loops.                        ZI (Thalamus, zona incerta) left              None           (-11.044642857142861, -14.5625, -6.323214285714286)       560.0 receptors=no; genes=yes; connectivity=no      True
+                  sensorimotor_cortex_proxy                                    Area 4a (PreCG) left         region         Proxy for the cortical arm of the cortico-striatal-thalamocortical loop implied by the chapter.                                    Area 4a (PreCG) left              None    (-6.554317548746525, -26.04700557103064, 67.2959610027855)      2872.0 receptors=no; genes=yes; connectivity=no      True
+             brain_iron_homeostasis_failure                          Brain Iron Homeostasis Failure latent_biology                          Localized CNS iron dysregulation centered on the substantia nigra and putamen.                                                    None              None                                                          None         NaN                                     None     False
+developmental_axonal_guidance_vulnerability             Developmental Axonal Guidance Vulnerability latent_biology       Developmental and axonal-guidance burden linked to the sensorimotor architecture of the disorder.                                                    None              None                                                          None         NaN                                     None     False
+       nigrostriatal_dopamine_dysregulation                    Nigrostriatal Dopamine Dysregulation latent_biology                           Impaired dopaminergic modulation and synthesis within nigrostriatal pathways.                                                    None              None                                                          None         NaN                                     None     False
+         striatal_d2_receptor_dysregulation                      Striatal D2 Receptor Dysregulation latent_biology                               Post-synaptic striatal D2 receptor dysfunction suggested by PET findings.                                                    None              None                                                          None         NaN                                     None     False
+         opioid_glutamate_modulatory_burden                      Opioid Glutamate Modulatory Burden latent_biology                                Additional neurotransmitter-system involvement beyond dopamine and iron.                                                    None              None                                                          None         NaN                                     None     False
+          direct_indirect_pathway_imbalance                       Direct Indirect Pathway Imbalance latent_biology              Imbalance between the pro-kinetic direct and anti-kinetic indirect basal-ganglia pathways.                                                    None              None                                                          None         NaN                                     None     False
+                    cstc_loop_dysregulation                                 Cstc Loop Dysregulation latent_biology    Disrupted cortico-striatal-thalamocortical integration underlying motor and sensory control failure.                                                    None              None                                                          None         NaN                                     None     False
+                  sensorimotor_restlessness                               Sensorimotor Restlessness        symptom                                              Aversive internal sensorimotor restlessness or discomfort.                                                    None              None                                                          None         NaN                                     None     False
+                               urge_to_move                                            Urge To Move        symptom                         The core urge to move the limbs in response to abnormal sensorimotor signaling.                                                    None              None                                                          None         NaN                                     None     False
+                    periodic_limb_movements                                 Periodic Limb Movements        symptom                     Involuntary periodic limb movements as a motor manifestation of loop dysregulation.                                                    None              None                                                          None         NaN                                     None     False
+            sleep_related_motor_disturbance                         Sleep Related Motor Disturbance        symptom                            Nocturnal movement burden and sleep disruption linked to RLS motor activity.                                                    None              None                                                          None         NaN                                     None     False
+
+=== Edges ===
+                                     source                                      target                                                                                       relation rls_change
+                      genetic_vulnerability developmental_axonal_guidance_vulnerability              genetic risk includes variants tied to fetal limb development and axonal guidance  increased
+                      genetic_vulnerability              brain_iron_homeostasis_failure              genetic burden may impair proteins regulating iron uptake, storage, and transport  increased
+                      genetic_vulnerability        nigrostriatal_dopamine_dysregulation                          genetic burden may influence dopamine synthesis and receptor function  increased
+                      iron_deficiency_state              brain_iron_homeostasis_failure                               iron-deficiency states anchor the modern biological model of RLS  increased
+                     iron_repletion_support              brain_iron_homeostasis_failure                                  improved iron availability can reduce iron-homeostasis burden  decreased
+             dopaminergic_treatment_support        nigrostriatal_dopamine_dysregulation                                    dopaminergic therapy can compensate for pathway dysfunction  decreased
+             peripheral_sensorimotor_burden                     cstc_loop_dysregulation                            peripheral contributions add to the distributed sensorimotor burden  increased
+             peripheral_sensorimotor_burden                   sensorimotor_restlessness                                  peripheral sensory burden can directly intensify restlessness  increased
+             brain_iron_homeostasis_failure                      substantia_nigra_proxy                     MRI and neuropathology localize reduced brain iron to the substantia nigra  increased
+             brain_iron_homeostasis_failure                                     putamen                                         MRI studies localize reduced brain iron to the putamen  increased
+             brain_iron_homeostasis_failure        nigrostriatal_dopamine_dysregulation           localized iron deficit can impair tyrosine-hydroxylase-dependent dopamine production  increased
+             brain_iron_homeostasis_failure          striatal_d2_receptor_dysregulation          iron-dopamine coupling failure can worsen post-synaptic striatal receptor dysfunction  increased
+developmental_axonal_guidance_vulnerability                     cstc_loop_dysregulation                  developmental circuitry vulnerability can bias sensorimotor loop organization  increased
+       nigrostriatal_dopamine_dysregulation                      substantia_nigra_proxy            dopaminergic dysfunction is expressed through the substantia-nigra-centered pathway  increased
+       nigrostriatal_dopamine_dysregulation           direct_indirect_pathway_imbalance              insufficient dopaminergic modulation disrupts the direct-indirect pathway balance  increased
+         striatal_d2_receptor_dysregulation                                     putamen                   reduced striatal D2 binding anchors post-synaptic dysfunction in the putamen  increased
+         striatal_d2_receptor_dysregulation                                     caudate                   reduced striatal D2 binding anchors post-synaptic dysfunction in the caudate  increased
+         striatal_d2_receptor_dysregulation           direct_indirect_pathway_imbalance                                   D2-system dysregulation disturbs indirect-pathway modulation  increased
+         opioid_glutamate_modulatory_burden                     cstc_loop_dysregulation              non-dopaminergic transmitter burden further destabilizes the sensorimotor network  increased
+          direct_indirect_pathway_imbalance                              thalamus_proxy                            abnormal basal-ganglia output propagates through the thalamic relay  increased
+          direct_indirect_pathway_imbalance                     cstc_loop_dysregulation basal-ganglia pathway imbalance destabilizes the broader cortico-striatal-thalamocortical loop  increased
+                    cstc_loop_dysregulation                   sensorimotor_cortex_proxy                       loop disruption burdens the cortical motor-planning and sensorimotor arm  increased
+                                    putamen                   sensorimotor_restlessness                          putaminal dysfunction contributes to abnormal sensorimotor experience  increased
+                     substantia_nigra_proxy                   sensorimotor_restlessness                     nigrostriatal dysfunction contributes to sensorimotor discomfort and drive  increased
+                  sensorimotor_cortex_proxy                                urge_to_move                                 cortical motor-planning burden contributes to the urge to move  increased
+          direct_indirect_pathway_imbalance                                urge_to_move          pathway imbalance can produce inappropriate motor output signals and the urge to move  increased
+                    cstc_loop_dysregulation                                urge_to_move                              sensorimotor loop disruption drives the core urge-to-move symptom  increased
+                    cstc_loop_dysregulation                     periodic_limb_movements                sensorimotor loop disruption contributes to involuntary periodic limb movements  increased
+                               urge_to_move                     periodic_limb_movements                                   stronger movement drive increases motor manifestation burden  increased
+                    periodic_limb_movements             sleep_related_motor_disturbance                  periodic nocturnal movements disrupt sleep and produce nighttime motor burden  increased
+                               urge_to_move             sleep_related_motor_disturbance                                    persistent movement urge increases nocturnal symptom burden  increased
+
+=== Resolved regions ===
+- substantia_nigra_proxy: SNC (Midbrain, Substantia Nigra pars compacta) left
+- putamen: FuP (Ventral Striatum, Fundus of Putamen) left
+- caudate: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+- thalamus_proxy: ZI (Thalamus, zona incerta) left
+- sensorimotor_cortex_proxy: Area 4a (PreCG) left
+
+=== Receptor fingerprints (head) ===
+
+[substantia_nigra_proxy]
+<no receptor fingerprint>
+
+[putamen]
+<no receptor fingerprint>
+
+[caudate]
+<no receptor fingerprint>
+
+[thalamus_proxy]
+<no receptor fingerprint>
+
+[sensorimotor_cortex_proxy]
+<no receptor fingerprint>
+
+=== Gene summaries (head) ===
+
+[substantia_nigra_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BTBD9    5.985306   2.815046           16    -0.677963    1.028262
+  DRD2    5.387710   2.650629           20     1.612610    1.240540
+  FTH1   13.107667   1.244123           12     0.062092    0.905180
+   FTL   11.205785   2.352668           20     0.739305    1.130224
+MAP2K5    6.027700   0.620376            8    -0.423575    0.916796
+
+[putamen]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BTBD9    6.490494   2.854037           16    -0.130900    0.832520
+  DRD2    5.214320   2.586407           20     1.381145    0.928738
+  FTH1   12.999508   1.187050           12    -0.036925    0.450461
+   FTL   11.177805   2.310289           20     0.786145    0.616624
+MAP2K5    5.922500   0.428943            8    -0.542450    0.944867
+
+[caudate]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BTBD9    6.705992   2.804916           24     0.448629    0.781301
+  DRD2    6.119210   2.344979           30     2.320237    1.023981
+  FTH1   12.745100   1.005705           18    -0.424928    0.669823
+   FTL   10.976443   2.391999           30     0.311320    0.596300
+MAP2K5    6.094775   0.496254           12    -0.076475    0.976408
+
+[thalamus_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BTBD9    6.064434   2.821184           32    -0.369972    1.038875
+  DRD2    4.756305   2.505212           40     0.980560    0.913045
+  FTH1   13.042292   1.268886           24     0.053275    1.024103
+   FTL   11.218655   2.397374           40     0.630362    1.250461
+MAP2K5    6.278531   0.646933           16     0.346206    1.171747
+
+[sensorimotor_cortex_proxy]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BTBD9    6.723720   2.856266           20     0.357665    0.540959
+  DRD2    3.038716   1.848771           25    -0.415092    0.416177
+  FTH1   13.319360   1.108469           15     0.381907    0.481871
+   FTL   10.663960   2.446719           25    -0.183668    0.458061
+MAP2K5    6.590360   0.608626           10     0.912590    0.758190
+
+=== Connectivity profiles (head) ===
+
+[substantia_nigra_proxy]
+<no connectivity profile>
+
+[putamen]
+<no connectivity profile>
+
+[caudate]
+<no connectivity profile>
+
+[thalamus_proxy]
+<no connectivity profile>
+
+[sensorimotor_cortex_proxy]
+<no connectivity profile>
+
+=== Circuit connectivity ===
+                           substantia_nigra_proxy   putamen   caudate  thalamus_proxy  sensorimotor_cortex_proxy
+substantia_nigra_proxy                     12.565     0.110     0.020          77.225                      1.305
+putamen                                     0.110  3774.225  4462.355           3.715                      1.715
+caudate                                     0.020  4462.355  2794.395          16.035                      0.435
+thalamus_proxy                             77.225     3.715    16.035        1372.320                     28.105
+sensorimotor_cortex_proxy                   1.305     1.715     0.435          28.105                  10362.375
+
+=== Simulation: inputs ===
+genetic_vulnerability             0.70
+iron_deficiency_state             0.80
+peripheral_sensorimotor_burden    0.55
+dopaminergic_treatment_support    0.35
+iron_repletion_support            0.25
+
+=== Simulation: latents ===
+brain_iron_homeostasis_failure                 0.5825
+developmental_axonal_guidance_vulnerability    0.5950
+nigrostriatal_dopamine_dysregulation           0.4773
+striatal_d2_receptor_dysregulation             0.4888
+opioid_glutamate_modulatory_burden             0.5858
+direct_indirect_pathway_imbalance              0.4514
+cstc_loop_dysregulation                        0.5154
+
+=== Simulation: regional state ===
+substantia_nigra_proxy       0.5404
+putamen                      0.5329
+caudate                      0.5193
+thalamus_proxy               0.5000
+sensorimotor_cortex_proxy    0.5148
+
+=== Simulation: symptoms ===
+sensorimotor_restlessness          0.5430
+urge_to_move                       0.5001
+periodic_limb_movements            0.4964
+sleep_related_motor_disturbance    0.5049
+
+=== Simulation: phenotypes ===
+rls_core_sensorimotor_profile    0.5132
+iron_dopamine_profile            0.5334
+sleep_movement_profile           0.5004
+developmental_circuit_profile    0.5417

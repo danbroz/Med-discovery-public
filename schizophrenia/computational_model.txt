@@ -1,0 +1,147 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                               key      node_type                                   atlas_region                            feature_summary
+             genetic_vulnerability          input                                                                                          
+         neurodevelopmental_burden          input                                                                                          
+         environmental_stress_load          input                                                                                          
+               multiple_hit_burden          input                                                                                          
+                 prodromal_decline          input                                                                                          
+   atypical_antipsychotic_coverage          input                                                                                          
+                       pfc_control         region                           middle frontal gyrus   receptors=no; genes=yes; connectivity=no
+                               acc         region                        frontal cingulate gyrus    receptors=no; genes=no; connectivity=no
+                          thalamus         region               ZI (Thalamus, zona incerta) left  receptors=no; genes=yes; connectivity=yes
+                       hippocampus         region                          DG (Hippocampus) left receptors=yes; genes=yes; connectivity=yes
+                     heschls_gyrus         region                      Area Te 1.0 (HESCHL) left receptors=yes; genes=yes; connectivity=yes
+       inferotemporal_cortex_proxy         region                           Area Te 3 (STG) left  receptors=no; genes=yes; connectivity=yes
+               basal_ganglia_proxy         region FuP (Ventral Striatum, Fundus of Putamen) left  receptors=no; genes=yes; connectivity=yes
+                  cerebellum_proxy         region     Nfast (Cerebellum, Fastigial Nucleus) left  receptors=no; genes=yes; connectivity=yes
+     serotonin_5ht2a_dysregulation latent_biology                                                                                          
+          gaba_interneuron_deficit latent_biology                                                                                          
+          glutamate_gaba_imbalance latent_biology                                                                                          
+         hippocampal_disinhibition latent_biology                                                                                          
+   dopamine_salience_dysregulation latent_biology                                                                                          
+        cortical_hyperexcitability latent_biology                                                                                          
+working_memory_oscillation_failure latent_biology                                                                                          
+    large_scale_circuit_disruption latent_biology                                                                                          
+   thalamocortical_dysconnectivity latent_biology                                                                                          
+    frontotemporal_dysconnectivity latent_biology                                                                                          
+           salience_misattribution latent_biology                                                                                          
+       positive_psychotic_symptoms        symptom                                                                                          
+           auditory_hallucinations        symptom                                                                                          
+visual_hallucination_vulnerability        symptom                                                                                          
+              disorganized_thought        symptom                                                                                          
+              cognitive_impairment        symptom                                                                                          
+                 negative_symptoms        symptom                                                                                          
+           social_function_decline        symptom                                                                                          
+
+=== Edges (first 14) ===
+                        source                             target                                                                 relation schizophrenia_change  weight
+         genetic_vulnerability     large_scale_circuit_disruption confers broad inherited vulnerability to distributed circuit dysfunction            increased    0.40
+         genetic_vulnerability    dopamine_salience_dysregulation                              biases dopamine-related salience mechanisms            increased    0.25
+         genetic_vulnerability           gaba_interneuron_deficit               raises vulnerability to inhibitory interneuron dysfunction            increased    0.20
+     neurodevelopmental_burden     large_scale_circuit_disruption           disrupts maturation of frontal, temporal, and thalamic systems            increased    0.45
+           multiple_hit_burden     large_scale_circuit_disruption        adds cumulative non-genetic insults in the multiple-hit framework            increased    0.25
+     environmental_stress_load      serotonin_5ht2a_dysregulation          can amplify perceptual and affective serotonergic dysregulation            increased    0.20
+             prodromal_decline     frontotemporal_dysconnectivity                    signals emerging disconnection before overt psychosis            increased    0.25
+      gaba_interneuron_deficit           glutamate_gaba_imbalance        weakens inhibition and destabilizes excitatory-inhibitory balance            increased    0.40
+      gaba_interneuron_deficit          hippocampal_disinhibition     loss of hippocampal GABAergic control may increase hippocampal drive            increased    0.35
+      glutamate_gaba_imbalance         cortical_hyperexcitability                    produces disinhibited cortical firing and instability            increased    0.40
+      gaba_interneuron_deficit working_memory_oscillation_failure            disrupts inhibitory synchronization needed for working memory            increased    0.40
+     hippocampal_disinhibition    dopamine_salience_dysregulation                                may elevate downstream dopaminergic drive            increased    0.35
+ serotonin_5ht2a_dysregulation    dopamine_salience_dysregulation               modulates regional dopamine release in cortex and striatum            increased    0.25
+large_scale_circuit_disruption    thalamocortical_dysconnectivity                          breaks coordination between thalamus and cortex            increased    0.35
+
+=== Region suggestions for 'thalamus' ===
+                                    name identifier                                parcellation
+   Rt (Thalamus, reticular Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+        ZI (Thalamus, zona incerta) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+    PUm (Thalamus, medial pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+    Li (Thalamus, limitans Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   PUl (Thalamus, lateral pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   Po (Thalamus, posterior Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  PUa (Thalamus, anterior pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  PUi (Thalamus, inferior pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+ MD (Thalamus, mediodorsal Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+MV (Thalamus, medioventral Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Example receptor / gene / connectivity tables ===
+
+[pfc_control] receptor rows: 0
+[pfc_control] gene rows: 22
+[pfc_control] connectivity rows: 0
+
+[acc] receptor rows: 0
+[acc] gene rows: 0
+[acc] connectivity rows: 0
+
+[thalamus] receptor rows: 0
+[thalamus] gene rows: 22
+[thalamus] connectivity rows: 10
+
+[hippocampus] receptor rows: 14
+[hippocampus] gene rows: 22
+[hippocampus] connectivity rows: 10
+
+[heschls_gyrus] receptor rows: 16
+[heschls_gyrus] gene rows: 22
+[heschls_gyrus] connectivity rows: 10
+
+[basal_ganglia_proxy] receptor rows: 0
+[basal_ganglia_proxy] gene rows: 22
+[basal_ganglia_proxy] connectivity rows: 10
+
+=== Example simulation ===
+
+-- inputs --
+genetic_vulnerability              0.68
+neurodevelopmental_burden          0.62
+prodromal_decline                  0.58
+multiple_hit_burden                0.54
+environmental_stress_load          0.47
+atypical_antipsychotic_coverage    0.36
+
+-- latents --
+gaba_interneuron_deficit              0.5310
+large_scale_circuit_disruption        0.5260
+working_memory_oscillation_failure    0.4375
+hippocampal_disinhibition             0.4170
+glutamate_gaba_imbalance              0.4108
+frontotemporal_dysconnectivity        0.4047
+serotonin_5ht2a_dysregulation         0.3470
+cortical_hyperexcitability            0.3347
+thalamocortical_dysconnectivity       0.3226
+dopamine_salience_dysregulation       0.2688
+salience_misattribution               0.1529
+
+-- regional_state --
+hippocampus                    0.3232
+pfc_control                    0.3160
+cerebellum_proxy               0.2855
+heschls_gyrus                  0.2585
+inferotemporal_cortex_proxy    0.2577
+thalamus                       0.2096
+acc                            0.2071
+basal_ganglia_proxy            0.1344
+
+-- symptoms --
+cognitive_impairment                  0.2934
+negative_symptoms                     0.2633
+disorganized_thought                  0.2584
+social_function_decline               0.1906
+visual_hallucination_vulnerability    0.1184
+auditory_hallucinations               0.0997
+positive_psychotic_symptoms           0.0827
+
+-- phenotypes --
+disorganized_cognitive_profile             0.2534
+negative_symptom_profile                   0.2154
+overall_schizophrenia_severity             0.1725
+paranoid_hallucinatory_profile             0.0986
+multimodal_perceptual_psychosis_profile    0.0845

@@ -1,0 +1,199 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                   key      node_type           atlas_region region_identifier                          feature_summary
+                 genetic_vulnerability          input                   None              None                                     None
+                 co2_panic_sensitivity          input                   None              None                                     None
+                     early_life_trauma          input                   None              None                                     None
+                   current_stress_load          input                   None              None                                     None
+         bodily_sensation_trigger_load          input                   None              None                                     None
+                benzodiazepine_support          input                   None              None                                     None
+                              amygdala         region     LB (Amygdala) left              None receptors=no; genes=yes; connectivity=no
+                                insula         region Area Id1 (Insula) left              None receptors=no; genes=yes; connectivity=no
+                                   acc         region   Area p32 (pACC) left              None receptors=no; genes=yes; connectivity=no
+                           pfc_control         region                   None              None                               unresolved
+                 brainstem_alarm_proxy         region               midbrain              None receptors=no; genes=yes; connectivity=no
+             fear_stress_sensitization latent_biology                   None              None                                     None
+          cck_gaba_modulatory_pressure latent_biology                   None              None                                     None
+               gabaergic_disinhibition latent_biology                   None              None                                     None
+              interoceptive_alarm_bias latent_biology                   None              None                                     None
+       frontolimbic_regulatory_failure latent_biology                   None              None                                     None
+  autonomic_brainstem_alarm_activation latent_biology                   None              None                                     None
+ catastrophic_bodily_misinterpretation latent_biology                   None              None                                     None
+          anticipatory_anxiety_circuit latent_biology                   None              None                                     None
+                panic_attack_intensity        symptom                   None              None                                     None
+                somatic_alarm_symptoms        symptom                   None              None                                     None
+catastrophic_medical_misinterpretation        symptom                   None              None                                     None
+                  anticipatory_anxiety        symptom                   None              None                                     None
+ attention_memory_executive_difficulty        symptom                   None              None                                     None
+             avoidance_safety_behavior        symptom                   None              None                                     None
+
+=== EDGES ===
+                               source                                 target                                                                        relation panic_change
+                genetic_vulnerability              fear_stress_sensitization           increases inherited biological diathesis for panic-network reactivity    increased
+                    early_life_trauma              fear_stress_sensitization                 kindles and sensitizes fear-stress circuitry across development    increased
+                  current_stress_load              fear_stress_sensitization                          adds current load to already sensitized stress systems    increased
+                genetic_vulnerability           cck_gaba_modulatory_pressure can contribute to inherited vulnerability in inhibitory-neuropeptide regulation    increased
+                  current_stress_load           cck_gaba_modulatory_pressure   stress increases modulatory pressure on anxiety-related inhibitory regulation    increased
+         cck_gaba_modulatory_pressure                gabaergic_disinhibition                      can weaken inhibitory buffering within the anxiety network    increased
+               benzodiazepine_support                gabaergic_disinhibition                acutely restores inhibitory tone through GABA-A receptor agonism    decreased
+                co2_panic_sensitivity               interoceptive_alarm_bias       raises vulnerability to panicogenic respiratory and suffocation-like cues    increased
+        bodily_sensation_trigger_load               interoceptive_alarm_bias                       provides the bodily cues that are read as imminent danger    increased
+              gabaergic_disinhibition               interoceptive_alarm_bias                reduces damping of alarm responses to internal bodily sensations    increased
+            fear_stress_sensitization        frontolimbic_regulatory_failure                       weakens top-down control over hyperreactive fear circuits    increased
+              gabaergic_disinhibition        frontolimbic_regulatory_failure            heightens neuronal excitability and destabilizes cortical regulation    increased
+             interoceptive_alarm_bias   autonomic_brainstem_alarm_activation                 rapidly recruits physiological alarm-state systems during panic    increased
+              gabaergic_disinhibition   autonomic_brainstem_alarm_activation                                         permits stronger autonomic alarm surges    increased
+             interoceptive_alarm_bias  catastrophic_bodily_misinterpretation                  turns bodily sensations into perceived evidence of catastrophe    increased
+      frontolimbic_regulatory_failure  catastrophic_bodily_misinterpretation                          impairs cognitive reappraisal of bodily danger signals    increased
+            fear_stress_sensitization           anticipatory_anxiety_circuit                              maintains a persistent expectation of future panic    increased
+catastrophic_bodily_misinterpretation           anticipatory_anxiety_circuit                                   feeds between-attack worry and hypervigilance    increased
+            fear_stress_sensitization                               amygdala                       maps sensitized threat bias onto amygdala hyperreactivity    increased
+             interoceptive_alarm_bias                                 insula                 maps interoceptive danger monitoring onto insular hyperactivity    increased
+      frontolimbic_regulatory_failure                                    acc                           burdens ACC conflict and affect-integration functions    increased
+      frontolimbic_regulatory_failure                            pfc_control           burdens prefrontal appraisal, inhibition, and decision-making systems    increased
+ autonomic_brainstem_alarm_activation                  brainstem_alarm_proxy             maps panic-state physiological alarm onto brainstem arousal systems    increased
+                             amygdala                 panic_attack_intensity                                  drives fear intensity during the panic episode    increased
+                               insula                 panic_attack_intensity                   intensifies conscious experience of bodily alarm during panic    increased
+                brainstem_alarm_proxy                 somatic_alarm_symptoms                               drives the prominent physiological surge of panic    increased
+catastrophic_bodily_misinterpretation catastrophic_medical_misinterpretation      creates conviction that panic symptoms are life-threatening medical events    increased
+         anticipatory_anxiety_circuit                   anticipatory_anxiety                                   maintains between-attack worry and expectancy    increased
+                          pfc_control  attention_memory_executive_difficulty    prefrontal dysfunction reduces working memory, flexibility, and strategy use    increased
+                                  acc  attention_memory_executive_difficulty                 cingulate dysfunction burdens conflict monitoring and attention    increased
+         anticipatory_anxiety_circuit              avoidance_safety_behavior     supports avoidance and safety strategies aimed at preventing future attacks    increased
+catastrophic_bodily_misinterpretation              avoidance_safety_behavior   encourages reassurance seeking and avoidance of feared sensations or contexts    increased
+
+=== CIRCUIT CONNECTIVITY ===
+                       amygdala  insula  acc  brainstem_alarm_proxy
+amygdala                    NaN     NaN  NaN                    NaN
+insula                      NaN     NaN  NaN                    NaN
+acc                         NaN     NaN  NaN                    NaN
+brainstem_alarm_proxy       NaN     NaN  NaN                    NaN
+
+=== RECEPTOR TABLE: amygdala ===
+No receptor fingerprint available.
+
+=== GENE TABLE: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+   CCK   13.764979   0.556024           14     0.625271    0.144055
+ CCKBR    4.663667   2.321812           21    -0.065333    0.610959
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+GABRG2    9.809148   1.051943           21    -0.431229    1.114230
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+
+=== CONNECTIVITY PROFILE: amygdala ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: insula ===
+No receptor fingerprint available.
+
+=== GENE TABLE: insula ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    6.670433   1.636444            6     0.926267    0.206763
+   CCK   14.817833   0.457848            6     0.902767    0.101741
+ CCKBR    5.081778   2.331831            9     0.224744    0.708497
+ CRHR1    4.551908   2.504119           12    -0.213075    0.963337
+GABRA1    7.690771   3.117178          147     0.158293    0.637404
+GABRA2    8.231310   1.535083           78     0.893958    0.464156
+GABRB2    7.802300   1.496936            6     0.289317    0.653062
+GABRG2    9.763467   1.060148            9    -0.395122    0.757125
+ NR3C1    9.378853   1.057596           15    -0.108947    0.502861
+
+=== CONNECTIVITY PROFILE: insula ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: acc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: acc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+   CCK   14.496091   0.348654           32     0.834163    0.075133
+ CCKBR    6.313940   1.830333           48     0.957419    0.288405
+ CRHR1    5.238798   1.959829           64     0.137673    0.666190
+GABRA1    7.893453   3.079313          784     0.347816    0.458416
+GABRA2    7.951337   1.493217          416     0.732192    0.294361
+GABRB2    8.011919   1.268520           32     0.447750    0.340872
+GABRG2   10.101200   1.250689           48     0.186342    0.351946
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+
+=== CONNECTIVITY PROFILE: acc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: pfc_control ===
+No receptor fingerprint available.
+
+=== GENE TABLE: pfc_control ===
+No gene-expression summary available.
+
+=== CONNECTIVITY PROFILE: pfc_control ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: brainstem_alarm_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: brainstem_alarm_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.734800   1.981989           36    -0.711794    0.906419
+   CCK    9.964967   2.136671           36    -0.352094    0.551950
+ CCKBR    2.602269   1.375690           54    -1.087054    0.625568
+ CRHR1    4.632486   2.668169           72    -0.327956    0.964843
+GABRA1    6.759858   3.007351          882    -0.414205    0.833170
+GABRA2    5.428941   1.921243          468    -1.248763    0.918404
+GABRB2    6.370794   1.374911           36    -0.881956    0.573115
+GABRG2    9.558544   1.209321           54    -0.622820    1.154308
+ NR3C1    8.814033   1.334114           90    -0.685713    1.291193
+
+=== CONNECTIVITY PROFILE: brainstem_alarm_proxy ===
+No connectivity profile available.
+
+=== SIMULATION EXAMPLE ===
+
+--- INPUTS ---
+bodily_sensation_trigger_load    0.88
+genetic_vulnerability            0.78
+co2_panic_sensitivity            0.72
+current_stress_load              0.65
+early_life_trauma                0.42
+benzodiazepine_support           0.22
+
+--- LATENTS ---
+interoceptive_alarm_bias                 0.574
+fear_stress_sensitization                0.533
+catastrophic_bodily_misinterpretation    0.518
+autonomic_brainstem_alarm_activation     0.463
+anticipatory_anxiety_circuit             0.446
+cck_gaba_modulatory_pressure             0.420
+frontolimbic_regulatory_failure          0.369
+gabaergic_disinhibition                  0.345
+
+--- REGIONAL_STATE ---
+insula                   0.482
+brainstem_alarm_proxy    0.411
+amygdala                 0.402
+pfc_control              0.325
+acc                      0.308
+
+--- SYMPTOMS ---
+somatic_alarm_symptoms                    0.437
+panic_attack_intensity                    0.429
+avoidance_safety_behavior                 0.420
+catastrophic_medical_misinterpretation    0.417
+anticipatory_anxiety                      0.361
+attention_memory_executive_difficulty     0.303
+
+--- PHENOTYPES ---
+interoceptive_fear_profile         0.491
+acute_panic_episode_profile        0.428
+anticipatory_panic_profile         0.409
+emergency_presentation_pressure    0.368

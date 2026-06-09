@@ -1,0 +1,154 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 20) ===
+                                      key                                     label      node_type                                                                                                     description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+             upper_airway_anatomical_load              Upper Airway Anatomical Load          input                     Anatomical narrowing burden from obesity, fat distribution, or craniofacial susceptibility.                   None              None                                                           None         NaN                                      None
+                    genetic_vulnerability                     Genetic Vulnerability          input   Polygenic susceptibility influencing anatomy, neuromuscular airway control, loop gain, and arousal threshold.                   None              None                                                           None         NaN                                      None
+         sleep_state_monoamine_withdrawal          Sleep State Monoamine Withdrawal          input         Loss of wake-like serotonergic and noradrenergic excitatory drive during NREM and especially REM sleep.                   None              None                                                           None         NaN                                      None
+                  gabaergic_hypnotic_load                   Gabaergic Hypnotic Load          input            Muscle-relaxant and inhibitory burden from benzodiazepine-like or Z-medication-like GABAergic enhancement.                   None              None                                                           None         NaN                                      None
+             ventilatory_instability_load              Ventilatory Instability Load          input             Instability of respiratory control, including loop-gain related susceptibility to recurring events.                   None              None                                                           None         NaN                                      None
+                intermittent_hypoxia_load                 Intermittent Hypoxia Load          input                             Cumulative nocturnal oxygen desaturation burden reflecting repeated hypoxic stress.                   None              None                                                           None         NaN                                      None
+                   airway_patency_support                    Airway Patency Support          input Protective support from interventions or behaviors that help maintain airway patency and reduce hypoxic burden.                   None              None                                                           None         NaN                                      None
+            brainstem_monoaminergic_proxy                                  midbrain         region                                                                                      Atlas-backed circuit node.               midbrain              None (-7.693044354838705, -20.180443548387103, -14.356350806451616)      1984.0  receptors=no; genes=yes; connectivity=no
+                    frontal_control_proxy                      middle frontal gyrus         region                                                                                      Atlas-backed circuit node.   middle frontal gyrus              None    (-37.574017415862556, 34.86051619989016, 35.43335686828273)     12747.0  receptors=no; genes=yes; connectivity=no
+                              hippocampus                    CA1 (Hippocampus) left         region                                                                                      Atlas-backed circuit node. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+             upper_airway_dilator_failure              Upper Airway Dilator Failure latent_biology                               Failure of upper-airway motor output to maintain pharyngeal patency during sleep.                   None              None                                                           None         NaN                                      None
+          respiratory_control_instability           Respiratory Control Instability latent_biology                                       Unstable respiratory control that amplifies recurring obstructive events.                   None              None                                                           None         NaN                                      None
+          arousal_threshold_dysregulation           Arousal Threshold Dysregulation latent_biology            Trait-level dysregulation of the arousal threshold affecting event termination and sleep continuity.                   None              None                                                           None         NaN                                      None
+        sleep_state_airway_collapsibility         Sleep State Airway Collapsibility latent_biology                                          State-dependent increase in airway collapsibility across sleep stages.                   None              None                                                           None         NaN                                      None
+ intermittent_hypoxia_inflammatory_stress  Intermittent Hypoxia Inflammatory Stress latent_biology                             Inflammatory and oxidative stress burden generated by chronic intermittent hypoxia.                   None              None                                                           None         NaN                                      None
+         small_vessel_white_matter_injury          Small Vessel White Matter Injury latent_biology       White-matter hyperintensity and axonal/demyelinating burden consistent with small-vessel ischemic injury.                   None              None                                                           None         NaN                                      None
+frontal_hippocampal_network_vulnerability Frontal Hippocampal Network Vulnerability latent_biology                     Vulnerability of memory and executive networks centered on hippocampal and frontal systems.                   None              None                                                           None         NaN                                      None
+           distributed_osah_neural_burden            Distributed Osah Neural Burden latent_biology          Overall central nervous system burden integrating airway-control failure, hypoxia, and network injury.                   None              None                                                           None         NaN                                      None
+              apnea_hypopnea_event_burden               Apnea Hypopnea Event Burden        symptom                                              Burden of recurring obstructive apneas and hypopneas during sleep.                   None              None                                                           None         NaN                                      None
+                      sleep_fragmentation                       Sleep Fragmentation        symptom               Repeated sleep interruption and unstable sleep continuity due to respiratory events and arousals.                   None              None                                                           None         NaN                                      None
+
+=== Edges ===
+                                   source                                    target                                                                                   relation osah_change
+             upper_airway_anatomical_load              upper_airway_dilator_failure            increases the mechanical burden that neuromuscular airway support must overcome   increased
+                    genetic_vulnerability              upper_airway_dilator_failure                    raises susceptibility through anatomy and neural control endophenotypes   increased
+                    genetic_vulnerability           respiratory_control_instability                        contributes to inherited variation in ventilatory control stability   increased
+                    genetic_vulnerability           arousal_threshold_dysregulation                           contributes to inherited differences in arousal threshold traits   increased
+         sleep_state_monoamine_withdrawal              upper_airway_dilator_failure withdraws serotonergic and noradrenergic excitation from airway motor neurons during sleep   increased
+                  gabaergic_hypnotic_load              upper_airway_dilator_failure                                                  further relaxes upper-airway dilator tone   increased
+                  gabaergic_hypnotic_load           arousal_threshold_dysregulation                                 alters arousal dynamics while increasing inhibitory burden   increased
+             ventilatory_instability_load           respiratory_control_instability                                              raises loop-gain-like respiratory instability   increased
+             upper_airway_dilator_failure             brainstem_monoaminergic_proxy         maps loss of central monoaminergic support onto brainstem airway-control circuitry   increased
+             upper_airway_dilator_failure         sleep_state_airway_collapsibility                                                   permits pharyngeal collapse during sleep   increased
+          respiratory_control_instability         sleep_state_airway_collapsibility                                        amplifies recurring instability of breathing events   increased
+          arousal_threshold_dysregulation         sleep_state_airway_collapsibility                                 modulates how easily obstructive events terminate or recur   increased
+        sleep_state_airway_collapsibility               apnea_hypopnea_event_burden                    produces the recurrent respiratory events that define syndrome severity   increased
+        sleep_state_airway_collapsibility                       sleep_fragmentation                                  triggers repeated arousals and disrupted sleep continuity   increased
+                intermittent_hypoxia_load  intermittent_hypoxia_inflammatory_stress                                  drives chronic inflammatory and oxidative stress pathways   increased
+              apnea_hypopnea_event_burden  intermittent_hypoxia_inflammatory_stress           adds recurrent desaturation burden to inflammatory and oxidative stress cascades   increased
+ intermittent_hypoxia_inflammatory_stress          small_vessel_white_matter_injury                                      promotes demyelinating and axonal white-matter injury   increased
+         small_vessel_white_matter_injury frontal_hippocampal_network_vulnerability                                                  disconnects executive and memory networks   increased
+frontal_hippocampal_network_vulnerability                     frontal_control_proxy                                  maps executive vulnerability onto frontal control systems   increased
+frontal_hippocampal_network_vulnerability                               hippocampus                                  maps hypoxic-ischemic vulnerability onto memory circuitry   increased
+             upper_airway_dilator_failure            distributed_osah_neural_burden                adds central neuromuscular airway-control failure to overall disease burden   increased
+          respiratory_control_instability            distributed_osah_neural_burden                                adds unstable respiratory control to overall disease burden   increased
+ intermittent_hypoxia_inflammatory_stress            distributed_osah_neural_burden                                              adds inflammatory and oxidative neural burden   increased
+         small_vessel_white_matter_injury            distributed_osah_neural_burden                                                 adds connectivity injury to overall burden   increased
+           distributed_osah_neural_burden              excessive_daytime_sleepiness                                    contributes to daytime sleepiness and vigilance failure   increased
+                      sleep_fragmentation              excessive_daytime_sleepiness                                 reduces restorative sleep and increases daytime somnolence   increased
+                      sleep_fragmentation                                   fatigue                                                        produces persistent daytime fatigue   increased
+                    frontal_control_proxy                  concentration_impairment                                                    impairs attention and executive control   increased
+                              hippocampus               memory_executive_impairment                                                    contributes memory-system vulnerability   increased
+                    frontal_control_proxy               memory_executive_impairment                                                        contributes executive vulnerability   increased
+           distributed_osah_neural_burden                          mood_disturbance                   links chronic sleep disruption and neural stress with affective symptoms   increased
+                   airway_patency_support              upper_airway_dilator_failure                                                   partially offsets airway patency failure   decreased
+                   airway_patency_support         sleep_state_airway_collapsibility                                             reduces the tendency of the airway to collapse   decreased
+                   airway_patency_support  intermittent_hypoxia_inflammatory_stress                                                          reduces downstream hypoxic stress   decreased
+                   airway_patency_support              excessive_daytime_sleepiness                                                             reduces daytime symptom burden   decreased
+
+=== Resolved regions ===
+- brainstem_monoaminergic_proxy: midbrain
+- frontal_control_proxy: middle frontal gyrus
+- hippocampus: CA1 (Hippocampus) left
+
+=== Example multimodal tables ===
+
+Region: brainstem_monoaminergic_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  APOE   10.357393   3.171432           54     0.841159    1.196042
+  BDNF    3.734800   1.981989           36    -0.711794    0.906419
+   DBH    2.401843   0.930432           54    -0.341135    0.771358
+  DRD2    4.933710   2.542018           90     1.091881    1.126056
+GABRA1    6.759858   3.007351          882    -0.414205    0.833170
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+Region: frontal_control_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  APOE    8.976215   2.806869           39    -0.463421    0.619598
+  BDNF    5.543831   1.790812           26     0.359869    0.356919
+   DBH    3.392808   0.894791           39     0.442818    0.546406
+  DRD2    3.053811   1.788356           65    -0.485960    0.584656
+GABRA1    8.024643   3.077440          637     0.479512    0.498160
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Example simulation ===
+
+[inputs]
+upper_airway_anatomical_load        0.70
+genetic_vulnerability               0.50
+sleep_state_monoamine_withdrawal    0.75
+gabaergic_hypnotic_load             0.30
+ventilatory_instability_load        0.45
+intermittent_hypoxia_load           0.65
+airway_patency_support              0.20
+
+[latents]
+upper_airway_dilator_failure                 0.4050
+respiratory_control_instability              0.3575
+arousal_threshold_dysregulation              0.3650
+sleep_state_airway_collapsibility            0.4069
+intermittent_hypoxia_inflammatory_stress     0.3146
+small_vessel_white_matter_injury             0.2858
+frontal_hippocampal_network_vulnerability    0.2754
+distributed_osah_neural_burden               0.3228
+
+[regional_state]
+brainstem_monoaminergic_proxy    0.3562
+frontal_control_proxy            0.2465
+hippocampus                      0.2479
+
+[symptoms]
+apnea_hypopnea_event_burden     0.2939
+sleep_fragmentation             0.2722
+excessive_daytime_sleepiness    0.2052
+fatigue                         0.1912
+concentration_impairment        0.1851
+memory_executive_impairment     0.2198
+mood_disturbance                0.1619
+
+[phenotypes]
+neuromuscular_collapse_dominant_profile       0.4241
+hypoxic_white_matter_injury_profile           0.2597
+daytime_neurobehavioral_impairment_profile    0.1948

@@ -1,0 +1,53 @@
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"disruptive_mood_dysregulation_disorder_model.py" 1069L, 45063B[1;1H[35mfrom[m __future__ [35mimport[m annotations
+
+[31m"""
+Disruptive Mood Dysregulation Disorder (DMDD) atlas-grounded siibra scaffold.
+
+This script turns a chapter-level biological summary of DMDD into a transparent,
+research-oriented mechanistic graph. The source chapter explicitly notes that
+DMDD-specific neurobiology is still sparse, so this scaffold encodes an
+inferential model drawn from the chapter's links to irritability, ADHD,
+externalizing dyscontrol, anxiety, and depressive liability.
+
+Important:
+- This is a research scaffold, not a diagnostic or treatment tool.
+- Higher simulated values indicate greater dysregulation burden or symptom
+  pressure unless otherwise noted.
+- Several nodes are deliberately modeled as atlas-backed proxies because the
+  chapter is systems-level rather than parcel-specific.
+"""[m
+
+[35mimport[m warnings
+[35mfrom[m typing [35mimport[m Any, Dict, List, Optional, Sequence, Tuple
+
+[35mimport[m pandas [38;5;130mas[m pd
+
+[38;5;130mtry[m:
+    [35mimport[m siibra
+[38;5;130mexcept[m [32mException[m [38;5;130mas[m exc:  [34m# pragma: no cover - import guard for environments without siibra[m
+    siibra = [36mNone[m  [34m# type: ignore[assignment][m
+    _SIIBRA_IMPORT_ERROR = exc
+[38;5;130melse[m:  [34m# pragma: no cover - import success path is environment-specific[m
+    _SIIBRA_IMPORT_ERROR = [36mNone[m
+
+
+DEFAULT_DMDD_GENE_PANEL = [
+    [31m"SLC6A3"[m,   [34m# dopamine transporter[m
+    [31m"DRD4"[m,     [34m# dopamine receptor D4[m
+    [31m"DRD2"[m,     [34m# dopamine receptor D2[m
+    [31m"SLC6A2"[m,   [34m# norepinephrine transporter[m
+    [31m"COMT"[m,     [34m# catecholamine metabolism[m
+    [31m"MAOA"[m,     [34m# monoamine degradation / impulsive aggression literature[m
+    [31m"SLC6A4"[m,   [34m# serotonin transporter[m
+    [31m"HTR1A"[m,    [34m# serotonin receptor 1A[m
+    [31m"TPH2"[m,     [34m# serotonin synthesis[m
+    [31m"BDNF"[m,     [34m# neuroplasticity / stress sensitivity[m
+    [31m"CACNA1C"[m,  [34m# mood dysregulation / affective liability[m
+][49;136H1,1[11CTop[1;1H[?25h[?4m[?25l[49;126H^Z[1;1H[49;1H
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
