@@ -1,6 +1,8 @@
 # Anorexia Nervosa
 
 Candidate combination: mianserin + delta-9-tetrahydrocannabinol
+DOI: https://doi.org/10.5281/zenodo.20609377
+Zenodo record: https://zenodo.org/records/20609377
 
 ## Source Files
 

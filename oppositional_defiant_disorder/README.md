@@ -1,6 +1,8 @@
 # Oppositional Defiant Disorder
 
 Candidate combination: perospirone + oxymetazoline
+DOI: https://doi.org/10.5281/zenodo.20609363
+Zenodo record: https://zenodo.org/records/20609363
 
 ## Source Files
 

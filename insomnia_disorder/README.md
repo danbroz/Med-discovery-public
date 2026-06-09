@@ -1,6 +1,8 @@
 # Insomnia Disorder
 
 Candidate combination: suvorexant + agomelatine
+DOI: https://doi.org/10.5281/zenodo.20609277
+Zenodo record: https://zenodo.org/records/20609277
 
 ## Source Files
 

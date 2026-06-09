@@ -1,6 +1,8 @@
 # Borderline Personality Disorder
 
 Candidate combination: pimavanserin + perospirone
+DOI: https://doi.org/10.5281/zenodo.20609335
+Zenodo record: https://zenodo.org/records/20609335
 
 ## Source Files
 

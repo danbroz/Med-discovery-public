@@ -1,6 +1,8 @@
 # Erectile Disorder
 
 Candidate combination: mianserin + testosterone propionate
+DOI: https://doi.org/10.5281/zenodo.20609289
+Zenodo record: https://zenodo.org/records/20609289
 
 ## Source Files
 

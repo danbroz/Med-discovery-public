@@ -1,6 +1,8 @@
 # Acute Stress Disorder
 
 Candidate combination: pimavanserin + agomelatine
+DOI: https://doi.org/10.5281/zenodo.20609379
+Zenodo record: https://zenodo.org/records/20609379
 
 ## Source Files
 

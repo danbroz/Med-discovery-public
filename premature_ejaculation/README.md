@@ -1,6 +1,8 @@
 # Premature Ejaculation
 
 Candidate combination: mianserin + sufentanil
+DOI: https://doi.org/10.5281/zenodo.20609357
+Zenodo record: https://zenodo.org/records/20609357
 
 ## Source Files
 

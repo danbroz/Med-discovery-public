@@ -1,6 +1,8 @@
 # Lewy Body Disease
 
 Candidate combination: pitolisant + xanomeline
+DOI: https://doi.org/10.5281/zenodo.20609323
+Zenodo record: https://zenodo.org/records/20609323
 
 ## Source Files
 

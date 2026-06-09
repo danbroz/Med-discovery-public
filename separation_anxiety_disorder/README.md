@@ -1,6 +1,8 @@
 # Separation Anxiety Disorder
 
 Candidate combination: agomelatine + vilazodone
+DOI: https://doi.org/10.5281/zenodo.20609375
+Zenodo record: https://zenodo.org/records/20609375
 
 ## Source Files
 

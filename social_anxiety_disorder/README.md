@@ -1,6 +1,8 @@
 # Social Anxiety Disorder
 
 Candidate combination: vilazodone + agomelatine
+DOI: https://doi.org/10.5281/zenodo.20609313
+Zenodo record: https://zenodo.org/records/20609313
 
 ## Source Files
 

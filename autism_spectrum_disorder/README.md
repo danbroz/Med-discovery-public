@@ -1,6 +1,8 @@
 # Autism Spectrum Disorder
 
 Candidate combination: oxytocin + pitolisant
+DOI: https://doi.org/10.5281/zenodo.20609301
+Zenodo record: https://zenodo.org/records/20609301
 
 ## Source Files
 

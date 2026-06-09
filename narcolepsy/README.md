@@ -1,6 +1,8 @@
 # Narcolepsy
 
 Candidate combination: pitolisant + Nag 26
+DOI: https://doi.org/10.5281/zenodo.20609305
+Zenodo record: https://zenodo.org/records/20609305
 
 ## Source Files
 

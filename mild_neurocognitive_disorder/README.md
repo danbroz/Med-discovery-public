@@ -1,6 +1,8 @@
 # Mild Neurocognitive Disorder
 
 Candidate combination: pitolisant + xanomeline
+DOI: https://doi.org/10.5281/zenodo.20609345
+Zenodo record: https://zenodo.org/records/20609345
 
 ## Source Files
 

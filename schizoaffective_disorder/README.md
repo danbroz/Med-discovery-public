@@ -1,6 +1,8 @@
 # Schizoaffective Disorder
 
 Candidate combination: xanomeline + perospirone
+DOI: https://doi.org/10.5281/zenodo.20609325
+Zenodo record: https://zenodo.org/records/20609325
 
 ## Source Files
 

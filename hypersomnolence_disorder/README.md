@@ -1,6 +1,8 @@
 # Hypersomnolence Disorder
 
 Candidate combination: pitolisant + Nag 26
+DOI: https://doi.org/10.5281/zenodo.20609333
+Zenodo record: https://zenodo.org/records/20609333
 
 ## Source Files
 

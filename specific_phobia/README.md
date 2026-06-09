@@ -1,6 +1,8 @@
 # Specific Phobia
 
 Candidate combination: agomelatine + vilazodone
+DOI: https://doi.org/10.5281/zenodo.20609341
+Zenodo record: https://zenodo.org/records/20609341
 
 ## Source Files
 

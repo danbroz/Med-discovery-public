@@ -1,6 +1,8 @@
 # Male Hypoactive Sexual Desire Disorder
 
 Candidate combination: mianserin + sufentanil
+DOI: https://doi.org/10.5281/zenodo.20609389
+Zenodo record: https://zenodo.org/records/20609389
 
 ## Source Files
 

@@ -1,6 +1,8 @@
 # Opioid Withdrawal
 
 Candidate combination: sufentanil + oxymetazoline
+DOI: https://doi.org/10.5281/zenodo.20609331
+Zenodo record: https://zenodo.org/records/20609331
 
 ## Source Files
 

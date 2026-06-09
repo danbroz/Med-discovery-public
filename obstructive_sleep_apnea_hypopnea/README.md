@@ -1,6 +1,8 @@
 # Obstructive Sleep Apnea Hypopnea
 
 Candidate combination: suvorexant + agomelatine
+DOI: https://doi.org/10.5281/zenodo.20609319
+Zenodo record: https://zenodo.org/records/20609319
 
 ## Source Files
 

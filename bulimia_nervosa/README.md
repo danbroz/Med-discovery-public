@@ -1,6 +1,8 @@
 # Bulimia Nervosa
 
 Candidate combination: vilazodone + crinecerfont
+DOI: https://doi.org/10.5281/zenodo.20609351
+Zenodo record: https://zenodo.org/records/20609351
 
 ## Source Files
 

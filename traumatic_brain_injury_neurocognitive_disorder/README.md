@@ -1,6 +1,8 @@
 # Traumatic Brain Injury Neurocognitive Disorder
 
 Candidate combination: pitolisant + xanomeline
+DOI: https://doi.org/10.5281/zenodo.20609369
+Zenodo record: https://zenodo.org/records/20609369
 
 ## Source Files
 

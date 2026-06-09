@@ -1,6 +1,8 @@
 # Central Sleep Apnea
 
 Candidate combination: agomelatine + suvorexant
+DOI: https://doi.org/10.5281/zenodo.20609387
+Zenodo record: https://zenodo.org/records/20609387
 
 ## Source Files
 

@@ -1,6 +1,8 @@
 # Circadian Rhythm Sleep Wake Disorder
 
 Candidate combination: agomelatine + suvorexant
+DOI: https://doi.org/10.5281/zenodo.20609359
+Zenodo record: https://zenodo.org/records/20609359
 
 ## Source Files
 

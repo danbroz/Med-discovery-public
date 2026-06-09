@@ -1,6 +1,8 @@
 # Major Depressive Disorder
 
 Candidate combination: agomelatine + vilazodone
+DOI: https://doi.org/10.5281/zenodo.20609271
+Zenodo record: https://zenodo.org/records/20609271
 
 ## Source Files
 

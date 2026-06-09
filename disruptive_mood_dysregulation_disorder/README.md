@@ -1,6 +1,8 @@
 # Disruptive Mood Dysregulation Disorder
 
 Candidate combination: agomelatine + suvorexant
+DOI: https://doi.org/10.5281/zenodo.20609337
+Zenodo record: https://zenodo.org/records/20609337
 
 ## Source Files
 

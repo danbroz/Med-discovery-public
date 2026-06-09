@@ -1,6 +1,8 @@
 # Panic Disorder
 
 Candidate combination: vilazodone + betaxolol
+DOI: https://doi.org/10.5281/zenodo.20609311
+Zenodo record: https://zenodo.org/records/20609311
 
 ## Source Files
 

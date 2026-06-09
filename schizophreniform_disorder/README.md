@@ -1,6 +1,8 @@
 # Schizophreniform Disorder
 
 Candidate combination: xanomeline + perospirone
+DOI: https://doi.org/10.5281/zenodo.20609355
+Zenodo record: https://zenodo.org/records/20609355
 
 ## Source Files
 

@@ -1,6 +1,8 @@
 # Bipolar I Disorder
 
 Candidate combination: agomelatine + perospirone
+DOI: https://doi.org/10.5281/zenodo.20609280
+Zenodo record: https://zenodo.org/records/20609280
 
 ## Source Files
 

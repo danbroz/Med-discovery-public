@@ -1,6 +1,8 @@
 # Schizophrenia
 
 Candidate combination: pimavanserin + perospirone
+DOI: https://doi.org/10.5281/zenodo.20609275
+Zenodo record: https://zenodo.org/records/20609275
 
 ## Source Files
 

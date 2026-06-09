@@ -1,6 +1,8 @@
 # Cyclothymic Disorder
 
 Candidate combination: pimavanserin + perospirone
+DOI: https://doi.org/10.5281/zenodo.20609383
+Zenodo record: https://zenodo.org/records/20609383
 
 ## Source Files
 

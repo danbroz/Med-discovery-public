@@ -1,6 +1,8 @@
 # Posttraumatic Stress Disorder
 
 Candidate combination: crinecerfont + silodosin
+DOI: https://doi.org/10.5281/zenodo.20609299
+Zenodo record: https://zenodo.org/records/20609299
 
 ## Source Files
 
