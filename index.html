@@ -151,6 +151,45 @@
       padding: 12px;
     }
     .diligence-list strong { color: var(--accent); display: block; margin-bottom: 4px; }
+    .book-section {
+      margin-top: 22px;
+      margin-bottom: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .book-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .book-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+    }
+    .book-actions a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .book-actions span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+    }
     .controls {
       display: grid;
       grid-template-columns: minmax(220px, 2fr) minmax(160px, 1fr) minmax(160px, 1fr);
@@ -213,7 +252,7 @@
       font-size: 13px;
     }
     @media (max-width: 900px) {
-      .hero, .grid-2, .method-grid { grid-template-columns: 1fr; }
+      .hero, .grid-2, .method-grid, .book-section { grid-template-columns: 1fr; }
       .controls { grid-template-columns: 1fr; }
       .nav { align-items: flex-start; flex-direction: column; }
     }
@@ -225,6 +264,7 @@
       <div class="brand">Daniel Jerome Broz | AI CNS Treatment Discovery Portfolio</div>
       <div class="navlinks">
         <a href="#portfolio">Portfolio</a>
+        <a href="#book">Book</a>
         <a href="#method">Method</a>
         <a class="button secondary" href="top51_pharma_portfolio.csv">Download CSV</a>
         <a class="button" href="mailto:dan@danbroz.com?subject=AI%20CNS%20Treatment%20Discovery%20Portfolio">Contact</a>
@@ -248,6 +288,7 @@
           <div><dt>Phone</dt><dd><a href="tel:+14807932212">+1 480-793-2212</a></dd></div>
           <div><dt>Website</dt><dd><a href="https://neurotreatmentsip.com">NeuroTreatmentsIP.com</a></dd></div>
           <div><dt>Location</dt><dd>United States</dd></div>
+          <div><dt>Book</dt><dd><a href="https://www.researchgate.net/publication/403724838_Biological_Basis_Mental_Health_Disorders_1st_Edition">Biological Basis book</a></dd></div>
           <div><dt>Research records</dt><dd><a href="https://zenodo.org/search?q=creators.name%3A%22Broz%2C%20Daniel%20Jerome%22&l=list&p=1&s=10&sort=bestmatch">Zenodo papers</a></dd></div>
           <div><dt>Public source packets</dt><dd><a href="https://github.com/danbroz/Med-discovery-public">GitHub repository</a></dd></div>
         </dl>
@@ -959,6 +1000,19 @@
       </div>
       <div class="note">
         Provisional applications are generally not public-inspection documents. Patent Center receipt information shown here is based on the owner's receipt-history text. Application 64/077,085 may not be public-searchable yet, consistent with Patent Center's message that an entered application number may be unavailable or not yet public.
+      </div>
+    </section>
+
+    <section id="book" class="section book-section">
+      <div>
+        <div class="book-kicker">Companion scientific foundation</div>
+        <h2>Biological Basis: Mental Health Disorders, 1st Edition</h2>
+        <p>The book provides the disorder-by-disorder biological foundation behind this treatment-discovery portfolio. It organizes the neuroscience used to frame the patent-pending assets: symptom biology, neurotransmitter systems, brain circuits, genetic and developmental context, treatment mechanisms, and chapter-level references.</p>
+        <p>For a pharma diligence team, the book is the biological map that sits underneath the computational neuroscience workflow. It helps reviewers trace why each indication was modeled, what disease mechanisms were considered, and where validation work should focus before any clinical-development decision.</p>
+      </div>
+      <div class="book-actions" aria-label="Book links">
+        <a href="https://www.researchgate.net/publication/403724838_Biological_Basis_Mental_Health_Disorders_1st_Edition">Read on ResearchGate <span>publication page</span></a>
+        <a href="https://www.amazon.com/Biological-Basis-Mental-Health-Disorders/dp/B0GW1LKWP1/">View on Amazon <span>book listing</span></a>
       </div>
     </section>
 
