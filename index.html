@@ -192,7 +192,7 @@
     }
     .controls {
       display: grid;
-      grid-template-columns: minmax(220px, 2fr) minmax(160px, 1fr) minmax(160px, 1fr);
+      grid-template-columns: minmax(220px, 2fr) minmax(180px, .8fr);
       gap: 10px;
       margin: 14px 0;
     }
@@ -297,19 +297,9 @@
 
     <section id="portfolio" class="section">
       <h2>Top 51 Patent-Pending Applications And Pharma Deal Guidance</h2>
-      <p>Use the controls to filter by disorder, application number, active agents, risk, or paper status. Paper links go to the exact Zenodo records when available.</p>
+      <p>Use the controls to filter by disorder, application number, active agents, docket, or paper status. Paper links go to the exact Zenodo records when available.</p>
       <div class="controls">
-        <input id="search" type="search" placeholder="Search disorder, drug, application number, docket, risk">
-        <select id="risk">
-          <option value="">All risk categories</option>
-          <option value="Standard CNS/FDA risk">Standard CNS/FDA risk</option>
-          <option value="High psychiatry trial risk">High psychiatry trial risk</option>
-          <option value="High neuro/FDA endpoint risk">High neuro/FDA endpoint risk</option>
-          <option value="Sleep/CNS endpoint risk">Sleep/CNS endpoint risk</option>
-          <option value="High controlled-substance/FDA safety risk">High controlled-substance/FDA safety risk</option>
-          <option value="High pediatric/safety risk">High pediatric/safety risk</option>
-          <option value="High psychiatry/safety endpoint risk">High psychiatry/safety endpoint risk</option>
-        </select>
+        <input id="search" type="search" placeholder="Search disorder, drug, application number, or docket">
         <select id="paper">
           <option value="">All paper statuses</option>
           <option value="DOI-indexed Zenodo preprint">DOI-indexed Zenodo preprint</option>
@@ -323,11 +313,9 @@
               <th>#</th>
               <th>Indication / candidate</th>
               <th>USPTO receipt data</th>
-              <th>Receipt date</th>
               <th>Market signal</th>
               <th>License ask</th>
               <th>Outright assignment ask</th>
-              <th>Risk note</th>
               <th>Paper / source links</th>
             </tr>
           </thead>
@@ -337,11 +325,9 @@
               <td class="num">1</td>
               <td><strong>Major Depressive Disorder</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-001<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Mega tier; ~$18B estimated annual market</td>
               <td><strong>$3-8M</strong><br><span class="muted">Milestones $200-500M</span><br><span class="muted">Royalty 3-6%</span></td>
               <td>$35-90M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609271">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609271</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/major_depressive_disorder">Source packet</a></td>
             </tr>
             
@@ -350,11 +336,9 @@
               <td class="num">2</td>
               <td><strong>Schizophrenia</strong><br><span class="muted">pimavanserin + perospirone</span></td>
               <td>MHMDCNS-002<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Mega tier; ~$10B estimated annual market</td>
               <td><strong>$3-8M</strong><br><span class="muted">Milestones $200-500M</span><br><span class="muted">Royalty 3-6%</span></td>
               <td>$35-90M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609275">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609275</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/schizophrenia">Source packet</a></td>
             </tr>
             
@@ -363,11 +347,9 @@
               <td class="num">3</td>
               <td><strong>Insomnia Disorder</strong><br><span class="muted">suvorexant + agomelatine</span></td>
               <td>MHMDCNS-003<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Mega tier; ~$7B estimated annual market</td>
               <td><strong>$2-6M</strong><br><span class="muted">Milestones $150-350M</span><br><span class="muted">Royalty 2.5-5%</span></td>
               <td>$25-70M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609277">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609277</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/insomnia_disorder">Source packet</a></td>
             </tr>
             
@@ -376,11 +358,9 @@
               <td class="num">4</td>
               <td><strong>Bipolar I Disorder</strong><br><span class="muted">agomelatine + perospirone</span></td>
               <td>MHMDCNS-004<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Mega tier; ~$8B estimated annual market</td>
               <td><strong>$2-6M</strong><br><span class="muted">Milestones $150-350M</span><br><span class="muted">Royalty 2.5-5%</span></td>
               <td>$25-70M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609280">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609280</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/bipolar_i_disorder">Source packet</a></td>
             </tr>
             
@@ -389,11 +369,9 @@
               <td class="num">5</td>
               <td><strong>Alzheimer&#x27;s Disease Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-005<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Mega tier; ~$10B+ estimated annual market</td>
               <td><strong>$3-8M</strong><br><span class="muted">Milestones $200-500M</span><br><span class="muted">Royalty 3-6%</span></td>
               <td>$35-90M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609283">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609283</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/alzheimer_s_disease_ncd">Source packet</a></td>
             </tr>
             
@@ -402,11 +380,9 @@
               <td class="num">6</td>
               <td><strong>Generalized Anxiety Disorder</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-006<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Mega tier; ~$5B estimated annual market</td>
               <td><strong>$2-6M</strong><br><span class="muted">Milestones $150-350M</span><br><span class="muted">Royalty 2.5-5%</span></td>
               <td>$25-70M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609285">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609285</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/generalized_anxiety_disorder">Source packet</a></td>
             </tr>
             
@@ -415,11 +391,9 @@
               <td class="num">7</td>
               <td><strong>Erectile Disorder</strong><br><span class="muted">mianserin + testosterone propionate</span></td>
               <td>MHMDCNS-007<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Large tier; ~$5B estimated annual market</td>
               <td><strong>$2-6M</strong><br><span class="muted">Milestones $150-350M</span><br><span class="muted">Royalty 2.5-5%</span></td>
               <td>$25-70M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609289">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609289</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/erectile_disorder">Source packet</a></td>
             </tr>
             
@@ -428,11 +402,9 @@
               <td class="num">8</td>
               <td><strong>Bipolar II Disorder</strong><br><span class="muted">agomelatine + perospirone</span></td>
               <td>MHMDCNS-008<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Large tier; ~$4B estimated annual market</td>
               <td><strong>$1.5-4M</strong><br><span class="muted">Milestones $100-250M</span><br><span class="muted">Royalty 2-4.5%</span></td>
               <td>$15-50M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609293">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609293</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/bipolar_ii_disorder">Source packet</a></td>
             </tr>
             
@@ -441,11 +413,9 @@
               <td class="num">9</td>
               <td><strong>Major Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-009<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Large tier; ~$5B estimated annual market</td>
               <td><strong>$2-6M</strong><br><span class="muted">Milestones $150-350M</span><br><span class="muted">Royalty 2.5-5%</span></td>
               <td>$25-70M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609295">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609295</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/major_neurocognitive_disorder">Source packet</a></td>
             </tr>
             
@@ -454,11 +424,9 @@
               <td class="num">10</td>
               <td><strong>Parkinson&#x27;s Disease Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-010<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Large tier; ~$4B Parkinson&#x27;s disease Rx market</td>
               <td><strong>$1.5-4M</strong><br><span class="muted">Milestones $100-250M</span><br><span class="muted">Royalty 2-4.5%</span></td>
               <td>$15-50M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609297">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609297</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/parkinson_s_disease_ncd">Source packet</a></td>
             </tr>
             
@@ -467,11 +435,9 @@
               <td class="num">11</td>
               <td><strong>Posttraumatic Stress Disorder</strong><br><span class="muted">crinecerfont + silodosin</span></td>
               <td>MHMDCNS-011<br><span class="muted">App: Awaiting confirmation</span><br><span class="muted">Receipt: Awaiting USPTO/EBC confirmation</span></td>
-              <td>Awaiting confirmation</td>
               <td>Large tier; ~$3B estimated annual market</td>
               <td><strong>$1.5-4M</strong><br><span class="muted">Milestones $100-250M</span><br><span class="muted">Royalty 2-4.5%</span></td>
               <td>$15-50M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609299">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609299</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/posttraumatic_stress_disorder">Source packet</a></td>
             </tr>
             
@@ -480,11 +446,9 @@
               <td class="num">12</td>
               <td><strong>Autism Spectrum Disorder</strong><br><span class="muted">oxytocin + pitolisant</span></td>
               <td>MHMDCNS-012<br><span class="muted">App: 64/076,299</span><br><span class="muted">Receipt: 76742452</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$3B estimated annual market</td>
               <td><strong>$1.5-4M</strong><br><span class="muted">Milestones $100-250M</span><br><span class="muted">Royalty 2-4.5%</span></td>
               <td>$15-50M</td>
-              <td>High pediatric/safety risk</td>
               <td><a href="https://zenodo.org/records/20609301">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609301</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/autism_spectrum_disorder">Source packet</a></td>
             </tr>
             
@@ -493,11 +457,9 @@
               <td class="num">13</td>
               <td><strong>Narcolepsy</strong><br><span class="muted">pitolisant + Nag 26</span></td>
               <td>MHMDCNS-013<br><span class="muted">App: 64/076,301</span><br><span class="muted">Receipt: 76742431</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$3B estimated annual market</td>
               <td><strong>$1.5-4M</strong><br><span class="muted">Milestones $100-250M</span><br><span class="muted">Royalty 2-4.5%</span></td>
               <td>$15-50M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609305">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609305</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/narcolepsy">Source packet</a></td>
             </tr>
             
@@ -506,11 +468,9 @@
               <td class="num">14</td>
               <td><strong>Obsessive Compulsive Disorder</strong><br><span class="muted">pimavanserin + vilazodone</span></td>
               <td>MHMDCNS-014<br><span class="muted">App: 64/076,302</span><br><span class="muted">Receipt: 76742590</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$2B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609307">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609307</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/obsessive_compulsive_disorder">Source packet</a></td>
             </tr>
             
@@ -519,11 +479,9 @@
               <td class="num">15</td>
               <td><strong>Persistent Depressive Disorder</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-015<br><span class="muted">App: 64/076,304</span><br><span class="muted">Receipt: 76742593</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$2B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609309">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609309</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/persistent_depressive_disorder">Source packet</a></td>
             </tr>
             
@@ -532,11 +490,9 @@
               <td class="num">16</td>
               <td><strong>Panic Disorder</strong><br><span class="muted">vilazodone + betaxolol</span></td>
               <td>MHMDCNS-016<br><span class="muted">App: 64/076,305</span><br><span class="muted">Receipt: 76742730</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$2B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609311">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609311</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/panic_disorder">Source packet</a></td>
             </tr>
             
@@ -545,11 +501,9 @@
               <td class="num">17</td>
               <td><strong>Social Anxiety Disorder</strong><br><span class="muted">vilazodone + agomelatine</span></td>
               <td>MHMDCNS-017<br><span class="muted">App: 64/076,307</span><br><span class="muted">Receipt: 76742672</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$1.5B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609313">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609313</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/social_anxiety_disorder">Source packet</a></td>
             </tr>
             
@@ -558,11 +512,9 @@
               <td class="num">18</td>
               <td><strong>Binge Eating Disorder</strong><br><span class="muted">setmelanotide + vilazodone</span></td>
               <td>MHMDCNS-018<br><span class="muted">App: 64/076,308</span><br><span class="muted">Receipt: 76742790</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$1.5B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609315">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609315</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/binge_eating_disorder">Source packet</a></td>
             </tr>
             
@@ -571,11 +523,9 @@
               <td class="num">19</td>
               <td><strong>Restless Legs Syndrome</strong><br><span class="muted">suvorexant + agomelatine</span></td>
               <td>MHMDCNS-019<br><span class="muted">App: 64/076,309</span><br><span class="muted">Receipt: 76742870</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$1B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609317">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609317</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/restless_legs_syndrome">Source packet</a></td>
             </tr>
             
@@ -584,11 +534,9 @@
               <td class="num">20</td>
               <td><strong>Obstructive Sleep Apnea Hypopnea</strong><br><span class="muted">suvorexant + agomelatine</span></td>
               <td>MHMDCNS-020<br><span class="muted">App: 64/076,310</span><br><span class="muted">Receipt: 76742754</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$1B Rx adjunct est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609319">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609319</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/obstructive_sleep_apnea_hypopnea">Source packet</a></td>
             </tr>
             
@@ -597,11 +545,9 @@
               <td class="num">21</td>
               <td><strong>Vascular Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-021<br><span class="muted">App: 64/076,311</span><br><span class="muted">Receipt: 76742972</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$1B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609321">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609321</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/vascular_neurocognitive_disorder">Source packet</a></td>
             </tr>
             
@@ -610,11 +556,9 @@
               <td class="num">22</td>
               <td><strong>Lewy Body Disease</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-022<br><span class="muted">App: 64/076,313</span><br><span class="muted">Receipt: 76743030</span></td>
-              <td>05/28/2026</td>
               <td>Large tier; ~$1B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609323">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609323</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/lewy_body_disease">Source packet</a></td>
             </tr>
             
@@ -623,11 +567,9 @@
               <td class="num">23</td>
               <td><strong>Schizoaffective Disorder</strong><br><span class="muted">xanomeline + perospirone</span></td>
               <td>MHMDCNS-023<br><span class="muted">App: 64/076,315</span><br><span class="muted">Receipt: 76743070</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$1B est. market</td>
               <td><strong>$0.75-2.5M</strong><br><span class="muted">Milestones $60-160M</span><br><span class="muted">Royalty 1.5-3.5%</span></td>
               <td>$8-30M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609325">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609325</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/schizoaffective_disorder">Source packet</a></td>
             </tr>
             
@@ -636,11 +578,9 @@
               <td class="num">24</td>
               <td><strong>Premenstrual Dysphoric Disorder</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-024<br><span class="muted">App: 64/076,319</span><br><span class="muted">Receipt: 76742976</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$700M est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609327">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609327</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/premenstrual_dysphoric_disorder">Source packet</a></td>
             </tr>
             
@@ -649,11 +589,9 @@
               <td class="num">25</td>
               <td><strong>Adjustment Disorder</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-025<br><span class="muted">App: 64/076,320</span><br><span class="muted">Receipt: 76743170</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$700M est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609329">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609329</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/adjustment_disorder">Source packet</a></td>
             </tr>
             
@@ -662,11 +600,9 @@
               <td class="num">26</td>
               <td><strong>Opioid Withdrawal</strong><br><span class="muted">sufentanil + oxymetazoline</span></td>
               <td>MHMDCNS-026<br><span class="muted">App: 64/076,322</span><br><span class="muted">Receipt: 76743230</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$700M est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>High controlled-substance/FDA safety risk</td>
               <td><a href="https://zenodo.org/records/20609331">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609331</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/opioid_withdrawal">Source packet</a></td>
             </tr>
             
@@ -675,11 +611,9 @@
               <td class="num">27</td>
               <td><strong>Hypersomnolence Disorder</strong><br><span class="muted">pitolisant + Nag 26</span></td>
               <td>MHMDCNS-027<br><span class="muted">App: 64/076,326</span><br><span class="muted">Receipt: 76743214</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609333">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609333</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/hypersomnolence_disorder">Source packet</a></td>
             </tr>
             
@@ -688,11 +622,9 @@
               <td class="num">28</td>
               <td><strong>Borderline Personality Disorder</strong><br><span class="muted">pimavanserin + perospirone</span></td>
               <td>MHMDCNS-028<br><span class="muted">App: 64/076,327</span><br><span class="muted">Receipt: 76743232</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M off-label antipsychotics est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609335">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609335</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/borderline_personality_disorder">Source packet</a></td>
             </tr>
             
@@ -701,11 +633,9 @@
               <td class="num">29</td>
               <td><strong>Disruptive Mood Dysregulation Disorder</strong><br><span class="muted">agomelatine + suvorexant</span></td>
               <td>MHMDCNS-029<br><span class="muted">App: 64/076,329</span><br><span class="muted">Receipt: 76743350</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M pediatric off-label est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>High pediatric/safety risk</td>
               <td><a href="https://zenodo.org/records/20609337">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609337</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/disruptive_mood_dysregulation_disorder">Source packet</a></td>
             </tr>
             
@@ -714,11 +644,9 @@
               <td class="num">30</td>
               <td><strong>Specific Phobia</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-030<br><span class="muted">App: 64/076,332</span><br><span class="muted">Receipt: 76743450</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609341">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609341</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/specific_phobia">Source packet</a></td>
             </tr>
             
@@ -727,11 +655,9 @@
               <td class="num">31</td>
               <td><strong>Frontotemporal Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-031<br><span class="muted">App: 64/076,333</span><br><span class="muted">Receipt: 76743432</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M emerging est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609343">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609343</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/frontotemporal_neurocognitive_disorder">Source packet</a></td>
             </tr>
             
@@ -740,11 +666,9 @@
               <td class="num">32</td>
               <td><strong>Mild Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-032<br><span class="muted">App: 64/076,334</span><br><span class="muted">Receipt: 76743531</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609345">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609345</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/mild_neurocognitive_disorder">Source packet</a></td>
             </tr>
             
@@ -753,11 +677,9 @@
               <td class="num">33</td>
               <td><strong>Delirium</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-033<br><span class="muted">App: 64/076,337</span><br><span class="muted">Receipt: 76743412</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$500M off-label antipsychotics est. market</td>
               <td><strong>$0.4-1.5M</strong><br><span class="muted">Milestones $35-100M</span><br><span class="muted">Royalty 1-3%</span></td>
               <td>$5-18M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609349">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609349</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/delirium">Source packet</a></td>
             </tr>
             
@@ -766,11 +688,9 @@
               <td class="num">34</td>
               <td><strong>Bulimia Nervosa</strong><br><span class="muted">vilazodone + crinecerfont</span></td>
               <td>MHMDCNS-034<br><span class="muted">App: 64/076,338</span><br><span class="muted">Receipt: 76743415</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609351">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609351</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/bulimia_nervosa">Source packet</a></td>
             </tr>
             
@@ -779,11 +699,9 @@
               <td class="num">35</td>
               <td><strong>Schizophreniform Disorder</strong><br><span class="muted">xanomeline + perospirone</span></td>
               <td>MHMDCNS-035<br><span class="muted">App: 64/076,339</span><br><span class="muted">Receipt: 76743393</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609355">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609355</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/schizophreniform_disorder">Source packet</a></td>
             </tr>
             
@@ -792,11 +710,9 @@
               <td class="num">36</td>
               <td><strong>Premature Ejaculation</strong><br><span class="muted">mianserin + sufentanil</span></td>
               <td>MHMDCNS-036<br><span class="muted">App: 64/076,341</span><br><span class="muted">Receipt: 76743651</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High controlled-substance/FDA safety risk</td>
               <td><a href="https://zenodo.org/records/20609357">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609357</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/premature_ejaculation">Source packet</a></td>
             </tr>
             
@@ -805,11 +721,9 @@
               <td class="num">37</td>
               <td><strong>Circadian Rhythm Sleep Wake Disorder</strong><br><span class="muted">agomelatine + suvorexant</span></td>
               <td>MHMDCNS-037<br><span class="muted">App: 64/076,941</span><br><span class="muted">Receipt: 76769119</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609359">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609359</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/circadian_rhythm_sleep_wake_disorder">Source packet</a></td>
             </tr>
             
@@ -818,11 +732,9 @@
               <td class="num">38</td>
               <td><strong>Conduct Disorder</strong><br><span class="muted">perospirone + oxymetazoline</span></td>
               <td>MHMDCNS-038<br><span class="muted">App: 64/076,969</span><br><span class="muted">Receipt: 76769976</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M pediatric off-label est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High pediatric/safety risk</td>
               <td><a href="https://zenodo.org/records/20609361">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609361</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/conduct_disorder">Source packet</a></td>
             </tr>
             
@@ -831,11 +743,9 @@
               <td class="num">39</td>
               <td><strong>Oppositional Defiant Disorder</strong><br><span class="muted">perospirone + oxymetazoline</span></td>
               <td>MHMDCNS-039<br><span class="muted">App: 64/076,974</span><br><span class="muted">Receipt: 76769916</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M pediatric off-label est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High pediatric/safety risk</td>
               <td><a href="https://zenodo.org/records/20609363">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609363</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/oppositional_defiant_disorder">Source packet</a></td>
             </tr>
             
@@ -844,11 +754,9 @@
               <td class="num">40</td>
               <td><strong>Multiple Etiologies Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-040<br><span class="muted">App: 64/076,977</span><br><span class="muted">Receipt: 76770105</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609365">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609365</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/multiple_etiologies_neurocognitive_disorder">Source packet</a></td>
             </tr>
             
@@ -857,11 +765,9 @@
               <td class="num">41</td>
               <td><strong>Traumatic Brain Injury Neurocognitive Disorder</strong><br><span class="muted">pitolisant + xanomeline</span></td>
               <td>MHMDCNS-041<br><span class="muted">App: 64/076,981</span><br><span class="muted">Receipt: 76770354</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High neuro/FDA endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609369">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609369</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/traumatic_brain_injury_neurocognitive_disorder">Source packet</a></td>
             </tr>
             
@@ -870,11 +776,9 @@
               <td class="num">42</td>
               <td><strong>Alcohol Withdrawal</strong><br><span class="muted">delta-9-tetrahydrocannabinol + betaxolol</span></td>
               <td>MHMDCNS-042<br><span class="muted">App: 64/076,989</span><br><span class="muted">Receipt: 76770711</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M estimated annual market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High controlled-substance/FDA safety risk</td>
               <td><a href="https://zenodo.org/records/20609371">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609371</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/alcohol_withdrawal">Source packet</a></td>
             </tr>
             
@@ -883,11 +787,9 @@
               <td class="num">43</td>
               <td><strong>Separation Anxiety Disorder</strong><br><span class="muted">agomelatine + vilazodone</span></td>
               <td>MHMDCNS-043<br><span class="muted">App: 64/076,997</span><br><span class="muted">Receipt: 76770516</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$400M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609375">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609375</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/separation_anxiety_disorder">Source packet</a></td>
             </tr>
             
@@ -896,11 +798,9 @@
               <td class="num">44</td>
               <td><strong>Anorexia Nervosa</strong><br><span class="muted">mianserin + delta-9-tetrahydrocannabinol</span></td>
               <td>MHMDCNS-044<br><span class="muted">App: 64/077,002</span><br><span class="muted">Receipt: 76770574</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High controlled-substance/FDA safety risk</td>
               <td><a href="https://zenodo.org/records/20609377">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609377</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/anorexia_nervosa">Source packet</a></td>
             </tr>
             
@@ -909,11 +809,9 @@
               <td class="num">45</td>
               <td><strong>Acute Stress Disorder</strong><br><span class="muted">pimavanserin + agomelatine</span></td>
               <td>MHMDCNS-045<br><span class="muted">App: 64/077,016</span><br><span class="muted">Receipt: 76770754</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609379">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609379</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/acute_stress_disorder">Source packet</a></td>
             </tr>
             
@@ -922,11 +820,9 @@
               <td class="num">46</td>
               <td><strong>Agoraphobia</strong><br><span class="muted">vilazodone + agomelatine</span></td>
               <td>MHMDCNS-046<br><span class="muted">App: 64/077,023</span><br><span class="muted">Receipt: 76770878</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>Standard CNS/FDA risk</td>
               <td><a href="https://zenodo.org/records/20609381">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609381</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/agoraphobia">Source packet</a></td>
             </tr>
             
@@ -935,11 +831,9 @@
               <td class="num">47</td>
               <td><strong>Cyclothymic Disorder</strong><br><span class="muted">pimavanserin + perospirone</span></td>
               <td>MHMDCNS-047<br><span class="muted">App: 64/077,037</span><br><span class="muted">Receipt: 76770897</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609383">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609383</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/cyclothymic_disorder">Source packet</a></td>
             </tr>
             
@@ -948,11 +842,9 @@
               <td class="num">48</td>
               <td><strong>Delusional Disorder</strong><br><span class="muted">xanomeline + perospirone</span></td>
               <td>MHMDCNS-048<br><span class="muted">App: 64/077,042</span><br><span class="muted">Receipt: 76771414</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High psychiatry trial risk</td>
               <td><a href="https://zenodo.org/records/20609385">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609385</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/delusional_disorder">Source packet</a></td>
             </tr>
             
@@ -961,11 +853,9 @@
               <td class="num">49</td>
               <td><strong>Central Sleep Apnea</strong><br><span class="muted">agomelatine + suvorexant</span></td>
               <td>MHMDCNS-049<br><span class="muted">App: 64/077,046</span><br><span class="muted">Receipt: 76771516</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M Rx adjunct est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>Sleep/CNS endpoint risk</td>
               <td><a href="https://zenodo.org/records/20609387">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609387</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/central_sleep_apnea">Source packet</a></td>
             </tr>
             
@@ -974,11 +864,9 @@
               <td class="num">50</td>
               <td><strong>Male Hypoactive Sexual Desire Disorder</strong><br><span class="muted">mianserin + sufentanil</span></td>
               <td>MHMDCNS-050<br><span class="muted">App: 64/077,051</span><br><span class="muted">Receipt: 76771890</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High controlled-substance/FDA safety risk</td>
               <td><a href="https://zenodo.org/records/20609389">Zenodo paper</a><br><span class="muted">https://doi.org/10.5281/zenodo.20609389</span><br><a href="https://github.com/danbroz/Med-discovery-public/tree/main/male_hypoactive_sexual_desire_disorder">Source packet</a></td>
             </tr>
             
@@ -987,11 +875,9 @@
               <td class="num">51</td>
               <td><strong>Intermittent Explosive Disorder</strong><br><span class="muted">perospirone + oxymetazoline</span></td>
               <td>MHMDCNS-051<br><span class="muted">App: 64/077,085</span><br><span class="muted">Receipt: 76772337</span></td>
-              <td>05/28/2026</td>
               <td>Mid tier; ~$300M est. market</td>
               <td><strong>$0.25-1.0M</strong><br><span class="muted">Milestones $20-75M</span><br><span class="muted">Royalty 0.75-2.5%</span></td>
               <td>$2-12M</td>
-              <td>High psychiatry/safety endpoint risk</td>
               <td><span class="muted">Paper pending</span><br><span class="muted">Source packet pending</span></td>
             </tr>
             
@@ -1048,24 +934,20 @@
   <script>
     const ASSETS = [{"rank": "1", "docket": "MHMDCNS-001", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Major Depressive Disorder with a combination of agomelatine and vilazodone", "disorder": "Major Depressive Disorder", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Mega tier; ~$18B estimated annual market", "upfront": "$3-8M", "milestones": "$200-500M", "royalty": "3-6%", "assignment": "$35-90M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609271", "zenodo_url": "https://zenodo.org/records/20609271", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/major_depressive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "2", "docket": "MHMDCNS-002", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Schizophrenia with a combination of pimavanserin and perospirone", "disorder": "Schizophrenia", "active_pair": "pimavanserin + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mega tier; ~$10B estimated annual market", "upfront": "$3-8M", "milestones": "$200-500M", "royalty": "3-6%", "assignment": "$35-90M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609275", "zenodo_url": "https://zenodo.org/records/20609275", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/schizophrenia", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "3", "docket": "MHMDCNS-003", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Insomnia Disorder with a combination of suvorexant and agomelatine", "disorder": "Insomnia Disorder", "active_pair": "suvorexant + agomelatine", "inventor": "Daniel Jerome Broz", "market": "Mega tier; ~$7B estimated annual market", "upfront": "$2-6M", "milestones": "$150-350M", "royalty": "2.5-5%", "assignment": "$25-70M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609277", "zenodo_url": "https://zenodo.org/records/20609277", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/insomnia_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "4", "docket": "MHMDCNS-004", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Bipolar I Disorder with a combination of agomelatine and perospirone", "disorder": "Bipolar I Disorder", "active_pair": "agomelatine + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mega tier; ~$8B estimated annual market", "upfront": "$2-6M", "milestones": "$150-350M", "royalty": "2.5-5%", "assignment": "$25-70M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609280", "zenodo_url": "https://zenodo.org/records/20609280", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/bipolar_i_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "5", "docket": "MHMDCNS-005", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Alzheimer's Disease Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Alzheimer's Disease Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Mega tier; ~$10B+ estimated annual market", "upfront": "$3-8M", "milestones": "$200-500M", "royalty": "3-6%", "assignment": "$35-90M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609283", "zenodo_url": "https://zenodo.org/records/20609283", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/alzheimer_s_disease_ncd", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "6", "docket": "MHMDCNS-006", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Generalized Anxiety Disorder with a combination of agomelatine and vilazodone", "disorder": "Generalized Anxiety Disorder", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Mega tier; ~$5B estimated annual market", "upfront": "$2-6M", "milestones": "$150-350M", "royalty": "2.5-5%", "assignment": "$25-70M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609285", "zenodo_url": "https://zenodo.org/records/20609285", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/generalized_anxiety_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "7", "docket": "MHMDCNS-007", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Erectile Disorder with a combination of mianserin and testosterone propionate", "disorder": "Erectile Disorder", "active_pair": "mianserin + testosterone propionate", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$5B estimated annual market", "upfront": "$2-6M", "milestones": "$150-350M", "royalty": "2.5-5%", "assignment": "$25-70M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609289", "zenodo_url": "https://zenodo.org/records/20609289", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/erectile_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "8", "docket": "MHMDCNS-008", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Bipolar II Disorder with a combination of agomelatine and perospirone", "disorder": "Bipolar II Disorder", "active_pair": "agomelatine + perospirone", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$4B estimated annual market", "upfront": "$1.5-4M", "milestones": "$100-250M", "royalty": "2-4.5%", "assignment": "$15-50M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609293", "zenodo_url": "https://zenodo.org/records/20609293", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/bipolar_ii_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "9", "docket": "MHMDCNS-009", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Major Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Major Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$5B estimated annual market", "upfront": "$2-6M", "milestones": "$150-350M", "royalty": "2.5-5%", "assignment": "$25-70M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609295", "zenodo_url": "https://zenodo.org/records/20609295", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/major_neurocognitive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "10", "docket": "MHMDCNS-010", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Parkinson's Disease Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Parkinson's Disease Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$4B Parkinson's disease Rx market", "upfront": "$1.5-4M", "milestones": "$100-250M", "royalty": "2-4.5%", "assignment": "$15-50M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609297", "zenodo_url": "https://zenodo.org/records/20609297", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/parkinson_s_disease_ncd", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "11", "docket": "MHMDCNS-011", "application": "Awaiting confirmation", "receipt": "Awaiting USPTO/EBC confirmation", "receipt_date": "Awaiting confirmation", "title": "Pharmaceutical compositions and methods of treating Posttraumatic Stress Disorder with a combination of crinecerfont and silodosin", "disorder": "Posttraumatic Stress Disorder", "active_pair": "crinecerfont + silodosin", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$3B estimated annual market", "upfront": "$1.5-4M", "milestones": "$100-250M", "royalty": "2-4.5%", "assignment": "$15-50M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609299", "zenodo_url": "https://zenodo.org/records/20609299", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/posttraumatic_stress_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "12", "docket": "MHMDCNS-012", "application": "64/076,299", "receipt": "76742452", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Autism Spectrum Disorder with a combination of oxytocin and pitolisant", "disorder": "Autism Spectrum Disorder", "active_pair": "oxytocin + pitolisant", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$3B estimated annual market", "upfront": "$1.5-4M", "milestones": "$100-250M", "royalty": "2-4.5%", "assignment": "$15-50M", "risk": "High pediatric/safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609301", "zenodo_url": "https://zenodo.org/records/20609301", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/autism_spectrum_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "13", "docket": "MHMDCNS-013", "application": "64/076,301", "receipt": "76742431", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Narcolepsy with a combination of pitolisant and Nag 26", "disorder": "Narcolepsy", "active_pair": "pitolisant + Nag 26", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$3B estimated annual market", "upfront": "$1.5-4M", "milestones": "$100-250M", "royalty": "2-4.5%", "assignment": "$15-50M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609305", "zenodo_url": "https://zenodo.org/records/20609305", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/narcolepsy", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "14", "docket": "MHMDCNS-014", "application": "64/076,302", "receipt": "76742590", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Obsessive Compulsive Disorder with a combination of pimavanserin and vilazodone", "disorder": "Obsessive Compulsive Disorder", "active_pair": "pimavanserin + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$2B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609307", "zenodo_url": "https://zenodo.org/records/20609307", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/obsessive_compulsive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "15", "docket": "MHMDCNS-015", "application": "64/076,304", "receipt": "76742593", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Persistent Depressive Disorder with a combination of agomelatine and vilazodone", "disorder": "Persistent Depressive Disorder", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$2B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609309", "zenodo_url": "https://zenodo.org/records/20609309", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/persistent_depressive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "16", "docket": "MHMDCNS-016", "application": "64/076,305", "receipt": "76742730", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Panic Disorder with a combination of vilazodone and betaxolol", "disorder": "Panic Disorder", "active_pair": "vilazodone + betaxolol", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$2B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609311", "zenodo_url": "https://zenodo.org/records/20609311", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/panic_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "17", "docket": "MHMDCNS-017", "application": "64/076,307", "receipt": "76742672", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Social Anxiety Disorder with a combination of vilazodone and agomelatine", "disorder": "Social Anxiety Disorder", "active_pair": "vilazodone + agomelatine", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$1.5B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609313", "zenodo_url": "https://zenodo.org/records/20609313", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/social_anxiety_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "18", "docket": "MHMDCNS-018", "application": "64/076,308", "receipt": "76742790", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Binge Eating Disorder with a combination of setmelanotide and vilazodone", "disorder": "Binge Eating Disorder", "active_pair": "setmelanotide + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$1.5B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609315", "zenodo_url": "https://zenodo.org/records/20609315", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/binge_eating_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "19", "docket": "MHMDCNS-019", "application": "64/076,309", "receipt": "76742870", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Restless Legs Syndrome with a combination of suvorexant and agomelatine", "disorder": "Restless Legs Syndrome", "active_pair": "suvorexant + agomelatine", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$1B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609317", "zenodo_url": "https://zenodo.org/records/20609317", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/restless_legs_syndrome", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "20", "docket": "MHMDCNS-020", "application": "64/076,310", "receipt": "76742754", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Obstructive Sleep Apnea Hypopnea with a combination of suvorexant and agomelatine", "disorder": "Obstructive Sleep Apnea Hypopnea", "active_pair": "suvorexant + agomelatine", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$1B Rx adjunct est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609319", "zenodo_url": "https://zenodo.org/records/20609319", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/obstructive_sleep_apnea_hypopnea", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "21", "docket": "MHMDCNS-021", "application": "64/076,311", "receipt": "76742972", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Vascular Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Vascular Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$1B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609321", "zenodo_url": "https://zenodo.org/records/20609321", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/vascular_neurocognitive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "22", "docket": "MHMDCNS-022", "application": "64/076,313", "receipt": "76743030", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Lewy Body Disease with a combination of pitolisant and xanomeline", "disorder": "Lewy Body Disease", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Large tier; ~$1B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609323", "zenodo_url": "https://zenodo.org/records/20609323", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/lewy_body_disease", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "23", "docket": "MHMDCNS-023", "application": "64/076,315", "receipt": "76743070", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Schizoaffective Disorder with a combination of xanomeline and perospirone", "disorder": "Schizoaffective Disorder", "active_pair": "xanomeline + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$1B est. market", "upfront": "$0.75-2.5M", "milestones": "$60-160M", "royalty": "1.5-3.5%", "assignment": "$8-30M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609325", "zenodo_url": "https://zenodo.org/records/20609325", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/schizoaffective_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "24", "docket": "MHMDCNS-024", "application": "64/076,319", "receipt": "76742976", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Premenstrual Dysphoric Disorder with a combination of agomelatine and vilazodone", "disorder": "Premenstrual Dysphoric Disorder", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$700M est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609327", "zenodo_url": "https://zenodo.org/records/20609327", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/premenstrual_dysphoric_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "25", "docket": "MHMDCNS-025", "application": "64/076,320", "receipt": "76743170", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Adjustment Disorder with a combination of agomelatine and vilazodone", "disorder": "Adjustment Disorder", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$700M est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609329", "zenodo_url": "https://zenodo.org/records/20609329", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/adjustment_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "26", "docket": "MHMDCNS-026", "application": "64/076,322", "receipt": "76743230", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Opioid Withdrawal with a combination of sufentanil and oxymetazoline", "disorder": "Opioid Withdrawal", "active_pair": "sufentanil + oxymetazoline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$700M est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "High controlled-substance/FDA safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609331", "zenodo_url": "https://zenodo.org/records/20609331", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/opioid_withdrawal", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "27", "docket": "MHMDCNS-027", "application": "64/076,326", "receipt": "76743214", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Hypersomnolence Disorder with a combination of pitolisant and Nag 26", "disorder": "Hypersomnolence Disorder", "active_pair": "pitolisant + Nag 26", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609333", "zenodo_url": "https://zenodo.org/records/20609333", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/hypersomnolence_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "28", "docket": "MHMDCNS-028", "application": "64/076,327", "receipt": "76743232", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Borderline Personality Disorder with a combination of pimavanserin and perospirone", "disorder": "Borderline Personality Disorder", "active_pair": "pimavanserin + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M off-label antipsychotics est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609335", "zenodo_url": "https://zenodo.org/records/20609335", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/borderline_personality_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "29", "docket": "MHMDCNS-029", "application": "64/076,329", "receipt": "76743350", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Disruptive Mood Dysregulation Disorder with a combination of agomelatine and suvorexant", "disorder": "Disruptive Mood Dysregulation Disorder", "active_pair": "agomelatine + suvorexant", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M pediatric off-label est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "High pediatric/safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609337", "zenodo_url": "https://zenodo.org/records/20609337", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/disruptive_mood_dysregulation_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "30", "docket": "MHMDCNS-030", "application": "64/076,332", "receipt": "76743450", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Specific Phobia with a combination of agomelatine and vilazodone", "disorder": "Specific Phobia", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609341", "zenodo_url": "https://zenodo.org/records/20609341", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/specific_phobia", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "31", "docket": "MHMDCNS-031", "application": "64/076,333", "receipt": "76743432", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Frontotemporal Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Frontotemporal Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M emerging est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609343", "zenodo_url": "https://zenodo.org/records/20609343", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/frontotemporal_neurocognitive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "32", "docket": "MHMDCNS-032", "application": "64/076,334", "receipt": "76743531", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Mild Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Mild Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609345", "zenodo_url": "https://zenodo.org/records/20609345", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/mild_neurocognitive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "33", "docket": "MHMDCNS-033", "application": "64/076,337", "receipt": "76743412", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Delirium with a combination of pitolisant and xanomeline", "disorder": "Delirium", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$500M off-label antipsychotics est. market", "upfront": "$0.4-1.5M", "milestones": "$35-100M", "royalty": "1-3%", "assignment": "$5-18M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609349", "zenodo_url": "https://zenodo.org/records/20609349", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/delirium", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "34", "docket": "MHMDCNS-034", "application": "64/076,338", "receipt": "76743415", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Bulimia Nervosa with a combination of vilazodone and crinecerfont", "disorder": "Bulimia Nervosa", "active_pair": "vilazodone + crinecerfont", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609351", "zenodo_url": "https://zenodo.org/records/20609351", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/bulimia_nervosa", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "35", "docket": "MHMDCNS-035", "application": "64/076,339", "receipt": "76743393", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Schizophreniform Disorder with a combination of xanomeline and perospirone", "disorder": "Schizophreniform Disorder", "active_pair": "xanomeline + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609355", "zenodo_url": "https://zenodo.org/records/20609355", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/schizophreniform_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "36", "docket": "MHMDCNS-036", "application": "64/076,341", "receipt": "76743651", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Premature Ejaculation with a combination of mianserin and sufentanil", "disorder": "Premature Ejaculation", "active_pair": "mianserin + sufentanil", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High controlled-substance/FDA safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609357", "zenodo_url": "https://zenodo.org/records/20609357", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/premature_ejaculation", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "37", "docket": "MHMDCNS-037", "application": "64/076,941", "receipt": "76769119", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Circadian Rhythm Sleep Wake Disorder with a combination of agomelatine and suvorexant", "disorder": "Circadian Rhythm Sleep Wake Disorder", "active_pair": "agomelatine + suvorexant", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609359", "zenodo_url": "https://zenodo.org/records/20609359", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/circadian_rhythm_sleep_wake_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "38", "docket": "MHMDCNS-038", "application": "64/076,969", "receipt": "76769976", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Conduct Disorder with a combination of perospirone and oxymetazoline", "disorder": "Conduct Disorder", "active_pair": "perospirone + oxymetazoline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M pediatric off-label est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High pediatric/safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609361", "zenodo_url": "https://zenodo.org/records/20609361", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/conduct_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "39", "docket": "MHMDCNS-039", "application": "64/076,974", "receipt": "76769916", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Oppositional Defiant Disorder with a combination of perospirone and oxymetazoline", "disorder": "Oppositional Defiant Disorder", "active_pair": "perospirone + oxymetazoline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M pediatric off-label est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High pediatric/safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609363", "zenodo_url": "https://zenodo.org/records/20609363", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/oppositional_defiant_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "40", "docket": "MHMDCNS-040", "application": "64/076,977", "receipt": "76770105", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Multiple Etiologies Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Multiple Etiologies Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609365", "zenodo_url": "https://zenodo.org/records/20609365", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/multiple_etiologies_neurocognitive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "41", "docket": "MHMDCNS-041", "application": "64/076,981", "receipt": "76770354", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Traumatic Brain Injury Neurocognitive Disorder with a combination of pitolisant and xanomeline", "disorder": "Traumatic Brain Injury Neurocognitive Disorder", "active_pair": "pitolisant + xanomeline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High neuro/FDA endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609369", "zenodo_url": "https://zenodo.org/records/20609369", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/traumatic_brain_injury_neurocognitive_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "42", "docket": "MHMDCNS-042", "application": "64/076,989", "receipt": "76770711", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Alcohol Withdrawal with a combination of delta-9-tetrahydrocannabinol and betaxolol", "disorder": "Alcohol Withdrawal", "active_pair": "delta-9-tetrahydrocannabinol + betaxolol", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M estimated annual market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High controlled-substance/FDA safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609371", "zenodo_url": "https://zenodo.org/records/20609371", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/alcohol_withdrawal", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "43", "docket": "MHMDCNS-043", "application": "64/076,997", "receipt": "76770516", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Separation Anxiety Disorder with a combination of agomelatine and vilazodone", "disorder": "Separation Anxiety Disorder", "active_pair": "agomelatine + vilazodone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$400M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609375", "zenodo_url": "https://zenodo.org/records/20609375", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/separation_anxiety_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "44", "docket": "MHMDCNS-044", "application": "64/077,002", "receipt": "76770574", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Anorexia Nervosa with a combination of mianserin and delta-9-tetrahydrocannabinol", "disorder": "Anorexia Nervosa", "active_pair": "mianserin + delta-9-tetrahydrocannabinol", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High controlled-substance/FDA safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609377", "zenodo_url": "https://zenodo.org/records/20609377", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/anorexia_nervosa", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "45", "docket": "MHMDCNS-045", "application": "64/077,016", "receipt": "76770754", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Acute Stress Disorder with a combination of pimavanserin and agomelatine", "disorder": "Acute Stress Disorder", "active_pair": "pimavanserin + agomelatine", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609379", "zenodo_url": "https://zenodo.org/records/20609379", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/acute_stress_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "46", "docket": "MHMDCNS-046", "application": "64/077,023", "receipt": "76770878", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Agoraphobia with a combination of vilazodone and agomelatine", "disorder": "Agoraphobia", "active_pair": "vilazodone + agomelatine", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "Standard CNS/FDA risk", "doi_url": "https://doi.org/10.5281/zenodo.20609381", "zenodo_url": "https://zenodo.org/records/20609381", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/agoraphobia", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "47", "docket": "MHMDCNS-047", "application": "64/077,037", "receipt": "76770897", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Cyclothymic Disorder with a combination of pimavanserin and perospirone", "disorder": "Cyclothymic Disorder", "active_pair": "pimavanserin + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609383", "zenodo_url": "https://zenodo.org/records/20609383", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/cyclothymic_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "48", "docket": "MHMDCNS-048", "application": "64/077,042", "receipt": "76771414", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Delusional Disorder with a combination of xanomeline and perospirone", "disorder": "Delusional Disorder", "active_pair": "xanomeline + perospirone", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High psychiatry trial risk", "doi_url": "https://doi.org/10.5281/zenodo.20609385", "zenodo_url": "https://zenodo.org/records/20609385", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/delusional_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "49", "docket": "MHMDCNS-049", "application": "64/077,046", "receipt": "76771516", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Central Sleep Apnea with a combination of agomelatine and suvorexant", "disorder": "Central Sleep Apnea", "active_pair": "agomelatine + suvorexant", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M Rx adjunct est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "Sleep/CNS endpoint risk", "doi_url": "https://doi.org/10.5281/zenodo.20609387", "zenodo_url": "https://zenodo.org/records/20609387", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/central_sleep_apnea", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "50", "docket": "MHMDCNS-050", "application": "64/077,051", "receipt": "76771890", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Male Hypoactive Sexual Desire Disorder with a combination of mianserin and sufentanil", "disorder": "Male Hypoactive Sexual Desire Disorder", "active_pair": "mianserin + sufentanil", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High controlled-substance/FDA safety risk", "doi_url": "https://doi.org/10.5281/zenodo.20609389", "zenodo_url": "https://zenodo.org/records/20609389", "github_url": "https://github.com/danbroz/Med-discovery-public/tree/main/male_hypoactive_sexual_desire_disorder", "paper_status": "DOI-indexed Zenodo preprint", "patent_status": "US provisional patent pending"}, {"rank": "51", "docket": "MHMDCNS-051", "application": "64/077,085", "receipt": "76772337", "receipt_date": "05/28/2026", "title": "Pharmaceutical compositions and methods of treating Intermittent Explosive Disorder with a combination of perospirone and oxymetazoline", "disorder": "Intermittent Explosive Disorder", "active_pair": "perospirone + oxymetazoline", "inventor": "Daniel Jerome Broz", "market": "Mid tier; ~$300M est. market", "upfront": "$0.25-1.0M", "milestones": "$20-75M", "royalty": "0.75-2.5%", "assignment": "$2-12M", "risk": "High psychiatry/safety endpoint risk", "doi_url": "", "zenodo_url": "", "github_url": "", "paper_status": "Zenodo paper not yet generated", "patent_status": "US provisional patent pending"}];
     const search = document.getElementById('search');
-    const risk = document.getElementById('risk');
     const paper = document.getElementById('paper');
     const rows = [...document.querySelectorAll('#portfolioTable tbody tr')];
     function applyFilters() {
       const q = search.value.trim().toLowerCase();
-      const riskValue = risk.value;
       const paperValue = paper.value;
       rows.forEach((row, index) => {
         const item = ASSETS[index];
         const haystack = Object.values(item).join(' ').toLowerCase();
         const visible = (!q || haystack.includes(q)) &&
-          (!riskValue || item.risk === riskValue) &&
           (!paperValue || item.paper_status === paperValue);
         row.style.display = visible ? '' : 'none';
       });
     }
     search.addEventListener('input', applyFilters);
-    risk.addEventListener('change', applyFilters);
     paper.addEventListener('change', applyFilters);
   </script>
 </body>
