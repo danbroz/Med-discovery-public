@@ -8,13 +8,13 @@
   <style>
     :root {
       color-scheme: light;
-      --ink: #18212f;
-      --muted: #5f6b7a;
-      --line: #d8dee8;
-      --panel: #f7f9fc;
-      --panel-2: #eef5f7;
-      --accent: #0c6b78;
-      --accent-2: #8b3f2f;
+      --ink: #16202e;
+      --muted: #627083;
+      --line: #d9e1eb;
+      --panel: #f6f8fb;
+      --panel-2: #eef6f6;
+      --accent: #075f6b;
+      --accent-2: #824534;
       --good: #2f6f4e;
       --warn: #8a5a00;
       --bg: #ffffff;
@@ -65,17 +65,17 @@
       background: white;
       color: var(--accent);
     }
-    main { max-width: 1320px; margin: 0 auto; padding: 26px 20px 60px; }
+    main { max-width: 1280px; margin: 0 auto; padding: 28px 22px 60px; }
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(300px, .8fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
       gap: 26px;
       align-items: start;
-      padding: 16px 0 28px;
+      padding: 18px 0 28px;
     }
     h1 {
-      font-size: clamp(30px, 4vw, 58px);
-      line-height: 1.03;
+      font-size: clamp(34px, 3.4vw, 54px);
+      line-height: 1.04;
       margin: 0 0 14px;
       letter-spacing: 0;
       max-width: 980px;
@@ -85,7 +85,7 @@
     p { margin: 0 0 12px; }
     .lead { font-size: 18px; color: #283444; max-width: 920px; }
     .eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
-    .contact-panel, .section, .method, .domain-box {
+    .contact-panel, .section, .method, .site-box {
       border: 1px solid var(--line);
       background: var(--panel);
       border-radius: 8px;
@@ -114,21 +114,70 @@
       gap: 16px;
       margin-bottom: 22px;
     }
-    .workflow {
+    .method-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(130px, 1fr));
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 16px;
+      margin-bottom: 22px;
+      align-items: start;
+    }
+    .workflow-list {
+      display: grid;
       gap: 10px;
       margin-top: 14px;
     }
-    .step {
+    .workflow-step {
       background: white;
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 12px;
-      min-height: 112px;
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
     }
-    .step b { display: block; margin-bottom: 6px; color: var(--accent); }
-    .step span { color: var(--muted); font-size: 13px; }
+    .workflow-step .badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+    }
+    .workflow-step b { display: block; margin-bottom: 4px; color: var(--ink); }
+    .workflow-step span { color: var(--muted); font-size: 14px; }
+    .diligence-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .diligence-list li {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .diligence-list strong { color: var(--accent); display: block; margin-bottom: 4px; }
+    .primary-site {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .primary-site a { font-size: 20px; font-weight: 700; }
     .controls {
       display: grid;
       grid-template-columns: minmax(220px, 2fr) minmax(160px, 1fr) minmax(160px, 1fr);
@@ -183,9 +232,6 @@
       color: #4d3a09;
       margin-top: 12px;
     }
-    .domain-box ul { margin: 8px 0 0; padding-left: 18px; }
-    .domain-box li { margin-bottom: 8px; }
-    .domain-box li span { display: block; color: var(--muted); font-size: 13px; }
     .footer {
       margin-top: 30px;
       padding-top: 20px;
@@ -194,9 +240,8 @@
       font-size: 13px;
     }
     @media (max-width: 900px) {
-      .hero, .grid-2 { grid-template-columns: 1fr; }
+      .hero, .grid-2, .method-grid { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2, 1fr); }
-      .workflow { grid-template-columns: 1fr; }
       .controls { grid-template-columns: 1fr; }
       .nav { align-items: flex-start; flex-direction: column; }
     }
@@ -209,7 +254,7 @@
       <div class="navlinks">
         <a href="#portfolio">Portfolio</a>
         <a href="#method">Method</a>
-        <a href="#domains">Domains</a>
+        <a href="#site">Website</a>
         <a class="button secondary" href="top51_pharma_portfolio.csv">Download CSV</a>
         <a class="button" href="mailto:dan@danbroz.com?subject=AI%20CNS%20Treatment%20Discovery%20Portfolio">Contact</a>
       </div>
@@ -230,6 +275,7 @@
           <div><dt>Name</dt><dd>Daniel Jerome Broz</dd></div>
           <div><dt>Email</dt><dd><a href="mailto:dan@danbroz.com">dan@danbroz.com</a></dd></div>
           <div><dt>Phone</dt><dd><a href="tel:+14807932212">+1 480-793-2212</a></dd></div>
+          <div><dt>Website</dt><dd><a href="https://neurotreatmentsip.com">NeuroTreatmentsIP.com</a></dd></div>
           <div><dt>Location</dt><dd>United States</dd></div>
           <div><dt>Research records</dt><dd><a href="https://zenodo.org/search?q=creators.name%3A%22Broz%2C%20Daniel%20Jerome%22&l=list&p=1&s=10&sort=bestmatch">Zenodo papers</a></dd></div>
           <div><dt>Public source packets</dt><dd><a href="https://github.com/danbroz/Med-discovery-public">GitHub repository</a></dd></div>
@@ -241,39 +287,39 @@
       <div class="stat"><strong>51</strong><span>US provisional patent-pending applications listed</span></div>
       <div class="stat"><strong>50</strong><span>DOI-indexed Zenodo research papers</span></div>
       <div class="stat"><strong>40</strong><span>Patent Center receipt-history entries documented here</span></div>
-      <div class="stat"><strong>5</strong><span>RDAP-checked domain candidates</span></div>
+      <div class="stat"><strong>1</strong><span>Registered public domain: NeuroTreatmentsIP.com</span></div>
     </section>
 
-    <section id="method" class="grid-2">
+    <section id="method" class="method-grid">
       <div class="method">
         <h2>Computational Neuroscience Method</h2>
-        <p>The discovery method integrates disease-specific neurobiology with candidate pharmacology and computational model outputs. Each manuscript separates established biology from modeled, repository-derived, prophetic, and data-needed claims.</p>
-        <div class="workflow" aria-label="Workflow">
-          <div class="step"><b>1. Disease biology</b><span>Biological Basis chapters define symptoms, circuits, neurotransmitters, brain regions, genes, and treatment gaps.</span></div>
-          <div class="step"><b>2. Receptor taxonomy</b><span>Candidate agents are mapped to receptor, transporter, neuroendocrine, and arousal-system mechanisms.</span></div>
-          <div class="step"><b>3. Model scoring</b><span>Computational disorder models connect mechanisms to phenotypes, latents, endpoints, and safety constraints.</span></div>
-          <div class="step"><b>4. Patent narrowing</b><span>Drafts are corrected to avoid unsupported superiority claims and to preserve validation requirements.</span></div>
-          <div class="step"><b>5. Pharma package</b><span>Each asset is framed for formulation, clinical pharmacology, component contribution, and FDA-risk review.</span></div>
+        <p>The portfolio starts with disease biology, then maps candidate drug mechanisms onto symptom circuitry and FDA-relevant development questions. The goal is not to claim clinical proof today; it is to give a pharma team a clear, testable starting point for diligence.</p>
+        <div class="workflow-list" aria-label="Computational neuroscience workflow">
+          <div class="workflow-step"><span class="badge">1</span><span><b>Disease biology</b>Each indication is grounded in disorder-specific neurobiology: symptoms, circuits, neurotransmitters, brain regions, genetics, and treatment gaps.</span></div>
+          <div class="workflow-step"><span class="badge">2</span><span><b>Mechanism mapping</b>Candidate agents are mapped to receptors, transporters, neuroendocrine systems, sleep-wake systems, arousal biology, and safety constraints.</span></div>
+          <div class="workflow-step"><span class="badge">3</span><span><b>Computational model layer</b>Model outputs connect drug mechanisms to disease phenotypes, latent variables, endpoints, and predicted development risks.</span></div>
+          <div class="workflow-step"><span class="badge">4</span><span><b>Evidence labeling</b>Manuscripts separate established biology from repository-derived, modeled, prophetic, and data-needed claims so diligence can focus on the next experiments.</span></div>
+          <div class="workflow-step"><span class="badge">5</span><span><b>Pharma translation</b>Each asset is framed around formulation feasibility, component contribution, clinical pharmacology, endpoint selection, and FDA review risk.</span></div>
         </div>
       </div>
       <div class="method">
         <h2>What A Pharma Team Can Evaluate</h2>
-        <p><strong>IP posture:</strong> US provisional patent-pending applications with inventor listed as Daniel Jerome Broz. Applications 012-051 are shown with Patent Center receipt details from the 40-item receipt-history page. Applications 001-011 are awaiting USPTO/EBC confirmation because they were not visible in the current receipt-history view.</p>
-        <p><strong>Development path:</strong> confirm patentability and freedom-to-operate; run formulation compatibility; test pharmacokinetic interaction and component contribution; conduct IND-enabling toxicology where required; design Phase I-III programs and FDA endpoint strategy.</p>
-        <p><strong>Transaction structure:</strong> recommended structure is a paid evaluation option followed by an exclusive license, asset purchase, or indication-specific collaboration. The price ranges are directional asks, not appraised fair-market values.</p>
+        <ul class="diligence-list">
+          <li><strong>IP posture</strong>US provisional patent-pending applications with inventor listed as Daniel Jerome Broz. Applications 012-051 include Patent Center receipt details from the current receipt-history export; applications 001-011 are awaiting USPTO/EBC confirmation.</li>
+          <li><strong>Scientific package</strong>Each DOI-indexed manuscript links the disease-biology rationale, active-agent mechanism, model output, fixed-dose concept, validation gaps, and public source packet.</li>
+          <li><strong>Development path</strong>Partner diligence should cover patentability, freedom-to-operate, CMC, formulation compatibility, PK interaction, component contribution, toxicology, endpoints, and Phase I-III strategy.</li>
+          <li><strong>Transaction structure</strong>Recommended structure is a paid evaluation option followed by an exclusive license, asset purchase, or indication-specific collaboration. Price ranges are directional asks, not appraised fair-market values.</li>
+        </ul>
       </div>
     </section>
 
-    <section id="domains" class="domain-box">
-      <h2>Domain Candidates</h2>
-      <p>These names appeared likely available through RDAP checks on 2026-06-13. Availability can change quickly; final confirmation must be done during registrar checkout.</p>
-      <ul>
-        <li><strong>AICNSDiscovery.com</strong><span>Preferred: short, direct, and pharma-readable. RDAP returned 404 on 2026-06-13; verify at registrar checkout.</span></li>
-<li><strong>CNSMedDiscovery.com</strong><span>Strong scientific positioning. RDAP returned 404 on 2026-06-13; verify at registrar checkout.</span></li>
-<li><strong>BrozNeuroDiscovery.com</strong><span>Founder-branded and credible. RDAP returned 404 on 2026-06-13; verify at registrar checkout.</span></li>
-<li><strong>NeuroTreatmentsIP.com</strong><span>Explicit licensing/IP signal. RDAP returned 404 on 2026-06-13; verify at registrar checkout.</span></li>
-<li><strong>BrozMedDiscovery.com</strong><span>Simple founder-branded alternative. RDAP returned 404 on 2026-06-13; verify at registrar checkout.</span></li>
-      </ul>
+    <section id="site" class="site-box">
+      <h2>Public Website</h2>
+      <p>The registered public-facing domain for the portfolio is now NeuroTreatmentsIP.com. It forwards to this hosted portfolio page for prospective pharma, biotech, venture, and licensing-review contacts.</p>
+      <div class="primary-site">
+        <a href="https://neurotreatmentsip.com">NeuroTreatmentsIP.com</a>
+        <span class="muted">Primary domain for outreach and business-development sharing</span>
+      </div>
     </section>
 
     <section id="portfolio" class="section" style="margin-top: 22px;">
