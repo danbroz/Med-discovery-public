@@ -85,7 +85,7 @@
     p { margin: 0 0 12px; }
     .lead { font-size: 18px; color: #283444; max-width: 920px; }
     .eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
-    .contact-panel, .section, .method, .site-box {
+    .contact-panel, .section, .method {
       border: 1px solid var(--line);
       background: var(--panel);
       border-radius: 8px;
@@ -94,20 +94,6 @@
     .contact-panel dl { margin: 0; display: grid; gap: 10px; }
     .contact-panel dt { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
     .contact-panel dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(150px, 1fr));
-      gap: 12px;
-      margin: 10px 0 28px;
-    }
-    .stat {
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 8px;
-      padding: 14px;
-    }
-    .stat strong { display: block; font-size: 28px; line-height: 1; }
-    .stat span { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; }
     .grid-2 {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -165,19 +151,6 @@
       padding: 12px;
     }
     .diligence-list strong { color: var(--accent); display: block; margin-bottom: 4px; }
-    .primary-site {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-    }
-    .primary-site a { font-size: 20px; font-weight: 700; }
     .controls {
       display: grid;
       grid-template-columns: minmax(220px, 2fr) minmax(160px, 1fr) minmax(160px, 1fr);
@@ -241,7 +214,6 @@
     }
     @media (max-width: 900px) {
       .hero, .grid-2, .method-grid { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
       .controls { grid-template-columns: 1fr; }
       .nav { align-items: flex-start; flex-direction: column; }
     }
@@ -254,7 +226,6 @@
       <div class="navlinks">
         <a href="#portfolio">Portfolio</a>
         <a href="#method">Method</a>
-        <a href="#site">Website</a>
         <a class="button secondary" href="top51_pharma_portfolio.csv">Download CSV</a>
         <a class="button" href="mailto:dan@danbroz.com?subject=AI%20CNS%20Treatment%20Discovery%20Portfolio">Contact</a>
       </div>
@@ -283,46 +254,7 @@
       </aside>
     </section>
 
-    <section class="stats" aria-label="Portfolio statistics">
-      <div class="stat"><strong>51</strong><span>US provisional patent-pending applications listed</span></div>
-      <div class="stat"><strong>50</strong><span>DOI-indexed Zenodo research papers</span></div>
-      <div class="stat"><strong>40</strong><span>Patent Center receipt-history entries documented here</span></div>
-      <div class="stat"><strong>1</strong><span>Registered public domain: NeuroTreatmentsIP.com</span></div>
-    </section>
-
-    <section id="method" class="method-grid">
-      <div class="method">
-        <h2>Computational Neuroscience Method</h2>
-        <p>The portfolio starts with disease biology, then maps candidate drug mechanisms onto symptom circuitry and FDA-relevant development questions. The goal is not to claim clinical proof today; it is to give a pharma team a clear, testable starting point for diligence.</p>
-        <div class="workflow-list" aria-label="Computational neuroscience workflow">
-          <div class="workflow-step"><span class="badge">1</span><span><b>Disease biology</b>Each indication is grounded in disorder-specific neurobiology: symptoms, circuits, neurotransmitters, brain regions, genetics, and treatment gaps.</span></div>
-          <div class="workflow-step"><span class="badge">2</span><span><b>Mechanism mapping</b>Candidate agents are mapped to receptors, transporters, neuroendocrine systems, sleep-wake systems, arousal biology, and safety constraints.</span></div>
-          <div class="workflow-step"><span class="badge">3</span><span><b>Computational model layer</b>Model outputs connect drug mechanisms to disease phenotypes, latent variables, endpoints, and predicted development risks.</span></div>
-          <div class="workflow-step"><span class="badge">4</span><span><b>Evidence labeling</b>Manuscripts separate established biology from repository-derived, modeled, prophetic, and data-needed claims so diligence can focus on the next experiments.</span></div>
-          <div class="workflow-step"><span class="badge">5</span><span><b>Pharma translation</b>Each asset is framed around formulation feasibility, component contribution, clinical pharmacology, endpoint selection, and FDA review risk.</span></div>
-        </div>
-      </div>
-      <div class="method">
-        <h2>What A Pharma Team Can Evaluate</h2>
-        <ul class="diligence-list">
-          <li><strong>IP posture</strong>US provisional patent-pending applications with inventor listed as Daniel Jerome Broz. Applications 012-051 include Patent Center receipt details from the current receipt-history export; applications 001-011 are awaiting USPTO/EBC confirmation.</li>
-          <li><strong>Scientific package</strong>Each DOI-indexed manuscript links the disease-biology rationale, active-agent mechanism, model output, fixed-dose concept, validation gaps, and public source packet.</li>
-          <li><strong>Development path</strong>Partner diligence should cover patentability, freedom-to-operate, CMC, formulation compatibility, PK interaction, component contribution, toxicology, endpoints, and Phase I-III strategy.</li>
-          <li><strong>Transaction structure</strong>Recommended structure is a paid evaluation option followed by an exclusive license, asset purchase, or indication-specific collaboration. Price ranges are directional asks, not appraised fair-market values.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="site" class="site-box">
-      <h2>Public Website</h2>
-      <p>The registered public-facing domain for the portfolio is now NeuroTreatmentsIP.com. It forwards to this hosted portfolio page for prospective pharma, biotech, venture, and licensing-review contacts.</p>
-      <div class="primary-site">
-        <a href="https://neurotreatmentsip.com">NeuroTreatmentsIP.com</a>
-        <span class="muted">Primary domain for outreach and business-development sharing</span>
-      </div>
-    </section>
-
-    <section id="portfolio" class="section" style="margin-top: 22px;">
+    <section id="portfolio" class="section">
       <h2>Top 51 Patent-Pending Applications And Pharma Deal Guidance</h2>
       <p>Use the controls to filter by disorder, application number, active agents, risk, or paper status. Paper links go to the exact Zenodo records when available.</p>
       <div class="controls">
@@ -1027,6 +959,29 @@
       </div>
       <div class="note">
         Provisional applications are generally not public-inspection documents. Patent Center receipt information shown here is based on the owner's receipt-history text. Application 64/077,085 may not be public-searchable yet, consistent with Patent Center's message that an entered application number may be unavailable or not yet public.
+      </div>
+    </section>
+
+    <section id="method" class="method-grid">
+      <div class="method">
+        <h2>Computational Neuroscience Method</h2>
+        <p>The portfolio starts with disease biology, then maps candidate drug mechanisms onto symptom circuitry and FDA-relevant development questions. The goal is not to claim clinical proof today; it is to give a pharma team a clear, testable starting point for diligence.</p>
+        <div class="workflow-list" aria-label="Computational neuroscience workflow">
+          <div class="workflow-step"><span class="badge">1</span><span><b>Disease biology</b>Each indication is grounded in disorder-specific neurobiology: symptoms, circuits, neurotransmitters, brain regions, genetics, and treatment gaps.</span></div>
+          <div class="workflow-step"><span class="badge">2</span><span><b>Mechanism mapping</b>Candidate agents are mapped to receptors, transporters, neuroendocrine systems, sleep-wake systems, arousal biology, and safety constraints.</span></div>
+          <div class="workflow-step"><span class="badge">3</span><span><b>Computational model layer</b>Model outputs connect drug mechanisms to disease phenotypes, latent variables, endpoints, and predicted development risks.</span></div>
+          <div class="workflow-step"><span class="badge">4</span><span><b>Evidence labeling</b>Manuscripts separate established biology from repository-derived, modeled, prophetic, and data-needed claims so diligence can focus on the next experiments.</span></div>
+          <div class="workflow-step"><span class="badge">5</span><span><b>Pharma translation</b>Each asset is framed around formulation feasibility, component contribution, clinical pharmacology, endpoint selection, and FDA review risk.</span></div>
+        </div>
+      </div>
+      <div class="method">
+        <h2>What A Pharma Team Can Evaluate</h2>
+        <ul class="diligence-list">
+          <li><strong>IP posture</strong>US provisional patent-pending applications with inventor listed as Daniel Jerome Broz. Applications 012-051 include Patent Center receipt details from the current receipt-history export; applications 001-011 are awaiting USPTO/EBC confirmation.</li>
+          <li><strong>Scientific package</strong>Each DOI-indexed manuscript links the disease-biology rationale, active-agent mechanism, model output, fixed-dose concept, validation gaps, and public source packet.</li>
+          <li><strong>Development path</strong>Partner diligence should cover patentability, freedom-to-operate, CMC, formulation compatibility, PK interaction, component contribution, toxicology, endpoints, and Phase I-III strategy.</li>
+          <li><strong>Transaction structure</strong>Recommended structure is a paid evaluation option followed by an exclusive license, asset purchase, or indication-specific collaboration. Price ranges are directional asks, not appraised fair-market values.</li>
+        </ul>
       </div>
     </section>
 
