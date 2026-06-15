@@ -6,7 +6,7 @@ Patent application: 64/090,797
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708212
-Zenodo draft: https://zenodo.org/deposit/20708212
+Zenodo paper: https://zenodo.org/records/20708212
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/non_rem_sleep_arousal_disorders
 
 ## Source Files

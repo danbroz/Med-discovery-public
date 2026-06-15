@@ -6,7 +6,7 @@ Patent application: 64/090,773
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708202
-Zenodo draft: https://zenodo.org/deposit/20708202
+Zenodo paper: https://zenodo.org/records/20708202
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/somatic_symptom_disorder
 
 ## Source Files

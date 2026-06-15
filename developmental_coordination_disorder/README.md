@@ -6,7 +6,7 @@ Patent application: 64/090,995
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708311
-Zenodo draft: https://zenodo.org/deposit/20708311
+Zenodo paper: https://zenodo.org/records/20708311
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/developmental_coordination_disorder
 
 ## Source Files

@@ -6,7 +6,7 @@ Patent application: 64/090,901
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708264
-Zenodo draft: https://zenodo.org/deposit/20708264
+Zenodo paper: https://zenodo.org/records/20708264
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/other_or_unknown_substance_withdrawal
 
 ## Source Files

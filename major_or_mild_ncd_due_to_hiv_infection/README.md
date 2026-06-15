@@ -6,7 +6,7 @@ Patent application: 64/090,891
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708258
-Zenodo draft: https://zenodo.org/deposit/20708258
+Zenodo paper: https://zenodo.org/records/20708258
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/major_or_mild_ncd_due_to_hiv_infection
 
 ## Source Files

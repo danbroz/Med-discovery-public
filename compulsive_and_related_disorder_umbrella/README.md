@@ -6,7 +6,7 @@ Patent application: 64/090,814
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708216
-Zenodo draft: https://zenodo.org/deposit/20708216
+Zenodo paper: https://zenodo.org/records/20708216
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/compulsive_and_related_disorder_umbrella
 
 ## Source Files

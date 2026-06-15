@@ -6,7 +6,7 @@ Patent application: 64/090,791
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708208
-Zenodo draft: https://zenodo.org/deposit/20708208
+Zenodo paper: https://zenodo.org/records/20708208
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/rem_sleep_behavior_disorder
 
 ## Source Files

@@ -6,7 +6,7 @@ Patent application: 64/090,754
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708190
-Zenodo draft: https://zenodo.org/deposit/20708190
+Zenodo paper: https://zenodo.org/records/20708190
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/body_dysmorphic_disorder
 
 ## Source Files

@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-051
 Patent application: 64/077,085
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20708188
-Zenodo draft: https://zenodo.org/deposit/20708188
+Zenodo paper: https://zenodo.org/records/20708188
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/intermittent_explosive_disorder
 
 ## Source Files
