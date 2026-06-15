@@ -1,0 +1,179 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                         key      node_type             atlas_region region_identifier                           feature_summary
+                           genetic_liability          input                     None              None                                      None
+                    home_environment_quality          input                     None              None                                      None
+                         educational_support          input                     None              None                                      None
+                    nutrition_health_support          input                     None              None                                      None
+                              social_support          input                     None              None                                      None
+                               stress_burden          input                     None              None                                      None
+                  comorbid_mood_anxiety_load          input                     None              None                                      None
+                                 pfc_control         region                     None              None                                unresolved
+                                 hippocampus         region   CA1 (Hippocampus) left              None receptors=yes; genes=yes; connectivity=no
+                                    amygdala         region       LB (Amygdala) left              None  receptors=no; genes=yes; connectivity=no
+                            medial_pfc_proxy         region     Area p32 (pACC) left              None  receptors=no; genes=yes; connectivity=no
+                                   tpj_proxy         region Area TPJ (STG, SMG) left              None  receptors=no; genes=yes; connectivity=no
+distributed_neurodevelopmental_dysregulation latent_biology                     None              None                                      None
+      global_cognitive_processing_constraint latent_biology                     None              None                                      None
+              executive_control_inefficiency latent_biology                     None              None                                      None
+        memory_encoding_retrieval_constraint latent_biology                     None              None                                      None
+              emotion_regulation_dysfunction latent_biology                     None              None                                      None
+                 social_cognitive_impairment latent_biology                     None              None                                      None
+               reasoning_learning_difficulty        symptom                     None              None                                      None
+                       executive_dysfunction        symptom                     None              None                                      None
+                           memory_difficulty        symptom                     None              None                                      None
+               emotion_regulation_difficulty        symptom                     None              None                                      None
+                social_perception_difficulty        symptom                     None              None                                      None
+  decision_making_problem_solving_difficulty        symptom                     None              None                                      None
+             affective_lability_irritability        symptom                     None              None                                      None
+               inappropriate_social_response        symptom                     None              None                                      None
+             adaptive_functioning_difficulty        symptom                     None              None                                      None
+
+=== EDGES ===
+                                      source                                       target                                                                        relation idd_change
+                           genetic_liability distributed_neurodevelopmental_dysregulation                                        increases broad developmental CNS burden  increased
+                    home_environment_quality distributed_neurodevelopmental_dysregulation                      buffers developmental burden through environmental quality  decreased
+                         educational_support distributed_neurodevelopmental_dysregulation                           buffers developmental burden through learning support  decreased
+                    nutrition_health_support distributed_neurodevelopmental_dysregulation               buffers developmental burden through health and nutrition support  decreased
+                              social_support                  social_cognitive_impairment                                      buffers downstream social-cognitive burden  decreased
+                               stress_burden               emotion_regulation_dysfunction                            increases emotional dysregulation and arousal burden  increased
+                  comorbid_mood_anxiety_load               emotion_regulation_dysfunction                                  amplifies emotional self-regulation difficulty  increased
+distributed_neurodevelopmental_dysregulation       global_cognitive_processing_constraint reduces efficient receiving, processing, storing, and responding to information  increased
+distributed_neurodevelopmental_dysregulation               executive_control_inefficiency                                              drives frontal-system inefficiency  increased
+distributed_neurodevelopmental_dysregulation         memory_encoding_retrieval_constraint                                            drives temporal-limbic memory burden  increased
+distributed_neurodevelopmental_dysregulation                  social_cognitive_impairment                          increases burden on distributed social-brain functions  increased
+              emotion_regulation_dysfunction                  social_cognitive_impairment            degrades social interpretation when affective processing is unstable  increased
+              executive_control_inefficiency                                  pfc_control                 maps to dysfunction burden in frontal executive-control systems  increased
+        memory_encoding_retrieval_constraint                                  hippocampus                      maps to dysfunction burden in hippocampal memory circuitry  increased
+              emotion_regulation_dysfunction                                     amygdala                      maps to dysfunction burden in affective salience circuitry  increased
+                 social_cognitive_impairment                             medial_pfc_proxy        maps to dysfunction burden in medial prefrontal social-cognitive systems  increased
+                 social_cognitive_impairment                                    tpj_proxy          maps to dysfunction burden in temporoparietal social-inference systems  increased
+      global_cognitive_processing_constraint                reasoning_learning_difficulty                               reduces general reasoning and learning efficiency  increased
+                                 pfc_control                        executive_dysfunction                        increases planning, inhibition, and flexibility problems  increased
+                                 hippocampus                            memory_difficulty                                       increases encoding and retrieval problems  increased
+                                    amygdala                emotion_regulation_difficulty                             increases affective arousal and regulation problems  increased
+                            medial_pfc_proxy                 social_perception_difficulty                                      increases social interpretation difficulty  increased
+                                   tpj_proxy                 social_perception_difficulty                      increases theory-of-mind and perspective-taking difficulty  increased
+              emotion_regulation_dysfunction   decision_making_problem_solving_difficulty             disrupts higher-order cognition when emotion and cognition interact  increased
+               emotion_regulation_difficulty              affective_lability_irritability                                    produces irritability and affective lability  increased
+                social_perception_difficulty                inappropriate_social_response                                       increases miscalibrated social responding  increased
+               reasoning_learning_difficulty              adaptive_functioning_difficulty                                                  impairs broad daily adaptation  increased
+                       executive_dysfunction              adaptive_functioning_difficulty                                      reduces organized goal-directed adaptation  increased
+                           memory_difficulty              adaptive_functioning_difficulty                                     reduces effective daily learning and recall  increased
+               emotion_regulation_difficulty              adaptive_functioning_difficulty                                reduces daily emotional and behavioral stability  increased
+               inappropriate_social_response              adaptive_functioning_difficulty                                               worsens social adaptation demands  increased
+
+=== CIRCUIT CONNECTIVITY ===
+                  hippocampus  amygdala  medial_pfc_proxy  tpj_proxy
+hippocampus               NaN       NaN               NaN        NaN
+amygdala                  NaN       NaN               NaN        NaN
+medial_pfc_proxy          NaN       NaN               NaN        NaN
+tpj_proxy                 NaN       NaN               NaN        NaN
+
+=== RECEPTOR TABLE: pfc_control ===
+No receptor fingerprint available.
+
+=== GENE TABLE: pfc_control ===
+No gene-expression summary available.
+
+=== CONNECTIVITY PROFILE: pfc_control ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: hippocampus ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== GENE TABLE: hippocampus ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARID1B    7.135158   1.034303           24     0.616287    1.301227
+ DYRK1A    7.326229   0.815888           24     0.261333    1.025002
+  EHMT1    5.275672   1.483347           32    -0.027231    1.088554
+   FMR1    7.243517   1.042110           24    -0.666687    0.922606
+  MECP2    6.288687   2.580231           32    -0.091984    1.301394
+   PTEN    7.964954   1.367856           24    -0.157412    0.707576
+  SCN2A    9.739859   1.019323           32     0.749559    0.423605
+ SHANK3    9.583931   2.172591           16     1.156900    1.307663
+ SLC2A1    5.231088   2.836901           24    -0.508558    0.841878
+SYNGAP1    6.494175   2.443555           24     1.468463    1.207500
+
+=== CONNECTIVITY PROFILE: hippocampus ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: amygdala ===
+No receptor fingerprint available.
+
+=== GENE TABLE: amygdala ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ARID1B    6.983348   1.146675           21     0.539938    1.132031
+ DYRK1A    7.106343   1.118783           21    -0.353695    1.723196
+  EHMT1    4.942796   1.977612           28    -0.291893    1.651914
+   FMR1    7.370790   0.817751           21    -1.043376    0.697088
+  MECP2    6.003818   2.676180           28    -0.216161    1.368662
+   PTEN    8.159452   1.172782           21    -0.465419    0.853784
+  SCN2A    9.489618   1.180030           28     0.402846    0.737849
+ SHANK3    9.536964   2.157168           14     1.570457    0.684577
+ SLC2A1    5.400624   3.105042           21    -0.497533    1.010956
+SYNGAP1    5.614762   1.860415           21     1.050962    0.978817
+
+=== CONNECTIVITY PROFILE: amygdala ===
+No connectivity profile available.
+
+=== SIMULATION EXAMPLE ===
+
+--- INPUTS ---
+genetic_liability             0.75
+stress_burden                 0.62
+nutrition_health_support      0.60
+comorbid_mood_anxiety_load    0.55
+educational_support           0.50
+social_support                0.48
+home_environment_quality      0.45
+
+--- LATENTS ---
+distributed_neurodevelopmental_dysregulation    0.635
+global_cognitive_processing_constraint          0.436
+emotion_regulation_dysfunction                  0.393
+executive_control_inefficiency                  0.375
+memory_encoding_retrieval_constraint            0.369
+social_cognitive_impairment                     0.238
+
+--- REGIONAL_STATE ---
+amygdala            0.292
+hippocampus         0.287
+pfc_control         0.242
+tpj_proxy           0.152
+medial_pfc_proxy    0.104
+
+--- SYMPTOMS ---
+memory_difficulty                             0.328
+executive_dysfunction                         0.318
+affective_lability_irritability               0.305
+decision_making_problem_solving_difficulty    0.302
+reasoning_learning_difficulty                 0.271
+adaptive_functioning_difficulty               0.245
+emotion_regulation_difficulty                 0.241
+inappropriate_social_response                 0.182
+social_perception_difficulty                  0.110
+
+--- PHENOTYPES ---
+cold_cognition_burden        0.305
+comorbidity_vulnerability    0.289
+hot_cognition_burden         0.283
+adaptive_support_needs       0.208
+social_cognition_burden      0.178

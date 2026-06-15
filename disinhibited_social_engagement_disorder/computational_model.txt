@@ -1,0 +1,152 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                       key      node_type           atlas_region                            feature_summary
+                  early_social_deprivation          input                   None                                       None
+                     attachment_disruption          input                   None                                       None
+                     chronic_social_stress          input                   None                                       None
+                        family_dysfunction          input                   None                                       None
+                        neglect_abuse_load          input                   None                                       None
+           intergenerational_vulnerability          input                   None                                       None
+                      caregiving_stability          input                   None                                       None
+             enriched_recovery_environment          input                   None                                       None
+                  developmental_plasticity          input                   None                                       None
+                        genetic_resilience          input                   None                                       None
+                                  amygdala         region     LB (Amygdala) left  receptors=no; genes=yes; connectivity=yes
+                               hippocampus         region CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=yes
+                               pfc_control         region  Area Fp2 (FPole) left  receptors=no; genes=yes; connectivity=yes
+ oxytocin_vasopressin_signaling_disruption latent_biology                   None                                       None
+       dopaminergic_social_reward_blunting latent_biology                   None                                       None
+endogenous_opioid_attachment_dysregulation latent_biology                   None                                       None
+        attachment_reward_underdevelopment latent_biology                   None                                       None
+             hpa_axis_stress_sensitization latent_biology                   None                                       None
+                      epigenetic_embedding latent_biology                   None                                       None
+           social_fear_calibration_failure latent_biology                   None                                       None
+         frontolimbic_regulatory_weakening latent_biology                   None                                       None
+     hippocampal_context_memory_disruption latent_biology                   None                                       None
+      white_matter_social_brain_immaturity latent_biology                   None                                       None
+             reduced_wariness_of_strangers        symptom                   None                                       None
+            indiscriminate_social_approach        symptom                   None                                       None
+          nonselective_attachment_behavior        symptom                   None                                       None
+                    shallow_social_bonding        symptom                   None                                       None
+                social_boundary_impairment        symptom                   None                                       None
+               persistence_after_placement        symptom                   None                                       None
+
+=== Edges ===
+                                    source                                     target                                                                                            relation             dsed_change
+                  early_social_deprivation  oxytocin_vasopressin_signaling_disruption                      reduces the normal affiliative input needed for selective attachment signaling    increased disruption
+                  early_social_deprivation        dopaminergic_social_reward_blunting                                       weakens socially rewarding learning around a stable caregiver      increased blunting
+                     attachment_disruption endogenous_opioid_attachment_dysregulation repeated separation and unstable bonds dysregulate social comfort and separation-distress chemistry increased dysregulation
+                        family_dysfunction                      chronic_social_stress                                                      creates an unbuffered risky family environment               increased
+                        neglect_abuse_load              hpa_axis_stress_sensitization                                                sustained adversity loads the stress-response system               increased
+           intergenerational_vulnerability                         family_dysfunction          parental psychopathology and substance-related risk can propagate a neglectful environment               increased
+           intergenerational_vulnerability                       epigenetic_embedding            genetic liability can interact with adversity to amplify persistent biological embedding increased vulnerability
+ oxytocin_vasopressin_signaling_disruption         attachment_reward_underdevelopment                                 disrupted affiliation chemistry undermines selective bond formation               increased
+       dopaminergic_social_reward_blunting         attachment_reward_underdevelopment                                 reduced social reward weakens reinforcement of caregiver preference               increased
+endogenous_opioid_attachment_dysregulation         attachment_reward_underdevelopment           reduced attachment comfort and abnormal separation distress impede deep selective bonding               increased
+                     chronic_social_stress              hpa_axis_stress_sensitization                                unbuffered adversity chronically activates stress regulation systems               increased
+                        neglect_abuse_load                       epigenetic_embedding    severe adversity plausibly induces lasting changes in stress and social-behavior gene regulation               increased
+             hpa_axis_stress_sensitization          frontolimbic_regulatory_weakening                       stress burden weakens regulatory development across prefrontal-limbic systems               increased
+             hpa_axis_stress_sensitization      hippocampal_context_memory_disruption                                   stress-sensitive memory systems are burdened by chronic adversity               increased
+                      epigenetic_embedding          frontolimbic_regulatory_weakening                  biological embedding can help symptoms persist even after the environment improves   increased persistence
+
+=== Region suggestions for 'amygdala' ===
+                 name identifier                                parcellation
+LB.La (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   IF (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   SF (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   MF (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   LB (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   CM (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  VTM (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+ Astr (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+LB.Pl (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+IF.ld (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Pairwise circuit connectivity ===
+     source      target  value
+   amygdala hippocampus 64.260
+   amygdala pfc_control  0.135
+hippocampus    amygdala 64.260
+hippocampus pfc_control  2.590
+pfc_control hippocampus  2.590
+pfc_control    amygdala  0.135
+
+=== Example receptor table: amygdala ===
+No receptor data available.
+
+=== Example gene table: hippocampus ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+AVPR1A    2.008471   0.870857           24    -0.195279    1.095304
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+ OPRM1    3.071646   1.121513           24    -0.715817    0.819420
+  OXTR    5.184188   2.593742           16    -0.172387    0.717949
+SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+
+=== Example connectivity profile: pfc_control ===
+                                       connected_region    value
+                                   Area p32 (pACC) left 6077.900
+                                  Area Fp1 (FPole) left 2615.460
+                                   Area s32 (sACC) left 2241.300
+                                 Area Fp1 (FPole) right 1897.015
+                     Frontal-to-Occipital (GapMap) left 1655.055
+                                    Area Fo1 (OFC) left 1548.565
+                                   Area SFG2 (SFG) left 1406.925
+                                 Area Fp2 (FPole) right 1312.510
+                                  Area p32 (pACC) right 1151.920
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 1145.105
+
+=== Simulation example ===
+
+INPUTS
+early_social_deprivation           0.90
+attachment_disruption              0.85
+chronic_social_stress              0.80
+neglect_abuse_load                 0.75
+family_dysfunction                 0.65
+intergenerational_vulnerability    0.55
+developmental_plasticity           0.55
+genetic_resilience                 0.45
+enriched_recovery_environment      0.35
+caregiving_stability               0.20
+
+LATENTS
+dopaminergic_social_reward_blunting           0.6080
+social_fear_calibration_failure               0.6037
+hpa_axis_stress_sensitization                 0.5440
+oxytocin_vasopressin_signaling_disruption     0.5420
+endogenous_opioid_attachment_dysregulation    0.5350
+attachment_reward_underdevelopment            0.5071
+white_matter_social_brain_immaturity          0.4992
+epigenetic_embedding                          0.4487
+frontolimbic_regulatory_weakening             0.4369
+hippocampal_context_memory_disruption         0.4368
+
+REGIONAL_STATE
+amygdala       0.4368
+hippocampus    0.2825
+pfc_control    0.2681
+
+SYMPTOMS
+reduced_wariness_of_strangers       0.4358
+nonselective_attachment_behavior    0.4077
+shallow_social_bonding              0.3723
+indiscriminate_social_approach      0.3305
+social_boundary_impairment          0.2763
+persistence_after_placement         0.2642
+
+PHENOTYPES
+dsed_core_profile                 0.3913
+attachment_depth_impairment       0.3900
+recovery_buffer                   0.3300
+persistent_social_risk_profile    0.2695

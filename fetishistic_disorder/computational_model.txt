@@ -1,0 +1,96 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 12) ===
+                                 key                                          label    node_type                                                                                                    description                                   atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+genetic_reward_control_vulnerability           Genetic Reward Control Vulnerability        input Inherited liability affecting sex-drive intensity, impulsivity, personality, and reward-pathway responsiveness                                           None              None                                                          None         NaN                                     None
+                   early_life_trauma                              Early Life Trauma        input                       Childhood abuse, neglect, or early stress exposure that may become biologically embedded                                           None              None                                                          None         NaN                                     None
+              reward_pairing_history                         Reward Pairing History        input                                  Repetitive pairing of a specific cue or object with sexual arousal and orgasm                                           None              None                                                          None         NaN                                     None
+                 fetish_cue_exposure                            Fetish Cue Exposure        input                                              Current availability or salience of the conditioned cue or object                                           None              None                                                          None         NaN                                     None
+              impulsivity_trait_load                         Impulsivity Trait Load        input                                     Trait-level impulsivity or compulsivity burden relevant to control failure                                           None              None                                                          None         NaN                                     None
+                 sex_drive_intensity                            Sex Drive Intensity        input                         Baseline libido / reward-seeking drive intensity contributing to motivational pressure                                           None              None                                                          None         NaN                                     None
+                  stress_mood_burden                             Stress Mood Burden        input                                  Mood and stress burden that can erode control and amplify compulsive behavior                                           None              None                                                          None         NaN                                     None
+                        ssri_support                                   Ssri Support        input                          Protective serotonergic treatment support, modeled from the chapter's SSRI discussion                                           None              None                                                          None         NaN                                     None
+                            amygdala                             LB (Amygdala) left       region                                                                                      Atlas-backed circuit node                             LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                orbitofrontal_cortex                            Area Fo4 (OFC) left       region                                                                                      Atlas-backed circuit node                            Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+       dorsolateral_prefrontal_proxy                            Area 8v2 (MFG) left region_proxy                                                                                      Atlas-backed circuit node                            Area 8v2 (MFG) left              None   (-36.862173649058896, 27.834851244687314, 36.9010321797207)      1647.0  receptors=no; genes=no; connectivity=no
+              ventral_striatum_proxy FuP (Ventral Striatum, Fundus of Putamen) left region_proxy                                                                                      Atlas-backed circuit node FuP (Ventral Striatum, Fundus of Putamen) left              None (-22.444895199459097, 7.6233941852603095, -9.231913455037187)      1479.0 receptors=no; genes=yes; connectivity=no
+
+=== Edges (first 12) ===
+                               source                                target                                                                  relation fetishistic_change
+ genetic_reward_control_vulnerability    heritable_reward_control_liability provides inherited vulnerability affecting reward sensitivity and control          increased
+               impulsivity_trait_load    heritable_reward_control_liability                                 indexes trait-level control vulnerability          increased
+                  sex_drive_intensity    heritable_reward_control_liability                         captures inherited variation in sexual motivation          increased
+                    early_life_trauma    epigenetic_reward_attachment_shift             may become biologically embedded in stress and reward systems          increased
+                   stress_mood_burden    epigenetic_reward_attachment_shift                                can reinforce stress-linked circuit burden          increased
+               reward_pairing_history conditioned_object_reward_association                                        creates strong cue–reward learning          increased
+                  fetish_cue_exposure conditioned_object_reward_association                                        keeps conditioned cue value active          increased
+conditioned_object_reward_association           dopamine_incentive_salience                   transforms the cue into a powerful motivational trigger          increased
+                  sex_drive_intensity           dopamine_incentive_salience                                       amplifies reward-seeking motivation          increased
+   heritable_reward_control_liability           dopamine_incentive_salience              biases reward circuitry toward stronger cue-driven 'wanting'          increased
+               impulsivity_trait_load  serotonergic_impulse_control_deficit          matches low-control / compulsive traits discussed in the chapter          increased
+                   stress_mood_burden  serotonergic_impulse_control_deficit                               reduces mood-regulated inhibitory stability          increased
+
+=== Resolved region keys ===
+['amygdala', 'orbitofrontal_cortex', 'dorsolateral_prefrontal_proxy', 'ventral_striatum_proxy', 'vta_proxy']
+
+=== Receptor table: orbitofrontal_cortex ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Gene table: orbitofrontal_cortex ===
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.623275   1.783520            8     0.213975    0.107743
+ COMT    6.309525   3.411804           24    -0.136267    0.423556
+CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+ DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ DRD3    1.765404   1.176595           28    -0.151786    0.553500
+
+=== Connectivity profile: orbitofrontal_cortex ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+                   source_key                    target_key       source_region                                  target_region matrix_source_label                            matrix_target_label  value
+                     amygdala          orbitofrontal_cortex  LB (Amygdala) left                            Area Fo4 (OFC) left                None                                           None    NaN
+                     amygdala dorsolateral_prefrontal_proxy  LB (Amygdala) left                            Area 8v2 (MFG) left                None                                           None    NaN
+                     amygdala        ventral_striatum_proxy  LB (Amygdala) left FuP (Ventral Striatum, Fundus of Putamen) left                None                                           None    NaN
+                     amygdala                     vta_proxy  LB (Amygdala) left                             midbrain tegmentum                None                                           None    NaN
+         orbitofrontal_cortex                      amygdala Area Fo4 (OFC) left                             LB (Amygdala) left                None                                           None    NaN
+         orbitofrontal_cortex dorsolateral_prefrontal_proxy Area Fo4 (OFC) left                            Area 8v2 (MFG) left Area Fo4 (OFC) left                            Area 8v2 (MFG) left    NaN
+         orbitofrontal_cortex        ventral_striatum_proxy Area Fo4 (OFC) left FuP (Ventral Striatum, Fundus of Putamen) left Area Fo4 (OFC) left FuP (Ventral Striatum, Fundus of Putamen) left    NaN
+         orbitofrontal_cortex                     vta_proxy Area Fo4 (OFC) left                             midbrain tegmentum                None                                           None    NaN
+dorsolateral_prefrontal_proxy                      amygdala Area 8v2 (MFG) left                             LB (Amygdala) left                None                                           None    NaN
+dorsolateral_prefrontal_proxy          orbitofrontal_cortex Area 8v2 (MFG) left                            Area Fo4 (OFC) left Area 8v2 (MFG) left                            Area Fo4 (OFC) left    NaN
+dorsolateral_prefrontal_proxy        ventral_striatum_proxy Area 8v2 (MFG) left FuP (Ventral Striatum, Fundus of Putamen) left Area 8v2 (MFG) left FuP (Ventral Striatum, Fundus of Putamen) left    NaN
+dorsolateral_prefrontal_proxy                     vta_proxy Area 8v2 (MFG) left                             midbrain tegmentum                None                                           None    NaN
+
+=== Latents ===
+conditioned_object_reward_association    0.7086
+dopamine_incentive_salience              0.5884
+heritable_reward_control_liability       0.5475
+compulsive_urge_loop                     0.5028
+prefrontal_inhibitory_control_failure    0.4269
+epigenetic_reward_attachment_shift       0.4125
+serotonergic_impulse_control_deficit     0.3500
+
+=== Symptoms ===
+cue_triggered_sexual_urge          0.5677
+intrusive_fetish_fantasies         0.5588
+compulsive_fetish_behavior         0.4516
+impaired_control_over_behavior     0.3758
+partner_relationship_difficulty    0.3604
+guilt_or_distress                  0.3602
+
+=== Phenotypes ===
+conditioned_arousal_profile           0.5628
+reward_over_control_imbalance         0.4523
+compulsive_loss_of_control_profile    0.4393
+distress_impairment_profile           0.3902

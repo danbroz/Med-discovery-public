@@ -1,0 +1,97 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 12) ===
+                           key                                          label    node_type                                                                                                                                                                    description                                   atlas_region region_identifier                                                  centroid_mni  volume_mm3                           feature_summary
+         genetic_vulnerability                          Genetic Vulnerability        input                                             Polygenic neurodevelopmental liability shared in part with ADHD, ASD, and dyslexia vulnerability patterns discussed in the chapter                                           None              None                                                          None         NaN                                      None
+     developmental_wiring_load                      Developmental Wiring Load        input                                                                                           Burden on neuronal migration, synaptogenesis, and myelination implied by the chapter                                           None              None                                                          None         NaN                                      None
+         adhd_comorbidity_load                          Adhd Comorbidity Load        input                                                                                           ADHD-overlap burden used as a catecholaminergic and frontostriatal hypothesis bridge                                           None              None                                                          None         NaN                                      None
+     autism_dyslexia_liability                      Autism Dyslexia Liability        input                                                                                                      Shared neurodevelopmental liability from ASD/dyslexia comorbidity context                                           None              None                                                          None         NaN                                      None
+      attention_control_burden                       Attention Control Burden        input                                                                         Impaired sustained attention, vigilance, and processing-speed burden that can worsen motor performance                                           None              None                                                          None         NaN                                      None
+         motor_task_complexity                          Motor Task Complexity        input                                                                                              Demand imposed by multi-step, precision, balance, or dual-task motor requirements                                           None              None                                                          None         NaN                                      None
+          compensatory_support                           Compensatory Support        input Optional generic scaffold control for structured support, practice, or environmental adaptation; included for simulation transparency rather than as an explicit chapter claim                                           None              None                                                          None         NaN                                      None
+          primary_motor_cortex                           Area 4a (PreCG) left       region                                                                                                                                                      Atlas-backed circuit node                           Area 4a (PreCG) left              None    (-6.554317548746525, -26.04700557103064, 67.2959610027855)      2872.0  receptors=no; genes=yes; connectivity=no
+               premotor_cortex                                Premotor Cortex       region                                                                                                       Atlas-backed circuit node unresolved in this environment; proxy retained                                           None              None                                                          None         NaN                                unresolved
+supplementary_motor_area_proxy                     Area 6mp (SMA, mesial SFG) region_proxy                                                                                                                                                      Atlas-backed circuit node                     Area 6mp (SMA, mesial SFG)              None   (5.420449116101295, -10.936932632584814, 56.80840898232202)      2093.0  receptors=no; genes=yes; connectivity=no
+     posterior_parietal_cortex                             Area 7A (SPL) left       region                                                                                                                                                      Atlas-backed circuit node                             Area 7A (SPL) left              None  (-19.807117437722425, -60.42609727164887, 62.64412811387899)      8430.0 receptors=yes; genes=yes; connectivity=no
+           basal_ganglia_proxy FuP (Ventral Striatum, Fundus of Putamen) left region_proxy                                                                                                                                                      Atlas-backed circuit node FuP (Ventral Striatum, Fundus of Putamen) left              None (-22.444895199459097, 7.6233941852603095, -9.231913455037187)      1479.0  receptors=no; genes=yes; connectivity=no
+
+=== Edges (first 12) ===
+                                                 source                                                  target                                                                relation dcd_change
+                                  genetic_vulnerability                  polygenic_neurodevelopmental_liability                              contributes shared neurodevelopmental risk  increased
+                                  adhd_comorbidity_load                  polygenic_neurodevelopmental_liability         indexes overlap with heritable neurodevelopmental vulnerability  increased
+                              autism_dyslexia_liability                  polygenic_neurodevelopmental_liability                            reinforces shared developmental-risk context  increased
+                              developmental_wiring_load neuronal_migration_synaptogenesis_myelination_variation                        amplifies developmental circuit-formation burden  increased
+                 polygenic_neurodevelopmental_liability neuronal_migration_synaptogenesis_myelination_variation                      biases distributed neurodevelopmental organization  increased
+                                  adhd_comorbidity_load                       catecholaminergic_support_deficit motivates dopamine/norepinephrine hypothesis transfer from ADHD overlap  increased
+                               attention_control_burden                       catecholaminergic_support_deficit                     raises need for attentional neuromodulatory support  increased
+                      catecholaminergic_support_deficit            frontostriatal_attention_control_dysfunction              weakens action selection and sustained attentional control  increased
+neuronal_migration_synaptogenesis_myelination_variation                    white_matter_connectivity_disruption                                   impairs long-range circuit efficiency  increased
+                   white_matter_connectivity_disruption                         sensorimotor_integration_burden       reduces efficient communication across motor and parietal systems  increased
+           frontostriatal_attention_control_dysfunction                         motor_sequence_planning_failure                             degrades planning and sequencing of actions  increased
+                cerebellar_prediction_error_dysfunction                         motor_sequence_planning_failure         limits error correction and calibration during skilled movement  increased
+
+=== Resolved region keys ===
+['primary_motor_cortex', 'supplementary_motor_area_proxy', 'posterior_parietal_cortex', 'basal_ganglia_proxy', 'cerebellum_proxy']
+
+=== Receptor table: primary_motor_cortex ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Gene table: primary_motor_cortex ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    4.819860   1.923501           10    -0.114840    0.460691
+CNTNAP2    7.581807   3.388217           15     0.207513    0.404395
+   COMT    6.586887   3.502088           30     0.029907    0.575708
+    DBH    3.182287   0.756219           15     0.461473    0.506598
+  DCDC2    2.211270   0.695945           10    -0.261500    0.775829
+
+=== Connectivity profile: primary_motor_cortex ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+                    source_key                     target_key              source_region                                  target_region             matrix_source_label                            matrix_target_label  value
+          primary_motor_cortex supplementary_motor_area_proxy       Area 4a (PreCG) left                     Area 6mp (SMA, mesial SFG)            Area 4a (PreCG) left                Area 6mp (SMA, mesial SFG) left    NaN
+          primary_motor_cortex      posterior_parietal_cortex       Area 4a (PreCG) left                             Area 7A (SPL) left            Area 4a (PreCG) left                             Area 7A (SPL) left    NaN
+          primary_motor_cortex            basal_ganglia_proxy       Area 4a (PreCG) left FuP (Ventral Striatum, Fundus of Putamen) left            Area 4a (PreCG) left FuP (Ventral Striatum, Fundus of Putamen) left    NaN
+          primary_motor_cortex               cerebellum_proxy       Area 4a (PreCG) left     Nfast (Cerebellum, Fastigial Nucleus) left            Area 4a (PreCG) left     Nfast (Cerebellum, Fastigial Nucleus) left    NaN
+supplementary_motor_area_proxy           primary_motor_cortex Area 6mp (SMA, mesial SFG)                           Area 4a (PreCG) left Area 6mp (SMA, mesial SFG) left                           Area 4a (PreCG) left    NaN
+supplementary_motor_area_proxy      posterior_parietal_cortex Area 6mp (SMA, mesial SFG)                             Area 7A (SPL) left Area 6mp (SMA, mesial SFG) left                             Area 7A (SPL) left    NaN
+supplementary_motor_area_proxy            basal_ganglia_proxy Area 6mp (SMA, mesial SFG) FuP (Ventral Striatum, Fundus of Putamen) left Area 6mp (SMA, mesial SFG) left FuP (Ventral Striatum, Fundus of Putamen) left    NaN
+supplementary_motor_area_proxy               cerebellum_proxy Area 6mp (SMA, mesial SFG)     Nfast (Cerebellum, Fastigial Nucleus) left Area 6mp (SMA, mesial SFG) left     Nfast (Cerebellum, Fastigial Nucleus) left    NaN
+     posterior_parietal_cortex           primary_motor_cortex         Area 7A (SPL) left                           Area 4a (PreCG) left              Area 7A (SPL) left                           Area 4a (PreCG) left    NaN
+     posterior_parietal_cortex supplementary_motor_area_proxy         Area 7A (SPL) left                     Area 6mp (SMA, mesial SFG)              Area 7A (SPL) left                Area 6mp (SMA, mesial SFG) left    NaN
+     posterior_parietal_cortex            basal_ganglia_proxy         Area 7A (SPL) left FuP (Ventral Striatum, Fundus of Putamen) left              Area 7A (SPL) left FuP (Ventral Striatum, Fundus of Putamen) left    NaN
+     posterior_parietal_cortex               cerebellum_proxy         Area 7A (SPL) left     Nfast (Cerebellum, Fastigial Nucleus) left              Area 7A (SPL) left     Nfast (Cerebellum, Fastigial Nucleus) left    NaN
+
+=== Latents ===
+polygenic_neurodevelopmental_liability                     0.5950
+sensorimotor_integration_burden                            0.5418
+neuronal_migration_synaptogenesis_myelination_variation    0.5212
+motor_sequence_planning_failure                            0.5204
+frontostriatal_attention_control_dysfunction               0.5075
+cerebellar_prediction_error_dysfunction                    0.4875
+catecholaminergic_support_deficit                          0.4750
+white_matter_connectivity_disruption                       0.4571
+
+=== Symptoms ===
+dual_task_motor_breakdown           0.5753
+handwriting_self_care_impairment    0.5400
+balance_and_gait_difficulty         0.5322
+impaired_motor_coordination         0.5291
+fine_motor_impairment               0.5261
+slow_motor_learning                 0.5013
+
+=== Phenotypes ===
+attention_motor_interference_profile    0.5420
+lifespan_functional_impact_profile      0.5329
+fine_motor_profile                      0.5324
+gross_motor_profile                     0.5307

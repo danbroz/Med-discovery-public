@@ -1,0 +1,247 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                           key      node_type                                       atlas_region                                                  centroid_mni                          feature_summary
+         genetic_vulnerability          input                                               None                                                          None                                     None
+           early_onset_loading          input                                               None                                                          None                                     None
+                chronic_stress          input                                               None                                                          None                                     None
+        frontal_or_cstc_insult          input                                               None                                                          None                                     None
+serotonergic_treatment_support          input                                               None                                                          None                                     None
+                           ofc         region                                Area Fo4 (OFC) left  (-29.001430615164523, 53.3412017167382, -15.175965665236049) receptors=no; genes=yes; connectivity=no
+                           acc         region                                 Area 33 (ACC) left  (-4.092857142857142, 13.314285714285717, 25.242857142857147) receptors=no; genes=yes; connectivity=no
+                   pfc_control         region                                Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262) receptors=no; genes=yes; connectivity=no
+                striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)   (10.758389261744966, 16.82550335570471, -5.468839884947272) receptors=no; genes=yes; connectivity=no
+                thalamus_proxy         region                                           thalamus (-14.367965711564409, -20.185252797841102, 4.345265497261693) receptors=no; genes=yes; connectivity=no
+    serotonergic_dysregulation latent_biology                                               None                                                          None                                     None
+    glutamate_habit_plasticity latent_biology                                               None                                                          None                                     None
+  hpa_crf_stress_sensitization latent_biology                                               None                                                          None                                     None
+            stress_habit_shift latent_biology                                               None                                                          None                                     None
+       cstc_loop_hyperactivity latent_biology                                               None                                                          None                                     None
+      top_down_control_failure latent_biology                                               None                                                          None                                     None
+        error_signal_overdrive latent_biology                                               None                                                          None                                     None
+               habit_dominance latent_biology                                               None                                                          None                                     None
+ compulsive_urge_amplification latent_biology                                               None                                                          None                                     None
+intrusive_obsessional_thoughts        symptom                                               None                                                          None                                     None
+            compulsive_rituals        symptom                                               None                                                          None                                     None
+       urge_resistance_failure        symptom                                               None                                                          None                                     None
+ stress_triggered_exacerbation        symptom                                               None                                                          None                                     None
+            cognitive_rigidity        symptom                                               None                                                          None                                     None
+           distress_impairment        symptom                                               None                                                          None                                     None
+
+=== EDGES ===
+                        source                         target                                                                         relation        compulsive_change
+         genetic_vulnerability     serotonergic_dysregulation                  raises vulnerability for obsessional-serotonergic dysregulation increased susceptibility
+         genetic_vulnerability     glutamate_habit_plasticity                        raises vulnerability in glutamate-dependent habit systems increased susceptibility
+           early_onset_loading          genetic_vulnerability                                          marks stronger familial/genetic loading                increased
+                chronic_stress   hpa_crf_stress_sensitization                                           stress sensitizes compulsive circuitry                increased
+                chronic_stress  stress_triggered_exacerbation          stress lowers the threshold for obsessive thoughts and compulsive urges                increased
+        frontal_or_cstc_insult       top_down_control_failure                           lesion-model burden weakens frontal inhibitory control                increased
+        frontal_or_cstc_insult        cstc_loop_hyperactivity                         frontal or subcortical injury can dysregulate CSTC loops                increased
+serotonergic_treatment_support     serotonergic_dysregulation                                          buffers obsessional-serotonergic burden               protective
+serotonergic_treatment_support intrusive_obsessional_thoughts                                              can reduce intrusive thought burden               protective
+serotonergic_treatment_support             compulsive_rituals                                            can reduce compulsive ritual pressure               protective
+    serotonergic_dysregulation intrusive_obsessional_thoughts                                           supports persistent obsessional burden                increased
+    serotonergic_dysregulation  compulsive_urge_amplification                                                 amplifies compulsive urge states                increased
+    glutamate_habit_plasticity             stress_habit_shift                      glutamate-dependent plasticity promotes shift toward habits                increased
+    glutamate_habit_plasticity        cstc_loop_hyperactivity                          strengthens pathological corticostriatal habit circuits                increased
+  hpa_crf_stress_sensitization             stress_habit_shift                    stress biases behavior from goal-directed to habitual control                increased
+  hpa_crf_stress_sensitization  compulsive_urge_amplification                     stress-related neurochemical shifts amplify compulsive urges                increased
+            stress_habit_shift                habit_dominance                       habitual responding becomes dominant over flexible control                increased
+       cstc_loop_hyperactivity                            ofc                             loads orbitofrontal valuation and checking circuitry  increased dysregulation
+       cstc_loop_hyperactivity                            acc                                loads anterior cingulate error/conflict circuitry  increased dysregulation
+       cstc_loop_hyperactivity                 striatum_proxy                              loads striatal habit and action-selection circuitry  increased dysregulation
+       cstc_loop_hyperactivity                 thalamus_proxy                              loads thalamic relay/re-entry loops in compulsivity  increased dysregulation
+       cstc_loop_hyperactivity         error_signal_overdrive             dysregulated CSTC looping can sustain persistent alarm/error signals                increased
+      top_down_control_failure                    pfc_control                                  reduces frontal regulation over intrusive urges         reduced function
+      top_down_control_failure        urge_resistance_failure                                 weakens ability to resist obsessions and rituals                increased
+      top_down_control_failure             cognitive_rigidity                    reduces flexible switching away from repetitive control loops                increased
+        error_signal_overdrive intrusive_obsessional_thoughts                 persistent error/conflict signals reinforce obsessional thoughts                increased
+        error_signal_overdrive            distress_impairment                        persistent inner alarm increases distress and dysfunction                increased
+               habit_dominance             compulsive_rituals                       habitual responding promotes repetitive ritual performance                increased
+               habit_dominance             cognitive_rigidity                           stimulus-response dominance reduces flexible cognition                increased
+ compulsive_urge_amplification        urge_resistance_failure                                            amplified urges are harder to inhibit                increased
+ compulsive_urge_amplification             compulsive_rituals                                  amplified urge states promote ritual completion                increased
+                           ofc intrusive_obsessional_thoughts altered orbitofrontal valuation/checking processes intensify obsessional content                increased
+                           acc         error_signal_overdrive     anterior cingulate dysfunction promotes persistent conflict/error monitoring                increased
+                striatum_proxy             compulsive_rituals                             striatal habit circuitry supports repetitive actions                increased
+                thalamus_proxy intrusive_obsessional_thoughts              thalamic relay dysfunction can sustain repetitive looped processing                increased
+ stress_triggered_exacerbation intrusive_obsessional_thoughts                                      stress worsens intrusive thoughts and urges                increased
+ stress_triggered_exacerbation             compulsive_rituals                                                stress worsens repetitive rituals                increased
+intrusive_obsessional_thoughts            distress_impairment                           intrusions increase distress and functional impairment                increased
+            compulsive_rituals            distress_impairment                                   time-consuming compulsions increase impairment                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    Area Fo4 (OFC) left  Area 33 (ACC) left  Area 8v1 (MFG) left  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)  thalamus
+Area Fo4 (OFC) left                                             698.345               2.080                6.875                                             495.015       0.0
+Area 33 (ACC) left                                                2.080             977.565              116.930                                              96.055       0.0
+Area 8v1 (MFG) left                                               6.875             116.930             6703.680                                               2.910       0.0
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)              495.015              96.055                2.910                                            2794.395       0.0
+thalamus                                                          0.000               0.000                0.000                                               0.000       0.0
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+DLGAP3    8.640087   3.483884            8     0.052513    0.778111
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GABRA2    7.660662   1.472412          104     0.468212    0.187486
+GABRB2    8.112538   1.295789            8     0.346513    0.091195
+  GAD1    8.635429   1.878978           72     0.180461    0.206737
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+SLC1A1    7.498825   1.243019            8     0.158138    0.190438
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+  TPH2    2.649612   0.482695            8    -0.050250    0.261655
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+DLGAP3    8.644900   3.914147            6     0.530017    0.999040
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+GABRA2    8.118859   1.598675           78     0.854947    0.291603
+GABRB2    7.977067   1.437059            6     0.287583    0.319589
+  GAD1    9.063930   1.833599           54     0.606461    0.169329
+GRIN2B    6.508622   1.715237            9     0.674611    0.432203
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+ HTR2A    7.087492   2.045575           75     0.437077    0.471426
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+SLC1A1    7.460867   1.404513            6     0.162117    0.461006
+SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+  TPH2    2.438400   0.856455            6    -0.225217    0.352445
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC_CONTROL : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_CONTROL : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+DLGAP3    8.671075   3.435845            8    -0.125812    0.962038
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+GABRA2    7.718805   1.556872          104     0.515174    0.284856
+GABRB2    8.222962   1.190676            8     0.599387    0.219932
+  GAD1    8.470140   1.869564           72     0.234585    0.268393
+GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+ HTR1A    4.492558   1.458132           12     0.359783    0.242565
+ HTR2A    7.762873   1.981006          100     0.864402    0.640734
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+SLC1A1    7.465975   1.352288            8     0.323425    0.404878
+SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+  TPH2    2.896663   0.998774            8     0.060712    0.337883
+
+=== PFC_CONTROL : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STRIATUM_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== STRIATUM_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+ CRHR1    3.964031   2.379487           32    -1.035025    0.898802
+DLGAP3    8.719138   3.168326           16     0.049219    1.452642
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+ FKBP5    4.906187   2.527519           32     0.287916    0.613248
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GABRB2    6.981731   1.334508           16    -0.441375    0.544187
+  GAD1    9.044125   1.833515          144     0.758347    0.338457
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+ HTR1A    2.481942   1.355876           24    -0.801938    0.579867
+ HTR2A    5.073537   1.742211          200    -0.405778    0.371937
+ NR3C1    8.892430   1.124793           40    -0.717515    0.756545
+SLC1A1    7.369725   1.119729           16     0.209775    0.544026
+SLC6A3    2.099873   1.649630           48    -0.235673    0.509298
+SLC6A4    1.711622   0.660476           88    -0.184322    0.416930
+  TPH2    1.998469   0.770223           16    -0.496944    0.347877
+
+=== STRIATUM_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== THALAMUS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== THALAMUS_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.585602   2.013440          410    -0.863433    0.784586
+  COMT    6.696718   3.651617         1230     0.355509    1.238947
+ CRHR1    4.810321   2.511263          820     0.113186    1.037727
+DLGAP3    8.643424   3.874781          410     0.204930    1.253712
+  DRD2    4.591492   2.406942         1025     0.775113    0.873169
+ FKBP5    4.833678   2.449193          820     0.330300    0.846161
+GABRA2    6.223685   1.895726         5330    -0.728558    0.760170
+GABRB2    7.291694   1.616901          410    -0.123261    0.882164
+  GAD1    8.376507   2.193450         3690     0.303600    0.910694
+GRIN2B    5.313393   2.186007          615    -0.079798    0.877520
+ HTR1A    2.629617   1.358534          615    -0.771302    0.660170
+ HTR2A    4.774745   1.960658         5125    -0.590627    0.589796
+ NR3C1    9.353292   1.207740         1025     0.257266    0.939003
+SLC1A1    7.436578   1.303379          410     0.308250    1.286644
+SLC6A3    2.601390   2.192195         1230     0.143562    1.338375
+SLC6A4    1.807653   0.679452         2255    -0.203712    0.498376
+  TPH2    2.399945   1.125647          410    -0.329352    0.643109
+
+=== THALAMUS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+hpa_crf_stress_sensitization     0.4000
+serotonergic_dysregulation       0.3900
+glutamate_habit_plasticity       0.3900
+cstc_loop_hyperactivity          0.2845
+stress_habit_shift               0.2375
+top_down_control_failure         0.2336
+compulsive_urge_amplification    0.2231
+error_signal_overdrive           0.1776
+habit_dominance                  0.1661
+
+=== REGIONAL STATE ===
+ofc               0.1263
+acc               0.1240
+striatum_proxy    0.1233
+pfc_control       0.1159
+thalamus_proxy    0.1120
+
+=== SYMPTOMS ===
+stress_triggered_exacerbation     0.3735
+intrusive_obsessional_thoughts    0.1615
+urge_resistance_failure           0.1138
+cognitive_rigidity                0.1056
+compulsive_rituals                0.0941
+distress_impairment               0.0875
+
+=== PHENOTYPES ===
+stress_sensitive_compulsive_profile    0.3015
+lesion_disinhibition_profile           0.2289
+obsessional_serotonergic_profile       0.1968
+habit_dominant_compulsive_profile      0.1424

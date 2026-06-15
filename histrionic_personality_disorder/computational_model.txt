@@ -1,0 +1,107 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE ===
+                                  key      node_type                atlas_region                          feature_summary
+                genetic_vulnerability          input                        None                                     None
+          innate_emotional_reactivity          input                        None                                     None
+                    early_life_stress          input                        None                                     None
+       social_attention_reinforcement          input                        None                                     None
+                 interpersonal_stress          input                        None                                     None
+                         ssri_support          input                        None                                     None
+                     recovery_support          input                        None                                     None
+                             amygdala         region          LB (Amygdala) left receptors=no; genes=yes; connectivity=no
+                                  ofc         region         Area Fo4 (OFC) left receptors=no; genes=yes; connectivity=no
+                          vmpfc_proxy   region_proxy medial orbitofrontal cortex receptors=no; genes=yes; connectivity=no
+                            acc_proxy   region_proxy               Area 33 (ACC) receptors=no; genes=yes; connectivity=no
+                         insula_proxy   region_proxy      Area Id1 (Insula) left receptors=no; genes=yes; connectivity=no
+  dopaminergic_attention_reward_drive latent_biology                        None                                     None
+           serotonergic_disinhibition latent_biology                        None                                     None
+           frontolimbic_disconnection latent_biology                        None                                     None
+           frontolimbic_dysregulation latent_biology                        None                                     None
+prefrontal_social_decision_impairment latent_biology                        None                                     None
+    attention_deprivation_empty_state latent_biology                        None                                     None
+                    attention_seeking        symptom                        None                                     None
+            novelty_sensation_seeking        symptom                        None                                     None
+       short_lived_intense_engagement        symptom                        None                                     None
+                   affective_lability        symptom                        None                                     None
+         impulsive_dramatic_outbursts        symptom                        None                                     None
+                     anger_dyscontrol        symptom                        None                                     None
+                    boredom_emptiness        symptom                        None                                     None
+        provocative_boundary_blurring        symptom                        None                                     None
+                misperceived_intimacy        symptom                        None                                     None
+            self_destructive_gestures        symptom                        None                                     None
+
+=== EDGE TABLE (first 12 rows) ===
+                        source                                target                                                              relation hpd_change
+         genetic_vulnerability   dopaminergic_attention_reward_drive               shapes reward sensitivity and novelty-seeking liability  increased
+         genetic_vulnerability            serotonergic_disinhibition    raises baseline risk for affective and impulse-control instability  increased
+         genetic_vulnerability            frontolimbic_disconnection                     contributes to heritable regulatory vulnerability  increased
+   innate_emotional_reactivity            frontolimbic_dysregulation          creates a high-arousal substrate for dysregulated expression  increased
+             early_life_stress            frontolimbic_disconnection         interacts with biology to weaken later regulatory integration  increased
+social_attention_reinforcement   dopaminergic_attention_reward_drive       social centrality is reinforcing and sustains attention seeking  increased
+          interpersonal_stress            serotonergic_disinhibition                  stress worsens irritability and impulsive reactivity  increased
+          interpersonal_stress            frontolimbic_dysregulation           relationship strain amplifies emotionally driven responding  increased
+                  ssri_support            serotonergic_disinhibition serotonergic support may reduce affective instability and impulsivity  decreased
+              recovery_support            frontolimbic_dysregulation                    supportive containment improves reflective control  decreased
+                      amygdala            frontolimbic_dysregulation          limbic hyperreactivity drives unchecked emotional escalation  increased
+                           ofc prefrontal_social_decision_impairment    OFC dysfunction weakens consequence evaluation and impulse control  increased
+
+=== WITHIN-CIRCUIT CONNECTIVITY ===
+              amygdala      ofc  acc_proxy  insula_proxy
+amygdala       244.570    0.075      0.045         0.065
+ofc              0.075  698.345      2.080         3.810
+acc_proxy        0.045    2.080    977.565         1.035
+insula_proxy     0.065    3.810      1.035       290.185
+
+=== AVAILABLE REGION-SPECIFIC TABLES ===
+amygdala: receptors=0, genes=12, connectivity_rows=0
+ofc: receptors=0, genes=12, connectivity_rows=0
+vmpfc_proxy: receptors=0, genes=12, connectivity_rows=0
+
+=== INPUTS ===
+genetic_vulnerability             0.65
+innate_emotional_reactivity       0.75
+early_life_stress                 0.55
+social_attention_reinforcement    0.80
+interpersonal_stress              0.60
+ssri_support                      0.15
+recovery_support                  0.30
+
+=== LATENT BIOLOGY ===
+dopaminergic_attention_reward_drive      0.6000
+frontolimbic_dysregulation               0.4868
+serotonergic_disinhibition               0.4685
+frontolimbic_disconnection               0.4680
+attention_deprivation_empty_state        0.4383
+prefrontal_social_decision_impairment    0.3886
+
+=== REGIONAL STATE (BURDEN / DYSREGULATION) ===
+amygdala        0.6114
+ofc             0.3860
+vmpfc_proxy     0.3495
+acc_proxy       0.3428
+insula_proxy    0.3031
+
+=== SYMPTOMS ===
+novelty_sensation_seeking         0.4522
+attention_seeking                 0.4369
+short_lived_intense_engagement    0.4246
+affective_lability                0.3573
+provocative_boundary_blurring     0.3527
+impulsive_dramatic_outbursts      0.3396
+misperceived_intimacy             0.3301
+anger_dyscontrol                  0.3218
+boredom_emptiness                 0.3066
+self_destructive_gestures         0.2392
+
+=== PHENOTYPES ===
+attention_driven_dramatic_profile             0.4379
+depleted_empty_rebound_profile                0.3986
+interpersonal_boundary_instability_profile    0.3732
+impulsive_affective_instability_profile       0.3145

@@ -1,0 +1,211 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                               key      node_type         atlas_region                                                  centroid_mni                          feature_summary
+             genetic_vulnerability          input                 None                                                          None                                     None
+                parental_rejection          input                 None                                                          None                                     None
+                  peer_humiliation          input                 None                                                          None                                     None
+            supportive_environment          input                 None                                                          None                                     None
+                   ssri_modulation          input                 None                                                          None                                     None
+                          amygdala         region   LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+                              mpfc         region Area p32 (pACC) left   (-6.9639365918097695, 49.28771466314399, 9.933289299867894) receptors=no; genes=yes; connectivity=no
+                               ofc         region  Area Fo4 (OFC) left  (-29.001430615164523, 53.3412017167382, -15.175965665236049) receptors=no; genes=yes; connectivity=no
+                               acc         region   Area 33 (ACC) left  (-4.092857142857142, 13.314285714285717, 25.242857142857147) receptors=no; genes=yes; connectivity=no
+        serotonergic_dysregulation latent_biology                 None                                                          None                                     None
+dopaminergic_social_reward_deficit latent_biology                 None                                                          None                                     None
+          epigenetic_sensitization latent_biology                 None                                                          None                                     None
+              amygdala_threat_bias latent_biology                 None                                                          None                                     None
+            pfc_regulatory_failure latent_biology                 None                                                          None                                     None
+             rejection_sensitivity latent_biology                 None                                                          None                                     None
+                  social_anhedonia latent_biology                 None                                                          None                                     None
+          negative_self_rumination latent_biology                 None                                                          None                                     None
+                 social_inhibition        symptom                 None                                                          None                                     None
+                         avoidance        symptom                 None                                                          None                                     None
+               feelings_inadequacy        symptom                 None                                                          None                                     None
+          negative_evaluation_fear        symptom                 None                                                          None                                     None
+                  anxious_distress        symptom                 None                                                          None                                     None
+               depressive_distress        symptom                 None                                                          None                                     None
+                anger_irritability        symptom                 None                                                          None                                     None
+               solitude_preference        symptom                 None                                                          None                                     None
+
+=== EDGES ===
+                            source                             target                                                                      relation              avpd_change
+             genetic_vulnerability         serotonergic_dysregulation    raises vulnerability for anxious and socially painful affective reactivity increased susceptibility
+             genetic_vulnerability dopaminergic_social_reward_deficit                         raises vulnerability for low social reward and apathy increased susceptibility
+             genetic_vulnerability           epigenetic_sensitization creates vulnerability for strong environmental calibration of trait avoidance increased susceptibility
+                parental_rejection           epigenetic_sensitization      amplifies long-term vulnerability through developmental stress embedding                increased
+                parental_rejection              rejection_sensitivity                          conditions anticipation of criticism and disapproval                increased
+                  peer_humiliation              rejection_sensitivity                                  intensifies social pain and fear of scrutiny                increased
+                  peer_humiliation           negative_self_rumination                                creates self-critical replay of social failure                increased
+            supportive_environment              rejection_sensitivity                                buffers expectation of criticism and rejection               protective
+            supportive_environment                          avoidance                            supports approach and corrective social experience               protective
+                   ssri_modulation         serotonergic_dysregulation                                              reduces serotonergic instability               protective
+                   ssri_modulation                   anxious_distress                                    reduces social-anxiety-like symptom burden               protective
+          epigenetic_sensitization         serotonergic_dysregulation                                      stabilizes high-anxiety trait expression                increased
+          epigenetic_sensitization               amygdala_threat_bias                               biases emotional circuitry toward social threat                increased
+        serotonergic_dysregulation               amygdala_threat_bias                              weakens modulation of fear and rejection signals                increased
+        serotonergic_dysregulation                   anxious_distress                                supports pervasive anxiety, tension, and worry                increased
+        serotonergic_dysregulation                depressive_distress                                        supports sadness, stress, and low mood                increased
+        serotonergic_dysregulation              rejection_sensitivity                            heightens social pain and sensitivity to criticism                increased
+dopaminergic_social_reward_deficit                   social_anhedonia                 reduces pleasure and motivational pull from social encounters                increased
+dopaminergic_social_reward_deficit                solitude_preference                                   fails to reinforce social approach behavior                increased
+                  social_anhedonia                          avoidance                          makes social approach less rewarding and less likely                increased
+             rejection_sensitivity           negative_evaluation_fear                        drives fear of criticism, rejection, and embarrassment                increased
+             rejection_sensitivity                           amygdala                             loads social threat detection and alarm responses  increased dysregulation
+              amygdala_threat_bias                           amygdala                              supports hyper-reactive social threat processing  increased dysregulation
+            pfc_regulatory_failure                               mpfc                      reflects weak top-down regulation of emotional responses         reduced function
+            pfc_regulatory_failure                                ofc            reflects weak orbitofrontal evaluation/regulation of social threat         reduced function
+            pfc_regulatory_failure                                acc              reflects weak disengagement from self-referential negative loops         reduced function
+                              mpfc                           amygdala                                           normally exerts top-down inhibition       reduced inhibition
+                               ofc           negative_evaluation_fear     reduced regulatory valuation sustains exaggerated social threat appraisal                increased
+                               acc           negative_self_rumination                 supports repetitive self-referential error/failure monitoring                increased
+                          amygdala                   anxious_distress                                            amplifies social fear and distress                increased
+                          amygdala                  social_inhibition             promotes freezing, restraint, and withdrawal in social situations                increased
+          negative_self_rumination                feelings_inadequacy                                 stabilizes inferiority and inadequacy beliefs                increased
+          negative_self_rumination                depressive_distress                                           sustains demoralization and sadness                increased
+          negative_self_rumination                 anger_irritability                   can amplify frustrated, misunderstood, or criticized states                increased
+          negative_evaluation_fear                  social_inhibition                                      promotes guarded behavior and inhibition                increased
+          negative_evaluation_fear                          avoidance                          promotes escape from scrutiny and embarrassment risk                increased
+               feelings_inadequacy                          avoidance                     supports withdrawal from social comparison and evaluation                increased
+               solitude_preference                          avoidance                              reinforces low-risk solitary behavioral defaults                increased
+                  anxious_distress                          avoidance                       sustains avoidance as an anxiolytic short-term strategy                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                      LB (Amygdala) left  Area p32 (pACC) left  Area Fo4 (OFC) left  Area 33 (ACC) left
+LB (Amygdala) left                   276                     0                    0                   0
+Area p32 (pACC) left                   0                 19399                    2                 511
+Area Fo4 (OFC) left                    0                     2                  762                   0
+Area 33 (ACC) left                     0                   511                    0                 522
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+   IL6    2.392836   1.012524           14     0.173964    1.127447
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+  OXTR    5.481329   2.114813           14     0.208743    0.776505
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+   TNF    2.985986   1.786056           14    -0.385279    0.709226
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== MPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== MPFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+ CRHR1    5.238798   1.959829           64     0.137673    0.666190
+  DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+ HTR1A    4.864731   1.657835           48     0.584969    0.515345
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+   IL6    2.468644   0.836864           32     0.209894    0.906095
+  MAOA    5.688919   1.874365          496     0.213809    0.513407
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+  OXTR    5.128106   2.061371           32    -0.159934    0.586625
+SLC6A3    2.090293   1.704914           96    -0.166331    0.456316
+SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+   TNF    2.886447   1.530403           32    -0.400509    1.064628
+  TPH2    2.509237   0.838277           32    -0.155825    0.338133
+
+=== MPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+   IL6    1.985437   0.905265            8    -0.174875    1.004383
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+  OXTR    4.951225   2.117506            8    -0.344725    0.616400
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+   TNF    2.853975   1.329279            8    -0.267050    0.588345
+  TPH2    2.649612   0.482695            8    -0.050250    0.261655
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+ HTR2A    7.087492   2.045575           75     0.437077    0.471426
+   IL6    2.022550   0.405522            6    -0.282350    0.476819
+  MAOA    5.880426   1.865243           93     0.464074    0.678755
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+  OXTR    5.430117   2.284446            6     0.183783    0.506796
+SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+   TNF    3.633267   2.277348            6     0.248400    0.778812
+  TPH2    2.438400   0.856455            6    -0.225217    0.352445
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+epigenetic_sensitization              0.5750
+rejection_sensitivity                 0.4794
+serotonergic_dysregulation            0.4312
+dopaminergic_social_reward_deficit    0.4025
+amygdala_threat_bias                  0.3358
+negative_self_rumination              0.3108
+pfc_regulatory_failure                0.2566
+social_anhedonia                      0.2129
+
+=== REGIONAL STATE ===
+amygdala    0.2230
+acc         0.1601
+mpfc        0.1466
+ofc         0.1429
+
+=== SYMPTOMS ===
+negative_evaluation_fear    0.2618
+anxious_distress            0.2561
+depressive_distress         0.2240
+feelings_inadequacy         0.2078
+anger_irritability          0.1823
+social_inhibition           0.1763
+avoidance                   0.1576
+solitude_preference         0.1351
+
+=== PHENOTYPES ===
+ruminative_inadequacy_profile           0.2212
+rejection_sensitive_avoidant_profile    0.2032
+social_anhedonic_avoidant_profile       0.1562

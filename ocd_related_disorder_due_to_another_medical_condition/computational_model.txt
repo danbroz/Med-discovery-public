@@ -1,0 +1,283 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (key fields) ===
+                                   key      node_type                                            atlas_region region_identifier                           feature_summary
+                 genetic_vulnerability          input                                                                                                                    
+             focal_neurological_insult          input                                                                                                                    
+        temporal_limbic_seizure_burden          input                                                                                                                    
+     autoimmune_infectious_cns_process          input                                                                                                                    
+        systemic_metabolic_disturbance          input                                                                                                                    
+                chronic_medical_stress          input                                                                                                                    
+underlying_condition_treatment_support          input                                                                                                                    
+            behavioral_control_support          input                                                                                                                    
+                                   ofc         region                                     Area Fo4 (OFC) left                    receptors=no; genes=yes; connectivity=no
+                                   acc         region                                  Area p24ab (pACC) left                    receptors=no; genes=yes; connectivity=no
+                         caudate_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                    receptors=no; genes=yes; connectivity=no
+                        thalamus_proxy         region                CM (Thalamus, centromedian Nucleus) left                    receptors=no; genes=yes; connectivity=no
+                              amygdala         region                                      LB (Amygdala) left                    receptors=no; genes=yes; connectivity=no
+                           hippocampus         region                                  CA1 (Hippocampus) left                   receptors=yes; genes=yes; connectivity=no
+                      cerebellum_proxy         region              Nfast (Cerebellum, Fastigial Nucleus) left                    receptors=no; genes=yes; connectivity=no
+          lesion_network_disconnection latent_biology                                                                                                                    
+      glutamatergic_cstc_hyperactivity latent_biology                                                                                                                    
+          gabaergic_inhibitory_failure latent_biology                                                                                                                    
+   noradrenergic_arousal_dysregulation latent_biology                                                                                                                    
+     hpa_axis_epigenetic_sensitization latent_biology                                                                                                                    
+                 cstc_loop_dysfunction latent_biology                                                                                                                    
+              frontolimbic_threat_bias latent_biology                                                                                                                    
+          contextual_memory_triggering latent_biology                                                                                                                    
+           intrusive_salience_pressure latent_biology                                                                                                                    
+      compulsive_action_gating_failure latent_biology                                                                                                                    
+                  intrusive_obsessions        symptom                                                                                                                    
+                    compulsive_rituals        symptom                                                                                                                    
+                      anxiety_distress        symptom                                                                                                                    
+           response_inhibition_failure        symptom                                                                                                                    
+        contextual_trigger_sensitivity        symptom                                                                                                                    
+           motoric_compulsion_pressure        symptom                                                                                                                    
+
+=== EDGE TABLE ===
+                                source                              target                                                                                            relation ocrd_medical_change
+                 genetic_vulnerability    glutamatergic_cstc_hyperactivity                                                       can bias baseline excitatory CSTC tone upward           increased
+                 genetic_vulnerability   hpa_axis_epigenetic_sensitization                           can increase vulnerability to stress-mediated long-term regulatory change           increased
+             focal_neurological_insult        lesion_network_disconnection              directly disrupts distributed control circuits after TBI, stroke, or neurodegeneration           increased
+             focal_neurological_insult    glutamatergic_cstc_hyperactivity                                can destabilize glutamatergic homeostasis and produce CSTC overdrive           increased
+        temporal_limbic_seizure_burden        lesion_network_disconnection                                                  disrupts limbic and contextual processing networks           increased
+        temporal_limbic_seizure_burden        contextual_memory_triggering                                  can bind symptoms to temporal-limbic and contextual cue processing           increased
+        temporal_limbic_seizure_burden            frontolimbic_threat_bias                                        can increase limbic emotional loading and autonomic salience           increased
+     autoimmune_infectious_cns_process        lesion_network_disconnection                                    can create distributed inflammatory or infectious network burden           increased
+     autoimmune_infectious_cns_process    glutamatergic_cstc_hyperactivity                                         can disturb excitatory balance within OCD-relevant circuits           increased
+        systemic_metabolic_disturbance    glutamatergic_cstc_hyperactivity                                          can promote excitotoxic or excitatory-inhibitory imbalance           increased
+        systemic_metabolic_disturbance        gabaergic_inhibitory_failure                                           can reduce inhibitory buffering against CSTC overactivity           increased
+                chronic_medical_stress   hpa_axis_epigenetic_sensitization                         can induce durable epigenetic and endocrine recalibration of stress systems           increased
+                chronic_medical_stress noradrenergic_arousal_dysregulation                                              elevates stress-linked vigilance and arousal signaling           increased
+      glutamatergic_cstc_hyperactivity               cstc_loop_dysfunction                                          drives persistent hyperactivity of OCD-relevant CSTC loops           increased
+          gabaergic_inhibitory_failure               cstc_loop_dysfunction                                           removes inhibitory control over repetitive circuit output           increased
+   noradrenergic_arousal_dysregulation            frontolimbic_threat_bias                                                         amplifies anxiety-linked emotional salience           increased
+     hpa_axis_epigenetic_sensitization            frontolimbic_threat_bias                                 sustains exaggerated stress responsivity in limbic-control networks           increased
+          lesion_network_disconnection               cstc_loop_dysfunction                                    disconnects or dyscoordinates core selection and gating circuits           increased
+                 cstc_loop_dysfunction                                 ofc                          maps network overactivity onto orbitofrontal error and valuation circuitry           increased
+                 cstc_loop_dysfunction                                 acc                          maps network overactivity onto cingulate monitoring and distress circuitry           increased
+                 cstc_loop_dysfunction                       caudate_proxy                              maps network dysregulation onto striatal selection and habit circuitry           increased
+                 cstc_loop_dysfunction                      thalamus_proxy                                           maps loop dysregulation onto thalamocortical relay burden           increased
+              frontolimbic_threat_bias                            amygdala                                                        loads fear and salience processing circuitry           increased
+          contextual_memory_triggering                         hippocampus                                                    loads medial-temporal contextual memory circuits           increased
+      compulsive_action_gating_failure                    cerebellum_proxy                                       can recruit motor-pattern support systems for repetitive acts           increased
+                 cstc_loop_dysfunction         intrusive_salience_pressure                  transforms network hyperactivity into persistent internal error / threat signaling           increased
+              frontolimbic_threat_bias         intrusive_salience_pressure                                   adds anxiety and emotional urgency to intrusive signal generation           increased
+           intrusive_salience_pressure                intrusive_obsessions                                                        promotes intrusive obsessive thought content           increased
+                 cstc_loop_dysfunction    compulsive_action_gating_failure                                          impairs action termination and repetitive behavior control           increased
+      compulsive_action_gating_failure                  compulsive_rituals                                            permits repetitive behaviors and mental rituals to occur           increased
+              frontolimbic_threat_bias                    anxiety_distress                                            increases distress that drives compulsive relief-seeking           increased
+          contextual_memory_triggering      contextual_trigger_sensitivity                                             links symptoms to trauma-associated or situational cues           increased
+      compulsive_action_gating_failure         response_inhibition_failure                                                reduces the ability to suppress repetitive responses           increased
+      compulsive_action_gating_failure         motoric_compulsion_pressure                                can generate repetitive motoric pressure associated with compulsions           increased
+underlying_condition_treatment_support        lesion_network_disconnection can partially reduce medically driven network burden when the precipitating condition is stabilized           decreased
+underlying_condition_treatment_support               cstc_loop_dysfunction                            can reduce the circuit consequences of the precipitating medical process           decreased
+            behavioral_control_support    compulsive_action_gating_failure                              can strengthen compensatory inhibitory control and symptom containment           decreased
+            behavioral_control_support                    anxiety_distress                                            can reduce downstream distress and compulsive escalation           decreased
+
+=== REGION: ofc ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+DLGAP3    8.640087   3.483884            8     0.052513    0.778111
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GABRA2    7.660662   1.472412          104     0.468212    0.187486
+  GAD1    8.635429   1.878978           72     0.180461    0.206737
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+  GRM5    7.514033   2.133320           12     0.412042    0.173048
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: acc ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+  COMT    6.626667   3.449944           18     0.128428    0.590874
+ CRHR1    5.037908   2.235077           12     0.254025    0.541458
+DLGAP3    8.812333   3.729406            6     0.292633    0.410533
+ FKBP5    3.499567   1.660310           12    -0.799333    0.415369
+GABRA2    8.136708   1.478496           78     0.799604    0.300161
+  GAD1    8.507307   1.906101           54     0.404194    0.262115
+GRIN2B    6.430744   1.558241            9     0.625622    0.151891
+  GRM5    7.721089   2.108743            9     0.571144    0.275861
+ HTR2A    7.570288   1.887168           75     0.733983    0.223171
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: caudate_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  COMT    6.334303   3.508445           36    -0.298369    1.144405
+ CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+DLGAP3    8.578433   3.180932           12    -0.018050    1.353384
+ FKBP5    4.946871   2.609290           24     0.220421    0.612810
+GABRA2    7.971366   1.779787          156     0.760445    0.685440
+  GAD1    9.070838   1.815833          108     0.735861    0.339088
+GRIN2B    6.220944   1.646767           18     0.647833    0.420739
+  GRM5    7.807567   2.037353           18     0.743578    0.522347
+ HTR2A    5.122333   1.672406          150    -0.381103    0.276388
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: thalamus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.950650   1.905805            6    -1.176750    0.745791
+  COMT    7.294361   4.123617           18     1.347411    1.679779
+ CRHR1    5.316600   2.796570           12     0.421183    1.185759
+DLGAP3    7.707600   5.730137            6    -0.233800    1.818713
+ FKBP5    5.473342   2.845248           12     0.688617    0.841032
+GABRA2    5.655063   1.976911           78    -0.988859    0.870975
+  GAD1    7.855733   2.458170           54    -0.069507    1.244461
+GRIN2B    4.307800   1.959653            9    -0.533233    0.605779
+  GRM5    6.285522   2.275176            9    -0.485411    0.633745
+ HTR2A    5.148943   2.320312           75    -0.356659    0.720124
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+DLGAP3    8.968071   3.202782           14     0.713007    0.841323
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+  GRM5    7.861019   2.246626           21     0.768329    0.642251
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: hippocampus ===
+Receptors:
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+DLGAP3    9.100413   3.024167           16     0.489269    0.812495
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+  GRM5    8.317125   2.151004           24     0.967625    0.504044
+ HTR2A    6.079706   2.649687          200     0.028969    0.956248
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: cerebellum_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.167967   0.597530            6    -1.750383    0.750859
+  COMT    6.463578   3.461408           18    -0.170339    0.646965
+ CRHR1    3.933450   2.473507           12    -0.633233    0.650476
+DLGAP3    7.807417   4.299885            6    -0.438283    0.875754
+ FKBP5    4.908458   2.729477           12     0.506208    0.838928
+GABRA2    5.178208   1.732166           78    -1.783636    0.617527
+  GAD1    8.951193   2.019727           54     0.769041    0.560115
+GRIN2B    3.751500   1.805389            9    -1.214244    0.485970
+  GRM5    7.176767   1.933899            9    -0.017522    0.649327
+ HTR2A    5.546272   1.977216           75    -0.335907    0.446198
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+<no circuit connectivity available>
+
+=== SIMULATION: example lesion-linked stress-sensitized medical OCRD phenotype ===
+
+INPUTS
+genetic_vulnerability                     0.45
+focal_neurological_insult                 0.55
+temporal_limbic_seizure_burden            0.35
+autoimmune_infectious_cns_process         0.25
+systemic_metabolic_disturbance            0.20
+chronic_medical_stress                    0.60
+underlying_condition_treatment_support    0.25
+behavioral_control_support                0.20
+
+LATENTS
+lesion_network_disconnection           0.3200
+glutamatergic_cstc_hyperactivity       0.3250
+gabaergic_inhibitory_failure           0.2715
+noradrenergic_arousal_dysregulation    0.3360
+hpa_axis_epigenetic_sensitization      0.3210
+cstc_loop_dysfunction                  0.1883
+frontolimbic_threat_bias               0.2409
+contextual_memory_triggering           0.2457
+intrusive_salience_pressure            0.1759
+compulsive_action_gating_failure       0.1229
+
+REGIONAL_STATE
+ofc                 0.1802
+acc                 0.1768
+caudate_proxy       0.1689
+thalamus_proxy      0.1865
+amygdala            0.2382
+hippocampus         0.2144
+cerebellum_proxy    0.1698
+
+SYMPTOMS
+intrusive_obsessions              0.1671
+compulsive_rituals                0.1114
+anxiety_distress                  0.1827
+response_inhibition_failure       0.1002
+contextual_trigger_sensitivity    0.1883
+motoric_compulsion_pressure       0.1257
+
+PHENOTYPES
+medical_cstc_ocd_profile         0.1622
+limbic_contextual_ocd_profile    0.2205
+stress_sensitized_ocd_profile    0.3599
+focal_lesion_ocd_profile         0.2865
+mixed_medical_ocd_profile        0.1404

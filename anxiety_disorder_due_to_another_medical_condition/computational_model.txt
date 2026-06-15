@@ -1,0 +1,293 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                              key      node_type                                            atlas_region                                                   centroid_mni                           feature_summary
+                 focal_cns_lesion          input                                                    None                                                           None                                      None
+           traumatic_brain_injury          input                                                    None                                                           None                                      None
+   endocrine_catecholamine_excess          input                                                    None                                                           None                                      None
+           chronic_pain_condition          input                                                    None                                                           None                                      None
+             early_medical_trauma          input                                                    None                                                           None                                      None
+            medical_stabilization          input                                                    None                                                           None                                      None
+                         amygdala         region                                      LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                      hippocampus         region                                  CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                              acc         region                                      Area 33 (ACC) left   (-4.092857142857142, 13.314285714285717, 25.242857142857147)  receptors=no; genes=yes; connectivity=no
+                         left_pfc         region                                     Area 8v1 (MFG) left     (-35.2425934919864, 23.561923263720246, 51.07455075279262)  receptors=no; genes=yes; connectivity=no
+              basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left   (-11.604950495049508, 15.60396039603961, -5.409900990099004)  receptors=no; genes=yes; connectivity=no
+         amine_pathway_disruption latent_biology                                                    None                                                           None                                      None
+          serotonergic_disruption latent_biology                                                    None                                                           None                                      None
+         noradrenergic_disruption latent_biology                                                    None                                                           None                                      None
+          dopaminergic_disruption latent_biology                                                    None                                                           None                                      None
+             gaba_destabilization latent_biology                                                    None                                                           None                                      None
+       catecholamine_hyperarousal latent_biology                                                    None                                                           None                                      None
+     perk_sting_neuroinflammation latent_biology                                                    None                                                           None                                      None
+                neuroinflammation latent_biology                                                    None                                                           None                                      None
+              epigenetic_scarring latent_biology                                                    None                                                           None                                      None
+           hpa_axis_dysregulation latent_biology                                                    None                                                           None                                      None
+            central_sensitization latent_biology                                                    None                                                           None                                      None
+     diffuse_axonal_disconnection latent_biology                                                    None                                                           None                                      None
+         fear_network_instability latent_biology                                                    None                                                           None                                      None
+           autonomic_hyperarousal        symptom                                                    None                                                           None                                      None
+              panic_like_symptoms        symptom                                                    None                                                           None                                      None
+                  somatic_anxiety        symptom                                                    None                                                           None                                      None
+                 anxious_distress        symptom                                                    None                                                           None                                      None
+       depression_anxiety_overlap        symptom                                                    None                                                           None                                      None
+           contextual_threat_bias        symptom                                                    None                                                           None                                      None
+cognitive_affective_dysregulation        symptom                                                    None                                                           None                                      None
+
+=== EDGES ===
+                           source                            target                                                        relation    medical_anxiety_change
+                 focal_cns_lesion          amine_pathway_disruption          disrupts aminergic pathways linked to mood and anxiety                 increased
+                 focal_cns_lesion                          left_pfc                          burdens left frontal cortical function     increased dysfunction
+                 focal_cns_lesion               basal_ganglia_proxy                         burdens subcortical affective circuitry     increased dysfunction
+           traumatic_brain_injury      diffuse_axonal_disconnection              disrupts large-scale communication across networks                 increased
+           traumatic_brain_injury      perk_sting_neuroinflammation             activates inflammatory signaling after brain injury                 increased
+           traumatic_brain_injury                          left_pfc     burdens frontal-lobe function after contusion/disconnection     increased dysfunction
+   endocrine_catecholamine_excess        catecholamine_hyperarousal                raises hyperadrenergic bodily and mental arousal                 increased
+           chronic_pain_condition             central_sensitization                   amplifies persistent bodily threat processing                 increased
+           chronic_pain_condition               epigenetic_scarring    can induce stable molecular changes sustaining sensitization                 increased
+             early_medical_trauma               epigenetic_scarring       creates long-term stress-response molecular vulnerability                 increased
+             early_medical_trauma            hpa_axis_dysregulation                programs long-term stress-response vulnerability                 increased
+            medical_stabilization        catecholamine_hyperarousal                                   buffers systemic hyperarousal                protective
+            medical_stabilization                 neuroinflammation                          buffers downstream inflammatory burden                protective
+            medical_stabilization          fear_network_instability        supports restoration of physiologic and neural stability                protective
+         amine_pathway_disruption           serotonergic_disruption                                 reduces serotonergic regulation                 increased
+         amine_pathway_disruption          noradrenergic_disruption                        reduces/deranges noradrenergic signaling                 increased
+         amine_pathway_disruption           dopaminergic_disruption                         reduces/deranges dopaminergic signaling                 increased
+         amine_pathway_disruption          fear_network_instability                  destabilizes limbic-cortical threat processing                 increased
+     perk_sting_neuroinflammation                 neuroinflammation        amplifies cytokine and injury-linked inflammatory burden                 increased
+                neuroinflammation               epigenetic_scarring        alters gene expression and synaptic/neurogenic processes                 increased
+                neuroinflammation          fear_network_instability             destabilizes synaptic function in anxiety circuitry                 increased
+              epigenetic_scarring            hpa_axis_dysregulation                sustains long-term stress-response vulnerability                 increased
+            central_sensitization                   somatic_anxiety converts bodily threat processing into chronic anxiety symptoms                 increased
+     diffuse_axonal_disconnection          fear_network_instability         weakens coordinated control across distributed circuits                 increased
+     diffuse_axonal_disconnection                          left_pfc                            impairs frontal executive regulation     increased dysfunction
+     diffuse_axonal_disconnection                               acc                      impairs monitoring and control integration     increased dysfunction
+       catecholamine_hyperarousal            autonomic_hyperarousal              drives adrenergic symptoms and physiologic anxiety                 increased
+       catecholamine_hyperarousal               panic_like_symptoms                           promotes acute surges of bodily alarm                 increased
+           hpa_axis_dysregulation                          amygdala                  amplifies threat-reactive emotional processing   increased dysregulation
+           hpa_axis_dysregulation                       hippocampus                  burdens stress-sensitive contextual processing          reduced function
+           hpa_axis_dysregulation                          left_pfc                             weakens top-down regulatory control          reduced function
+         fear_network_instability                          amygdala                      loads threat detection and fear generation   increased dysregulation
+         fear_network_instability                       hippocampus                              impairs contextual safety learning          reduced function
+         fear_network_instability                               acc             burdens conflict monitoring and emotional appraisal          reduced function
+         fear_network_instability                          left_pfc                burdens executive control over anxiety responses          reduced function
+                         left_pfc                          amygdala                             normally exerts top-down inhibition        reduced inhibition
+                         amygdala                  anxious_distress                  amplifies subjective threat and anxious affect                 increased
+                         amygdala            contextual_threat_bias                                 biases perception toward danger                 increased
+                      hippocampus            contextual_threat_bias         reduced contextualization impairs safety discrimination reduced contextualization
+                              acc cognitive_affective_dysregulation                 impaired monitoring weakens adaptive regulation                 increased
+                         left_pfc cognitive_affective_dysregulation            impaired executive control weakens affect regulation                 increased
+          serotonergic_disruption        depression_anxiety_overlap                  contributes to mixed anxious-depressive burden                 increased
+         noradrenergic_disruption        depression_anxiety_overlap                       contributes to arousal/mood dysregulation                 increased
+          dopaminergic_disruption        depression_anxiety_overlap                  contributes to motivation and affective burden                 increased
+           autonomic_hyperarousal               panic_like_symptoms            escalates physiologic alarm into panic-like episodes                 increased
+           autonomic_hyperarousal                   somatic_anxiety                               amplifies bodily anxiety symptoms                 increased
+              panic_like_symptoms                  anxious_distress                                     intensifies ongoing anxiety                 increased
+cognitive_affective_dysregulation                  anxious_distress                         sustains difficulty controlling anxiety                 increased
+           contextual_threat_bias                  anxious_distress                       biases situations toward perceived danger                 increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                         LB (Amygdala) left  CA1 (Hippocampus) left  Area 33 (ACC) left  Area 8v1 (MFG) left  FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+LB (Amygdala) left                                                      276                       0                   0                    0                                                        0
+CA1 (Hippocampus) left                                                    0                     862                   0                    0                                                        1
+Area 33 (ACC) left                                                        0                       0                 522                  198                                                       33
+Area 8v1 (MFG) left                                                       0                       0                 198                 5672                                                        0
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                   0                       1                  33                    0                                                     2614
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+  CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+    DBH    2.221610   1.005047           21    -0.238133    0.810462
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+EIF2AK3    4.325379   0.962412           14     0.509736    1.136651
+  FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ GABRA2    8.655185   1.624692          182     1.367407    0.575439
+ GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+  HTR1A    4.510162   2.272854           21     0.317105    1.132796
+  HTR2A    6.457724   2.230421          175     0.172246    0.678875
+   IL1B    3.647605   1.433646           21     0.019371    1.035487
+    IL6    2.392836   1.012524           14     0.173964    1.127447
+  NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+ SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+ SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+ SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+TMEM173    5.476743   2.098782           14     0.430371    0.790047
+    TNF    2.985986   1.786056           14    -0.385279    0.709226
+   TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ADRA2A    4.298275   2.082820           24     0.125287    1.160998
+   BDNF    5.638438   2.851173           16     0.533731    1.414835
+  CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+    DBH    2.417275   0.928359           24    -0.358292    0.803196
+   DRD2    3.819515   2.124018           40     0.115163    1.234718
+EIF2AK3    3.641169   0.801453           16    -0.220931    0.969391
+  FKBP5    5.287750   2.991862           32     0.558866    1.301838
+ GABRA2    8.208484   1.631502          208     0.900643    0.435795
+ GABRB2    7.984463   1.324134           16     0.411287    0.217944
+  HTR1A    5.652654   2.623296           24     1.054863    1.335226
+  HTR2A    6.079706   2.649687          200     0.028969    0.956248
+   IL1B    3.228713   1.419698           24    -0.341350    0.993966
+    IL6    2.201325   0.696271           16    -0.270200    0.945900
+  NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+ SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+ SLC6A3    2.298956   1.516447           48    -0.208298    0.500259
+ SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+TMEM173    4.712981   1.795175           16    -0.306700    1.153855
+    TNF    2.754838   1.271581           16    -0.514088    0.830098
+   TPH2    3.547069   1.534409           16     0.467569    1.057322
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ADRA2A    4.157667   2.071993            9     0.349044    0.656220
+   BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  CRHR1    4.980858   2.195075           12     0.147525    0.616369
+    DBH    2.910622   0.492084            9     0.486911    0.387880
+   DRD2    3.364467   2.030234           15    -0.009313    0.489381
+EIF2AK3    4.005250   0.932225            6     0.072583    0.596258
+  FKBP5    4.949175   2.579626           12     0.084408    0.370364
+ GABRA2    8.118859   1.598675           78     0.854947    0.291603
+ GABRB2    7.977067   1.437059            6     0.287583    0.319589
+  HTR1A    4.650922   2.081012            9     0.375600    0.781548
+  HTR2A    7.087492   2.045575           75     0.437077    0.471426
+   IL1B    4.165733   1.167364            9     0.282544    0.441346
+    IL6    2.022550   0.405522            6    -0.282350    0.476819
+  NR3C1    9.432000   1.297241           15     0.012267    0.656989
+ SLC6A2    1.404633   0.578627            6     0.109350    0.579562
+ SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+ SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+TMEM173    5.418700   2.058028            6     0.434983    0.651653
+    TNF    3.633267   2.277348            6     0.248400    0.778812
+   TPH2    2.438400   0.856455            6    -0.225217    0.352445
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LEFT_PFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== LEFT_PFC : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ADRA2A    4.332058   2.384898           12     0.148975    0.704177
+   BDNF    5.264200   2.070726            8     0.201300    0.549120
+  CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+    DBH    3.260200   0.921546           12     0.219600    0.480866
+   DRD2    2.842185   1.856980           20    -0.700490    0.622121
+EIF2AK3    3.715037   0.808882            8     0.059600    0.398004
+  FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+ GABRA2    7.718805   1.556872          104     0.515174    0.284856
+ GABRB2    8.222962   1.190676            8     0.599387    0.219932
+  HTR1A    4.492558   1.458132           12     0.359783    0.242565
+  HTR2A    7.762873   1.981006          100     0.864402    0.640734
+   IL1B    3.241783   1.040622           12    -0.410800    0.652467
+    IL6    2.044225   0.800203            8    -0.174187    1.077107
+  NR3C1    9.469765   1.052399           20     0.402145    0.472749
+ SLC6A2    1.237313   0.282436            8    -0.367688    0.175513
+ SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+ SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+TMEM173    5.176350   2.128692            8     0.001687    0.687942
+    TNF    3.175512   1.820857            8    -0.181950    0.691111
+   TPH2    2.896663   0.998774            8     0.060712    0.337883
+
+=== LEFT_PFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== BASAL_GANGLIA_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== BASAL_GANGLIA_PROXY : gene panel summary ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ADRA2A    3.153822   1.555159           18    -0.734117    1.844310
+   BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+    DBH    2.154417   0.747833           18    -0.469878    0.733881
+   DRD2    6.119210   2.344979           30     2.320237    1.023981
+EIF2AK3    3.405750   0.944642           12    -0.696750    1.041806
+  FKBP5    4.946871   2.609290           24     0.220421    0.612810
+ GABRA2    7.971366   1.779787          156     0.760445    0.685440
+ GABRB2    6.895192   1.334288           12    -0.541575    0.599097
+  HTR1A    2.212033   1.165959           18    -0.920606    0.555960
+  HTR2A    5.122333   1.672406          150    -0.381103    0.276388
+   IL1B    3.031194   1.337306           18    -0.742244    0.911014
+    IL6    2.499683   0.893221           12     0.206058    1.118091
+  NR3C1    8.845813   1.140821           30    -0.905580    0.739992
+ SLC6A2    1.461367   0.486896           12    -0.060608    0.507452
+ SLC6A3    1.960617   1.684585           36    -0.279892    0.496073
+ SLC6A4    1.650494   0.711277           66    -0.160020    0.445940
+TMEM173    5.946192   1.996232           12     1.001208    0.681433
+    TNF    2.984458   1.823516           12    -0.374283    0.913885
+   TPH2    1.924133   0.792027           12    -0.500817    0.391488
+
+=== BASAL_GANGLIA_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+amine_pathway_disruption        0.3900
+central_sensitization           0.3771
+diffuse_axonal_disconnection    0.3657
+perk_sting_neuroinflammation    0.3175
+epigenetic_scarring             0.3141
+neuroinflammation               0.2411
+gaba_destabilization            0.2127
+fear_network_instability        0.2074
+hpa_axis_dysregulation          0.1940
+serotonergic_disruption         0.1922
+catecholamine_hyperarousal      0.1691
+noradrenergic_disruption        0.1619
+dopaminergic_disruption         0.1411
+
+=== REGIONAL STATE ===
+basal_ganglia_proxy    0.2610
+left_pfc               0.2316
+acc                    0.1457
+hippocampus            0.1281
+amygdala               0.1114
+
+=== SYMPTOMS ===
+somatic_anxiety                      0.2012
+depression_anxiety_overlap           0.1698
+cognitive_affective_dysregulation    0.1468
+anxious_distress                     0.0941
+contextual_threat_bias               0.0878
+autonomic_hyperarousal               0.0874
+panic_like_symptoms                  0.0799
+
+=== PHENOTYPES ===
+post_stroke_aminergic_profile        0.4575
+pain_sensitized_anxiety_profile      0.3934
+tbi_inflammatory_anxiety_profile     0.3380
+endocrine_hyperadrenergic_profile    0.1732

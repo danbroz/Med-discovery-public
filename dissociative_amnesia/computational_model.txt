@@ -1,0 +1,264 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                        key      node_type                                       atlas_region                                                   centroid_mni                           feature_summary
+               traumatic_stressor_intensity          input                                               None                                                           None                                      None
+                        chronic_stress_load          input                                               None                                                           None                                      None
+            genetic_internalizing_diathesis          input                                               None                                                           None                                      None
+              dissociative_state_dependency          input                                               None                                                           None                                      None
+                          retrieval_support          input                                               None                                                           None                                      None
+                                pfc_control         region                              Area Fp2 (FPole) left    (-5.641685520361989, 59.519513574660635, -3.11057692307692)  receptors=no; genes=yes; connectivity=no
+                                hippocampus         region                             CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                                   amygdala         region                                 LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                             thalamus_proxy         region                                           thalamus  (-14.367965711564409, -20.185252797841102, 4.345265497261693)  receptors=no; genes=yes; connectivity=no
+                        basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)    (10.758389261744966, 16.82550335570471, -5.468839884947272)  receptors=no; genes=yes; connectivity=no
+                   hpa_axis_hyperactivation latent_biology                                               None                                                           None                                      None
+       glucocorticoid_gene_expression_shift latent_biology                                               None                                                           None                                      None
+          hippocampal_contextual_disruption latent_biology                                               None                                                           None                                      None
+            prefrontal_retrieval_inhibition latent_biology                                               None                                                           None                                      None
+                 frontolimbic_disconnection latent_biology                                               None                                                           None                                      None
+              autobiographical_access_block latent_biology                                               None                                                           None                                      None
+state_dependent_memory_compartmentalization latent_biology                                               None                                                           None                                      None
+      dopaminergic_motivational_suppression latent_biology                                               None                                                           None                                      None
+       cholinergic_memory_state_instability latent_biology                                               None                                                           None                                      None
+        retrograde_autobiographical_amnesia        symptom                                               None                                                           None                                      None
+              identity_narrative_disruption        symptom                                               None                                                           None                                      None
+           reduced_autonoetic_consciousness        symptom                                               None                                                           None                                      None
+                    dissociative_detachment        symptom                                               None                                                           None                                      None
+                    motivational_withdrawal        symptom                                               None                                                           None                                      None
+                  recall_recovery_potential        symptom                                               None                                                           None                                      None
+
+=== EDGES ===
+                                     source                                      target                                                                  relation                da_change
+               traumatic_stressor_intensity                    hpa_axis_hyperactivation                severe stress activates the HPA axis and trauma physiology                increased
+               traumatic_stressor_intensity               dissociative_state_dependency        acute trauma can precipitate state-dependent dissociative barriers                increased
+                        chronic_stress_load        glucocorticoid_gene_expression_shift            chronic stress sustains hormone-driven gene expression changes                increased
+                        chronic_stress_load           hippocampal_contextual_disruption              chronic stress burdens hippocampal contextual memory systems                increased
+            genetic_internalizing_diathesis                    hpa_axis_hyperactivation           genetic liability raises sensitivity of stress-response systems increased susceptibility
+            genetic_internalizing_diathesis       dopaminergic_motivational_suppression         genetic liability may worsen motivational withdrawal under stress increased susceptibility
+              dissociative_state_dependency state_dependent_memory_compartmentalization             state-dependent processing segregates autobiographical access                increased
+                          retrieval_support               autobiographical_access_block   supportive retrieval conditions reduce autobiographical inaccessibility               protective
+                          retrieval_support                   recall_recovery_potential                       safe retrieval support increases recovery potential               protective
+                          retrieval_support             prefrontal_retrieval_inhibition                supportive state modulation can reduce inhibitory blockade               protective
+                   hpa_axis_hyperactivation        glucocorticoid_gene_expression_shift     glucocorticoids alter transcription in stress-sensitive brain regions                increased
+                   hpa_axis_hyperactivation           hippocampal_contextual_disruption                  stress hormones compromise contextual memory integration                increased
+                   hpa_axis_hyperactivation             prefrontal_retrieval_inhibition                      stress weakens flexible prefrontal retrieval control                increased
+       glucocorticoid_gene_expression_shift                                 hippocampus                     gene-expression changes burden hippocampal plasticity  increased dysregulation
+       glucocorticoid_gene_expression_shift                                 pfc_control                      gene-expression changes burden prefrontal regulation  increased dysregulation
+       glucocorticoid_gene_expression_shift                  frontolimbic_disconnection     longer-term stress effects weaken coordinated memory network function                increased
+          hippocampal_contextual_disruption                                 hippocampus               disrupts contextual and autobiographical memory integration  increased dysregulation
+          hippocampal_contextual_disruption               autobiographical_access_block             contextual memory disruption blocks personal-memory retrieval                increased
+            prefrontal_retrieval_inhibition                                 pfc_control            increases inhibitory or maladaptive top-down retrieval control  increased dysregulation
+            prefrontal_retrieval_inhibition               autobiographical_access_block         prefrontal blockade prevents conscious autobiographical retrieval                increased
+                 frontolimbic_disconnection                                    amygdala    disconnects emotional salience from integrated autobiographical access  increased dysregulation
+                 frontolimbic_disconnection                              thalamus_proxy                disrupts relay and integration within memory/self networks  increased dysregulation
+                 frontolimbic_disconnection               autobiographical_access_block         network disconnection prevents coherent personal-memory retrieval                increased
+state_dependent_memory_compartmentalization                     dissociative_detachment  state-dependent sequestration promotes detachment from the personal past                increased
+state_dependent_memory_compartmentalization               identity_narrative_disruption      compartmentalization destabilizes coherent self-narrative continuity                increased
+      dopaminergic_motivational_suppression                         basal_ganglia_proxy               frontal-subcortical motivational systems become underdriven  increased dysregulation
+      dopaminergic_motivational_suppression                     motivational_withdrawal                reduced drive contributes to avolition and low spontaneity                increased
+       cholinergic_memory_state_instability               autobiographical_access_block unstable memory-state gating can impair conscious autobiographical access                increased
+              autobiographical_access_block         retrograde_autobiographical_amnesia            loss of access presents as retrograde autobiographical amnesia                increased
+              autobiographical_access_block            reduced_autonoetic_consciousness                     blocks conscious re-experiencing of the personal past                increased
+                                   amygdala                     dissociative_detachment                      limbic stress burden can intensify detachment states                increased
+                             thalamus_proxy               identity_narrative_disruption          relay dysfunction can destabilize integrated self-representation                increased
+                  recall_recovery_potential         retrograde_autobiographical_amnesia    recovery potential can reduce the persistence of the amnestic blockade               protective
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    Area Fp2 (FPole) left  CA1 (Hippocampus) left  LB (Amygdala) left  thalamus  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)
+Area Fp2 (FPole) left                                            5850.700                    2.59               0.135       0.0                                            1145.105
+CA1 (Hippocampus) left                                              2.590                 1685.40              64.260       0.0                                               1.610
+LB (Amygdala) left                                                  0.135                   64.26             244.570       0.0                                               0.075
+thalamus                                                            0.000                    0.00               0.000       0.0                                               0.000
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)               1145.105                    1.61               0.075       0.0                                            2794.395
+
+=== PFC_CONTROL : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_CONTROL : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.796383   1.867844           18     0.517650    0.384825
+  CHAT    2.374524   1.751078           45    -0.468860    0.556878
+ CHRM2    3.274105   1.684196          198    -0.305615    0.521514
+  COMT    6.481383   3.523346           54    -0.082935    0.760079
+ CRHR1    5.305375   1.668315           36     0.181675    0.672597
+   DBH    3.373296   1.267294           27     0.491515    1.005593
+  DRD2    2.818344   1.670966           45    -0.684044    0.512313
+ FKBP5    4.073744   2.181970           36    -0.601586    0.422587
+GABRA2    7.885184   1.558905          234     0.700718    0.346754
+GABRB2    7.825428   1.171977           18     0.378006    0.297584
+  GAD1    8.678576   1.931858          162     0.446596    0.382195
+GRIN2B    6.267404   1.407140           27     0.680467    0.355488
+ HTR1A    5.194256   1.280317           27     0.872267    0.275212
+ NR3C1    9.325847   1.103661           45     0.134616    0.556211
+SLC1A1    7.334122   1.397821           18     0.173483    0.485323
+SLC6A2    1.461606   0.354724           18    -0.112139    0.753670
+SLC6A3    2.093320   1.621854           54    -0.300667    0.486711
+SLC6A4    1.599053   0.568835           99    -0.360282    0.327403
+  TPH2    2.405672   0.872102           18    -0.253000    0.558948
+
+=== PFC_CONTROL : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  CHAT    2.870032   2.066771           40    -0.164502    0.645836
+ CHRM2    2.876368   1.666080          176    -0.650878    0.776226
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+SLC1A1    7.928800   0.783462           16     0.979869    0.753948
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+SLC6A3    2.298956   1.516447           48    -0.208298    0.500259
+SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+  TPH2    3.547069   1.534409           16     0.467569    1.057322
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  CHAT    2.866706   2.193904           35     0.015974    0.657465
+ CHRM2    3.061001   1.729562          154    -0.374939    0.667839
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A1    7.480636   0.903997           14     0.140714    1.025792
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== THALAMUS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== THALAMUS_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.585602   2.013440          410    -0.863433    0.784586
+  CHAT    3.212013   2.236816         1025     0.077720    0.825530
+ CHRM2    4.743242   1.807741         4510     0.836864    1.194847
+  COMT    6.696718   3.651617         1230     0.355509    1.238947
+ CRHR1    4.810321   2.511263          820     0.113186    1.037727
+   DBH    2.215716   0.829900          615    -0.472405    0.823535
+  DRD2    4.591492   2.406942         1025     0.775113    0.873169
+ FKBP5    4.833678   2.449193          820     0.330300    0.846161
+GABRA2    6.223685   1.895726         5330    -0.728558    0.760170
+GABRB2    7.291694   1.616901          410    -0.123261    0.882164
+  GAD1    8.376507   2.193450         3690     0.303600    0.910694
+GRIN2B    5.313393   2.186007          615    -0.079798    0.877520
+ HTR1A    2.629617   1.358534          615    -0.771302    0.660170
+ NR3C1    9.353292   1.207740         1025     0.257266    0.939003
+SLC1A1    7.436578   1.303379          410     0.308250    1.286644
+SLC6A2    1.570577   0.496029          410    -0.214401    0.608296
+SLC6A3    2.601390   2.192195         1230     0.143562    1.338375
+SLC6A4    1.807653   0.679452         2255    -0.203712    0.498376
+  TPH2    2.399945   1.125647          410    -0.329352    0.643109
+
+=== THALAMUS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== BASAL_GANGLIA_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== BASAL_GANGLIA_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+  CHAT    4.131840   1.603890           40     0.890208    0.946200
+ CHRM2    2.965002   1.489065          176    -0.517648    0.705120
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+ CRHR1    3.964031   2.379487           32    -1.035025    0.898802
+   DBH    2.234079   0.743262           24    -0.447996    0.774587
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+ FKBP5    4.906187   2.527519           32     0.287916    0.613248
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GABRB2    6.981731   1.334508           16    -0.441375    0.544187
+  GAD1    9.044125   1.833515          144     0.758347    0.338457
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+ HTR1A    2.481942   1.355876           24    -0.801938    0.579867
+ NR3C1    8.892430   1.124793           40    -0.717515    0.756545
+SLC1A1    7.369725   1.119729           16     0.209775    0.544026
+SLC6A2    1.516831   0.438030           16    -0.090475    0.445743
+SLC6A3    2.099873   1.649630           48    -0.235673    0.509298
+SLC6A4    1.711622   0.660476           88    -0.184322    0.416930
+  TPH2    1.998469   0.770223           16    -0.496944    0.347877
+
+=== BASAL_GANGLIA_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+hpa_axis_hyperactivation                       0.5000
+dopaminergic_motivational_suppression          0.4075
+prefrontal_retrieval_inhibition                0.3750
+hippocampal_contextual_disruption              0.3381
+cholinergic_memory_state_instability           0.3275
+autobiographical_access_block                  0.3203
+glucocorticoid_gene_expression_shift           0.3125
+state_dependent_memory_compartmentalization    0.3066
+frontolimbic_disconnection                     0.2395
+
+=== REGIONAL STATE ===
+hippocampus            0.2146
+pfc_control            0.1917
+basal_ganglia_proxy    0.1666
+amygdala               0.1588
+thalamus_proxy         0.1212
+
+=== SYMPTOMS ===
+recall_recovery_potential              0.3303
+motivational_withdrawal                0.1905
+retrograde_autobiographical_amnesia    0.1783
+dissociative_detachment                0.1737
+identity_narrative_disruption          0.1643
+reduced_autonoetic_consciousness       0.1576
+
+=== RETAINED FUNCTIONS ===
+preserved_new_learning    0.7243
+
+=== PHENOTYPES ===
+reversible_retrieval_barrier_profile    0.2228
+trauma_locked_memory_block_profile      0.2216
+motivational_shutdown_profile           0.2164
+identity_discontinuity_profile          0.1481

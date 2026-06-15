@@ -1,0 +1,234 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                 key      node_type                                   atlas_region                                                   centroid_mni                            feature_summary
+               genetic_vulnerability          input                                           None                                                           None                                       None
+          chronic_stimulant_exposure          input                                           None                                                           None                                       None
+              acute_abstinence_shift          input                                           None                                                           None                                       None
+     serotonergic_neurotoxicity_load          input                                           None                                                           None                                       None
+                         stress_load          input                                           None                                                           None                                       None
+                   medication_cue_exposure          input                                           None                                                           None                                       None
+                    recovery_support          input                                           None                                                           None                                       None
+                            amygdala         region                             LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=yes
+                         hippocampus         region                         CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=yes
+                                 ofc         region                            Area Fo4 (OFC) left   (-29.001430615164523, 53.3412017167382, -15.175965665236049)  receptors=no; genes=yes; connectivity=yes
+                                 acc         region                        frontal cingulate gyrus                                                           None    receptors=no; genes=no; connectivity=no
+                              insula         region                         Area Id1 (Insula) left   (-40.04663212435233, -18.51813471502591, -4.458549222797927)  receptors=no; genes=yes; connectivity=yes
+                         pfc_control   region_proxy                                           None                                                           None                           unresolved proxy
+              ventral_striatum_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left     (-7.25139664804469, 8.162011173184368, -8.016759776536318)  receptors=no; genes=yes; connectivity=yes
+           dopaminergic_reward_crash latent_biology                                           None                                                           None                                       None
+serotonergic_noradrenergic_depletion latent_biology                                           None                                                           None                                       None
+     stress_epigenetic_sensitization latent_biology                                           None                                                           None                                       None
+          amygdala_threat_reactivity latent_biology                                           None                                                           None                                       None
+   hippocampal_craving_memory_burden latent_biology                                           None                                                           None                                       None
+      cue_reactivity_relapse_circuit latent_biology                                           None                                                           None                                       None
+        frontolimbic_control_failure latent_biology                                           None                                                           None                                       None
+    allostatic_negative_affect_state latent_biology                                           None                                                           None                                       None
+ neuroplastic_addiction_entrenchment latent_biology                                           None                                                           None                                       None
+                      depressed_mood        symptom                                           None                                                           None                                       None
+                           anhedonia        symptom                                           None                                                           None                                       None
+         fatigue_psychomotor_slowing        symptom                                           None                                                           None                                       None
+                   sleep_disturbance        symptom                                           None                                                           None                                       None
+                anxiety_irritability        symptom                                           None                                                           None                                       None
+                             craving        symptom                                           None                                                           None                                       None
+               executive_dysfunction        symptom                                           None                                                           None                                       None
+               relapse_vulnerability        symptom                                           None                                                           None                                       None
+
+=== EDGES ===
+                              source                               target                                                                             relation  weight
+               genetic_vulnerability      stress_epigenetic_sensitization increases susceptibility to lasting stress- and medication-linked biological sensitization    0.20
+               genetic_vulnerability            dopaminergic_reward_crash                       modulates severity of reward-system collapse during withdrawal    0.18
+          chronic_stimulant_exposure            dopaminergic_reward_crash                         drives post-use reward deficit and anhedonic withdrawal tone    0.45
+          chronic_stimulant_exposure serotonergic_noradrenergic_depletion        contributes to monoamine depletion underlying depressive and fatigue symptoms    0.30
+          chronic_stimulant_exposure  neuroplastic_addiction_entrenchment                               induces lasting molecular and circuit-level adaptation    0.42
+              acute_abstinence_shift            dopaminergic_reward_crash                           unmasks withdrawal-related reward collapse after cessation    0.35
+              acute_abstinence_shift     allostatic_negative_affect_state                           pushes the post-use state into negative reinforcement mode    0.28
+     serotonergic_neurotoxicity_load serotonergic_noradrenergic_depletion                               intensifies serotonin-linked mood and cognitive burden    0.45
+                         stress_load      stress_epigenetic_sensitization                         converges with medication exposure to create durable vulnerability    0.40
+                         stress_load     allostatic_negative_affect_state                   amplifies withdrawal dysphoria and negative reinforcement pressure    0.25
+                   medication_cue_exposure    hippocampal_craving_memory_burden                                      reactivates medication-use memories during abstinence    0.30
+                   medication_cue_exposure       cue_reactivity_relapse_circuit                                               triggers cue-reactive relapse pressure    0.45
+                    recovery_support         frontolimbic_control_failure                                  buffers executive-control failure during abstinence   -0.25
+                    recovery_support     allostatic_negative_affect_state                                                 partly counters withdrawal dysphoria   -0.20
+     stress_epigenetic_sensitization           amygdala_threat_reactivity         sensitizes limbic circuits involved in negative affect and stress reactivity    0.40
+     stress_epigenetic_sensitization         frontolimbic_control_failure                         weakens cortical regulation under chronic medication-stress burden    0.25
+           dopaminergic_reward_crash               ventral_striatum_proxy                                     maps to reward-circuit deficit during withdrawal    0.60
+           dopaminergic_reward_crash                            anhedonia                                           reduces reward responsiveness and pleasure    0.55
+serotonergic_noradrenergic_depletion                       depressed_mood                                  contributes to depressive overlap during withdrawal    0.45
+serotonergic_noradrenergic_depletion          fatigue_psychomotor_slowing                                       contributes to fatigue and psychomotor slowing    0.35
+          amygdala_threat_reactivity                             amygdala                                    maps to limbic hyper-reactivity during abstinence    0.65
+   hippocampal_craving_memory_burden                          hippocampus                                     maps to memory-circuit reactivation by medication cues    0.65
+      cue_reactivity_relapse_circuit                              craving                                                drives cue-induced urge to resume use    0.55
+        frontolimbic_control_failure                          pfc_control                      maps to prefrontal hypoactivation and impaired top-down control    0.60
+        frontolimbic_control_failure                                  ofc                     maps to orbitofrontal burden consistent with structural findings    0.45
+        frontolimbic_control_failure                                  acc                maps to anterior cingulate burden consistent with structural findings    0.45
+    allostatic_negative_affect_state                               insula                         maps to interoceptive and dysphoric burden during withdrawal    0.45
+    allostatic_negative_affect_state                 anxiety_irritability                               translates dysphoria into anxious and irritable affect    0.40
+                         pfc_control                executive_dysfunction                                   permits impaired planning, control, and inhibition    0.50
+                             craving                relapse_vulnerability                          raises the probability of relapse under abstinence pressure    0.45
+
+=== REGION SUMMARY: amygdala ===
+Resolved region: LB (Amygdala) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CREB1    5.164336   1.499069           28    -0.946468    1.243605
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD3    2.195912   0.927252           49     0.395627    0.817122
+Connectivity:
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+
+=== REGION SUMMARY: hippocampus ===
+Resolved region: CA1 (Hippocampus) left
+Receptors:
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+      M1   405  229
+      M2   107   44
+      M3   707  335
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.298275   2.082820           24     0.125287    1.160998
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CREB1    5.504834   1.192803           32    -0.074084    0.996907
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+  DRD3    2.324175   1.146700           56     0.009480    1.151966
+Connectivity:
+                          connected_region    value
+Subc (Hippocampus, Subicular complex) left 5205.660
+        Temporal-to-Parietal (GapMap) left 2875.975
+      Frontal-to-Temporal-II (GapMap) left 2118.815
+                       Area Ph2 (PhG) left 1448.100
+                      Area FG4 (FusG) left  781.135
+                      Area FG3 (FusG) left  564.870
+        Frontal-to-Occipital (GapMap) left  540.175
+            Area hOc1 (V1, 17, CalcS) left  166.740
+
+=== REGION SUMMARY: ofc ===
+Resolved region: Area Fo4 (OFC) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    3.979550   2.636939           12    -0.111708    0.539130
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CREB1    5.704937   1.358404           16     0.052562    0.318113
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+   DBH    2.885375   0.758348           12     0.181442    0.333721
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  DRD3    1.765404   1.176595           28    -0.151786    0.553500
+Connectivity:
+                                       connected_region    value
+                                    Area Fo3 (OFC) left 2218.500
+                                    Area Fo7 (OFC) left 1055.200
+         FuP (Ventral Striatum, Fundus of Putamen) left  812.060
+                                  Area Fp1 (FPole) left  600.190
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  495.015
+                    Frontal-to-Temporal-I (GapMap) left  400.550
+                                    Area Fo6 (OFC) left  296.095
+                                Area Id10 (Insula) left  291.760
+
+=== REGION SUMMARY: pfc_control ===
+Resolved region: unresolved proxy
+Receptors:
+  <none>
+Genes:
+  <none>
+Connectivity:
+  <none>
+
+=== CIRCUIT CONNECTIVITY ===
+            source_key                                  source_region             target_key                                  target_region  value
+              amygdala                             LB (Amygdala) left            hippocampus                         CA1 (Hippocampus) left 64.260
+              amygdala                             LB (Amygdala) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  0.170
+              amygdala                             LB (Amygdala) left                    ofc                            Area Fo4 (OFC) left  0.075
+              amygdala                             LB (Amygdala) left                 insula                         Area Id1 (Insula) left  0.065
+           hippocampus                         CA1 (Hippocampus) left               amygdala                             LB (Amygdala) left 64.260
+           hippocampus                         CA1 (Hippocampus) left                 insula                         Area Id1 (Insula) left  2.115
+           hippocampus                         CA1 (Hippocampus) left                    ofc                            Area Fo4 (OFC) left  1.655
+           hippocampus                         CA1 (Hippocampus) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  1.100
+                insula                         Area Id1 (Insula) left                    ofc                            Area Fo4 (OFC) left  3.810
+                insula                         Area Id1 (Insula) left            hippocampus                         CA1 (Hippocampus) left  2.115
+                insula                         Area Id1 (Insula) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  0.455
+                insula                         Area Id1 (Insula) left               amygdala                             LB (Amygdala) left  0.065
+                   ofc                            Area Fo4 (OFC) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  5.040
+                   ofc                            Area Fo4 (OFC) left                 insula                         Area Id1 (Insula) left  3.810
+                   ofc                            Area Fo4 (OFC) left            hippocampus                         CA1 (Hippocampus) left  1.655
+                   ofc                            Area Fo4 (OFC) left               amygdala                             LB (Amygdala) left  0.075
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left                    ofc                            Area Fo4 (OFC) left  5.040
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left            hippocampus                         CA1 (Hippocampus) left  1.100
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left                 insula                         Area Id1 (Insula) left  0.455
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left               amygdala                             LB (Amygdala) left  0.170
+
+=== INPUTS ===
+genetic_vulnerability              0.50
+chronic_stimulant_exposure         0.80
+acute_abstinence_shift             0.70
+serotonergic_neurotoxicity_load    0.45
+stress_load                        0.60
+medication_cue_exposure                  0.55
+recovery_support                   0.25
+
+=== LATENTS ===
+dopaminergic_reward_crash               0.5930
+serotonergic_noradrenergic_depletion    0.5020
+stress_epigenetic_sensitization         0.4910
+amygdala_threat_reactivity              0.4254
+hippocampal_craving_memory_burden       0.4937
+cue_reactivity_relapse_circuit          0.4456
+frontolimbic_control_failure            0.3900
+allostatic_negative_affect_state        0.5122
+neuroplastic_addiction_entrenchment     0.5192
+
+=== REGIONAL_STATE ===
+ventral_striatum_proxy    0.5020
+amygdala                  0.3944
+hippocampus               0.4298
+ofc                       0.3619
+acc                       0.3597
+insula                    0.4053
+pfc_control               0.3732
+
+=== SYMPTOMS ===
+depressed_mood                 0.4278
+anhedonia                      0.4694
+fatigue_psychomotor_slowing    0.4592
+sleep_disturbance              0.3923
+anxiety_irritability           0.3887
+craving                        0.4440
+executive_dysfunction          0.3008
+relapse_vulnerability          0.3997
+
+=== PHENOTYPES ===
+depressive_withdrawal_profile            0.4372
+cue_reactive_relapse_profile             0.4298
+executive_control_impairment_profile     0.3489
+hyperkatifeia_negative_affect_profile    0.4429

@@ -1,0 +1,99 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                           key                          label node_type                                                          description           atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+  compulsive_fantasy_rehearsal   Compulsive Fantasy Rehearsal     input  Repetitive reinforcing rehearsal of sadistic fantasies and scripts.                   None              None                                                          None         NaN                                     None
+          empathy_deficit_load           Empathy Deficit Load     input               Reduced empathic responsiveness or callousness burden.                   None              None                                                          None         NaN                                     None
+     impulsivity_disinhibition      Impulsivity Disinhibition     input   Baseline inhibitory-control weakness and behavioral disinhibition.                   None              None                                                          None         NaN                                     None
+    inhibitory_control_support     Inhibitory Control Support     input Protective support for top-down inhibition and external containment.                   None              None                                                          None         NaN                                     None
+trait_aggression_vulnerability Trait Aggression Vulnerability     input                           Heritable aggression-related trait burden.                   None              None                                                          None         NaN                                     None
+       trauma_stress_embedding        Trauma Stress Embedding     input        Early trauma/stress burden with lasting biological embedding.                   None              None                                                          None         NaN                                     None
+          treatment_engagement           Treatment Engagement     input  Protective treatment engagement that can reduce symptom expression.                   None              None                                                          None         NaN                                     None
+                           acc         Area p24ab (pACC) left    region                                            Atlas-backed circuit node Area p24ab (pACC) left              None     (-4.228915662650607, 38.1933187294633, 4.467141292442491)      1826.0 receptors=no; genes=yes; connectivity=no
+                      amygdala             LB (Amygdala) left    region                                            Atlas-backed circuit node     LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                         dlpfc           middle frontal gyrus    region                                            Atlas-backed circuit node   middle frontal gyrus              None   (-37.574017415862556, 34.86051619989016, 35.43335686828273)     12747.0 receptors=no; genes=yes; connectivity=no
+                        insula         Area Id7 (Insula) left    region                                            Atlas-backed circuit node Area Id7 (Insula) left              None    (-31.47215496368038, 23.55326876513317, 4.044794188861985)       826.0 receptors=no; genes=yes; connectivity=no
+                           ofc            Area Fo4 (OFC) left    region                                            Atlas-backed circuit node    Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+
+=== Edges (head) ===
+                                                              relation                               source ssd_change                               target
+           rehearsal reinforces reward value assigned to sadistic cues         compulsive_fantasy_rehearsal  increased     mesolimbic_reward_misattribution
+                       baseline disinhibition weakens top-down control            impulsivity_disinhibition  increased        prefrontal_inhibitory_failure
+early stress can biologically sensitize aggression and arousal systems              trauma_stress_embedding  increased      trauma_epigenetic_sensitization
+           trauma-linked sensitization can distort salience processing      trauma_epigenetic_sensitization  increased           amygdala_salience_reversal
+                  aberrant reward coding strengthens fantasy intensity     mesolimbic_reward_misattribution  increased  coercive_sadistic_fantasy_intensity
+              poor top-down control permits aggressive urge escalation        prefrontal_inhibitory_failure  increased aggressive_sexual_urge_disinhibition
+    callous-empathy deficit reduces affective resonance with suffering                 empathy_deficit_load  increased                  empathy_suppression
+                high-intensity fantasies feed persistent preoccupation  coercive_sadistic_fantasy_intensity  increased             compulsive_preoccupation
+                  disinhibited aggressive urges elevate enactment risk aggressive_sexual_urge_disinhibition  increased             violence_risk_expression
+            reduced empathy weakens inhibitory social-emotional brakes                  empathy_suppression  increased             violence_risk_expression
+                   treatment and containment can reduce expressed risk                 treatment_engagement  decreased             violence_risk_expression
+                         protective support can buffer control failure           inhibitory_control_support  decreased        prefrontal_inhibitory_failure
+
+=== Gene summary: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+  OXTR    5.481329   2.114813           14     0.208743    0.776505
+
+=== Gene summary: ventral_striatum_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.009257   2.293641           40    -1.185732    1.237663
+  COMT    6.402036   3.593712          120    -0.059620    1.034789
+  DRD2    5.426011   2.496559          100     1.577181    1.050432
+  DRD4    6.721858   6.310373           60    -0.258992    0.980232
+ FKBP5    4.996973   2.602574           80     0.353689    0.613249
+GABRA2    7.988096   1.868113          520     0.718714    0.775717
+GRIN2B    5.862947   2.148731           60     0.315608    0.719515
+  MAOA    6.048184   2.090857          620     0.515039    0.710792
+ NR3C1    8.979819   1.178522          100    -0.595447    0.953983
+  OXTR    6.448767   2.541768           40     1.056917    0.932911
+
+=== Inputs ===
+trait_aggression_vulnerability    0.55
+impulsivity_disinhibition         0.60
+trauma_stress_embedding           0.45
+empathy_deficit_load              0.55
+compulsive_fantasy_rehearsal      0.60
+inhibitory_control_support        0.25
+treatment_engagement              0.20
+
+=== Latents ===
+mesolimbic_reward_misattribution          0.4120
+dissociative_glutamatergic_instability    0.3550
+prefrontal_inhibitory_failure             0.3500
+trauma_epigenetic_sensitization           0.3200
+amygdala_salience_reversal                0.2815
+
+=== Regional state ===
+ventral_striatum_proxy    0.2866
+ofc                       0.2475
+insula                    0.2213
+acc                       0.1804
+dlpfc                     0.1757
+amygdala                  0.1747
+
+=== Symptoms ===
+coercive_sadistic_fantasy_intensity     0.3317
+empathy_suppression                     0.3098
+compulsive_preoccupation                0.2751
+aggressive_sexual_urge_disinhibition    0.2588
+violence_risk_expression                0.1681
+
+=== Phenotypes ===
+reward_dominant_sadistic_profile    0.3434
+disinhibited_aggressive_profile     0.2854
+empathy_collapse_risk_profile       0.2175

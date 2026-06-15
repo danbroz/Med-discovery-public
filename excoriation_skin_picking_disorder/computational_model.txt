@@ -1,0 +1,229 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (key fields) ===
+                              key      node_type                                            atlas_region region_identifier                          feature_summary
+            genetic_vulnerability          input                                                                                                                   
+                early_life_stress          input                                                                                                                   
+             negative_affect_load          input                                                                                                                   
+         boredom_understimulation          input                                                                                                                   
+        sensory_irregularity_cues          input                                                                                                                   
+    glutamate_homeostasis_support          input                                                                                                                   
+         top_down_control_support          input                                                                                                                   
+        stress_regulation_support          input                                                                                                                   
+                              ofc         region                                     Area Fo4 (OFC) left                   receptors=no; genes=yes; connectivity=no
+                              acc         region                                  Area p24ab (pACC) left                   receptors=no; genes=yes; connectivity=no
+                            dlpfc         region                                                                                                         unresolved
+                         amygdala         region                                      LB (Amygdala) left                   receptors=no; genes=yes; connectivity=no
+                    caudate_proxy   region_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                   receptors=no; genes=yes; connectivity=no
+          nucleus_accumbens_proxy   region_proxy          AcbM (Ventral Striatum, Medial Accumbens) left                   receptors=no; genes=yes; connectivity=no
+ glutamatergic_cstc_hyperactivity latent_biology                                                                                                                   
+serotonergic_regulatory_imbalance latent_biology                                                                                                                   
+  dopaminergic_reinforcement_bias latent_biology                                                                                                                   
+           hpa_axis_sensitization latent_biology                                                                                                                   
+     limbic_negative_affect_drive latent_biology                                                                                                                   
+   sensory_salience_amplification latent_biology                                                                                                                   
+   frontostriatal_control_failure latent_biology                                                                                                                   
+   compulsive_habit_reinforcement latent_biology                                                                                                                   
+                     urge_to_pick        symptom                                                                                                                   
+          repetitive_skin_picking        symptom                                                                                                                   
+     loss_of_control_over_picking        symptom                                                                                                                   
+             tension_relief_cycle        symptom                                                                                                                   
+                      skin_damage        symptom                                                                                                                   
+              distress_impairment        symptom                                                                                                                   
+
+=== EDGE TABLE ===
+                           source                            target                                                                                relation excoriation_change
+            genetic_vulnerability  glutamatergic_cstc_hyperactivity                     can bias CSTC excitability and compulsive-loop vulnerability upward          increased
+            genetic_vulnerability serotonergic_regulatory_imbalance                    can alter baseline serotonergic regulation of impulsivity and affect          increased
+            genetic_vulnerability    frontostriatal_control_failure                                       can weaken inherited executive-control efficiency          increased
+                early_life_stress            hpa_axis_sensitization can create enduring stress-response amplification via epigenetic and endocrine pathways          increased
+             negative_affect_load      limbic_negative_affect_drive                           raises the aversive emotional state that can motivate picking          increased
+         boredom_understimulation   dopaminergic_reinforcement_bias                                can increase repetitive self-stimulating habit selection          increased
+         boredom_understimulation    sensory_salience_amplification                                     can heighten attention to body-focused sensory cues          increased
+        sensory_irregularity_cues    sensory_salience_amplification                  promotes over-detection of minor skin imperfections as action triggers          increased
+           hpa_axis_sensitization      limbic_negative_affect_drive                                 intensifies anxiety/tension states that precede picking          increased
+ glutamatergic_cstc_hyperactivity    frontostriatal_control_failure                              overloads CSTC control loops and impairs inhibitory gating          increased
+serotonergic_regulatory_imbalance    frontostriatal_control_failure                       reduces stable modulation of impulsivity and compulsive restraint          increased
+   sensory_salience_amplification    frontostriatal_control_failure                          biases attention toward urges and away from inhibitory control          increased
+ glutamatergic_cstc_hyperactivity    compulsive_habit_reinforcement                 strengthens repetitive motor tendencies and compulsive loop persistence          increased
+  dopaminergic_reinforcement_bias    compulsive_habit_reinforcement                                        links relief / gratification to repeated picking          increased
+     limbic_negative_affect_drive    compulsive_habit_reinforcement                                 drives picking as maladaptive emotional self-regulation          increased
+   sensory_salience_amplification                      urge_to_pick                                         converts minor irregularities into action urges          increased
+     limbic_negative_affect_drive                      urge_to_pick                                   negative affect increases body-focused urge intensity          increased
+   frontostriatal_control_failure      loss_of_control_over_picking                                           weakens the ability to resist or stop picking          increased
+   compulsive_habit_reinforcement           repetitive_skin_picking                                        stabilizes repeated urge-driven picking behavior          increased
+   frontostriatal_control_failure           repetitive_skin_picking                               allows subcortical urges to manifest as compulsive action          increased
+          repetitive_skin_picking                       skin_damage                                recurrent picking produces excoriation and tissue injury          increased
+     limbic_negative_affect_drive              tension_relief_cycle                                                    drives the pre-picking tension state          increased
+  dopaminergic_reinforcement_bias              tension_relief_cycle                                           supports gratification / relief after picking          increased
+     loss_of_control_over_picking               distress_impairment                                 persistent inability to resist picking increases burden          increased
+                      skin_damage               distress_impairment                                 visible tissue injury increases impairment and distress          increased
+             tension_relief_cycle               distress_impairment                          recurrent tension-relief dynamics help sustain clinical burden          increased
+    glutamate_homeostasis_support  glutamatergic_cstc_hyperactivity                       restores excitatory balance and reduces compulsive drive pressure          decreased
+         top_down_control_support    frontostriatal_control_failure                                          improves inhibitory control over picking urges          decreased
+        stress_regulation_support            hpa_axis_sensitization                                                    reduces chronic stress amplification          decreased
+        stress_regulation_support      limbic_negative_affect_drive                                     lowers affective pressure that precipitates picking          decreased
+
+=== REGION: ofc ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+DLGAP3    8.640087   3.483884            8     0.052513    0.778111
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+  GRM5    7.514033   2.133320           12     0.412042    0.173048
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+SLC1A1    7.498825   1.243019            8     0.158138    0.190438
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: acc ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+  COMT    6.626667   3.449944           18     0.128428    0.590874
+DLGAP3    8.812333   3.729406            6     0.292633    0.410533
+  DRD2    2.950413   1.689432           15    -0.634413    0.582728
+ FKBP5    3.499567   1.660310           12    -0.799333    0.415369
+GRIN2B    6.430744   1.558241            9     0.625622    0.151891
+  GRM5    7.721089   2.108743            9     0.571144    0.275861
+ HTR2A    7.570288   1.887168           75     0.733983    0.223171
+ NR3C1    8.983753   1.100518           15    -0.471073    0.416826
+SLC1A1    7.419883   1.422796            6     0.283900    0.526112
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: dlpfc ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+DLGAP3    8.968071   3.202782           14     0.713007    0.841323
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+  GRM5    7.861019   2.246626           21     0.768329    0.642251
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A1    7.480636   0.903997           14     0.140714    1.025792
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: caudate_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  COMT    6.334303   3.508445           36    -0.298369    1.144405
+DLGAP3    8.578433   3.180932           12    -0.018050    1.353384
+  DRD2    6.119210   2.344979           30     2.320237    1.023981
+ FKBP5    4.946871   2.609290           24     0.220421    0.612810
+GRIN2B    6.220944   1.646767           18     0.647833    0.420739
+  GRM5    7.807567   2.037353           18     0.743578    0.522347
+ HTR2A    5.122333   1.672406          150    -0.381103    0.276388
+ NR3C1    8.845813   1.140821           30    -0.905580    0.739992
+SLC1A1    7.357092   1.109834           12     0.168733    0.607275
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: nucleus_accumbens_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+DLGAP3    8.385067   3.823817           12    -0.081800    0.551573
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+ FKBP5    5.013658   2.833167           24     0.244575    0.557984
+GRIN2B    4.904022   2.339611           18    -0.280294    0.679978
+  GRM5    7.388083   2.009500           18     0.285078    0.374855
+ HTR2A    5.121897   1.832953          150    -0.351531    0.349620
+ NR3C1    8.935243   1.194727           30    -0.789843    0.603282
+SLC1A1    7.436192   0.912900           12     0.272358    0.471774
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+<no circuit connectivity available>
+
+=== SIMULATION: example affect-loaded cue-reactive picking phenotype ===
+
+INPUTS
+genetic_vulnerability            0.55
+early_life_stress                0.45
+negative_affect_load             0.70
+boredom_understimulation         0.35
+sensory_irregularity_cues        0.65
+glutamate_homeostasis_support    0.20
+top_down_control_support         0.15
+stress_regulation_support        0.20
+
+LATENTS
+glutamatergic_cstc_hyperactivity     0.4170
+serotonergic_regulatory_imbalance    0.3340
+dopaminergic_reinforcement_bias      0.4447
+hpa_axis_sensitization               0.3300
+limbic_negative_affect_drive         0.3650
+sensory_salience_amplification       0.4204
+frontostriatal_control_failure       0.3137
+compulsive_habit_reinforcement       0.3570
+
+REGIONAL_STATE
+ofc                        0.2947
+acc                        0.2950
+dlpfc                      0.2582
+amygdala                   0.3383
+caudate_proxy              0.3247
+nucleus_accumbens_proxy    0.3537
+
+SYMPTOMS
+urge_to_pick                    0.3437
+repetitive_skin_picking         0.3157
+loss_of_control_over_picking    0.2943
+tension_relief_cycle            0.3514
+skin_damage                     0.2965
+distress_impairment             0.2968
+
+PHENOTYPES
+affect_regulation_picking_profile    0.4366
+cue_reactive_picking_profile         0.4325
+compulsive_cstc_profile              0.3374
+habit_reward_picking_profile         0.3763
+severe_skin_damage_profile           0.3008

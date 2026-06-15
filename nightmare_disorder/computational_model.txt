@@ -1,0 +1,265 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                               key      node_type  region_role           atlas_region                           feature_summary
+             genetic_vulnerability          input         None                   None                                      None
+                    trauma_history          input         None                   None                                      None
+              early_life_adversity          input         None                   None                                      None
+               chronic_stress_load          input         None                   None                                      None
+         depression_anxiety_burden          input         None                   None                                      None
+         serotonergic_perturbation          input         None                   None                                      None
+       gabaergic_hypnotic_exposure          input         None                   None                                      None
+            recovery_sleep_support          input         None                   None                                      None
+                          amygdala         region atlas_backed     LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                       hippocampus         region atlas_backed CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                               acc         region atlas_backed Area p24ab (pACC) left  receptors=no; genes=yes; connectivity=no
+                             dlpfc         region atlas_backed                   None                                unresolved
+                        mpfc_proxy         region        proxy  Area Fp1 (FPole) left  receptors=no; genes=yes; connectivity=no
+               brainstem_rem_proxy         region        proxy               midbrain  receptors=no; genes=yes; connectivity=no
+ stress_sensitized_sleep_liability latent_biology         None                   None                                      None
+        serotonergic_dysregulation latent_biology         None                   None                                      None
+     sleep_architecture_disruption latent_biology         None                   None                                      None
+             cholinergic_rem_drive latent_biology         None                   None                                      None
+            hpa_axis_dysregulation latent_biology         None                   None                                      None
+         noradrenergic_rem_arousal latent_biology         None                   None                                      None
+             rem_sleep_instability latent_biology         None                   None                                      None
+executive_dream_regulation_failure latent_biology         None                   None                                      None
+  frontolimbic_dream_dysregulation latent_biology         None                   None                                      None
+       recurrent_threat_nightmares        symptom         None                   None                                      None
+     nightmare_emotional_intensity        symptom         None                   None                                      None
+        abrupt_awakening_alertness        symptom         None                   None                                      None
+          rem_parasomnia_liability        symptom         None                   None                                      None
+                  sleep_disruption        symptom         None                   None                                      None
+       daytime_distress_impairment        symptom         None                   None                                      None
+
+=== Edges ===
+                            source                             target                                                                        relation nightmare_disorder_change
+             genetic_vulnerability  stress_sensitized_sleep_liability contributes exploratory heritable vulnerability in sleep and emotion regulation                 increased
+                    trauma_history  stress_sensitized_sleep_liability           traumatic exposure increases later threat-related dream vulnerability                 increased
+              early_life_adversity  stress_sensitized_sleep_liability          early adversity may create long-lasting stress-reactive susceptibility                 increased
+         depression_anxiety_burden  stress_sensitized_sleep_liability         affective burden amplifies vulnerability to REM-emotional dysregulation                 increased
+         serotonergic_perturbation         serotonergic_dysregulation                        altered serotonergic tone can destabilize REM regulation                 increased
+         depression_anxiety_burden         serotonergic_dysregulation     mood and anxiety burden are linked to serotonergic sleep-wake dysregulation                 increased
+       gabaergic_hypnotic_exposure      sleep_architecture_disruption            hypnotic manipulation can alter REM and slow-wave sleep architecture                 increased
+               chronic_stress_load      sleep_architecture_disruption                             stress destabilizes sleep continuity and regulation                 increased
+         depression_anxiety_burden              cholinergic_rem_drive           depression-linked REM pressure may reflect stronger cholinergic drive                 increased
+        serotonergic_dysregulation              cholinergic_rem_drive   REM gating imbalance may allow stronger cholinergic dream-promoting influence                 increased
+                    trauma_history             hpa_axis_dysregulation                  trauma perturbs stress-system regulation and cortisol dynamics                 increased
+              early_life_adversity             hpa_axis_dysregulation                    epigenetic stress sensitization may dysregulate the HPA axis                 increased
+               chronic_stress_load             hpa_axis_dysregulation                             ongoing stress maintains maladaptive HPA activation                 increased
+        serotonergic_dysregulation              rem_sleep_instability                              altered serotonin signaling destabilizes REM sleep                 increased
+     sleep_architecture_disruption              rem_sleep_instability                           broader state instability makes REM more dysregulated                 increased
+             cholinergic_rem_drive              rem_sleep_instability                          heightened REM drive can intensify vivid REM phenomena                 increased
+            hpa_axis_dysregulation          noradrenergic_rem_arousal                   stress-system dysregulation increases REM-period over-arousal                 increased
+            hpa_axis_dysregulation              rem_sleep_instability                    stress physiology promotes unstable REM-emotional processing                 increased
+             rem_sleep_instability executive_dream_regulation_failure                       unstable REM weakens top-down regulation of dream content                 increased
+            hpa_axis_dysregulation executive_dream_regulation_failure                     stress burden further weakens regulatory control during REM                 increased
+             rem_sleep_instability   frontolimbic_dream_dysregulation                     REM instability favors emotional-limbic dominance in dreams                 increased
+ stress_sensitized_sleep_liability   frontolimbic_dream_dysregulation                     trait vulnerability amplifies emotional-dream dysregulation                 increased
+executive_dream_regulation_failure                         mpfc_proxy         reduced medial prefrontal regulation is expressed as weaker REM control                 increased
+executive_dream_regulation_failure                              dlpfc              dorsal executive network becomes relatively deactivated during REM                 increased
+  frontolimbic_dream_dysregulation                           amygdala                          limbic-dominant REM processing heightens threat affect                 increased
+  frontolimbic_dream_dysregulation                        hippocampus             emotionally loaded memory/context reactivation shapes dream content                 increased
+  frontolimbic_dream_dysregulation                                acc    ventral emotional network engagement includes anterior cingulate involvement                 increased
+             rem_sleep_instability                brainstem_rem_proxy                       dysregulated REM engages brainstem REM-generative systems                 increased
+             cholinergic_rem_drive                brainstem_rem_proxy          brainstem cholinergic REM promotion intensifies vivid dream generation                 increased
+                          amygdala        recurrent_threat_nightmares                                 threat salience drives disturbing dream content                 increased
+                       hippocampus        recurrent_threat_nightmares           memory-context reactivation contributes to elaborate dream narratives                 increased
+               brainstem_rem_proxy        recurrent_threat_nightmares                       REM generative systems support recurrent dream expression                 increased
+                          amygdala      nightmare_emotional_intensity                      amygdala hyperreactivity intensifies negative dream affect                 increased
+                               acc      nightmare_emotional_intensity                      ACC engagement contributes emotional salience and distress                 increased
+         noradrenergic_rem_arousal         abrupt_awakening_alertness                    REM over-arousal facilitates sudden awakening with alertness                 increased
+               brainstem_rem_proxy         abrupt_awakening_alertness               REM-brainstem dyscontrol contributes to awakening from nightmares                 increased
+             rem_sleep_instability           rem_parasomnia_liability                       unstable REM increases nightmare parasomnia vulnerability                 increased
+        serotonergic_dysregulation           rem_parasomnia_liability                     5-HT dysregulation can facilitate REM parasomnia expression                 increased
+       recurrent_threat_nightmares                   sleep_disruption                                            nightmares fragment sleep continuity                 increased
+        abrupt_awakening_alertness                   sleep_disruption                       sudden alert awakenings further disturb sleep maintenance                 increased
+                  sleep_disruption        daytime_distress_impairment                  fragmented sleep contributes to daytime burden and dysfunction                 increased
+     nightmare_emotional_intensity        daytime_distress_impairment                 emotionally intense nightmares increase distress and impairment                 increased
+            recovery_sleep_support             hpa_axis_dysregulation               supportive recovery conditions buffer stress-system dysregulation                 decreased
+            recovery_sleep_support              rem_sleep_instability                                     sleep stabilization reduces REM instability                 decreased
+            recovery_sleep_support executive_dream_regulation_failure         supportive treatment and recovery structure improve top-down regulation                 decreased
+
+=== Region suggestions for 'amygdala' ===
+                 name identifier                                parcellation
+LB.La (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   IF (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   SF (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   CM (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   LB (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   MF (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  VTM (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+ Astr (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+IF.ld (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+LB.Bl (Amygdala) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Region evidence: amygdala ===
+Resolved region: LB (Amygdala) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+ CHRM2    3.061001   1.729562          154    -0.374939    0.667839
+CHRNA4    4.603889   2.020430           28    -0.231596    1.000382
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: hippocampus ===
+Resolved region: CA1 (Hippocampus) left
+Receptors:
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.298275   2.082820           24     0.125287    1.160998
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+ CHRM2    2.876368   1.666080          176    -0.650878    0.776226
+CHRNA4    4.635866   1.946865           32    -0.334775    0.861438
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA1    7.128230   3.002379          392    -0.072726    0.732888
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+ HTR2A    6.079706   2.649687          200     0.028969    0.956248
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: acc ===
+Resolved region: Area p24ab (pACC) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.413722   2.388957            9     0.003656    0.432406
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+ CHRM2    3.465497   1.742673           66    -0.222441    0.617910
+CHRNA4    4.870217   1.830160           12    -0.251283    0.477380
+ CRHR1    5.037908   2.235077           12     0.254025    0.541458
+ FKBP5    3.499567   1.660310           12    -0.799333    0.415369
+GABRA1    7.643848   2.938582          147     0.290488    0.346272
+GABRB2    7.614567   1.370410            6     0.191817    0.187450
+ HTR1A    5.024900   1.767105            9     0.675933    0.624451
+ HTR2A    7.570288   1.887168           75     0.733983    0.223171
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: dlpfc ===
+Resolved region: None
+Receptors:
+<no receptor table>
+Genes:
+<no gene table>
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: mpfc_proxy ===
+Resolved region: Area Fp1 (FPole) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.346359   2.472342           27    -0.075044    0.751567
+  BDNF    5.234189   2.205737           18     0.236700    0.502516
+ CHRM2    3.444636   1.620000          198    -0.266276    0.552984
+CHRNA4    4.900131   1.741567           36    -0.461428    0.630929
+ CRHR1    5.117950   2.071325           36    -0.031842    0.617286
+ FKBP5    4.062900   2.010703           36    -0.269953    0.658346
+GABRA1    7.658536   3.129235          441     0.301159    0.453254
+GABRB2    7.924139   1.263838           18     0.604311    0.255935
+ HTR1A    4.599767   1.355557           27     0.518704    0.580625
+ HTR2A    7.424025   2.073493          225     0.720213    0.355664
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: brainstem_rem_proxy ===
+Resolved region: midbrain
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    3.918861   1.906864           54    -0.076159    1.215005
+  BDNF    3.734800   1.981989           36    -0.711794    0.906419
+ CHRM2    3.990270   1.607375          396     0.231684    0.926710
+CHRNA4    5.874833   2.052730           72     0.788233    1.078779
+ CRHR1    4.632486   2.668169           72    -0.327956    0.964843
+ FKBP5    5.115553   2.706802           72     0.649651    0.838576
+GABRA1    6.759858   3.007351          882    -0.414205    0.833170
+GABRB2    6.370794   1.374911           36    -0.881956    0.573115
+ HTR1A    2.775674   1.275763           54    -0.593257    0.593937
+ HTR2A    5.647106   2.079464          450    -0.109931    0.621439
+Connectivity profile:
+<no connectivity profile>
+
+=== Circuit connectivity ===
+                     amygdala  hippocampus       acc  mpfc_proxy  brainstem_rem_proxy
+amygdala              244.570        64.26     0.055       0.205                  0.0
+hippocampus            64.260      1685.40     1.790       7.130                  0.0
+acc                     0.055         1.79  2208.080     777.000                  0.0
+mpfc_proxy              0.205         7.13   777.000   10593.840                  0.0
+brainstem_rem_proxy     0.000         0.00     0.000       0.000                  0.0
+
+=== Simulation: inputs ===
+genetic_vulnerability          0.55
+trauma_history                 0.80
+early_life_adversity           0.65
+chronic_stress_load            0.70
+depression_anxiety_burden      0.75
+serotonergic_perturbation      0.60
+gabaergic_hypnotic_exposure    0.35
+recovery_sleep_support         0.30
+
+=== Simulation: latents ===
+stress_sensitized_sleep_liability     0.6270
+hpa_axis_dysregulation                0.6160
+noradrenergic_rem_arousal             0.5696
+cholinergic_rem_drive                 0.5562
+serotonergic_dysregulation            0.5270
+rem_sleep_instability                 0.4609
+frontolimbic_dream_dysregulation      0.4503
+executive_dream_regulation_failure    0.4301
+sleep_architecture_disruption         0.3600
+
+=== Simulation: regional state ===
+hippocampus            0.4998
+amygdala               0.4927
+brainstem_rem_proxy    0.4568
+acc                    0.4403
+mpfc_proxy             0.3398
+dlpfc                  0.3378
+
+=== Simulation: symptoms ===
+nightmare_emotional_intensity    0.5033
+recurrent_threat_nightmares      0.4873
+abrupt_awakening_alertness       0.4553
+rem_parasomnia_liability         0.4172
+daytime_distress_impairment      0.4165
+sleep_disruption                 0.3670
+
+=== Simulation: phenotypes ===
+trauma_stress_nightmare_profile       0.5031
+affective_nightmare_profile           0.4535
+rem_instability_parasomnia_profile    0.4476
+executive_dream_regulation_profile    0.3987

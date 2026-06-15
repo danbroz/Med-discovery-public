@@ -1,0 +1,98 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                              key                             label node_type                                                                                  description           atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+  environmental_structure_support   Environmental Structure Support     input                         External structure that reduces real-world expression of dyscontrol.                   None              None                                                          None         NaN                                     None
+     frontal_temporal_damage_load      Frontal Temporal Damage Load     input Damage burden centered on frontal and temporal systems important for personality expression.                   None              None                                                          None         NaN                                     None
+    inflammation_endocrine_burden     Inflammation Endocrine Burden     input         Inflammatory, endocrine, or systemic physiological perturbation affecting the brain.                   None              None                                                          None         NaN                                     None
+  lesion_or_medical_insult_burden   Lesion Or Medical Insult Burden     input                              Overall burden of the causative medical or neurological insult.                   None              None                                                          None         NaN                                     None
+      neurotransmitter_disruption       Neurotransmitter Disruption     input      Direct alteration of serotonin, dopamine, or norepinephrine signaling by the condition.                   None              None                                                          None         NaN                                     None
+    premorbid_trait_vulnerability     Premorbid Trait Vulnerability     input                             Baseline vulnerability in affect regulation or behavioral style.                   None              None                                                          None         NaN                                     None
+treatment_of_underlying_condition Treatment Of Underlying Condition     input                        Protective improvement through treating the underlying medical cause.                   None              None                                                          None         NaN                                     None
+                              acc            Area p24ab (pACC) left    region                                                                    Atlas-backed circuit node Area p24ab (pACC) left              None     (-4.228915662650607, 38.1933187294633, 4.467141292442491)      1826.0 receptors=no; genes=yes; connectivity=no
+                         amygdala                LB (Amygdala) left    region                                                                    Atlas-backed circuit node     LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+                            dlpfc              middle frontal gyrus    region                                                                    Atlas-backed circuit node   middle frontal gyrus              None   (-37.574017415862556, 34.86051619989016, 35.43335686828273)     12747.0 receptors=no; genes=yes; connectivity=no
+                           insula            Area Id7 (Insula) left    region                                                                    Atlas-backed circuit node Area Id7 (Insula) left              None    (-31.47215496368038, 23.55326876513317, 4.044794188861985)       826.0 receptors=no; genes=yes; connectivity=no
+                              ofc               Area Fo4 (OFC) left    region                                                                    Atlas-backed circuit node    Area Fo4 (OFC) left              None  (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0 receptors=no; genes=yes; connectivity=no
+
+=== Edges (head) ===
+pcm_change                                                           relation                                source                                target
+ increased           medical insult disrupts coordinated frontolimbic control       lesion_or_medical_insult_burden       frontolimbic_regulatory_failure
+ increased       altered monoamine signaling destabilizes affect and behavior           neurotransmitter_disruption serotonergic_dopaminergic_instability
+ increased   frontal-temporal damage reduces restraint and social calibration          frontal_temporal_damage_load         social_behavior_disinhibition
+ increased         systemic physiological burden undermines network stability         inflammation_endocrine_burden       neurotrophic_network_disruption
+ increased             poor regulation produces unstable emotional expression       frontolimbic_regulatory_failure                    affective_lability
+ increased     reduced social restraint is expressed as disinhibited behavior         social_behavior_disinhibition                         disinhibition
+ increased monoaminergic instability can heighten irritability and aggression serotonergic_dopaminergic_instability               aggression_irritability
+ increased          reduced trophic and network support contributes to apathy       neurotrophic_network_disruption                apathy_or_indifference
+ increased               behavioral discontrol worsens social decision-making                         disinhibition            social_judgment_impairment
+ decreased treating the cause can reduce downstream personality change burden     treatment_of_underlying_condition       frontolimbic_regulatory_failure
+ decreased           structure can reduce real-world expression of dyscontrol       environmental_structure_support                         disinhibition
+
+=== Gene summary: ofc ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.623275   1.783520            8     0.213975    0.107743
+CACNA1C    7.933233   1.594317           12     0.189750    0.509748
+   COMT    6.309525   3.411804           24    -0.136267    0.423556
+   DRD2    2.808050   1.854283           20    -0.616190    0.387672
+   DRD4    6.744192   6.803711           12     0.012533    0.887891
+  FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+ GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+  HTR1A    5.193775   1.369889           12     0.684575    0.166077
+   MAOA    5.282093   1.825758          124    -0.082106    0.308734
+  NR3C1    9.524360   1.046868           20     0.162315    0.346317
+
+=== Gene summary: amygdala ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+CACNA1C    8.106348   2.033784           21     0.538729    0.710266
+   COMT    6.458171   3.351996           42    -0.164479    1.545434
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+   DRD4    6.954405   6.242902           21     0.339352    1.290183
+  FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+  HTR1A    4.510162   2.272854           21     0.317105    1.132796
+   MAOA    6.318328   2.025589          217     0.779681    0.725249
+  NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+
+=== Inputs ===
+lesion_or_medical_insult_burden      0.60
+neurotransmitter_disruption          0.55
+inflammation_endocrine_burden        0.45
+frontal_temporal_damage_load         0.55
+premorbid_trait_vulnerability        0.40
+treatment_of_underlying_condition    0.35
+environmental_structure_support      0.30
+
+=== Latents ===
+serotonergic_dopaminergic_instability    0.3950
+neurotrophic_network_disruption          0.3525
+frontolimbic_regulatory_failure          0.3425
+social_behavior_disinhibition            0.2836
+identity_affect_instability              0.2586
+
+=== Regional state ===
+ofc              0.2376
+temporal_pole    0.2350
+dlpfc            0.1904
+amygdala         0.1627
+acc              0.1590
+insula           0.1160
+
+=== Symptoms ===
+aggression_irritability       0.2012
+affective_lability            0.1519
+apathy_or_indifference        0.1315
+disinhibition                 0.1301
+social_judgment_impairment    0.1234
+
+=== Phenotypes ===
+apathetic_network_profile       0.2248
+labile_frontolimbic_profile     0.1719
+disinhibited_frontal_profile    0.1637

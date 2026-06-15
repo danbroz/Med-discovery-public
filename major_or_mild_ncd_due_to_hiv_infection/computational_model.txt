@@ -1,0 +1,220 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                      key      node_type                                                   label                                            atlas_region                           feature_summary
+          acute_persistent_cns_hiv_burden          input                         Acute Persistent Cns Hiv Burden                                                    None                                      None
+chemokine_monocyte_infiltration_liability          input               Chemokine Monocyte Infiltration Liability                                                    None                                      None
+                chronic_immune_activation          input                               Chronic Immune Activation                                                    None                                      None
+                    disease_severity_load          input                                   Disease Severity Load                                                    None                                      None
+       antiretroviral_cns_control_support          input                      Antiretroviral Cns Control Support                                                    None                                      None
+                      basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left receptors=no; genes=yes; connectivity=yes
+                           thalamus_proxy         region                        ZI (Thalamus, zona incerta) left                        ZI (Thalamus, zona incerta) left receptors=no; genes=yes; connectivity=yes
+              cerebral_white_matter_proxy         region                             Cerebral White Matter Proxy                                                    None                                unresolved
+                         cerebellum_proxy         region              Nfast (Cerebellum, Fastigial Nucleus) left              Nfast (Cerebellum, Fastigial Nucleus) left receptors=no; genes=yes; connectivity=yes
+               brainstem_oculomotor_proxy         region                                                midbrain                                                midbrain receptors=no; genes=yes; connectivity=yes
+                 monocyte_cns_trafficking latent_biology                                Monocyte Cns Trafficking                                                    None                                      None
+                chronic_neuroinflammation latent_biology                               Chronic Neuroinflammation                                                    None                                      None
+              viral_protein_neurotoxicity latent_biology                             Viral Protein Neurotoxicity                                                    None                                      None
+            synaptic_neuronal_dysfunction latent_biology                           Synaptic Neuronal Dysfunction                                                    None                                      None
+        subcortical_transmitter_imbalance latent_biology                       Subcortical Transmitter Imbalance                                                    None                                      None
+   subcortical_white_matter_disconnection latent_biology                  Subcortical White Matter Disconnection                                                    None                                      None
+         deep_gray_matter_network_failure latent_biology                        Deep Gray Matter Network Failure                                                    None                                      None
+  cerebellar_brainstem_pathway_disruption latent_biology                 Cerebellar Brainstem Pathway Disruption                                                    None                                      None
+                      psychomotor_slowing        symptom                                     Psychomotor Slowing                                                    None                                      None
+        attentional_executive_dysfunction        symptom                       Attentional Executive Dysfunction                                                    None                                      None
+             behavioral_motivation_change        symptom                            Behavioral Motivation Change                                                    None                                      None
+              motor_incoordination_ataxia        symptom                             Motor Incoordination Ataxia                                                    None                                      None
+                 oculomotor_abnormalities        symptom                                Oculomotor Abnormalities                                                    None                                      None
+              daily_function_interference        symptom                             Daily Function Interference                                                    None                                      None
+
+=== EDGES ===
+                                   source                                  target                                                                                               relation hiv_ncd_change
+          acute_persistent_cns_hiv_burden                monocyte_cns_trafficking establishes and maintains CNS infection conditions that permit inflammatory cell entry and persistence      increased
+          acute_persistent_cns_hiv_burden             viral_protein_neurotoxicity                             raises the burden of viral products contributing to indirect neural injury      increased
+chemokine_monocyte_infiltration_liability                monocyte_cns_trafficking                       biases monocyte recruitment into the CNS through chemokine-system susceptibility      increased
+                chronic_immune_activation               chronic_neuroinflammation                                                         sustains inflammatory signaling within the CNS      increased
+                    disease_severity_load             viral_protein_neurotoxicity                                       raises cumulative neurotoxic burden as illness severity advances      increased
+                    disease_severity_load  subcortical_white_matter_disconnection                              increases vulnerability of distributed deep-gray and white-matter systems      increased
+       antiretroviral_cns_control_support                monocyte_cns_trafficking                                           reduces the effective inflammatory seeding burden in the CNS      decreased
+       antiretroviral_cns_control_support               chronic_neuroinflammation                                     buffers neuroinflammatory drive by reducing ongoing viral activity      decreased
+       antiretroviral_cns_control_support             viral_protein_neurotoxicity                                                      lowers the burden of indirect viral neurotoxicity      decreased
+                 monocyte_cns_trafficking               chronic_neuroinflammation                                                initiates and sustains inflammatory cascades in the CNS      increased
+                chronic_neuroinflammation           synaptic_neuronal_dysfunction                                                    drives widespread synaptic and neuronal dysfunction      increased
+              viral_protein_neurotoxicity           synaptic_neuronal_dysfunction                                             adds direct toxic stress on neural signaling and viability      increased
+                chronic_neuroinflammation       subcortical_transmitter_imbalance                       perturbs subcortical transmitter systems relevant to cognition and motor control      increased
+            synaptic_neuronal_dysfunction       subcortical_transmitter_imbalance                                         destabilizes neurotransmitter-dependent subcortical processing      increased
+            synaptic_neuronal_dysfunction  subcortical_white_matter_disconnection                                          weakens communication across distributed subcortical networks      increased
+   subcortical_white_matter_disconnection        deep_gray_matter_network_failure                                                    disconnects basal ganglia-thalamic processing loops      increased
+        subcortical_transmitter_imbalance        deep_gray_matter_network_failure                                             worsens processing efficiency in deep gray matter circuits      increased
+                chronic_neuroinflammation cerebellar_brainstem_pathway_disruption                                     extends pathological burden into cerebellar and brainstem pathways      increased
+   subcortical_white_matter_disconnection cerebellar_brainstem_pathway_disruption                             interrupts cerebro-cerebellar and brainstem-related communication pathways      increased
+         deep_gray_matter_network_failure                     basal_ganglia_proxy                                                increases dysfunction burden in basal ganglia circuitry      increased
+         deep_gray_matter_network_failure                          thalamus_proxy                                               increases dysfunction burden in thalamic relay circuitry      increased
+   subcortical_white_matter_disconnection             cerebral_white_matter_proxy                                           increases injury burden in distributed white-matter pathways      increased
+  cerebellar_brainstem_pathway_disruption                        cerebellum_proxy                                         raises dysfunction burden in cerebellar coordination circuitry      increased
+  cerebellar_brainstem_pathway_disruption              brainstem_oculomotor_proxy                                             raises dysfunction burden in brainstem oculomotor pathways      increased
+                      basal_ganglia_proxy                     psychomotor_slowing                                 contributes to psychomotor slowing in the subcortical dementia pattern      increased
+              cerebral_white_matter_proxy                     psychomotor_slowing                                  slows distributed information transfer and motor-cognitive throughput      increased
+                           thalamus_proxy       attentional_executive_dysfunction                                                        weakens relay and attentional control functions      increased
+              cerebral_white_matter_proxy       attentional_executive_dysfunction                                             disconnects distributed executive and attentional networks      increased
+                      basal_ganglia_proxy            behavioral_motivation_change                                       contributes to behavioral and motivational slowing or alteration      increased
+                         cerebellum_proxy             motor_incoordination_ataxia                          drives ataxia and coordination deficits when cerebellar pathways are affected      increased
+               brainstem_oculomotor_proxy                oculomotor_abnormalities                                         contributes to abnormal fixation, saccades, and smooth pursuit      increased
+                      psychomotor_slowing             daily_function_interference                                        increases day-to-day burden through slowed cognition and action      increased
+        attentional_executive_dysfunction             daily_function_interference                                                             reduces efficiency in everyday functioning      increased
+              motor_incoordination_ataxia             daily_function_interference                                                   increases functional burden through motor impairment      increased
+             behavioral_motivation_change             daily_function_interference                                     adds behavioral and motivational impairment to the syndrome burden      increased
+
+=== REGION RESOLUTION ===
+basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+thalamus_proxy: ZI (Thalamus, zona incerta) left
+cerebellum_proxy: Nfast (Cerebellum, Fastigial Nucleus) left
+brainstem_oculomotor_proxy: midbrain
+
+=== FEATURES: basal_ganglia_proxy ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  CCL2    3.656358   1.394744           12    -0.477108    1.032725
+  CCR2    1.332975   0.526380           24    -0.216408    0.915911
+  CCR5    2.297756   1.482844           18    -0.168178    0.977143
+CXCL10    1.331692   0.587923           12    -0.201483    0.845610
+Connectivity:
+                              connected_region    value
+FuP (Ventral Striatum, Fundus of Putamen) left 4462.355
+       BST (Basal Forebrain, Bed Nucleus) left 3299.035
+                    VP (Ventral Pallidum) left 1944.015
+                         Area Fp1 (FPole) left 1678.720
+                           Area Fo3 (OFC) left 1624.325
+
+=== FEATURES: thalamus_proxy ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    4.053369   2.316030           16    -0.572300    0.865879
+  CCL2    4.880781   1.672990           16     0.654650    0.741557
+  CCR2    1.580797   0.372451           32    -0.089878    0.884392
+  CCR5    2.582437   1.728042           24     0.219800    1.091754
+CXCL10    1.564556   0.313573           16    -0.104844    0.701201
+Connectivity:
+                                      connected_region    value
+     VIM (Thalamus, ventral intermediate Nucleus) left 3248.250
+ VLA (Thalamus, ventral lateral anterior Nucleus) left 1128.025
+VA (Thalamus, ventral anterior Nucleus (ventral)) left  657.830
+                                STN (Subthalamus) left  547.375
+                                 Area 6d1 (PreCG) left  371.750
+
+=== FEATURES: cerebral_white_matter_proxy ===
+Receptors:
+<none>
+Genes:
+<none>
+Connectivity:
+<none>
+
+=== FEATURES: cerebellum_proxy ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.167967   0.597530            6    -1.750383    0.750859
+  CCL2    3.518800   0.935957            6    -0.689400    1.139494
+  CCR2    1.747692   0.145750           12     0.465200    0.765130
+  CCR5    2.831467   1.626970            9     1.135478    0.632641
+CXCL10    1.748183   0.140477            6     0.331850    0.593045
+Connectivity:
+      connected_region  value
+ Area 3b (PostCG) left    0.0
+    Area PF (IPL) left    0.0
+Area hOc4la (LOC) left    0.0
+  Area CoS1 (CoS) left    0.0
+  Astr (Amygdala) left    0.0
+
+=== FEATURES: brainstem_oculomotor_proxy ===
+Receptors:
+<none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.734800   1.981989           36    -0.711794    0.906419
+  CCL2    4.338000   1.897855           36     0.070389    1.137141
+  CCR2    1.739764   0.562604           72     0.666547    1.199911
+  CCR5    2.825887   1.751116           54     0.677074    1.084571
+CXCL10    1.755750   0.673507           36     0.606672    1.287875
+Connectivity:
+      connected_region  value
+ Area 3b (PostCG) left    0.0
+    Area PF (IPL) left    0.0
+Area hOc4la (LOC) left    0.0
+  Area CoS1 (CoS) left    0.0
+  Astr (Amygdala) left    0.0
+
+=== CIRCUIT CONNECTIVITY ===
+                source_key                                           source_region                 target_key                                           target_region  value
+       basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left             thalamus_proxy                        ZI (Thalamus, zona incerta) left 16.035
+            thalamus_proxy                        ZI (Thalamus, zona incerta) left        basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 16.035
+       basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left           cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left  0.000
+       basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left brainstem_oculomotor_proxy                                                midbrain  0.000
+            thalamus_proxy                        ZI (Thalamus, zona incerta) left           cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left  0.000
+            thalamus_proxy                        ZI (Thalamus, zona incerta) left brainstem_oculomotor_proxy                                                midbrain  0.000
+          cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left        basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  0.000
+          cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left             thalamus_proxy                        ZI (Thalamus, zona incerta) left  0.000
+          cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left brainstem_oculomotor_proxy                                                midbrain  0.000
+brainstem_oculomotor_proxy                                                midbrain        basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  0.000
+brainstem_oculomotor_proxy                                                midbrain             thalamus_proxy                        ZI (Thalamus, zona incerta) left  0.000
+brainstem_oculomotor_proxy                                                midbrain           cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left  0.000
+
+=== SIMULATION: INPUTS ===
+acute_persistent_cns_hiv_burden              0.78
+chemokine_monocyte_infiltration_liability    0.58
+chronic_immune_activation                    0.72
+disease_severity_load                        0.64
+antiretroviral_cns_control_support           0.42
+
+=== SIMULATION: LATENTS ===
+chronic_neuroinflammation                  0.609
+monocyte_cns_trafficking                   0.586
+viral_protein_neurotoxicity                0.565
+cerebellar_brainstem_pathway_disruption    0.524
+deep_gray_matter_network_failure           0.512
+synaptic_neuronal_dysfunction              0.511
+subcortical_white_matter_disconnection     0.492
+subcortical_transmitter_imbalance          0.455
+
+=== SIMULATION: REGIONAL STATE ===
+thalamus_proxy                 0.424
+cerebral_white_matter_proxy    0.424
+basal_ganglia_proxy            0.413
+cerebellum_proxy               0.402
+brainstem_oculomotor_proxy     0.368
+
+=== SIMULATION: SYMPTOMS ===
+behavioral_motivation_change         0.463
+psychomotor_slowing                  0.433
+attentional_executive_dysfunction    0.432
+daily_function_interference          0.431
+oculomotor_abnormalities             0.386
+motor_incoordination_ataxia          0.377
+
+=== SIMULATION: PHENOTYPES ===
+hand_continuum_burden                    0.440
+mnd_pattern_index                        0.431
+had_like_subcortical_dementia_profile    0.427
+subcortical_dementia_profile             0.425
+motor_cerebellar_profile                 0.383
+ani_pattern_index                        0.258

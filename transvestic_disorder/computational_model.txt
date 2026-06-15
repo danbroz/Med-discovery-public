@@ -1,0 +1,122 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                               key                              label node_type                                                                                               description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+familial_atypical_interest_loading Familial Atypical Interest Loading     input     Possible familial loading for atypical sexual-interest patterns noted as a hypothesis in the chapter.                   None              None                                                           None         NaN                                      None
+obsessive_compulsive_trait_loading Obsessive Compulsive Trait Loading     input  Familial or temperamental obsessive-compulsive traits that may bias habit formation and urge resistance.                   None              None                                                           None         NaN                                      None
+     arousal_reinforcement_history      Arousal Reinforcement History     input History of repeated reinforcement of the disorder-defined arousal pattern, strengthening reward salience.                   None              None                                                           None         NaN                                      None
+                 early_life_stress                  Early Life Stress     input                        Early stress or trauma that may produce durable biological and epigenetic effects.                   None              None                                                           None         NaN                                      None
+        chronic_concealment_stress         Chronic Concealment Stress     input                           Sustained stress from concealment of the behavior pattern and fear of exposure.                   None              None                                                           None         NaN                                      None
+                 internal_conflict                  Internal Conflict     input                                 Persistent internal conflict around the behavior pattern and its meaning.                   None              None                                                           None         NaN                                      None
+            social_stigma_exposure             Social Stigma Exposure     input                            External stigma, fear of judgment, discovery, rejection, or social punishment.                   None              None                                                           None         NaN                                      None
+                 affirming_support                  Affirming Support     input        Protective affirming and regulating support that can reduce concealment burden and chronic stress.                   None              None                                                           None         NaN                                      None
+                          amygdala                 LB (Amygdala) left    region                      Direct atlas anchor for the chapter's fear, salience, and social-judgment circuitry.     LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=no
+                               ofc                Area Fo4 (OFC) left    region                 Direct atlas anchor for orbitofrontal reward valuation and compulsive habit-loop control.    Area Fo4 (OFC) left              None   (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0  receptors=no; genes=yes; connectivity=no
+                               acc               Area s24 (sACC) left    region                 Direct atlas anchor for conflict monitoring, distress processing, and control allocation.   Area s24 (sACC) left              None    (-4.674531575294935, 25.271339347675223, -10.9972241498959)      1441.0  receptors=no; genes=yes; connectivity=no
+                       hippocampus             CA1 (Hippocampus) left    region               Direct atlas anchor for stress-sensitive memory/context systems affected by chronic stress. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+
+=== Edges (head) ===
+                            source                          target                                                                              relation transvestic_change
+familial_atypical_interest_loading          familial_vulnerability familial clustering of atypical sexual interests may contribute to baseline liability          increased
+obsessive_compulsive_trait_loading          familial_vulnerability              familial obsessive-compulsive traits may bias urge-related vulnerability          increased
+                 early_life_stress     epigenetic_stress_embedding         early stress can leave durable biological marks through epigenetic mechanisms          increased
+        chronic_concealment_stress     epigenetic_stress_embedding                      chronic stress may reinforce lasting stress-system recalibration          increased
+            familial_vulnerability dopamine_reward_motivation_bias              baseline vulnerability may bias reward and motivational salience systems          increased
+     arousal_reinforcement_history dopamine_reward_motivation_bias                 repeated reinforcement strengthens incentive salience and reward pull          increased
+            familial_vulnerability   serotonergic_regulation_shift              baseline liability may contribute to serotonergic regulation differences          increased
+       epigenetic_stress_embedding   serotonergic_regulation_shift                               stress embedding can alter affective regulation systems          increased
+       epigenetic_stress_embedding          hpa_axis_dysregulation                                              stress embedding sensitizes the HPA axis          increased
+        chronic_concealment_stress          hpa_axis_dysregulation                            concealment burden chronically activates stress physiology          increased
+                 internal_conflict          hpa_axis_dysregulation                           internal conflict sustains chronic stress-system activation          increased
+            social_stigma_exposure          hpa_axis_dysregulation                               stigma and judgment exposure amplify stress-axis burden          increased
+
+=== Region resolution ===
+     node_key  resolved                                                                                  requested_candidates                                           resolved_name identifier
+     amygdala      True                 [LB (Amygdala) left, CM (Amygdala) left, SF (Amygdala) left, amygdala left, amygdala]                                      LB (Amygdala) left       None
+          ofc      True                                   [Area Fo4 (OFC) left, Area Fo3 (OFC) left, Fo4, Fo3, orbitofrontal]                                     Area Fo4 (OFC) left       None
+          acc      True                   [Area p24 left, Area a24 left, Area s24 left, anterior cingulate cortex, cingulate]                                    Area s24 (sACC) left       None
+  hippocampus      True                                             [CA1 left, Subiculum left, hippocampus left, hippocampus]                                  CA1 (Hippocampus) left       None
+  vmpfc_proxy     False [Area 14M left, Area 10 left, Area 32 left, ventromedial prefrontal cortex, medial prefrontal cortex]                                                    None       None
+caudate_proxy      True                              [caudate nucleus left, caudate left, caudate nucleus, caudate, striatum] FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left       None
+
+=== Example connectivity subgraph ===
+               amygdala      ofc       acc  hippocampus  caudate_proxy
+amygdala        244.570    0.075     0.110       64.260          0.075
+ofc               0.075  698.345    13.595        1.655        495.015
+acc               0.110   13.595  4092.955        0.970        518.855
+hippocampus      64.260    1.655     0.970     1685.400          1.610
+caudate_proxy     0.075  495.015   518.855        1.610       2794.395
+
+=== Example amygdala receptor table ===
+No amygdala receptor table available in this environment.
+
+=== Example amygdala gene table ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+
+=== Example OFC connectivity profile ===
+No OFC connectivity profile available in this environment.
+
+=== Example simulation ===
+
+[inputs]
+familial_atypical_interest_loading    0.48
+obsessive_compulsive_trait_loading    0.56
+arousal_reinforcement_history         0.72
+early_life_stress                     0.34
+chronic_concealment_stress            0.76
+internal_conflict                     0.68
+social_stigma_exposure                0.63
+affirming_support                     0.18
+
+[latents]
+familial_vulnerability               0.370
+epigenetic_stress_embedding          0.404
+dopamine_reward_motivation_bias      0.448
+serotonergic_regulation_shift        0.322
+hpa_axis_dysregulation               0.506
+noradrenergic_hyperarousal           0.406
+frontostriatal_compulsivity          0.383
+pfc_top_down_weakening               0.310
+amygdala_social_threat_reactivity    0.425
+hippocampal_stress_burden            0.280
+shame_conflict_dysphoria             0.416
+
+[regional_state]
+amygdala         0.328
+ofc              0.293
+acc              0.306
+hippocampus      0.251
+vmpfc_proxy      0.292
+caudate_proxy    0.329
+
+[symptoms]
+recurrent_cross_dressing_arousal      0.350
+compulsive_cross_dressing_behavior    0.248
+shame_distress                        0.314
+anxiety_hypervigilance                0.241
+exaggerated_startle                   0.251
+episodic_dysphoria_irritability       0.296
+depressive_burden                     0.370
+functional_impairment                 0.262
+
+[phenotypes]
+reward_compulsivity_profile            0.357
+concealment_stress_profile             0.351
+dysphoric_internal_conflict_profile    0.349
+clinical_td_burden_profile             0.298

@@ -1,0 +1,95 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                    key                                   label      node_type                                                                                                                              description       atlas_region                                          region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+    genetic_steroid_signaling_variation     Genetic Steroid Signaling Variation          input Variation in genes controlling steroid synthesis, metabolism, or receptor signaling that could shift sexual differentiation of the brain               None                                                       None                                                          None         NaN                                     None
+     prenatal_hormone_signal_divergence      Prenatal Hormone Signal Divergence          input                        Prenatal hormonal milieu leading brain sexual differentiation to diverge from genital and somatic differentiation               None                                                       None                                                          None         NaN                                     None
+              activational_hormone_load               Activational Hormone Load          input            Later-life circulating hormone effects that modulate established circuits and intensify secondary sex characteristic salience               None                                                       None                                                          None         NaN                                     None
+   body_sex_characteristic_misalignment    Body Sex Characteristic Misalignment          input                                      Current mismatch between bodily / secondary sex characteristics and the experienced gender identity               None                                                       None                                                          None         NaN                                     None
+       gender_affirming_hormone_support        Gender Affirming Hormone Support          input                                    Hormonal alignment support that can shift secondary sex characteristics toward the experienced gender               None                                                       None                                                          None         NaN                                     None
+               gender_affirming_support                Gender Affirming Support          input                                                           Broader affirming clinical and social support that buffers psychosocial burden               None                                                       None                                                          None         NaN                                     None
+                     hypothalamus_proxy                      hypothalamus proxy   region_proxy                                                                                 Proxy circuit node unresolved in this siibra environment               None                                                       None                                                          None         NaN                               unresolved
+                         amygdala_proxy                      LB (Amygdala) left   region_proxy                                                                                    Atlas-backed proxy node for a chapter-implied circuit LB (Amygdala) left JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_LB_AMYGDALA_LEFT (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+           steroid_signaling_divergence            Steroid Signaling Divergence latent_biology                                                                  Net divergence in steroid synthesis, metabolism, and receptor signaling               None                                                       None                                                          None         NaN                                     None
+brain_body_sex_differentiation_mismatch Brain Body Sex Differentiation Mismatch latent_biology                                  Developmental divergence between brain-based gender identity programming and bodily sex differentiation               None                                                       None                                                          None         NaN                                     None
+    gender_identity_encoding_divergence     Gender Identity Encoding Divergence latent_biology                                            Brain organization becoming more congruent with experienced gender than assigned sex at birth               None                                                       None                                                          None         NaN                                     None
+     activational_hormone_amplification      Activational Hormone Amplification latent_biology                                                                Later hormonal modulation that amplifies circuit salience and bodily cues               None                                                       None                                                          None         NaN                                     None
+                secondary_sex_alignment                 Secondary Sex Alignment latent_biology                                                            Protective alignment of secondary sex characteristics with experienced gender               None                                                       None                                                          None         NaN                                     None
+             body_identity_incongruence              Body Identity Incongruence latent_biology                                                              Lived mismatch between body characteristics and experienced gender identity               None                                                       None                                                          None         NaN                                     None
+   sex_typed_behavioral_expression_bias    Sex Typed Behavioral Expression Bias latent_biology                                                                   Behavioral preferences and expression aligning with experienced gender               None                                                       None                                                          None         NaN                                     None
+              gender_dysphoria_distress               Gender Dysphoria Distress        symptom                                                                   Distress arising from incongruence between experienced gender and body               None                                                       None                                                          None         NaN                                     None
+  secondary_sex_characteristic_distress   Secondary Sex Characteristic Distress        symptom                                                            Distress focused on secondary sex characteristics that intensify incongruence               None                                                       None                                                          None         NaN                                     None
+                  body_related_distress                   Body Related Distress        symptom                                                            Body-focused distress linked to mismatch between identity and physical traits               None                                                       None                                                          None         NaN                                     None
+     psychosocial_adjustment_difficulty      Psychosocial Adjustment Difficulty        symptom                                                              Broader psychosocial burden that may improve when bodily traits are aligned               None                                                       None                                                          None         NaN                                     None
+
+=== Edges ===
+                                 source                                  target                                                                    relation          gd_change
+    genetic_steroid_signaling_variation            steroid_signaling_divergence              alters steroid synthesis, metabolism, and receptor sensitivity          increased
+     prenatal_hormone_signal_divergence            steroid_signaling_divergence             captures atypical prenatal androgen / estrogen exposure effects          increased
+           steroid_signaling_divergence brain_body_sex_differentiation_mismatch decouples brain sexual differentiation from genital and somatic development          increased
+     prenatal_hormone_signal_divergence brain_body_sex_differentiation_mismatch    directly shifts developmental trajectory of brain sexual differentiation          increased
+brain_body_sex_differentiation_mismatch     gender_identity_encoding_divergence      organizes identity-related brain development toward experienced gender          increased
+    gender_identity_encoding_divergence    sex_typed_behavioral_expression_bias         biases early play and preference patterns toward experienced gender          increased
+              activational_hormone_load      activational_hormone_amplification                         modulates established neural circuits later in life          increased
+       gender_affirming_hormone_support                 secondary_sex_alignment  promotes bodily alignment with experienced gender via secondary sex traits decreased_distress
+    gender_identity_encoding_divergence              body_identity_incongruence  creates conflict when body characteristics do not match experienced gender          increased
+   body_sex_characteristic_misalignment              body_identity_incongruence                loads the lived mismatch between body and experienced gender          increased
+     activational_hormone_amplification              body_identity_incongruence                         amplifies salience of secondary sex characteristics          increased
+                secondary_sex_alignment              body_identity_incongruence                             reduces bodily mismatch with experienced gender          decreased
+             body_identity_incongruence               gender_dysphoria_distress                                              drives core dysphoric distress          increased
+             body_identity_incongruence                   body_related_distress                                  focuses distress on bodily characteristics          increased
+     activational_hormone_amplification   secondary_sex_characteristic_distress intensifies distress through later hormonal effects on secondary sex traits          increased
+              gender_dysphoria_distress      psychosocial_adjustment_difficulty                                          contributes to psychosocial burden          increased
+  secondary_sex_characteristic_distress      psychosocial_adjustment_difficulty                         adds body-related burden to adjustment difficulties          increased
+               gender_affirming_support      psychosocial_adjustment_difficulty                                                 buffers psychosocial burden          decreased
+
+=== Resolved regions ===
+- amygdala_proxy: LB (Amygdala) left
+
+=== Feature availability ===
+- hypothalamus_proxy: receptors=False, genes=False, connectivity=False
+- amygdala_proxy: receptors=False, genes=True, connectivity=False
+
+=== Example simulation ===
+
+INPUTS
+activational_hormone_load               0.55
+body_sex_characteristic_misalignment    0.80
+gender_affirming_hormone_support        0.25
+gender_affirming_support                0.40
+genetic_steroid_signaling_variation     0.60
+prenatal_hormone_signal_divergence      0.70
+
+LATENTS
+activational_hormone_amplification         0.5200
+body_identity_incongruence                 0.5271
+brain_body_sex_differentiation_mismatch    0.6670
+gender_identity_encoding_divergence        0.6615
+secondary_sex_alignment                    0.2875
+sex_typed_behavioral_expression_bias       0.5830
+steroid_signaling_divergence               0.6450
+
+REGIONAL_STATE
+amygdala_proxy        0.5365
+hypothalamus_proxy    0.5950
+
+SYMPTOMS
+body_related_distress                    0.3928
+gender_dysphoria_distress                0.3866
+psychosocial_adjustment_difficulty       0.1954
+secondary_sex_characteristic_distress    0.4785
+
+PHENOTYPES
+developmental_mismatch_profile          0.6185
+early_identity_consistency_signal       0.6222
+hormone_responsive_dysphoria_profile    0.4617
+support_buffered_adjustment             0.4974
+
+Tip: use model.suggest_regions('amygdala') or model.suggest_regions('hypothalamus') to retune proxies.
+Tip: use model.assign_mni_point((x, y, z)) when siibra is installed and online atlas resources are available.

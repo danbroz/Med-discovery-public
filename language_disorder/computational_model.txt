@@ -1,0 +1,142 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE SUMMARY ===
+                                            key      node_type                                            atlas_region                           feature_summary  is_proxy
+                     genetic_language_liability          input                                                    None                                      None     False
+                       foxp2_pathway_disruption          input                                                    None                                      None     False
+                 chromatin_transcription_burden          input                                                    None                                      None     False
+      dopaminergic_frontostriatal_dysregulation          input                                                    None                                      None     False
+                     executive_attention_burden          input                                                    None                                      None     False
+                  neurodevelopmental_cns_burden          input                                                    None                                      None     False
+left_lateralized_language_network_vulnerability          input                                                    None                                      None     False
+                social_pragmatic_network_burden          input                                                    None                                      None     False
+            environmental_language_exacerbation          input                                                    None                                      None     False
+                    stimulant_attention_support          input                                                    None                                      None     False
+                speech_language_therapy_support          input                                                    None                                      None     False
+                  enriched_language_environment          input                                                    None                                      None     False
+               declarative_compensation_support          input                                                    None                                      None     False
+                         inferior_frontal_gyrus         region                                      Area 44 (IFG) left receptors=yes; genes=yes; connectivity=no     False
+                temporoparietal_phonology_proxy         region                                     Area PFm (IPL) left receptors=yes; genes=yes; connectivity=no      True
+                              pfc_control_proxy         region                                                    None                                unresolved      True
+                            basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no      True
+                                    hippocampus         region                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no     False
+      right_inferior_frontal_compensation_proxy         region                                     Area 44 (IFG) right receptors=yes; genes=yes; connectivity=no      True
+                 synaptic_plasticity_constraint latent_biology                                                    None                                      None     False
+          frontostriatal_sequencing_dysfunction latent_biology                                                    None                                      None     False
+           procedural_memory_grammar_impairment latent_biology                                                    None                                      None     False
+        phonological_representation_instability latent_biology                                                    None                                      None     False
+                  speech_motor_planning_deficit latent_biology                                                    None                                      None     False
+         prefrontal_executive_access_constraint latent_biology                                                    None                                      None     False
+        frontotemporal_connectivity_atypicality latent_biology                                                    None                                      None     False
+      pragmatic_social_language_dysconnectivity latent_biology                                                    None                                      None     False
+               declarative_lexical_compensation latent_biology                                                    None                                      None     False
+                 expressive_language_impairment        symptom                                                    None                                      None     False
+                  receptive_language_impairment        symptom                                                    None                                      None     False
+             phonological_processing_difficulty        symptom                                                    None                                      None     False
+           grammatical_rule_learning_difficulty        symptom                                                    None                                      None     False
+               speech_motor_planning_difficulty        symptom                                                    None                                      None     False
+                  pragmatic_language_difficulty        symptom                                                    None                                      None     False
+
+=== EDGE SUMMARY ===
+                                         source                                    target                                                                            relation language_disorder_change
+                     genetic_language_liability            synaptic_plasticity_constraint  loads inherited risk affecting neural development and language-learning efficiency                increased
+                       foxp2_pathway_disruption             speech_motor_planning_deficit                  raises speech motor planning burden and apraxia-like vulnerability                increased
+                       foxp2_pathway_disruption     frontostriatal_sequencing_dysfunction                      disrupts corticostriatal development and sequencing for speech                increased
+                 chromatin_transcription_burden            synaptic_plasticity_constraint             broadly disrupts downstream targets needed for normal brain development                increased
+                 chromatin_transcription_burden   frontotemporal_connectivity_atypicality                            contributes to distributed developmental dysconnectivity                increased
+      dopaminergic_frontostriatal_dysregulation     frontostriatal_sequencing_dysfunction                              impairs sequencing, motor learning, and speech fluency                increased
+      dopaminergic_frontostriatal_dysregulation    prefrontal_executive_access_constraint                  reduces executive control and attentional access to language tasks                increased
+                     executive_attention_burden    prefrontal_executive_access_constraint                     adds working-memory, inhibition, and sustained-attention burden                increased
+                  neurodevelopmental_cns_burden   frontotemporal_connectivity_atypicality          reflects intrinsic CNS dysfunction underlying persistent language problems                increased
+left_lateralized_language_network_vulnerability   phonological_representation_instability                 undermines dominant left posterior phonological processing networks                increased
+                social_pragmatic_network_burden pragmatic_social_language_dysconnectivity                       disrupts pragmatic language and social-cognitive language use                increased
+            environmental_language_exacerbation   phonological_representation_instability             worsens expression of the disorder without serving as the primary cause                increased
+                    stimulant_attention_support    prefrontal_executive_access_constraint                   improves attention and access to educational or therapeutic input                decreased
+                speech_language_therapy_support   phonological_representation_instability supports rehearsal and strengthening of phonological and expressive language skills                decreased
+                speech_language_therapy_support             speech_motor_planning_deficit                  partially offsets speech-motor programming burden through practice                decreased
+                  enriched_language_environment            synaptic_plasticity_constraint              improves language-learning opportunities and support for consolidation                decreased
+               declarative_compensation_support          declarative_lexical_compensation                      supports lexical compensation when procedural learning is weak                decreased
+          frontostriatal_sequencing_dysfunction                       basal_ganglia_proxy                           loads striatal sequencing and motor-programming circuitry                increased
+                  speech_motor_planning_deficit                    inferior_frontal_gyrus                       raises burden in inferior frontal speech-production circuitry                increased
+         prefrontal_executive_access_constraint                         pfc_control_proxy             raises executive-control burden in prefrontal language-access circuitry                increased
+
+=== REGION FEATURE SNAPSHOT ===
+
+[inferior_frontal_gyrus]
+      atlas_region                                                centroid_mni                           feature_summary
+Area 44 (IFG) left (-53.1196388261851, 16.236518685728612, 12.396287935791321) receptors=yes; genes=yes; connectivity=no
+receptors:
+ mean  std
+  295  112
+  490  205
+ 1129  382
+ 3545  913
+ 1420  216
+genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.676517   1.810704            6     0.281467    0.245191
+  COMT    6.015694   3.469225           18    -0.490539    0.556158
+CYFIP1    7.383583   0.584436            6     0.238050    0.287306
+  DRD2    3.175227   2.085261           15    -0.333620    0.451824
+ FOXP2    4.163033   0.866976           12     0.346725    0.321668
+
+[temporoparietal_phonology_proxy]
+       atlas_region                                                centroid_mni                           feature_summary
+Area PFm (IPL) left (-56.13532182103611, -52.10266875981162, 41.33893249607536) receptors=yes; genes=yes; connectivity=no
+receptors:
+ mean  std
+  513  134
+  532  373
+ 1244  311
+ 1649  229
+ 1881  914
+genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.426433   1.901761            6     0.308817    0.393800
+  COMT    6.542244   3.361313           18    -0.231011    0.717942
+CYFIP1    7.537933   0.415910            6     0.450083    0.371680
+  DRD2    2.913880   1.852590           15    -0.500180    0.464384
+ FOXP2    3.840308   1.067210           12     0.195742    0.560779
+
+[hippocampus]
+          atlas_region                                                   centroid_mni                           feature_summary
+CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+receptors:
+ mean  std
+  498  120
+ 1366  273
+  366  127
+  789  362
+ 1961  397
+genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+CYFIP1    6.809150   0.515976           16    -0.454937    0.818165
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FOXP2    2.869831   1.458961           32    -0.656562    1.113506
+
+=== CIRCUIT CONNECTIVITY ===
+No pairwise circuit connectivity available in this runtime.
+
+=== SIMULATED SYMPTOMS ===
+receptive_language_impairment           0.2285
+speech_motor_planning_difficulty        0.1710
+expressive_language_impairment          0.1620
+phonological_processing_difficulty      0.1613
+pragmatic_language_difficulty           0.1474
+grammatical_rule_learning_difficulty    0.1395
+
+=== SIMULATED PHENOTYPES ===
+declarative_compensation_profile        0.4184
+executive_attention_language_profile    0.2664
+phonological_dyslexia_overlap           0.2414
+speech_apraxia_profile                  0.2198
+procedural_language_profile             0.2197
+overall_language_disorder_severity      0.1725

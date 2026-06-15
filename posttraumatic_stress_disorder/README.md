@@ -1,8 +1,13 @@
 # Posttraumatic Stress Disorder
 
 Candidate combination: crinecerfont + silodosin
+Patent docket: MHMDCNS-011
+Patent application: 64/090,751
+Patent Center status: Application Undergoing Preexam Processing
+Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20609299
-Zenodo record: https://zenodo.org/records/20609299
+Zenodo paper: https://zenodo.org/records/20609299
+Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/posttraumatic_stress_disorder
 
 ## Source Files
 
@@ -18,3 +23,4 @@ Zenodo record: https://zenodo.org/records/20609299
 
 This directory is the public source packet for the corresponding translational discovery manuscript.
 Evidence labels in the manuscript distinguish established, repository-derived, modeled, prophetic, and data-needed claims.
+The candidate is a research hypothesis and is not a clinical-use recommendation.

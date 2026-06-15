@@ -1,0 +1,112 @@
+
+=== Building atlas-backed scaffold ===
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+Nodes:
+                             key      node_type                                   atlas_region                          feature_summary
+               genetic_liability          input                                           None                                     None
+developmental_androgen_variation          input                                           None                                     None
+        disinhibitory_trait_load          input                                           None                                     None
+        family_adversity_history          input                                           None                                     None
+       cue_conditioning_strength          input                                           None                                     None
+       dopamine_agonist_exposure          input                                           None                                     None
+ acute_self_regulatory_depletion          input                                           None                                     None
+              inhibitory_support          input                                           None                                     None
+                        amygdala         region                             LB (Amygdala) left receptors=no; genes=yes; connectivity=no
+          ventral_striatum_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left receptors=no; genes=yes; connectivity=no
+                     pfc_control         region                                           None                               unresolved
+                             acc         region                           Area p32 (pACC) left receptors=no; genes=yes; connectivity=no
+             trait_disinhibition latent_biology                                           None                                     None
+   androgenic_developmental_bias latent_biology                                           None                                     None
+ dopaminergic_incentive_salience latent_biology                                           None                                     None
+      conditioned_cue_reactivity latent_biology                                           None                                     None
+   limbic_reward_hyperreactivity latent_biology                                           None                                     None
+  frontostriatal_control_failure latent_biology                                           None                                     None
+            compulsive_urge_loop latent_biology                                           None                                     None
+         intrusive_exposure_urge        symptom                                           None                                     None
+           cue_triggered_craving        symptom                                           None                                     None
+      inhibitory_control_failure        symptom                                           None                                     None
+       public_exposure_enactment        symptom                                           None                                     None
+ repetition_despite_consequences        symptom                                           None                                     None
+           ego_dystonic_conflict        symptom                                           None                                     None
+
+Edges (first 18):
+                          source                          target                                                                      relation exhibitionism_change
+               genetic_liability             trait_disinhibition        familial and heritable influences increase baseline disinhibition risk            increased
+               genetic_liability   androgenic_developmental_bias             genetic variation shapes developmental sexual-behaviour circuitry            increased
+developmental_androgen_variation   androgenic_developmental_bias androgen-pathway variation alters organization of sexual preference circuitry            increased
+        disinhibitory_trait_load             trait_disinhibition                impulsivity and sensation-seeking increase weak-restraint bias            increased
+        family_adversity_history             trait_disinhibition       adverse family environments may amplify later behavioural dysregulation            increased
+       cue_conditioning_strength      conditioned_cue_reactivity    learned public-exposure cues become strong triggers of arousal and wanting            increased
+       dopamine_agonist_exposure dopaminergic_incentive_salience                  dopaminergic stimulation intensifies compulsive sexual urges            increased
+ acute_self_regulatory_depletion  frontostriatal_control_failure            temporary depletion weakens the ability to inhibit sexual impulses            increased
+             trait_disinhibition  frontostriatal_control_failure                              stable disinhibition undermines top-down control            increased
+   androgenic_developmental_bias dopaminergic_incentive_salience              developmental sexual-circuit bias can potentiate reward salience            increased
+ dopaminergic_incentive_salience      conditioned_cue_reactivity             reward salience makes conditioned cues more motivationally potent            increased
+      conditioned_cue_reactivity   limbic_reward_hyperreactivity                  conditioned cues heighten limbic and reward-system responses            increased
+ dopaminergic_incentive_salience          ventral_striatum_proxy     dopamine-mediated wanting engages nucleus-accumbens-like reward circuitry          hyperactive
+      conditioned_cue_reactivity                        amygdala                 conditioned sexual cues recruit affective salience processing          hyperactive
+  frontostriatal_control_failure                     pfc_control            weak top-down regulation compromises prefrontal inhibitory control         dysregulated
+  frontostriatal_control_failure                             acc     response-conflict monitoring and inhibitory engagement become inefficient         dysregulated
+   limbic_reward_hyperreactivity         intrusive_exposure_urge                        overactive reward responses intensify repetitive urges            increased
+      conditioned_cue_reactivity           cue_triggered_craving                             conditioned contexts trigger craving-like arousal            increased
+
+No amygdala receptor table available in this environment.
+
+No PFC-control gene table available in this environment.
+
+No ventral striatum connectivity profile available in this environment.
+
+Within-model circuit connectivity:
+                        amygdala  ventral_striatum_proxy        acc
+amygdala                 244.570                    0.17      0.075
+ventral_striatum_proxy     0.170                  106.63     34.680
+acc                        0.075                   34.68  14215.670
+
+=== Simulation example: strong cue conditioning with weak control ===
+
+inputs:
+cue_conditioning_strength           0.85
+disinhibitory_trait_load            0.75
+acute_self_regulatory_depletion     0.55
+developmental_androgen_variation    0.55
+genetic_liability                   0.50
+family_adversity_history            0.35
+inhibitory_support                  0.20
+dopamine_agonist_exposure           0.05
+
+latents:
+conditioned_cue_reactivity         0.6029
+limbic_reward_hyperreactivity      0.4867
+trait_disinhibition                0.4825
+androgenic_developmental_bias      0.4725
+dopaminergic_incentive_salience    0.4659
+compulsive_urge_loop               0.4275
+frontostriatal_control_failure     0.3754
+
+regional_state:
+amygdala                  0.4703
+ventral_striatum_proxy    0.4394
+acc                       0.3774
+pfc_control               0.3319
+
+symptoms:
+cue_triggered_craving              0.4901
+intrusive_exposure_urge            0.4008
+repetition_despite_consequences    0.3464
+public_exposure_enactment          0.3444
+ego_dystonic_conflict              0.3281
+inhibitory_control_failure         0.3106
+
+phenotypes:
+cue_reactive_exhibitionism_profile    0.4317
+global_exhibitionism_burden           0.3639
+reward_control_imbalance              0.3588
+compulsive_exhibitionism_profile      0.3436
+disinhibited_public_risk_profile      0.3294

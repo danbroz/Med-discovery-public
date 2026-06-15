@@ -1,0 +1,139 @@
+Building Rumination Disorder scaffold...
+
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+NODES
+                                key      node_type                                            atlas_region                          feature_summary
+              genetic_vulnerability          input                                                    None                                     None
+   neurodevelopmental_vulnerability          input                                                    None                                     None
+                psychosocial_stress          input                                                    None                                     None
+               upper_gi_dysfunction          input                                                    None                                     None
+       visceral_mechanosensory_load          input                                                    None                                     None
+          postprandial_trigger_load          input                                                    None                                     None
+       immune_mucosal_dysregulation          input                                                    None                                     None
+             learned_habit_strength          input                                                    None                                     None
+      behavioral_regulation_support          input                                                    None                                     None
+                             insula         region                                  Area Ig2 (Insula) left receptors=no; genes=yes; connectivity=no
+                                acc         region                                  Area p24ab (pACC) left receptors=no; genes=yes; connectivity=no
+                           amygdala         region                                      LB (Amygdala) left receptors=no; genes=yes; connectivity=no
+                        pfc_control         region                                   Area Fp1 (FPole) left receptors=no; genes=yes; connectivity=no
+                basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left receptors=no; genes=yes; connectivity=no
+       gut_brain_axis_dysregulation latent_biology                                                    None                                     None
+     interoceptive_hypersensitivity latent_biology                                                    None                                     None
+dopamine_habit_signal_dysregulation latent_biology                                                    None                                     None
+              noradrenergic_arousal latent_biology                                                    None                                     None
+            gabaergic_disinhibition latent_biology                                                    None                                     None
+  cck_gut_motor_trigger_sensitivity latent_biology                                                    None                                     None
+    immune_neuroinflammatory_signal latent_biology                                                    None                                     None
+        visceral_affective_salience latent_biology                                                    None                                     None
+           acc_urge_monitoring_bias latent_biology                                                    None                                     None
+      prefrontal_inhibitory_failure latent_biology                                                    None                                     None
+        basal_ganglia_motor_release latent_biology                                                    None                                     None
+          premonitory_visceral_urge        symptom                                                    None                                     None
+         postprandial_regurgitation        symptom                                                    None                                     None
+          visceral_distress_anxiety        symptom                                                    None                                     None
+   hypervigilance_to_gut_sensations        symptom                                                    None                                     None
+      stress_triggered_exacerbation        symptom                                                    None                                     None
+       compulsive_habit_maintenance        symptom                                                    None                                     None
+
+EDGES
+                             source                              target                                                                            relation rumination_change
+              genetic_vulnerability dopamine_habit_signal_dysregulation  loads liability in transmitter systems shaping motor control and habit maintenance         increased
+              genetic_vulnerability             gabaergic_disinhibition                               raises trait vulnerability to weak inhibitory control         increased
+              genetic_vulnerability     immune_neuroinflammatory_signal                                              loads immune and mucosal vulnerability         increased
+   neurodevelopmental_vulnerability      interoceptive_hypersensitivity                        contributes to atypical sensory processing of bodily signals         increased
+   neurodevelopmental_vulnerability       prefrontal_inhibitory_failure                          can weaken developmental establishment of top-down control         increased
+                psychosocial_stress               noradrenergic_arousal                    amplifies stress-linked central arousal and autonomic reactivity         increased
+                psychosocial_stress     immune_neuroinflammatory_signal                          can disrupt the gut barrier and increase immune activation         increased
+                psychosocial_stress       prefrontal_inhibitory_failure                                weakens contextual regulation of prepotent responses         increased
+               upper_gi_dysfunction        gut_brain_axis_dysregulation provides the gastrointestinal dysfunction background shared with GERD and dyspepsia         increased
+       visceral_mechanosensory_load      interoceptive_hypersensitivity           provides gastric and esophageal signals that can be perceived as aversive         increased
+          postprandial_trigger_load   cck_gut_motor_trigger_sensitivity                          loads postprandial peptide and gastric-motility triggering         increased
+       immune_mucosal_dysregulation     immune_neuroinflammatory_signal                   raises inflammatory and mast-cell mediated visceral sensitization         increased
+       immune_mucosal_dysregulation        gut_brain_axis_dysregulation          perturbs enteric signaling and barrier integrity within the gut-brain axis         increased
+             learned_habit_strength dopamine_habit_signal_dysregulation                      stabilizes the behavior as a compulsive or habit-driven action         increased
+             learned_habit_strength         basal_ganglia_motor_release                           facilitates re-expression of the rumination motor program         increased
+      behavioral_regulation_support               noradrenergic_arousal                                               can reduce stress-linked hyperarousal         decreased
+      behavioral_regulation_support       prefrontal_inhibitory_failure                          can improve inhibitory regulation of maladaptive responses         decreased
+      behavioral_regulation_support         basal_ganglia_motor_release                           can interrupt expression of the maladaptive motor pattern         decreased
+       gut_brain_axis_dysregulation      interoceptive_hypersensitivity                                      amplifies central responsiveness to GI signals         increased
+     interoceptive_hypersensitivity                              insula                      loads the interoceptive cortex with amplified visceral signals         increased
+    immune_neuroinflammatory_signal         visceral_affective_salience                       sensitizes discomfort processing and affective unpleasantness         increased
+              noradrenergic_arousal                            amygdala                                   heightens threat-linked distress to visceral cues         increased
+        visceral_affective_salience                                 acc                       engages cingulate affective processing of discomfort and urge         increased
+        visceral_affective_salience                            amygdala                               adds emotional salience and anxiety to gut sensations         increased
+           acc_urge_monitoring_bias                                 acc                         focuses monitoring on premonitory sensations and discomfort         increased
+      prefrontal_inhibitory_failure                         pfc_control             reduces top-down suppression of prepotent motor and emotional responses         decreased
+dopamine_habit_signal_dysregulation         basal_ganglia_motor_release                  permits expression and maintenance of the habit-like motor program         increased
+            gabaergic_disinhibition         basal_ganglia_motor_release                                      weakens suppression of unwanted motor patterns         increased
+  cck_gut_motor_trigger_sensitivity           premonitory_visceral_urge                   contributes meal-linked gut-motor triggering before regurgitation         increased
+                             insula           premonitory_visceral_urge                     translates amplified gut signals into a conscious internal urge         increased
+                                acc           premonitory_visceral_urge                     adds affective urgency and monitoring to the visceral sensation         increased
+        basal_ganglia_motor_release                 basal_ganglia_proxy                                              loads motor gating and habit circuitry         increased
+                basal_ganglia_proxy          postprandial_regurgitation                                   permits execution of the rumination motor pattern         increased
+          premonitory_visceral_urge          postprandial_regurgitation             acts as the immediate subjective precursor to the regurgitation episode         increased
+                           amygdala           visceral_distress_anxiety                                drives distress and anxiety around the gut sensation         increased
+                             insula    hypervigilance_to_gut_sensations                        supports excessive interoceptive attention to gut sensations         increased
+                           amygdala       stress_triggered_exacerbation                         helps stress transform visceral cues into worsened episodes         increased
+dopamine_habit_signal_dysregulation        compulsive_habit_maintenance                        helps maintain the repetitive behavior as a habit-driven act         increased
+                basal_ganglia_proxy        compulsive_habit_maintenance                           supports repetition of the motor routine once established         increased
+
+ACC GENE SUMMARY (head)
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.413722   2.388957            9     0.003656    0.432406
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+   CCK   14.342617   0.359577            6     0.814667    0.068110
+ CCKAR    1.872211   0.585329            9     0.039922    0.817338
+ CCKBR    5.817789   2.086622            9     0.897978    0.272902
+
+SIMULATION EXAMPLE
+
+INPUTS
+postprandial_trigger_load           0.85
+upper_gi_dysfunction                0.80
+psychosocial_stress                 0.75
+visceral_mechanosensory_load        0.70
+learned_habit_strength              0.65
+genetic_vulnerability               0.45
+immune_mucosal_dysregulation        0.45
+neurodevelopmental_vulnerability    0.30
+behavioral_regulation_support       0.25
+
+LATENTS
+cck_gut_motor_trigger_sensitivity      0.7970
+dopamine_habit_signal_dysregulation    0.6600
+gut_brain_axis_dysregulation           0.6475
+interoceptive_hypersensitivity         0.6466
+noradrenergic_arousal                  0.6400
+acc_urge_monitoring_bias               0.6303
+visceral_affective_salience            0.6023
+immune_neuroinflammatory_signal        0.5950
+basal_ganglia_motor_release            0.5916
+prefrontal_inhibitory_failure          0.5328
+gabaergic_disinhibition                0.4850
+
+REGIONAL_STATE
+insula                 0.6616
+acc                    0.6258
+amygdala               0.6140
+basal_ganglia_proxy    0.5908
+pfc_control            0.4235
+
+SYMPTOMS
+postprandial_regurgitation          0.6792
+premonitory_visceral_urge           0.6691
+stress_triggered_exacerbation       0.6593
+hypervigilance_to_gut_sensations    0.6499
+compulsive_habit_maintenance        0.6269
+visceral_distress_anxiety           0.6190
+
+PHENOTYPES
+interoceptive_rumination_profile       0.6661
+habit_maintained_profile               0.6323
+stress_reactive_rumination_profile     0.6308
+immune_visceral_sensitivity_profile    0.6308

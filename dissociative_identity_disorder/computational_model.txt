@@ -1,0 +1,144 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                               key      node_type                                                   label                                            atlas_region                           feature_summary
+                 early_life_trauma          input                                       Early Life Trauma                                                    None                                      None
+               chronic_stress_load          input                                     Chronic Stress Load                                                    None                                      None
+               trauma_cue_exposure          input                                     Trauma Cue Exposure                                                    None                                      None
+             genetic_vulnerability          input                                   Genetic Vulnerability                                                    None                                      None
+            depressive_comorbidity          input                                  Depressive Comorbidity                                                    None                                      None
+       ptsd_hyperarousal_liability          input                             Ptsd Hyperarousal Liability                                                    None                                      None
+                 grounding_support          input                                       Grounding Support                                                    None                                      None
+                          amygdala         region                                      LB (Amygdala) left                                      LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                       hippocampus         region                                  CA1 (Hippocampus) left                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                       pfc_control         region                                     Area 8v1 (MFG) left                                     Area 8v1 (MFG) left  receptors=no; genes=yes; connectivity=no
+          parietal_self_processing         region                                     Area PFm (IPL) left                                     Area PFm (IPL) left receptors=yes; genes=yes; connectivity=no
+                    thalamus_proxy         region                                 CGL (Metathalamus) left                                 CGL (Metathalamus) left  receptors=no; genes=yes; connectivity=no
+               basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no
+            hpa_axis_sensitization latent_biology                                  Hpa Axis Sensitization                                                    None                                      None
+       monoaminergic_dysregulation latent_biology                             Monoaminergic Dysregulation                                                    None                                      None
+        noradrenergic_hyperarousal latent_biology                              Noradrenergic Hyperarousal                                                    None                                      None
+trauma_memory_compartmentalization latent_biology                      Trauma Memory Compartmentalization                                                    None                                      None
+        frontolimbic_disconnection latent_biology                              Frontolimbic Disconnection                                                    None                                      None
+   self_state_compartmentalization latent_biology                         Self State Compartmentalization                                                    None                                      None
+         sensorimotor_dissociation latent_biology                               Sensorimotor Dissociation                                                    None                                      None
+         temporal_lobe_dysrhythmia latent_biology                               Temporal Lobe Dysrhythmia                                                    None                                      None
+            identity_discontinuity        symptom                                  Identity Discontinuity                                                    None                                      None
+              dissociative_amnesia        symptom                                    Dissociative Amnesia                                                    None                                      None
+             altered_consciousness        symptom                                   Altered Consciousness                                                    None                                      None
+                affective_lability        symptom                                      Affective Lability                                                    None                                      None
+                    hypervigilance        symptom                                          Hypervigilance                                                    None                                      None
+              sensory_motor_shifts        symptom                                    Sensory Motor Shifts                                                    None                                      None
+            impulsivity_aggression        symptom                                  Impulsivity Aggression                                                    None                                      None
+
+=== Edges ===
+                            source                             target                                                                                relation did_change
+                 early_life_trauma             hpa_axis_sensitization                               recurrent developmental trauma sensitizes the stress axis  increased
+                 early_life_trauma trauma_memory_compartmentalization                                 overwhelming trauma fragments autobiographical encoding  increased
+                 early_life_trauma         frontolimbic_disconnection                            repeated trauma weakens integrated self-regulation circuitry  increased
+               chronic_stress_load             hpa_axis_sensitization                          sustained stress keeps the organism in a high-reactivity state  increased
+               chronic_stress_load        monoaminergic_dysregulation            prolonged stress perturbs serotonergic, noradrenergic, and dopaminergic tone  increased
+               trauma_cue_exposure         noradrenergic_hyperarousal                           trauma reminders reactivate high-arousal autonomic responding  increased
+               trauma_cue_exposure    self_state_compartmentalization                   cue-triggered switching pressure increases segregation of self-states  increased
+             genetic_vulnerability        monoaminergic_dysregulation                              stress-related polymorphisms can bias monoamine regulation  increased
+             genetic_vulnerability             hpa_axis_sensitization             genetic liability can heighten the impact of early stress on stress biology  increased
+            depressive_comorbidity        monoaminergic_dysregulation                             depressive comorbidity reinforces monoaminergic disturbance  increased
+       ptsd_hyperarousal_liability         noradrenergic_hyperarousal                                   PTSD-like trauma physiology amplifies autonomic alarm  increased
+                 grounding_support         noradrenergic_hyperarousal                                        stabilization support can buffer runaway arousal  decreased
+                 grounding_support         frontolimbic_disconnection                 containment and regulation support reduce system fragmentation pressure  decreased
+            hpa_axis_sensitization                        hippocampus                              chronic stress burden impairs hippocampal memory integrity  increased
+        noradrenergic_hyperarousal                           amygdala                                         high norepinephrine sustains limbic threat bias  increased
+       monoaminergic_dysregulation                        pfc_control                       poor monoaminergic regulation weakens top-down inhibitory control  increased
+trauma_memory_compartmentalization                        hippocampus                         segregated trauma encoding burdens mnemonic integration systems  increased
+        frontolimbic_disconnection                        pfc_control                    frontolimbic disconnection manifests as impaired control integration  increased
+        frontolimbic_disconnection    self_state_compartmentalization                    loss of integrated control fosters separated self-state organization  increased
+   self_state_compartmentalization           parietal_self_processing                      state segregation disturbs agency and self-referential integration  increased
+         sensorimotor_dissociation                     thalamus_proxy               gating and state-integration burden can propagate through thalamic relays  increased
+         sensorimotor_dissociation                basal_ganglia_proxy                  action-selection and motor-set systems carry dissociative state shifts  increased
+         temporal_lobe_dysrhythmia              altered_consciousness temporal-lobe instability can resemble dissociative changes in awareness and perception  increased
+                       hippocampus               dissociative_amnesia                               mnestic integration failure promotes episodic memory gaps  increased
+                          amygdala                 affective_lability                                  limbic hyperreactivity destabilizes emotion processing  increased
+        noradrenergic_hyperarousal                     hypervigilance                                    elevated norepinephrine sustains vigilance and alarm  increased
+   self_state_compartmentalization             identity_discontinuity            segregated self-state organization produces discontinuity in self and agency  increased
+          parietal_self_processing             identity_discontinuity                   self-referential integration burden destabilizes continuity of agency  increased
+                    thalamus_proxy              altered_consciousness                           thalamic gating burden disrupts continuity of conscious state  increased
+               basal_ganglia_proxy               sensory_motor_shifts                           basal-ganglia burden contributes to state-linked motor shifts  increased
+       monoaminergic_dysregulation             impulsivity_aggression        low serotonergic inhibitory tone can increase impulsive or aggressive expression  increased
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- hippocampus: CA1 (Hippocampus) left
+- pfc_control: Area 8v1 (MFG) left
+- parietal_self_processing: Area PFm (IPL) left
+- thalamus_proxy: CGL (Metathalamus) left
+- basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== Example receptor table: hippocampus ===
+receptor  mean  std
+    AMPA   498  120
+ kainate  1366  273
+    NMDA   366  127
+   GABAA   789  362
+   GABAB  1961  397
+
+=== Example gene table: amygdala ===
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+FKBP5    5.135946   2.684673           28     0.556286    1.064947
+
+=== Example connectivity profile: pfc_control ===
+No connectivity profile available for pfc_control in this environment.
+
+=== Example circuit connectivity ===
+No pairwise circuit connectivity values available in this environment.
+
+=== Simulation: inputs ===
+early_life_trauma              0.90
+chronic_stress_load            0.75
+trauma_cue_exposure            0.65
+genetic_vulnerability          0.40
+depressive_comorbidity         0.55
+ptsd_hyperarousal_liability    0.70
+grounding_support              0.20
+
+=== Simulation: latents ===
+hpa_axis_sensitization                0.6730
+monoaminergic_dysregulation           0.5067
+noradrenergic_hyperarousal            0.5702
+trauma_memory_compartmentalization    0.6188
+frontolimbic_disconnection            0.5867
+self_state_compartmentalization       0.4867
+sensorimotor_dissociation             0.4367
+temporal_lobe_dysrhythmia             0.3691
+
+=== Simulation: regional_state ===
+amygdala                    0.4654
+hippocampus                 0.4322
+pfc_control                 0.4177
+parietal_self_processing    0.3210
+thalamus_proxy              0.2871
+basal_ganglia_proxy         0.2283
+
+=== Simulation: symptoms ===
+identity_discontinuity    0.3728
+dissociative_amnesia      0.3936
+altered_consciousness     0.2852
+affective_lability        0.4128
+hypervigilance            0.4922
+sensory_motor_shifts      0.2501
+impulsivity_aggression    0.3185
+
+=== Simulation: phenotypes ===
+trauma_dissociation_profile         0.3505
+mnestic_fragmentation_profile       0.4815
+hyperarousal_switching_profile      0.4435
+sensorimotor_state_shift_profile    0.2552

@@ -1,0 +1,411 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                       key      node_type                                   atlas_region                                                   centroid_mni                            feature_summary
+                     genetic_vulnerability          input                                           None                                                           None                                       None
+                early_empathic_deprivation          input                                           None                                                           None                                       None
+                 developmental_trauma_load          input                                           None                                                           None                                       None
+                admiration_reward_exposure          input                                           None                                                           None                                       None
+                      social_status_threat          input                                           None                                                           None                                       None
+                        reflective_support          input                                           None                                                           None                                       None
+                                  amygdala         region                             LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=yes
+                               hippocampus         region                         CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=yes
+                        hypothalamus_proxy   region_proxy                                           None                                                           None                           unresolved proxy
+                               pfc_control         region                            Area Fo4 (OFC) left   (-29.001430615164523, 53.3412017167382, -15.175965665236049)  receptors=no; genes=yes; connectivity=yes
+                    ventral_striatum_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left     (-7.25139664804469, 8.162011173184368, -8.016759776536318)  receptors=no; genes=yes; connectivity=yes
+            epigenetic_social_bonding_scar latent_biology                                           None                                                           None                                       None
+      oxytocin_vasopressin_bonding_deficit latent_biology                                           None                                                           None                                       None
+        dopaminergic_admiration_dependence latent_biology                                           None                                                           None                                       None
+serotonergic_affect_regulation_instability latent_biology                                           None                                                           None                                       None
+             amygdala_threat_sensitization latent_biology                                           None                                                           None                                       None
+             reward_deficit_rage_liability latent_biology                                           None                                                           None                                       None
+          hippocampal_stress_memory_burden latent_biology                                           None                                                           None                                       None
+              frontolimbic_control_failure latent_biology                                           None                                                           None                                       None
+               false_self_defensive_schema latent_biology                                           None                                                           None                                       None
+       neuroplastic_defensive_entrenchment latent_biology                                           None                                                           None                                       None
+                     admiration_dependence        symptom                                           None                                                           None                                       None
+                               grandiosity        symptom                                           None                                                           None                                       None
+                           empathy_deficit        symptom                                           None                                                           None                                       None
+                   entitlement_superiority        symptom                                           None                                                           None                                       None
+            fragile_self_esteem_reactivity        symptom                                           None                                                           None                                       None
+                                 envy_rage        symptom                                           None                                                           None                                       None
+             impulsive_emotional_outbursts        symptom                                           None                                                           None                                       None
+              interpersonal_exploitiveness        symptom                                           None                                                           None                                       None
+
+=== EDGES ===
+                                    source                                     target                                                            relation  weight
+                     genetic_vulnerability             epigenetic_social_bonding_scar    increases susceptibility to lasting social-bonding dysregulation    0.18
+                     genetic_vulnerability         dopaminergic_admiration_dependence         biases reward sensitivity toward admiration and status cues    0.20
+                     genetic_vulnerability serotonergic_affect_regulation_instability                                reduces affective regulatory reserve    0.18
+                early_empathic_deprivation             epigenetic_social_bonding_scar            writes early deprivation into enduring defensive biology    0.45
+                early_empathic_deprivation                false_self_defensive_schema                      promotes defensive grandiose self-organization    0.35
+                 developmental_trauma_load              amygdala_threat_sensitization                   sensitizes limbic threat and aggression circuitry    0.45
+                 developmental_trauma_load           hippocampal_stress_memory_burden            loads stress-memory systems and contextual fear learning    0.35
+                admiration_reward_exposure         dopaminergic_admiration_dependence              reinforces reward seeking for approval and superiority    0.45
+                      social_status_threat              reward_deficit_rage_liability         creates reward-deficit states when admiration is threatened    0.45
+                      social_status_threat              amygdala_threat_sensitization                             amplifies self-esteem threat processing    0.25
+                        reflective_support               frontolimbic_control_failure                               buffers dysregulated top-down control   -0.25
+                        reflective_support                false_self_defensive_schema                           reduces rigid defensive self-organization   -0.12
+            epigenetic_social_bonding_scar       oxytocin_vasopressin_bonding_deficit                reduces affiliative and empathy-supporting signaling    0.50
+      oxytocin_vasopressin_bonding_deficit                         hypothalamus_proxy       maps to disturbed hypothalamic attachment-neurohormonal state    0.55
+      oxytocin_vasopressin_bonding_deficit                            empathy_deficit                     weakens social bonding and empathic reciprocity    0.50
+        dopaminergic_admiration_dependence                     ventral_striatum_proxy        maps to reward and salience circuitry for validation seeking    0.60
+        dopaminergic_admiration_dependence                      admiration_dependence creates reliance on external validation for self-esteem maintenance    0.55
+serotonergic_affect_regulation_instability               frontolimbic_control_failure                reduces affective restraint and regulatory stability    0.25
+             amygdala_threat_sensitization                                   amygdala                          maps to hyper-reactive limbic threat state    0.65
+             reward_deficit_rage_liability                                  envy_rage                     translates threatened supply into rage and envy    0.50
+          hippocampal_stress_memory_burden                                hippocampus                             maps to contextual stress-memory burden    0.60
+              frontolimbic_control_failure                                pfc_control                        maps to impaired prefrontal top-down control    0.60
+                               pfc_control              impulsive_emotional_outbursts         permits poorly inhibited emotional and behavioral responses    0.50
+               false_self_defensive_schema                                grandiosity                   supports defensive superiority and self-inflation    0.50
+               false_self_defensive_schema                    entitlement_superiority                   supports rigid expectations of exceptional status    0.35
+       neuroplastic_defensive_entrenchment               interpersonal_exploitiveness                  stabilizes habitual disregard for others' feelings    0.35
+                      social_status_threat             fragile_self_esteem_reactivity               reveals unstable self-esteem under criticism or shame    0.35
+
+=== REGION SUMMARY: amygdala ===
+Resolved region: LB (Amygdala) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AVP    3.519293   2.113905           14     0.051514    0.549357
+AVPR1A    2.056871   0.922626           21     0.302062    1.308363
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  CD38    5.245664   0.390092           14     0.631479    0.508005
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+Connectivity:
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+
+=== REGION SUMMARY: ventral_striatum_proxy ===
+Resolved region: AcbM (Ventral Striatum, Medial Accumbens) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AVP    5.988833   2.951891           12     1.872392    1.851985
+AVPR1A    2.066478   0.716810           18     0.179517    0.891826
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  CD38    6.121708   0.361229           12     1.205833    0.410510
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+ CRHR1    3.910475   2.688631           24    -1.034871    1.128113
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+  DRD4    6.784350   6.428352           18    -0.196528    0.805253
+Connectivity:
+                                       connected_region    value
+                             VP (Ventral Pallidum) left 1536.115
+         FuP (Ventral Striatum, Fundus of Putamen) left  596.560
+        AcbL (Ventral Striatum, Lateral Accumbens) left  527.470
+                BST (Basal Forebrain, Bed Nucleus) left  462.825
+                          Ch 123 (Basal Forebrain) left  455.785
+                                   Area s24 (sACC) left  381.805
+                   Frontal-to-Temporal-II (GapMap) left  343.730
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  211.460
+
+=== REGION SUMMARY: pfc_control ===
+Resolved region: Area Fo4 (OFC) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AVP    3.317137   1.947197            8    -0.015463    0.310100
+AVPR1A    2.725167   0.689692           12     0.813083    0.562266
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  CD38    4.044050   0.592590            8     0.169375    0.268407
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  DRD4    6.744192   6.803711           12     0.012533    0.887891
+Connectivity:
+                                       connected_region    value
+                                    Area Fo3 (OFC) left 2218.500
+                                    Area Fo7 (OFC) left 1055.200
+         FuP (Ventral Striatum, Fundus of Putamen) left  812.060
+                                  Area Fp1 (FPole) left  600.190
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  495.015
+                    Frontal-to-Temporal-I (GapMap) left  400.550
+                                    Area Fo6 (OFC) left  296.095
+                                Area Id10 (Insula) left  291.760
+
+=== CIRCUIT CONNECTIVITY ===
+            source_key                                  source_region             target_key                                  target_region  value
+              amygdala                             LB (Amygdala) left            hippocampus                         CA1 (Hippocampus) left 64.260
+              amygdala                             LB (Amygdala) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  0.170
+              amygdala                             LB (Amygdala) left            pfc_control                            Area Fo4 (OFC) left  0.075
+           hippocampus                         CA1 (Hippocampus) left               amygdala                             LB (Amygdala) left 64.260
+           hippocampus                         CA1 (Hippocampus) left            pfc_control                            Area Fo4 (OFC) left  1.655
+           hippocampus                         CA1 (Hippocampus) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  1.100
+           pfc_control                            Area Fo4 (OFC) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  5.040
+           pfc_control                            Area Fo4 (OFC) left            hippocampus                         CA1 (Hippocampus) left  1.655
+           pfc_control                            Area Fo4 (OFC) left               amygdala                             LB (Amygdala) left  0.075
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left            pfc_control                            Area Fo4 (OFC) left  5.040
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left            hippocampus                         CA1 (Hippocampus) left  1.100
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left               amygdala                             LB (Amygdala) left  0.170
+
+=== INPUTS ===
+genetic_vulnerability         0.50
+early_empathic_deprivation    0.70
+developmental_trauma_load     0.55
+admiration_reward_exposure    0.65
+social_status_threat          0.60
+reflective_support            0.20
+
+=== LATENTS ===
+epigenetic_social_bonding_scar                0.5255
+oxytocin_vasopressin_bonding_deficit          0.3768
+dopaminergic_admiration_dependence            0.5350
+serotonergic_affect_regulation_instability    0.3530
+amygdala_threat_sensitization                 0.4555
+reward_deficit_rage_liability                 0.4368
+hippocampal_stress_memory_burden              0.4007
+frontolimbic_control_failure                  0.3545
+false_self_defensive_schema                   0.5659
+neuroplastic_defensive_entrenchment           0.4855
+
+=== REGIONAL_STATE ===
+ventral_striatum_proxy    0.5343
+amygdala                  0.3834
+hippocampus               0.3430
+hypothalamus_proxy        0.3470
+pfc_control               0.3386
+
+=== SYMPTOMS ===
+admiration_dependence             0.4904
+grandiosity                       0.5181
+empathy_deficit                   0.3604
+entitlement_superiority           0.4387
+fragile_self_esteem_reactivity    0.4375
+envy_rage                         0.4163
+impulsive_emotional_outbursts     0.3038
+interpersonal_exploitiveness      0.3372
+
+=== PHENOTYPES ===
+grandiose_narcissism_profile          0.4824
+vulnerable_reactivity_profile         0.3859
+empathy_attachment_deficit_profile    0.3488
+narcissistic_rage_profile             0.3856
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                       key      node_type                                   atlas_region                                                   centroid_mni                            feature_summary
+                     genetic_vulnerability          input                                           None                                                           None                                       None
+                early_empathic_deprivation          input                                           None                                                           None                                       None
+                 developmental_trauma_load          input                                           None                                                           None                                       None
+                admiration_reward_exposure          input                                           None                                                           None                                       None
+                      social_status_threat          input                                           None                                                           None                                       None
+                        reflective_support          input                                           None                                                           None                                       None
+                                  amygdala         region                             LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=yes
+                               hippocampus         region                         CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=yes
+                        hypothalamus_proxy   region_proxy                                           None                                                           None                           unresolved proxy
+                               pfc_control         region                            Area Fo4 (OFC) left   (-29.001430615164523, 53.3412017167382, -15.175965665236049)  receptors=no; genes=yes; connectivity=yes
+                    ventral_striatum_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left     (-7.25139664804469, 8.162011173184368, -8.016759776536318)  receptors=no; genes=yes; connectivity=yes
+            epigenetic_social_bonding_scar latent_biology                                           None                                                           None                                       None
+      oxytocin_vasopressin_bonding_deficit latent_biology                                           None                                                           None                                       None
+        dopaminergic_admiration_dependence latent_biology                                           None                                                           None                                       None
+serotonergic_affect_regulation_instability latent_biology                                           None                                                           None                                       None
+             amygdala_threat_sensitization latent_biology                                           None                                                           None                                       None
+             reward_deficit_rage_liability latent_biology                                           None                                                           None                                       None
+          hippocampal_stress_memory_burden latent_biology                                           None                                                           None                                       None
+              frontolimbic_control_failure latent_biology                                           None                                                           None                                       None
+               false_self_defensive_schema latent_biology                                           None                                                           None                                       None
+       neuroplastic_defensive_entrenchment latent_biology                                           None                                                           None                                       None
+                     admiration_dependence        symptom                                           None                                                           None                                       None
+                               grandiosity        symptom                                           None                                                           None                                       None
+                           empathy_deficit        symptom                                           None                                                           None                                       None
+                   entitlement_superiority        symptom                                           None                                                           None                                       None
+            fragile_self_esteem_reactivity        symptom                                           None                                                           None                                       None
+                                 envy_rage        symptom                                           None                                                           None                                       None
+             impulsive_emotional_outbursts        symptom                                           None                                                           None                                       None
+              interpersonal_exploitiveness        symptom                                           None                                                           None                                       None
+
+=== EDGES ===
+                                    source                                     target                                                            relation  weight
+                     genetic_vulnerability             epigenetic_social_bonding_scar    increases susceptibility to lasting social-bonding dysregulation    0.18
+                     genetic_vulnerability         dopaminergic_admiration_dependence         biases reward sensitivity toward admiration and status cues    0.20
+                     genetic_vulnerability serotonergic_affect_regulation_instability                                reduces affective regulatory reserve    0.18
+                early_empathic_deprivation             epigenetic_social_bonding_scar            writes early deprivation into enduring defensive biology    0.45
+                early_empathic_deprivation                false_self_defensive_schema                      promotes defensive grandiose self-organization    0.35
+                 developmental_trauma_load              amygdala_threat_sensitization                   sensitizes limbic threat and aggression circuitry    0.45
+                 developmental_trauma_load           hippocampal_stress_memory_burden            loads stress-memory systems and contextual fear learning    0.35
+                admiration_reward_exposure         dopaminergic_admiration_dependence              reinforces reward seeking for approval and superiority    0.45
+                      social_status_threat              reward_deficit_rage_liability         creates reward-deficit states when admiration is threatened    0.45
+                      social_status_threat              amygdala_threat_sensitization                             amplifies self-esteem threat processing    0.25
+                        reflective_support               frontolimbic_control_failure                               buffers dysregulated top-down control   -0.25
+                        reflective_support                false_self_defensive_schema                           reduces rigid defensive self-organization   -0.12
+            epigenetic_social_bonding_scar       oxytocin_vasopressin_bonding_deficit                reduces affiliative and empathy-supporting signaling    0.50
+      oxytocin_vasopressin_bonding_deficit                         hypothalamus_proxy       maps to disturbed hypothalamic attachment-neurohormonal state    0.55
+      oxytocin_vasopressin_bonding_deficit                            empathy_deficit                     weakens social bonding and empathic reciprocity    0.50
+        dopaminergic_admiration_dependence                     ventral_striatum_proxy        maps to reward and salience circuitry for validation seeking    0.60
+        dopaminergic_admiration_dependence                      admiration_dependence creates reliance on external validation for self-esteem maintenance    0.55
+serotonergic_affect_regulation_instability               frontolimbic_control_failure                reduces affective restraint and regulatory stability    0.25
+             amygdala_threat_sensitization                                   amygdala                          maps to hyper-reactive limbic threat state    0.65
+             reward_deficit_rage_liability                                  envy_rage                     translates threatened supply into rage and envy    0.50
+          hippocampal_stress_memory_burden                                hippocampus                             maps to contextual stress-memory burden    0.60
+              frontolimbic_control_failure                                pfc_control                        maps to impaired prefrontal top-down control    0.60
+                               pfc_control              impulsive_emotional_outbursts         permits poorly inhibited emotional and behavioral responses    0.50
+               false_self_defensive_schema                                grandiosity                   supports defensive superiority and self-inflation    0.50
+               false_self_defensive_schema                    entitlement_superiority                   supports rigid expectations of exceptional status    0.35
+       neuroplastic_defensive_entrenchment               interpersonal_exploitiveness                  stabilizes habitual disregard for others' feelings    0.35
+                      social_status_threat             fragile_self_esteem_reactivity               reveals unstable self-esteem under criticism or shame    0.35
+
+=== REGION SUMMARY: amygdala ===
+Resolved region: LB (Amygdala) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AVP    3.519293   2.113905           14     0.051514    0.549357
+AVPR1A    2.056871   0.922626           21     0.302062    1.308363
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  CD38    5.245664   0.390092           14     0.631479    0.508005
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+Connectivity:
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+
+=== REGION SUMMARY: ventral_striatum_proxy ===
+Resolved region: AcbM (Ventral Striatum, Medial Accumbens) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AVP    5.988833   2.951891           12     1.872392    1.851985
+AVPR1A    2.066478   0.716810           18     0.179517    0.891826
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  CD38    6.121708   0.361229           12     1.205833    0.410510
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+ CRHR1    3.910475   2.688631           24    -1.034871    1.128113
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+  DRD4    6.784350   6.428352           18    -0.196528    0.805253
+Connectivity:
+                                       connected_region    value
+                             VP (Ventral Pallidum) left 1536.115
+         FuP (Ventral Striatum, Fundus of Putamen) left  596.560
+        AcbL (Ventral Striatum, Lateral Accumbens) left  527.470
+                BST (Basal Forebrain, Bed Nucleus) left  462.825
+                          Ch 123 (Basal Forebrain) left  455.785
+                                   Area s24 (sACC) left  381.805
+                   Frontal-to-Temporal-II (GapMap) left  343.730
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  211.460
+
+=== REGION SUMMARY: pfc_control ===
+Resolved region: Area Fo4 (OFC) left
+Receptors:
+  <none>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AVP    3.317137   1.947197            8    -0.015463    0.310100
+AVPR1A    2.725167   0.689692           12     0.813083    0.562266
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  CD38    4.044050   0.592590            8     0.169375    0.268407
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  DRD4    6.744192   6.803711           12     0.012533    0.887891
+Connectivity:
+                                       connected_region    value
+                                    Area Fo3 (OFC) left 2218.500
+                                    Area Fo7 (OFC) left 1055.200
+         FuP (Ventral Striatum, Fundus of Putamen) left  812.060
+                                  Area Fp1 (FPole) left  600.190
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  495.015
+                    Frontal-to-Temporal-I (GapMap) left  400.550
+                                    Area Fo6 (OFC) left  296.095
+                                Area Id10 (Insula) left  291.760
+
+=== CIRCUIT CONNECTIVITY ===
+            source_key                                  source_region             target_key                                  target_region  value
+              amygdala                             LB (Amygdala) left            hippocampus                         CA1 (Hippocampus) left 64.260
+              amygdala                             LB (Amygdala) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  0.170
+              amygdala                             LB (Amygdala) left            pfc_control                            Area Fo4 (OFC) left  0.075
+           hippocampus                         CA1 (Hippocampus) left               amygdala                             LB (Amygdala) left 64.260
+           hippocampus                         CA1 (Hippocampus) left            pfc_control                            Area Fo4 (OFC) left  1.655
+           hippocampus                         CA1 (Hippocampus) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  1.100
+           pfc_control                            Area Fo4 (OFC) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left  5.040
+           pfc_control                            Area Fo4 (OFC) left            hippocampus                         CA1 (Hippocampus) left  1.655
+           pfc_control                            Area Fo4 (OFC) left               amygdala                             LB (Amygdala) left  0.075
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left            pfc_control                            Area Fo4 (OFC) left  5.040
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left            hippocampus                         CA1 (Hippocampus) left  1.100
+ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left               amygdala                             LB (Amygdala) left  0.170
+
+=== INPUTS ===
+genetic_vulnerability         0.50
+early_empathic_deprivation    0.70
+developmental_trauma_load     0.55
+admiration_reward_exposure    0.65
+social_status_threat          0.60
+reflective_support            0.20
+
+=== LATENTS ===
+epigenetic_social_bonding_scar                0.5255
+oxytocin_vasopressin_bonding_deficit          0.3768
+dopaminergic_admiration_dependence            0.5350
+serotonergic_affect_regulation_instability    0.3530
+amygdala_threat_sensitization                 0.4555
+reward_deficit_rage_liability                 0.4368
+hippocampal_stress_memory_burden              0.4007
+frontolimbic_control_failure                  0.3545
+false_self_defensive_schema                   0.5659
+neuroplastic_defensive_entrenchment           0.4855
+
+=== REGIONAL_STATE ===
+ventral_striatum_proxy    0.5343
+amygdala                  0.3834
+hippocampus               0.3430
+hypothalamus_proxy        0.3470
+pfc_control               0.3386
+
+=== SYMPTOMS ===
+admiration_dependence             0.4904
+grandiosity                       0.5181
+empathy_deficit                   0.3604
+entitlement_superiority           0.4387
+fragile_self_esteem_reactivity    0.4375
+envy_rage                         0.4163
+impulsive_emotional_outbursts     0.3038
+interpersonal_exploitiveness      0.3372
+
+=== PHENOTYPES ===
+grandiose_narcissism_profile          0.4824
+vulnerable_reactivity_profile         0.3859
+empathy_attachment_deficit_profile    0.3488
+narcissistic_rage_profile             0.3856

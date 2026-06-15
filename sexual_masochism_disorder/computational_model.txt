@@ -1,0 +1,216 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (key fields) ===
+                              key      node_type                                            atlas_region region_identifier                          feature_summary
+             early_life_adversity          input                                                                                                                   
+              chronic_stress_load          input                                                                                                                   
+          sensation_seeking_trait          input                                                                                                                   
+      affective_instability_trait          input                                                                                                                   
+   ritualized_submission_learning          input                                                                                                                   
+ humiliation_association_learning          input                                                                                                                   
+           physical_pain_salience          input                                                                                                                   
+       aversive_appraisal_reserve          input                                                                                                                   
+                           insula         region                                  Area Id1 (Insula) left                   receptors=no; genes=yes; connectivity=no
+                              acc         region                                  Area p24ab (pACC) left                   receptors=no; genes=yes; connectivity=no
+                         amygdala         region                                      LB (Amygdala) left                   receptors=no; genes=yes; connectivity=no
+           ventral_striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                   receptors=no; genes=yes; connectivity=no
+                      pfc_control         region                                     Area 8v1 (MFG) left                   receptors=no; genes=yes; connectivity=no
+     stress_arousal_sensitization latent_biology                                                                                                                   
+  endogenous_opioid_reinforcement latent_biology                                                                                                                   
+  dopaminergic_incentive_salience latent_biology                                                                                                                   
+             pain_reward_coupling latent_biology                                                                                                                   
+        social_pain_eroticization latent_biology                                                                                                                   
+      interoceptive_amplification latent_biology                                                                                                                   
+      prefrontal_reappraisal_bias latent_biology                                                                                                                   
+frontolimbic_regulatory_imbalance latent_biology                                                                                                                   
+           submission_relief_loop latent_biology                                                                                                                   
+       paradoxical_stress_arousal        symptom                                                                                                                   
+             pain_desire_coupling        symptom                                                                                                                   
+     humiliation_arousal_coupling        symptom                                                                                                                   
+               submission_seeking        symptom                                                                                                                   
+    ritualized_enactment_pressure        symptom                                                                                                                   
+              distress_impairment        symptom                                                                                                                   
+
+=== EDGE TABLE ===
+                           source                            target                                                                             relation smd_change
+             early_life_adversity      stress_arousal_sensitization                         can prime long-lasting stress responsivity and vulnerability  increased
+             early_life_adversity frontolimbic_regulatory_imbalance                             can bias emotional regulation circuitry over development  increased
+              chronic_stress_load      stress_arousal_sensitization                            deepens stress physiology and persistent arousal coupling  increased
+          sensation_seeking_trait   dopaminergic_incentive_salience                                  raises motivational pull toward intense experiences  increased
+      affective_instability_trait frontolimbic_regulatory_imbalance                                 adds volatility to limbic and control-system balance  increased
+   ritualized_submission_learning            submission_relief_loop                                    conditions surrender and restraint as reinforcing  increased
+   ritualized_submission_learning       prefrontal_reappraisal_bias                shapes meaning-making around submission and perceived lack of control  increased
+ humiliation_association_learning         social_pain_eroticization                           conditions humiliation and degradation as arousing signals  increased
+           physical_pain_salience              pain_reward_coupling                makes painful stimulation more available for conditioning into reward  increased
+           physical_pain_salience       interoceptive_amplification                                     intensifies bodily awareness of pain and arousal  increased
+     stress_arousal_sensitization   endogenous_opioid_reinforcement             prolonged or intense stress may recruit relief-like opioid reinforcement  increased
+  endogenous_opioid_reinforcement              pain_reward_coupling                    supports pleasurable or relieving response to painful stimulation  increased
+  dopaminergic_incentive_salience              pain_reward_coupling                           adds wanting and reward prediction to pain-associated cues  increased
+             pain_reward_coupling            ventral_striatum_proxy                        links painful stimulation to accumbens-type reward processing  increased
+        social_pain_eroticization                               acc                       engages cingulate reinterpretation of social and physical pain  increased
+      interoceptive_amplification                            insula                       maps bodily arousal and pain awareness onto insular processing  increased
+frontolimbic_regulatory_imbalance                          amygdala                               heightens affective salience and arousal/fear coupling  increased
+      prefrontal_reappraisal_bias                       pfc_control                     recruits prefrontal meaning-making and top-down reinterpretation  increased
+      prefrontal_reappraisal_bias                               acc                         biases cingulate appraisal from aversion toward desirability  increased
+             pain_reward_coupling        paradoxical_stress_arousal                                  supports excitement under painful or stressful cues  increased
+             pain_reward_coupling              pain_desire_coupling                                         directly makes pain motivationally desirable  increased
+        social_pain_eroticization      humiliation_arousal_coupling                                   makes humiliation and degradation sexually salient  increased
+           submission_relief_loop                submission_seeking                        turns surrender and loss of control into motivational targets  increased
+               submission_seeking     ritualized_enactment_pressure                           drives repeated ritualized enactment of the learned script  increased
+frontolimbic_regulatory_imbalance               distress_impairment                                         adds broader behavioral and emotional burden  increased
+       aversive_appraisal_reserve              pain_reward_coupling                                   preserves ordinary aversive interpretation of pain  decreased
+       aversive_appraisal_reserve         social_pain_eroticization preserves ordinary aversive interpretation of humiliation and rejection-like signals  decreased
+       aversive_appraisal_reserve        paradoxical_stress_arousal                                         buffers conversion of threat into excitement  decreased
+
+=== REGION: insula ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    6.670433   1.636444            6     0.926267    0.206763
+ COMT    6.531583   3.255215           18    -0.189561    0.878717
+CRHR1    4.551908   2.504119           12    -0.213075    0.963337
+ DRD2    3.639480   1.851429           15     0.251373    0.616119
+ DRD4    6.609744   6.371807            9     0.014900    1.576090
+ FAAH    5.892033   0.569992            6    -0.679400    0.593531
+ MAOA    5.344446   1.999486           93    -0.359771    0.767264
+NR3C1    9.378853   1.057596           15    -0.108947    0.502861
+OPRK1    4.892200   2.558507            9     1.176189    1.318950
+OPRM1    2.898656   1.031512            9    -0.919589    0.743868
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: acc ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.621500   1.881802            6     0.483533    0.383933
+ COMT    6.626667   3.449944           18     0.128428    0.590874
+CRHR1    5.037908   2.235077           12     0.254025    0.541458
+ DRD2    2.950413   1.689432           15    -0.634413    0.582728
+ DRD4    6.924767   6.793680            9     0.154522    0.438361
+ FAAH    6.246917   0.677227            6     0.100167    0.483882
+ MAOA    5.886943   1.901421           93     0.238697    0.532340
+NR3C1    8.983753   1.100518           15    -0.471073    0.416826
+OPRK1    3.885822   1.531654            9     0.424867    0.303690
+OPRM1    4.130422   1.036304            9     0.222144    0.684007
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+ DRD4    6.954405   6.242902           21     0.339352    1.290183
+ FAAH    5.933429   0.587149           14    -0.902543    0.879666
+ MAOA    6.318328   2.025589          217     0.779681    0.725249
+NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+OPRK1    3.812752   1.775930           21     0.344324    1.023432
+OPRM1    4.817310   1.361393           21     0.300824    0.894048
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: ventral_striatum_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    2.095275   1.373588           12    -1.740383    0.864869
+ COMT    6.334303   3.508445           36    -0.298369    1.144405
+CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+ DRD2    6.119210   2.344979           30     2.320237    1.023981
+ DRD4    6.639983   6.431988           18    -0.214961    1.158365
+ FAAH    6.582508   0.577419           12     0.463025    0.609512
+ MAOA    5.766845   1.883782          186     0.249987    0.587030
+NR3C1    8.845813   1.140821           30    -0.905580    0.739992
+OPRK1    4.774550   2.190138           18     1.182100    1.022046
+OPRM1    5.691544   0.622991           18     1.132778    0.485399
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: pfc_control ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.264200   2.070726            8     0.201300    0.549120
+ COMT    6.246108   3.562423           24    -0.295967    0.679431
+CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+ DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ DRD4    6.946050   6.610430           12     0.091183    0.810238
+ FAAH    6.227362   0.799960            8    -0.186463    0.919952
+ MAOA    5.384172   1.986323          124    -0.131315    0.486882
+NR3C1    9.469765   1.052399           20     0.402145    0.472749
+OPRK1    3.657183   1.612649           12     0.116717    0.573967
+OPRM1    4.387475   0.915995           12     0.149950    0.312914
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+<no circuit connectivity available>
+
+=== SIMULATION: example pain-reward / submission-linked SMD profile ===
+
+INPUTS
+early_life_adversity                0.50
+chronic_stress_load                 0.55
+sensation_seeking_trait             0.50
+affective_instability_trait         0.35
+ritualized_submission_learning      0.70
+humiliation_association_learning    0.60
+physical_pain_salience              0.55
+aversive_appraisal_reserve          0.15
+
+LATENTS
+stress_arousal_sensitization         0.4160
+endogenous_opioid_reinforcement      0.4465
+dopaminergic_incentive_salience      0.4465
+pain_reward_coupling                 0.3769
+social_pain_eroticization            0.4214
+interoceptive_amplification          0.4105
+prefrontal_reappraisal_bias          0.4880
+frontolimbic_regulatory_imbalance    0.4056
+submission_relief_loop               0.4735
+
+REGIONAL_STATE
+insula                    0.3309
+acc                       0.3303
+amygdala                  0.3146
+ventral_striatum_proxy    0.3920
+pfc_control               0.3522
+
+SYMPTOMS
+paradoxical_stress_arousal       0.2897
+pain_desire_coupling             0.3354
+humiliation_arousal_coupling     0.3248
+submission_seeking               0.3271
+ritualized_enactment_pressure    0.2776
+distress_impairment              0.3244
+
+PHENOTYPES
+pain_reward_dominant_profile         0.3455
+humiliation_submission_profile       0.3509
+stress_arousal_conversion_profile    0.3378
+frontolimbic_reappraisal_profile     0.3926

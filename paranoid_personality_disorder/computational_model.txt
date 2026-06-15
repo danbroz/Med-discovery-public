@@ -1,0 +1,182 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                key                               label      node_type                                                                                                                         description           atlas_region                                              region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+    genetic_temperamental_liability     Genetic Temperamental Liability          input Heritable temperament liability involving impulsivity, low agreeableness, aggressive reactivity, and suspicious interpersonal style                   None                                                           None                                                           None         NaN                                      None
+                  early_life_trauma                   Early Life Trauma          input                                        Early abuse or adversity that increases later emotional dysregulation and threat sensitivity                   None                                                           None                                                           None         NaN                                      None
+intergenerational_violence_exposure Intergenerational Violence Exposure          input                                         Exposure to violent or abusive family transmission patterns that shape hostile expectations                   None                                                           None                                                           None         NaN                                      None
+           prenatal_maternal_stress            Prenatal Maternal Stress          input                                           Prenatal stress exposure contributing to fetal stress programming and later vulnerability                   None                                                           None                                                           None         NaN                                      None
+   dysfunctional_family_environment    Dysfunctional Family Environment          input                                        Shared invalidating or hostile family environment that can reinforce distrust and antagonism                   None                                                           None                                                           None         NaN                                      None
+       chronic_interpersonal_stress        Chronic Interpersonal Stress          input                                               Ongoing rejection, conflict, ambiguity, or social threat that sustains hypervigilance                   None                                                           None                                                           None         NaN                                      None
+       interpersonal_safety_support        Interpersonal Safety Support          input                                                 Protective exposure to reliable, non-malevolent, stabilizing interpersonal contexts                   None                                                           None                                                           None         NaN                                      None
+                           amygdala                  LB (Amygdala) left         region                                                                          Atlas-backed circuit node for a chapter-grounded mechanism     LB (Amygdala) left     JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_LB_AMYGDALA_LEFT  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=no
+                         mpfc_proxy               Area Fp2 (FPole) left   region_proxy                                                                          Atlas-backed circuit node for a chapter-grounded mechanism  Area Fp2 (FPole) left  JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_FP2_FPOLE_LEFT    (-5.641685520361989, 59.519513574660635, -3.11057692307692)      3536.0  receptors=no; genes=yes; connectivity=no
+                                ofc                 Area Fo4 (OFC) left         region                                                                          Atlas-backed circuit node for a chapter-grounded mechanism    Area Fo4 (OFC) left    JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_FO4_OFC_LEFT   (-29.001430615164523, 53.3412017167382, -15.175965665236049)      1398.0  receptors=no; genes=yes; connectivity=no
+                                acc                Area p32 (pACC) left         region                                                                          Atlas-backed circuit node for a chapter-grounded mechanism   Area p32 (pACC) left   JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_P32_PACC_LEFT    (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0  receptors=no; genes=yes; connectivity=no
+                        hippocampus              CA1 (Hippocampus) left         region                                                                          Atlas-backed circuit node for a chapter-grounded mechanism CA1 (Hippocampus) left JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_CA1_HIPPOCAMPUS_LEFT (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+          monoaminergic_threat_bias           Monoaminergic Threat Bias latent_biology                        Combined dopamine / serotonin / norepinephrine dysregulation biasing salience, arousal, and threat appraisal                   None                                                           None                                                           None         NaN                                      None
+      epigenetic_stress_programming       Epigenetic Stress Programming latent_biology                                            Stable stress-linked gene-expression programming shaped by trauma and prenatal adversity                   None                                                           None                                                           None         NaN                                      None
+             hpa_axis_sensitization              Hpa Axis Sensitization latent_biology                                              Stress-system hyperreactivity plausibly related to glucocorticoid receptor programming                   None                                                           None                                                           None         NaN                                      None
+   social_trust_calibration_failure    Social Trust Calibration Failure latent_biology                                     Failure to calibrate interpersonal trust, with a bias toward expecting exploitation or betrayal                   None                                                           None                                                           None         NaN                                      None
+             mentalizing_distortion              Mentalizing Distortion latent_biology                                          Impaired inference of others' thoughts and intentions, favoring malevolent interpretations                   None                                                           None                                                           None         NaN                                      None
+    frontolimbic_regulatory_failure     Frontolimbic Regulatory Failure latent_biology                                           Reduced medial / orbitofrontal top-down control over fear, anger, and impulsive reactions                   None                                                           None                                                           None         NaN                                      None
+           threat_cue_salience_bias            Threat Cue Salience Bias latent_biology                                  Enhanced attention allocation to angry or ambiguous social cues, corresponding to a P300-like bias                   None                                                           None                                                           None         NaN                                      None
+       social_error_hypermonitoring        Social Error Hypermonitoring latent_biology                                            Excessive monitoring of social mistakes or evaluation, corresponding to an ERN-like bias                   None                                                           None                                                           None         NaN                                      None
+           hostile_attribution_bias            Hostile Attribution Bias latent_biology                                          Tendency to interpret ambiguous interpersonal events as attacks, betrayal, or exploitation                   None                                                           None                                                           None         NaN                                      None
+            distrust_suspiciousness             Distrust Suspiciousness        symptom                                                                       Pervasive suspiciousness and expectation of malevolent intent                   None                                                           None                                                           None         NaN                                      None
+        malevolent_intent_inference         Malevolent Intent Inference        symptom                                                            Interpretation of others' motives as hostile, deceptive, or exploitative                   None                                                           None                                                           None         NaN                                      None
+         loyalty_doubts_and_grudges          Loyalty Doubts And Grudges        symptom                                                                        Persistent doubts about loyalty and tendency to hold grudges                   None                                                           None                                                           None         NaN                                      None
+          anger_hostility_outbursts           Anger Hostility Outbursts        symptom                                                          Poorly regulated anger, hostile reactivity, and readiness to counterattack                   None                                                           None                                                           None         NaN                                      None
+           social_avoidance_anxiety            Social Avoidance Anxiety        symptom                                             Avoidance and anxiety driven by fear of negative evaluation, betrayal, or social threat                   None                                                           None                                                           None         NaN                                      None
+       antagonistic_aggression_risk        Antagonistic Aggression Risk        symptom                                                                           Risk of antagonistic or aggressive interpersonal behavior                   None                                                           None                                                           None         NaN                                      None
+
+=== Edges ===
+                             source                           target                                                                                     relation paranoid_pd_change
+    genetic_temperamental_liability        monoaminergic_threat_bias loads inherited monoaminergic vulnerability affecting threat, reward, and impulse regulation          increased
+    genetic_temperamental_liability social_trust_calibration_failure                  contributes trait-level suspiciousness and antagonistic interpersonal style          increased
+                  early_life_trauma    epigenetic_stress_programming                                  supports long-lasting stress-linked gene-expression changes          increased
+           prenatal_maternal_stress    epigenetic_stress_programming                                           contributes fetal programming of stress reactivity          increased
+intergenerational_violence_exposure    epigenetic_stress_programming              adds adversity-linked programming pressure through recurrent abuse environments          increased
+   dysfunctional_family_environment social_trust_calibration_failure                                  teaches hostile expectations and unstable trust calibration          increased
+intergenerational_violence_exposure social_trust_calibration_failure                                        reinforces expectations of harm, deceit, and betrayal          increased
+      epigenetic_stress_programming           hpa_axis_sensitization                                 alters stress responsivity through stable regulatory changes          increased
+                  early_life_trauma           hpa_axis_sensitization                                        directly increases long-term stress-system reactivity          increased
+       chronic_interpersonal_stress           hpa_axis_sensitization                                                maintains chronic fear and anger responsivity          increased
+    genetic_temperamental_liability  frontolimbic_regulatory_failure                contributes trait vulnerability in emotion regulation and impulsive hostility          increased
+          monoaminergic_threat_bias  frontolimbic_regulatory_failure                 weakens stable top-down regulation of affective salience and impulse control          increased
+             hpa_axis_sensitization  frontolimbic_regulatory_failure                   sustained stress burden undermines prefrontal regulation of fear and anger          increased
+   social_trust_calibration_failure           mentalizing_distortion                      biases inference of others' intentions toward betrayal and exploitation          increased
+    frontolimbic_regulatory_failure           mentalizing_distortion                        reduces accurate social-cognitive interpretation of ambiguous actions          increased
+          monoaminergic_threat_bias         threat_cue_salience_bias                                  amplifies attention to threatening or ambiguous social cues          increased
+             hpa_axis_sensitization         threat_cue_salience_bias                                                 heightens vigilance for threat-laden stimuli          increased
+       chronic_interpersonal_stress     social_error_hypermonitoring                                    increases fear of social missteps and negative evaluation          increased
+             hpa_axis_sensitization     social_error_hypermonitoring                                        increases anxious error monitoring in social contexts          increased
+             mentalizing_distortion         hostile_attribution_bias                          promotes malevolent interpretations of ambiguous interpersonal acts          increased
+           threat_cue_salience_bias         hostile_attribution_bias                          selectively amplifies evidence consistent with threat and hostility          increased
+   social_trust_calibration_failure         hostile_attribution_bias                                  predisposes ambiguous interactions to be read as malevolent          increased
+       interpersonal_safety_support social_trust_calibration_failure                          buffers hostile default expectations and improves trust calibration          decreased
+       interpersonal_safety_support           hpa_axis_sensitization                           reduces sustained stress responsivity through safer social context          decreased
+       interpersonal_safety_support  frontolimbic_regulatory_failure                                        supports better top-down regulation of fear and anger          decreased
+           threat_cue_salience_bias                         amygdala                                                         loads threat-reactive amygdala state          increased
+    frontolimbic_regulatory_failure                       mpfc_proxy             maps impaired social-cognitive regulation onto medial prefrontal control systems          increased
+             mentalizing_distortion                       mpfc_proxy                               captures biased theory-of-mind and social inference processing          increased
+    frontolimbic_regulatory_failure                              ofc              maps reduced emotional decision control and impulsive modulation onto OFC state          increased
+       social_error_hypermonitoring                              acc                         maps excessive social error monitoring onto anterior cingulate state          increased
+             hpa_axis_sensitization                      hippocampus                 maps stress-linked glucocorticoid and mnemonic burden onto hippocampal state          increased
+                           amygdala          distrust_suspiciousness                        heightened amygdala threat reactivity supports chronic suspiciousness          increased
+           hostile_attribution_bias          distrust_suspiciousness                                              sustains a pervasive expectation of malevolence          increased
+             mentalizing_distortion      malevolent_intent_inference                             causes others' intentions to be inferred inaccurately as hostile          increased
+                         mpfc_proxy      malevolent_intent_inference               medial prefrontal dysfunction impairs accurate interpretation of social intent          increased
+            distrust_suspiciousness       loyalty_doubts_and_grudges                          persistent suspiciousness fosters loyalty doubts and grudge holding          increased
+           hostile_attribution_bias       loyalty_doubts_and_grudges                             biases memory and interpretation of interpersonal transgressions          increased
+                                ofc        anger_hostility_outbursts                          orbitofrontal dysregulation reduces modulation of hostile reactions          increased
+                           amygdala        anger_hostility_outbursts                                          fear and anger reactivity promote hostile outbursts          increased
+                                acc         social_avoidance_anxiety                         anterior cingulate hypermonitoring promotes anxious social avoidance          increased
+       social_error_hypermonitoring         social_avoidance_anxiety                                fear of negative evaluation increases interpersonal avoidance          increased
+          anger_hostility_outbursts     antagonistic_aggression_risk                         poorly regulated hostility can escalate into antagonistic aggression          increased
+        malevolent_intent_inference     antagonistic_aggression_risk                                  perceived attack or betrayal can motivate counteraggression          increased
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- mpfc_proxy: Area Fp2 (FPole) left
+- ofc: Area Fo4 (OFC) left
+- acc: Area p32 (pACC) left
+- hippocampus: CA1 (Hippocampus) left
+
+=== Feature availability ===
+- amygdala: receptors=False, genes=True, connectivity=False
+- mpfc_proxy: receptors=False, genes=True, connectivity=False
+- ofc: receptors=False, genes=True, connectivity=False
+- acc: receptors=False, genes=True, connectivity=False
+- hippocampus: receptors=True, genes=True, connectivity=False
+
+=== Example connectivity among resolved circuit nodes ===
+No circuit connectivity matrix available in this environment.
+
+=== Gene expression summary: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+
+=== Gene expression summary: ofc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    3.979550   2.636939           12    -0.111708    0.539130
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+
+=== Gene expression summary: acc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.265356   2.392434           48     0.171363    0.565985
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+ CRHR1    5.238798   1.959829           64     0.137673    0.666190
+  DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+ HTR1A    4.864731   1.657835           48     0.584969    0.515345
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+  MAOA    5.688919   1.874365          496     0.213809    0.513407
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+
+=== Example simulation ===
+
+[inputs]
+genetic_temperamental_liability        0.64
+early_life_trauma                      0.62
+chronic_interpersonal_stress           0.60
+dysfunctional_family_environment       0.58
+intergenerational_violence_exposure    0.45
+prenatal_maternal_stress               0.30
+interpersonal_safety_support           0.22
+
+[latents]
+social_trust_calibration_failure    0.5136
+monoaminergic_threat_bias           0.4996
+mentalizing_distortion              0.4689
+frontolimbic_regulatory_failure     0.4625
+epigenetic_stress_programming       0.4520
+hpa_axis_sensitization              0.4443
+social_error_hypermonitoring        0.4421
+threat_cue_salience_bias            0.4371
+hostile_attribution_bias            0.4269
+
+[regional_state]
+ofc            0.4386
+hippocampus    0.4210
+amygdala       0.4070
+mpfc_proxy     0.4042
+acc            0.3909
+
+[symptoms]
+anger_hostility_outbursts       0.3978
+distrust_suspiciousness         0.3869
+antagonistic_aggression_risk    0.3738
+malevolent_intent_inference     0.3709
+social_avoidance_anxiety        0.3610
+loyalty_doubts_and_grudges      0.3542
+
+[phenotypes]
+trauma_sensitized_paranoid_profile    0.4415
+socially_avoidant_paranoid_profile    0.3952
+hostile_suspicious_profile            0.3875
+threat_hypervigilant_profile          0.3865

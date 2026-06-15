@@ -1,0 +1,342 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                        key      node_type  is_proxy           atlas_region                           feature_summary
+                      genetic_vulnerability          input     False                   None                                      None
+                      stressful_life_events          input     False                   None                                      None
+               neurodevelopmental_liability          input     False                   None                                      None
+                      adhd_comorbidity_load          input     False                   None                                      None
+                           recovery_support          input     False                   None                                      None
+                                      dlpfc         region     False   Area MFG1 (MFG) left  receptors=no; genes=yes; connectivity=no
+                                        acc         region     False   Area p32 (pACC) left  receptors=no; genes=yes; connectivity=no
+                                   amygdala         region     False     LB (Amygdala) left receptors=yes; genes=yes; connectivity=no
+                                hippocampus         region     False CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                     ventral_striatum_proxy         region      True       ventral striatum  receptors=no; genes=yes; connectivity=no
+stress_sensitive_neuroplastic_vulnerability latent_biology     False                   None                                      None
+         dopaminergic_control_dysregulation latent_biology     False                   None                                      None
+             glutamatergic_association_bias latent_biology     False                   None                                      None
+             frontostriatal_control_failure latent_biology     False                   None                                      None
+                 frontolimbic_disconnection latent_biology     False                   None                                      None
+             object_safety_identity_binding latent_biology     False                   None                                      None
+                      executive_dysfunction        symptom     False                   None                                      None
+                    cognitive_inflexibility        symptom     False                   None                                      None
+                  attention_disorganization        symptom     False                   None                                      None
+                   distress_when_discarding        symptom     False                   None                                      None
+                             indecisiveness        symptom     False                   None                                      None
+                          compulsive_saving        symptom     False                   None                                      None
+                       clutter_accumulation        symptom     False                   None                                      None
+
+=== EDGES ===
+                                     source                                      target                                                                    relation hd_change
+                      genetic_vulnerability stress_sensitive_neuroplastic_vulnerability                                raises stress-sensitive plasticity liability increased
+                      stressful_life_events stress_sensitive_neuroplastic_vulnerability                      can alter stress adaptation and BDNF-linked plasticity increased
+               neurodevelopmental_liability          dopaminergic_control_dysregulation                          biases attention and executive-control development increased
+                      adhd_comorbidity_load          dopaminergic_control_dysregulation marks shared dopaminergic vulnerability with executive-control consequences increased
+                      genetic_vulnerability              glutamatergic_association_bias                     contributes to maladaptive learning and plasticity bias increased
+         dopaminergic_control_dysregulation              frontostriatal_control_failure                weakens planning, decision-making, and cognitive flexibility increased
+             glutamatergic_association_bias              frontostriatal_control_failure                               adds rigid learning pressure to control loops increased
+stress_sensitive_neuroplastic_vulnerability                  frontolimbic_disconnection                         sensitizes emotional-control circuitry under stress increased
+             glutamatergic_association_bias              object_safety_identity_binding  strengthens maladaptive possession-safety and possession-identity learning increased
+             frontostriatal_control_failure                                       dlpfc                                  reduces effective DLPFC control efficiency decreased
+                 frontolimbic_disconnection                                         acc                           reduces cingulate control over emotional conflict decreased
+                 frontolimbic_disconnection                                    amygdala                          permits greater limbic threat / anxiety reactivity increased
+             object_safety_identity_binding                                 hippocampus                     reinforces object-memory and contextual meaning binding increased
+         dopaminergic_control_dysregulation                      ventral_striatum_proxy                              biases striatal gating and salience assignment increased
+             frontostriatal_control_failure                       executive_dysfunction                                           drives broad executive impairment increased
+             glutamatergic_association_bias                     cognitive_inflexibility                          supports rigid learned rules and poor set shifting increased
+         dopaminergic_control_dysregulation                   attention_disorganization                              reduces attention stability and follow-through increased
+                                   amygdala                    distress_when_discarding                    amplifies anxiety associated with discarding possessions increased
+                      executive_dysfunction                              indecisiveness                                 undermines efficient keep/discard decisions increased
+                   distress_when_discarding                           compulsive_saving                               discourages discarding and promotes retention increased
+             object_safety_identity_binding                           compulsive_saving              makes possessions feel too meaningful or protective to discard increased
+                          compulsive_saving                        clutter_accumulation                                            drives downstream clutter burden increased
+                           recovery_support              frontostriatal_control_failure                              partially compensates executive-control burden decreased
+                           recovery_support                    distress_when_discarding                                           buffers anxiety during discarding decreased
+
+=== CIRCUIT CONNECTIVITY (resolved region pairs) ===
+No circuit connectivity matrix could be resolved in this environment.
+
+=== AMYGDALA GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+   COMT    6.458171   3.351996           42    -0.164479    1.545434
+   DLG4    7.066586   1.157053           21     0.199305    0.617794
+   DRD1    4.613016   1.787098          140     0.912275    0.740432
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+ GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+SLC17A7    9.403374   2.926548           42     0.921979    0.546472
+ SLC1A2    9.187107   4.754858           28     1.474525    0.830116
+ SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+ SNAP25   11.907400   1.696718           28     0.308375    0.956790
+
+=== AMYGDALA CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== DLPFC GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.808700   1.540375            6     0.382433    0.199946
+   COMT    6.471850   3.495803           18     0.100972    1.039281
+   DLG4    7.390378   0.999026            9     0.609067    0.528089
+   DRD1    4.034288   1.430597           60     0.495738    0.455511
+   DRD2    3.016520   1.905924           15    -0.417060    0.297323
+ GRIN2B    6.495922   1.382746            9     0.667089    0.126177
+SLC17A7    8.844306   2.222936           18     0.580944    0.173473
+ SLC1A2    7.628192   4.519044           12     0.487975    0.486008
+ SLC6A3    1.943139   1.721674           18    -0.154211    0.401479
+ SNAP25   11.905675   2.282016           12     0.365875    0.330404
+
+=== DLPFC CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== ACC GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.584522   1.763174           32     0.378994    0.292470
+   COMT    6.469328   3.460309           96    -0.076757    0.783002
+   DLG4    7.312108   1.224763           48     0.498225    0.753414
+   DRD1    4.006743   1.505281          320     0.441164    0.581172
+   DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ GRIN2B    6.431923   1.455238           48     0.697717    0.230982
+SLC17A7    9.008310   2.260850           96     0.715042    0.179903
+ SLC1A2    8.384612   4.374398           64     0.642056    0.582219
+ SLC6A3    2.090293   1.704914           96    -0.166331    0.456316
+ SNAP25   11.741192   2.064222           64     0.358395    0.449390
+
+=== ACC CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== VENTRAL_STRIATUM_PROXY GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    3.009257   2.293641           40    -1.185732    1.237663
+   COMT    6.402036   3.593712          120    -0.059620    1.034789
+   DLG4    7.075130   1.370532           60    -0.076348    1.110180
+   DRD1    5.191275   2.571429          400     1.440038    1.612673
+   DRD2    5.426011   2.496559          100     1.577181    1.050432
+ GRIN2B    5.862947   2.148731           60     0.315608    0.719515
+SLC17A7    5.080541   2.641455          120    -1.257597    0.934427
+ SLC1A2    8.858217   4.364429           80     0.931356    0.863236
+ SLC6A3    2.216257   1.756066          120    -0.062672    0.505430
+ SNAP25   10.582589   2.115882           80    -0.861815    0.959904
+
+=== VENTRAL_STRIATUM_PROXY CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== SIMULATION OUTPUT ===
+
+[inputs]
+genetic_vulnerability           0.70
+stressful_life_events           0.65
+neurodevelopmental_liability    0.55
+adhd_comorbidity_load           0.45
+recovery_support                0.25
+
+[latents]
+stress_sensitive_neuroplastic_vulnerability    0.6225
+glutamatergic_association_bias                 0.5531
+dopaminergic_control_dysregulation             0.5375
+object_safety_identity_binding                 0.4850
+frontostriatal_control_failure                 0.4622
+frontolimbic_disconnection                     0.4206
+
+[regional_state]
+amygdala                  0.4198
+ventral_striatum_proxy    0.4158
+hippocampus               0.3972
+dlpfc                     0.3615
+acc                       0.3171
+
+[symptoms]
+cognitive_inflexibility      0.3790
+distress_when_discarding     0.3740
+attention_disorganization    0.3701
+compulsive_saving            0.3448
+executive_dysfunction        0.3409
+indecisiveness               0.3010
+clutter_accumulation         0.2765
+
+[phenotypes]
+discard_anxiety_profile          0.4263
+network_disconnection_profile    0.3903
+control_deficit_profile          0.3477
+overall_hoarding_burden          0.3340
+clutter_burden_profile           0.3074
+
+=== OPTIONAL USAGE ===
+# model.assign_mni_point((-6, 28, 24)).head()
+# mask = model.region_mask('amygdala')
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                        key      node_type  is_proxy           atlas_region                           feature_summary
+                      genetic_vulnerability          input     False                   None                                      None
+                      stressful_life_events          input     False                   None                                      None
+               neurodevelopmental_liability          input     False                   None                                      None
+                      adhd_comorbidity_load          input     False                   None                                      None
+                           recovery_support          input     False                   None                                      None
+                                      dlpfc         region     False   Area MFG1 (MFG) left  receptors=no; genes=yes; connectivity=no
+                                        acc         region     False   Area p32 (pACC) left  receptors=no; genes=yes; connectivity=no
+                                   amygdala         region     False     LB (Amygdala) left receptors=yes; genes=yes; connectivity=no
+                                hippocampus         region     False CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                     ventral_striatum_proxy         region      True       ventral striatum  receptors=no; genes=yes; connectivity=no
+stress_sensitive_neuroplastic_vulnerability latent_biology     False                   None                                      None
+         dopaminergic_control_dysregulation latent_biology     False                   None                                      None
+             glutamatergic_association_bias latent_biology     False                   None                                      None
+             frontostriatal_control_failure latent_biology     False                   None                                      None
+                 frontolimbic_disconnection latent_biology     False                   None                                      None
+             object_safety_identity_binding latent_biology     False                   None                                      None
+                      executive_dysfunction        symptom     False                   None                                      None
+                    cognitive_inflexibility        symptom     False                   None                                      None
+                  attention_disorganization        symptom     False                   None                                      None
+                   distress_when_discarding        symptom     False                   None                                      None
+                             indecisiveness        symptom     False                   None                                      None
+                          compulsive_saving        symptom     False                   None                                      None
+                       clutter_accumulation        symptom     False                   None                                      None
+
+=== EDGES ===
+                                     source                                      target                                                                    relation hd_change
+                      genetic_vulnerability stress_sensitive_neuroplastic_vulnerability                                raises stress-sensitive plasticity liability increased
+                      stressful_life_events stress_sensitive_neuroplastic_vulnerability                      can alter stress adaptation and BDNF-linked plasticity increased
+               neurodevelopmental_liability          dopaminergic_control_dysregulation                          biases attention and executive-control development increased
+                      adhd_comorbidity_load          dopaminergic_control_dysregulation marks shared dopaminergic vulnerability with executive-control consequences increased
+                      genetic_vulnerability              glutamatergic_association_bias                     contributes to maladaptive learning and plasticity bias increased
+         dopaminergic_control_dysregulation              frontostriatal_control_failure                weakens planning, decision-making, and cognitive flexibility increased
+             glutamatergic_association_bias              frontostriatal_control_failure                               adds rigid learning pressure to control loops increased
+stress_sensitive_neuroplastic_vulnerability                  frontolimbic_disconnection                         sensitizes emotional-control circuitry under stress increased
+             glutamatergic_association_bias              object_safety_identity_binding  strengthens maladaptive possession-safety and possession-identity learning increased
+             frontostriatal_control_failure                                       dlpfc                                  reduces effective DLPFC control efficiency decreased
+                 frontolimbic_disconnection                                         acc                           reduces cingulate control over emotional conflict decreased
+                 frontolimbic_disconnection                                    amygdala                          permits greater limbic threat / anxiety reactivity increased
+             object_safety_identity_binding                                 hippocampus                     reinforces object-memory and contextual meaning binding increased
+         dopaminergic_control_dysregulation                      ventral_striatum_proxy                              biases striatal gating and salience assignment increased
+             frontostriatal_control_failure                       executive_dysfunction                                           drives broad executive impairment increased
+             glutamatergic_association_bias                     cognitive_inflexibility                          supports rigid learned rules and poor set shifting increased
+         dopaminergic_control_dysregulation                   attention_disorganization                              reduces attention stability and follow-through increased
+                                   amygdala                    distress_when_discarding                    amplifies anxiety associated with discarding possessions increased
+                      executive_dysfunction                              indecisiveness                                 undermines efficient keep/discard decisions increased
+                   distress_when_discarding                           compulsive_saving                               discourages discarding and promotes retention increased
+             object_safety_identity_binding                           compulsive_saving              makes possessions feel too meaningful or protective to discard increased
+                          compulsive_saving                        clutter_accumulation                                            drives downstream clutter burden increased
+                           recovery_support              frontostriatal_control_failure                              partially compensates executive-control burden decreased
+                           recovery_support                    distress_when_discarding                                           buffers anxiety during discarding decreased
+
+=== CIRCUIT CONNECTIVITY (resolved region pairs) ===
+No circuit connectivity matrix could be resolved in this environment.
+
+=== AMYGDALA GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+   COMT    6.458171   3.351996           42    -0.164479    1.545434
+   DLG4    7.066586   1.157053           21     0.199305    0.617794
+   DRD1    4.613016   1.787098          140     0.912275    0.740432
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+ GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+SLC17A7    9.403374   2.926548           42     0.921979    0.546472
+ SLC1A2    9.187107   4.754858           28     1.474525    0.830116
+ SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+ SNAP25   11.907400   1.696718           28     0.308375    0.956790
+
+=== AMYGDALA CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== DLPFC GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.808700   1.540375            6     0.382433    0.199946
+   COMT    6.471850   3.495803           18     0.100972    1.039281
+   DLG4    7.390378   0.999026            9     0.609067    0.528089
+   DRD1    4.034288   1.430597           60     0.495738    0.455511
+   DRD2    3.016520   1.905924           15    -0.417060    0.297323
+ GRIN2B    6.495922   1.382746            9     0.667089    0.126177
+SLC17A7    8.844306   2.222936           18     0.580944    0.173473
+ SLC1A2    7.628192   4.519044           12     0.487975    0.486008
+ SLC6A3    1.943139   1.721674           18    -0.154211    0.401479
+ SNAP25   11.905675   2.282016           12     0.365875    0.330404
+
+=== DLPFC CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== ACC GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.584522   1.763174           32     0.378994    0.292470
+   COMT    6.469328   3.460309           96    -0.076757    0.783002
+   DLG4    7.312108   1.224763           48     0.498225    0.753414
+   DRD1    4.006743   1.505281          320     0.441164    0.581172
+   DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ GRIN2B    6.431923   1.455238           48     0.697717    0.230982
+SLC17A7    9.008310   2.260850           96     0.715042    0.179903
+ SLC1A2    8.384612   4.374398           64     0.642056    0.582219
+ SLC6A3    2.090293   1.704914           96    -0.166331    0.456316
+ SNAP25   11.741192   2.064222           64     0.358395    0.449390
+
+=== ACC CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== VENTRAL_STRIATUM_PROXY GENE SUMMARY ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    3.009257   2.293641           40    -1.185732    1.237663
+   COMT    6.402036   3.593712          120    -0.059620    1.034789
+   DLG4    7.075130   1.370532           60    -0.076348    1.110180
+   DRD1    5.191275   2.571429          400     1.440038    1.612673
+   DRD2    5.426011   2.496559          100     1.577181    1.050432
+ GRIN2B    5.862947   2.148731           60     0.315608    0.719515
+SLC17A7    5.080541   2.641455          120    -1.257597    0.934427
+ SLC1A2    8.858217   4.364429           80     0.931356    0.863236
+ SLC6A3    2.216257   1.756066          120    -0.062672    0.505430
+ SNAP25   10.582589   2.115882           80    -0.861815    0.959904
+
+=== VENTRAL_STRIATUM_PROXY CONNECTIVITY PROFILE ===
+No connectivity profile available.
+
+=== SIMULATION OUTPUT ===
+
+[inputs]
+genetic_vulnerability           0.70
+stressful_life_events           0.65
+neurodevelopmental_liability    0.55
+adhd_comorbidity_load           0.45
+recovery_support                0.25
+
+[latents]
+stress_sensitive_neuroplastic_vulnerability    0.6225
+glutamatergic_association_bias                 0.5531
+dopaminergic_control_dysregulation             0.5375
+object_safety_identity_binding                 0.4850
+frontostriatal_control_failure                 0.4622
+frontolimbic_disconnection                     0.4206
+
+[regional_state]
+amygdala                  0.4198
+ventral_striatum_proxy    0.4158
+hippocampus               0.3972
+dlpfc                     0.3615
+acc                       0.3171
+
+[symptoms]
+cognitive_inflexibility      0.3790
+distress_when_discarding     0.3740
+attention_disorganization    0.3701
+compulsive_saving            0.3448
+executive_dysfunction        0.3409
+indecisiveness               0.3010
+clutter_accumulation         0.2765
+
+[phenotypes]
+discard_anxiety_profile          0.4263
+network_disconnection_profile    0.3903
+control_deficit_profile          0.3477
+overall_hoarding_burden          0.3340
+clutter_burden_profile           0.3074
+
+=== OPTIONAL USAGE ===
+# model.assign_mni_point((-6, 28, 24)).head()
+# mask = model.region_mask('amygdala')

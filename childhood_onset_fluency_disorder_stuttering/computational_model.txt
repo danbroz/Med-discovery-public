@@ -1,0 +1,268 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                     key      node_type                                       atlas_region                                                  centroid_mni                           feature_summary
+                   genetic_vulnerability          input                                               None                                                          None                                      None
+                essence_comorbidity_load          input                                               None                                                          None                                      None
+               dopaminergic_perturbation          input                                               None                                                          None                                      None
+       excitatory_inhibitory_instability          input                                               None                                                          None                                      None
+developmental_white_matter_disconnection          input                                               None                                                          None                                      None
+                         fluency_support          input                                               None                                                          None                                      None
+                          ifg_broca_left         region                                 Area 44 (IFG) left   (-53.1196388261851, 16.236518685728612, 12.396287935791321) receptors=yes; genes=yes; connectivity=no
+                                stg_left         region                             Area Te 2.1 (STG) left (-53.970976253298154, -18.035180299032547, 5.733509234828503) receptors=yes; genes=yes; connectivity=no
+                               stg_right         region                            Area Te 2.1 (STG) right   (57.31546391752576, -10.552577319587627, 3.138144329896903)  receptors=yes; genes=no; connectivity=no
+                    premotor_speech_left         region                              Area 6v1 (PreCG) left (-38.159634317862164, -1.8534927332395625, 57.77965307079231)  receptors=no; genes=yes; connectivity=no
+                     basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)   (10.758389261744966, 16.82550335570471, -5.468839884947272)  receptors=no; genes=yes; connectivity=no
+                   corpus_callosum_proxy         region                                               None                                                          None                                unresolved
+        polygenic_speech_motor_liability latent_biology                                               None                                                          None                                      None
+       dopaminergic_timing_dysregulation latent_biology                                               None                                                          None                                      None
+        basal_ganglia_gating_instability latent_biology                                               None                                                          None                                      None
+            synaptic_release_instability latent_biology                                               None                                                          None                                      None
+  excitatory_inhibitory_timing_imbalance latent_biology                                               None                                                          None                                      None
+          speech_network_disconnectivity latent_biology                                               None                                                          None                                      None
+      auditory_motor_monitoring_mismatch latent_biology                                               None                                                          None                                      None
+    interhemispheric_timing_inefficiency latent_biology                                               None                                                          None                                      None
+    attention_impulse_control_modulation latent_biology                                               None                                                          None                                      None
+           speech_motor_timing_breakdown latent_biology                                               None                                                          None                                      None
+        repetitions_blocks_prolongations        symptom                                               None                                                          None                                      None
+               speech_initiation_failure        symptom                                               None                                                          None                                      None
+           auditory_feedback_instability        symptom                                               None                                                          None                                      None
+                     fluency_variability        symptom                                               None                                                          None                                      None
+             secondary_tension_behaviors        symptom                                               None                                                          None                                      None
+    attention_related_fluency_modulation        symptom                                               None                                                          None                                      None
+                     psychosocial_impact        symptom                                               None                                                          None                                      None
+
+=== EDGES ===
+                                  source                                 target                                                                      relation        stuttering_change
+                   genetic_vulnerability       polygenic_speech_motor_liability                          raises inherited vulnerability for speech disfluency increased susceptibility
+                   genetic_vulnerability      dopaminergic_timing_dysregulation                          raises vulnerability of basal-ganglia timing systems increased susceptibility
+                   genetic_vulnerability           synaptic_release_instability           raises vulnerability in synaptic release and trafficking mechanisms increased susceptibility
+                essence_comorbidity_load   attention_impulse_control_modulation                  loads shared neurodevelopmental executive-control influences                increased
+                essence_comorbidity_load         speech_network_disconnectivity               shared neurodevelopmental load can amplify network inefficiency                increased
+               dopaminergic_perturbation      dopaminergic_timing_dysregulation                         destabilizes dopamine-sensitive speech-timing systems                increased
+               dopaminergic_perturbation   attention_impulse_control_modulation                                    can alter attentional control over fluency                increased
+       excitatory_inhibitory_instability excitatory_inhibitory_timing_imbalance                              destabilizes temporal precision of neural firing                increased
+       excitatory_inhibitory_instability           synaptic_release_instability                          can destabilize synaptic timing and release dynamics                increased
+developmental_white_matter_disconnection         speech_network_disconnectivity                         reduces integrity of frontal-temporal speech pathways                increased
+developmental_white_matter_disconnection   interhemispheric_timing_inefficiency                                    reduces interhemispheric timing efficiency                increased
+                         fluency_support          speech_motor_timing_breakdown                                                 buffers unstable motor timing               protective
+                         fluency_support       repetitions_blocks_prolongations                                             reduces overt disfluency severity               protective
+        polygenic_speech_motor_liability          speech_motor_timing_breakdown                                  loads vulnerability of speech-timing control                increased
+       dopaminergic_timing_dysregulation       basal_ganglia_gating_instability                 destabilizes sequencing and initiation in basal-ganglia loops                increased
+       dopaminergic_timing_dysregulation                    basal_ganglia_proxy                                          loads basal-ganglia timing circuitry  increased dysregulation
+        basal_ganglia_gating_instability              speech_initiation_failure                            impairs fluent initiation of speech motor programs                increased
+        basal_ganglia_gating_instability       repetitions_blocks_prolongations                             disrupts smooth sequencing of speech motor output                increased
+            synaptic_release_instability          speech_motor_timing_breakdown                                    reduces precision of temporal coordination                increased
+  excitatory_inhibitory_timing_imbalance          speech_motor_timing_breakdown                                 disrupts fine timing needed for fluent speech                increased
+          speech_network_disconnectivity                         ifg_broca_left                                       burdens frontal speech-planning regions  increased dysregulation
+          speech_network_disconnectivity                               stg_left                             burdens left auditory-language monitoring regions  increased dysregulation
+          speech_network_disconnectivity                              stg_right                      burdens bilateral auditory timing and monitoring systems  increased dysregulation
+          speech_network_disconnectivity                  corpus_callosum_proxy            can burden interhemispheric communication when this proxy resolves  increased dysregulation
+          speech_network_disconnectivity     auditory_motor_monitoring_mismatch                  weakens coordination between auditory and motor speech nodes                increased
+    interhemispheric_timing_inefficiency                  corpus_callosum_proxy                     reflects inefficient interhemispheric timing coordination  increased dysregulation
+    interhemispheric_timing_inefficiency                    fluency_variability                            makes output less stable across contexts and loads                increased
+      auditory_motor_monitoring_mismatch          auditory_feedback_instability                                   disrupts monitoring of self-produced speech                increased
+      auditory_motor_monitoring_mismatch                               stg_left                 loads auditory-monitoring circuitry in the left temporal lobe  increased dysregulation
+      auditory_motor_monitoring_mismatch                              stg_right                             loads bilateral speech-sound monitoring circuitry  increased dysregulation
+           speech_motor_timing_breakdown                         ifg_broca_left                   burdens left inferior frontal articulatory planning systems  increased dysregulation
+           speech_motor_timing_breakdown                   premotor_speech_left                     burdens left speech motor timing and coordination systems  increased dysregulation
+           speech_motor_timing_breakdown       repetitions_blocks_prolongations                             directly produces overt timing failures in speech                increased
+                          ifg_broca_left              speech_initiation_failure left frontal speech-planning dysfunction contributes to initiation difficulty                increased
+                    premotor_speech_left       repetitions_blocks_prolongations                 motor planning/timing instability contributes to disfluencies                increased
+    attention_impulse_control_modulation                    fluency_variability               executive and attentional control can modulate fluency severity    increased variability
+    attention_impulse_control_modulation   attention_related_fluency_modulation                                 captures executive-control effects on fluency                increased
+                     fluency_variability            secondary_tension_behaviors                          instability promotes compensatory effort and tension                increased
+        repetitions_blocks_prolongations                    psychosocial_impact               persistent disfluency increases functional and emotional burden                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    Area 44 (IFG) left  Area Te 2.1 (STG) left  Area Te 2.1 (STG) right  Area 6v1 (PreCG) left  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)
+Area 44 (IFG) left                                            6571.865                  59.175                    0.325                560.935                                               6.655
+Area Te 2.1 (STG) left                                          59.175                1920.480                    1.030                  7.695                                               0.175
+Area Te 2.1 (STG) right                                          0.325                   1.030                  561.575                  0.510                                               0.060
+Area 6v1 (PreCG) left                                          560.935                   7.695                    0.510               6293.565                                               1.100
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)               6.655                   0.175                    0.060                  1.100                                            2794.395
+
+=== IFG_BROCA_LEFT : receptor fingerprint ===
+receptor  mean  std
+    AMPA   295  112
+ kainate   490  205
+    NMDA  1129  382
+mGluR2_3  3545  913
+   GABAA  1420  216
+   GABAB  1965  742
+      BZ  2135  641
+      M1   532  102
+      M2   143   59
+      M3   653  230
+
+=== IFG_BROCA_LEFT : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.676517   1.810704            6     0.281467    0.245191
+  COMT    6.015694   3.469225           18    -0.490539    0.556158
+   DBH    3.149656   0.616918            9     0.536578    0.557775
+  DRD2    3.175227   2.085261           15    -0.333620    0.451824
+GABRA2    7.877374   1.444772           78     0.550232    0.297669
+GABRB2    8.463333   1.371062            6     0.613083    0.170419
+  GAD1    8.710746   1.831798           54     0.360524    0.271835
+GNPTAB    8.255742   1.389459           12     0.740800    0.417118
+ GNPTG   10.750633   0.338573            6    -0.018967    0.288240
+GRIN2B    6.695489   1.415013            9     0.613356    0.332023
+ NAGPA    8.045633   2.340948            6     0.793467    0.197581
+SLC1A1    7.629683   1.438307            6     0.340650    0.419711
+SLC6A2    1.140267   0.324972            6    -0.410600    0.180633
+SLC6A3    2.069178   1.728249           18    -0.205283    0.223476
+  SV2A    8.168167   1.292234            6     0.338800    0.375339
+
+=== IFG_BROCA_LEFT : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STG_LEFT : receptor fingerprint ===
+receptor  mean  std
+    AMPA   300   96
+ kainate   402   93
+    NMDA   920  164
+mGluR2/3  2615  250
+   GABAA  1344  396
+   GABAB  1931  466
+      BZ  2628  372
+      M1   549  148
+      M2   168   26
+      M3   962  192
+
+=== STG_LEFT : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    4.606300   2.404729            2    -0.232750    0.357160
+  COMT    6.268800   3.707633            6    -0.551817    0.482883
+   DBH    2.904067   0.682629            3     0.869467    1.101097
+  DRD2    3.344600   0.977964            5    -0.019180    0.831442
+GABRA2    7.789631   1.473591           26     0.622577    0.225555
+GABRB2    8.460100   1.645155            2     0.866300    0.047942
+  GAD1    8.606928   1.822821           18     0.474722    0.305483
+GNPTAB    7.742225   1.419596            4     0.210650    0.254133
+ GNPTG   10.886900   0.606556            2     0.135250    0.015061
+GRIN2B    6.154233   1.777188            3     0.664200    0.245514
+ NAGPA    8.406650   2.714795            2     1.018450    0.380070
+SLC1A1    7.296850   1.362524            2     0.234950    0.143613
+SLC6A2    2.349800   0.718562            2     1.358350    0.900076
+SLC6A3    2.531517   1.449505            6    -0.004383    0.187412
+  SV2A    8.001100   1.571474            2     0.374400    0.080186
+
+=== STG_LEFT : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STG_RIGHT : receptor fingerprint ===
+receptor  mean  std
+    AMPA   300   96
+ kainate   402   93
+    NMDA   920  164
+mGluR2/3  2615  250
+   GABAA  1344  396
+   GABAB  1931  466
+      BZ  2628  372
+      M1   549  148
+      M2   168   26
+      M3   962  192
+
+=== STG_RIGHT : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== STG_RIGHT : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PREMOTOR_SPEECH_LEFT : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PREMOTOR_SPEECH_LEFT : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.010286   1.713512           14     0.057179    0.363742
+  COMT    6.587545   3.445850           42     0.104307    0.598799
+   DBH    2.925200   0.857555           21     0.091995    0.649088
+  DRD2    3.156760   1.872209           35    -0.348297    0.509723
+GABRA2    7.711352   1.508384          182     0.494487    0.265247
+GABRB2    8.073829   1.193717           14     0.497100    0.198698
+  GAD1    8.764359   1.862692          126     0.482716    0.324803
+GNPTAB    8.036525   1.279976           28     0.664236    0.304193
+ GNPTG   10.760786   0.534522           14     0.097050    0.646641
+GRIN2B    6.273876   1.497920           21     0.564943    0.273546
+ NAGPA    8.003414   2.362481           14     0.764100    0.375902
+SLC1A1    7.483293   1.397653           14     0.378871    0.463207
+SLC6A2    1.318436   0.441260           14    -0.292850    0.440746
+SLC6A3    2.147198   1.798589           42    -0.146467    0.315973
+  SV2A    8.080850   1.199539           14     0.405357    0.635175
+
+=== PREMOTOR_SPEECH_LEFT : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== BASAL_GANGLIA_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== BASAL_GANGLIA_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+   DBH    2.234079   0.743262           24    -0.447996    0.774587
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GABRB2    6.981731   1.334508           16    -0.441375    0.544187
+  GAD1    9.044125   1.833515          144     0.758347    0.338457
+GNPTAB    7.894462   1.419752           32     0.428909    0.901548
+ GNPTG   10.359206   0.468423           16    -0.892362    0.926854
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+ NAGPA    7.494137   2.458339           16     0.286069    0.477432
+SLC1A1    7.369725   1.119729           16     0.209775    0.544026
+SLC6A2    1.516831   0.438030           16    -0.090475    0.445743
+SLC6A3    2.099873   1.649630           48    -0.235673    0.509298
+  SV2A    7.613325   0.943941           16    -0.495138    0.766592
+
+=== BASAL_GANGLIA_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== CORPUS_CALLOSUM_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== CORPUS_CALLOSUM_PROXY : gene panel summary ===
+No gene-expression summary available for this node.
+
+=== CORPUS_CALLOSUM_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+dopaminergic_timing_dysregulation         0.4300
+speech_network_disconnectivity            0.3975
+polygenic_speech_motor_liability          0.3825
+excitatory_inhibitory_timing_imbalance    0.3325
+attention_impulse_control_modulation      0.3125
+interhemispheric_timing_inefficiency      0.3070
+speech_motor_timing_breakdown             0.2854
+basal_ganglia_gating_instability          0.2720
+synaptic_release_instability              0.2650
+auditory_motor_monitoring_mismatch        0.2255
+
+=== REGIONAL STATE ===
+corpus_callosum_proxy    0.1976
+basal_ganglia_proxy      0.1669
+stg_left                 0.1497
+premotor_speech_left     0.1440
+ifg_broca_left           0.1393
+stg_right                0.1357
+
+=== SYMPTOMS ===
+attention_related_fluency_modulation    0.2051
+repetitions_blocks_prolongations        0.1386
+fluency_variability                     0.1366
+speech_initiation_failure               0.1316
+auditory_feedback_instability           0.1092
+psychosocial_impact                     0.0709
+secondary_tension_behaviors             0.0541
+
+=== PHENOTYPES ===
+disconnection_profile              0.2631
+attention_modulated_profile        0.1909
+basal_ganglia_timing_profile       0.1830
+auditory_motor_mismatch_profile    0.1373

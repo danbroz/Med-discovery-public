@@ -1,0 +1,129 @@
+Building Illness Anxiety Disorder scaffold...
+
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+NODES
+                               key      node_type                                            atlas_region                          feature_summary
+             genetic_vulnerability          input                                                    None                                     None
+               psychosocial_stress          input                                                    None                                     None
+             bodily_sensation_load          input                                                    None                                     None
+      negative_interpretation_bias          input                                                    None                                     None
+               medical_uncertainty          input                                                    None                                     None
+                      ssri_support          input                                                    None                                     None
+             benzodiazepine_relief          input                                                    None                                     None
+                  recovery_support          input                                                    None                                     None
+                            insula         region                                  Area Ig2 (Insula) left receptors=no; genes=yes; connectivity=no
+                          amygdala         region                                      LB (Amygdala) left receptors=no; genes=yes; connectivity=no
+                               ofc         region                                     Area Fo4 (OFC) left receptors=no; genes=yes; connectivity=no
+                       pfc_control         region                                   Area Fp1 (FPole) left receptors=no; genes=yes; connectivity=no
+                               acc         region                                  Area p24ab (pACC) left receptors=no; genes=yes; connectivity=no
+                    striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left receptors=no; genes=yes; connectivity=no
+                 somatization_bias latent_biology                                                    None                                     None
+       interoceptive_amplification latent_biology                                                    None                                     None
+        serotonergic_dysregulation latent_biology                                                    None                                     None
+           gabaergic_disinhibition latent_biology                                                    None                                     None
+             salience_arousal_bias latent_biology                                                    None                                     None
+     catastrophic_health_appraisal latent_biology                                                    None                                     None
+    threat_circuit_hyperreactivity latent_biology                                                    None                                     None
+    prefrontal_reappraisal_failure latent_biology                                                    None                                     None
+frontostriatal_rumination_checking latent_biology                                                    None                                     None
+                    health_anxiety        symptom                                                    None                                     None
+             somatic_preoccupation        symptom                                                    None                                     None
+          persistent_worry_tension        symptom                                                    None                                     None
+          attentional_bias_to_body        symptom                                                    None                                     None
+      reassurance_seeking_checking        symptom                                                    None                                     None
+        delusional_conviction_risk        symptom                                                    None                                     None
+
+EDGES
+                            source                             target                                                       relation iad_change
+             genetic_vulnerability         serotonergic_dysregulation                 loads broad anxiety/obsessional susceptibility  increased
+             genetic_vulnerability     threat_circuit_hyperreactivity                            raises inherited threat sensitivity  increased
+               psychosocial_stress                  somatization_bias                 channels distress into bodily symptom tracking  increased
+               psychosocial_stress              salience_arousal_bias                         amplifies bodily arousal and vigilance  increased
+             bodily_sensation_load        interoceptive_amplification              provides ambiguous bodily signals to over-monitor  increased
+      negative_interpretation_bias      catastrophic_health_appraisal             pushes ambiguous sensations toward threat meanings  increased
+               medical_uncertainty      catastrophic_health_appraisal                   maintains illness-related ambiguity and fear  increased
+                 somatization_bias        interoceptive_amplification                      feeds the monitoring of bodily sensations  increased
+       interoceptive_amplification                             insula                        heightens interoceptive signal salience  increased
+           gabaergic_disinhibition     threat_circuit_hyperreactivity              reduces inhibitory control over anxiety circuitry  increased
+             salience_arousal_bias     threat_circuit_hyperreactivity                          adds catecholaminergic threat urgency  increased
+     catastrophic_health_appraisal     threat_circuit_hyperreactivity                  turns bodily uncertainty into escalating fear  increased
+    threat_circuit_hyperreactivity                           amygdala                            drives a fear-biased alarm response  increased
+        serotonergic_dysregulation     prefrontal_reappraisal_failure          weakens mood/anxiety regulation and cognitive control  increased
+    prefrontal_reappraisal_failure                        pfc_control                   reduces top-down threat reappraisal capacity  decreased
+    prefrontal_reappraisal_failure                                ofc         weakens contextual appraisal and inhibitory evaluation  decreased
+frontostriatal_rumination_checking                                acc          loads conflict monitoring and perseverative attention  increased
+frontostriatal_rumination_checking                     striatum_proxy  promotes repetitive checking and habit-like reassurance loops  increased
+     catastrophic_health_appraisal frontostriatal_rumination_checking                         drives perseverative health monitoring  increased
+                            insula           attentional_bias_to_body                      focuses attention on internal bodily cues  increased
+                          amygdala                     health_anxiety                            casts bodily signals as threatening  increased
+                       pfc_control                     health_anxiety    normally reappraises and suppresses excessive threat belief  decreased
+                               ofc                     health_anxiety                normally contextualizes illness-related beliefs  decreased
+                               acc       reassurance_seeking_checking           supports repetitive monitoring and checking pressure  increased
+                    striatum_proxy       reassurance_seeking_checking                 adds habit-like checking and reassurance loops  increased
+                    health_anxiety              somatic_preoccupation                    keeps attention anchored to bodily symptoms  increased
+    threat_circuit_hyperreactivity           persistent_worry_tension                               sustains chronic anxious arousal  increased
+     catastrophic_health_appraisal         delusional_conviction_risk       can escalate toward fixed illness conviction when severe  increased
+                      ssri_support         serotonergic_dysregulation                                  restores serotonergic balance  decreased
+                      ssri_support     prefrontal_reappraisal_failure       supports improved anxiety and obsessive-worry regulation  decreased
+             benzodiazepine_relief            gabaergic_disinhibition                             temporarily boosts inhibitory tone  decreased
+                  recovery_support      catastrophic_health_appraisal improves reappraisal and limits escalation of illness meanings  decreased
+                  recovery_support frontostriatal_rumination_checking                 reduces reassurance-seeking and checking loops  decreased
+
+INSULA GENE SUMMARY (head)
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.908663   2.855007            8     0.480175    1.243952
+ COMT    6.706663   3.439795           24     0.183175    1.186617
+CRHR1    3.692912   2.464608           16    -1.022863    0.615769
+ DRD2    4.335480   2.521575           20     0.716645    1.321551
+FKBP5    5.971025   2.746983           16     1.161569    0.943340
+
+SIMULATION EXAMPLE
+
+INPUTS
+negative_interpretation_bias    0.80
+psychosocial_stress             0.75
+medical_uncertainty             0.70
+bodily_sensation_load           0.65
+genetic_vulnerability           0.55
+recovery_support                0.30
+ssri_support                    0.25
+benzodiazepine_relief           0.10
+
+LATENTS
+interoceptive_amplification           0.6996
+salience_arousal_bias                 0.6899
+somatization_bias                     0.6775
+catastrophic_health_appraisal         0.6574
+frontostriatal_rumination_checking    0.5708
+threat_circuit_hyperreactivity        0.5423
+serotonergic_dysregulation            0.4725
+prefrontal_reappraisal_failure        0.4667
+gabaergic_disinhibition               0.4375
+
+REGIONAL_STATE
+insula            0.6937
+striatum_proxy    0.6264
+acc               0.5996
+amygdala          0.5706
+pfc_control       0.4755
+ofc               0.4518
+
+SYMPTOMS
+attentional_bias_to_body        0.6559
+somatic_preoccupation           0.6540
+delusional_conviction_risk      0.6110
+health_anxiety                  0.5959
+reassurance_seeking_checking    0.5894
+persistent_worry_tension        0.5423
+
+PHENOTYPES
+somatic_hypervigilance_profile    0.6679
+checking_loop_profile             0.6051
+conviction_escalation_profile     0.5976
+obsessive_health_worry_profile    0.5759

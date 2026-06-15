@@ -1,8 +1,12 @@
 # Persistent Depressive Disorder
 
 Candidate combination: agomelatine + vilazodone
+Patent docket: MHMDCNS-015
+Patent application: 64/076,304
+Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609309
-Zenodo record: https://zenodo.org/records/20609309
+Zenodo paper: https://zenodo.org/records/20609309
+Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/persistent_depressive_disorder
 
 ## Source Files
 
@@ -18,3 +22,4 @@ Zenodo record: https://zenodo.org/records/20609309
 
 This directory is the public source packet for the corresponding translational discovery manuscript.
 Evidence labels in the manuscript distinguish established, repository-derived, modeled, prophetic, and data-needed claims.
+The candidate is a research hypothesis and is not a clinical-use recommendation.

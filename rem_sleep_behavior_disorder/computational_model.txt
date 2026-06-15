@@ -1,0 +1,123 @@
+
+=== Nodes ===
+                                    key      node_type                                   atlas_region                         feature_summary
+        alpha_synucleinopathy_liability          input                                           None                                    None
+              gba1_pathway_genetic_risk          input                                           None                                    None
+          neurodegenerative_progression          input                                           None                                    None
+           environmental_toxin_exposure          input                                           None                                    None
+       glutamatergic_dysregulation_load          input                                           None                                    None
+                  rem_state_instability          input                                           None                                    None
+          narcolepsy_orexin_instability          input                                           None                                    None
+                brainstem_lesion_burden          input                                           None                                    None
+       pontine_rem_atonia_circuit_proxy         region                                           None                              unresolved
+                               amygdala         region                             LB (Amygdala) left receptors=no; genes=no; connectivity=no
+                    basal_ganglia_proxy         region FuP (Ventral Striatum, Fundus of Putamen) left receptors=no; genes=no; connectivity=no
+              hypothalamus_orexin_proxy         region                                           None                              unresolved
+           alpha_synuclein_accumulation latent_biology                                           None                                    None
+pontine_rem_atonia_circuit_degeneration latent_biology                                           None                                    None
+              glutamatergic_instability latent_biology                                           None                                    None
+               orexin_state_instability latent_biology                                           None                                    None
+                 rem_state_dissociation latent_biology                                           None                                    None
+           limbic_dream_enactment_drive latent_biology                                           None                                    None
+             basal_ganglia_motor_bypass latent_biology                                           None                                    None
+ brainstem_microstructural_degeneration latent_biology                                           None                                    None
+         prodromal_synucleinopathy_risk latent_biology                                           None                                    None
+                     rem_without_atonia        symptom                                           None                                    None
+              dream_enactment_behaviors        symptom                                           None                                    None
+               violent_fearful_dreaming        symptom                                           None                                    None
+              sleep_related_injury_risk        symptom                                           None                                    None
+        synucleinopathy_conversion_risk        symptom                                           None                                    None
+          secondary_lesional_rbd_burden        symptom                                           None                                    None
+
+=== Edges (first 15) ===
+                                source                                  target                                                                                  relation rbd_change
+       alpha_synucleinopathy_liability            alpha_synuclein_accumulation                       baseline synucleinopathy liability increases alpha-synuclein burden  increased
+             gba1_pathway_genetic_risk            alpha_synuclein_accumulation                       GBA1-pathway risk strengthens synucleinopathy-related vulnerability  increased
+          environmental_toxin_exposure            alpha_synuclein_accumulation                      toxin exposure may increase Parkinson-linked molecular vulnerability  increased
+         neurodegenerative_progression            alpha_synuclein_accumulation                        slow neurodegeneration amplifies synucleinopathic burden over time  increased
+         neurodegenerative_progression  brainstem_microstructural_degeneration progressive degeneration produces early microstructural change in brainstem-linked tracts  increased
+               brainstem_lesion_burden pontine_rem_atonia_circuit_degeneration                         focal brainstem insults can directly disrupt REM-atonia circuitry  increased
+               brainstem_lesion_burden  brainstem_microstructural_degeneration            structural insults increase microstructural disruption in REM-related pathways  increased
+               brainstem_lesion_burden           secondary_lesional_rbd_burden                           secondary RBD may arise from focal pontine or tegmental lesions  increased
+      glutamatergic_dysregulation_load               glutamatergic_instability                            altered glutamate signaling destabilizes REM-atonia generators  increased
+                 rem_state_instability                  rem_state_dissociation            state instability promotes admixture of REM sleep and waking-like motor output  increased
+         narcolepsy_orexin_instability                orexin_state_instability                         orexin deficiency or instability weakens sleep-wake stabilization  increased
+          alpha_synuclein_accumulation pontine_rem_atonia_circuit_degeneration                     synucleinopathic change damages the brainstem circuitry of REM atonia  increased
+          alpha_synuclein_accumulation              basal_ganglia_motor_bypass   Parkinson-spectrum pathology alters basal-ganglia participation in REM motor expression  increased
+          alpha_synuclein_accumulation          prodromal_synucleinopathy_risk              alpha-synuclein pathology raises the chance that RBD is prodromal PD/DLB/MSA  increased
+brainstem_microstructural_degeneration pontine_rem_atonia_circuit_degeneration                          microstructural degeneration further weakens REM-atonia pathways  increased
+
+=== Circuit connectivity ===
+No circuit connectivity matrix available in this environment.
+
+=== amygdala receptor fingerprint ===
+No receptor data available.
+
+=== amygdala gene summary ===
+No gene-expression data available.
+
+=== amygdala connectivity profile ===
+No connectivity data available.
+
+=== pontine_rem_atonia_circuit_proxy receptor fingerprint ===
+No receptor data available.
+
+=== pontine_rem_atonia_circuit_proxy gene summary ===
+No gene-expression data available.
+
+=== pontine_rem_atonia_circuit_proxy connectivity profile ===
+No connectivity data available.
+
+=== hypothalamus_orexin_proxy receptor fingerprint ===
+No receptor data available.
+
+=== hypothalamus_orexin_proxy gene summary ===
+No gene-expression data available.
+
+=== hypothalamus_orexin_proxy connectivity profile ===
+No connectivity data available.
+
+=== Example simulation ===
+
+INPUTS
+alpha_synucleinopathy_liability     0.50
+gba1_pathway_genetic_risk           0.45
+neurodegenerative_progression       0.60
+environmental_toxin_exposure        0.25
+glutamatergic_dysregulation_load    0.50
+rem_state_instability               0.65
+narcolepsy_orexin_instability       0.20
+brainstem_lesion_burden             0.10
+
+LATENTS
+alpha_synuclein_accumulation               0.4750
+pontine_rem_atonia_circuit_degeneration    0.3900
+glutamatergic_instability                  0.4980
+orexin_state_instability                   0.3950
+rem_state_dissociation                     0.4573
+limbic_dream_enactment_drive               0.4693
+basal_ganglia_motor_bypass                 0.4990
+brainstem_microstructural_degeneration     0.4120
+prodromal_synucleinopathy_risk             0.4856
+
+REGIONAL_STATE
+pontine_rem_atonia_circuit_proxy    0.4305
+amygdala                            0.4552
+basal_ganglia_proxy                 0.4799
+hypothalamus_orexin_proxy           0.4413
+
+SYMPTOMS
+rem_without_atonia                 0.4581
+dream_enactment_behaviors          0.4595
+violent_fearful_dreaming           0.4577
+sleep_related_injury_risk          0.4586
+synucleinopathy_conversion_risk    0.4576
+secondary_lesional_rbd_burden      0.2795
+
+PHENOTYPES
+isolated_rbd_profile                               0.4494
+violent_dream_enactment_profile                    0.4575
+narcolepsy_associated_state_instability_profile    0.4312
+prodromal_synucleinopathy_profile                  0.4727
+secondary_lesional_rbd_profile                     0.2638
+severe_sleep_injury_profile                        0.4586

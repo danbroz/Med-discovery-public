@@ -1,0 +1,302 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                  key                                 label      node_type                                                                              description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                            feature_summary
+            bereavement_loss_severity             Bereavement Loss Severity          input                        Severity and destabilizing impact of the interpersonal loss event                   None              None                                                           None         NaN                                       None
+  genetic_affective_anxiety_liability   Genetic Affective Anxiety Liability          input           Familial or polygenic liability for depression, anxiety, and stress reactivity                   None              None                                                           None         NaN                                       None
+            early_life_trauma_history             Early Life Trauma History          input   Earlier adversity that sensitizes later stress-response and emotion-regulation systems                   None              None                                                           None         NaN                                       None
+                  chronic_stress_load                   Chronic Stress Load          input                               Persistent stress burden surrounding or following the loss                   None              None                                                           None         NaN                                       None
+                    reminder_exposure                     Reminder Exposure          input         Ongoing exposure to grief reminders and memory triggers that reactivate the loss                   None              None                                                           None         NaN                                       None
+                     recovery_support                      Recovery Support          input          Protective mourning support, social buffering, and adaptive recovery conditions                   None              None                                                           None         NaN                                       None
+                    treatment_support                     Treatment Support          input       Protective treatment support that can reduce anxious arousal and depressive burden                   None              None                                                           None         NaN                                       None
+                             amygdala                    LB (Amygdala) left         region                                                                Atlas-backed circuit node     LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=yes
+                          hippocampus                CA1 (Hippocampus) left         region                                                                Atlas-backed circuit node CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=yes
+                               insula                Area Id1 (Insula) left         region                                                                Atlas-backed circuit node Area Id1 (Insula) left              None   (-40.04663212435233, -18.51813471502591, -4.458549222797927)       386.0  receptors=no; genes=yes; connectivity=yes
+                                  acc                Area p24ab (pACC) left         region                                                                Atlas-backed circuit node Area p24ab (pACC) left              None      (-4.228915662650607, 38.1933187294633, 4.467141292442491)      1826.0  receptors=no; genes=yes; connectivity=yes
+                          pfc_control                  Area MFG1 (MFG) left         region                                                                Atlas-backed circuit node   Area MFG1 (MFG) left              None    (-37.670404984423676, 53.42679127725856, 19.42741433021807)      1605.0  receptors=no; genes=yes; connectivity=yes
+              acute_grief_trauma_load               Acute Grief Trauma Load latent_biology                         Combined loss-related traumatic burden and immediate grief shock                   None              None                                                           None         NaN                                       None
+                 stress_sensitization                  Stress Sensitization latent_biology    Inherited and acquired stress-reactivity bias that increases vulnerability after loss                   None              None                                                           None         NaN                                       None
+           epigenetic_grief_embedding            Epigenetic Grief Embedding latent_biology      Biological embedding of loss-related stress through durable gene-expression changes                   None              None                                                           None         NaN                                       None
+           noradrenergic_hyperarousal            Noradrenergic Hyperarousal latent_biology         Elevated arousal, vigilance, and startle pressure associated with norepinephrine                   None              None                                                           None         NaN                                       None
+ serotonergic_affective_dysregulation  Serotonergic Affective Dysregulation latent_biology               Low-mood and emotional-regulation burden related to serotonergic imbalance                   None              None                                                           None         NaN                                       None
+         gabaergic_inhibitory_erosion          Gabaergic Inhibitory Erosion latent_biology            Reduced inhibitory buffering that permits persistent anxiety and hyperarousal                   None              None                                                           None         NaN                                       None
+   nmda_glutamatergic_memory_fixation    Nmda Glutamatergic Memory Fixation latent_biology Stress-linked maladaptive plasticity that entrenches grief memories and emotional traces                   None              None                                                           None         NaN                                       None
+      frontolimbic_regulation_failure       Frontolimbic Regulation Failure latent_biology                Reduced top-down regulation of limbic distress and grief-related salience                   None              None                                                           None         NaN                                       None
+salience_memory_network_dysregulation Salience Memory Network Dysregulation latent_biology       Persistent coupling of salience, emotional pain, and autobiographical grief memory                   None              None                                                           None         NaN                                       None
+          mourning_resolution_failure           Mourning Resolution Failure latent_biology                        Failure of grief adaptation leading to chronic arrest of mourning                   None              None                                                           None         NaN                                       None
+            persistent_emotional_pain             Persistent Emotional Pain        symptom                                Ongoing emotional pain and distress connected to the loss                   None              None                                                           None         NaN                                       None
+             intrusive_grief_memories              Intrusive Grief Memories        symptom                     Repeated, difficult-to-regulate grief-related memories and reminders                   None              None                                                           None         NaN                                       None
+                            avoidance                             Avoidance        symptom                Avoidance of reminders, situations, or internal states linked to the loss                   None              None                                                           None         NaN                                       None
+                         hyperarousal                          Hyperarousal        symptom                     Hypervigilance, exaggerated startle, tension, and persistent arousal                   None              None                                                           None         NaN                                       None
+                            anhedonia                             Anhedonia        symptom                  Reduced capacity for pleasure or re-engagement with life after the loss                   None              None                                                           None         NaN                                       None
+                     somatic_distress                      Somatic Distress        symptom                        Fatigue, bodily complaints, and stress-linked physical discomfort                   None              None                                                           None         NaN                                       None
+                     sleep_disruption                      Sleep Disruption        symptom                               Insomnia or arousal-linked sleep disruption in bereavement                   None              None                                                           None         NaN                                       None
+               persistent_grief_state                Persistent Grief State        symptom                         Chronically stuck grief process with impaired natural resolution                   None              None                                                           None         NaN                                       None
+
+=== Edges ===
+                               source                                target                                                                     relation pgd_change  weight
+            bereavement_loss_severity               acute_grief_trauma_load             major loss acts as a severe stressor and traumatic grief trigger  increased    0.46
+  genetic_affective_anxiety_liability                  stress_sensitization     familial affective and anxiety liability raises vulnerability after loss  increased    0.42
+            early_life_trauma_history                  stress_sensitization                         earlier adversity sensitizes stress-response systems  increased    0.40
+                  chronic_stress_load                  stress_sensitization                sustained stress amplifies later reactivity and dysregulation  increased    0.24
+                     recovery_support               acute_grief_trauma_load                 adaptive support can buffer the destabilizing impact of loss  decreased   -0.16
+                 stress_sensitization            epigenetic_grief_embedding      stress-sensitive systems are more likely to biologically embed the loss  increased    0.30
+              acute_grief_trauma_load            epigenetic_grief_embedding   severe loss can induce lasting molecular scars that maintain dysregulation  increased    0.30
+                  chronic_stress_load          gabaergic_inhibitory_erosion            chronic stress disrupts inhibitory buffering and sustains anxiety  increased    0.39
+              acute_grief_trauma_load            noradrenergic_hyperarousal                          loss-related stress increases vigilance and arousal  increased    0.34
+                 stress_sensitization            noradrenergic_hyperarousal               stress-reactive vulnerability heightens PTSD-like hyperarousal  increased    0.30
+                    reminder_exposure            noradrenergic_hyperarousal                 grief reminders can reactivate arousal and threat-monitoring  increased    0.18
+                    treatment_support            noradrenergic_hyperarousal                       supportive treatment may reduce anxious arousal burden  decreased   -0.18
+  genetic_affective_anxiety_liability  serotonergic_affective_dysregulation  affective liability increases low-mood and emotional dysregulation pressure  increased    0.28
+              acute_grief_trauma_load  serotonergic_affective_dysregulation                           severe loss can deepen depressive-affective burden  increased    0.26
+           epigenetic_grief_embedding  serotonergic_affective_dysregulation                    embedded stress vulnerability sustains mood dysregulation  increased    0.22
+                  chronic_stress_load    nmda_glutamatergic_memory_fixation      stress-linked glutamatergic plasticity can entrench grief memory traces  increased    0.26
+              acute_grief_trauma_load    nmda_glutamatergic_memory_fixation              intense grief experience loads maladaptive memory consolidation  increased    0.24
+                    reminder_exposure    nmda_glutamatergic_memory_fixation                   repeated cue reactivation reinforces grief-memory fixation  increased    0.22
+           noradrenergic_hyperarousal       frontolimbic_regulation_failure                   high arousal weakens effective top-down emotion regulation  increased    0.27
+         gabaergic_inhibitory_erosion       frontolimbic_regulation_failure                loss of inhibitory control permits persistent distress states  increased    0.24
+ serotonergic_affective_dysregulation       frontolimbic_regulation_failure       depressive-affective dysregulation weakens adaptive emotion regulation  increased    0.22
+   nmda_glutamatergic_memory_fixation salience_memory_network_dysregulation         maladaptive plasticity couples grief memory with persistent salience  increased    0.34
+           noradrenergic_hyperarousal salience_memory_network_dysregulation                       hyperarousal amplifies the salience of grief reminders  increased    0.24
+      frontolimbic_regulation_failure salience_memory_network_dysregulation  poor regulation permits emotional pain and memory systems to remain coupled  increased    0.22
+           epigenetic_grief_embedding           mourning_resolution_failure           lasting molecular changes can maintain a chronic stuck grief state  increased    0.31
+salience_memory_network_dysregulation           mourning_resolution_failure                        persistent grief salience prevents natural resolution  increased    0.29
+ serotonergic_affective_dysregulation           mourning_resolution_failure                                  depressive burden hampers adaptive mourning  increased    0.20
+                     recovery_support           mourning_resolution_failure                    supportive recovery context can reduce grief entrenchment  decreased   -0.18
+      frontolimbic_regulation_failure                           pfc_control                       maps regulatory burden onto prefrontal control systems  increased    0.41
+salience_memory_network_dysregulation                                   acc maps persistent salience and emotional pain onto cingulate control circuitry  increased    0.36
+salience_memory_network_dysregulation                                insula             maps salience and somatic distress burden onto insular circuitry  increased    0.39
+   nmda_glutamatergic_memory_fixation                           hippocampus                             maps grief-memory fixation onto memory circuitry  increased    0.42
+           noradrenergic_hyperarousal                              amygdala               maps hyperarousal onto threat and emotional salience circuitry  increased    0.39
+                               insula             persistent_emotional_pain                 supports salience-laden emotional and bodily pain experience  increased    0.31
+                          hippocampus              intrusive_grief_memories           memory-system dysregulation promotes repetitive grief recollection  increased    0.34
+                             amygdala                             avoidance           threat-weighted emotional salience promotes avoidance of reminders  increased    0.27
+           noradrenergic_hyperarousal                          hyperarousal                                drives hypervigilance and exaggerated startle  increased    0.44
+ serotonergic_affective_dysregulation                             anhedonia                          supports depressive withdrawal and reduced pleasure  increased    0.33
+                               insula                      somatic_distress                  interoceptive salience contributes to bodily grief symptoms  increased    0.24
+         gabaergic_inhibitory_erosion                      sleep_disruption                reduced inhibitory buffering promotes anxiety-linked insomnia  increased    0.28
+
+=== Resolved regions ===
+   node_key  resolved            region_name identifier
+   amygdala      True     LB (Amygdala) left       None
+hippocampus      True CA1 (Hippocampus) left       None
+     insula      True Area Id1 (Insula) left       None
+        acc      True Area p24ab (pACC) left       None
+pfc_control      True   Area MFG1 (MFG) left       None
+
+=== Receptors: amygdala ===
+(empty)
+
+=== Genes: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+ GRIN1    8.095914   4.248572           28     0.210557    1.065264
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+
+=== Connectivity profile: amygdala ===
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+                         Ch 4 (Basal Forebrain) left    9.330
+                  Frontal-to-Occipital (GapMap) left    7.855
+
+=== Receptors: hippocampus ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== Genes: hippocampus ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+ GRIN1    8.941981   3.626345           32     0.919053    0.852285
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+
+=== Connectivity profile: hippocampus ===
+                                    connected_region    value
+          Subc (Hippocampus, Subicular complex) left 5205.660
+                  Temporal-to-Parietal (GapMap) left 2875.975
+                Frontal-to-Temporal-II (GapMap) left 2118.815
+                                 Area Ph2 (PhG) left 1448.100
+                                Area FG4 (FusG) left  781.135
+                                Area FG3 (FusG) left  564.870
+                  Frontal-to-Occipital (GapMap) left  540.175
+                      Area hOc1 (V1, 17, CalcS) left  166.740
+Area EC (Hippocampal Region, Entorhinal Cortex) left  166.100
+                             Area hOc4v (LingG) left  139.825
+
+=== Receptors: insula ===
+(empty)
+
+=== Genes: insula ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    6.670433   1.636444            6     0.926267    0.206763
+  COMT    6.531583   3.255215           18    -0.189561    0.878717
+ CRHR1    4.551908   2.504119           12    -0.213075    0.963337
+ FKBP5    4.897533   2.734592           12     0.319258    0.851587
+GABRA2    8.231310   1.535083           78     0.893958    0.464156
+  GAD1    8.105317   2.005115           54    -0.043024    0.501578
+ GRIN1    7.947708   4.220683           12     0.062483    1.042291
+GRIN2B    5.809500   2.213760            9     0.305722    0.562220
+ HTR1A    6.287078   1.956025            9     1.349789    0.606316
+ NR3C1    9.378853   1.057596           15    -0.108947    0.502861
+
+=== Connectivity profile: insula ===
+                  connected_region   value
+    Area hOc1 (V1, 17, CalcS) left 591.005
+Temporal-to-Parietal (GapMap) left 577.600
+           Area hOc3v (LingG) left 424.000
+               Area TeI (STG) left 421.565
+               Area PGp (IPL) left 371.490
+              Area Te 3 (STG) left 370.510
+                Area TI (STG) left 367.615
+          Area hOc3d (Cuneus) left 311.535
+            Area Id3 (Insula) left 303.995
+            Area hOc4lp (LOC) left 286.965
+
+=== Receptors: acc ===
+(empty)
+
+=== Genes: acc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+  COMT    6.626667   3.449944           18     0.128428    0.590874
+ CRHR1    5.037908   2.235077           12     0.254025    0.541458
+ FKBP5    3.499567   1.660310           12    -0.799333    0.415369
+GABRA2    8.136708   1.478496           78     0.799604    0.300161
+  GAD1    8.507307   1.906101           54     0.404194    0.262115
+ GRIN1    8.769408   3.678481           12     0.695625    0.388277
+GRIN2B    6.430744   1.558241            9     0.625622    0.151891
+ HTR1A    5.024900   1.767105            9     0.675933    0.624451
+ NR3C1    8.983753   1.100518           15    -0.471073    0.416826
+
+=== Connectivity profile: acc ===
+                  connected_region    value
+Frontal-to-Occipital (GapMap) left 3698.220
+              Area p32 (pACC) left 2761.485
+              Area s24 (sACC) left 2275.900
+             Area p24c (pACC) left 1415.725
+             Area Fp2 (FPole) left 1021.730
+             Area Fp1 (FPole) left  777.000
+                Area 33 (ACC) left  617.555
+              Area s32 (sACC) left  499.640
+               Area 25 (sACC) left  421.570
+            Area Fp1 (FPole) right  381.910
+
+=== Receptors: pfc_control ===
+(empty)
+
+=== Genes: pfc_control ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.808700   1.540375            6     0.382433    0.199946
+  COMT    6.471850   3.495803           18     0.100972    1.039281
+ CRHR1    5.277217   1.946015           12     0.132875    0.570297
+ FKBP5    4.524192   2.360031           12    -0.102917    0.461762
+GABRA2    7.912806   1.439838           78     0.700127    0.324874
+  GAD1    8.776133   1.880663           54     0.295546    0.252303
+ GRIN1    8.450267   3.705874           12     0.417692    0.498522
+GRIN2B    6.495922   1.382746            9     0.667089    0.126177
+ HTR1A    4.927300   1.605505            9     0.527278    0.165097
+ NR3C1    9.737967   0.985300           15     0.594193    0.434242
+
+=== Connectivity profile: pfc_control ===
+         connected_region    value
+     Area MFG4 (MFG) left 1807.210
+Frontal-I.1 (GapMap) left 1117.735
+     Area MFG2 (MFG) left  510.105
+    Area Fp1 (FPole) left  423.310
+     Area SFG4 (SFG) left  418.120
+      Area 8v2 (MFG) left  371.360
+      Area 8v1 (MFG) left  363.775
+     Area SFG3 (SFG) left  307.955
+Area MFG5 (MFG, IFG) left  248.825
+     Area SFS2 (SFS) left  216.425
+
+=== Circuit connectivity ===
+ source_key          source_region  target_key          target_region  mean_streamline_count  n_observations
+   amygdala     LB (Amygdala) left hippocampus CA1 (Hippocampus) left                 64.260               1
+        acc Area p24ab (pACC) left pfc_control   Area MFG1 (MFG) left                 24.480               1
+     insula Area Id1 (Insula) left pfc_control   Area MFG1 (MFG) left                  2.190               4
+hippocampus CA1 (Hippocampus) left      insula Area Id1 (Insula) left                  2.115               4
+hippocampus CA1 (Hippocampus) left         acc Area p24ab (pACC) left                  1.790               3
+     insula Area Id1 (Insula) left         acc Area p24ab (pACC) left                  1.085               3
+hippocampus CA1 (Hippocampus) left pfc_control   Area MFG1 (MFG) left                  0.370               4
+   amygdala     LB (Amygdala) left      insula Area Id1 (Insula) left                  0.065               1
+   amygdala     LB (Amygdala) left pfc_control   Area MFG1 (MFG) left                  0.000               1
+
+=== Simulation inputs ===
+bereavement_loss_severity              0.82
+genetic_affective_anxiety_liability    0.56
+early_life_trauma_history              0.42
+chronic_stress_load                    0.70
+reminder_exposure                      0.66
+recovery_support                       0.24
+treatment_support                      0.18
+
+=== Latent biology ===
+acute_grief_trauma_load                  0.5780
+stress_sensitization                     0.5008
+epigenetic_grief_embedding               0.4301
+noradrenergic_hyperarousal               0.4739
+serotonergic_affective_dysregulation     0.4269
+gabaergic_inhibitory_erosion             0.4191
+nmda_glutamatergic_memory_fixation       0.4665
+frontolimbic_regulation_failure          0.3226
+salience_memory_network_dysregulation    0.3779
+mourning_resolution_failure              0.2948
+
+=== Regional state ===
+amygdala       0.4183
+hippocampus    0.4468
+insula         0.3804
+acc            0.3386
+pfc_control    0.3825
+
+=== Symptoms ===
+persistent_emotional_pain    0.3516
+intrusive_grief_memories     0.4090
+avoidance                    0.3285
+hyperarousal                 0.4242
+anhedonia                    0.2992
+somatic_distress             0.3366
+sleep_disruption             0.3201
+persistent_grief_state       0.2904
+
+=== Phenotypes ===
+hyperaroused_grief_profile          0.3523
+memory_fixation_profile             0.4408
+depressive_anxious_grief_profile    0.3755
+entrenched_grief_profile            0.3307

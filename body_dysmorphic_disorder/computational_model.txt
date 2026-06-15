@@ -1,0 +1,295 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                               key      node_type                                       atlas_region                                                 centroid_mni                           feature_summary
+             genetic_vulnerability          input                                               None                                                         None                                      None
+  environmental_psychological_load          input                                               None                                                         None                                      None
+         appearance_related_stress          input                                               None                                                         None                                      None
+right_hemisphere_body_image_insult          input                                               None                                                         None                                      None
+                 treatment_support          input                                               None                                                         None                                      None
+                               ofc         region                                Area Fo4 (OFC) left (-29.001430615164523, 53.3412017167382, -15.175965665236049)  receptors=no; genes=yes; connectivity=no
+                               acc         region                                 Area 33 (ACC) left (-4.092857142857142, 13.314285714285717, 25.242857142857147)  receptors=no; genes=yes; connectivity=no
+                    striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)  (10.758389261744966, 16.82550335570471, -5.468839884947272)  receptors=no; genes=yes; connectivity=no
+               visual_cortex_proxy         region                            Area hOc3v (LingG) left  (-17.067521944632006, -82.6959824442944, -9.18332207967589) receptors=yes; genes=yes; connectivity=no
+          posterior_parietal_proxy         region                                Area PGp (IPL) left (-44.18055555555556, -75.48958333333334, 31.076016865079367) receptors=yes; genes=yes; connectivity=no
+                    premotor_proxy         region                              Area 6d1 (PreCG) left  (-20.557940536620734, -13.287454677302392, 67.562291515591)  receptors=no; genes=yes; connectivity=no
+                self_midline_proxy         region                               Area p32 (pACC) left  (-6.9639365918097695, 49.28771466314399, 9.933289299867894)  receptors=no; genes=yes; connectivity=no
+                 ocrd_compulsivity latent_biology                                               None                                                         None                                      None
+      frontostriatal_dysregulation latent_biology                                               None                                                         None                                      None
+     behavioral_inhibition_failure latent_biology                                               None                                                         None                                      None
+                visual_detail_bias latent_biology                                               None                                                         None                                      None
+         global_processing_failure latent_biology                                               None                                                         None                                      None
+            body_schema_distortion latent_biology                                               None                                                         None                                      None
+       self_referential_distortion latent_biology                                               None                                                         None                                      None
+             negative_affect_trait latent_biology                                               None                                                         None                                      None
+    gene_environment_sensitization latent_biology                                               None                                                         None                                      None
+          appearance_preoccupation        symptom                                               None                                                         None                                      None
+             perceptual_distortion        symptom                                               None                                                         None                                      None
+             body_image_distortion        symptom                                               None                                                         None                                      None
+           local_feature_overfocus        symptom                                               None                                                         None                                      None
+               compulsive_checking        symptom                                               None                                                         None                                      None
+                  grooming_picking        symptom                                               None                                                         None                                      None
+                avoidance_distress        symptom                                               None                                                         None                                      None
+                  shame_inadequacy        symptom                                               None                                                         None                                      None
+
+=== EDGES ===
+                            source                         target                                                                     relation               bdd_change
+             genetic_vulnerability              ocrd_compulsivity        raises liability for obsessive-compulsive-spectrum symptom expression increased susceptibility
+             genetic_vulnerability          negative_affect_trait                raises liability for neurotic, self-conscious affective style increased susceptibility
+             genetic_vulnerability gene_environment_sensitization            creates vulnerability for environmental amplification of symptoms increased susceptibility
+  environmental_psychological_load gene_environment_sensitization                                       amplifies stable symptom vulnerability                increased
+  environmental_psychological_load          negative_affect_trait                          increases self-conscious distress and vulnerability                increased
+         appearance_related_stress             visual_detail_bias                               focuses attention on minor local imperfections                increased
+         appearance_related_stress    self_referential_distortion                        loads negative self-referential body image processing                increased
+right_hemisphere_body_image_insult         body_schema_distortion                            provides a body-image/body-schema lesion analogue                increased
+                 treatment_support              ocrd_compulsivity                                 buffers obsessive-compulsive ritual pressure               protective
+                 treatment_support       appearance_preoccupation                                         buffers obsessional appearance focus               protective
+                 treatment_support            compulsive_checking                                         reduces ritualized checking behavior               protective
+    gene_environment_sensitization          negative_affect_trait                      stabilizes self-conscious negative-affect vulnerability                increased
+                 ocrd_compulsivity   frontostriatal_dysregulation                 loads cortico-striatal-thalamo-cortical compulsive circuitry                increased
+                 ocrd_compulsivity            compulsive_checking                            increases ritualized appearance-checking behavior                increased
+                 ocrd_compulsivity               grooming_picking                               increases ritualized picking/grooming behavior                increased
+      frontostriatal_dysregulation                            ofc                              burdens orbitofrontal habit/valuation circuitry  increased dysregulation
+      frontostriatal_dysregulation                            acc                                  burdens conflict/error monitoring circuitry  increased dysregulation
+      frontostriatal_dysregulation                 striatum_proxy                           burdens caudate-putamen habit/inhibition circuitry  increased dysregulation
+      frontostriatal_dysregulation  behavioral_inhibition_failure                                  weakens suppression of ritualistic behavior                increased
+     behavioral_inhibition_failure            compulsive_checking                              allows compulsive checking to become entrenched                increased
+     behavioral_inhibition_failure               grooming_picking                         allows picking/grooming rituals to become entrenched                increased
+                visual_detail_bias            visual_cortex_proxy              loads local visual processing over global appearance processing           increased bias
+                visual_detail_bias        local_feature_overfocus                           amplifies fixation on minor details or asymmetries                increased
+         global_processing_failure          perceptual_distortion                                 reduces coherent whole-appearance perception                increased
+            body_schema_distortion       posterior_parietal_proxy                            loads posterior parietal body-schema construction  increased dysregulation
+            body_schema_distortion                 premotor_proxy                                    loads premotor body-schema representation  increased dysregulation
+            body_schema_distortion          body_image_distortion                                   destabilizes perceived body representation                increased
+       self_referential_distortion             self_midline_proxy                loads cortical-midline self-referential body-image processing  increased dysregulation
+       self_referential_distortion       appearance_preoccupation                                  stabilizes obsessional self-focused concern                increased
+             negative_affect_trait       appearance_preoccupation                     amplifies self-conscious distress around perceived flaws                increased
+             negative_affect_trait               shame_inadequacy                                  amplifies shame and perceived defectiveness                increased
+               visual_cortex_proxy        local_feature_overfocus                                        supports detail-biased visual parsing                increased
+          posterior_parietal_proxy          body_image_distortion distorted parietal body representation contributes to body-image disturbance                increased
+                    premotor_proxy          body_image_distortion         distorted premotor body schema contributes to body-image disturbance                increased
+                self_midline_proxy       appearance_preoccupation                                   supports self-focused appearance appraisal                increased
+          appearance_preoccupation            compulsive_checking                                        drives repeated appearance monitoring                increased
+          appearance_preoccupation             avoidance_distress                         drives distress and avoidance around social exposure                increased
+             body_image_distortion          perceptual_distortion                           contributes to misperception of overall appearance                increased
+             perceptual_distortion               shame_inadequacy                                      strengthens conviction of defectiveness                increased
+                  shame_inadequacy             avoidance_distress                                promotes avoidance of scrutiny and evaluation                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    Area Fo4 (OFC) left  Area 33 (ACC) left  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)  Area hOc3v (LingG) left  Area PGp (IPL) left  Area 6d1 (PreCG) left  Area p32 (pACC) left
+Area Fo4 (OFC) left                                             698.345               2.080                                             495.015                   36.880               14.755                  2.620                20.480
+Area 33 (ACC) left                                                2.080             977.565                                              96.055                    2.745                5.885                 28.785               598.030
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)              495.015              96.055                                            2794.395                   22.625                8.050                  1.555               410.810
+Area hOc3v (LingG) left                                          36.880               2.745                                              22.625                23332.360               84.850                  3.800                14.030
+Area PGp (IPL) left                                              14.755               5.885                                               8.050                   84.850            12793.430                151.500                 5.595
+Area 6d1 (PreCG) left                                             2.620              28.785                                               1.555                    3.800              151.500              21648.850                 8.310
+Area p32 (pACC) left                                             20.480             598.030                                             410.810                   14.030                5.595                  8.310             14215.670
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+DLGAP3    8.640087   3.483884            8     0.052513    0.778111
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+GABRA2    7.660662   1.472412          104     0.468212    0.187486
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+SLC1A1    7.498825   1.243019            8     0.158138    0.190438
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.012600   2.031757            6    -0.178550    0.407521
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+DLGAP3    8.644900   3.914147            6     0.530017    0.999040
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+GABRA2    8.118859   1.598675           78     0.854947    0.291603
+GRIN2B    6.508622   1.715237            9     0.674611    0.432203
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+ HTR2A    7.087492   2.045575           75     0.437077    0.471426
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+SLC1A1    7.460867   1.404513            6     0.162117    0.461006
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== STRIATUM_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== STRIATUM_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+DLGAP3    8.719138   3.168326           16     0.049219    1.452642
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+ FKBP5    4.906187   2.527519           32     0.287916    0.613248
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+ HTR1A    2.481942   1.355876           24    -0.801938    0.579867
+ HTR2A    5.073537   1.742211          200    -0.405778    0.371937
+ NR3C1    8.892430   1.124793           40    -0.717515    0.756545
+SLC1A1    7.369725   1.119729           16     0.209775    0.544026
+SLC6A4    1.711622   0.660476           88    -0.184322    0.416930
+
+=== STRIATUM_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== VISUAL_CORTEX_PROXY : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   477  118
+    kainate   391  448
+       NMDA  1496  215
+      GABAA  2338  570
+      GABAB  2119  103
+         BZ  2917 2139
+         M1   578   25
+         M2   299   68
+         M3   485   53
+alpha4beta2    47    7
+
+=== VISUAL_CORTEX_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.332094   1.835630           34     0.249815    0.516435
+  COMT    6.451522   3.345706          102    -0.221440    0.739919
+DLGAP3    8.562079   3.466895           34     0.097294    0.700615
+  DRD2    2.957409   1.771294           85    -0.549139    0.679043
+ FKBP5    4.501944   2.357936           68     0.022638    0.973242
+GABRA2    7.297789   1.759642          442     0.141885    0.648389
+GRIN2B    5.377124   2.145879           51     0.049718    0.840709
+ HTR1A    3.170002   1.648451           51    -0.422553    0.632727
+ HTR2A    6.917973   3.049185          425     0.467046    1.092171
+ NR3C1    9.775321   1.101455           85     0.957625    0.554435
+SLC1A1    7.155579   1.417228           34    -0.089153    0.937488
+SLC6A4    1.733641   0.677041          187    -0.190950    0.347500
+
+=== VISUAL_CORTEX_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== POSTERIOR_PARIETAL_PROXY : receptor fingerprint ===
+receptor   mean    std
+    AMPA  428.0  242.0
+ kainate  518.0  360.0
+    NMDA 1081.0  313.0
+mGluR2_3 3416.0 1572.0
+   GABAA 1847.0  767.0
+   GABAB 2374.0  790.0
+      BZ 2294.0  830.0
+      M1  461.0  180.0
+      M2  202.0   74.0
+      M3  843.0  432.0
+
+=== POSTERIOR_PARIETAL_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.629555   1.947246           22     0.484977    0.553379
+  COMT    6.439261   3.388563           66    -0.225515    0.622942
+DLGAP3    8.633850   3.424972           22     0.075750    0.590874
+  DRD2    3.055029   1.675220           55    -0.519125    0.480889
+ FKBP5    4.357627   2.046855           44    -0.150664    0.684709
+GABRA2    7.614772   1.606119          286     0.434564    0.318846
+GRIN2B    6.126261   1.595423           33     0.526485    0.295976
+ HTR1A    4.365067   1.469527           33     0.330394    0.391243
+ HTR2A    7.769684   2.032964          275     0.856343    0.368876
+ NR3C1    9.339409   1.071847           55     0.244985    0.512629
+SLC1A1    7.363277   1.307823           22     0.268350    0.519883
+SLC6A4    1.826130   0.544439          121    -0.222349    0.353568
+
+=== POSTERIOR_PARIETAL_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PREMOTOR_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PREMOTOR_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.030750   1.726032           20     0.051360    0.415033
+  COMT    6.729898   3.353123           60     0.399138    0.849882
+DLGAP3    8.545685   3.577549           20    -0.037155    0.648103
+  DRD2    2.937068   1.699809           50    -0.573032    0.456222
+ FKBP5    4.782735   2.241948           40     0.190475    0.518619
+GABRA2    7.428325   1.651430          260     0.246859    0.409031
+GRIN2B    5.971150   1.619395           30     0.350260    0.365923
+ HTR1A    4.019333   1.623126           30     0.023400    0.422453
+ HTR2A    7.471326   1.893078          250     0.687258    0.306268
+ NR3C1    9.401096   1.095279           50     0.193776    0.543610
+SLC1A1    7.437380   1.448096           20     0.304520    0.545877
+SLC6A4    1.700022   0.552746          110    -0.201172    0.351208
+
+=== PREMOTOR_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== SELF_MIDLINE_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== SELF_MIDLINE_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+DLGAP3    8.735425   3.395130           32     0.235453    0.780882
+  DRD2    3.052440   1.858398           80    -0.471081    0.500034
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+GABRA2    7.951337   1.493217          416     0.732192    0.294361
+GRIN2B    6.431923   1.455238           48     0.697717    0.230982
+ HTR1A    4.864731   1.657835           48     0.584969    0.515345
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+ NR3C1    9.279732   1.082899           80    -0.088474    0.685890
+SLC1A1    7.478541   1.388959           32     0.336884    0.502193
+SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+
+=== SELF_MIDLINE_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+visual_detail_bias                0.5625
+gene_environment_sensitization    0.5100
+negative_affect_trait             0.4245
+ocrd_compulsivity                 0.3900
+global_processing_failure         0.3296
+self_referential_distortion       0.3171
+body_schema_distortion            0.3089
+frontostriatal_dysregulation      0.2259
+behavioral_inhibition_failure     0.1390
+
+=== REGIONAL STATE ===
+visual_cortex_proxy         0.3355
+self_midline_proxy          0.2126
+posterior_parietal_proxy    0.1790
+striatum_proxy              0.1489
+premotor_proxy              0.1481
+acc                         0.1433
+ofc                         0.0962
+
+=== SYMPTOMS ===
+local_feature_overfocus     0.2916
+appearance_preoccupation    0.2234
+compulsive_checking         0.2152
+perceptual_distortion       0.2101
+shame_inadequacy            0.2049
+body_image_distortion       0.1674
+avoidance_distress          0.1368
+grooming_picking            0.1213
+
+=== PHENOTYPES ===
+visual_distortion_profile         0.2009
+body_schema_profile               0.1954
+ocrd_compulsive_ritual_profile    0.1917
+shame_avoidant_profile            0.1575

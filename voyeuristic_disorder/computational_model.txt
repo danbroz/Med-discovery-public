@@ -1,0 +1,256 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                   key      node_type                                   atlas_region region_identifier                           feature_summary
+                 genetic_vulnerability          input                                           None              None                                      None
+                impulsivity_trait_load          input                                           None              None                                      None
+               sensation_seeking_drive          input                                           None              None                                      None
+          emotional_dysregulation_load          input                                           None              None                                      None
+              conditioned_cue_exposure          input                                           None              None                                      None
+             risk_of_detection_context          input                                           None              None                                      None
+                          ssri_support          input                                           None              None                                      None
+                         visual_cortex         region                 Area hOc1 (V1, 17, CalcS) left              None receptors=yes; genes=yes; connectivity=no
+                ventral_striatum_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left              None  receptors=no; genes=yes; connectivity=no
+                                insula         region                         Area Id1 (Insula) left              None  receptors=no; genes=yes; connectivity=no
+                                   acc         region                           Area p32 (pACC) left              None  receptors=no; genes=yes; connectivity=no
+                              amygdala         region                             LB (Amygdala) left              None  receptors=no; genes=yes; connectivity=no
+                                   ofc         region                            Area Fo4 (OFC) left              None  receptors=no; genes=yes; connectivity=no
+                                 dlpfc         region                                           None              None                                unresolved
+          serotonergic_control_deficit latent_biology                                           None              None                                      None
+ conditioned_visual_incentive_salience latent_biology                                           None              None                                      None
+             mesolimbic_reward_capture latent_biology                                           None              None                                      None
+         amygdala_risk_reward_coupling latent_biology                                           None              None                                      None
+                 salience_network_bias latent_biology                                           None              None                                      None
+           top_down_inhibitory_failure latent_biology                                           None              None                                      None
+       compulsive_tension_relief_cycle latent_biology                                           None              None                                      None
+           compulsive_voyeuristic_urge        symptom                                           None              None                                      None
+               pre_act_tension_arousal        symptom                                           None              None                                      None
+         post_act_gratification_relief        symptom                                           None              None                                      None
+repetitive_boundary_violating_behavior        symptom                                           None              None                                      None
+      social_moral_constraint_override        symptom                                           None              None                                      None
+             risk_amplified_excitation        symptom                                           None              None                                      None
+                 affective_instability        symptom                                           None              None                                      None
+
+=== EDGES ===
+                               source                                 target                                                                             relation voyeuristic_change
+                genetic_vulnerability           serotonergic_control_deficit contributes shared heritable liability for impulsivity and poor emotional regulation          increased
+         emotional_dysregulation_load           serotonergic_control_deficit           raises affective dysregulation burden associated with poor impulse control          increased
+                         ssri_support           serotonergic_control_deficit         can improve serotonergic modulation and reduce impulsive-compulsive pressure          decreased
+             conditioned_cue_exposure  conditioned_visual_incentive_salience strengthens learned cue value so relevant visual stimuli become powerful reinforcers          increased
+              sensation_seeking_drive  conditioned_visual_incentive_salience                                increases attraction to novel and intense stimulation          increased
+conditioned_visual_incentive_salience              mesolimbic_reward_capture                              drives reward-system capture by learned high-value cues          increased
+              sensation_seeking_drive              mesolimbic_reward_capture                                       amplifies reward pursuit and approach behavior          increased
+            risk_of_detection_context          amygdala_risk_reward_coupling         activates fear-of-being-caught arousal that can become fused with excitement          increased
+            mesolimbic_reward_capture          amygdala_risk_reward_coupling                      permits risk-related arousal to be co-opted by reward processes          increased
+conditioned_visual_incentive_salience                  salience_network_bias                                       biases attention toward disorder-relevant cues          increased
+        amygdala_risk_reward_coupling                  salience_network_bias                        adds emotional intensity and threat salience to the cue state          increased
+         serotonergic_control_deficit            top_down_inhibitory_failure                                   weakens behavioral restraint and affect regulation          increased
+               impulsivity_trait_load            top_down_inhibitory_failure                        raises baseline risk of failing to resist the reinforced urge          increased
+            mesolimbic_reward_capture            top_down_inhibitory_failure                   reward pressure overwhelms rational and inhibitory control systems          increased
+            mesolimbic_reward_capture        compulsive_tension_relief_cycle                     provides the gratification and pleasure that stamp in repetition          increased
+        amygdala_risk_reward_coupling        compulsive_tension_relief_cycle             adds risk-linked arousal to the pre-act tension and post-act relief loop          increased
+          top_down_inhibitory_failure        compulsive_tension_relief_cycle                           permits the urge-tension-relief loop to continue unchecked          increased
+conditioned_visual_incentive_salience                          visual_cortex                     maps learned cue salience onto visual-cortical hyperresponsivity          increased
+            mesolimbic_reward_capture                 ventral_striatum_proxy                    maps reward capture onto ventral-striatal reinforcement circuitry          increased
+                salience_network_bias                                 insula                             maps salience and arousal burden onto insular processing          increased
+                salience_network_bias                                    acc                        burdens cingulate conflict and salience-integration functions          increased
+        amygdala_risk_reward_coupling                               amygdala                          maps risk-fear-excitement coupling onto amygdala reactivity          increased
+          top_down_inhibitory_failure                                    ofc    maps reduced social-rule and value-based restraint onto orbitofrontal dysfunction          increased
+          top_down_inhibitory_failure                                  dlpfc           maps reduced executive inhibition onto dorsolateral prefrontal dysfunction          increased
+               ventral_striatum_proxy            compulsive_voyeuristic_urge                                          drives incentive salience and urge strength          increased
+                             amygdala                pre_act_tension_arousal                                       contributes fear-linked arousal before the act          increased
+                               insula                pre_act_tension_arousal                                     contributes conscious arousal and bodily tension          increased
+      compulsive_tension_relief_cycle          post_act_gratification_relief                 drives the relief and gratification that reinforce future repetition          increased
+                                  ofc       social_moral_constraint_override             orbitofrontal dysfunction weakens social and moral constraint evaluation          increased
+                                dlpfc       social_moral_constraint_override                            dorsolateral control failure weakens executive inhibition          increased
+          compulsive_voyeuristic_urge repetitive_boundary_violating_behavior                                     strong urges increase repetition of the behavior          increased
+        post_act_gratification_relief repetitive_boundary_violating_behavior                                                reward and relief stamp in repetition          increased
+                             amygdala              risk_amplified_excitation                                fear of detection contributes to the excitement state          increased
+               ventral_striatum_proxy              risk_amplified_excitation                       reward reinforcement magnifies the excitement attached to risk          increased
+         serotonergic_control_deficit                  affective_instability           links poor serotonergic regulation to irritability, anxiety, and dysphoria          increased
+
+=== CIRCUIT CONNECTIVITY ===
+                        visual_cortex  ventral_striatum_proxy  insula  acc  amygdala  ofc
+visual_cortex                     NaN                     NaN     NaN  NaN       NaN  NaN
+ventral_striatum_proxy            NaN                     NaN     NaN  NaN       NaN  NaN
+insula                            NaN                     NaN     NaN  NaN       NaN  NaN
+acc                               NaN                     NaN     NaN  NaN       NaN  NaN
+amygdala                          NaN                     NaN     NaN  NaN       NaN  NaN
+ofc                               NaN                     NaN     NaN  NaN       NaN  NaN
+
+=== RECEPTOR TABLE: visual_cortex ===
+   receptor  mean  std
+       AMPA   500  223
+    kainate   260  239
+       NMDA  1348  320
+      GABAA  2508  828
+      GABAB  2187  274
+         BZ  3882 1761
+         M1   661  123
+         M2   390   35
+         M3   524  395
+alpha4beta2    48   14
+
+=== GENE TABLE: visual_cortex ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.169266   2.012292           68     0.100531    0.656146
+  COMT    6.341400   3.420436          204    -0.295596    0.803623
+  DRD2    2.852616   1.669951          170    -0.638293    0.470715
+  DRD3    1.883692   0.855902          238    -0.269967    0.599071
+ HTR1B    2.573495   0.993128          102     0.303035    1.120464
+ HTR2A    6.901339   3.016561          850     0.434935    1.055181
+  MAOA    5.137473   2.032359         1054    -0.407595    0.771343
+SLC6A3    2.146122   1.621255          204    -0.185061    0.382136
+SLC6A4    1.703097   0.667823          374    -0.185979    0.422549
+
+=== CONNECTIVITY PROFILE: visual_cortex ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: ventral_striatum_proxy ===
+No receptor fingerprint available.
+
+=== GENE TABLE: ventral_striatum_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+  DRD3    3.014340   1.512229           42     1.348486    1.864282
+ HTR1B    2.748144   1.206254           18     0.301572    0.905550
+ HTR2A    5.121897   1.832953          150    -0.351531    0.349620
+  MAOA    6.462545   2.175700          186     0.930363    0.748346
+SLC6A3    2.300233   1.860179           36     0.111914    0.510223
+SLC6A4    1.646929   0.611654           66    -0.114265    0.397311
+
+=== CONNECTIVITY PROFILE: ventral_striatum_proxy ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: insula ===
+No receptor fingerprint available.
+
+=== GENE TABLE: insula ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    6.670433   1.636444            6     0.926267    0.206763
+  COMT    6.531583   3.255215           18    -0.189561    0.878717
+  DRD2    3.639480   1.851429           15     0.251373    0.616119
+  DRD3    2.334933   0.854366           21     0.456214    0.821500
+ HTR1B    2.152378   0.846513            9     0.199022    0.971365
+ HTR2A    7.284489   1.984838           75     0.471215    0.374053
+  MAOA    5.344446   1.999486           93    -0.359771    0.767264
+SLC6A3    2.198033   1.666990           18    -0.055872    0.460211
+SLC6A4    1.744845   0.473089           33    -0.022800    0.546028
+
+=== CONNECTIVITY PROFILE: insula ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: acc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: acc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+  DRD2    3.052440   1.858398           80    -0.471081    0.500034
+  DRD3    1.869045   1.062574          112    -0.228134    0.617752
+ HTR1B    2.327527   0.885433           48    -0.163246    0.741631
+ HTR2A    7.667605   1.955538          400     0.769739    0.286794
+  MAOA    5.688919   1.874365          496     0.213809    0.513407
+SLC6A3    2.090293   1.704914           96    -0.166331    0.456316
+SLC6A4    1.564001   0.701130          176    -0.251251    0.403867
+
+=== CONNECTIVITY PROFILE: acc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: amygdala ===
+No receptor fingerprint available.
+
+=== GENE TABLE: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD3    2.195912   0.927252           49     0.395627    0.817122
+ HTR1B    2.559043   1.174881           21     0.387505    1.112828
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+
+=== CONNECTIVITY PROFILE: amygdala ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: ofc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: ofc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  DRD3    1.765404   1.176595           28    -0.151786    0.553500
+ HTR1B    2.051267   0.970915           12    -0.451217    0.813835
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+
+=== CONNECTIVITY PROFILE: ofc ===
+No connectivity profile available.
+
+=== RECEPTOR TABLE: dlpfc ===
+No receptor fingerprint available.
+
+=== GENE TABLE: dlpfc ===
+No gene-expression summary available.
+
+=== CONNECTIVITY PROFILE: dlpfc ===
+No connectivity profile available.
+
+=== SIMULATION EXAMPLE ===
+
+--- INPUTS ---
+conditioned_cue_exposure        0.82
+impulsivity_trait_load          0.74
+sensation_seeking_drive         0.68
+risk_of_detection_context       0.66
+genetic_vulnerability           0.62
+emotional_dysregulation_load    0.58
+ssri_support                    0.20
+
+--- LATENTS ---
+mesolimbic_reward_capture                0.5962
+conditioned_visual_incentive_salience    0.5452
+top_down_inhibitory_failure              0.5004
+serotonergic_control_deficit             0.4940
+amygdala_risk_reward_coupling            0.4725
+salience_network_bias                    0.4519
+compulsive_tension_relief_cycle          0.4186
+
+--- REGIONAL_STATE ---
+ventral_striatum_proxy    0.4211
+visual_cortex             0.3758
+dlpfc                     0.3750
+acc                       0.3670
+ofc                       0.3584
+insula                    0.3444
+amygdala                  0.3176
+
+--- SYMPTOMS ---
+risk_amplified_excitation                 0.3623
+repetitive_boundary_violating_behavior    0.3552
+compulsive_voyeuristic_urge               0.3486
+social_moral_constraint_override          0.3473
+affective_instability                     0.3325
+post_act_gratification_relief             0.3246
+pre_act_tension_arousal                   0.3193
+
+--- PHENOTYPES ---
+poor_control_profile               0.4010
+risk_coupled_arousal_profile       0.3847
+serotonergic_dyscontrol_profile    0.3819
+compulsive_reward_profile          0.3428

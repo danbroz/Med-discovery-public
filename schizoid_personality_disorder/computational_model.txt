@@ -1,0 +1,218 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                                     key                                    label      node_type                                                                                                                        description                     atlas_region region_identifier                                                  centroid_mni  volume_mm3                           feature_summary
+schizophrenia_spectrum_genetic_liability Schizophrenia Spectrum Genetic Liability          input                                                  Shared familial and polygenic liability across schizophrenia-spectrum conditions.                             None              None                                                          None         NaN                                      None
+        neurodevelopmental_vulnerability         Neurodevelopmental Vulnerability          input                                                                 Broad neurodevelopmental vulnerability shaping circuit maturation.                             None              None                                                          None         NaN                                      None
+                     childhood_adversity                      Childhood Adversity          input                                Early adversity, neglect, or trauma that can leave lasting effects on social-emotional development.                             None              None                                                          None         NaN                                      None
+     emotional_nonresponsive_environment      Emotional Nonresponsive Environment          input                                         Emotionally non-responsive caregiving or relational context that may reinforce detachment.                             None              None                                                          None         NaN                                      None
+                   social_impoverishment                    Social Impoverishment          input                                                          Socially impoverished developmental environment limiting social learning.                             None              None                                                          None         NaN                                      None
+           supportive_relational_context            Supportive Relational Context          input                                             Protective corrective relationships and social scaffolding that may buffer detachment.                             None              None                                                          None         NaN                                      None
+                                amygdala                       LB (Amygdala) left         region                      Direct atlas anchor for the amygdala-centered social-emotional processing network highlighted in the chapter.               LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=no
+                 prefrontal_cortex_proxy                       Area 45 (IFG) left   region_proxy          Conservative proxy for broad prefrontal control and motivation territory described as hypoactive in schizoid functioning.               Area 45 (IFG) left              None (-52.591273128969895, 29.535211267605632, 12.254073460370066)      3621.0 receptors=yes; genes=yes; connectivity=no
+                          thalamus_proxy         ZI (Thalamus, zona incerta) left   region_proxy Conservative proxy for thalamocortical relay circuitry described as dysconnected in schizophrenia-spectrum models relevant to SPD. ZI (Thalamus, zona incerta) left              None           (-11.044642857142861, -14.5625, -6.323214285714286)       560.0  receptors=no; genes=yes; connectivity=no
+           shared_spectrum_vulnerability            Shared Spectrum Vulnerability latent_biology                                   Integrated schizophrenia-spectrum liability arising from genetic and neurodevelopmental factors.                             None              None                                                          None         NaN                                      None
+     developmental_detachment_adaptation      Developmental Detachment Adaptation latent_biology                                                 Stable adaptation toward emotional distance and self-protective social withdrawal.                             None              None                                                          None         NaN                                      None
+           nmda_interneuron_hypofunction            Nmda Interneuron Hypofunction latent_biology                              Subtle chronic NMDA-related glutamatergic hypofunction, especially affecting inhibitory interneurons.                             None              None                                                          None         NaN                                      None
+
+=== Edges (head) ===
+                                  source                              target                                                                                    relation schizoid_change
+schizophrenia_spectrum_genetic_liability       shared_spectrum_vulnerability               shared familial liability contributes to schizophrenia-spectrum vulnerability       increased
+        neurodevelopmental_vulnerability       shared_spectrum_vulnerability                           neurodevelopmental factors shape spectrum-level risk architecture       increased
+                     childhood_adversity developmental_detachment_adaptation                     early adversity can promote defensive withdrawal and emotional distance       increased
+     emotional_nonresponsive_environment developmental_detachment_adaptation                             emotionally barren environments can reinforce schizoid relating       increased
+                   social_impoverishment developmental_detachment_adaptation                 reduced social learning context shapes enduring interpersonal disengagement       increased
+           shared_spectrum_vulnerability developmental_detachment_adaptation spectrum liability interacts with environmental context to shape stable schizoid adaptation       increased
+           supportive_relational_context developmental_detachment_adaptation                                   corrective relationships may buffer entrenched detachment       decreased
+           shared_spectrum_vulnerability       nmda_interneuron_hypofunction                  spectrum vulnerability plausibly includes subtle chronic NMDA hypofunction       increased
+     developmental_detachment_adaptation       nmda_interneuron_hypofunction  developmental adaptation may stabilize inefficient glutamatergic social-learning circuitry       increased
+           nmda_interneuron_hypofunction      gaba_interneuron_dysregulation                  NMDA dysfunction in inhibitory interneurons perturbs inhibitory regulation       increased
+           nmda_interneuron_hypofunction    monoamine_social_reward_blunting        glutamatergic dysfunction can secondarily dysregulate dopamine and serotonin systems       increased
+           nmda_interneuron_hypofunction    synaptic_connectivity_disruption             chronic glutamatergic inefficiency impairs synaptic plasticity and connectivity       increased
+
+=== Region resolution ===
+               node_key  resolved                                                                  requested_candidates                    resolved_name identifier
+               amygdala      True [LB (Amygdala) left, CM (Amygdala) left, SF (Amygdala) left, amygdala left, amygdala]               LB (Amygdala) left       None
+prefrontal_cortex_proxy      True      [Area 46 left, Area 9 left, Area 45 (IFG) left, Area 10 left, prefrontal cortex]               Area 45 (IFG) left       None
+         thalamus_proxy      True                         [thalamus left, thalamus, mediodorsal thalamus, metathalamus] ZI (Thalamus, zona incerta) left       None
+
+=== Example connectivity subgraph ===
+                         amygdala  prefrontal_cortex_proxy  thalamus_proxy
+amygdala                  244.570                    0.030           0.015
+prefrontal_cortex_proxy     0.030                 4180.905          13.225
+thalamus_proxy              0.015                   13.225        1372.320
+
+=== Example amygdala gene table ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+CACNA1C    8.106348   2.033784           21     0.538729    0.710266
+   COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DISC1    5.057950   2.039309           56     0.534182    0.952315
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+   DRD3    2.195912   0.927252           49     0.395627    0.817122
+ GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+ GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+   GAD1    8.101099   1.986020          126    -0.172393    0.543093
+  GRIN1    8.095914   4.248572           28     0.210557    1.065264
+
+=== Example simulation ===
+
+-- inputs --
+emotional_nonresponsive_environment         0.72
+social_impoverishment                       0.60
+schizophrenia_spectrum_genetic_liability    0.58
+neurodevelopmental_vulnerability            0.52
+childhood_adversity                         0.40
+supportive_relational_context               0.22
+
+-- latents --
+shared_spectrum_vulnerability           0.4576
+developmental_detachment_adaptation     0.4436
+nmda_interneuron_hypofunction           0.3078
+monoamine_social_reward_blunting        0.2767
+synaptic_connectivity_disruption        0.2672
+amygdala_social_emotional_blunting      0.2535
+prefrontal_hypoactivity                 0.2334
+social_cognition_underengagement        0.2271
+thalamic_prefrontal_hypoconnectivity    0.2258
+gaba_interneuron_dysregulation          0.1969
+motivational_negative_symptom_load      0.1917
+thalamocortical_dysconnectivity         0.1813
+thalamic_sensory_hyperconnectivity      0.1758
+
+-- regional_state --
+amygdala                   0.2125
+thalamus_proxy             0.1997
+prefrontal_cortex_proxy    0.1853
+
+-- symptoms --
+preference_for_solitude    0.2102
+emotional_detachment       0.2027
+flattened_affect           0.1646
+anhedonia                  0.1519
+social_withdrawal          0.1391
+avolition                  0.1307
+
+-- phenotypes --
+developmental_detachment_profile         0.2709
+thalamocortical_disconnection_profile    0.1764
+core_schizoid_profile                    0.1707
+negative_symptom_overlap_profile         0.1597
+
+# Optional: model.assign_mni_point((0, -20, 8))
+# Optional: model.region_mask('amygdala')
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                                     key                                    label      node_type                                                                                                                        description                     atlas_region region_identifier                                                  centroid_mni  volume_mm3                           feature_summary
+schizophrenia_spectrum_genetic_liability Schizophrenia Spectrum Genetic Liability          input                                                  Shared familial and polygenic liability across schizophrenia-spectrum conditions.                             None              None                                                          None         NaN                                      None
+        neurodevelopmental_vulnerability         Neurodevelopmental Vulnerability          input                                                                 Broad neurodevelopmental vulnerability shaping circuit maturation.                             None              None                                                          None         NaN                                      None
+                     childhood_adversity                      Childhood Adversity          input                                Early adversity, neglect, or trauma that can leave lasting effects on social-emotional development.                             None              None                                                          None         NaN                                      None
+     emotional_nonresponsive_environment      Emotional Nonresponsive Environment          input                                         Emotionally non-responsive caregiving or relational context that may reinforce detachment.                             None              None                                                          None         NaN                                      None
+                   social_impoverishment                    Social Impoverishment          input                                                          Socially impoverished developmental environment limiting social learning.                             None              None                                                          None         NaN                                      None
+           supportive_relational_context            Supportive Relational Context          input                                             Protective corrective relationships and social scaffolding that may buffer detachment.                             None              None                                                          None         NaN                                      None
+                                amygdala                       LB (Amygdala) left         region                      Direct atlas anchor for the amygdala-centered social-emotional processing network highlighted in the chapter.               LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=no
+                 prefrontal_cortex_proxy                       Area 45 (IFG) left   region_proxy          Conservative proxy for broad prefrontal control and motivation territory described as hypoactive in schizoid functioning.               Area 45 (IFG) left              None (-52.591273128969895, 29.535211267605632, 12.254073460370066)      3621.0 receptors=yes; genes=yes; connectivity=no
+                          thalamus_proxy         ZI (Thalamus, zona incerta) left   region_proxy Conservative proxy for thalamocortical relay circuitry described as dysconnected in schizophrenia-spectrum models relevant to SPD. ZI (Thalamus, zona incerta) left              None           (-11.044642857142861, -14.5625, -6.323214285714286)       560.0  receptors=no; genes=yes; connectivity=no
+           shared_spectrum_vulnerability            Shared Spectrum Vulnerability latent_biology                                   Integrated schizophrenia-spectrum liability arising from genetic and neurodevelopmental factors.                             None              None                                                          None         NaN                                      None
+     developmental_detachment_adaptation      Developmental Detachment Adaptation latent_biology                                                 Stable adaptation toward emotional distance and self-protective social withdrawal.                             None              None                                                          None         NaN                                      None
+           nmda_interneuron_hypofunction            Nmda Interneuron Hypofunction latent_biology                              Subtle chronic NMDA-related glutamatergic hypofunction, especially affecting inhibitory interneurons.                             None              None                                                          None         NaN                                      None
+
+=== Edges (head) ===
+                                  source                              target                                                                                    relation schizoid_change
+schizophrenia_spectrum_genetic_liability       shared_spectrum_vulnerability               shared familial liability contributes to schizophrenia-spectrum vulnerability       increased
+        neurodevelopmental_vulnerability       shared_spectrum_vulnerability                           neurodevelopmental factors shape spectrum-level risk architecture       increased
+                     childhood_adversity developmental_detachment_adaptation                     early adversity can promote defensive withdrawal and emotional distance       increased
+     emotional_nonresponsive_environment developmental_detachment_adaptation                             emotionally barren environments can reinforce schizoid relating       increased
+                   social_impoverishment developmental_detachment_adaptation                 reduced social learning context shapes enduring interpersonal disengagement       increased
+           shared_spectrum_vulnerability developmental_detachment_adaptation spectrum liability interacts with environmental context to shape stable schizoid adaptation       increased
+           supportive_relational_context developmental_detachment_adaptation                                   corrective relationships may buffer entrenched detachment       decreased
+           shared_spectrum_vulnerability       nmda_interneuron_hypofunction                  spectrum vulnerability plausibly includes subtle chronic NMDA hypofunction       increased
+     developmental_detachment_adaptation       nmda_interneuron_hypofunction  developmental adaptation may stabilize inefficient glutamatergic social-learning circuitry       increased
+           nmda_interneuron_hypofunction      gaba_interneuron_dysregulation                  NMDA dysfunction in inhibitory interneurons perturbs inhibitory regulation       increased
+           nmda_interneuron_hypofunction    monoamine_social_reward_blunting        glutamatergic dysfunction can secondarily dysregulate dopamine and serotonin systems       increased
+           nmda_interneuron_hypofunction    synaptic_connectivity_disruption             chronic glutamatergic inefficiency impairs synaptic plasticity and connectivity       increased
+
+=== Region resolution ===
+               node_key  resolved                                                                  requested_candidates                    resolved_name identifier
+               amygdala      True [LB (Amygdala) left, CM (Amygdala) left, SF (Amygdala) left, amygdala left, amygdala]               LB (Amygdala) left       None
+prefrontal_cortex_proxy      True      [Area 46 left, Area 9 left, Area 45 (IFG) left, Area 10 left, prefrontal cortex]               Area 45 (IFG) left       None
+         thalamus_proxy      True                         [thalamus left, thalamus, mediodorsal thalamus, metathalamus] ZI (Thalamus, zona incerta) left       None
+
+=== Example connectivity subgraph ===
+                         amygdala  prefrontal_cortex_proxy  thalamus_proxy
+amygdala                  244.570                    0.030           0.015
+prefrontal_cortex_proxy     0.030                 4180.905          13.225
+thalamus_proxy              0.015                   13.225        1372.320
+
+=== Example amygdala gene table ===
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   BDNF    5.968729   2.109068           14     0.500329    0.552838
+CACNA1C    8.106348   2.033784           21     0.538729    0.710266
+   COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DISC1    5.057950   2.039309           56     0.534182    0.952315
+   DRD2    3.894083   2.410057           35     0.371746    0.752121
+   DRD3    2.195912   0.927252           49     0.395627    0.817122
+ GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+ GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+   GAD1    8.101099   1.986020          126    -0.172393    0.543093
+  GRIN1    8.095914   4.248572           28     0.210557    1.065264
+
+=== Example simulation ===
+
+-- inputs --
+emotional_nonresponsive_environment         0.72
+social_impoverishment                       0.60
+schizophrenia_spectrum_genetic_liability    0.58
+neurodevelopmental_vulnerability            0.52
+childhood_adversity                         0.40
+supportive_relational_context               0.22
+
+-- latents --
+shared_spectrum_vulnerability           0.4576
+developmental_detachment_adaptation     0.4436
+nmda_interneuron_hypofunction           0.3078
+monoamine_social_reward_blunting        0.2767
+synaptic_connectivity_disruption        0.2672
+amygdala_social_emotional_blunting      0.2535
+prefrontal_hypoactivity                 0.2334
+social_cognition_underengagement        0.2271
+thalamic_prefrontal_hypoconnectivity    0.2258
+gaba_interneuron_dysregulation          0.1969
+motivational_negative_symptom_load      0.1917
+thalamocortical_dysconnectivity         0.1813
+thalamic_sensory_hyperconnectivity      0.1758
+
+-- regional_state --
+amygdala                   0.2125
+thalamus_proxy             0.1997
+prefrontal_cortex_proxy    0.1853
+
+-- symptoms --
+preference_for_solitude    0.2102
+emotional_detachment       0.2027
+flattened_affect           0.1646
+anhedonia                  0.1519
+social_withdrawal          0.1391
+avolition                  0.1307
+
+-- phenotypes --
+developmental_detachment_profile         0.2709
+thalamocortical_disconnection_profile    0.1764
+core_schizoid_profile                    0.1707
+negative_symptom_overlap_profile         0.1597
+
+# Optional: model.assign_mni_point((0, -20, 8))
+# Optional: model.region_mask('amygdala')

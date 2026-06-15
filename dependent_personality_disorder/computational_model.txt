@@ -1,0 +1,183 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                 key      node_type                                   atlas_region                                                  centroid_mni                           feature_summary
+     genetic_temperamental_liability          input                                           None                                                          None                                      None
+          early_attachment_adversity          input                                           None                                                          None                                      None
+                    childhood_trauma          input                                           None                                                          None                                      None
+                  rejection_cue_load          input                                           None                                                          None                                      None
+     supportive_relationship_context          input                                           None                                                          None                                      None
+             autonomy_skills_support          input                                           None                                                          None                                      None
+                            amygdala         region                             LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=yes
+                               dlpfc         region                                           None                                                          None                                unresolved
+                              insula         region                         Area Id1 (Insula) left  (-40.04663212435233, -18.51813471502591, -4.458549222797927) receptors=no; genes=yes; connectivity=yes
+                                 acc         region                         Area p24ab (pACC) left     (-4.228915662650607, 38.1933187294633, 4.467141292442491) receptors=no; genes=yes; connectivity=yes
+                         vmpfc_proxy   region_proxy                           Area s32 (sACC) left   (-6.475282485875709, 35.7584745762712, -15.663135593220339) receptors=no; genes=yes; connectivity=yes
+              ventral_striatum_proxy   region_proxy AcbM (Ventral Striatum, Medial Accumbens) left    (-7.25139664804469, 8.162011173184368, -8.016759776536318) receptors=no; genes=yes; connectivity=yes
+       inhibited_anxious_temperament latent_biology                                           None                                                          None                                      None
+               attachment_insecurity latent_biology                                           None                                                          None                                      None
+                negative_self_schema latent_biology                                           None                                                          None                                      None
+                amygdala_threat_bias latent_biology                                           None                                                          None                                      None
+          interoceptive_social_alarm latent_biology                                           None                                                          None                                      None
+    dopaminergic_reassurance_craving latent_biology                                           None                                                          None                                      None
+     frontolimbic_regulatory_failure latent_biology                                           None                                                          None                                      None
+      dependency_self_representation latent_biology                                           None                                                          None                                      None
+impaired_autonomous_decision_control latent_biology                                           None                                                          None                                      None
+                 fear_of_abandonment        symptom                                           None                                                          None                                      None
+                 reassurance_seeking        symptom                                           None                                                          None                                      None
+                      indecisiveness        symptom                                           None                                                          None                                      None
+             submissive_help_seeking        symptom                                           None                                                          None                                      None
+           avoidance_of_independence        symptom                                           None                                                          None                                      None
+                   low_self_efficacy        symptom                                           None                                                          None                                      None
+         clingy_relationship_pattern        symptom                                           None                                                          None                                      None
+
+=== Edges ===
+                              source                               target                                                                    relation   dependent_pd_change  weight
+     genetic_temperamental_liability        inhibited_anxious_temperament                raises early inhibition, timidity, and rejection sensitivity             increased    0.42
+          early_attachment_adversity                attachment_insecurity            promotes insecure attachment and reliance on external regulation             increased    0.42
+          early_attachment_adversity                 negative_self_schema                           weakens self-worth and stable self-representation             increased    0.35
+                    childhood_trauma                 amygdala_threat_bias                           sensitizes threat detection and abandonment alarm             increased    0.40
+                    childhood_trauma                 negative_self_schema                                       consolidates helpless self-appraisals             increased    0.33
+                  rejection_cue_load                 amygdala_threat_bias                      acutely drives reactivity to criticism and disapproval             increased    0.28
+       inhibited_anxious_temperament                attachment_insecurity                            biases the person toward seeking external safety             increased    0.18
+       inhibited_anxious_temperament                 amygdala_threat_bias                        primes heightened vigilance for interpersonal threat             increased    0.24
+                            amygdala                 amygdala_threat_bias   threat-detection node likely shows exaggerated response to rejection cues        hyper-reactive    0.30
+                              insula           interoceptive_social_alarm                   amplifies felt social alarm and internal distress signals             increased    0.26
+                                 acc      frontolimbic_regulatory_failure        weaker conflict monitoring and emotion regulation worsens dependence increased dysfunction    0.25
+                               dlpfc impaired_autonomous_decision_control           reduced executive control weakens independent choice and planning increased dysfunction    0.34
+              ventral_striatum_proxy     dopaminergic_reassurance_craving social approval becomes a potent reward that reinforces reassurance seeking             increased    0.30
+                         vmpfc_proxy       dependency_self_representation         self-valuation becomes overly tied to external support and approval             increased    0.24
+               attachment_insecurity       dependency_self_representation                         organizes self-other expectations around dependence             increased    0.32
+                negative_self_schema       dependency_self_representation   low self-worth is stabilized by defining the self as unable to cope alone             increased    0.28
+                negative_self_schema     dopaminergic_reassurance_craving               external validation is recruited to repair fragile self-worth             increased    0.24
+                amygdala_threat_bias           interoceptive_social_alarm                              threat bias spills into felt urgency and alarm             increased    0.36
+                amygdala_threat_bias      frontolimbic_regulatory_failure                   fear-driven bottom-up pressure overwhelms control systems             increased    0.30
+     frontolimbic_regulatory_failure impaired_autonomous_decision_control                 poor top-down control reduces self-directed problem solving             increased    0.40
+               attachment_insecurity                  fear_of_abandonment                            creates persistent separation and rejection fear             increased    0.38
+          interoceptive_social_alarm                  fear_of_abandonment                   bodily alarm escalates perceived threat of losing support             increased    0.26
+    dopaminergic_reassurance_craving                  reassurance_seeking                     approval and validation are pursued as rewarding relief             increased    0.43
+      dependency_self_representation              submissive_help_seeking                   the self is cast as needing others to take responsibility             increased    0.35
+impaired_autonomous_decision_control                       indecisiveness                              reduces capacity to decide without reassurance             increased    0.45
+impaired_autonomous_decision_control            avoidance_of_independence                                autonomous action feels unsafe and effortful             increased    0.38
+                negative_self_schema                    low_self_efficacy                       consolidates beliefs about being unable to cope alone             increased    0.46
+                 fear_of_abandonment          clingy_relationship_pattern                  relationship-preserving behavior is driven by fear of loss             increased    0.32
+                 reassurance_seeking          clingy_relationship_pattern                      repeated validation-seeking reinforces over-attachment             increased    0.28
+     supportive_relationship_context                attachment_insecurity                 secure-base experiences soften dependency-driven insecurity             decreased   -0.28
+     supportive_relationship_context                 amygdala_threat_bias                     predictable safety cues dampen social-threat reactivity             decreased   -0.18
+             autonomy_skills_support impaired_autonomous_decision_control                structured practice improves independent planning and choice             decreased   -0.34
+             autonomy_skills_support            avoidance_of_independence                    graded mastery reduces avoidance of self-directed action             decreased   -0.20
+
+=== Circuit Connectivity (resolved region pairs) ===
+ source_key          source_region             target_key                                  target_region  mean_streamline_count
+vmpfc_proxy   Area s32 (sACC) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left                 69.475
+     insula Area Id1 (Insula) left            vmpfc_proxy                           Area s32 (sACC) left                  0.640
+     insula Area Id1 (Insula) left ventral_striatum_proxy AcbM (Ventral Striatum, Medial Accumbens) left                  0.455
+
+=== Gene expression preview: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+AVPR1A    2.056871   0.922626           21     0.302062    1.308363
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+
+=== Connectivity profile preview: amygdala ===
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+                         Ch 4 (Basal Forebrain) left    9.330
+                  Frontal-to-Occipital (GapMap) left    7.855
+
+=== Gene expression preview: ventral_striatum_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+AVPR1A    2.066478   0.716810           18     0.179517    0.891826
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+ CRHR1    3.910475   2.688631           24    -1.034871    1.128113
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+  DRD4    6.784350   6.428352           18    -0.196528    0.805253
+ FKBP5    5.013658   2.833167           24     0.244575    0.557984
+ HTR1A    3.291533   1.699841           18    -0.350967    0.768239
+ HTR2A    5.121897   1.832953          150    -0.351531    0.349620
+  MAOA    6.462545   2.175700          186     0.930363    0.748346
+
+=== Connectivity profile preview: ventral_striatum_proxy ===
+                                       connected_region    value
+                             VP (Ventral Pallidum) left 1536.115
+         FuP (Ventral Striatum, Fundus of Putamen) left  596.560
+        AcbL (Ventral Striatum, Lateral Accumbens) left  527.470
+                BST (Basal Forebrain, Bed Nucleus) left  462.825
+                          Ch 123 (Basal Forebrain) left  455.785
+                                   Area s24 (sACC) left  381.805
+                   Frontal-to-Temporal-II (GapMap) left  343.730
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  211.460
+                     Frontal-to-Occipital (GapMap) left  207.500
+                                 Area p24ab (pACC) left  161.915
+
+=== Simulation outputs ===
+
+[inputs]
+early_attachment_adversity         0.80
+childhood_trauma                   0.72
+genetic_temperamental_liability    0.70
+rejection_cue_load                 0.64
+supportive_relationship_context    0.25
+autonomy_skills_support            0.20
+
+[latents]
+inhibited_anxious_temperament           0.6790
+negative_self_schema                    0.6273
+attachment_insecurity                   0.6066
+amygdala_threat_bias                    0.5880
+dopaminergic_reassurance_craving        0.5271
+interoceptive_social_alarm              0.4862
+dependency_self_representation          0.4689
+frontolimbic_regulatory_failure         0.4317
+impaired_autonomous_decision_control    0.3677
+
+[regional_state]
+amygdala                  0.5462
+insula                    0.4590
+ventral_striatum_proxy    0.4456
+vmpfc_proxy               0.4082
+acc                       0.3885
+dlpfc                     0.2967
+
+[symptoms]
+fear_of_abandonment            0.5067
+reassurance_seeking            0.4426
+submissive_help_seeking        0.4001
+clingy_relationship_pattern    0.3879
+low_self_efficacy              0.3732
+indecisiveness                 0.3193
+avoidance_of_independence      0.2965
+
+[phenotypes]
+social_threat_sensitivity     0.5270
+validation_craving_profile    0.4710
+dependent_profile             0.4115
+autonomy_collapse_risk        0.3534

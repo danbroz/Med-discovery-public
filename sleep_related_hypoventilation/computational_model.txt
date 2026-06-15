@@ -1,0 +1,128 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                                key                                          label node_type                                                                                                                   description                                   atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary  is_proxy
+            phox2b_autonomic_defect                        Phox2B Autonomic Defect     input                       Congenital autonomic developmental liability relevant to CCHS and impaired automatic breathing control.                                           None              None                                                           None         NaN                                      None     False
+       obesity_leptin_dysregulation                   Obesity Leptin Dysregulation     input             Obesity-related load that may reduce ventilatory drive through leptin resistance and altered respiratory control.                                           None              None                                                           None         NaN                                      None     False
+         inflammatory_cytokine_load                     Inflammatory Cytokine Load     input                       Inflammatory burden, including cytokine effects that may suppress or distort central respiratory drive.                                           None              None                                                           None         NaN                                      None     False
+        pulmonary_mechanical_burden                    Pulmonary Mechanical Burden     input                                                Mechanical or pulmonary burden that increases nocturnal ventilatory challenge.                                           None              None                                                           None         NaN                                      None     False
+             sleep_state_dependence                         Sleep State Dependence     input                                         Degree to which ventilation fails when wakefulness support is withdrawn during sleep.                                           None              None                                                           None         NaN                                      None     False
+        chronic_gas_exchange_burden                    Chronic Gas Exchange Burden     input                                                                         Accumulated hypoxic and hypercapnic burden over time.                                           None              None                                                           None         NaN                                      None     False
+dopaminergic_modulatory_instability            Dopaminergic Modulatory Instability     input                    Exploratory state-dependent dopaminergic instability affecting arousal and respiratory control boundaries.                                           None              None                                                           None         NaN                                      None     False
+                 wake_drive_reserve                             Wake Drive Reserve     input         Residual wakefulness-related respiratory support and arousal reserve that can partially buffer sleep-related failure.                                           None              None                                                           None         NaN                                      None     False
+        brainstem_respiratory_proxy                    Brainstem Respiratory Proxy    region                               Proxy for medullary and pontine respiratory rhythmogenic and chemosensory integration circuits.                                           None              None                                                           None         NaN                                unresolved      True
+                 hypothalamus_proxy                             Hypothalamus Proxy    region                          Proxy for homeostatic and hormonal modulation of respiratory drive, including leptin-linked effects.                                           None              None                                                           None         NaN                                unresolved      True
+                  nucleus_accumbens AcbM (Ventral Striatum, Medial Accumbens) left    region Exploratory dopaminergic state-modulation node reflecting the chapter's limited discussion of dopamine-related sleep control. AcbM (Ventral Striatum, Medial Accumbens) left              None     (-7.25139664804469, 8.162011173184368, -8.016759776536318)       179.0  receptors=no; genes=yes; connectivity=no     False
+                        hippocampus                         CA1 (Hippocampus) left    region                               Memory-system node vulnerable to chronic hypoxia, hypercapnia, and sleep-related neural burden.                         CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no     False
+
+=== Edge table (head) ===
+                                    source                                     target                                                                 relation       domain sleep_related_hypoventilation_change
+                   phox2b_autonomic_defect autonomic_breathing_circuit_dysdevelopment  disrupts development of autonomic breathing and chemoreceptor circuitry      genetic                            increased
+              obesity_leptin_dysregulation                  leptin_central_resistance              reduces effective hormonal stimulation of ventilatory drive    metabolic                            increased
+                inflammatory_cytokine_load             inflammatory_drive_suppression adds cytokine-mediated suppression and distortion of respiratory control inflammatory                            increased
+                    sleep_state_dependence                sleep_transition_drive_loss      exposes state-dependent loss of wakefulness support for ventilation        state                            increased
+                        wake_drive_reserve                sleep_transition_drive_loss                           buffers loss of respiratory drive during sleep   protective                            decreased
+                        wake_drive_reserve               co2_chemosensitivity_failure            partially compensates for reduced automatic ventilatory drive   protective                            decreased
+autonomic_breathing_circuit_dysdevelopment               co2_chemosensitivity_failure                          produces marked reduction in CO2 responsiveness    autonomic                            increased
+autonomic_breathing_circuit_dysdevelopment        central_ventilatory_drive_reduction                        reduces automatic ventilatory output during sleep    autonomic                            increased
+              co2_chemosensitivity_failure        central_ventilatory_drive_reduction                          weakens ventilatory compensation to hypercapnia chemosensory                            increased
+              co2_chemosensitivity_failure               blunted_ventilatory_response               manifests clinically as poor chemical-drive responsiveness      symptom                            increased
+                 hypoxic_response_blunting               blunted_ventilatory_response      further reduces appropriate ventilatory response to gas derangement      symptom                            increased
+              obesity_leptin_dysregulation                  hypoxic_response_blunting              adds obesity-linked weakening of ventilatory responsiveness    metabolic                            increased
+
+=== Resolved regions ===
+- nucleus_accumbens: AcbM (Ventral Striatum, Medial Accumbens) left
+- hippocampus: CA1 (Hippocampus) left
+- temporal_lobe_proxy: Area Te 2.1 (STG) left
+
+=== Example receptor availability ===
+- brainstem_respiratory_proxy: 0 rows
+- hypothalamus_proxy: 0 rows
+- nucleus_accumbens: 0 rows
+- hippocampus: 14 rows
+- temporal_lobe_proxy: 16 rows
+
+=== Example gene summaries ===
+- brainstem_respiratory_proxy: no gene rows returned
+- hypothalamus_proxy: no gene rows returned
+
+nucleus_accumbens
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  DBH    2.282889   1.026393           18    -0.453583    0.956592
+EPAS1    8.697783   1.473458           12    -0.380517    0.407021
+HIF1A    7.415100   0.458659           12    -0.159383    0.434954
+  IL6    2.131158   0.662175           12    -0.176933    0.643706
+
+hippocampus
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.638438   2.851173           16     0.533731    1.414835
+  DBH    2.417275   0.928359           24    -0.358292    0.803196
+EPAS1    9.052481   1.394864           16    -0.083981    0.947635
+HIF1A    7.136800   0.426747           16    -0.690512    0.675880
+  IL6    2.201325   0.696271           16    -0.270200    0.945900
+
+temporal_lobe_proxy
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    4.606300   2.404729            2    -0.232750    0.357160
+  DBH    2.904067   0.682629            3     0.869467    1.101097
+EPAS1    8.928750   1.990859            2    -0.202600    0.112571
+HIF1A    6.882050   0.453043            2    -1.356650    0.024395
+  IL6    2.797250   1.153645            2     0.035150    0.809991
+
+=== Circuit connectivity ===
+No circuit connectivity rows available in this runtime.
+
+=== Simulation example: obesity-linked SRH with chronic burden ===
+
+[inputs]
+obesity_leptin_dysregulation           0.85
+sleep_state_dependence                 0.75
+inflammatory_cytokine_load             0.70
+chronic_gas_exchange_burden            0.65
+pulmonary_mechanical_burden            0.60
+wake_drive_reserve                     0.25
+dopaminergic_modulatory_instability    0.20
+phox2b_autonomic_defect                0.10
+
+[latents]
+leptin_central_resistance                     0.6130
+inflammatory_drive_suppression                0.5100
+cerebral_autoregulation_stress                0.4397
+nocturnal_gas_exchange_failure                0.4086
+chronic_hypoxic_hypercapnic_neural_burden     0.4030
+hypoxic_response_blunting                     0.4030
+sleep_transition_drive_loss                   0.3895
+central_ventilatory_drive_reduction           0.3704
+brain_aging_pressure                          0.3579
+co2_chemosensitivity_failure                  0.3465
+autonomic_breathing_circuit_dysdevelopment    0.1690
+
+[regional_state]
+hypothalamus_proxy             0.4883
+hippocampus                    0.3231
+temporal_lobe_proxy            0.2821
+brainstem_respiratory_proxy    0.2347
+nucleus_accumbens              0.1903
+
+[symptoms]
+nocturnal_hypoxemia              0.3646
+sleep_related_hypoventilation    0.3577
+nocturnal_hypercapnia            0.3092
+blunted_ventilatory_response     0.2859
+sleep_fragmentation              0.2493
+brain_aging_vulnerability        0.2442
+neurocognitive_morbidity         0.2438
+autonomic_respiratory_failure    0.2153
+
+[phenotypes]
+obesity_hypoventilation_profile            0.5159
+state_dependent_control_failure_profile    0.3658
+chronic_brain_consequence_profile          0.2885
+cchs_autonomic_failure_profile             0.2124

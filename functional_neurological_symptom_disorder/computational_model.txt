@@ -1,0 +1,147 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                              key      node_type                             label                    atlas_region                           feature_summary
+             acute_stress_arousal          input              Acute Stress Arousal                            None                                      None
+              chronic_stress_load          input               Chronic Stress Load                            None                                      None
+            comorbid_mood_anxiety          input             Comorbid Mood Anxiety                            None                                      None
+                genetic_diathesis          input                 Genetic Diathesis                            None                                      None
+         neurotic_trait_liability          input          Neurotic Trait Liability                            None                                      None
+                 neuroimmune_load          input                  Neuroimmune Load                            None                                      None
+                treatment_support          input                 Treatment Support                            None                                      None
+             primary_motor_cortex         region              Area 4p (PreCG) left            Area 4p (PreCG) left receptors=yes; genes=yes; connectivity=no
+         supplementary_motor_area         region   Area 6mp (SMA, mesial SFG) left Area 6mp (SMA, mesial SFG) left  receptors=no; genes=yes; connectivity=no
+                            dlpfc         region               Area 8v1 (MFG) left             Area 8v1 (MFG) left  receptors=no; genes=yes; connectivity=no
+                            vlpfc         region                Area 45 (IFG) left              Area 45 (IFG) left receptors=yes; genes=yes; connectivity=no
+                              acc         region              Area p32 (pACC) left            Area p32 (pACC) left  receptors=no; genes=yes; connectivity=no
+                         amygdala         region                LB (Amygdala) left              LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+    stress_response_sensitization latent_biology     Stress Response Sensitization                            None                                      None
+      monoaminergic_dysregulation latent_biology       Monoaminergic Dysregulation                            None                                      None
+         gaba_glutamate_imbalance latent_biology          Gaba Glutamate Imbalance                            None                                      None
+     neuroimmune_stress_diathesis latent_biology      Neuroimmune Stress Diathesis                            None                                      None
+      altered_top_down_regulation latent_biology       Altered Top Down Regulation                            None                                      None
+            limbic_motor_coupling latent_biology             Limbic Motor Coupling                            None                                      None
+        top_down_motor_inhibition latent_biology         Top Down Motor Inhibition                            None                                      None
+aberrant_sensorimotor_integration latent_biology Aberrant Sensorimotor Integration                            None                                      None
+    functional_weakness_paralysis        symptom     Functional Weakness Paralysis                            None                                      None
+     abnormal_movement_inhibition        symptom      Abnormal Movement Inhibition                            None                                      None
+   functional_sensory_disturbance        symptom    Functional Sensory Disturbance                            None                                      None
+           seizure_like_phenomena        symptom            Seizure Like Phenomena                            None                                      None
+         somatic_distress_arousal        symptom          Somatic Distress Arousal                            None                                      None
+
+=== Edges ===
+                           source                            target                                                                               relation fnsd_change
+             acute_stress_arousal     stress_response_sensitization                            acute stress can precipitate high-arousal functional states   increased
+             acute_stress_arousal             limbic_motor_coupling                         emotional arousal strengthens limbic influence on motor output   increased
+              chronic_stress_load     stress_response_sensitization                                  ongoing stress sustains functional dysregulation risk   increased
+              chronic_stress_load      neuroimmune_stress_diathesis                               prolonged stress can reinforce neuroimmune vulnerability   increased
+            comorbid_mood_anxiety       monoaminergic_dysregulation    mood and anxiety comorbidity implicate serotonergic and noradrenergic dysregulation   increased
+            comorbid_mood_anxiety          gaba_glutamate_imbalance          anxious and agitated states can reflect altered inhibitory-excitatory balance   increased
+            comorbid_mood_anxiety       altered_top_down_regulation                            comorbid affective burden can bias frontal control networks   increased
+                genetic_diathesis       monoaminergic_dysregulation                           shared heritable liability can bias monoaminergic regulation   increased
+                genetic_diathesis      neuroimmune_stress_diathesis genetic vulnerability may contribute to stress-reactive and neuroimmune susceptibility   increased
+         neurotic_trait_liability     stress_response_sensitization     high trait reactivity increases susceptibility to stress-linked symptom generation   increased
+         neurotic_trait_liability             limbic_motor_coupling                  neurotic disposition amplifies affective capture of bodily experience   increased
+                 neuroimmune_load      neuroimmune_stress_diathesis           neuroimmune burden contributes to broad vulnerability of functional circuits   increased
+                treatment_support     stress_response_sensitization       supportive care and functional retraining can reduce runaway stress responsivity   decreased
+                treatment_support       altered_top_down_regulation    treatment can reduce maladaptive top-down control and improve functional regulation   decreased
+                treatment_support         top_down_motor_inhibition                       rehabilitative support can reduce nonconscious motor suppression   decreased
+     neuroimmune_stress_diathesis       monoaminergic_dysregulation                           stress-inflammatory burden can worsen monoaminergic function   increased
+    stress_response_sensitization                          amygdala                     stress sensitization heightens limbic salience and alarm signaling   increased
+      monoaminergic_dysregulation                             dlpfc                 monoaminergic dysregulation perturbs frontal executive control systems   increased
+      monoaminergic_dysregulation                               acc            monoaminergic dysregulation perturbs arousal and control monitoring systems   increased
+         gaba_glutamate_imbalance         top_down_motor_inhibition                excitatory-inhibitory imbalance can favor maladaptive motor suppression   increased
+         gaba_glutamate_imbalance aberrant_sensorimotor_integration      excitatory-inhibitory dysbalance can distort sensory and motor signal integration   increased
+      altered_top_down_regulation                             dlpfc        functional motor paradigms show excessive engagement of frontal control systems   increased
+      altered_top_down_regulation                             vlpfc  ventrolateral inhibitory-control systems contribute to nonconscious motor suppression   increased
+      altered_top_down_regulation                               acc                  control-conflict and emotional-monitoring regions become over-engaged   increased
+            limbic_motor_coupling                          amygdala                    limbic salience systems drive symptom-related bodily threat tagging   increased
+            limbic_motor_coupling         top_down_motor_inhibition              emotional networks can translate distress into suppressed movement output   increased
+        top_down_motor_inhibition              primary_motor_cortex                       top-down suppression manifests as motor cortex under-recruitment   increased
+        top_down_motor_inhibition          supplementary_motor_area                         top-down suppression disrupts motor preparation and initiation   increased
+aberrant_sensorimotor_integration    functional_sensory_disturbance                misintegrated sensory-motor signals produce functional sensory symptoms   increased
+aberrant_sensorimotor_integration            seizure_like_phenomena                   widespread network instability can contribute to seizure-like events   increased
+             primary_motor_cortex     functional_weakness_paralysis            motor cortex under-recruitment aligns with functional weakness or paralysis   increased
+             primary_motor_cortex      abnormal_movement_inhibition            motor execution disruption contributes to broader functional motor symptoms   increased
+         supplementary_motor_area     functional_weakness_paralysis                  disrupted motor planning and initiation worsen weakness presentations   increased
+         supplementary_motor_area      abnormal_movement_inhibition              SMA dysregulation contributes to abnormal movement and initiation failure   increased
+                            vlpfc      abnormal_movement_inhibition     excess inhibitory frontal control can reinforce nonvolitional movement suppression   increased
+                              acc          somatic_distress_arousal                 ACC burden can amplify distress monitoring and bodily conflict signals   increased
+                         amygdala          somatic_distress_arousal                     limbic hyperreactivity amplifies bodily alarm and symptom salience   increased
+
+=== Resolved regions ===
+- primary_motor_cortex: Area 4p (PreCG) left
+- supplementary_motor_area: Area 6mp (SMA, mesial SFG) left
+- dlpfc: Area 8v1 (MFG) left
+- vlpfc: Area 45 (IFG) left
+- acc: Area p32 (pACC) left
+- amygdala: LB (Amygdala) left
+
+=== Example receptor table: primary_motor_cortex ===
+receptor  mean  std
+    AMPA   286   40
+ kainate   286   35
+    NMDA   739    1
+   GABAA   999  108
+   GABAB  1842   10
+
+=== Example gene table: acc ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.584522   1.763174           32     0.378994    0.292470
+  COMT    6.469328   3.460309           96    -0.076757    0.783002
+ FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+GABRA2    7.951337   1.493217          416     0.732192    0.294361
+  GAD1    8.682633   1.916574          288     0.364728    0.326928
+
+=== Example connectivity profile: supplementary_motor_area ===
+No connectivity profile available for supplementary_motor_area in this environment.
+
+=== Example circuit connectivity ===
+No pairwise circuit connectivity values available in this environment.
+
+=== Simulation: inputs ===
+acute_stress_arousal        0.75
+chronic_stress_load         0.65
+comorbid_mood_anxiety       0.60
+genetic_diathesis           0.35
+neurotic_trait_liability    0.55
+neuroimmune_load            0.30
+treatment_support           0.25
+
+=== Simulation: latents ===
+stress_response_sensitization        0.5160
+monoaminergic_dysregulation          0.4382
+gaba_glutamate_imbalance             0.4189
+neuroimmune_stress_diathesis         0.3360
+altered_top_down_regulation          0.4072
+limbic_motor_coupling                0.5345
+top_down_motor_inhibition            0.3844
+aberrant_sensorimotor_integration    0.3617
+
+=== Simulation: regional_state ===
+amygdala                    0.4044
+acc                         0.3068
+dlpfc                       0.2699
+vlpfc                       0.2774
+supplementary_motor_area    0.2608
+primary_motor_cortex        0.2473
+
+=== Simulation: symptoms ===
+functional_weakness_paralysis     0.2382
+abnormal_movement_inhibition      0.2452
+functional_sensory_disturbance    0.3201
+seizure_like_phenomena            0.3496
+somatic_distress_arousal          0.3581
+
+=== Simulation: phenotypes ===
+motor_conversion_profile         0.2479
+sensory_conversion_profile       0.3466
+functional_seizure_profile       0.4343
+frontolimbic_override_profile    0.3286
+affective_somatic_profile        0.4374

@@ -1,0 +1,151 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                               key      node_type                                            atlas_region                           feature_summary
+             pathogenic_htt_burden          input                                                    None                                      None
+              disease_stage_burden          input                                                    None                                      None
+               juvenile_rigid_bias          input                                                    None                                      None
+         cognitive_reserve_support          input                                                    None                                      None
+    symptomatic_management_support          input                                                    None                                      None
+                   caudate_nucleus         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no
+                    striatum_proxy         region          FuP (Ventral Striatum, Fundus of Putamen) left  receptors=no; genes=yes; connectivity=no
+                    thalamus_proxy         region                        ZI (Thalamus, zona incerta) left  receptors=no; genes=yes; connectivity=no
+                       pfc_control         region                                     Area 8v1 (MFG) left  receptors=no; genes=yes; connectivity=no
+       temporal_association_cortex         region                                  Area Te 2.1 (STG) left receptors=yes; genes=yes; connectivity=no
+        mutant_huntingtin_toxicity latent_biology                                                    None                                      None
+ progressive_striatal_degeneration latent_biology                                                    None                                      None
+          glutamate_gaba_imbalance latent_biology                                                    None                                      None
+          dopaminergic_state_shift latent_biology                                                    None                                      None
+     thalamocortical_disconnection latent_biology                                                    None                                      None
+  frontostriatal_executive_failure latent_biology                                                    None                                      None
+diffuse_cortical_network_breakdown latent_biology                                                    None                                      None
+             executive_dysfunction        symptom                                                    None                                      None
+attention_processing_speed_decline        symptom                                                    None                                      None
+           memory_language_decline        symptom                                                    None                                      None
+          behavioral_disinhibition        symptom                                                    None                                      None
+          movement_disorder_burden        symptom                                                    None                                      None
+      global_neurocognitive_burden        symptom                                                    None                                      None
+
+=== Edges (first 15) ===
+                           source                             target                                                                             relation hd_ncd_change
+            pathogenic_htt_burden         mutant_huntingtin_toxicity                          CAG-repeat expansion drives toxic mutant huntingtin biology     increased
+            pathogenic_htt_burden  progressive_striatal_degeneration               the causative mutation promotes progressive striatal neurodegeneration     increased
+             disease_stage_burden  progressive_striatal_degeneration         later disease stages accumulate neuronal loss in core basal-ganglia circuits     increased
+             disease_stage_burden diffuse_cortical_network_breakdown      progression expands pathology beyond striatum into widespread cortical networks     increased
+              juvenile_rigid_bias           dopaminergic_state_shift   juvenile phenotype alters dopamine-state expression toward akinetic-rigid patterns     increased
+        cognitive_reserve_support   frontostriatal_executive_failure                     reserve can buffer functional expression of executive impairment     decreased
+        cognitive_reserve_support diffuse_cortical_network_breakdown                  reserve can modestly reduce the expressed impact of cortical burden     decreased
+   symptomatic_management_support           dopaminergic_state_shift             symptomatic therapy can partly modulate dopamine-linked motor expression     decreased
+   symptomatic_management_support           movement_disorder_burden supportive treatment may reduce motor symptom expression without reversing pathology     decreased
+       mutant_huntingtin_toxicity  progressive_striatal_degeneration     toxic huntingtin promotes ongoing neuronal degeneration in HD-sensitive circuits     increased
+       mutant_huntingtin_toxicity           glutamate_gaba_imbalance                     mutant huntingtin disturbs inhibitory-excitatory circuit balance     increased
+       mutant_huntingtin_toxicity diffuse_cortical_network_breakdown             the toxic protein burden contributes to broader cortical network failure     increased
+progressive_striatal_degeneration                    caudate_nucleus                           striatal degeneration heavily involves the caudate nucleus     increased
+progressive_striatal_degeneration                     striatum_proxy                        primary pathology is centered on the basal ganglia / striatum     increased
+progressive_striatal_degeneration      thalamocortical_disconnection                       striatal damage propagates through thalamocortical relay loops     increased
+
+=== Circuit connectivity ===
+No circuit connectivity matrix available in this environment.
+
+=== caudate_nucleus receptor fingerprint ===
+No receptor data available.
+
+=== caudate_nucleus gene expression summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  COMT    6.334303   3.508445           36    -0.298369    1.144405
+  DRD1    5.954111   2.430015          120     2.015426    1.523818
+  DRD2    6.119210   2.344979           30     2.320237    1.023981
+  GAD1    9.070838   1.815833          108     0.735861    0.339088
+  GAD2   10.305179   1.285980          108     1.571035    0.336476
+ GRIA2    9.169933   1.670880           24     0.438833    0.582108
+GRIN2B    6.220944   1.646767           18     0.647833    0.420739
+   HTT    7.319667   1.589221           12    -1.055658    0.516502
+SLC1A2    9.021062   4.388534           24     1.118708    0.549408
+
+=== caudate_nucleus connectivity profile ===
+No connectivity profile available.
+
+=== pfc_control receptor fingerprint ===
+No receptor data available.
+
+=== pfc_control gene expression summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+  DRD1    3.808315   1.499131           80     0.302617    0.551405
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+  GAD1    8.470140   1.869564           72     0.234585    0.268393
+  GAD2    8.584693   1.236045           72     0.278046    0.192419
+ GRIA2    9.144306   1.701078           16     0.476969    0.394981
+GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+   HTT    8.161288   1.618343            8     0.776863    0.476814
+SLC1A2    7.967462   4.373654           16     0.238288    0.451288
+
+=== pfc_control connectivity profile ===
+No connectivity profile available.
+
+=== thalamus_proxy receptor fingerprint ===
+No receptor data available.
+
+=== thalamus_proxy gene expression summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    4.053369   2.316030           16    -0.572300    0.865879
+  COMT    6.827440   3.667711           48     0.302381    1.424946
+  DRD1    2.438649   1.528787          160    -0.582302    0.738248
+  DRD2    4.756305   2.505212           40     0.980560    0.913045
+  GAD1    8.048958   2.320105          144     0.032626    1.152170
+  GAD2    7.808731   1.906782          144    -0.191263    1.089636
+ GRIA2    8.494559   1.563690           32    -0.237619    0.681866
+GRIN2B    4.109829   2.176130           24    -0.774508    0.604571
+   HTT    7.154106   1.605570           16    -1.096906    1.059628
+SLC1A2    8.139978   4.524249           32    -0.046047    0.695668
+
+=== thalamus_proxy connectivity profile ===
+No connectivity profile available.
+
+=== Simulation example ===
+
+[inputs]
+pathogenic_htt_burden             0.98
+disease_stage_burden              0.65
+juvenile_rigid_bias               0.15
+cognitive_reserve_support         0.30
+symptomatic_management_support    0.35
+
+[latents]
+mutant_huntingtin_toxicity            0.8096
+progressive_striatal_degeneration     0.6526
+glutamate_gaba_imbalance              0.4910
+dopaminergic_state_shift              0.3809
+thalamocortical_disconnection         0.4078
+diffuse_cortical_network_breakdown    0.4648
+frontostriatal_executive_failure      0.3494
+
+[regional_state]
+caudate_nucleus                0.5087
+striatum_proxy                 0.4407
+thalamus_proxy                 0.3515
+pfc_control                    0.2302
+temporal_association_cortex    0.2899
+
+[symptoms]
+executive_dysfunction                 0.3308
+attention_processing_speed_decline    0.2563
+memory_language_decline               0.2916
+behavioral_disinhibition              0.2892
+movement_disorder_burden              0.2975
+global_neurocognitive_burden          0.2641
+
+[phenotypes]
+dysexecutive_mild_ncd_profile         0.3315
+advanced_major_ncd_profile            0.3276
+corticostriatal_disconnect_profile    0.3599
+adult_choreiform_profile              0.3540
+juvenile_akinetic_rigid_profile       0.3357

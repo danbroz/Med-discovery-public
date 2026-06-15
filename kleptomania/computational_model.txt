@@ -1,0 +1,211 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                             key      node_type  region_role           atlas_region                          feature_summary
+           genetic_vulnerability          input         None                   None                                     None
+            acute_stress_trigger          input         None                   None                                     None
+             chronic_stress_load          input         None                   None                                     None
+           novelty_seeking_trait          input         None                   None                                     None
+      emotional_reactivity_trait          input         None                   None                                     None
+         poor_self_control_trait          input         None                   None                                     None
+        family_emotional_neglect          input         None                   None                                     None
+                recovery_support          input         None                   None                                     None
+                        amygdala         region atlas_backed     LB (Amygdala) left receptors=no; genes=yes; connectivity=no
+                          insula         region atlas_backed Area Ia1 (Insula) left  receptors=no; genes=no; connectivity=no
+                             ofc         region atlas_backed    Area Fo4 (OFC) left receptors=no; genes=yes; connectivity=no
+                             acc         region atlas_backed Area p24ab (pACC) left receptors=no; genes=yes; connectivity=no
+          ventral_striatum_proxy         region        proxy       ventral striatum receptors=no; genes=yes; connectivity=no
+     trait_impulsivity_liability latent_biology         None                   None                                     None
+           noradrenergic_arousal latent_biology         None                   None                                     None
+      pfc_subcortical_disconnect latent_biology         None                   None                                     None
+  frontostriatal_control_failure latent_biology         None                   None                                     None
+      frontolimbic_dysregulation latent_biology         None                   None                                     None
+       dopaminergic_reward_drive latent_biology         None                   None                                     None
+         tension_preceding_theft        symptom         None                   None                                     None
+                   urge_to_steal        symptom         None                   None                                     None
+     impaired_impulse_resistance        symptom         None                   None                                     None
+gratification_relief_after_theft        symptom         None                   None                                     None
+       repetitive_stealing_cycle        symptom         None                   None                                     None
+
+=== Edges ===
+                          source                           target                                                                           relation kleptomania_change
+           genetic_vulnerability      trait_impulsivity_liability       contributes speculative heritable liability for impulsivity and poor control          increased
+           novelty_seeking_trait      trait_impulsivity_liability                        increases approach bias toward immediate reward and novelty          increased
+         poor_self_control_trait      trait_impulsivity_liability                                     directly weakens inhibition of prepotent urges          increased
+            acute_stress_trigger            noradrenergic_arousal                      acute stress escalates fight-or-flight arousal before the act          increased
+             chronic_stress_load            noradrenergic_arousal                            sustained stress sensitizes hyper-arousal and vigilance          increased
+      emotional_reactivity_trait            noradrenergic_arousal                              high affective reactivity intensifies anxious arousal          increased
+        family_emotional_neglect       pfc_subcortical_disconnect           developmental adversity may shape regulation circuitry and communication          increased
+             chronic_stress_load       pfc_subcortical_disconnect          chronic stress may contribute to structural or functional disconnectivity          increased
+           noradrenergic_arousal   frontostriatal_control_failure                    stress-linked norepinephrine impairs prefrontal impulse control          increased
+     trait_impulsivity_liability   frontostriatal_control_failure                                   trait impulsivity reduces resistance to the urge          increased
+      pfc_subcortical_disconnect   frontostriatal_control_failure              weaker PFC-subcortical communication undermines behavioral inhibition          increased
+           noradrenergic_arousal       frontolimbic_dysregulation                   hyper-arousal couples control loss to stronger limbic reactivity          increased
+  frontostriatal_control_failure       frontolimbic_dysregulation                                  control failure permits emotion-driven responding          increased
+           novelty_seeking_trait        dopaminergic_reward_drive                       novelty/reward seeking strengthens anticipated gratification          increased
+     trait_impulsivity_liability        dopaminergic_reward_drive                                    impulsivity amplifies immediate reward salience          increased
+           noradrenergic_arousal                         amygdala                stress arousal potentiates amygdala-driven fear and negative affect          increased
+      frontolimbic_dysregulation                           insula          maladaptive regulation amplifies interoceptive urge and tension signaling          increased
+  frontostriatal_control_failure                              ofc                          control failure is expressed in orbitofrontal dysfunction          increased
+  frontostriatal_control_failure                              acc control failure is expressed in anterior cingulate conflict-monitoring dysfunction          increased
+       dopaminergic_reward_drive           ventral_striatum_proxy             reward/salience circuitry proxies anticipated gratification and relief          increased
+                        amygdala          tension_preceding_theft                  negative-affect and threat reactivity intensify pre-theft tension          increased
+                          insula          tension_preceding_theft        interoceptive arousal contributes to rising bodily tension and restlessness          increased
+  frontostriatal_control_failure      impaired_impulse_resistance                               weak top-down control reduces resistance to stealing          increased
+          ventral_striatum_proxy                    urge_to_steal                                        reward salience strengthens the urge to act          increased
+         tension_preceding_theft                    urge_to_steal                             rising aversive tension pressures behavioral discharge          increased
+       dopaminergic_reward_drive gratification_relief_after_theft                        reward circuitry contributes to gratification after the act          increased
+         tension_preceding_theft gratification_relief_after_theft                    stealing discharges the aversive tension state, creating relief          increased
+gratification_relief_after_theft        repetitive_stealing_cycle                             post-act reward and relief reinforce future repetition          increased
+                recovery_support            noradrenergic_arousal                           support and structure buffer stress-linked hyper-arousal          decreased
+                recovery_support   frontostriatal_control_failure                     supportive treatment and structure strengthen control capacity          decreased
+
+=== Region suggestions for 'insula' ===
+                  name identifier                                parcellation
+Area Id1 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id5 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id6 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Ig2 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id2 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id3 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id7 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id4 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Id9 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area Ia3 (Insula) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Region evidence: amygdala ===
+Resolved region: LB (Amygdala) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ OPRM1    4.817310   1.361393           21     0.300824    0.894048
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: insula ===
+Resolved region: Area Ia1 (Insula) left
+Receptors:
+<no receptor table>
+Genes:
+<no gene table>
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: ofc ===
+Resolved region: Area Fo4 (OFC) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    3.979550   2.636939           12    -0.111708    0.539130
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+   DBH    2.885375   0.758348           12     0.181442    0.333721
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+ OPRM1    4.542500   0.719579           12    -0.053750    0.413481
+SLC6A2    1.387338   0.476759            8     0.140200    0.507251
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: acc ===
+Resolved region: Area p24ab (pACC) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.413722   2.388957            9     0.003656    0.432406
+  BDNF    5.621500   1.881802            6     0.483533    0.383933
+  COMT    6.626667   3.449944           18     0.128428    0.590874
+ CRHR1    5.037908   2.235077           12     0.254025    0.541458
+   DBH    3.156300   1.163959            9     0.184722    0.789541
+  DRD2    2.950413   1.689432           15    -0.634413    0.582728
+  MAOA    5.886943   1.901421           93     0.238697    0.532340
+ OPRM1    4.130422   1.036304            9     0.222144    0.684007
+SLC6A2    1.663317   0.413289            6    -0.087000    0.387004
+SLC6A4    1.847067   0.464813           33    -0.212021    0.311593
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: ventral_striatum_proxy ===
+Resolved region: ventral striatum
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    3.690170   1.943195           60    -0.330648    1.535297
+  BDNF    3.009257   2.293641           40    -1.185732    1.237663
+  COMT    6.402036   3.593712          120    -0.059620    1.034789
+ CRHR1    4.048764   2.564496           80    -0.866032    1.025555
+   DBH    2.304323   0.954221           60    -0.428033    1.033607
+  DRD2    5.426011   2.496559          100     1.577181    1.050432
+  MAOA    6.048184   2.090857          620     0.515039    0.710792
+ OPRM1    5.056912   1.100684           60     0.699690    0.836437
+SLC6A2    1.471218   0.478246           40    -0.110840    0.531207
+SLC6A4    1.704646   0.727714          220    -0.136528    0.570860
+Connectivity profile:
+<no connectivity profile>
+
+=== Circuit connectivity among resolved nodes ===
+                        amygdala  insula      ofc       acc  ventral_striatum_proxy
+amygdala                 244.570   0.020    0.075     0.055                   1.120
+insula                     0.020  11.860    2.310     1.260                   3.755
+ofc                        0.075   2.310  698.345    17.940                 812.060
+acc                        0.055   1.260   17.940  2208.080                 180.930
+ventral_striatum_proxy     1.120   3.755  812.060   180.930                3774.225
+
+=== Simulated inputs ===
+genetic_vulnerability         0.70
+acute_stress_trigger          0.85
+chronic_stress_load           0.60
+novelty_seeking_trait         0.72
+emotional_reactivity_trait    0.78
+poor_self_control_trait       0.74
+family_emotional_neglect      0.48
+recovery_support              0.20
+
+=== Simulated latents ===
+trait_impulsivity_liability       0.6638
+noradrenergic_arousal             0.6422
+pfc_subcortical_disconnect        0.4904
+frontostriatal_control_failure    0.5422
+frontolimbic_dysregulation        0.5418
+dopaminergic_reward_drive         0.6062
+
+=== Simulated regional state ===
+amygdala                  0.5888
+insula                    0.5759
+ofc                       0.4257
+acc                       0.4074
+ventral_striatum_proxy    0.6046
+
+=== Simulated symptoms ===
+tension_preceding_theft             0.5576
+urge_to_steal                       0.5683
+impaired_impulse_resistance         0.4277
+gratification_relief_after_theft    0.5332
+repetitive_stealing_cycle           0.5116
+
+=== Simulated phenotypes ===
+stress_triggered_episode_profile    0.5179
+tension_release_cycle_profile       0.5341
+trait_impulsivity_profile           0.5446
+reward_discharge_profile            0.5813

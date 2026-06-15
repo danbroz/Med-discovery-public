@@ -1,0 +1,242 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                     key      node_type                                                   label                                            atlas_region                            feature_summary
+         genetic_temperamental_liability          input                         Genetic Temperamental Liability                                                    None                                       None
+                early_life_stress_trauma          input                                Early Life Stress Trauma                                                    None                                       None
+                     chronic_stress_load          input                                     Chronic Stress Load                                                    None                                       None
+                   acute_tension_arousal          input                                   Acute Tension Arousal                                                    None                                       None
+                       fire_cue_exposure          input                                       Fire Cue Exposure                                                    None                                       None
+            relief_reinforcement_history          input                            Relief Reinforcement History                                                    None                                       None
+                      inhibitory_support          input                                      Inhibitory Support                                                    None                                       None
+               stress_regulation_support          input                               Stress Regulation Support                                                    None                                       None
+                             vmpfc_proxy         region                                    Area s32 (sACC) left                                    Area s32 (sACC) left  receptors=no; genes=yes; connectivity=yes
+                                   dlpfc         region                                      Area 45 (IFG) left                                      Area 45 (IFG) left receptors=yes; genes=yes; connectivity=yes
+                                amygdala         region                                      LB (Amygdala) left                                      LB (Amygdala) left   receptors=no; genes=yes; connectivity=no
+                  ventral_striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=yes
+                     basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=yes
+              noradrenergic_hyperarousal latent_biology                              Noradrenergic Hyperarousal                                                    None                                       None
+           hpa_axis_stress_sensitization latent_biology                           Hpa Axis Stress Sensitization                                                    None                                       None
+              frontolimbic_disconnection latent_biology                              Frontolimbic Disconnection                                                    None                                       None
+           prefrontal_inhibitory_failure latent_biology                           Prefrontal Inhibitory Failure                                                    None                                       None
+  amygdala_fire_salience_hyperreactivity latent_biology                  Amygdala Fire Salience Hyperreactivity                                                    None                                       None
+        reward_relief_reinforcement_bias latent_biology                        Reward Relief Reinforcement Bias                                                    None                                       None
+frontal_basal_ganglia_gating_dysfunction latent_biology                Frontal Basal Ganglia Gating Dysfunction                                                    None                                       None
+         tension_discharge_learning_loop latent_biology                         Tension Discharge Learning Loop                                                    None                                       None
+          fire_fascination_preoccupation        symptom                          Fire Fascination Preoccupation                                                    None                                       None
+                pre_fire_tension_arousal        symptom                                Pre Fire Tension Arousal                                                    None                                       None
+                       fire_setting_urge        symptom                                       Fire Setting Urge                                                    None                                       None
+     impaired_resistance_to_fire_setting        symptom                     Impaired Resistance To Fire Setting                                                    None                                       None
+       recurrent_deliberate_fire_setting        symptom                       Recurrent Deliberate Fire Setting                                                    None                                       None
+          post_fire_relief_gratification        symptom                          Post Fire Relief Gratification                                                    None                                       None
+              functional_impairment_risk        symptom                              Functional Impairment Risk                                                    None                                       None
+
+=== EDGES ===
+                                  source                                   target                                                                             relation pyromania_change
+         genetic_temperamental_liability               noradrenergic_hyperarousal                raises inherited vulnerability in arousal and threat-response systems        increased
+         genetic_temperamental_liability            prefrontal_inhibitory_failure      raises trait-level vulnerability in impulse inhibition and emotional regulation        increased
+                early_life_stress_trauma            hpa_axis_stress_sensitization                    can produce long-term stress sensitization and epigenetic biasing        increased
+                early_life_stress_trauma               frontolimbic_disconnection         can weaken amygdala-prefrontal coupling through developmental stress effects        increased
+                     chronic_stress_load               noradrenergic_hyperarousal                                         maintains elevated fight-or-flight readiness        increased
+                     chronic_stress_load            hpa_axis_stress_sensitization                           raises stress-hormone burden and lowers regulatory reserve        increased
+                   acute_tension_arousal               noradrenergic_hyperarousal                        directly amplifies short-term arousal pressure before the act        increased
+                   acute_tension_arousal                 pre_fire_tension_arousal            contributes directly to the subjective buildup that precedes fire-setting        increased
+                       fire_cue_exposure   amygdala_fire_salience_hyperreactivity          provides salient trigger cues that amplify emotional and sensory reactivity        increased
+                       fire_cue_exposure         reward_relief_reinforcement_bias                  strengthens associative attraction to fire-related cues and context        increased
+            relief_reinforcement_history         reward_relief_reinforcement_bias                           strengthens reward and negative-reinforcement expectations        increased
+            relief_reinforcement_history          tension_discharge_learning_loop                      conditions fire-setting as a learned route to tension discharge        increased
+                      inhibitory_support            prefrontal_inhibitory_failure  buffers control failure by supporting cognitive stopping and consequence monitoring        decreased
+               stress_regulation_support            hpa_axis_stress_sensitization                          buffers chronic arousal and lowers stress-linked escalation        decreased
+               stress_regulation_support               noradrenergic_hyperarousal                        reduces sympathetic overactivation and acute tension build-up        decreased
+              noradrenergic_hyperarousal            prefrontal_inhibitory_failure                                     impairs reflective inhibition under high arousal        increased
+           hpa_axis_stress_sensitization               frontolimbic_disconnection                                sustains poor emotion regulation and top-down control        increased
+              frontolimbic_disconnection   amygdala_fire_salience_hyperreactivity                                      permits more poorly modulated limbic reactivity        increased
+              frontolimbic_disconnection            prefrontal_inhibitory_failure                            reduces top-down control over arousal and action impulses        increased
+        reward_relief_reinforcement_bias          tension_discharge_learning_loop                  strengthens expectation that the act will be rewarding or relieving        increased
+           prefrontal_inhibitory_failure frontal_basal_ganglia_gating_dysfunction        disrupts the inhibitory network that should stop destructive action sequences        increased
+  amygdala_fire_salience_hyperreactivity                              vmpfc_proxy increases dysfunction burden in affective valuation and regulatory control circuitry        increased
+           prefrontal_inhibitory_failure                              vmpfc_proxy                          raises dysfunction burden in ventromedial control circuitry        increased
+           prefrontal_inhibitory_failure                                    dlpfc                             raises dysfunction burden in executive control circuitry        increased
+  amygdala_fire_salience_hyperreactivity                                 amygdala                  raises limbic arousal burden during cue exposure and tension states        increased
+        reward_relief_reinforcement_bias                   ventral_striatum_proxy            increases dysregulation burden in reward and incentive-salience circuitry        increased
+frontal_basal_ganglia_gating_dysfunction                      basal_ganglia_proxy                raises action-gating dysregulation within frontal-basal-ganglia loops        increased
+        reward_relief_reinforcement_bias           fire_fascination_preoccupation              increases motivational pull and preoccupation with fire-related stimuli        increased
+  amygdala_fire_salience_hyperreactivity           fire_fascination_preoccupation                             amplifies emotional salience of fire and contextual cues        increased
+              noradrenergic_hyperarousal                 pre_fire_tension_arousal                               drives bodily and subjective escalation before the act        increased
+         tension_discharge_learning_loop                        fire_setting_urge                      turns rising tension into a learned impulse toward fire-setting        increased
+          fire_fascination_preoccupation                        fire_setting_urge                                  adds cue-driven motivational pull to the urge state        increased
+           prefrontal_inhibitory_failure      impaired_resistance_to_fire_setting                                             weakens the ability to suppress the urge        increased
+frontal_basal_ganglia_gating_dysfunction      impaired_resistance_to_fire_setting                                reduces effective stopping of the behavioral sequence        increased
+                       fire_setting_urge        recurrent_deliberate_fire_setting                   provides direct motivational pressure toward repeated fire-setting        increased
+     impaired_resistance_to_fire_setting        recurrent_deliberate_fire_setting                                             allows urges to progress into overt acts        increased
+       recurrent_deliberate_fire_setting           post_fire_relief_gratification                       produces gratification or relief after ignition or observation        increased
+       recurrent_deliberate_fire_setting               functional_impairment_risk           increases clinical and real-world burden through repeated destructive acts        increased
+          fire_fascination_preoccupation               functional_impairment_risk                             increases preoccupation burden and downstream impairment        increased
+
+=== REGION RESOLUTION ===
+vmpfc_proxy: Area s32 (sACC) left
+dlpfc: Area 45 (IFG) left
+amygdala: LB (Amygdala) left
+ventral_striatum_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== FEATURES: amygdala ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DBH    2.221610   1.005047           21    -0.238133    0.810462
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+Connectivity:
+<none>
+
+=== FEATURES: vmpfc_proxy ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.651312   1.648678            8     0.514675    0.299902
+ COMT    6.688071   3.462218           24     0.160779    0.908322
+CRHR1    5.462313   1.746893           16     0.421963    0.599831
+  DBH    3.372917   1.114936           12     0.601917    0.940871
+ DRD2    2.915430   1.897044           20    -0.561750    0.572215
+Connectivity:
+     connected_region    value
+ Area s24 (sACC) left 3022.520
+ Area p32 (pACC) left 2821.785
+Area Fp2 (FPole) left 2241.300
+  Area Fo2 (OFC) left 2085.440
+  Area Fo1 (OFC) left  711.525
+
+=== FEATURES: dlpfc ===
+Receptors:
+receptor  mean  std
+    AMPA   472  379
+ kainate   434  264
+    NMDA  1078   40
+   GABAA  1515  283
+   GABAB  1428 1197
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.458628   1.916819           18     0.350511    0.619580
+ COMT    6.448093   3.394208           54    -0.108374    0.706085
+CRHR1    5.041300   2.010939           36     0.353247    0.661870
+  DBH    3.141063   1.074061           27     0.339344    0.780856
+ DRD2    2.945380   1.742219           45    -0.608476    0.634670
+Connectivity:
+                 connected_region    value
+        Frontal-I.1 (GapMap) left 2925.345
+               Area 44 (IFG) left 2882.180
+        Area MFG5 (MFG, IFG) left 2145.685
+Area Op9 (Frontal Operculum) left 1541.335
+         Frontal-II (GapMap) left 1369.710
+
+=== FEATURES: ventral_striatum_proxy ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    2.095275   1.373588           12    -1.740383    0.864869
+ COMT    6.334303   3.508445           36    -0.298369    1.144405
+CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+  DBH    2.154417   0.747833           18    -0.469878    0.733881
+ DRD2    6.119210   2.344979           30     2.320237    1.023981
+Connectivity:
+                              connected_region    value
+FuP (Ventral Striatum, Fundus of Putamen) left 4462.355
+       BST (Basal Forebrain, Bed Nucleus) left 3299.035
+                    VP (Ventral Pallidum) left 1944.015
+                         Area Fp1 (FPole) left 1678.720
+                           Area Fo3 (OFC) left 1624.325
+
+=== FEATURES: basal_ganglia_proxy ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    2.095275   1.373588           12    -1.740383    0.864869
+ COMT    6.334303   3.508445           36    -0.298369    1.144405
+CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+  DBH    2.154417   0.747833           18    -0.469878    0.733881
+ DRD2    6.119210   2.344979           30     2.320237    1.023981
+Connectivity:
+                              connected_region    value
+FuP (Ventral Striatum, Fundus of Putamen) left 4462.355
+       BST (Basal Forebrain, Bed Nucleus) left 3299.035
+                    VP (Ventral Pallidum) left 1944.015
+                         Area Fp1 (FPole) left 1678.720
+                           Area Fo3 (OFC) left 1624.325
+
+=== CIRCUIT CONNECTIVITY ===
+            source_key                                           source_region             target_key                                           target_region    value
+ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left    basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 2794.395
+   basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 2794.395
+           vmpfc_proxy                                    Area s32 (sACC) left ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  352.645
+           vmpfc_proxy                                    Area s32 (sACC) left    basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  352.645
+ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left            vmpfc_proxy                                    Area s32 (sACC) left  352.645
+   basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left            vmpfc_proxy                                    Area s32 (sACC) left  352.645
+ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                  dlpfc                                      Area 45 (IFG) left    6.910
+                 dlpfc                                      Area 45 (IFG) left    basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left    6.910
+                 dlpfc                                      Area 45 (IFG) left ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left    6.910
+   basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                  dlpfc                                      Area 45 (IFG) left    6.910
+                 dlpfc                                      Area 45 (IFG) left            vmpfc_proxy                                    Area s32 (sACC) left    1.525
+           vmpfc_proxy                                    Area s32 (sACC) left                  dlpfc                                      Area 45 (IFG) left    1.525
+
+=== SIMULATION: INPUTS ===
+genetic_temperamental_liability    0.60
+early_life_stress_trauma           0.45
+chronic_stress_load                0.70
+acute_tension_arousal              0.80
+fire_cue_exposure                  0.75
+relief_reinforcement_history       0.55
+inhibitory_support                 0.25
+stress_regulation_support          0.20
+
+=== SIMULATION: LATENTS ===
+noradrenergic_hyperarousal                  0.5600
+tension_discharge_learning_loop             0.5370
+reward_relief_reinforcement_bias            0.5220
+amygdala_fire_salience_hyperreactivity      0.4905
+frontal_basal_ganglia_gating_dysfunction    0.4672
+hpa_axis_stress_sensitization               0.4610
+prefrontal_inhibitory_failure               0.3971
+frontolimbic_disconnection                  0.3006
+
+=== SIMULATION: REGIONAL STATE ===
+ventral_striatum_proxy    0.4699
+basal_ganglia_proxy       0.4096
+amygdala                  0.3950
+dlpfc                     0.3632
+vmpfc_proxy               0.3211
+
+=== SIMULATION: SYMPTOMS ===
+pre_fire_tension_arousal               0.4910
+fire_setting_urge                      0.4905
+fire_fascination_preoccupation         0.4826
+post_fire_relief_gratification         0.4650
+recurrent_deliberate_fire_setting      0.4298
+functional_impairment_risk             0.4216
+impaired_resistance_to_fire_setting    0.3629
+
+=== SIMULATION: PHENOTYPES ===
+cue_reactive_fire_fascination_profile      0.5483
+reinforced_tension_relief_cycle_profile    0.5036
+stress_discharging_fire_setting_profile    0.4943
+pyromania_core_profile                     0.4370
+frontal_control_failure_profile            0.3871

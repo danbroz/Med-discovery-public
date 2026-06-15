@@ -1,0 +1,170 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 24) ===
+                                    key                                                   label      node_type                                                                                            description                                            atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+          vascular_ischemic_injury_load                           Vascular Ischemic Injury Load          input                  Burden of stroke, lacunes, microangiopathy, or other ischemic cerebrovascular injury.                                                    None              None                                                           None         NaN                                      None
+           traumatic_axonal_injury_load                            Traumatic Axonal Injury Load          input                                     Burden of traumatic brain injury and diffuse axonal disconnection.                                                    None              None                                                           None         NaN                                      None
+ metabolic_systemic_encephalopathy_load                  Metabolic Systemic Encephalopathy Load          input   Burden of systemic, metabolic, or dysmetabolic encephalopathy producing diffuse slowing or delirium.                                                    None              None                                                           None         NaN                                      None
+       inflammatory_infectious_cns_load                        Inflammatory Infectious Cns Load          input                           Burden of inflammatory, autoimmune, demyelinating, or infectious CNS injury.                                                    None              None                                                           None         NaN                                      None
+         mass_effect_hydrocephalus_load                          Mass Effect Hydrocephalus Load          input               Burden of tumors, subdural collections, hydrocephalus, or other space-occupying lesions.                                                    None              None                                                           None         NaN                                      None
+                         seizure_burden                                          Seizure Burden          input          Burden of seizures or nonconvulsive epileptic activity contributing to fluctuating cognition.                                                    None              None                                                           None         NaN                                      None
+                 genetic_susceptibility                                  Genetic Susceptibility          input Background genetic susceptibility that lowers the threshold for medical or environmental brain injury.                                                    None              None                                                           None         NaN                                      None
+medical_reversal_rehabilitation_support                 Medical Reversal Rehabilitation Support          input Protective effect of correcting the medical cause, stabilizing physiology, and rehabilitation support.                                                    None              None                                                           None         NaN                                      None
+                         thalamus_proxy                        ZI (Thalamus, zona incerta) left         region                                                             Atlas-backed circuit node or proxy anchor.                        ZI (Thalamus, zona incerta) left              None            (-11.044642857142861, -14.5625, -6.323214285714286)       560.0  receptors=no; genes=yes; connectivity=no
+                  frontal_control_proxy                                    middle frontal gyrus         region                                                             Atlas-backed circuit node or proxy anchor.                                    middle frontal gyrus              None    (-37.574017415862556, 34.86051619989016, 35.43335686828273)     12747.0  receptors=no; genes=yes; connectivity=no
+              frontal_subcortical_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left         region                                                             Atlas-backed circuit node or proxy anchor. FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None   (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0  receptors=no; genes=yes; connectivity=no
+                  limbic_temporal_proxy                                  CA1 (Hippocampus) left         region                                                             Atlas-backed circuit node or proxy anchor.                                  CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+                  injury_susceptibility                                   Injury Susceptibility latent_biology    Lowered reserve or resilience that makes brain networks more vulnerable to diverse medical insults.                                                    None              None                                                           None         NaN                                      None
+               glutamate_excitotoxicity                                Glutamate Excitotoxicity latent_biology   Excess glutamatergic receptor activation driving neuronal injury after ischemic or traumatic insult.                                                    None              None                                                           None         NaN                                      None
+                gaba_inhibitory_failure                                 Gaba Inhibitory Failure latent_biology        Reduced inhibitory stability permitting hyperexcitability, seizures, and fluctuating cognition.                                                    None              None                                                           None         NaN                                      None
+          strategic_focal_lesion_burden                           Strategic Focal Lesion Burden latent_biology            Cognitive impact of focal lesions in small but strategically important regions or circuits.                                                    None              None                                                           None         NaN                                      None
+     white_matter_network_disconnection                      White Matter Network Disconnection latent_biology        Executive and processing-speed burden caused by vascular white matter disease or axonal injury.                                                    None              None                                                           None         NaN                                      None
+      metabolic_encephalopathic_slowing                       Metabolic Encephalopathic Slowing latent_biology        Diffuse slowing and global inefficiency produced by systemic or dysmetabolic brain dysfunction.                                                    None              None                                                           None         NaN                                      None
+                 limbic_temporal_injury                                  Limbic Temporal Injury latent_biology          Medial temporal and limbic burden from autoimmune, infectious, inflammatory, or mass lesions.                                                    None              None                                                           None         NaN                                      None
+      executive_control_circuit_failure                       Executive Control Circuit Failure latent_biology        Breakdown of frontal and frontal-subcortical control circuits needed for executive performance.                                                    None              None                                                           None         NaN                                      None
+  distributed_cognitive_network_failure                   Distributed Cognitive Network Failure latent_biology                System-level failure of large-scale cortical-subcortical networks supporting cognition.                                                    None              None                                                           None         NaN                                      None
+                      memory_impairment                                       Memory Impairment        symptom                                                           Amnestic dysfunction or memory inefficiency.                                                    None              None                                                           None         NaN                                      None
+                  executive_dysfunction                                   Executive Dysfunction        symptom                                        Reduced planning, set shifting, inhibition, or working control.                                                    None              None                                                           None         NaN                                      None
+               processing_speed_slowing                                Processing Speed Slowing        symptom                                 Cognitive slowing typical of diffuse white matter or metabolic burden.                                                    None              None                                                           None         NaN                                      None
+
+=== Edges ===
+                                 source                                target                                                                            relation medical_ncd_change
+                 genetic_susceptibility                 injury_susceptibility             lowers reserve and the threshold for medical insults to produce decline          increased
+          vascular_ischemic_injury_load              glutamate_excitotoxicity                                 drives ischemia-related excitotoxic neuronal damage          increased
+          vascular_ischemic_injury_load         strategic_focal_lesion_burden     creates strategic infarcts affecting cognition out of proportion to lesion size          increased
+          vascular_ischemic_injury_load    white_matter_network_disconnection               produces subcortical white-matter disease and disconnection syndromes          increased
+           traumatic_axonal_injury_load              glutamate_excitotoxicity                                adds traumatic excitotoxic burden after brain injury          increased
+           traumatic_axonal_injury_load    white_matter_network_disconnection                     disrupts large-scale connectivity through diffuse axonal injury          increased
+ metabolic_systemic_encephalopathy_load     metabolic_encephalopathic_slowing                               produces diffuse slowing and confusional inefficiency          increased
+       inflammatory_infectious_cns_load                limbic_temporal_injury injures limbic and temporal systems in autoimmune or infectious encephalitic states          increased
+       inflammatory_infectious_cns_load    white_matter_network_disconnection                             adds demyelinating or inflammatory disconnection burden          increased
+         mass_effect_hydrocephalus_load         strategic_focal_lesion_burden                                     compresses or distorts focal cognitive circuits          increased
+                         seizure_burden               gaba_inhibitory_failure                                 reflects inhibitory breakdown and hyperexcitability          increased
+                  injury_susceptibility distributed_cognitive_network_failure                                reduces network resilience across medical etiologies          increased
+               glutamate_excitotoxicity distributed_cognitive_network_failure                       propagates neuronal loss into broad cognitive circuit failure          increased
+     white_matter_network_disconnection     executive_control_circuit_failure                    disconnects frontal-subcortical and frontoparietal control loops          increased
+          strategic_focal_lesion_burden                        thalamus_proxy                               captures thalamic and nearby strategic lesion effects          increased
+          strategic_focal_lesion_burden             frontal_subcortical_proxy                                    captures disruption of frontal-subcortical loops          increased
+      executive_control_circuit_failure                 frontal_control_proxy                                maps dysexecutive burden onto frontal control cortex          increased
+                 limbic_temporal_injury                 limbic_temporal_proxy        maps inflammatory or infectious burden onto medial temporal-limbic circuitry          increased
+                         thalamus_proxy              processing_speed_slowing                      strategic thalamic dysfunction slows relay-dependent cognition          increased
+                  frontal_control_proxy                 executive_dysfunction                              frontal control failure produces dysexecutive symptoms          increased
+                  frontal_control_proxy  behavioral_apathy_personality_change                             frontal lesions can drive apathy and personality change          increased
+              frontal_subcortical_proxy                 executive_dysfunction                   frontal-subcortical loop disruption weakens executive performance          increased
+                  limbic_temporal_proxy                     memory_impairment                                     limbic-temporal damage produces amnestic burden          increased
+                  limbic_temporal_proxy               social_cognitive_change           limbic-temporal dysfunction can alter social and emotional interpretation          increased
+                gaba_inhibitory_failure         confusional_state_or_delirium         hyperexcitability and seizure activity can present as fluctuating confusion          increased
+  distributed_cognitive_network_failure              global_cognitive_decline                network-level dysfunction yields multidomain cognitive deterioration          increased
+medical_reversal_rehabilitation_support distributed_cognitive_network_failure     correction of the underlying condition can partially buffer network dysfunction          decreased
+medical_reversal_rehabilitation_support         confusional_state_or_delirium                           medical stabilization can reduce acute confusional burden          decreased
+
+=== Resolved regions ===
+- thalamus_proxy: ZI (Thalamus, zona incerta) left
+- frontal_control_proxy: middle frontal gyrus
+- frontal_subcortical_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+- limbic_temporal_proxy: CA1 (Hippocampus) left
+
+=== Example multimodal tables ===
+
+Region: thalamus_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  APOE   11.014054   3.263851           24     1.454858    1.217219
+  BDNF    4.053369   2.316030           16    -0.572300    0.865879
+GABRA1    7.363306   3.066009          392     0.083266    0.867371
+  GAD1    8.048958   2.320105          144     0.032626    1.152170
+  GFAP   10.536244   3.775233           32     0.871431    0.916686
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+Region: frontal_control_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  APOE    8.976215   2.806869           39    -0.463421    0.619598
+  BDNF    5.543831   1.790812           26     0.359869    0.356919
+GABRA1    8.024643   3.077440          637     0.479512    0.498160
+  GAD1    8.488591   1.868771          234     0.251459    0.309337
+  GFAP    8.899281   3.849071           52    -0.234808    0.586988
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Simulation ===
+
+INPUTS
+vascular_ischemic_injury_load              0.65
+traumatic_axonal_injury_load               0.25
+metabolic_systemic_encephalopathy_load     0.20
+inflammatory_infectious_cns_load           0.15
+mass_effect_hydrocephalus_load             0.10
+seizure_burden                             0.20
+genetic_susceptibility                     0.35
+medical_reversal_rehabilitation_support    0.25
+
+LATENTS
+injury_susceptibility                    0.2975
+glutamate_excitotoxicity                 0.3645
+gaba_inhibitory_failure                  0.1774
+strategic_focal_lesion_burden            0.3271
+white_matter_network_disconnection       0.3623
+metabolic_encephalopathic_slowing        0.1399
+limbic_temporal_injury                   0.1984
+executive_control_circuit_failure        0.2609
+distributed_cognitive_network_failure    0.2233
+
+REGIONAL_STATE
+thalamus_proxy               0.2700
+frontal_control_proxy        0.2432
+frontal_subcortical_proxy    0.2989
+limbic_temporal_proxy        0.2158
+
+SYMPTOMS
+memory_impairment                       0.2168
+executive_dysfunction                   0.2850
+processing_speed_slowing                0.2632
+social_cognitive_change                 0.2127
+behavioral_apathy_personality_change    0.2245
+confusional_state_or_delirium           0.1363
+global_cognitive_decline                0.2421
+
+PHENOTYPES
+vascular_disconnection_profile               0.4133
+post_traumatic_dysexecutive_profile          0.2979
+metabolic_encephalopathy_profile             0.1807
+limbic_temporal_amnestic_profile             0.1958
+reversible_structural_mass_effect_profile    0.1668
+
+=== Example region suggestions for 'thalamus' ===
+                                    name identifier                                parcellation
+   Rt (Thalamus, reticular Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+        ZI (Thalamus, zona incerta) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+    Li (Thalamus, limitans Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+    PUm (Thalamus, medial pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   PUl (Thalamus, lateral pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+   Po (Thalamus, posterior Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  PUa (Thalamus, anterior pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+  PUi (Thalamus, inferior pulvinar) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+ MD (Thalamus, mediodorsal Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+MV (Thalamus, medioventral Nucleus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)

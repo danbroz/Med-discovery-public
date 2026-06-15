@@ -1,0 +1,174 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 24) ===
+                                         key                                        label      node_type                                                                                                   description                     atlas_region region_identifier                                                  centroid_mni  volume_mm3                           feature_summary
+             epilepsy_hyperexcitability_load              Epilepsy Hyperexcitability Load          input                             Burden of epileptic hypersynchrony, especially temporal-lobe network instability.                             None              None                                                          None         NaN                                      None
+       metabolic_encephalopathy_hypoxia_load        Metabolic Encephalopathy Hypoxia Load          input                     Burden of metabolic encephalopathy, hypoxia, or other diffuse physiological brain stress.                             None              None                                                          None         NaN                                      None
+     neuroinflammatory_systemic_illness_load      Neuroinflammatory Systemic Illness Load          input                       Burden of neuroinflammatory, infectious, or systemic medical illness affecting the CNS.                             None              None                                                          None         NaN                                      None
+                 traumatic_brain_injury_load                  Traumatic Brain Injury Load          input                            Burden of focal contusions and diffuse axonal injury after traumatic brain injury.                             None              None                                                          None         NaN                                      None
+                 cerebrovascular_lesion_load                  Cerebrovascular Lesion Load          input        Burden of stroke, infarction, or silent cerebrovascular lesions affecting psychosis-relevant circuits.                             None              None                                                          None         NaN                                      None
+                 genetic_psychosis_liability                  Genetic Psychosis Liability          input            Latent heritable vulnerability that lowers the threshold for psychosis when medical insults occur.                             None              None                                                          None         NaN                                      None
+     medical_stabilization_treatment_support      Medical Stabilization Treatment Support          input            Protective effect of correcting the medical cause, reducing instability, and supportive treatment.                             None              None                                                          None         NaN                                      None
+                         temporal_lobe_proxy                       Area Te 2.1 (STG) left         region                                                                    Atlas-backed circuit node or proxy anchor.           Area Te 2.1 (STG) left              None (-53.970976253298154, -18.035180299032547, 5.733509234828503)      1137.0 receptors=yes; genes=yes; connectivity=no
+                          frontal_lobe_proxy                         middle frontal gyrus         region                                                                    Atlas-backed circuit node or proxy anchor.             middle frontal gyrus              None   (-37.574017415862556, 34.86051619989016, 35.43335686828273)     12747.0  receptors=no; genes=yes; connectivity=no
+                 occipital_association_proxy                         Area hOc5 (LOC) left         region                                                                    Atlas-backed circuit node or proxy anchor.             Area hOc5 (LOC) left              None   (-42.917710196779964, -74.7227191413238, 0.688729874776385)       559.0   receptors=no; genes=no; connectivity=no
+                  subcortical_thalamic_proxy             ZI (Thalamus, zona incerta) left         region                                                                    Atlas-backed circuit node or proxy anchor. ZI (Thalamus, zona incerta) left              None           (-11.044642857142861, -14.5625, -6.323214285714286)       560.0  receptors=no; genes=yes; connectivity=no
+                psychosis_threshold_lowering                 Psychosis Threshold Lowering latent_biology         Reduced resilience or lowered threshold for psychosis expression after neurologic or systemic insult.                             None              None                                                          None         NaN                                      None
+                    glutamate_gaba_imbalance                     Glutamate Gaba Imbalance latent_biology    Disruption of excitatory-inhibitory balance linking epilepsy, inflammation, hypoxia, and delirious states.                             None              None                                                          None         NaN                                      None
+                  neuronal_hyperexcitability                   Neuronal Hyperexcitability latent_biology             Hypersynchronous or overexcitable neural activity that can manifest as seizure-related psychosis.                             None              None                                                          None         NaN                                      None
+                   metabolic_delirium_bridge                    Metabolic Delirium Bridge latent_biology                     Diffuse physiological brain dysfunction bridging encephalopathy, delirium, and psychosis.                             None              None                                                          None         NaN                                      None
+           frontotemporal_network_disruption            Frontotemporal Network Disruption latent_biology                   Disconnection and circuit injury across frontal and temporal systems, especially after TBI.                             None              None                                                          None         NaN                                      None
+                    focal_perceptual_release                     Focal Perceptual Release latent_biology Lesion-related perceptual disinhibition or release phenomena, particularly with temporal or occipital injury.                             None              None                                                          None         NaN                                      None
+    subcortical_reality_filtering_disruption     Subcortical Reality Filtering Disruption latent_biology            Breakdown of subcortical or thalamic filtering needed for stable thought and salience integration.                             None              None                                                          None         NaN                                      None
+distributed_perception_thought_dysregulation Distributed Perception Thought Dysregulation latent_biology           Large-scale disruption of networks governing perception, thought content, and emotional regulation.                             None              None                                                          None         NaN                                      None
+                              hallucinations                               Hallucinations        symptom                                                          Perceptual experiences without an external stimulus.                             None              None                                                          None         NaN                                      None
+                delusional_paranoid_ideation                 Delusional Paranoid Ideation        symptom                                             Fixed false beliefs, suspiciousness, or paranoid interpretations.                             None              None                                                          None         NaN                                      None
+                     thought_disorganization                      Thought Disorganization        symptom                                         Disordered thought form or behavior due to disrupted reality testing.                             None              None                                                          None         NaN                                      None
+          affective_behavioral_dysregulation           Affective Behavioral Dysregulation        symptom                            Emotional lability or behavioral dyscontrol accompanying lesion-related psychosis.                             None              None                                                          None         NaN                                      None
+           fluctuating_confusional_psychosis            Fluctuating Confusional Psychosis        symptom                      Psychosis embedded in delirious, encephalopathic, or rapidly fluctuating medical states.                             None              None                                                          None         NaN                                      None
+
+=== Edges ===
+                                      source                                       target                                                                             relation medical_psychosis_change
+                 genetic_psychosis_liability                 psychosis_threshold_lowering               creates a latent vulnerability that can be unmasked by medical insults                increased
+             epilepsy_hyperexcitability_load                     glutamate_gaba_imbalance         disrupts excitatory-inhibitory balance through epileptic network instability                increased
+             epilepsy_hyperexcitability_load                   neuronal_hyperexcitability   directly produces hypersynchronous firing associated with seizure-linked psychosis                increased
+       metabolic_encephalopathy_hypoxia_load                     glutamate_gaba_imbalance       destabilizes excitatory-inhibitory regulation during encephalopathy or hypoxia                increased
+       metabolic_encephalopathy_hypoxia_load                    metabolic_delirium_bridge              links diffuse physiological brain dysfunction to delirium and psychosis                increased
+     neuroinflammatory_systemic_illness_load                     glutamate_gaba_imbalance          adds inflammatory or infectious disruption to excitatory-inhibitory balance                increased
+     neuroinflammatory_systemic_illness_load                    metabolic_delirium_bridge contributes diffuse medical-brain dysfunction that can become psychotic or delirious                increased
+                 traumatic_brain_injury_load            frontotemporal_network_disruption            damages frontal and temporal circuits through contusion and axonal injury                increased
+                 traumatic_brain_injury_load                 psychosis_threshold_lowering                 acts as a potent environmental second hit for vulnerable individuals                increased
+                 cerebrovascular_lesion_load                     focal_perceptual_release            creates temporal or occipital lesions capable of producing hallucinations                increased
+                 cerebrovascular_lesion_load     subcortical_reality_filtering_disruption   injures subcortical or thalamic systems that help stabilize thought and perception                increased
+                    glutamate_gaba_imbalance                   neuronal_hyperexcitability                                       permits psychosis-prone network overexcitation                increased
+                    glutamate_gaba_imbalance                    metabolic_delirium_bridge        helps connect physiological brain dysfunction with delirious psychotic states                increased
+                  neuronal_hyperexcitability                          temporal_lobe_proxy                        is especially modeled through temporal-lobe seizure circuitry                increased
+           frontotemporal_network_disruption                           frontal_lobe_proxy                   burdens frontal systems involved in thought and behavioral control                increased
+           frontotemporal_network_disruption                          temporal_lobe_proxy                            burdens temporal systems implicated in post-TBI psychosis                increased
+                    focal_perceptual_release                  occipital_association_proxy      is represented through lesion-sensitive occipital perceptual association cortex                increased
+    subcortical_reality_filtering_disruption                   subcortical_thalamic_proxy                       is represented through subcortical-thalamic gating dysfunction                increased
+                psychosis_threshold_lowering distributed_perception_thought_dysregulation               makes medical circuit disruption more likely to become overt psychosis                increased
+                  neuronal_hyperexcitability distributed_perception_thought_dysregulation                  propagates unstable firing into broader psychosis-relevant networks                increased
+           frontotemporal_network_disruption distributed_perception_thought_dysregulation             disorganizes circuits governing thought content and emotional regulation                increased
+                    focal_perceptual_release                               hallucinations                      drives lesion-related hallucinations and perceptual distortions                increased
+    subcortical_reality_filtering_disruption                 delusional_paranoid_ideation     impairs filtering and interpretation of internally generated or external signals                increased
+distributed_perception_thought_dysregulation                      thought_disorganization                                               disrupts coherent thought and behavior                increased
+                          frontal_lobe_proxy           affective_behavioral_dysregulation                          supports lesion-related emotional and behavioral dyscontrol                increased
+                   metabolic_delirium_bridge            fluctuating_confusional_psychosis                  produces rapidly fluctuating psychosis in medically unstable states                increased
+                              hallucinations                      global_psychosis_burden                                            contributes to overall psychosis severity                increased
+                delusional_paranoid_ideation                      global_psychosis_burden                                            contributes to overall psychosis severity                increased
+                     thought_disorganization                      global_psychosis_burden                                            contributes to overall psychosis severity                increased
+           fluctuating_confusional_psychosis                      global_psychosis_burden                                            contributes to overall psychosis severity                increased
+     medical_stabilization_treatment_support                     glutamate_gaba_imbalance          medical correction and stabilization can reduce physiologic destabilization                decreased
+     medical_stabilization_treatment_support                      global_psychosis_burden                    treating the underlying condition can reduce psychotic expression                decreased
+
+=== Resolved regions ===
+- temporal_lobe_proxy: Area Te 2.1 (STG) left
+- frontal_lobe_proxy: middle frontal gyrus
+- occipital_association_proxy: Area hOc5 (LOC) left
+- subcortical_thalamic_proxy: ZI (Thalamus, zona incerta) left
+
+=== Example multimodal tables ===
+
+Region: temporal_lobe_proxy
+Receptors:
+receptor  mean  std
+    AMPA   300   96
+ kainate   402   93
+    NMDA   920  164
+mGluR2/3  2615  250
+   GABAA  1344  396
+Genes:
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AKT1    4.344900   0.969287            3     0.065533    0.448622
+   APOE    9.698000   3.828075            3    -0.399967    0.213100
+   BDNF    4.606300   2.404729            2    -0.232750    0.357160
+CACNA1C    7.583633   2.121288            3     0.137633    0.424690
+   COMT    6.268800   3.707633            6    -0.551817    0.482883
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+Region: frontal_lobe_proxy
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+   AKT1    4.645905   0.623570           39     0.418462    0.787966
+   APOE    8.976215   2.806869           39    -0.463421    0.619598
+   BDNF    5.543831   1.790812           26     0.359869    0.356919
+CACNA1C    7.849059   1.726391           39     0.201774    0.582973
+   COMT    6.389353   3.412489           78    -0.126738    0.817040
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Simulation ===
+
+INPUTS
+epilepsy_hyperexcitability_load            0.55
+metabolic_encephalopathy_hypoxia_load      0.20
+neuroinflammatory_systemic_illness_load    0.10
+traumatic_brain_injury_load                0.25
+cerebrovascular_lesion_load                0.15
+genetic_psychosis_liability                0.35
+medical_stabilization_treatment_support    0.30
+
+LATENTS
+psychosis_threshold_lowering                    0.2200
+glutamate_gaba_imbalance                        0.2645
+neuronal_hyperexcitability                      0.3206
+metabolic_delirium_bridge                       0.1267
+frontotemporal_network_disruption               0.1886
+focal_perceptual_release                        0.1669
+subcortical_reality_filtering_disruption        0.1488
+distributed_perception_thought_dysregulation    0.1548
+
+REGIONAL_STATE
+temporal_lobe_proxy            0.2477
+frontal_lobe_proxy             0.1851
+occipital_association_proxy    0.1542
+subcortical_thalamic_proxy     0.1523
+
+SYMPTOMS
+hallucinations                        0.1807
+delusional_paranoid_ideation          0.1745
+thought_disorganization               0.1593
+affective_behavioral_dysregulation    0.1951
+fluctuating_confusional_psychosis     0.1522
+global_psychosis_burden               0.1725
+
+PHENOTYPES
+epilepsy_temporal_psychosis_profile          0.3583
+post_tbi_frontotemporal_psychosis_profile    0.2035
+lesion_related_hallucinosis_profile          0.1606
+delirious_medical_psychosis_profile          0.1481
+second_hit_vulnerability_profile             0.2524
+
+=== Example region suggestions for 'temporal' ===
+                                                                                  name identifier                                parcellation
+                                       Area PirT (PiriformCortexMesial, temporal) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+               Area PirT.Tu (PiriformCortexMesial, Piriform temporal Area, Uncus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area PirT.Tit (PiriformCortexMesial, Piriform temporal Area, Incisura temporalis) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                                         temporal lobe       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                                       temporal insula       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                               superior temporal gyrus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                              superior temporal sulcus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                            Area PirT (PiriformCortexMesial, temporal)       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                      Area PirT (PiriformCortexMesial, temporal) right       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+              Area PirT.Tu (PiriformCortexMesial, Piriform temporal Area, Uncus) right       None Julich-Brain Cytoarchitectonic Atlas (v3.1)

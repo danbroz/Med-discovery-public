@@ -1,0 +1,107 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE SUMMARY ===
+                                     key      node_type                                   atlas_region                           feature_summary  is_proxy
+                   genetic_vulnerability          input                                           None                                      None     False
+              sleep_fragmentation_burden          input                                           None                                      None     False
+                slow_wave_sleep_pressure          input                                           None                                      None     False
+environmental_physiological_trigger_load          input                                           None                                      None     False
+           monoaminergic_modulator_shift          input                                           None                                      None     False
+ antidepressant_boundary_destabilization          input                                           None                                      None     False
+                dopamine_blockade_burden          input                                           None                                      None     False
+             benzodiazepine_gaba_support          input                                           None                                      None     False
+                            motor_cortex         region                           Area 4a (PreCG) left  receptors=no; genes=yes; connectivity=no     False
+                          thalamus_proxy         region               ZI (Thalamus, zona incerta) left  receptors=no; genes=yes; connectivity=no      True
+           basal_ganglia_locomotor_proxy         region FuP (Ventral Striatum, Fundus of Putamen) left  receptors=no; genes=yes; connectivity=no      True
+                       pfc_control_proxy         region                                           None                                unresolved      True
+                parietal_awareness_proxy         region                             Area 7A (SPL) left receptors=yes; genes=yes; connectivity=no      True
+                      limbic_alarm_proxy         region                             LB (Amygdala) left  receptors=no; genes=yes; connectivity=no      True
+           slow_wave_arousal_instability latent_biology                                           None                                      None     False
+      monoaminergic_boundary_instability latent_biology                                           None                                      None     False
+      incomplete_awakening_vulnerability latent_biology                                           None                                      None     False
+                      state_dissociation latent_biology                                           None                                      None     False
+                    motor_system_release latent_biology                                           None                                      None     False
+    frontoparietal_awareness_suppression latent_biology                                           None                                      None     False
+                limbic_sensory_intrusion latent_biology                                           None                                      None     False
+               amnestic_encoding_failure latent_biology                                           None                                      None     False
+                     confusional_arousal        symptom                                           None                                      None     False
+                  complex_motor_behavior        symptom                                           None                                      None     False
+                      impaired_awareness        symptom                                           None                                      None     False
+                         episode_amnesia        symptom                                           None                                      None     False
+                 impaired_responsiveness        symptom                                           None                                      None     False
+        fear_or_hallucinatory_experience        symptom                                           None                                      None     False
+
+=== EDGE SUMMARY ===
+                                  source                               target                                                                       relation nrem_arousal_change
+                   genetic_vulnerability        slow_wave_arousal_instability                     predisposes the system to unstable arousal from deep sleep           increased
+              sleep_fragmentation_burden        slow_wave_arousal_instability                  raises the number of disruptive arousals from slow-wave sleep           increased
+                slow_wave_sleep_pressure        slow_wave_arousal_instability                 loads the deep-sleep state from which episodes commonly emerge           increased
+environmental_physiological_trigger_load        slow_wave_arousal_instability                  interacts with predisposition to precipitate partial arousals           increased
+           monoaminergic_modulator_shift   monoaminergic_boundary_instability                          destabilizes boundaries between sleep and wakefulness           increased
+ antidepressant_boundary_destabilization   monoaminergic_boundary_instability can increase fragmentation and partial arousal risk in susceptible individuals           increased
+                dopamine_blockade_burden                   state_dissociation        may contribute to abnormal arousal regulation and parasomnia expression           increased
+             benzodiazepine_gaba_support        slow_wave_arousal_instability      suppresses destabilizing deep-sleep arousals and raises arousal threshold           decreased
+             benzodiazepine_gaba_support   incomplete_awakening_vulnerability                                     reduces the chance of incomplete awakening           decreased
+           slow_wave_arousal_instability   incomplete_awakening_vulnerability      increases the probability of partial awakening rather than full awakening           increased
+      monoaminergic_boundary_instability   incomplete_awakening_vulnerability               promotes unstable transitions between deep sleep and wakefulness           increased
+      incomplete_awakening_vulnerability                   state_dissociation              produces simultaneous local wake-like and sleep-like brain states           increased
+      monoaminergic_boundary_instability                   state_dissociation                    further destabilizes the integrity of wake-sleep boundaries           increased
+                      state_dissociation                 motor_system_release                permits wake-like motor output while awareness remains impaired           increased
+                      state_dissociation frontoparietal_awareness_suppression                 keeps associative and executive networks in a sleep-like state           increased
+                      state_dissociation             limbic_sensory_intrusion permits partial limbic and sensory activation without full top-down regulation           increased
+    frontoparietal_awareness_suppression            amnestic_encoding_failure                       prevents normal awareness-linked encoding of the episode           increased
+                    motor_system_release                         motor_cortex                            activates motor output circuitry during the episode           increased
+                      state_dissociation                       thalamus_proxy               loads thalamocortical arousal circuitry during partial awakening           increased
+                    motor_system_release        basal_ganglia_locomotor_proxy                    recruits locomotor and motor-patterning subcortical systems           increased
+
+=== REGION FEATURE SNAPSHOT ===
+
+[motor_cortex]
+        atlas_region                                               centroid_mni                          feature_summary
+Area 4a (PreCG) left (-6.554317548746525, -26.04700557103064, 67.2959610027855) receptors=no; genes=yes; connectivity=no
+genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.198967   2.308336           15     0.167027    0.613813
+   DBH    3.182287   0.756219           15     0.461473    0.506598
+  DRD2    3.038716   1.848771           25    -0.415092    0.416177
+GABRA1    7.992077   3.143091          245     0.464213    0.538980
+GABRA2    7.475072   1.574269          130     0.328965    0.325303
+
+[pfc_control_proxy]
+atlas_region centroid_mni feature_summary
+        None         None      unresolved
+
+[limbic_alarm_proxy]
+      atlas_region                                                  centroid_mni                          feature_summary
+LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ADRA2A    4.051000   2.021999           21     0.238990    1.185075
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+
+=== CIRCUIT CONNECTIVITY ===
+No pairwise circuit connectivity available in this runtime.
+
+=== SIMULATED SYMPTOMS ===
+impaired_awareness                  0.2584
+confusional_arousal                 0.2433
+impaired_responsiveness             0.2414
+fear_or_hallucinatory_experience    0.2339
+episode_amnesia                     0.2226
+complex_motor_behavior              0.1998
+
+=== SIMULATED PHENOTYPES ===
+state_dissociation_profile                0.2779
+confusional_arousal_profile               0.2525
+fearful_limbic_parasomnia_profile         0.2500
+overall_nrem_arousal_disorder_severity    0.2322
+sleepwalking_ambulatory_profile           0.2193

@@ -1,0 +1,204 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (key fields) ===
+                                 key      node_type              atlas_region region_identifier                           feature_summary
+             polygenic_vulnerability          input                                                                                      
+                           ssri_load          input                                                                                      
+          limbic_epileptiform_burden          input                                                                                      
+            neurological_injury_load          input                                                                                      
+             peripheral_nerve_damage          input                                                                                      
+                    endocrine_burden          input                                                                                      
+        serotonin_sparing_adjustment          input                                                                                      
+                    dopamine_support          input                                                                                      
+     neurologic_endocrine_correction          input                                                                                      
+                            amygdala         region        LB (Amygdala) left                    receptors=no; genes=yes; connectivity=no
+                         hippocampus         region    CA1 (Hippocampus) left                   receptors=yes; genes=yes; connectivity=no
+        temporal_limbic_cortex_proxy   region_proxy Area Te 1.0 (HESCHL) left                   receptors=yes; genes=yes; connectivity=no
+                  hypothalamus_proxy   region_proxy                                                                            unresolved
+          serotonergic_hyperactivity latent_biology                                                                                      
+          reduced_5ht1a_facilitation latent_biology                                                                                      
+       dopaminergic_hyporesponsivity latent_biology                                                                                      
+       limbic_temporal_dysregulation latent_biology                                                                                      
+hypothalamic_pituitary_dysregulation latent_biology                                                                                      
+autonomic_ejaculatory_output_failure latent_biology                                                                                      
+           orgasm_generation_failure latent_biology                                                                                      
+      elevated_ejaculatory_threshold latent_biology                                                                                      
+                 delayed_ejaculation        symptom                                                                                      
+                       anejaculation        symptom                                                                                      
+                      delayed_orgasm        symptom                                                                                      
+                          anorgasmia        symptom                                                                                      
+                     sexual_distress        symptom                                                                                      
+
+=== EDGE TABLE ===
+                              source                               target                                                                         relation delayed_ejaculation_change
+                           ssri_load           serotonergic_hyperactivity                   raises synaptic serotonin and strengthens inhibitory 5-HT tone                  increased
+             polygenic_vulnerability           serotonergic_hyperactivity                                       can bias baseline serotonergic tone upward                  increased
+             polygenic_vulnerability        dopaminergic_hyporesponsivity                                   can lower facilitatory catecholaminergic drive                  increased
+             polygenic_vulnerability           reduced_5ht1a_facilitation can alter receptor/transporter balance and pro-ejaculatory serotonergic feedback                  increased
+          serotonergic_hyperactivity           reduced_5ht1a_facilitation      overwhelms or counteracts pro-ejaculatory 5-HT1A-mediated release reduction                  increased
+          serotonergic_hyperactivity       elevated_ejaculatory_threshold                                 prolongs latency via inhibitory receptor balance                  increased
+       dopaminergic_hyporesponsivity       elevated_ejaculatory_threshold                        weakens facilitatory motivational drive toward completion                  increased
+          limbic_epileptiform_burden        limbic_temporal_dysregulation            disrupts limbic cortex organization of sexual and autonomic responses                  increased
+            neurological_injury_load        limbic_temporal_dysregulation                   adds distributed central burden to the sexual response network                  increased
+       limbic_temporal_dysregulation hypothalamic_pituitary_dysregulation                          can perturb hormonal release and neuroendocrine control                  increased
+                    endocrine_burden hypothalamic_pituitary_dysregulation                                    alters hormonal modulation of sexual function                  increased
+            neurological_injury_load autonomic_ejaculatory_output_failure                 impairs central-autonomic coordination of emission and expulsion                  increased
+             peripheral_nerve_damage autonomic_ejaculatory_output_failure     disrupts peripheral sensory/autonomic signaling needed for reflex completion                  increased
+hypothalamic_pituitary_dysregulation autonomic_ejaculatory_output_failure                             destabilizes hormonal modulation of reflex execution                  increased
+autonomic_ejaculatory_output_failure       elevated_ejaculatory_threshold                        forces more stimulation and stronger drive for completion                  increased
+          reduced_5ht1a_facilitation            orgasm_generation_failure                                weakens a pathway implicated in orgasm generation                  increased
+       dopaminergic_hyporesponsivity            orgasm_generation_failure         reduces facilitatory reward/salience drive needed for orgasmic discharge                  increased
+          serotonergic_hyperactivity                  delayed_ejaculation                                            directly prolongs ejaculatory latency                  increased
+      elevated_ejaculatory_threshold                  delayed_ejaculation                             requires more drive and time to complete ejaculation                  increased
+autonomic_ejaculatory_output_failure                        anejaculation                               can prevent coordinated reflex completion entirely                  increased
+           orgasm_generation_failure                       delayed_orgasm                                          slows the integrated orgasmic discharge                  increased
+           orgasm_generation_failure                           anorgasmia                               can eliminate orgasmic completion in severe states                  increased
+                 delayed_ejaculation                      sexual_distress                  persistent ejaculatory delay can become subjectively burdensome                  increased
+                       anejaculation                      sexual_distress                                    complete inhibition commonly increases burden                  increased
+                      delayed_orgasm                      sexual_distress                            prolonged or blunted orgasm increases distress burden                  increased
+        serotonin_sparing_adjustment           serotonergic_hyperactivity                                      reduces excess inhibitory serotonergic load                  decreased
+                    dopamine_support        dopaminergic_hyporesponsivity                        partially restores facilitatory catecholaminergic support                  decreased
+     neurologic_endocrine_correction hypothalamic_pituitary_dysregulation                         reduces reversible endocrine contribution to dysfunction                  decreased
+     neurologic_endocrine_correction autonomic_ejaculatory_output_failure                  reduces reversible neurogenic or endocrine burden on the reflex                  decreased
+
+=== REGION: amygdala ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR1B    2.559043   1.174881           21     0.387505    1.112828
+ HTR2C    5.347992   1.893970          301     0.540620    0.600612
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: hippocampus ===
+Receptors:
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+  DRD4    6.381812   6.585266           24    -0.680638    0.900865
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+ HTR1B    2.482404   1.079986           24     0.099588    1.295148
+ HTR2C    5.141054   2.304227          344     0.472226    1.052155
+  MAOA    5.820193   2.048195          248     0.134833    0.821787
+SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+  TPH2    3.547069   1.534409           16     0.467569    1.057322
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: temporal_limbic_cortex_proxy ===
+Receptors:
+receptor  mean  std
+    AMPA   364   77
+ kainate   372   90
+    NMDA   856  200
+mGluR2_3  2298  331
+   GABAA  1518  281
+   GABAB  1995  484
+      BZ  2404  658
+      M1   459   62
+      M2   216   38
+      M3   910  180
+
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.290300   2.285935            2     0.291100    0.269973
+  COMT    6.486167   3.908275            6     0.319150    0.549426
+  DRD2    3.142360   1.604648            5    -0.509160    0.270374
+  DRD4    7.008167   7.762404            3     0.155367    1.226264
+ HTR1A    4.037533   2.106147            3    -0.153333    0.647374
+ HTR1B    2.830000   1.113735            3     0.460400    0.905525
+ HTR2C    3.683193   1.258295           43    -0.328516    0.601068
+  MAOA    5.736748   2.096701           31    -0.131503    0.388521
+SLC6A4    1.960400   0.502149           11    -0.282045    0.230953
+  TPH2    2.569650   0.997657            2    -0.485900    0.154715
+
+Connectivity:
+<no connectivity profile available>
+
+=== REGION: hypothalamus_proxy ===
+Receptors:
+<no receptor fingerprint available>
+
+Genes:
+<no gene-expression table available>
+
+Connectivity:
+<no connectivity profile available>
+
+=== CIRCUIT CONNECTIVITY ===
+<no circuit connectivity available>
+
+=== SIMULATION: example serotonergic / high-threshold phenotype ===
+
+INPUTS
+polygenic_vulnerability            0.55
+ssri_load                          0.80
+limbic_epileptiform_burden         0.10
+neurological_injury_load           0.10
+peripheral_nerve_damage            0.05
+endocrine_burden                   0.20
+serotonin_sparing_adjustment       0.15
+dopamine_support                   0.10
+neurologic_endocrine_correction    0.20
+
+LATENTS
+serotonergic_hyperactivity              0.4910
+reduced_5ht1a_facilitation              0.3086
+dopaminergic_hyporesponsivity           0.3210
+limbic_temporal_dysregulation           0.1050
+hypothalamic_pituitary_dysregulation    0.0703
+autonomic_ejaculatory_output_failure    0.0305
+orgasm_generation_failure               0.2568
+elevated_ejaculatory_threshold          0.2961
+
+REGIONAL_STATE
+amygdala                        0.1181
+hippocampus                     0.1206
+temporal_limbic_cortex_proxy    0.0787
+hypothalamus_proxy              0.0783
+
+SYMPTOMS
+delayed_ejaculation    0.2516
+anejaculation          0.1015
+delayed_orgasm         0.3104
+anorgasmia             0.2700
+sexual_distress        0.2161
+
+PHENOTYPES
+iatrogenic_serotonergic_de_profile       0.4632
+limbic_neurological_de_profile           0.0963
+endocrine_autonomic_de_profile           0.1381
+severe_anorgasmia_profile                0.2864
+constitutional_high_threshold_profile    0.4145

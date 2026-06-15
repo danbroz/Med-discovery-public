@@ -1,0 +1,109 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                    key      node_type                                   atlas_region                                                  centroid_mni                          feature_summary
+            early_caregiver_deprivation          input                                           None                                                          None                                     None
+               maltreatment_trauma_load          input                                           None                                                          None                                     None
+                     repeated_adversity          input                                           None                                                          None                                     None
+       genetic_epigenetic_vulnerability          input                                           None                                                          None                                     None
+              stable_caregiving_support          input                                           None                                                          None                                     None
+       developmental_enrichment_support          input                                           None                                                          None                                     None
+                               amygdala         region                             LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+                            pfc_control         region                                           None                                                          None                               unresolved
+                nucleus_accumbens_proxy         region AcbM (Ventral Striatum, Medial Accumbens) left    (-7.25139664804469, 8.162011173184368, -8.016759776536318) receptors=no; genes=yes; connectivity=no
+                 hpa_axis_dysregulation latent_biology                                           None                                                          None                                     None
+    dopaminergic_social_reward_blunting latent_biology                                           None                                                          None                                     None
+       social_bonding_signal_disruption latent_biology                                           None                                                          None                                     None
+               gaba_glutamate_imbalance latent_biology                                           None                                                          None                                     None
+      epigenetic_embedding_of_adversity latent_biology                                           None                                                          None                                     None
+altered_neurodevelopmental_architecture latent_biology                                           None                                                          None                                     None
+        frontolimbic_regulatory_failure latent_biology                                           None                                                          None                                     None
+                failure_to_seek_comfort        symptom                                           None                                                          None                                     None
+                limited_positive_affect        symptom                                           None                                                          None                                     None
+                      social_withdrawal        symptom                                           None                                                          None                                     None
+              fear_anxiety_irritability        symptom                                           None                                                          None                                     None
+             emotion_regulation_failure        symptom                                           None                                                          None                                     None
+
+=== Edge sample ===
+                          source                                  target                                                                                  relation rad_change
+     early_caregiver_deprivation                  hpa_axis_dysregulation         disrupts early self-regulation and stress calibration during attachment formation  increased
+     early_caregiver_deprivation        social_bonding_signal_disruption                      weakens the development of affiliative and comfort-seeking signaling  increased
+     early_caregiver_deprivation altered_neurodevelopmental_architecture                          burdens critical-period neural development in regulatory systems  increased
+        maltreatment_trauma_load                  hpa_axis_dysregulation                    drives chronic stress-system dysregulation and cortisol-related burden  increased
+        maltreatment_trauma_load                gaba_glutamate_imbalance shifts inhibitory-excitatory balance toward hyperarousal and potential excitotoxic stress  increased
+        maltreatment_trauma_load       epigenetic_embedding_of_adversity                             promotes stable adversity-linked molecular regulation changes  increased
+              repeated_adversity       epigenetic_embedding_of_adversity                                   reinforces durable biological embedding of early stress  increased
+              repeated_adversity altered_neurodevelopmental_architecture                                       progressively burdens distributed neural maturation  increased
+genetic_epigenetic_vulnerability                  hpa_axis_dysregulation                 raises baseline susceptibility in developmental stress-reactivity systems  increased
+genetic_epigenetic_vulnerability     dopaminergic_social_reward_blunting                      contributes to vulnerability in reward and social motivation systems  increased
+       stable_caregiving_support                  hpa_axis_dysregulation                buffers stress calibration and reduces chronic physiological dysregulation  decreased
+       stable_caregiving_support        social_bonding_signal_disruption                                  supports affiliative safety and comfort-seeking salience  decreased
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- nucleus_accumbens_proxy: AcbM (Ventral Striatum, Medial Accumbens) left
+
+=== Example multimodal summaries ===
+
+[amygdala] receptors rows=0, genes rows=18, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ CD38    5.245664   0.390092           14     0.631479    0.508005
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHBP    4.858607   1.402239           14     0.011086    0.516559
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+
+[pfc_control] receptors rows=0, genes rows=0, connectivity rows=0
+
+[nucleus_accumbens_proxy] receptors rows=0, genes rows=18, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    3.301983   2.125536           12    -1.042192    1.018693
+ CD38    6.121708   0.361229           12     1.205833    0.410510
+ COMT    6.328539   3.669529           36    -0.155356    0.792483
+CRHBP    4.955575   1.584054           12     0.196808    0.932436
+CRHR1    3.910475   2.688631           24    -1.034871    1.128113
+
+=== Circuit connectivity ===
+source_key      source_region              target_key                                  target_region value cohort         modality
+  amygdala LB (Amygdala) left nucleus_accumbens_proxy AcbM (Ventral Striatum, Medial Accumbens) left  None    HCP StreamlineCounts
+
+=== Simulation: inputs ===
+genetic_epigenetic_vulnerability    0.40
+early_caregiver_deprivation         0.85
+maltreatment_trauma_load            0.70
+repeated_adversity                  0.65
+stable_caregiving_support           0.15
+developmental_enrichment_support    0.20
+
+=== Simulation: latents ===
+hpa_axis_dysregulation                     0.6345
+epigenetic_embedding_of_adversity          0.6225
+altered_neurodevelopmental_architecture    0.6098
+dopaminergic_social_reward_blunting        0.5630
+social_bonding_signal_disruption           0.5445
+frontolimbic_regulatory_failure            0.5034
+gaba_glutamate_imbalance                   0.4767
+
+=== Simulation: regional state ===
+amygdala_threat_bias                       0.5579
+nucleus_accumbens_social_reward_deficit    0.4681
+pfc_control_dysfunction                    0.4666
+
+=== Simulation: symptoms ===
+failure_to_seek_comfort       0.5459
+fear_anxiety_irritability     0.5312
+social_withdrawal             0.4965
+emotion_regulation_failure    0.4854
+limited_positive_affect       0.4334
+
+=== Simulation: phenotypes ===
+developmental_trauma_embedding_profile      0.6223
+threat_hyperarousal_profile                 0.5248
+emotionally_withdrawn_attachment_profile    0.4919
+social_reward_detachment_profile            0.4660

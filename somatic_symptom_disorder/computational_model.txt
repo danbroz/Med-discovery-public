@@ -1,0 +1,258 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                   key                                                   label      node_type                                                                                             description                                            atlas_region region_identifier                                                   centroid_mni  volume_mm3                            feature_summary
+               genetic_trait_liability                                 Genetic Trait Liability          input              Inherited liability for mood and anxiety dysregulation as well as somatoform vulnerability                                                    None              None                                                           None         NaN                                       None
+       neuroticism_anxious_temperament                         Neuroticism Anxious Temperament          input         Anxious worrying temperament and negative-affect sensitivity that promote bodily hypervigilance                                                    None              None                                                           None         NaN                                       None
+               early_adversity_history                                 Early Adversity History          input                           Earlier adversity that sensitizes later stress response and symptom appraisal                                                    None              None                                                           None         NaN                                       None
+                   chronic_stress_load                                     Chronic Stress Load          input                          Sustained stress burden that maintains physiological arousal and symptom focus                                                    None              None                                                           None         NaN                                       None
+        depression_anxiety_comorbidity                          Depression Anxiety Comorbidity          input                             Concurrent depression and anxiety loading that shares neurobiology with SSD                                                    None              None                                                           None         NaN                                       None
+                 bodily_sensation_load                                   Bodily Sensation Load          input                         Intensity or persistence of bodily sensations and functional somatic complaints                                                    None              None                                                           None         NaN                                       None
+                      recovery_support                                        Recovery Support          input             Protective support, reassurance, and effective care that reduce escalation of symptom focus                                                    None              None                                                           None         NaN                                       None
+                              amygdala                                      LB (Amygdala) left         region                                                                               Atlas-backed circuit node                                      LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=yes
+                           hippocampus                                  CA1 (Hippocampus) left         region                                                                               Atlas-backed circuit node                                  CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=yes
+                           pfc_control                               Area MFG5 (MFG, IFG) left         region                                                                               Atlas-backed circuit node                               Area MFG5 (MFG, IFG) left              None    (-43.70314919979349, 37.07072792978832, 16.892617449664428)      1937.0  receptors=no; genes=yes; connectivity=yes
+                         caudate_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left   region_proxy                                                                                Atlas-matched proxy node FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left              None   (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0  receptors=no; genes=yes; connectivity=yes
+           stress_system_sensitization                             Stress System Sensitization latent_biology               Stress-system reactivity bias shaped by genes, temperament, adversity, and chronic strain                                                    None              None                                                           None         NaN                                       None
+      monoamine_regulatory_dysfunction                        Monoamine Regulatory Dysfunction latent_biology          Shared serotonergic and noradrenergic dysregulation associated with anxiety/depression overlap                                                    None              None                                                           None         NaN                                       None
+     dopaminergic_motivational_erosion                       Dopaminergic Motivational Erosion latent_biology                      Motivational and energy-system burden contributing to fatigue and reduced interest                                                    None              None                                                           None         NaN                                       None
+          interoceptive_hypervigilance                            Interoceptive Hypervigilance latent_biology                    Excessive monitoring of bodily sensations and exaggerated attention to minor changes                                                    None              None                                                           None         NaN                                       None
+     frontolimbic_threat_dysregulation                       Frontolimbic Threat Dysregulation latent_biology                       Amygdala-PFC imbalance that biases threat appraisal and weakens emotional control                                                    None              None                                                           None         NaN                                       None
+ hippocampal_contextualization_failure                   Hippocampal Contextualization Failure latent_biology                    Reduced ability to contextualize bodily sensations and constrain fear generalization                                                    None              None                                                           None         NaN                                       None
+ frontostriatal_action_inhibition_bias                   Frontostriatal Action Inhibition Bias latent_biology Top-down inhibitory pressure on action and sensorimotor processing relevant to conversion-like symptoms                                                    None              None                                                           None         NaN                                       None
+          somatic_signal_amplification                            Somatic Signal Amplification latent_biology                 Amplification and maladaptive interpretation of bodily signals into persistent distress                                                    None              None                                                           None         NaN                                       None
+           persistent_somatic_distress                             Persistent Somatic Distress        symptom                                          Persistent physical symptoms and distressing bodily complaints                                                    None              None                                                           None         NaN                                       None
+                         illness_worry                                           Illness Worry        symptom                                         Excessive worry focused on bodily symptoms and possible disease                                                    None              None                                                           None         NaN                                       None
+    catastrophic_health_interpretation                      Catastrophic Health Interpretation        symptom                                Catastrophic thinking and worst-case interpretation of bodily sensations                                                    None              None                                                           None         NaN                                       None
+                       fear_of_illness                                         Fear Of Illness        symptom                                       Fearfulness and threat expectancy centered on being seriously ill                                                    None              None                                                           None         NaN                                       None
+                     fatigue_anhedonia                                       Fatigue Anhedonia        symptom                                          Profound fatigue, loss of interest, and motivational depletion                                                    None              None                                                           None         NaN                                       None
+conversion_like_motor_sensory_symptoms                  Conversion Like Motor Sensory Symptoms        symptom                            Functional motor or sensory deficits without corresponding structural lesion                                                    None              None                                                           None         NaN                                       None
+
+=== Edges ===
+                               source                                 target                                                                                relation            ssd_change  weight
+              genetic_trait_liability            stress_system_sensitization                                genetic vulnerability raises stress-reactivity liability             increased    0.34
+              genetic_trait_liability       monoamine_regulatory_dysfunction                       shared inherited mood and anxiety risk loads monoamine regulation             increased    0.28
+      neuroticism_anxious_temperament           interoceptive_hypervigilance                  anxious worrying temperament heightens monitoring of bodily sensations             increased    0.42
+      neuroticism_anxious_temperament      frontolimbic_threat_dysregulation                                     negative-affect temperament biases threat appraisal             increased    0.24
+              early_adversity_history            stress_system_sensitization                             earlier adversity sensitizes later stress-system responding             increased    0.32
+                  chronic_stress_load            stress_system_sensitization                           sustained stress amplifies reactivity and symptom persistence             increased    0.30
+       depression_anxiety_comorbidity       monoamine_regulatory_dysfunction                   anxiety and depression overlap implies shared monoamine dysregulation             increased    0.40
+       depression_anxiety_comorbidity      frontolimbic_threat_dysregulation                         comorbid affective disorders load emotional regulation circuits             increased    0.28
+                bodily_sensation_load           interoceptive_hypervigilance                                more persistent bodily signals promote attention capture             increased    0.30
+                bodily_sensation_load           somatic_signal_amplification                                  ongoing physical sensations feed symptom amplification             increased    0.34
+                     recovery_support            stress_system_sensitization                                            protective support buffers stress escalation             decreased   -0.18
+                     recovery_support           somatic_signal_amplification                                   effective support can reduce escalating symptom focus             decreased   -0.16
+          stress_system_sensitization       monoamine_regulatory_dysfunction                        stress burden worsens mood/anxiety-linked transmitter regulation             increased    0.22
+          stress_system_sensitization      frontolimbic_threat_dysregulation                                  stress sensitization destabilizes amygdala-PFC balance             increased    0.32
+          stress_system_sensitization  hippocampal_contextualization_failure                           chronic stress impairs context processing and fear constraint             increased    0.30
+          stress_system_sensitization  frontostriatal_action_inhibition_bias                                    stress can bias rigid top-down inhibitory responding             increased    0.18
+     monoamine_regulatory_dysfunction      dopaminergic_motivational_erosion                      monoamine disruption contributes to fatigue and reduced motivation             increased    0.34
+     monoamine_regulatory_dysfunction      frontolimbic_threat_dysregulation                         serotonin/norepinephrine imbalance weakens emotional regulation             increased    0.26
+         interoceptive_hypervigilance           somatic_signal_amplification                                  excessive bodily monitoring amplifies symptom salience             increased    0.34
+    frontolimbic_threat_dysregulation           somatic_signal_amplification                              threat-biased appraisal intensifies bodily symptom meaning             increased    0.26
+    frontolimbic_threat_dysregulation                               amygdala                       maps dysregulated threat appraisal onto limbic salience circuitry      increased burden    0.36
+     monoamine_regulatory_dysfunction                            pfc_control                      shared affective dysregulation burdens top-down prefrontal control increased dysfunction    0.30
+hippocampal_contextualization_failure                            hippocampus                                  maps contextualization failure onto hippocampal burden      increased burden    0.34
+frontostriatal_action_inhibition_bias                          caudate_proxy                     fronto-striatal inhibition bias loads caudate-centered action loops      increased burden    0.34
+    frontolimbic_threat_dysregulation                            pfc_control                           control regions are burdened when top-down regulation weakens increased dysfunction    0.32
+         somatic_signal_amplification            persistent_somatic_distress                               amplified bodily signals become persistent symptom burden             increased    0.42
+         interoceptive_hypervigilance                          illness_worry                                 hypervigilance to sensations drives worry about illness             increased    0.34
+                             amygdala                          illness_worry                           threat salience circuitry magnifies bodily danger expectation             increased    0.24
+                          pfc_control                          illness_worry                                    weakened top-down regulation allows worry to persist increased dysfunction    0.18
+                          hippocampus     catastrophic_health_interpretation               poor contextualization favors overgeneralized fear from bodily sensations             increased    0.24
+                          pfc_control     catastrophic_health_interpretation                 executive control failure reduces reappraisal of feared symptom meaning increased dysfunction    0.28
+         somatic_signal_amplification     catastrophic_health_interpretation             amplified bodily signals are more likely to be interpreted catastrophically             increased    0.22
+                        illness_worry                        fear_of_illness                                      persistent worry consolidates illness-related fear             increased    0.36
+   catastrophic_health_interpretation                        fear_of_illness                                       catastrophic appraisals deepen disease expectancy             increased    0.32
+    dopaminergic_motivational_erosion                      fatigue_anhedonia                   dopaminergic burden contributes to low energy and diminished interest             increased    0.38
+          persistent_somatic_distress                      fatigue_anhedonia                                   chronic symptom burden drains motivation and pleasure             increased    0.24
+frontostriatal_action_inhibition_bias conversion_like_motor_sensory_symptoms                          top-down inhibitory bias can contribute to functional deficits             increased    0.32
+                        caudate_proxy conversion_like_motor_sensory_symptoms caudate-centered action planning/inhibition loops support conversion-like presentations             increased    0.28
+                          pfc_control conversion_like_motor_sensory_symptoms              maladaptive prefrontal inhibition can suppress motor or sensory processing increased dysfunction    0.24
+
+=== Resolved regions ===
+     node_key  resolved                                             region_name identifier
+     amygdala      True                                      LB (Amygdala) left       None
+  hippocampus      True                                  CA1 (Hippocampus) left       None
+  pfc_control      True                               Area MFG5 (MFG, IFG) left       None
+caudate_proxy      True FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left       None
+
+=== Receptors: amygdala ===
+(empty)
+
+=== Genes: amygdala ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+
+=== Connectivity profile: amygdala ===
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+                         Ch 4 (Basal Forebrain) left    9.330
+                  Frontal-to-Occipital (GapMap) left    7.855
+
+=== Receptors: pfc_control ===
+(empty)
+
+=== Genes: pfc_control ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    4.941775   2.578961            4    -0.005525    0.550374
+  COMT    6.429092   3.480946           12    -0.026658    0.492167
+ CRHR1    4.830200   2.251988            8    -0.005613    0.706702
+  DRD2    3.103630   1.785936           10    -0.623060    0.371561
+ FKBP5    3.718225   1.908514            8    -0.561275    0.324137
+ HTR1A    4.310350   1.417034            6     0.262783    0.421058
+ HTR2A    7.374030   2.022939           50     0.682386    0.253765
+  MAOA    5.403176   1.895455           62    -0.224561    0.397363
+ NR3C1    9.141040   1.075810           10     0.010710    0.435880
+SLC6A2    1.644550   0.315721            4    -0.210350    0.328474
+
+=== Connectivity profile: pfc_control ===
+                  connected_region    value
+         Frontal-I.1 (GapMap) left 2964.710
+              Area MFG4 (MFG) left 2402.510
+                Area 45 (IFG) left 2145.685
+              Area IFS1 (IFS) left 1091.080
+          Frontal-II (GapMap) left  941.845
+              Area IFS3 (IFS) left  626.650
+Temporal-to-Parietal (GapMap) left  519.785
+               Area 8v2 (MFG) left  511.430
+                Area 44 (IFG) left  352.250
+               Area 8d1 (SFG) left  319.985
+
+=== Receptors: hippocampus ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== Genes: hippocampus ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+ HTR1A    5.652654   2.623296           24     1.054863    1.335226
+ HTR2A    6.079706   2.649687          200     0.028968    0.956248
+  MAOA    5.820193   2.048195          248     0.134833    0.821787
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+
+=== Connectivity profile: hippocampus ===
+                                    connected_region    value
+          Subc (Hippocampus, Subicular complex) left 5205.660
+                  Temporal-to-Parietal (GapMap) left 2875.975
+                Frontal-to-Temporal-II (GapMap) left 2118.815
+                                 Area Ph2 (PhG) left 1448.100
+                                Area FG4 (FusG) left  781.135
+                                Area FG3 (FusG) left  564.870
+                  Frontal-to-Occipital (GapMap) left  540.175
+                      Area hOc1 (V1, 17, CalcS) left  166.740
+Area EC (Hippocampal Region, Entorhinal Cortex) left  166.100
+                             Area hOc4v (LingG) left  139.825
+
+=== Receptors: caudate_proxy ===
+(empty)
+
+=== Genes: caudate_proxy ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.095275   1.373588           12    -1.740383    0.864869
+  COMT    6.334303   3.508445           36    -0.298369    1.144405
+ CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+  DRD2    6.119210   2.344979           30     2.320237    1.023981
+ FKBP5    4.946871   2.609290           24     0.220421    0.612810
+ HTR1A    2.212033   1.165959           18    -0.920606    0.555960
+ HTR2A    5.122333   1.672406          150    -0.381103    0.276388
+  MAOA    5.766845   1.883782          186     0.249987    0.587030
+ NR3C1    8.845813   1.140821           30    -0.905580    0.739992
+SLC6A2    1.461367   0.486896           12    -0.060608    0.507452
+
+=== Connectivity profile: caudate_proxy ===
+                               connected_region    value
+ FuP (Ventral Striatum, Fundus of Putamen) left 4462.355
+        BST (Basal Forebrain, Bed Nucleus) left 3299.035
+                     VP (Ventral Pallidum) left 1944.015
+                          Area Fp1 (FPole) left 1678.720
+                            Area Fo3 (OFC) left 1624.325
+                            Area Fo1 (OFC) left 1560.565
+                          Area Fp2 (FPole) left 1145.105
+AcbL (Ventral Striatum, Lateral Accumbens) left  758.530
+                            Area Fo2 (OFC) left  693.015
+                            Area Fo7 (OFC) left  636.045
+
+=== Circuit connectivity ===
+ source_key             source_region    target_key                                           target_region  mean_streamline_count  n_observations
+   amygdala        LB (Amygdala) left   hippocampus                                  CA1 (Hippocampus) left                 64.260               1
+pfc_control Area MFG5 (MFG, IFG) left caudate_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                  1.845               4
+hippocampus    CA1 (Hippocampus) left caudate_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                  1.610               4
+hippocampus    CA1 (Hippocampus) left   pfc_control                               Area MFG5 (MFG, IFG) left                  0.810               4
+   amygdala        LB (Amygdala) left caudate_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                  0.075               1
+   amygdala        LB (Amygdala) left   pfc_control                               Area MFG5 (MFG, IFG) left                  0.005               1
+
+=== Simulation inputs ===
+genetic_trait_liability            0.56
+neuroticism_anxious_temperament    0.68
+early_adversity_history            0.34
+chronic_stress_load                0.72
+depression_anxiety_comorbidity     0.64
+bodily_sensation_load              0.78
+recovery_support                   0.24
+
+=== Latent biology ===
+stress_system_sensitization              0.5412
+monoamine_regulatory_dysfunction         0.5294
+dopaminergic_motivational_erosion        0.5326
+interoceptive_hypervigilance             0.5583
+frontolimbic_threat_dysregulation        0.4494
+hippocampal_contextualization_failure    0.4305
+frontostriatal_action_inhibition_bias    0.4727
+somatic_signal_amplification             0.5077
+
+=== Regional state ===
+amygdala         0.4921
+pfc_control      0.4378
+hippocampus      0.4104
+caudate_proxy    0.5123
+
+=== Symptoms ===
+persistent_somatic_distress               0.5280
+illness_worry                             0.4624
+catastrophic_health_interpretation        0.4149
+fear_of_illness                           0.3608
+fatigue_anhedonia                         0.4991
+conversion_like_motor_sensory_symptoms    0.4356
+
+=== Phenotypes ===
+hypervigilant_catastrophizing_profile    0.4491
+affective_somatic_profile                0.5188
+conversion_bias_profile                  0.4735
+stress_somatization_profile              0.5066

@@ -1,0 +1,150 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (head) ===
+                              key                                   label    node_type                                                                                                                 description                            atlas_region region_identifier                                                  centroid_mni  volume_mm3                          feature_summary
+          chronic_dependence_load                 Chronic Dependence Load        input                                                Degree of chronic dependence-producing substance exposure before withdrawal.                                    None              None                                                          None         NaN                                     None
+                 abrupt_cessation                        Abrupt Cessation        input                                      Extent to which the substance has been suddenly removed, unmasking counteradaptations.                                    None              None                                                          None         NaN                                     None
+            genetic_vulnerability                   Genetic Vulnerability        input                                           Shared heritable vulnerability to addiction, dependence, and withdrawal severity.                                    None              None                                                          None         NaN                                     None
+ developmental_environmental_load        Developmental Environmental Load        input                                                Environmental and developmental loading that shapes addiction vulnerability.                                    None              None                                                          None         NaN                                     None
+             stress_sensitization                    Stress Sensitization        input                                                  Stress responsivity that can amplify negative affect and relapse pressure.                                    None              None                                                          None         NaN                                     None
+                     cue_exposure                            Cue Exposure        input                                    Exposure to medication-related cues that reactivate reward-memory circuitry during abstinence.                                    None              None                                                          None         NaN                                     None
+sedative_hypnotic_withdrawal_risk       Sedative Hypnotic Withdrawal Risk        input                                  Specific loading toward severe GABA/glutamate-rebound states such as seizures or delirium.                                    None              None                                                          None         NaN                                     None
+              psychosis_liability                     Psychosis Liability        input                                      Underlying liability for mesolimbic dopaminergic dysregulation and psychotic symptoms.                                    None              None                                                          None         NaN                                     None
+                 recovery_support                        Recovery Support        input                                                 Protective recovery structure, supervision, and relapse-prevention support.                                    None              None                                                          None         NaN                                     None
+    medical_stabilization_support           Medical Stabilization Support        input                                 Protective acute stabilization and monitoring that can buffer severe withdrawal physiology.                                    None              None                                                          None         NaN                                     None
+                         amygdala                      LB (Amygdala) left       region  Direct atlas anchor for reward-memory-emotion circuitry repeatedly named in cue-reactivity and withdrawal negative affect.                      LB (Amygdala) left              None (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0 receptors=no; genes=yes; connectivity=no
+          extended_amygdala_proxy BST (Basal Forebrain, Bed Nucleus) left region_proxy Conservative proxy for the extended amygdala and related stress circuitry driving dysphoria, anxiety, and relapse pressure. BST (Basal Forebrain, Bed Nucleus) left              None (-6.319999999999993, 1.2742857142857247, -2.9257142857142924)       175.0 receptors=no; genes=yes; connectivity=no
+
+=== Edges (head) ===
+                          source                        target                                                                          relation ousw_change
+         chronic_dependence_load  allostatic_counteradaptation             chronic exposure forces the brain into a new pathological equilibrium   increased
+                abrupt_cessation  allostatic_counteradaptation                                    substance removal unmasks compensatory changes   increased
+           genetic_vulnerability  allostatic_counteradaptation                          heritable vulnerability shapes withdrawal susceptibility   increased
+developmental_environmental_load  allostatic_counteradaptation           environmental and developmental loading raises withdrawal vulnerability   increased
+         chronic_dependence_load     camp_creb_gene_adaptation chronic medication exposure induces intracellular signaling and transcriptional changes   increased
+    allostatic_counteradaptation     camp_creb_gene_adaptation    pathological adaptation becomes stabilized through cAMP/CREB-linked plasticity   increased
+       camp_creb_gene_adaptation       reward_hypodopaminergia               long-term synaptic changes help sustain a withdrawal reward deficit   increased
+    allostatic_counteradaptation       reward_hypodopaminergia                    withdrawal unmasks hypoactive reward signaling in the striatum   increased
+            stress_sensitization stress_system_hyperreactivity                          stress responsivity amplifies withdrawal negative affect   increased
+    allostatic_counteradaptation stress_system_hyperreactivity                                    withdrawal exposes overactive stress circuitry   increased
+         chronic_dependence_load    white_matter_disconnection                     chronic substance exposure can degrade white-matter integrity   increased
+       camp_creb_gene_adaptation    white_matter_disconnection            stable plasticity changes alter connectivity and synaptic organization   increased
+
+=== Region resolution ===
+               node_key  resolved                                                                                            requested_candidates                                  resolved_name identifier
+               amygdala      True                           [LB (Amygdala) left, CM (Amygdala) left, SF (Amygdala) left, amygdala left, amygdala]                             LB (Amygdala) left       None
+extended_amygdala_proxy      True                [BST (Bed Nucleus) left, LB (Amygdala) left, SF (Amygdala) left, bed nucleus, extended amygdala]        BST (Basal Forebrain, Bed Nucleus) left       None
+            hippocampus      True [CA1 (Hippocampus) left, DG (Hippocampus) left, HC-Subiculum (Hippocampus) left, hippocampus left, hippocampus]                         CA1 (Hippocampus) left       None
+                 insula      True                   [Area Id2 (Insula) left, Area Id3 (Insula) left, Area Id1 (Insula) left, insula left, insula]                         Area Id2 (Insula) left       None
+prefrontal_cortex_proxy      True                        [Area 46 left, Area 9 left, Area 45 (IFG) left, Area s32 (sACC) left, prefrontal cortex]                             Area 45 (IFG) left       None
+         striatum_proxy      True                                 [putamen left, caudate nucleus left, striatum, ventral striatum, basal ganglia] FuP (Ventral Striatum, Fundus of Putamen) left       None
+    basal_ganglia_proxy      True                                                   [putamen left, caudate nucleus left, basal ganglia, striatum] FuP (Ventral Striatum, Fundus of Putamen) left       None
+         thalamus_proxy      True                       [thalamus, CGM (Metathalamus) left, CGL (Metathalamus) left, metathalamus, thalamus left]                                       thalamus       None
+
+=== Example connectivity subgraph ===
+                         amygdala  extended_amygdala_proxy  hippocampus   insula  prefrontal_cortex_proxy  basal_ganglia_proxy  basal_ganglia_proxy  thalamus_proxy
+amygdala                  244.570                    0.175        64.26    0.000                    0.030                1.120                1.120             0.0
+extended_amygdala_proxy     0.175                 2179.055         0.85    0.015                   10.865              337.375              337.375             0.0
+hippocampus                64.260                    0.850      1685.40    0.020                    1.410               11.510               11.510             0.0
+insula                      0.000                    0.015         0.02  222.795                    3.005                0.395                0.395             0.0
+prefrontal_cortex_proxy     0.030                   10.865         1.41    3.005                 4180.905               89.385               89.385             0.0
+basal_ganglia_proxy         1.120                  337.375        11.51    0.395                   89.385             3774.225             3774.225             0.0
+basal_ganglia_proxy         1.120                  337.375        11.51    0.395                   89.385             3774.225             3774.225             0.0
+thalamus_proxy              0.000                    0.000         0.00    0.000                    0.000                0.000                0.000             0.0
+
+=== Example receptor table (first non-empty region) ===
+[hippocampus]
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== Example gene table (first non-empty region) ===
+[amygdala]
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ADCY1    5.844838   2.803514           21    -0.446676    0.885484
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CREB1    5.164336   1.499069           28    -0.946468    1.243605
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD3    2.195912   0.927252           49     0.395627    0.817122
+  FOSB    3.862507   2.528092           14     0.616900    0.823783
+GABRA1    6.930668   2.949527          343    -0.417487    0.825505
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+
+=== Example connectivity profile (first non-empty region) ===
+[thalamus_proxy]
+                     connected_region  value
+Po (Thalamus, posterior Nucleus) left    0.0
+
+=== Simulated example ===
+
+-- inputs --
+abrupt_cessation                     0.90
+chronic_dependence_load              0.85
+cue_exposure                         0.75
+stress_sensitization                 0.70
+genetic_vulnerability                0.55
+developmental_environmental_load     0.50
+sedative_hypnotic_withdrawal_risk    0.45
+psychosis_liability                  0.35
+recovery_support                     0.30
+medical_stabilization_support        0.25
+
+-- latents --
+allostatic_counteradaptation                 0.6820
+reward_hypodopaminergia                      0.6344
+cue_reactivity_craving_circuit               0.6009
+camp_creb_gene_adaptation                    0.5980
+stress_system_hyperreactivity                0.5792
+gaba_glutamate_imbalance                     0.5295
+white_matter_disconnection                   0.4948
+interoceptive_urge_awareness                 0.4938
+frontostriatal_control_failure               0.4812
+prefrontal_hypofunction                      0.4786
+mesolimbic_dopamine_dysregulation            0.4538
+cortical_hyperexcitability                   0.4072
+basal_ganglia_thalamocortical_dysfunction    0.3857
+
+-- regional_state --
+hippocampus                0.5045
+striatum_proxy             0.5045
+amygdala                   0.4866
+insula                     0.4309
+prefrontal_cortex_proxy    0.4055
+extended_amygdala_proxy    0.3973
+thalamus_proxy             0.3263
+basal_ganglia_proxy        0.2759
+
+-- symptoms --
+anhedonia                     0.4435
+cognitive_impairment          0.4171
+craving                       0.4110
+memory_impairment             0.3879
+psychosis                     0.3821
+withdrawal_negative_affect    0.3779
+executive_dyscontrol          0.3591
+catatonia                     0.2818
+seizures_delirium             0.2722
+relapse_vulnerability         0.2700
+
+-- phenotypes --
+psychosis_vulnerable_withdrawal_profile     0.4468
+negative_affect_craving_profile             0.4108
+cognitive_withdrawal_profile                0.3880
+relapse_pressure_profile                    0.3850
+severe_hyperexcitable_withdrawal_profile    0.3204

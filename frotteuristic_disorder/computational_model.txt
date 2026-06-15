@@ -1,0 +1,201 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                  key      node_type                                                   label                                            atlas_region                            feature_summary
+ genetic_impulsivity_reward_liability          input                    Genetic Impulsivity Reward Liability                                                    None                                       None
+             early_life_stress_trauma          input                                Early Life Stress Trauma                                                    None                                       None
+               chronic_stress_tension          input                                  Chronic Stress Tension                                                    None                                       None
+    cue_rich_crowded_context_exposure          input                       Cue Rich Crowded Context Exposure                                                    None                                       None
+   pathological_reinforcement_history          input                      Pathological Reinforcement History                                                    None                                       None
+            executive_control_support          input                               Executive Control Support                                                    None                                       None
+            stress_regulation_support          input                               Stress Regulation Support                                                    None                                       None
+                                  ofc         region                                     Area Fo4 (OFC) left                                     Area Fo4 (OFC) left  receptors=no; genes=yes; connectivity=yes
+                                dlpfc         region                                      Area 45 (IFG) left                                      Area 45 (IFG) left receptors=yes; genes=yes; connectivity=yes
+                             amygdala         region                                      LB (Amygdala) left                                      LB (Amygdala) left   receptors=no; genes=yes; connectivity=no
+               ventral_striatum_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=yes
+        hpa_axis_stress_sensitization latent_biology                           Hpa Axis Stress Sensitization                                                    None                                       None
+ serotonergic_impulse_control_deficit latent_biology                    Serotonergic Impulse Control Deficit                                                    None                                       None
+    dopaminergic_reward_salience_bias latent_biology                       Dopaminergic Reward Salience Bias                                                    None                                       None
+           frontolimbic_disconnection latent_biology                              Frontolimbic Disconnection                                                    None                                       None
+        prefrontal_inhibitory_failure latent_biology                           Prefrontal Inhibitory Failure                                                    None                                       None
+    amygdala_salience_hyperreactivity latent_biology                       Amygdala Salience Hyperreactivity                                                    None                                       None
+          cue_primed_action_readiness latent_biology                             Cue Primed Action Readiness                                                    None                                       None
+        recurrent_frotteuristic_urges        symptom                           Recurrent Frotteuristic Urges                                                    None                                       None
+        cue_triggered_urge_escalation        symptom                           Cue Triggered Urge Escalation                                                    None                                       None
+boundary_violating_contact_propensity        symptom                   Boundary Violating Contact Propensity                                                    None                                       None
+                compulsive_repetition        symptom                                   Compulsive Repetition                                                    None                                       None
+           secrecy_escape_orientation        symptom                              Secrecy Escape Orientation                                                    None                                       None
+                  distress_impairment        symptom                                     Distress Impairment                                                    None                                       None
+
+=== EDGES ===
+                               source                                target                                                                     relation frotteuristic_change
+ genetic_impulsivity_reward_liability  serotonergic_impulse_control_deficit                    raises inherited vulnerability in impulse-control systems            increased
+ genetic_impulsivity_reward_liability     dopaminergic_reward_salience_bias        raises inherited vulnerability in reward-seeking and salience systems            increased
+             early_life_stress_trauma         hpa_axis_stress_sensitization            can increase long-term stress responsivity and threshold lowering            increased
+             early_life_stress_trauma            frontolimbic_disconnection   can weaken prefrontal-limbic coupling through developmental stress effects            increased
+               chronic_stress_tension         hpa_axis_stress_sensitization                          elevates stress-hormone burden and arousal pressure            increased
+    cue_rich_crowded_context_exposure     amygdala_salience_hyperreactivity provides salient external triggers for emotional and motivational activation            increased
+    cue_rich_crowded_context_exposure           cue_primed_action_readiness                              potentiates trigger-linked readiness for action            increased
+   pathological_reinforcement_history     dopaminergic_reward_salience_bias        strengthens incentive salience through prior reward or tension relief            increased
+   pathological_reinforcement_history           cue_primed_action_readiness sensitizes the action sequence through repetition and conditioned expectancy            increased
+            executive_control_support         prefrontal_inhibitory_failure                   supports stronger inhibitory gating and reduces discontrol            decreased
+            stress_regulation_support         hpa_axis_stress_sensitization          buffers chronic arousal and lowers stress-linked threshold collapse            decreased
+        hpa_axis_stress_sensitization         prefrontal_inhibitory_failure                                       impairs executive control under stress            increased
+        hpa_axis_stress_sensitization     amygdala_salience_hyperreactivity                             raises emotional and motivational responsiveness            increased
+ serotonergic_impulse_control_deficit         prefrontal_inhibitory_failure             reduces the capacity to suppress inappropriate action tendencies            increased
+    dopaminergic_reward_salience_bias           cue_primed_action_readiness                            amplifies the pull of cues and anticipated reward            increased
+           frontolimbic_disconnection         prefrontal_inhibitory_failure                          reduces top-down regulation of arousal and impulses            increased
+           frontolimbic_disconnection     amygdala_salience_hyperreactivity                                permits greater unmodulated limbic reactivity            increased
+        prefrontal_inhibitory_failure                                   ofc increases dysfunction burden in orbitofrontal inhibitory valuation circuitry            increased
+        prefrontal_inhibitory_failure                                 dlpfc     increases dysfunction burden in dorsolateral executive-control circuitry            increased
+    amygdala_salience_hyperreactivity                              amygdala                    raises limbic arousal burden in trigger and stress states            increased
+    dopaminergic_reward_salience_bias                ventral_striatum_proxy         increases dysregulation burden in reward and reinforcement circuitry            increased
+          cue_primed_action_readiness         recurrent_frotteuristic_urges                          supports rapid emergence and strengthening of urges            increased
+    amygdala_salience_hyperreactivity         cue_triggered_urge_escalation                        accelerates urge intensity in trigger-rich conditions            increased
+          cue_primed_action_readiness         cue_triggered_urge_escalation                                 lowers the provocation needed for escalation            increased
+        prefrontal_inhibitory_failure boundary_violating_contact_propensity   weakens inhibition of behavior that breaches consent and social boundaries            increased
+        recurrent_frotteuristic_urges boundary_violating_contact_propensity                        provides motivational pressure toward acting on urges            increased
+    dopaminergic_reward_salience_bias                 compulsive_repetition               supports repetition through wanting and reinforcement pressure            increased
+   pathological_reinforcement_history                 compulsive_repetition    maintains repetition through learned tension relief and reward expectancy            increased
+    cue_rich_crowded_context_exposure            secrecy_escape_orientation              favors environments allowing covert action and perceived escape            increased
+boundary_violating_contact_propensity                   distress_impairment                increases the overall burden and consequences of the syndrome            increased
+                compulsive_repetition                   distress_impairment    increases burden through repetition, preoccupation, and functional impact            increased
+
+=== REGION RESOLUTION ===
+ofc: Area Fo4 (OFC) left
+dlpfc: Area 45 (IFG) left
+amygdala: LB (Amygdala) left
+ventral_striatum_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== FEATURES: amygdala ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+ DRD4    6.954405   6.242902           21     0.339352    1.290183
+Connectivity:
+<none>
+
+=== FEATURES: ofc ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.623275   1.783520            8     0.213975    0.107743
+ COMT    6.309525   3.411804           24    -0.136267    0.423556
+CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+ DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ DRD4    6.744192   6.803711           12     0.012533    0.887891
+Connectivity:
+                                       connected_region    value
+                                    Area Fo3 (OFC) left 2218.500
+                                    Area Fo7 (OFC) left 1055.200
+         FuP (Ventral Striatum, Fundus of Putamen) left  812.060
+                                  Area Fp1 (FPole) left  600.190
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  495.015
+
+=== FEATURES: dlpfc ===
+Receptors:
+receptor  mean  std
+    AMPA   472  379
+ kainate   434  264
+    NMDA  1078   40
+   GABAA  1515  283
+   GABAB  1428 1197
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.458628   1.916819           18     0.350511    0.619580
+ COMT    6.448093   3.394208           54    -0.108374    0.706085
+CRHR1    5.041300   2.010939           36     0.353247    0.661870
+ DRD2    2.945380   1.742219           45    -0.608476    0.634670
+ DRD4    7.015181   6.348428           27     0.363485    0.742558
+Connectivity:
+                 connected_region    value
+        Frontal-I.1 (GapMap) left 2925.345
+               Area 44 (IFG) left 2882.180
+        Area MFG5 (MFG, IFG) left 2145.685
+Area Op9 (Frontal Operculum) left 1541.335
+         Frontal-II (GapMap) left 1369.710
+
+=== FEATURES: ventral_striatum_proxy ===
+Receptors:
+<none>
+Genes:
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    2.095275   1.373588           12    -1.740383    0.864869
+ COMT    6.334303   3.508445           36    -0.298369    1.144405
+CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+ DRD2    6.119210   2.344979           30     2.320237    1.023981
+ DRD4    6.639983   6.431988           18    -0.214961    1.158365
+Connectivity:
+                              connected_region    value
+FuP (Ventral Striatum, Fundus of Putamen) left 4462.355
+       BST (Basal Forebrain, Bed Nucleus) left 3299.035
+                    VP (Ventral Pallidum) left 1944.015
+                         Area Fp1 (FPole) left 1678.720
+                           Area Fo3 (OFC) left 1624.325
+
+=== CIRCUIT CONNECTIVITY ===
+            source_key                                           source_region             target_key                                           target_region   value
+                   ofc                                     Area Fo4 (OFC) left ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 495.015
+ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                    ofc                                     Area Fo4 (OFC) left 495.015
+                   ofc                                     Area Fo4 (OFC) left                  dlpfc                                      Area 45 (IFG) left  18.875
+                 dlpfc                                      Area 45 (IFG) left                    ofc                                     Area Fo4 (OFC) left  18.875
+                 dlpfc                                      Area 45 (IFG) left ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left   6.910
+ventral_striatum_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left                  dlpfc                                      Area 45 (IFG) left   6.910
+
+=== SIMULATION: INPUTS ===
+genetic_impulsivity_reward_liability    0.65
+early_life_stress_trauma                0.40
+chronic_stress_tension                  0.70
+cue_rich_crowded_context_exposure       0.75
+pathological_reinforcement_history      0.55
+executive_control_support               0.30
+stress_regulation_support               0.25
+
+=== SIMULATION: LATENTS ===
+dopaminergic_reward_salience_bias       0.548
+cue_primed_action_readiness             0.531
+amygdala_salience_hyperreactivity       0.444
+hpa_axis_stress_sensitization           0.426
+serotonergic_impulse_control_deficit    0.403
+prefrontal_inhibitory_failure           0.350
+frontolimbic_disconnection              0.282
+
+=== SIMULATION: REGIONAL STATE ===
+ventral_striatum_proxy    0.442
+amygdala                  0.343
+dlpfc                     0.281
+ofc                       0.279
+
+=== SIMULATION: SYMPTOMS ===
+cue_triggered_urge_escalation            0.511
+secrecy_escape_orientation               0.502
+recurrent_frotteuristic_urges            0.496
+compulsive_repetition                    0.475
+distress_impairment                      0.453
+boundary_violating_contact_propensity    0.359
+
+=== SIMULATION: PHENOTYPES ===
+covert_public_trigger_profile          0.594
+compulsive_repetition_profile          0.524
+stress_primed_impulse_profile          0.520
+frotteuristic_disorder_core_profile    0.446
+boundary_violation_risk_profile        0.434

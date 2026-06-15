@@ -1,0 +1,100 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 14) ===
+                               key                              label    node_type                                                                                                                                                                                                          description           atlas_region region_identifier                                                   centroid_mni  volume_mm3                            feature_summary
+                 acute_stress_load                  Acute Stress Load        input                                                                                                                                    Current acute stressor burden triggering rapid autonomic and endocrine responses.                   None              None                                                           None         NaN                                       None
+               chronic_stress_load                Chronic Stress Load        input                                                                                                                                    Sustained stress exposure that can dysregulate neuroendocrine and immune systems.                   None              None                                                           None         NaN                                       None
+            medical_illness_burden             Medical Illness Burden        input                                                                                                                          Severity of ongoing medical illness, which can amplify psychological and biological stress.                   None              None                                                           None         NaN                                       None
+         inflammatory_medical_load          Inflammatory Medical Load        input                                                                                                              Inflammatory or cytokine-heavy medical burden, including autoimmune or cytokine-treatment-like effects.                   None              None                                                           None         NaN                                       None
+family_history_affective_disorders Family History Affective Disorders        input                                                                                                          Inherited affective vulnerability increasing the probability of severe mood responses to illness or stress.                   None              None                                                           None         NaN                                       None
+                 early_life_stress                  Early Life Stress        input                                                                                                               Early adversity capable of leaving durable epigenetic effects on stress and reward/attachment systems.                   None              None                                                           None         NaN                                       None
+     cerebrovascular_lesion_burden      Cerebrovascular Lesion Burden        input                                                                                                             Stroke or focal lesion burden, especially relevant to left anterior frontal and left basal-ganglia risk.                   None              None                                                           None         NaN                                       None
+      integrated_treatment_support       Integrated Treatment Support        input                                                                                                                    Protective support from psychotherapy, pharmacotherapy, and coordinated medical-psychiatric care.                   None              None                                                           None         NaN                                       None
+         stress_regulation_support          Stress Regulation Support        input                                                                                                            Protective coping structure or stress-management support that can dampen physiological stress reactivity.                   None              None                                                           None         NaN                                       None
+                     left_amygdala                 LB (Amygdala) left       region                                                                 Amygdala node representing threat reactivity and emotional hyper-responsiveness observed in stress- and depression-related frontolimbic dysfunction.     LB (Amygdala) left              None  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=yes
+            left_hippocampus_proxy             CA1 (Hippocampus) left region_proxy                                                                                                         Hippocampal proxy for chronic-stress-linked volume loss, memory burden, and reduced neuroplastic resilience. CA1 (Hippocampus) left              None (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=yes
+ left_anterior_frontal_dlpfc_proxy  Left Anterior Frontal Dlpfc Proxy region_proxy Left anterior frontal / dorsolateral prefrontal proxy for cognitive control, stress regulation, and the left anterior frontal lesion burden linked to post-stroke depression. Unresolved in the current environment.                   None              None                                                           None         NaN                                 unresolved
+                    left_acc_proxy               Area p32 (pACC) left region_proxy                                                                                          Anterior cingulate proxy for conflict monitoring, affect regulation, and the pain-affect overlap emphasized in the chapter.   Area p32 (pACC) left              None    (-6.9639365918097695, 49.28771466314399, 9.933289299867894)      7570.0  receptors=no; genes=yes; connectivity=yes
+               subgenual_acc_proxy               Area s24 (sACC) left region_proxy                                                                         Subgenual anterior cingulate proxy for the depression-linked limbic-cingulate hyperactivity pattern described in functional imaging studies.   Area s24 (sACC) left              None    (-4.674531575294935, 25.271339347675223, -10.9972241498959)      1441.0  receptors=no; genes=yes; connectivity=yes
+
+=== Edge count ===
+41
+
+=== Resolved regions ===
+- left_amygdala: LB (Amygdala) left
+- left_hippocampus_proxy: CA1 (Hippocampus) left
+- left_acc_proxy: Area p32 (pACC) left
+- subgenual_acc_proxy: Area s24 (sACC) left
+- left_basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== Connectivity among resolved circuit nodes ===
+                source                   target    value
+        left_acc_proxy      subgenual_acc_proxy 1537.350
+   subgenual_acc_proxy left_basal_ganglia_proxy  518.855
+        left_acc_proxy left_basal_ganglia_proxy  410.810
+         left_amygdala   left_hippocampus_proxy   64.260
+left_hippocampus_proxy           left_acc_proxy    3.400
+left_hippocampus_proxy left_basal_ganglia_proxy    1.610
+left_hippocampus_proxy      subgenual_acc_proxy    0.970
+         left_amygdala      subgenual_acc_proxy    0.110
+         left_amygdala           left_acc_proxy    0.075
+         left_amygdala left_basal_ganglia_proxy    0.075
+
+=== Example receptor / gene / connectivity tables ===
+
+Node: left_amygdala
+  receptors rows: 0
+  genes rows: 14
+  connectivity rows: 15
+
+Node: left_anterior_frontal_dlpfc_proxy
+  receptors rows: 0
+  genes rows: 0
+  connectivity rows: 0
+
+Node: subgenual_acc_proxy
+  receptors rows: 0
+  genes rows: 14
+  connectivity rows: 15
+
+=== Latent biology ===
+affective_genetic_vulnerability            0.390
+epigenetic_stress_embedding                0.498
+autonomic_endocrine_stress_activation      0.506
+noradrenergic_arousal                      0.441
+inflammatory_cytokine_signaling            0.536
+hippocampal_neuroplasticity_loss           0.520
+frontolimbic_emotion_regulation_failure    0.433
+lesion_sensitized_affective_risk           0.257
+sickness_behavior_drive                    0.538
+pain_affect_overlap_processing             0.408
+
+=== Regional state ===
+left_amygdala                        0.416
+left_hippocampus_proxy               0.509
+left_anterior_frontal_dlpfc_proxy    0.361
+left_acc_proxy                       0.414
+subgenual_acc_proxy                  0.408
+left_basal_ganglia_proxy             0.360
+
+=== Symptoms ===
+depressive_symptoms               0.359
+anxiety_distress                  0.379
+sickness_behavior                 0.490
+cognitive_disturbance             0.383
+pain_amplification                0.340
+medical_condition_exacerbation    0.407
+post_stroke_depression_risk       0.274
+
+=== Phenotypes ===
+stress_inflammation_cycle_profile         0.493
+depression_medical_interaction_profile    0.421
+post_stroke_affective_risk_profile        0.313
+pain_stress_overlap_profile               0.385
+overall_psychological_medical_burden      0.388

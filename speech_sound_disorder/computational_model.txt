@@ -1,0 +1,162 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes (first 24) ===
+                                            key                                           label      node_type                                                                                                   description                               atlas_region region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+              genetic_speech_language_liability               Genetic Speech Language Liability          input                        Familial and polygenic liability affecting speech, language, and learning development.                                       None              None                                                           None         NaN                                      None
+        congenital_cortical_maldevelopment_load         Congenital Cortical Maldevelopment Load          input        Burden of congenital forebrain or cortical developmental anomalies that disrupt language architecture.                                       None              None                                                           None         NaN                                      None
+                   corpus_callosum_anomaly_load                    Corpus Callosum Anomaly Load          input                 Burden of callosal abnormality impairing interhemispheric communication relevant to language.                                       None              None                                                           None         NaN                                      None
+          cerebellar_developmental_anomaly_load           Cerebellar Developmental Anomaly Load          input                   Burden of cerebellar developmental disruption affecting timing, coordination, and learning.                                       None              None                                                           None         NaN                                      None
+           acquired_childhood_brain_lesion_load            Acquired Childhood Brain Lesion Load          input                      Burden of pediatric brain injury from stroke, trauma, infection, or other focal lesions.                                       None              None                                                           None         NaN                                      None
+             perinatal_white_matter_injury_load              Perinatal White Matter Injury Load          input                                 Burden of perinatal white-matter injury such as periventricular leukomalacia.                                       None              None                                                           None         NaN                                      None
+     shared_neurodevelopmental_comorbidity_load      Shared Neurodevelopmental Comorbidity Load          input      Shared developmental burden associated with executive, attentional, or broader language vulnerabilities.                                       None              None                                                           None         NaN                                      None
+             developmental_intervention_support              Developmental Intervention Support          input        Protective effect of early intervention, therapy, enriched learning context, and compensatory support.                                       None              None                                                           None         NaN                                      None
+              temporal_auditory_language_cortex                            Area Te 3 (STG) left         region                                                                    Atlas-backed circuit node or proxy anchor.                       Area Te 3 (STG) left              None (-63.756468797564686, -10.335616438356169, 0.6689497716894977)      3942.0  receptors=no; genes=yes; connectivity=no
+                     frontal_speech_motor_proxy                              Area 44 (IFG) left         region                                                                    Atlas-backed circuit node or proxy anchor.                         Area 44 (IFG) left              None    (-53.1196388261851, 16.236518685728612, 12.396287935791321)      3987.0 receptors=yes; genes=yes; connectivity=no
+                          corpus_callosum_proxy                           Corpus Callosum Proxy         region                                       Atlas-backed node or conservative proxy unresolved in this environment.                                       None              None                                                           None         NaN                                unresolved
+                               cerebellum_proxy      Nfast (Cerebellum, Fastigial Nucleus) left         region                                                                    Atlas-backed circuit node or proxy anchor. Nfast (Cerebellum, Fastigial Nucleus) left              None  (-4.769230769230774, -55.121794871794876, -29.47435897435897)       156.0  receptors=no; genes=yes; connectivity=no
+          developmental_plasticity_compensation           Developmental Plasticity Compensation latent_biology        Partially adaptive reorganization of language function after early injury or developmental disruption.                                       None              None                                                           None         NaN                                      None
+      transcriptional_speech_network_disruption       Transcriptional Speech Network Disruption latent_biology Speech-language network vulnerability linked to developmental gene regulation, exemplified by FOXP2 pathways.                                       None              None                                                           None         NaN                                      None
+       axon_guidance_language_wiring_disruption        Axon Guidance Language Wiring Disruption latent_biology    Disrupted long-range wiring and phonological-network formation linked to axon-guidance and language genes.                                       None              None                                                           None         NaN                                      None
+                     white_matter_disconnection                      White Matter Disconnection latent_biology                     Disconnection across developing speech-language pathways due to injury or maldevelopment.                                       None              None                                                           None         NaN                                      None
+   frontostriatal_executive_modulation_weakness    Frontostriatal Executive Modulation Weakness latent_biology    Reduced executive modulation of speech and language processing in shared neurodevelopmental burden states.                                       None              None                                                           None         NaN                                      None
+        auditory_phonological_encoding_weakness         Auditory Phonological Encoding Weakness latent_biology                                      Weak auditory discrimination and phonological encoding of speech sounds.                                       None              None                                                           None         NaN                                      None
+              speech_motor_planning_instability               Speech Motor Planning Instability latent_biology                       Imprecise planning and sequencing of speech movements, including dyspraxia-like burden.                                       None              None                                                           None         NaN                                      None
+  interhemispheric_language_integration_failure   Interhemispheric Language Integration Failure latent_biology                                 Poor integration across hemispheres for language and speech-sound processing.                                       None              None                                                           None         NaN                                      None
+cerebellar_timing_sensorimotor_learning_deficit Cerebellar Timing Sensorimotor Learning Deficit latent_biology                                      Impaired timing and sensorimotor calibration of speech-related learning.                                       None              None                                                           None         NaN                                      None
+                   phonological_encoding_errors                    Phonological Encoding Errors        symptom                                                Difficulty representing or selecting speech sounds accurately.                                       None              None                                                           None         NaN                                      None
+                        articulation_inaccuracy                         Articulation Inaccuracy        symptom                                                                        Imprecise production of speech sounds.                                       None              None                                                           None         NaN                                      None
+                     inconsistent_speech_output                      Inconsistent Speech Output        symptom                                                           Variable production across repetitions or contexts.                                       None              None                                                           None         NaN                                      None
+
+=== Edges ===
+                                         source                                          target                                                                                 relation ssd_change
+              genetic_speech_language_liability       transcriptional_speech_network_disruption           raises developmental vulnerability of speech-language transcriptional programs  increased
+              genetic_speech_language_liability        axon_guidance_language_wiring_disruption          raises vulnerability of language-network wiring and phonological endophenotypes  increased
+        congenital_cortical_maldevelopment_load                      white_matter_disconnection         disrupts the developmental architecture needed for coordinated language networks  increased
+                   corpus_callosum_anomaly_load   interhemispheric_language_integration_failure        impairs interhemispheric communication relevant to language and complex cognition  increased
+          cerebellar_developmental_anomaly_load cerebellar_timing_sensorimotor_learning_deficit                 impairs timing, coordination, and learning support for speech production  increased
+           acquired_childhood_brain_lesion_load                      white_matter_disconnection                           can disconnect speech-language pathways after pediatric injury  increased
+           acquired_childhood_brain_lesion_load         auditory_phonological_encoding_weakness           can damage temporal auditory-language systems and weaken speech-sound encoding  increased
+             perinatal_white_matter_injury_load                      white_matter_disconnection        damages developing white-matter pathways needed for coordinated language function  increased
+     shared_neurodevelopmental_comorbidity_load    frontostriatal_executive_modulation_weakness         adds executive and attentional inefficiency that can worsen speech-sound control  increased
+             developmental_intervention_support           developmental_plasticity_compensation                     supports compensatory learning and partial functional reorganization  increased
+      transcriptional_speech_network_disruption               speech_motor_planning_instability                                can produce dyspraxia-like planning and sequencing burden  increased
+       axon_guidance_language_wiring_disruption         auditory_phonological_encoding_weakness          weakens the developmental wiring needed for robust phonological representations  increased
+       axon_guidance_language_wiring_disruption   interhemispheric_language_integration_failure                         burdens long-range integration across language-relevant networks  increased
+                     white_matter_disconnection                           corpus_callosum_proxy          is represented through disrupted callosal and white-matter integration pathways  increased
+        auditory_phonological_encoding_weakness               temporal_auditory_language_cortex                            is represented through temporal auditory-language dysfunction  increased
+              speech_motor_planning_instability                      frontal_speech_motor_proxy                           is represented through frontal speech-motor planning circuitry  increased
+cerebellar_timing_sensorimotor_learning_deficit                                cerebellum_proxy                        is represented through cerebellar support for timing and learning  increased
+              temporal_auditory_language_cortex                    phonological_encoding_errors       temporal auditory-language dysfunction contributes to speech-sound encoding errors  increased
+                     frontal_speech_motor_proxy                         articulation_inaccuracy                  frontal speech-motor burden contributes to inaccurate speech production  increased
+                               cerebellum_proxy                      inconsistent_speech_output                         cerebellar timing and learning burden can increase inconsistency  increased
+  interhemispheric_language_integration_failure                  reduced_speech_intelligibility             poor integration across language systems degrades stable intelligible output  increased
+        auditory_phonological_encoding_weakness             receptive_auditory_language_overlap can extend to auditory-language comprehension overlap when temporal systems are affected  increased
+                   phonological_encoding_errors                  reduced_speech_intelligibility                                          reduces listener comprehension of speech output  increased
+                        articulation_inaccuracy                  reduced_speech_intelligibility                                                         reduces clarity of spoken output  increased
+                     inconsistent_speech_output                  reduced_speech_intelligibility                                            increases variability and listener difficulty  increased
+                 reduced_speech_intelligibility                broader_communication_impairment                                      interferes with effective communication of messages  increased
+            receptive_auditory_language_overlap                broader_communication_impairment                      adds comprehension-level burden to overall communication difficulty  increased
+          developmental_plasticity_compensation                broader_communication_impairment                                   partially offsets developmental speech-language burden  decreased
+
+=== Resolved regions ===
+- temporal_auditory_language_cortex: Area Te 3 (STG) left
+- frontal_speech_motor_proxy: Area 44 (IFG) left
+- cerebellum_proxy: Nfast (Cerebellum, Fastigial Nucleus) left
+
+=== Example multimodal tables ===
+
+Region: temporal_auditory_language_cortex
+Receptors:
+Empty DataFrame
+Columns: []
+Index: []
+Genes:
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ATP2C2    4.767534   0.522864           32     0.233766    0.491527
+   BDNF    5.697159   1.749048           32     0.490588    0.400196
+   CMIP    8.511981   0.856772           32     0.189784    0.516052
+CNTNAP2    7.721129   3.230961           48     0.379944    0.451882
+  DCDC2    2.997603   0.703332           32     0.532903    0.794974
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+Region: frontal_speech_motor_proxy
+Receptors:
+receptor  mean  std
+    AMPA   295  112
+ kainate   490  205
+    NMDA  1129  382
+mGluR2_3  3545  913
+   GABAA  1420  216
+Genes:
+   gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ ATP2C2    4.899733   0.256629            6     0.679633    0.297122
+   BDNF    5.676517   1.810704            6     0.281467    0.245191
+   CMIP    9.185633   0.992922            6     0.651000    0.891037
+CNTNAP2    8.185011   3.432605            9     0.691933    0.214701
+  DCDC2    2.750083   0.965249            6     0.136983    0.943171
+Connectivity profile:
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Circuit connectivity ===
+Empty DataFrame
+Columns: []
+Index: []
+
+=== Simulation ===
+
+INPUTS
+genetic_speech_language_liability             0.55
+congenital_cortical_maldevelopment_load       0.18
+corpus_callosum_anomaly_load                  0.22
+cerebellar_developmental_anomaly_load         0.20
+acquired_childhood_brain_lesion_load          0.10
+perinatal_white_matter_injury_load            0.18
+shared_neurodevelopmental_comorbidity_load    0.28
+developmental_intervention_support            0.40
+
+LATENTS
+developmental_plasticity_compensation              0.1976
+transcriptional_speech_network_disruption          0.2716
+axon_guidance_language_wiring_disruption           0.2518
+white_matter_disconnection                         0.1359
+frontostriatal_executive_modulation_weakness       0.1595
+auditory_phonological_encoding_weakness            0.1549
+speech_motor_planning_instability                  0.1586
+interhemispheric_language_integration_failure      0.1741
+cerebellar_timing_sensorimotor_learning_deficit    0.1270
+
+REGIONAL_STATE
+temporal_auditory_language_cortex    0.1072
+frontal_speech_motor_proxy           0.1109
+corpus_callosum_proxy                0.1652
+cerebellum_proxy                     0.1129
+
+SYMPTOMS
+phonological_encoding_errors           0.0974
+articulation_inaccuracy                0.1007
+inconsistent_speech_output             0.0884
+reduced_speech_intelligibility         0.0788
+receptive_auditory_language_overlap    0.0887
+broader_communication_impairment       0.0614
+
+PHENOTYPES
+developmental_phonological_profile    0.0636
+verbal_dyspraxia_like_profile         0.0934
+disconnection_language_profile        0.1157
+acquired_temporal_language_profile    0.0665
+
+=== Example region suggestions for 'speech' ===
+Empty DataFrame
+Columns: []
+Index: []

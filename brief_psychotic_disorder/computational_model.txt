@@ -1,0 +1,252 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                              key      node_type                                       atlas_region                                                   centroid_mni                           feature_summary
+                   acute_stressor          input                                               None                                                           None                                      None
+  genetic_psychosis_vulnerability          input                                               None                                                           None                                      None
+         mood_instability_loading          input                                               None                                                           None                                      None
+         sleep_arousal_disruption          input                                               None                                                           None                                      None
+               resilience_support          input                                               None                                                           None                                      None
+                      hippocampus         region                             CA1 (Hippocampus) left (-28.89739130434782, -21.001739130434785, -19.018260869565218) receptors=yes; genes=yes; connectivity=no
+                         amygdala         region                                 LB (Amygdala) left  (-25.74200206398349, -2.589267285861723, -23.879256965944272)  receptors=no; genes=yes; connectivity=no
+                      pfc_control         region                                Area 8v1 (MFG) left     (-35.2425934919864, 23.561923263720246, 51.07455075279262)  receptors=no; genes=yes; connectivity=no
+                   thalamus_proxy         region                                           thalamus  (-14.367965711564409, -20.185252797841102, 4.345265497261693)  receptors=no; genes=yes; connectivity=no
+              basal_ganglia_proxy         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus)    (10.758389261744966, 16.82550335570471, -5.468839884947272)  receptors=no; genes=yes; connectivity=no
+                   hpa_axis_surge latent_biology                                               None                                                           None                                      None
+                  monoamine_storm latent_biology                                               None                                                           None                                      None
+       dopamine_salience_overload latent_biology                                               None                                                           None                                      None
+          gaba_inhibitory_failure latent_biology                                               None                                                           None                                      None
+      glutamate_hyperexcitability latent_biology                                               None                                                           None                                      None
+        hippocampal_disinhibition latent_biology                                               None                                                           None                                      None
+         cortical_disorganization latent_biology                                               None                                                           None                                      None
+          thalamic_filter_failure latent_biology                                               None                                                           None                                      None
+basal_ganglia_integration_failure latent_biology                                               None                                                           None                                      None
+             homeostatic_recovery latent_biology                                               None                                                           None                                      None
+               resilience_factors latent_biology                                               None                                                           None                                      None
+           hallucination_delusion        symptom                                               None                                                           None                                      None
+      disorganized_thought_speech        symptom                                               None                                                           None                                      None
+                        agitation        symptom                                               None                                                           None                                      None
+               affective_lability        symptom                                               None                                                           None                                      None
+  catatonic_disorganized_behavior        symptom                                               None                                                           None                                      None
+                   full_remission        symptom                                               None                                                           None                                      None
+
+=== EDGES ===
+                           source                            target                                                             relation   brief_psychosis_change
+                   acute_stressor                    hpa_axis_surge                                triggers acute stress-system overload                increased
+                   acute_stressor          sleep_arousal_disruption                   destabilizes sleep, arousal, and cognitive control                increased
+  genetic_psychosis_vulnerability        dopamine_salience_overload             raises vulnerability to psychotic salience dysregulation increased susceptibility
+  genetic_psychosis_vulnerability           gaba_inhibitory_failure            raises vulnerability to inhibitory breakdown under stress increased susceptibility
+         mood_instability_loading                   monoamine_storm         raises vulnerability to affect-laden transmitter instability increased susceptibility
+         mood_instability_loading                affective_lability                          supports polymorphic affective presentation increased susceptibility
+               resilience_support              homeostatic_recovery                           supports restoration of system equilibrium               protective
+               resilience_support                         agitation                                buffers escalation of acute agitation               protective
+               resilience_support                    full_remission                                supports rapid return toward baseline               protective
+                   hpa_axis_surge                   monoamine_storm cortisol perturbs dopamine, norepinephrine, and serotonin regulation                increased
+                   hpa_axis_surge       glutamate_hyperexcitability                          stress increases excitatory destabilization                increased
+                   hpa_axis_surge                       hippocampus                          acute stress burdens hippocampal processing  increased dysregulation
+                   hpa_axis_surge                       pfc_control                       acute stress weakens cognitive control systems         reduced function
+                  monoamine_storm        dopamine_salience_overload   shifts transmitter balance toward psychotic salience dysregulation                increased
+                  monoamine_storm                affective_lability                                 supports rapid affective instability                increased
+          gaba_inhibitory_failure         hippocampal_disinhibition                reduces inhibitory restraint in hippocampal circuitry                increased
+          gaba_inhibitory_failure          cortical_disorganization                                 permits disorganized neuronal firing                increased
+      glutamate_hyperexcitability          cortical_disorganization                         amplifies hyperexcitable cortical processing                increased
+        hippocampal_disinhibition                       hippocampus                                destabilizes stress-memory processing  increased dysregulation
+        hippocampal_disinhibition        dopamine_salience_overload            can disinhibit downstream dopaminergic psychosis pathways                increased
+         cortical_disorganization       disorganized_thought_speech                          drives thought and language disorganization                increased
+       dopamine_salience_overload            hallucination_delusion           supports aberrant salience and psychotic symptom formation                increased
+          thalamic_filter_failure            hallucination_delusion                weakens sensory filtering and perceptual organization                increased
+          thalamic_filter_failure                    thalamus_proxy                     destabilizes thalamic relay and gating functions  increased dysregulation
+basal_ganglia_integration_failure               basal_ganglia_proxy                       disrupts motor-cognitive-emotional integration  increased dysregulation
+basal_ganglia_integration_failure   catatonic_disorganized_behavior                       can promote motor and behavioral abnormalities                increased
+       dopamine_salience_overload basal_ganglia_integration_failure                  dopamine surge destabilizes subcortical integration                increased
+         sleep_arousal_disruption          cortical_disorganization                weakens coherent cognitive control under acute stress                increased
+         sleep_arousal_disruption                         agitation                                     amplifies psychomotor dyscontrol                increased
+                         amygdala                         agitation                  amplifies acute emotional salience and alarm output                increased
+                      hippocampus                affective_lability        stress-memory dysregulation amplifies unstable affective tone                increased
+                      pfc_control          cortical_disorganization                   normally stabilizes thought and behavioral control       reduced inhibition
+                      pfc_control            hallucination_delusion                         normally constrains psychotic interpretation       reduced inhibition
+               resilience_factors              homeostatic_recovery                        support restoration after acute dysregulation               protective
+             homeostatic_recovery                    full_remission           restores stable cognition and affect after the acute storm      increased remission
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                                                    CA1 (Hippocampus) left  LB (Amygdala) left  Area 8v1 (MFG) left  thalamus  FuCd (Ventral Striatum, Fundus of Caudate Nucleus)
+CA1 (Hippocampus) left                                             1685.40              64.260                 2.39       0.0                                               1.610
+LB (Amygdala) left                                                   64.26             244.570                 0.03       0.0                                               0.075
+Area 8v1 (MFG) left                                                   2.39               0.030              6703.68       0.0                                               2.910
+thalamus                                                              0.00               0.000                 0.00       0.0                                               0.000
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus)                    1.61               0.075                 2.91       0.0                                            2794.395
+
+=== HIPPOCAMPUS : receptor fingerprint ===
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+
+=== HIPPOCAMPUS : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ CRHR1    4.150672   2.386880           32    -0.605653    1.124633
+   DBH    2.417275   0.928359           24    -0.358292    0.803196
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+ FKBP5    5.287750   2.991862           32     0.558866    1.301838
+GABRA2    8.208484   1.631502          208     0.900643    0.435795
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+GRIN2B    7.280267   2.035549           24     1.113921    0.608366
+  MAOA    5.820193   2.048195          248     0.134833    0.821787
+ NR3C1    8.720897   1.159121           40    -1.069570    0.612983
+SLC1A1    7.928800   0.783462           16     0.979869    0.753948
+SLC6A2    1.439419   0.292465           16    -0.377575    0.255242
+SLC6A3    2.298956   1.516447           48    -0.208298    0.500259
+SLC6A4    1.786357   0.592659           88    -0.255258    0.422112
+
+=== HIPPOCAMPUS : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+   DBH    2.221610   1.005047           21    -0.238133    0.810462
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+GABRA2    8.655185   1.624692          182     1.367407    0.575439
+GABRB2    7.450271   1.503071           14    -0.132057    0.771656
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC1A1    7.480636   0.903997           14     0.140714    1.025792
+SLC6A2    2.095421   1.363398           14     0.805236    1.373062
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== PFC_CONTROL : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== PFC_CONTROL : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.264200   2.070726            8     0.201300    0.549120
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+   DBH    3.260200   0.921546           12     0.219600    0.480866
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+GABRA2    7.718805   1.556872          104     0.515174    0.284856
+GABRB2    8.222962   1.190676            8     0.599387    0.219932
+  GAD1    8.470140   1.869564           72     0.234585    0.268393
+GRIN2B    6.692367   1.391907           12     0.768933    0.269242
+  MAOA    5.384172   1.986323          124    -0.131315    0.486882
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+SLC1A1    7.465975   1.352288            8     0.323425    0.404878
+SLC6A2    1.237313   0.282436            8    -0.367688    0.175513
+SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+
+=== PFC_CONTROL : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== THALAMUS_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== THALAMUS_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.585602   2.013440          410    -0.863433    0.784586
+  COMT    6.696718   3.651617         1230     0.355509    1.238947
+ CRHR1    4.810321   2.511263          820     0.113186    1.037727
+   DBH    2.215716   0.829900          615    -0.472405    0.823535
+  DRD2    4.591492   2.406942         1025     0.775113    0.873169
+ FKBP5    4.833678   2.449193          820     0.330300    0.846161
+GABRA2    6.223685   1.895726         5330    -0.728558    0.760170
+GABRB2    7.291694   1.616901          410    -0.123261    0.882164
+  GAD1    8.376507   2.193450         3690     0.303600    0.910694
+GRIN2B    5.313393   2.186007          615    -0.079798    0.877520
+  MAOA    6.204789   2.139120         6355     0.641987    0.828906
+ NR3C1    9.353292   1.207740         1025     0.257266    0.939003
+SLC1A1    7.436578   1.303379          410     0.308250    1.286644
+SLC6A2    1.570577   0.496029          410    -0.214401    0.608296
+SLC6A3    2.601390   2.192195         1230     0.143562    1.338375
+SLC6A4    1.807653   0.679452         2255    -0.203712    0.498376
+
+=== THALAMUS_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== BASAL_GANGLIA_PROXY : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== BASAL_GANGLIA_PROXY : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    2.236562   1.400425           16    -1.650019    0.807698
+  COMT    6.338062   3.550620           48    -0.244671    1.082107
+ CRHR1    3.964031   2.379487           32    -1.035025    0.898802
+   DBH    2.234079   0.743262           24    -0.447996    0.774587
+  DRD2    6.050108   2.329240           40     2.187403    0.967373
+ FKBP5    4.906187   2.527519           32     0.287916    0.613248
+GABRA2    8.113025   1.781376          208     0.857754    0.644370
+GABRB2    6.981731   1.334508           16    -0.441375    0.544187
+  GAD1    9.044125   1.833515          144     0.758347    0.338457
+GRIN2B    6.279562   1.700240           24     0.629379    0.398689
+  MAOA    5.794819   1.953550          248     0.259115    0.564867
+ NR3C1    8.892430   1.124793           40    -0.717515    0.756545
+SLC1A1    7.369725   1.119729           16     0.209775    0.544026
+SLC6A2    1.516831   0.438030           16    -0.090475    0.445743
+SLC6A3    2.099873   1.649630           48    -0.235673    0.509298
+SLC6A4    1.711622   0.660476           88    -0.184322    0.416930
+
+=== BASAL_GANGLIA_PROXY : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+hpa_axis_surge                       0.5025
+gaba_inhibitory_failure              0.4500
+hippocampal_disinhibition            0.3596
+glutamate_hyperexcitability          0.3584
+monoamine_storm                      0.3407
+cortical_disorganization             0.3079
+dopamine_salience_overload           0.2746
+resilience_factors                   0.1925
+thalamic_filter_failure              0.1473
+basal_ganglia_integration_failure    0.1440
+homeostatic_recovery                 0.0716
+
+=== REGIONAL STATE ===
+amygdala               0.3089
+hippocampus            0.2443
+pfc_control            0.2258
+thalamus_proxy         0.1051
+basal_ganglia_proxy    0.0988
+
+=== SYMPTOMS ===
+agitation                          0.3107
+affective_lability                 0.2640
+disorganized_thought_speech        0.1653
+hallucination_delusion             0.1566
+catatonic_disorganized_behavior    0.1195
+full_remission                     0.0779
+
+=== PHENOTYPES ===
+stress_triggered_psychosis_profile    0.2649
+affective_polymorphic_profile         0.2201
+disorganized_agitated_profile         0.1978
+rapid_recovery_profile                0.0607

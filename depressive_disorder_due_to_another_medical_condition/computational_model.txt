@@ -1,0 +1,137 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE (head) ===
+                              key                             label node_type                                                                                 description atlas_region region_identifier centroid_mni  volume_mm3 feature_summary
+            medical_insult_burden             Medical Insult Burden     input                           Overall physiological burden of the underlying medical condition.         None              None         None         NaN            None
+              focal_lesion_burden               Focal Lesion Burden     input Burden from focal brain injury, especially stroke or lesion load in mood-relevant pathways.         None              None         None         NaN            None
+         neurodegenerative_burden          Neurodegenerative Burden     input  Progressive neuronal loss that can diminish dopaminergic and broader neuromodulatory tone.         None              None         None         NaN            None
+           seizure_network_burden            Seizure Network Burden     input                    Epilepsy-related network instability contributing to mood vulnerability.         None              None         None         NaN            None
+    medication_depressogenic_load     Medication Depressogenic Load     input              Depressogenic medication exposure such as interferon, methyldopa, or steroids.         None              None         None         NaN            None
+              inflammatory_burden               Inflammatory Burden     input                    Systemic cytokine-driven inflammatory pressure affecting brain function.         None              None         None         NaN            None
+       endocrine_metabolic_burden        Endocrine Metabolic Burden     input          Endocrine or metabolic dysregulation that shifts neurochemical and stress systems.         None              None         None         NaN            None
+            genetic_vulnerability             Genetic Vulnerability     input  Inherited liability shaping sensitivity of stress, monoamine, and mood-regulation systems.         None              None         None         NaN            None
+       psychosocial_stress_burden        Psychosocial Stress Burden     input     Stress associated with illness, disability, uncertainty, or chronic disease management.         None              None         None         NaN            None
+     medical_condition_correction      Medical Condition Correction     input       Protective improvement from treating or stabilizing the underlying medical condition.         None              None         None         NaN            None
+           antidepressant_support            Antidepressant Support     input                 Protective support from antidepressant or other mood-targeted intervention.         None              None         None         NaN            None
+rehabilitation_and_social_support Rehabilitation And Social Support     input                              Protective cognitive, functional, and social recovery support.         None              None         None         NaN            None
+
+=== EDGE TABLE (head) ===
+                       source                               target                                                                relation ddamc_change
+        medical_insult_burden                 monoamine_disruption broad physiological illness burden perturbs neuromodulatory homeostasis    increased
+medication_depressogenic_load                 monoamine_disruption               depressogenic medications can disrupt monoamine signaling    increased
+          focal_lesion_burden                    serotonergic_loss                lesions can interrupt ascending serotonergic projections    increased
+          focal_lesion_burden                   noradrenergic_loss               lesions can interrupt ascending noradrenergic projections    increased
+     neurodegenerative_burden                    dopaminergic_loss                          neurodegeneration can reduce dopaminergic tone    increased
+          inflammatory_burden          neuroinflammatory_signaling          systemic inflammation propagates cytokine-linked brain effects    increased
+   psychosocial_stress_burden               hpa_axis_dysregulation         illness-related stress sensitizes neuroendocrine stress systems    increased
+        genetic_vulnerability               hpa_axis_dysregulation            familial mood-disorder liability amplifies stress reactivity    increased
+        genetic_vulnerability          limbic_prefrontal_imbalance         genetic diathesis biases network responses to injury and stress    increased
+          focal_lesion_burden frontostriatal_circuit_disconnection             stroke or focal injury disconnects mood-regulation circuits    increased
+       seizure_network_burden frontostriatal_circuit_disconnection              epilepsy-related network dysfunction burdens mood circuits    increased
+          focal_lesion_burden            diaschisis_network_burden               focal injury reduces function in connected intact regions    increased
+
+=== RESOLVED REGIONS ===
+- amygdala: LB (Amygdala) left
+- sgacc_proxy: Area s24 (sACC) left
+- left_basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+
+=== SAMPLE MULTIMODAL PROFILES ===
+
+[left_dlpfc]
+receptors: 0 rows
+genes: 0 rows
+connectivity: 0 rows
+
+[amygdala]
+receptors: 0 rows
+genes: 12 rows
+connectivity: 15 rows
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+HTR1A    4.510162   2.272854           21     0.317105    1.132796
+
+[sgacc_proxy]
+receptors: 0 rows
+genes: 12 rows
+connectivity: 15 rows
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.840375   2.082261            4     0.595700    0.244310
+ COMT    6.885258   3.424474           12     0.290700    0.621355
+CRHR1    5.444562   1.863520            8     0.370375    0.623702
+ DRD2    2.843430   1.821634           10    -0.701400    0.340102
+HTR1A    5.171783   1.371687            6     0.893500    0.474280
+
+[left_basal_ganglia_proxy]
+receptors: 0 rows
+genes: 12 rows
+connectivity: 15 rows
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    2.095275   1.373588           12    -1.740383    0.864869
+ COMT    6.334303   3.508445           36    -0.298369    1.144405
+CRHR1    3.949337   2.432744           24    -1.114600    0.816799
+ DRD2    6.119210   2.344979           30     2.320237    1.023981
+HTR1A    2.212033   1.165959           18    -0.920606    0.555960
+
+=== CIRCUIT CONNECTIVITY ===
+     source                   target   value
+sgacc_proxy left_basal_ganglia_proxy 518.855
+   amygdala              sgacc_proxy   0.110
+   amygdala left_basal_ganglia_proxy   0.075
+
+=== SIMULATION EXAMPLE: POST-STROKE / INFLAMMATORY MIX ===
+
+[inputs]
+medical_insult_burden                0.80
+focal_lesion_burden                  0.70
+inflammatory_burden                  0.55
+psychosocial_stress_burden           0.55
+genetic_vulnerability                0.35
+rehabilitation_and_social_support    0.30
+medical_condition_correction         0.25
+endocrine_metabolic_burden           0.20
+antidepressant_support               0.20
+medication_depressogenic_load        0.15
+neurodegenerative_burden             0.10
+seizure_network_burden               0.05
+
+[latents]
+neuroinflammatory_signaling             0.6775
+hpa_axis_dysregulation                  0.5400
+noradrenergic_loss                      0.4700
+serotonergic_loss                       0.4625
+diaschisis_network_burden               0.4363
+limbic_prefrontal_imbalance             0.4167
+monoamine_disruption                    0.3904
+frontostriatal_circuit_disconnection    0.3813
+motivational_anhedonia                  0.3214
+dopaminergic_loss                       0.2500
+
+[regional_state]
+amygdala_hyperreactivity         0.4655
+sgacc_overdrive                  0.4053
+left_basal_ganglia_disruption    0.3622
+left_dlpfc_hypofunction          0.3195
+
+[symptoms]
+fatigue_low_energy          0.4932
+depressed_mood              0.3491
+rumination_negative_bias    0.3116
+executive_dysfunction       0.2745
+anhedonia                   0.2562
+psychomotor_slowing         0.2478
+
+[phenotypes]
+inflammatory_depression_profile         0.5377
+vascular_depression_profile             0.4511
+network_injury_profile                  0.4008
+overall_depressive_syndrome             0.3182
+neurodegenerative_depression_profile    0.1735

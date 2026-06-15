@@ -1,0 +1,236 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                       key      node_type  region_role                                    atlas_region                           feature_summary
+                     genetic_vulnerability          input         None                                            None                                      None
+             early_developmental_liability          input         None                                            None                                      None
+       neurodevelopmental_comorbidity_load          input         None                                            None                                      None
+                       mood_anxiety_burden          input         None                                            None                                      None
+          acquired_frontal_temporal_insult          input         None                                            None                                      None
+                  neurodegenerative_burden          input         None                                            None                                      None
+      atypical_sexual_differentiation_load          input         None                                            None                                      None
+            serotonergic_treatment_support          input         None                                            None                                      None
+                         treatment_support          input         None                                            None                                      None
+                         pfc_control_proxy         region        proxy                             Area Fo4 (OFC) left  receptors=no; genes=yes; connectivity=no
+                       temporal_lobe_proxy         region        proxy Area PirT (PiriformCortexMesial, temporal) left   receptors=no; genes=no; connectivity=no
+                                  amygdala         region atlas_backed                              LB (Amygdala) left  receptors=no; genes=yes; connectivity=no
+                               hippocampus         region atlas_backed                          CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=no
+                    ventral_striatum_proxy         region        proxy                                ventral striatum  receptors=no; genes=yes; connectivity=no
+     developmental_psychosexual_patterning latent_biology         None                                            None                                      None
+          neurodevelopmental_disinhibition latent_biology         None                                            None                                      None
+              frontotemporal_disinhibition latent_biology         None                                            None                                      None
+     mesolimbic_dopaminergic_dysregulation latent_biology         None                                            None                                      None
+   serotonergic_impulse_modulation_deficit latent_biology         None                                            None                                      None
+    social_cognitive_regulation_impairment latent_biology         None                                            None                                      None
+              frontolimbic_control_failure latent_biology         None                                            None                                      None
+         late_onset_secondary_presentation        symptom         None                                            None                                      None
+               pedophilic_interest_pattern        symptom         None                                            None                                      None
+                  paraphilic_urge_salience        symptom         None                                            None                                      None
+impaired_impulse_control_over_sexual_urges        symptom         None                                            None                                      None
+                social_judgment_impairment        symptom         None                                            None                                      None
+             behavioral_disinhibition_risk        symptom         None                                            None                                      None
+
+=== Edges ===
+                                    source                                     target                                                                                         relation pedophilic_disorder_change
+             early_developmental_liability      developmental_psychosexual_patterning   supports the primary developmental form with early-emerging atypical psychosexual organization                  increased
+      atypical_sexual_differentiation_load      developmental_psychosexual_patterning         serves as a weak exploratory developmental-pathway hypothesis rather than a direct cause                  increased
+                     genetic_vulnerability      developmental_psychosexual_patterning                            may contribute indirectly through heritable developmental liabilities                  increased
+                     genetic_vulnerability           neurodevelopmental_disinhibition                              loads heritable impulsivity and behavioral regulation vulnerability                  increased
+       neurodevelopmental_comorbidity_load           neurodevelopmental_disinhibition                 ADHD/externalizing-style comorbidity raises impulsivity and poor self-regulation                  increased
+                       mood_anxiety_burden    serotonergic_impulse_modulation_deficit                    affective burden engages serotonergic pathways relevant to libido and control                  increased
+            serotonergic_treatment_support    serotonergic_impulse_modulation_deficit       serotonergic treatment may indirectly reduce urge expression and improve overall restraint                  decreased
+          acquired_frontal_temporal_insult               frontotemporal_disinhibition                          acquired brain damage can produce a secondary disinhibited presentation                  increased
+                  neurodegenerative_burden               frontotemporal_disinhibition                            cognitive decline may unmask or create late-onset paraphilic behavior                  increased
+          neurodevelopmental_disinhibition      mesolimbic_dopaminergic_dysregulation shared ADHD-like control deficits are linked to mesolimbic-prefrontal dopaminergic vulnerability                  increased
+              frontotemporal_disinhibition     social_cognitive_regulation_impairment   frontotemporal breakdown weakens social judgment and maintenance of normative sexual interests                  increased
+     developmental_psychosexual_patterning     social_cognitive_regulation_impairment                    developmental patterning can coexist with atypical social-sexual organization                  increased
+          neurodevelopmental_disinhibition     social_cognitive_regulation_impairment            developmental regulation problems can impair boundary and social-cognitive processing                  increased
+          neurodevelopmental_disinhibition               frontolimbic_control_failure                                      poor self-regulation undermines top-down control over urges                  increased
+              frontotemporal_disinhibition               frontolimbic_control_failure            acquired frontal-temporal dysfunction weakens executive control and sexual regulation                  increased
+   serotonergic_impulse_modulation_deficit               frontolimbic_control_failure                                  weaker serotonergic affect control reduces restraint over urges                  increased
+                         treatment_support               frontolimbic_control_failure                                 supportive treatment and external structure reduce disinhibition                  decreased
+              frontolimbic_control_failure                          pfc_control_proxy               control failure is expressed through prefrontal executive and judgment dysfunction                  increased
+    social_cognitive_regulation_impairment                        temporal_lobe_proxy              temporal-lobe systems carry social-cognitive and sexual-interest maintenance burden                  increased
+              frontolimbic_control_failure                                   amygdala            reduced top-down regulation permits stronger limbic salience and affective reactivity                  increased
+    social_cognitive_regulation_impairment                                hippocampus       temporal-limbic memory-context systems participate in interest organization and regulation                  increased
+     mesolimbic_dopaminergic_dysregulation                     ventral_striatum_proxy                       mesolimbic reward-salience circuitry contributes to urge-driven motivation                  increased
+              frontotemporal_disinhibition          late_onset_secondary_presentation     secondary late-onset cases emerge from acquired or degenerative frontal-temporal dysfunction                  increased
+                         pfc_control_proxy          late_onset_secondary_presentation                     prefrontal disinhibition contributes to behavioral change in secondary cases                  increased
+     developmental_psychosexual_patterning                pedophilic_interest_pattern             primary developmental organization contributes to a stable atypical interest pattern                  increased
+         late_onset_secondary_presentation                pedophilic_interest_pattern                  secondary acquired forms can create or unmask abnormal sexual interest patterns                  increased
+                               hippocampus                pedophilic_interest_pattern    temporal-limbic memory-context systems are hypothesized to help maintain the interest pattern                  increased
+                    ventral_striatum_proxy                   paraphilic_urge_salience                                   reward-salience circuitry increases motivational pull of urges                  increased
+               pedophilic_interest_pattern                   paraphilic_urge_salience                                      stable interest pattern increases salience of related urges                  increased
+                                  amygdala                   paraphilic_urge_salience                      limbic salience and affective tagging may intensify the urgency of impulses                  increased
+                         pfc_control_proxy impaired_impulse_control_over_sexual_urges                       prefrontal executive dysfunction weakens resistance once urges are present                  increased
+              frontolimbic_control_failure impaired_impulse_control_over_sexual_urges                               frontolimbic dyscontrol undermines suppression of paraphilic urges                  increased
+            serotonergic_treatment_support impaired_impulse_control_over_sexual_urges                              indirect serotonergic treatment may improve overall impulse control                  decreased
+                       temporal_lobe_proxy                 social_judgment_impairment                        temporal-lobe dysfunction weakens social cognition and normative judgment                  increased
+    social_cognitive_regulation_impairment                 social_judgment_impairment                            impaired social cognition compromises judgment and boundary awareness                  increased
+impaired_impulse_control_over_sexual_urges              behavioral_disinhibition_risk                                            poor urge inhibition raises risk of harmful enactment                  increased
+                social_judgment_impairment              behavioral_disinhibition_risk                        impaired judgment increases risk of acting despite consequences and norms                  increased
+                  paraphilic_urge_salience              behavioral_disinhibition_risk                    high urge salience increases pressure toward action in vulnerable individuals                  increased
+                         treatment_support              behavioral_disinhibition_risk                                   external support and treatment structure reduce enactment risk                  decreased
+
+=== Region suggestions for 'temporal' ===
+                                                                                  name identifier                                parcellation
+                                       Area PirT (PiriformCortexMesial, temporal) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+               Area PirT.Tu (PiriformCortexMesial, Piriform temporal Area, Uncus) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+Area PirT.Tit (PiriformCortexMesial, Piriform temporal Area, Incisura temporalis) left       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                                       temporal insula       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                               superior temporal gyrus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                              superior temporal sulcus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                            Area PirT (PiriformCortexMesial, temporal)       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                                                         temporal lobe       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+                                      Area PirT (PiriformCortexMesial, temporal) right       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+              Area PirT.Tu (PiriformCortexMesial, Piriform temporal Area, Uncus) right       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Region evidence: pfc_control_proxy ===
+Resolved region: Area Fo4 (OFC) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    2.829558   2.048970           12    -0.427625    0.625042
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  DRD4    6.744192   6.803711           12     0.012533    0.887891
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+ NLGN3    5.212937   0.434733            8     0.420663    0.697354
+  OXTR    4.951225   2.117506            8    -0.344725    0.616400
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: temporal_lobe_proxy ===
+Resolved region: Area PirT (PiriformCortexMesial, temporal) left
+Receptors:
+<no receptor table>
+Genes:
+<no gene table>
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: amygdala ===
+Resolved region: LB (Amygdala) left
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    3.537295   2.196616           21     0.409014    1.523109
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD4    6.954405   6.242902           21     0.339352    1.290183
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NLGN3    5.431621   0.322335           14     0.535343    0.728681
+  OXTR    5.481329   2.114813           14     0.208743    0.776505
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: hippocampus ===
+Resolved region: CA1 (Hippocampus) left
+Receptors:
+   receptor  mean  std
+       AMPA   498  120
+    kainate  1366  273
+       NMDA   366  127
+      GABAA   789  362
+      GABAB  1961  397
+         M1   405  229
+         M2   107   44
+         M3   707  335
+alpha4beta2    31    8
+     alpha1   441  265
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    3.211275   2.023181           24    -0.202388    1.133973
+  BDNF    5.638438   2.851173           16     0.533731    1.414835
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+  DRD4    6.381812   6.585266           24    -0.680638    0.900865
+ HTR2A    6.079706   2.649687          200     0.028968    0.956248
+  MAOA    5.820193   2.048195          248     0.134833    0.821787
+ NLGN3    5.776300   1.207890           16     0.566444    1.607704
+  OXTR    5.184188   2.593742           16    -0.172387    0.717949
+SLC6A3    2.298956   1.516447           48    -0.208298    0.500259
+Connectivity profile:
+<no connectivity profile>
+
+=== Region evidence: ventral_striatum_proxy ===
+Resolved region: ventral striatum
+Receptors:
+<no receptor table>
+Genes:
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    3.658465   2.416240           60     0.225950    0.954067
+  BDNF    3.009257   2.293641           40    -1.185732    1.237663
+  COMT    6.402036   3.593712          120    -0.059620    1.034789
+  DRD2    5.426011   2.496559          100     1.577181    1.050432
+  DRD4    6.721858   6.310373           60    -0.258992    0.980232
+ HTR2A    5.280004   1.906712          500    -0.305184    0.414827
+  MAOA    6.048184   2.090857          620     0.515039    0.710792
+ NLGN3    5.375928   0.592325           40     0.208115    1.019453
+  OXTR    6.448767   2.541768           40     1.056917    0.932911
+SLC6A3    2.216257   1.756066          120    -0.062672    0.505430
+Connectivity profile:
+<no connectivity profile>
+
+=== Circuit connectivity ===
+                        pfc_control_proxy  temporal_lobe_proxy  amygdala  hippocampus  ventral_striatum_proxy
+pfc_control_proxy                 698.345                0.035     0.075        1.655                 812.060
+temporal_lobe_proxy                 0.035                0.000     0.055        0.010                   0.135
+amygdala                            0.075                0.055   244.570       64.260                   1.120
+hippocampus                         1.655                0.010    64.260     1685.400                  11.510
+ventral_striatum_proxy            812.060                0.135     1.120       11.510                3774.225
+
+=== Simulation: inputs ===
+genetic_vulnerability                   0.65
+early_developmental_liability           0.70
+neurodevelopmental_comorbidity_load     0.72
+mood_anxiety_burden                     0.55
+acquired_frontal_temporal_insult        0.15
+neurodegenerative_burden                0.10
+atypical_sexual_differentiation_load    0.25
+serotonergic_treatment_support          0.45
+treatment_support                       0.55
+
+=== Simulation: latents ===
+developmental_psychosexual_patterning      0.5194
+neurodevelopmental_disinhibition           0.5310
+frontotemporal_disinhibition               0.0970
+mesolimbic_dopaminergic_dysregulation      0.3689
+serotonergic_impulse_modulation_deficit    0.1776
+social_cognitive_regulation_impairment     0.3200
+frontolimbic_control_failure               0.1415
+
+=== Simulation: regional_state ===
+pfc_control_proxy         0.0254
+temporal_lobe_proxy       0.2447
+amygdala                  0.2157
+hippocampus               0.3278
+ventral_striatum_proxy    0.2983
+
+=== Simulation: symptoms ===
+late_onset_secondary_presentation             0.1066
+pedophilic_interest_pattern                   0.3538
+paraphilic_urge_salience                      0.2300
+social_judgment_impairment                    0.1053
+impaired_impulse_control_over_sexual_urges    0.0221
+behavioral_disinhibition_risk                 0.0000
+
+=== Simulation: phenotypes ===
+developmental_primary_profile             0.3677
+acquired_secondary_profile                0.0772
+neurodevelopmental_impulsivity_profile    0.3073
+interest_plus_disinhibition_profile       0.1515

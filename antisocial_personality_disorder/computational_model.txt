@@ -1,0 +1,232 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODES ===
+                                    key      node_type         atlas_region                                                  centroid_mni                          feature_summary
+                  genetic_vulnerability          input                 None                                                          None                                     None
+                    childhood_adversity          input                 None                                                          None                                     None
+                   developmental_insult          input                 None                                                          None                                     None
+        adolescent_hormonal_sensitivity          input                 None                                                          None                                     None
+                  alcohol_disinhibition          input                 None                                                          None                                     None
+                 protective_environment          input                 None                                                          None                                     None
+                               amygdala         region   LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+                                    acc         region   Area 33 (ACC) left  (-4.092857142857142, 13.314285714285717, 25.242857142857147) receptors=no; genes=yes; connectivity=no
+                                  dlpfc         region  Area 8v1 (MFG) left    (-35.2425934919864, 23.561923263720246, 51.07455075279262) receptors=no; genes=yes; connectivity=no
+                                  vmpfc         region Area s32 (sACC) left   (-6.475282485875709, 35.7584745762712, -15.663135593220339) receptors=no; genes=yes; connectivity=no
+                                    ofc         region  Area Fo4 (OFC) left  (-29.001430615164523, 53.3412017167382, -15.175965665236049) receptors=no; genes=yes; connectivity=no
+                   serotonergic_deficit latent_biology                 None                                                          None                                     None
+               dopaminergic_reward_bias latent_biology                 None                                                          None                                     None
+                 hpa_axis_dysregulation latent_biology                 None                                                          None                                     None
+                 low_grade_inflammation latent_biology                 None                                                          None                                     None
+prefrontal_limbic_maturation_disruption latent_biology                 None                                                          None                                     None
+               punishment_insensitivity latent_biology                 None                                                          None                                     None
+          empathy_moral_circuit_failure latent_biology                 None                                                          None                                     None
+                   impulsive_aggression        symptom                 None                                                          None                                     None
+                poor_emotion_regulation        symptom                 None                                                          None                                     None
+                         reward_seeking        symptom                 None                                                          None                                     None
+                        empathy_deficit        symptom                 None                                                          None                                     None
+                callous_remorselessness        symptom                 None                                                          None                                     None
+              persistent_rule_violation        symptom                 None                                                          None                                     None
+
+=== EDGES ===
+                                 source                                  target                                                                    relation              aspd_change
+                  genetic_vulnerability                    serotonergic_deficit                            raises vulnerability for poor inhibitory control increased susceptibility
+                  genetic_vulnerability                dopaminergic_reward_bias                           raises vulnerability for immediate reward seeking increased susceptibility
+                  genetic_vulnerability prefrontal_limbic_maturation_disruption                     raises vulnerability of developmental circuit formation increased susceptibility
+                    childhood_adversity                  hpa_axis_dysregulation                                      programs stress-response dysregulation                increased
+                    childhood_adversity                  low_grade_inflammation                 raises inflammatory burden linked to aggressive development                increased
+                    childhood_adversity prefrontal_limbic_maturation_disruption                  alters developmental pathways of control-emotion circuitry                increased
+                   developmental_insult prefrontal_limbic_maturation_disruption                            directly burdens neural maturation and integrity                increased
+        adolescent_hormonal_sensitivity                dopaminergic_reward_bias                              can amplify risk-taking and reward sensitivity                increased
+        adolescent_hormonal_sensitivity                    impulsive_aggression                           can amplify aggressive and risk-taking tendencies                increased
+                  alcohol_disinhibition                    impulsive_aggression                                 disinhibits aggression and impairs judgment                increased
+                  alcohol_disinhibition               persistent_rule_violation                                   weakens behavioral restraint and judgment                increased
+                 protective_environment                  hpa_axis_dysregulation                                        buffers stress-related dysregulation               protective
+                 protective_environment prefrontal_limbic_maturation_disruption                                      supports healthier circuit development               protective
+                 protective_environment               persistent_rule_violation                        buffers expression of genetic and developmental risk               protective
+                 low_grade_inflammation                    serotonergic_deficit                 can impair neurotransmitter function and inhibitory control                increased
+                 hpa_axis_dysregulation                                amygdala                              loads threat-reactive and affective processing  increased dysregulation
+                 hpa_axis_dysregulation                                   vmpfc                          weakens top-down emotional regulation under stress         reduced function
+prefrontal_limbic_maturation_disruption                                   dlpfc                           impairs executive control and response inhibition         reduced function
+prefrontal_limbic_maturation_disruption                                   vmpfc                           impairs social-emotional valuation and regulation         reduced function
+prefrontal_limbic_maturation_disruption                                     ofc                           impairs outcome valuation and punishment learning         reduced function
+prefrontal_limbic_maturation_disruption                                     acc                                  impairs monitoring and conflict regulation         reduced function
+                   serotonergic_deficit                    impulsive_aggression                               lowers the threshold for aggressive responses                increased
+                   serotonergic_deficit                 poor_emotion_regulation                                        reduces inhibitory affect regulation                increased
+               dopaminergic_reward_bias                          reward_seeking                                     biases behavior toward immediate reward                increased
+               dopaminergic_reward_bias                punishment_insensitivity                             shifts behavior away from future-cost weighting                increased
+                               amygdala                 poor_emotion_regulation                                     amplifies reactive emotional responding                increased
+                               amygdala           empathy_moral_circuit_failure               abnormal limbic processing weakens social-emotional resonance                increased
+                                  dlpfc               persistent_rule_violation                     weakened executive control reduces behavioral restraint                increased
+                                    acc                 poor_emotion_regulation                           weakened monitoring impairs behavioral adjustment                increased
+                                  vmpfc           empathy_moral_circuit_failure            reduced social-emotional integration impairs empathy and remorse                increased
+                                    ofc                punishment_insensitivity reduced valuation of negative consequences impairs learning from punishment                increased
+          empathy_moral_circuit_failure                         empathy_deficit                                          drives blunted empathic responding                increased
+          empathy_moral_circuit_failure                 callous_remorselessness                                drives remorseless and exploitative behavior                increased
+               punishment_insensitivity               persistent_rule_violation                       reduces behavioral correction after negative outcomes                increased
+                         reward_seeking               persistent_rule_violation          promotes risky, exploitative, and immediate-gratification behavior                increased
+                   impulsive_aggression               persistent_rule_violation                             promotes unstable and harmful behavior patterns                increased
+                poor_emotion_regulation               persistent_rule_violation                           reduces capacity to inhibit destructive responses                increased
+
+=== CIRCUIT CONNECTIVITY SUBMATRIX ===
+                      LB (Amygdala) left  Area 33 (ACC) left  Area 8v1 (MFG) left  Area s32 (sACC) left  Area Fo4 (OFC) left
+LB (Amygdala) left               244.570               0.045                0.030                 0.040                0.075
+Area 33 (ACC) left                 0.045             977.565              116.930                49.825                2.080
+Area 8v1 (MFG) left                0.030             116.930             6703.680                 0.865                6.875
+Area s32 (sACC) left               0.040              49.825                0.865              3880.340                8.705
+Area Fo4 (OFC) left                0.075               2.080                6.875                 8.705              698.345
+
+=== AMYGDALA : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== AMYGDALA : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    3.537295   2.196616           21     0.409014    1.523109
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+ CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+ HTR1A    4.510162   2.272854           21     0.317105    1.132796
+ HTR2A    6.457724   2.230421          175     0.172246    0.678875
+  IL1B    3.647605   1.433646           21     0.019371    1.035487
+   IL6    2.392836   1.012524           14     0.173964    1.127447
+  MAOA    6.318328   2.025589          217     0.779681    0.725249
+ NR3C1    8.958746   1.159155           35    -0.874363    0.682659
+SLC6A3    2.234900   1.749381           42     0.098336    0.494918
+SLC6A4    1.613805   0.613967           77    -0.070261    0.369957
+   TNF    2.985986   1.786056           14    -0.385279    0.709226
+  TPH2    2.574557   1.495585           14    -0.122436    0.892617
+
+=== AMYGDALA : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== ACC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== ACC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    3.187722   1.817677            9    -0.063478    0.560121
+  COMT    6.730211   3.382294           18     0.458217    0.729940
+ CRHR1    4.980858   2.195075           12     0.147525    0.616369
+  DRD2    3.364467   2.030234           15    -0.009313    0.489381
+ FKBP5    4.949175   2.579626           12     0.084408    0.370364
+ HTR1A    4.650922   2.081012            9     0.375600    0.781548
+ HTR2A    7.087492   2.045575           75     0.437077    0.471426
+  IL1B    4.165733   1.167364            9     0.282544    0.441346
+   IL6    2.022550   0.405522            6    -0.282350    0.476819
+  MAOA    5.880426   1.865243           93     0.464074    0.678755
+ NR3C1    9.432000   1.297241           15     0.012267    0.656989
+SLC6A3    2.151544   1.895400           18    -0.041344    0.441870
+SLC6A4    1.533067   0.594877           33    -0.166488    0.356749
+   TNF    3.633267   2.277348            6     0.248400    0.778812
+  TPH2    2.438400   0.856455            6    -0.225217    0.352445
+
+=== ACC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== DLPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== DLPFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    3.275825   2.194042           12    -0.226933    0.356110
+  COMT    6.246108   3.562423           24    -0.295967    0.679431
+ CRHR1    4.951394   1.907628           16    -0.089169    0.660285
+  DRD2    2.842185   1.856980           20    -0.700490    0.622121
+ FKBP5    4.489250   2.239081           16    -0.001981    0.377034
+ HTR1A    4.492558   1.458132           12     0.359783    0.242565
+ HTR2A    7.762873   1.981006          100     0.864402    0.640734
+  IL1B    3.241783   1.040622           12    -0.410800    0.652467
+   IL6    2.044225   0.800203            8    -0.174187    1.077107
+  MAOA    5.384172   1.986323          124    -0.131315    0.486882
+ NR3C1    9.469765   1.052399           20     0.402145    0.472749
+SLC6A3    1.934183   1.605271           24    -0.380404    0.299746
+SLC6A4    1.524089   0.549525           44    -0.342659    0.252729
+   TNF    3.175512   1.820857            8    -0.181950    0.691111
+  TPH2    2.896663   0.998774            8     0.060712    0.337883
+
+=== DLPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== VMPFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== VMPFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    2.904658   1.780495           12    -0.527200    0.522824
+  COMT    6.688071   3.462218           24     0.160779    0.908322
+ CRHR1    5.462313   1.746893           16     0.421963    0.599831
+  DRD2    2.915430   1.897044           20    -0.561750    0.572215
+ FKBP5    4.194488   2.085606           16    -0.729075    0.456206
+ HTR1A    5.481100   1.531922           12     1.159325    0.388485
+ HTR2A    7.580865   1.894772          100     0.801758    0.360432
+  IL1B    4.366258   0.805180           12     0.510033    0.500998
+   IL6    2.566663   1.034447            8     0.023738    0.925250
+  MAOA    5.965982   1.916455          124     0.512652    0.508360
+ NR3C1    9.100105   1.057470           20    -0.302870    0.390626
+SLC6A3    2.194996   1.626260           24    -0.219642    0.409476
+SLC6A4    1.588675   0.452204           44    -0.417100    0.369156
+   TNF    2.686187   1.377094            8    -0.664212    0.743421
+  TPH2    2.166175   0.539776            8    -0.319525    0.393896
+
+=== VMPFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== OFC : receptor fingerprint ===
+No receptor fingerprint available for this node.
+
+=== OFC : gene panel summary ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+    AR    2.829558   2.048970           12    -0.427625    0.625042
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+ CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+ HTR1A    5.193775   1.369889           12     0.684575    0.166077
+ HTR2A    7.571044   2.049942          100     0.615521    0.311774
+  IL1B    3.762125   0.775734           12    -0.082358    0.591871
+   IL6    1.985437   0.905265            8    -0.174875    1.004383
+  MAOA    5.282093   1.825758          124    -0.082106    0.308734
+ NR3C1    9.524360   1.046868           20     0.162315    0.346317
+SLC6A3    1.973558   1.547554           24    -0.148667    0.428183
+SLC6A4    1.384282   0.424842           44    -0.204889    0.265524
+   TNF    2.853975   1.329279            8    -0.267050    0.588345
+  TPH2    2.649612   0.482695            8    -0.050250    0.261655
+
+=== OFC : top structural connectivity ===
+No connectivity profile available for this node.
+
+=== LATENT BIOLOGY ===
+prefrontal_limbic_maturation_disruption    0.4830
+dopaminergic_reward_bias                   0.4650
+hpa_axis_dysregulation                     0.4050
+serotonergic_deficit                       0.3746
+punishment_insensitivity                   0.3335
+low_grade_inflammation                     0.2732
+empathy_moral_circuit_failure              0.2603
+
+=== REGIONAL STATE ===
+amygdala    0.3234
+ofc         0.2729
+dlpfc       0.2663
+vmpfc       0.2396
+acc         0.1861
+
+=== SYMPTOMS ===
+impulsive_aggression         0.3184
+reward_seeking               0.3032
+poor_emotion_regulation      0.2616
+persistent_rule_violation    0.2227
+callous_remorselessness      0.1956
+empathy_deficit              0.1875
+
+=== PHENOTYPES ===
+impulsive_aggressive_profile          0.2837
+reward_dominant_antisocial_profile    0.2644
+persistent_aspd_profile               0.1838
+callous_unemotional_profile           0.1776

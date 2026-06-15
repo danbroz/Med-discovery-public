@@ -1,0 +1,123 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                              key      node_type         atlas_region                                                  centroid_mni                          feature_summary
+            genetic_vulnerability          input                 None                                                          None                                     None
+              chronic_stress_load          input                 None                                                          None                                     None
+                   acute_stressor          input                 None                                                          None                                     None
+    traumatic_brain_injury_burden          input                 None                                                          None                                     None
+        repeated_outburst_history          input                 None                                                          None                                     None
+   serotonergic_treatment_support          input                 None                                                          None                                     None
+                 recovery_support          input                 None                                                          None                                     None
+                         amygdala         region   LB (Amygdala) left (-25.74200206398349, -2.589267285861723, -23.879256965944272) receptors=no; genes=yes; connectivity=no
+                              ofc         region  Area Fo4 (OFC) left  (-29.001430615164523, 53.3412017167382, -15.175965665236049) receptors=no; genes=yes; connectivity=no
+                      vmpfc_proxy         region Area p32 (pACC) left   (-6.9639365918097695, 49.28771466314399, 9.933289299867894) receptors=no; genes=yes; connectivity=no
+        serotonergic_hypofunction latent_biology                 None                                                          None                                     None
+           hpa_axis_dysregulation latent_biology                 None                                                          None                                     None
+               neurosensitization latent_biology                 None                                                          None                                     None
+reward_impulse_circuit_adaptation latent_biology                 None                                                          None                                     None
+       frontolimbic_disinhibition latent_biology                 None                                                          None                                     None
+   impulsive_aggressive_outbursts        symptom                 None                                                          None                                     None
+             poor_impulse_control        symptom                 None                                                          None                                     None
+               emotional_lability        symptom                 None                                                          None                                     None
+              outburst_recurrence        symptom                 None                                                          None                                     None
+           interpersonal_conflict        symptom                 None                                                          None                                     None
+   social_occupational_impairment        symptom                 None                                                          None                                     None
+           legal_consequence_risk        symptom                 None                                                          None                                     None
+
+=== Edge sample ===
+                        source                            target                                                           relation ied_change
+         genetic_vulnerability         serotonergic_hypofunction     raises trait-level vulnerability in inhibitory control systems  increased
+           chronic_stress_load            hpa_axis_dysregulation drives stress-system dysregulation and cortisol-related reactivity  increased
+                acute_stressor            hpa_axis_dysregulation            acutely pushes the stress system toward hyperreactivity  increased
+ traumatic_brain_injury_burden        frontolimbic_disinhibition              disrupts frontal self-regulation and top-down control  increased
+     repeated_outburst_history                neurosensitization      sensitizes central stress and aggression mechanisms over time  increased
+     repeated_outburst_history reward_impulse_circuit_adaptation                     reinforces recurrent tension-release circuitry  increased
+serotonergic_treatment_support         serotonergic_hypofunction                              restores inhibitory serotonergic tone  decreased
+              recovery_support            hpa_axis_dysregulation                                   buffers stress-system escalation  decreased
+              recovery_support                neurosensitization                  reduces reinforcement of chronic relapse dynamics  decreased
+     serotonergic_hypofunction        frontolimbic_disinhibition        weakens inhibitory control over impulsive aggressive drives  increased
+        hpa_axis_dysregulation        frontolimbic_disinhibition      amplifies stress-linked dyscontrol within regulation circuits  increased
+            neurosensitization        frontolimbic_disinhibition         lowers the threshold for exaggerated aggressive responding  increased
+
+=== Resolved regions ===
+- amygdala: LB (Amygdala) left
+- ofc: Area Fo4 (OFC) left
+- vmpfc_proxy: Area p32 (pACC) left
+
+=== Example multimodal summaries ===
+
+[amygdala] receptors rows=0, genes rows=13, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.968729   2.109068           14     0.500329    0.552838
+ COMT    6.458171   3.351996           42    -0.164479    1.545434
+CRHR1    4.372954   2.612046           28    -0.524621    0.983141
+ DRD2    3.894083   2.410057           35     0.371746    0.752121
+FKBP5    5.135946   2.684673           28     0.556286    1.064947
+
+[ofc] receptors rows=0, genes rows=13, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.623275   1.783520            8     0.213975    0.107743
+ COMT    6.309525   3.411804           24    -0.136267    0.423556
+CRHR1    4.997744   1.866310           16    -0.193056    0.432136
+ DRD2    2.808050   1.854283           20    -0.616190    0.387672
+FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+
+[vmpfc_proxy] receptors rows=0, genes rows=13, connectivity rows=0
+ gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+ BDNF    5.584522   1.763174           32     0.378994    0.292470
+ COMT    6.469328   3.460309           96    -0.076757    0.783002
+CRHR1    5.238798   1.959829           64     0.137673    0.666190
+ DRD2    3.052440   1.858398           80    -0.471081    0.500034
+FKBP5    4.011958   2.008597           64    -0.511306    0.477220
+
+=== Circuit connectivity ===
+source_key       source_region  target_key        target_region  value cohort         modality
+       ofc Area Fo4 (OFC) left vmpfc_proxy Area p32 (pACC) left  20.48    HCP StreamlineCounts
+  amygdala  LB (Amygdala) left         ofc  Area Fo4 (OFC) left    NaN    HCP StreamlineCounts
+  amygdala  LB (Amygdala) left vmpfc_proxy Area p32 (pACC) left    NaN    HCP StreamlineCounts
+
+=== Example simulation ===
+
+INPUTS
+genetic_vulnerability             0.70
+chronic_stress_load               0.80
+acute_stressor                    0.65
+traumatic_brain_injury_burden     0.20
+repeated_outburst_history         0.75
+serotonergic_treatment_support    0.30
+recovery_support                  0.20
+
+LATENTS
+serotonergic_hypofunction            0.4050
+hpa_axis_dysregulation               0.5475
+neurosensitization                   0.5425
+reward_impulse_circuit_adaptation    0.5305
+frontolimbic_disinhibition           0.3350
+
+REGIONAL_STATE
+amygdala_reactivity       0.5280
+ofc_dyscontrol            0.2515
+vmpfc_proxy_dyscontrol    0.2607
+pfc_top_down_failure      0.2556
+
+SYMPTOMS
+impulsive_aggressive_outbursts    0.4452
+poor_impulse_control              0.3258
+emotional_lability                0.5030
+outburst_recurrence               0.5447
+interpersonal_conflict            0.4478
+social_occupational_impairment    0.4417
+legal_consequence_risk            0.3903
+
+PHENOTYPES
+explosive_outburst_profile       0.4247
+stress_sensitized_profile        0.5407
+injury_amplified_profile         0.2595
+functional_impairment_profile    0.4266

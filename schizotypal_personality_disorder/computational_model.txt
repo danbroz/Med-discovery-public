@@ -1,0 +1,201 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                                   key                                                   label      node_type                                                                                                                                        description                                            atlas_region                                                                              region_identifier                                                   centroid_mni  volume_mm3                           feature_summary
+            genetic_synaptic_liability                              Genetic Synaptic Liability          input Shared schizophrenia-spectrum and autism-related synaptic-development liability including 22q11.2, SHANK3, and related neurodevelopmental pathways                                                    None                                                                                           None                                                           None         NaN                                      None
+   social_cognitive_developmental_load                     Social Cognitive Developmental Load          input                  Developmental burden on social cognition and communication consistent with the ASD-schizophrenia overlap discussed in the chapter                                                    None                                                                                           None                                                           None         NaN                                      None
+                 oxidative_stress_load                                   Oxidative Stress Load          input                                                          Oxidative pressure contributing to neuronal and glial injury in psychosis-spectrum states                                                    None                                                                                           None                                                           None         NaN                                      None
+                proinflammatory_burden                                  Proinflammatory Burden          input                                                              Pro-inflammatory biological burden that can compromise neural signaling and integrity                                                    None                                                                                           None                                                           None         NaN                                      None
+          mitochondrial_energy_deficit                            Mitochondrial Energy Deficit          input                                                            Reduced mitochondrial efficiency constraining energy metabolism in distributed circuits                                                    None                                                                                           None                                                           None         NaN                                      None
+                   antioxidant_reserve                                     Antioxidant Reserve          input                                                                                          Protective glutathione and antioxidant buffering capacity                                                    None                                                                                           None                                                           None         NaN                                      None
+                 cognitive_demand_load                                   Cognitive Demand Load          input                                                           Increasing cognitive demand that exposes latent frontal-thalamic-cerebellar inefficiency                                                    None                                                                                           None                                                           None         NaN                                      None
+            early_intervention_support                              Early Intervention Support          input                                                                    Protective early identification, support, and stabilizing intervention pressure                                                    None                                                                                           None                                                           None         NaN                                      None
+                  frontal_cortex_proxy                                     Area 8v2 (MFG) left   region_proxy                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism                                     Area 8v2 (MFG) left                                    JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_8V2_MFG_LEFT    (-36.862173649058896, 27.834851244687314, 36.9010321797207)      1647.0   receptors=no; genes=no; connectivity=no
+                 temporal_cortex_proxy                                  Area Te 2.1 (STG) left   region_proxy                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism                                  Area Te 2.1 (STG) left                                 JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_TE_2_1_STG_LEFT  (-53.970976253298154, -18.035180299032547, 5.733509234828503)      1137.0 receptors=yes; genes=yes; connectivity=no
+                              amygdala                                      LB (Amygdala) left         region                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism                                      LB (Amygdala) left                                     JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_LB_AMYGDALA_LEFT  (-25.74200206398349, -2.589267285861723, -23.879256965944272)       969.0  receptors=no; genes=yes; connectivity=no
+                           hippocampus                                  CA1 (Hippocampus) left         region                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism                                  CA1 (Hippocampus) left                                 JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_CA1_HIPPOCAMPUS_LEFT (-28.89739130434782, -21.001739130434785, -19.018260869565218)      1150.0 receptors=yes; genes=yes; connectivity=no
+                        thalamus_proxy                                 CGM (Metathalamus) left   region_proxy                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism                                 CGM (Metathalamus) left                                JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_CGM_METATHALAMUS_LEFT  (-16.159090909090907, -26.51136363636364, -5.670454545454547)        88.0  receptors=no; genes=yes; connectivity=no
+                   basal_ganglia_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left   region_proxy                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_FUCD_VENTRAL_STRIATUM_FUNDUS_OF_CAUDATE_NUCLEUS_LEFT   (-11.604950495049508, 15.60396039603961, -5.409900990099004)      1010.0  receptors=no; genes=yes; connectivity=no
+                      cerebellum_proxy              Nfast (Cerebellum, Fastigial Nucleus) left   region_proxy                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism              Nfast (Cerebellum, Fastigial Nucleus) left              JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_NFAST_CEREBELLUM_FASTIGIAL_NUCLEUS_LEFT  (-4.769230769230774, -55.121794871794876, -29.47435897435897)       156.0  receptors=no; genes=yes; connectivity=no
+                 parietal_cortex_proxy                                     Area PGp (IPL) left   region_proxy                                                                                         Atlas-backed circuit node for a chapter-grounded mechanism                                     Area PGp (IPL) left                                    JULICH_BRAIN_CYTOARCHITECTONIC_ATLAS_V3_1_AREA_PGP_IPL_LEFT   (-44.18055555555556, -75.48958333333334, 31.076016865079367)      8064.0 receptors=yes; genes=yes; connectivity=no
+       synaptic_development_disruption                         Synaptic Development Disruption latent_biology                                             Disturbed synaptic development and function spanning psychosis-spectrum and autism-related liabilities                                                    None                                                                                           None                                                           None         NaN                                      None
+  oxidative_inflammatory_neural_injury                    Oxidative Inflammatory Neural Injury latent_biology                                            Distributed injury pressure from oxidative stress, inflammation, and insufficient antioxidant buffering                                                    None                                                                                           None                                                           None         NaN                                      None
+              mitochondrial_constraint                                Mitochondrial Constraint latent_biology                                                                    Reduced bioenergetic capacity limiting neural resilience under cognitive demand                                                    None                                                                                           None                                                           None         NaN                                      None
+              glutamate_gaba_imbalance                                Glutamate Gaba Imbalance latent_biology                                                               Excitation-inhibition imbalance affecting plasticity, learning, and signal stability                                                    None                                                                                           None                                                           None         NaN                                      None
+   serotonin_dopamine_modulatory_shift                     Serotonin Dopamine Modulatory Shift latent_biology                                                         Serotonergic modulation altering salience, affective instability, and impulsive expression                                                    None                                                                                           None                                                           None         NaN                                      None
+       dopamine_salience_dysregulation                         Dopamine Salience Dysregulation latent_biology                                                Abnormal salience assignment relevant to cognitive-perceptual oddity and psychosis-like experiences                                                    None                                                                                           None                                                           None         NaN                                      None
+        social_bonding_reward_blunting                          Social Bonding Reward Blunting latent_biology                           Reduced affiliative and social reward tone consistent with oxytocin and endocannabinoid-related negative symptom biology                                                    None                                                                                           None                                                           None         NaN                                      None
+   frontotemporal_limbic_dysregulation                     Frontotemporal Limbic Dysregulation latent_biology                          Distributed dysfunction across frontal, temporal, and limbic systems affecting executive control, emotion, and perception                                                    None                                                                                           None                                                           None         NaN                                      None
+thalamocerebellar_coordination_failure                  Thalamocerebellar Coordination Failure latent_biology                                                                  Inefficient frontal-thalamic-cerebellar coordination under increasing task demand                                                    None                                                                                           None                                                           None         NaN                                      None
+     parietal_signal_integration_shift                       Parietal Signal Integration Shift latent_biology                                         Altered parietal integration of sensory-cognitive signals linked to emerging attenuated psychotic features                                                    None                                                                                           None                                                           None         NaN                                      None
+        psychosis_transition_liability                          Psychosis Transition Liability latent_biology                                            Spectrum-level liability for transition toward more persistent attenuated or overt psychotic expression                                                    None                                                                                           None                                                           None         NaN                                      None
+              odd_beliefs_eccentricity                                Odd Beliefs Eccentricity        symptom                                                                                  Odd beliefs, eccentricity, and unusual cognitive-perceptual style                                                    None                                                                                           None                                                           None         NaN                                      None
+        unusual_perceptual_experiences                          Unusual Perceptual Experiences        symptom                                                                                                   Psychotic-like or unusual perceptual experiences                                                    None                                                                                           None                                                           None         NaN                                      None
+                 executive_dysfunction                                   Executive Dysfunction        symptom                                                                                   Executive inefficiency and difficulty handling cognitive demands                                                    None                                                                                           None                                                           None         NaN                                      None
+     negative_interpersonal_detachment                       Negative Interpersonal Detachment        symptom                                                            Interpersonal distance, low social reciprocity, and discomfort with close relationships                                                    None                                                                                           None                                                           None         NaN                                      None
+          restricted_affect_asociality                            Restricted Affect Asociality        symptom                                                                                          Restricted affect and asocial negative-symptom expression                                                    None                                                                                           None                                                           None         NaN                                      None
+          disorganized_cognitive_style                            Disorganized Cognitive Style        symptom                                                                                  Disorganized thought style and odd, difficult-to-follow cognition                                                    None                                                                                           None                                                           None         NaN                                      None
+     affective_instability_impulsivity                       Affective Instability Impulsivity        symptom                                                               Affective instability and impulsive features that can be present in some individuals                                                    None                                                                                           None                                                           None         NaN                                      None
+         attenuated_psychotic_features                           Attenuated Psychotic Features        symptom                                                             Subthreshold psychosis-spectrum features indicating increased transition vulnerability                                                    None                                                                                           None                                                           None         NaN                                      None
+
+=== Edges ===
+                                source                                 target                                                                                                  relation schizotypal_pd_change
+            genetic_synaptic_liability        synaptic_development_disruption loads shared synaptic-development vulnerability across schizophrenia-spectrum and autism-related pathways             increased
+   social_cognitive_developmental_load        synaptic_development_disruption                                                 adds developmental pressure on social-cognitive circuitry             increased
+                 oxidative_stress_load   oxidative_inflammatory_neural_injury                                                   raises redox-related neuronal and glial injury pressure             increased
+                proinflammatory_burden   oxidative_inflammatory_neural_injury                                            adds inflammatory disruption of neural signaling and integrity             increased
+          mitochondrial_energy_deficit   oxidative_inflammatory_neural_injury                                        lowers cellular resilience and magnifies distributed injury burden             increased
+          mitochondrial_energy_deficit               mitochondrial_constraint                                  reduces energy availability for distributed cognitive-emotional circuits             increased
+                proinflammatory_burden               mitochondrial_constraint                                                 inflammation further compromises mitochondrial efficiency             increased
+                   antioxidant_reserve   oxidative_inflammatory_neural_injury                                                 buffers oxidative and glutathione-related injury pressure             decreased
+                   antioxidant_reserve               glutamate_gaba_imbalance                                               reduces injury-driven excitation-inhibition destabilization             decreased
+            early_intervention_support         psychosis_transition_liability                                  buffers progression toward more persistent psychosis-spectrum expression             decreased
+            early_intervention_support thalamocerebellar_coordination_failure                                                    reduces destabilization during rising cognitive demand             decreased
+       synaptic_development_disruption               glutamate_gaba_imbalance                                      disordered synaptic development biases excitation-inhibition balance             increased
+       synaptic_development_disruption    serotonin_dopamine_modulatory_shift                                 developmental synaptic disruption changes modulatory transmitter coupling             increased
+       synaptic_development_disruption        dopamine_salience_dysregulation                                       supports abnormal salience assignment within the psychosis spectrum             increased
+   social_cognitive_developmental_load         social_bonding_reward_blunting                                    adds developmental pressure on affiliative and social reward processes             increased
+       synaptic_development_disruption         social_bonding_reward_blunting                                                      weakens social reward and bonding-related processing             increased
+  oxidative_inflammatory_neural_injury               glutamate_gaba_imbalance                                injury burden destabilizes plasticity and excitatory-inhibitory regulation             increased
+  oxidative_inflammatory_neural_injury    frontotemporal_limbic_dysregulation                                              distributed injury compromises cognitive-emotional circuitry             increased
+              mitochondrial_constraint    frontotemporal_limbic_dysregulation                            bioenergetic limitation reduces efficient frontal-temporal-limbic coordination             increased
+              glutamate_gaba_imbalance    frontotemporal_limbic_dysregulation                   excitation-inhibition imbalance destabilizes frontal, temporal, and limbic computations             increased
+   serotonin_dopamine_modulatory_shift        dopamine_salience_dysregulation                                     serotonergic modulation reshapes dopamine-driven salience attribution             increased
+   serotonin_dopamine_modulatory_shift      affective_instability_impulsivity                           modulatory imbalance contributes to affective lability and impulsive expression             increased
+                 cognitive_demand_load thalamocerebellar_coordination_failure         increasing cognitive demands expose network inefficiency across frontal-thalamic-cerebellar loops             increased
+                 cognitive_demand_load      parietal_signal_integration_shift                                   high demand exposes unstable parietal recruitment as symptoms intensify             increased
+              glutamate_gaba_imbalance thalamocerebellar_coordination_failure                                          signal instability undermines large-scale cognitive coordination             increased
+              mitochondrial_constraint thalamocerebellar_coordination_failure                                          energy limits reduce efficient network scaling under task demand             increased
+       dopamine_salience_dysregulation      parietal_signal_integration_shift                                   abnormal salience biases higher-order integration of perceptual signals             increased
+thalamocerebellar_coordination_failure         psychosis_transition_liability                                         network inefficiency under demand raises transition vulnerability             increased
+     parietal_signal_integration_shift         psychosis_transition_liability                                  parietal instability is linked to emerging attenuated psychotic features             increased
+       dopamine_salience_dysregulation         psychosis_transition_liability                                    abnormal salience processing raises spectrum-level psychosis liability             increased
+   frontotemporal_limbic_dysregulation                   frontal_cortex_proxy                           maps executive and negative-symptom circuit burden onto frontal control systems             increased
+   frontotemporal_limbic_dysregulation                  temporal_cortex_proxy                                    maps perceptual and memory-related circuit burden onto temporal cortex             increased
+   frontotemporal_limbic_dysregulation                               amygdala                                   maps emotion-processing and social-cognitive burden onto amygdala state             increased
+   frontotemporal_limbic_dysregulation                            hippocampus                                       maps memory and contextual processing burden onto hippocampal state             increased
+       dopamine_salience_dysregulation                    basal_ganglia_proxy                                                             loads subcortical salience and gating systems             increased
+              glutamate_gaba_imbalance                    basal_ganglia_proxy                                          adds excitatory-inhibitory instability to subcortical regulation             increased
+thalamocerebellar_coordination_failure                         thalamus_proxy                                    maps demand-sensitive coordination failure onto thalamic relay systems             increased
+thalamocerebellar_coordination_failure                       cerebellum_proxy                                         maps coordination and timing inefficiency onto cerebellar systems             increased
+     parietal_signal_integration_shift                  parietal_cortex_proxy                                                 maps altered signal integration onto parietal recruitment             increased
+       dopamine_salience_dysregulation               odd_beliefs_eccentricity                              abnormal salience promotes odd belief formation and eccentric interpretation             increased
+                 parietal_cortex_proxy               odd_beliefs_eccentricity        altered parietal integration contributes to unusual meaning-making and cognitive-perceptual oddity             increased
+                 temporal_cortex_proxy         unusual_perceptual_experiences                                temporal abnormalities contribute to psychotic-like perceptual experiences             increased
+                           hippocampus         unusual_perceptual_experiences                        limbic-contextual disturbance contributes to unusual memory-perception integration             increased
+                 parietal_cortex_proxy         unusual_perceptual_experiences                              parietal recruitment changes amplify unusual perceptual-cognitive experience             increased
+                  frontal_cortex_proxy                  executive_dysfunction                                                            frontal abnormalities impair executive control             increased
+thalamocerebellar_coordination_failure                  executive_dysfunction                                        coordination inefficiency under load worsens executive performance             increased
+                      cerebellum_proxy                  executive_dysfunction                         cerebellar contribution to cognition supports executive dysfunction when impaired             increased
+                   basal_ganglia_proxy                  executive_dysfunction                                                   subcortical gating deficits worsen executive efficiency             increased
+        social_bonding_reward_blunting      negative_interpersonal_detachment                                 reduced affiliative reward supports interpersonal distance and withdrawal             increased
+                              amygdala      negative_interpersonal_detachment              limbic social-emotional abnormalities contribute to impaired social cognition and distancing             increased
+                   basal_ganglia_proxy      negative_interpersonal_detachment                                    motivational and gating dysfunction contribute to social disengagement             increased
+        social_bonding_reward_blunting           restricted_affect_asociality                           affiliative blunting supports negative-symptom asociality and restricted affect             increased
+                  frontal_cortex_proxy           restricted_affect_asociality                                 frontal abnormalities are linked to negative symptoms across the spectrum             increased
+                  frontal_cortex_proxy           disorganized_cognitive_style                                   frontal inefficiency contributes to disorganized and eccentric thinking             increased
+thalamocerebellar_coordination_failure           disorganized_cognitive_style                                  poor large-scale coordination destabilizes coherent cognitive sequencing             increased
+                              amygdala      affective_instability_impulsivity                                                     limbic abnormalities contribute to emotional lability             increased
+        psychosis_transition_liability          attenuated_psychotic_features                                transition liability expresses as subthreshold psychosis-spectrum symptoms             increased
+                        thalamus_proxy          attenuated_psychotic_features                               thalamic network abnormality contributes to attenuated psychotic expression             increased
+                 parietal_cortex_proxy          attenuated_psychotic_features                           parietal activation shifts are linked to emerging attenuated psychotic features             increased
+
+=== Resolved regions ===
+- frontal_cortex_proxy: Area 8v2 (MFG) left
+- temporal_cortex_proxy: Area Te 2.1 (STG) left
+- amygdala: LB (Amygdala) left
+- hippocampus: CA1 (Hippocampus) left
+- thalamus_proxy: CGM (Metathalamus) left
+- basal_ganglia_proxy: FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left
+- cerebellum_proxy: Nfast (Cerebellum, Fastigial Nucleus) left
+- parietal_cortex_proxy: Area PGp (IPL) left
+
+=== Example receptor table: temporal_cortex_proxy ===
+receptor  mean  std
+    AMPA   300   96
+ kainate   402   93
+    NMDA   920  164
+mGluR2/3  2615  250
+   GABAA  1344  396
+   GABAB  1931  466
+      BZ  2628  372
+      M1   549  148
+      M2   168   26
+      M3   962  192
+
+=== Example gene table: hippocampus ===
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  CNR1    6.473745   2.038318          712     0.600683    0.716456
+  COMT    6.197856   3.449950           48    -0.510062    0.804045
+ DGCR8    8.285750   1.496634           16     0.074775    1.196868
+  DRD2    3.819515   2.124018           40     0.115163    1.234718
+GABRB2    7.984463   1.324134           16     0.411287    0.217944
+  GAD1    7.796544   1.904788          144    -0.190476    0.674246
+  GCLC    6.733644   1.474920           16    -0.776769    0.933053
+  GCLM    6.196013   0.344469            8    -0.683163    0.453571
+GRIN2A    8.155000   1.179632           40     0.830710    0.448826
+ GTF2I    9.830490   1.699464           40    -0.065112    0.991988
+
+=== Example connectivity profile: frontal_cortex_proxy ===
+No connectivity data available.
+
+=== Circuit connectivity ===
+No circuit connectivity matrix available.
+
+=== Simulation example ===
+
+[inputs]
+genetic_synaptic_liability             0.70
+social_cognitive_developmental_load    0.62
+oxidative_stress_load                  0.56
+proinflammatory_burden                 0.44
+mitochondrial_energy_deficit           0.46
+antioxidant_reserve                    0.24
+cognitive_demand_load                  0.68
+early_intervention_support             0.22
+
+[latents]
+oxidative_inflammatory_neural_injury      0.381
+mitochondrial_constraint                  0.397
+synaptic_development_disruption           0.537
+glutamate_gaba_imbalance                  0.410
+serotonin_dopamine_modulatory_shift       0.514
+dopamine_salience_dysregulation           0.474
+social_bonding_reward_blunting            0.479
+frontotemporal_limbic_dysregulation       0.439
+thalamocerebellar_coordination_failure    0.466
+parietal_signal_integration_shift         0.494
+psychosis_transition_liability            0.444
+
+[regional_state]
+frontal_cortex_proxy     0.418
+temporal_cortex_proxy    0.420
+amygdala                 0.431
+hippocampus              0.418
+thalamus_proxy           0.439
+basal_ganglia_proxy      0.445
+cerebellum_proxy         0.434
+parietal_cortex_proxy    0.457
+
+[symptoms]
+odd_beliefs_eccentricity             0.434
+unusual_perceptual_experiences       0.421
+executive_dysfunction                0.449
+negative_interpersonal_detachment    0.428
+restricted_affect_asociality         0.414
+disorganized_cognitive_style         0.401
+affective_instability_impulsivity    0.422
+attenuated_psychotic_features        0.419
+
+[phenotypes]
+cognitive_perceptual_schizotypy_profile       0.433
+negative_interpersonal_schizotypy_profile     0.441
+disorganized_executive_spectrum_profile       0.433
+psychosis_transition_vulnerability_profile    0.440
+affective_labile_spectrum_profile             0.460

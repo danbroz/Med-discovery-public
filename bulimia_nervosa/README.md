@@ -1,8 +1,12 @@
 # Bulimia Nervosa
 
 Candidate combination: vilazodone + crinecerfont
+Patent docket: MHMDCNS-034
+Patent application: 64/076,338
+Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609351
-Zenodo record: https://zenodo.org/records/20609351
+Zenodo paper: https://zenodo.org/records/20609351
+Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/bulimia_nervosa
 
 ## Source Files
 
@@ -18,3 +22,4 @@ Zenodo record: https://zenodo.org/records/20609351
 
 This directory is the public source packet for the corresponding translational discovery manuscript.
 Evidence labels in the manuscript distinguish established, repository-derived, modeled, prophetic, and data-needed claims.
+The candidate is a research hypothesis and is not a clinical-use recommendation.

@@ -1,0 +1,107 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== NODE TABLE ===
+                                       key      node_type                                            atlas_region                           feature_summary
+                     prion_misfolding_load          input                                                    None                                      None
+                   prnp_mutation_liability          input                                                    None                                      None
+                  codon_129_susceptibility          input                                                    None                                      None
+                             disease_stage          input                                                    None                                      None
+                      cortical_involvement          input                                                    None                                      None
+                     deep_gray_involvement          input                                                    None                                      None
+                     brainstem_involvement          input                                                    None                                      None
+                    cerebellar_involvement          input                                                    None                                      None
+                             caudate_proxy   region_proxy FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=no
+                             putamen_proxy   region_proxy          FuP (Ventral Striatum, Fundus of Putamen) left  receptors=no; genes=yes; connectivity=no
+                            thalamus_proxy   region_proxy                        ZI (Thalamus, zona incerta) left  receptors=no; genes=yes; connectivity=no
+                      frontal_cortex_proxy   region_proxy                                            frontal lobe receptors=yes; genes=yes; connectivity=no
+                     temporal_cortex_proxy   region_proxy                                    Area Te 3 (STG) left  receptors=no; genes=yes; connectivity=no
+                          cerebellum_proxy   region_proxy              Nfast (Cerebellum, Fastigial Nucleus) left  receptors=no; genes=yes; connectivity=no
+                               raphe_proxy   region_proxy                                                    None                                unresolved
+                     locus_coeruleus_proxy   region_proxy                                                    None                                unresolved
+      protein_misfolding_neurodegeneration latent_biology                                                    None                                      None
+        spongiform_synaptic_gliotic_injury latent_biology                                                    None                                      None
+     nigrostriatal_dopaminergic_disruption latent_biology                                                    None                                      None
+        serotonergic_noradrenergic_decline latent_biology                                                    None                                      None
+      cholinergic_attention_memory_failure latent_biology                                                    None                                      None
+          frontotemporal_network_breakdown latent_biology                                                    None                                      None
+            sleep_wake_circuit_instability latent_biology                                                    None                                      None
+                   rapid_cognitive_decline        symptom                                                    None                                      None
+executive_language_visuospatial_impairment        symptom                                                    None                                      None
+                              parkinsonism        symptom                                                    None                                      None
+                         cerebellar_ataxia        symptom                                                    None                                      None
+                                 myoclonus        symptom                                                    None                                      None
+                         apathy_depression        symptom                                                    None                                      None
+            anxiety_behavioral_disturbance        symptom                                                    None                                      None
+                    sleep_wake_disturbance        symptom                                                    None                                      None
+          personality_change_disinhibition        symptom                                                    None                                      None
+               daily_function_interference        symptom                                                    None                                      None
+            cortical_ribboning_mri_pattern        symptom                                                    None                                      None
+                     deep_gray_mri_pattern        symptom                                                    None                                      None
+
+=== EDGE TABLE (first 14 rows) ===
+                              source                                target                                                                             relation prion_change
+               prion_misfolding_load  protein_misfolding_neurodegeneration                       misfolded PrP burden drives neuronal death and network failure    increased
+             prnp_mutation_liability  protein_misfolding_neurodegeneration                          pathogenic PRNP variation destabilizes protein conformation    increased
+            codon_129_susceptibility  protein_misfolding_neurodegeneration                 susceptibility polymorphism increases risk and may accelerate course    increased
+                       disease_stage    spongiform_synaptic_gliotic_injury        later stage corresponds to greater spongiform degeneration and gliosis burden    increased
+protein_misfolding_neurodegeneration    spongiform_synaptic_gliotic_injury misfolding pathology propagates synaptic dysfunction, spongiform change, and gliosis    increased
+               deep_gray_involvement nigrostriatal_dopaminergic_disruption                           basal-ganglia burden disrupts dopaminergic motor circuitry    increased
+  spongiform_synaptic_gliotic_injury nigrostriatal_dopaminergic_disruption                                 degeneration worsens nigrostriatal signaling failure    increased
+               brainstem_involvement    serotonergic_noradrenergic_decline    raphe and locus-coeruleus involvement weakens serotonin and noradrenaline systems    increased
+  spongiform_synaptic_gliotic_injury    serotonergic_noradrenergic_decline                         distributed injury degrades monoaminergic brainstem function    increased
+                cortical_involvement  cholinergic_attention_memory_failure                     cortical disease burden compromises attention and memory systems    increased
+  spongiform_synaptic_gliotic_injury  cholinergic_attention_memory_failure                    synaptic and gliotic injury worsens cholinergic cognitive failure    increased
+                cortical_involvement      frontotemporal_network_breakdown               frontal and temporal pathology disrupts higher-order cortical networks    increased
+  spongiform_synaptic_gliotic_injury      frontotemporal_network_breakdown                    tissue injury propagates rapidly progressive cortical dysfunction    increased
+  serotonergic_noradrenergic_decline        sleep_wake_circuit_instability                   brainstem monoaminergic decline destabilizes sleep-wake regulation    increased
+
+=== WITHIN-CIRCUIT CONNECTIVITY ===
+                       caudate_proxy  putamen_proxy  thalamus_proxy  temporal_cortex_proxy  cerebellum_proxy
+caudate_proxy               2794.395       4462.355          16.035                  0.670               0.0
+putamen_proxy               4462.355       3774.225           3.715                  7.500               0.0
+thalamus_proxy                16.035          3.715        1372.320                  1.115               0.0
+temporal_cortex_proxy          0.670          7.500           1.115               3902.045               0.0
+cerebellum_proxy               0.000          0.000           0.000                  0.000               0.0
+
+=== AVAILABLE REGION-SPECIFIC TABLES ===
+frontal_cortex_proxy: receptors=16, genes=13, connectivity_rows=0
+temporal_cortex_proxy: receptors=0, genes=13, connectivity_rows=0
+thalamus_proxy: receptors=0, genes=13, connectivity_rows=0
+
+=== SIMULATION: LATENTS ===
+frontotemporal_network_breakdown         0.6959
+cholinergic_attention_memory_failure     0.6648
+protein_misfolding_neurodegeneration     0.6532
+nigrostriatal_dopaminergic_disruption    0.6522
+spongiform_synaptic_gliotic_injury       0.6095
+sleep_wake_circuit_instability           0.5101
+serotonergic_noradrenergic_decline       0.5056
+
+=== SIMULATION: SYMPTOMS ===
+cortical_ribboning_mri_pattern                0.6384
+rapid_cognitive_decline                       0.6259
+deep_gray_mri_pattern                         0.6132
+executive_language_visuospatial_impairment    0.5276
+parkinsonism                                  0.4980
+apathy_depression                             0.4829
+personality_change_disinhibition              0.4618
+myoclonus                                     0.4454
+daily_function_interference                   0.4145
+sleep_wake_disturbance                        0.3895
+cerebellar_ataxia                             0.3502
+anxiety_behavioral_disturbance                0.3320
+
+=== SIMULATION: PHENOTYPES ===
+imaging_support_profile                  0.5674
+rapidly_progressive_dementia_profile     0.5360
+major_neurocognitive_disorder_profile    0.5234
+mild_neurocognitive_disorder_profile     0.4992
+parkinsonian_prion_profile               0.4562
+brainstem_affective_sleep_profile        0.3470
+cerebellar_prion_profile                 0.2987

@@ -1,0 +1,236 @@
+
+    For retrieving microarray data, siibra connects to the web API of
+    the Allen Brain Atlas (© 2015 Allen Institute for Brain Science),
+    available from https://brain-map.org/api/index.html. Any use of the
+    microarray data needs to be in accordance with their terms of use,
+    as specified at https://alleninstitute.org/legal/terms-use/.
+    
+
+=== Nodes ===
+                              key      node_type                                            atlas_region                            feature_summary
+            genetic_vulnerability          input                                                                                                   
+       ocrd_bfrb_shared_liability          input                                                                                                   
+        environmental_stress_load          input                                                                                                   
+     negative_affect_trigger_load          input                                                                                                   
+    boredom_understimulation_load          input                                                                                                   
+sensory_reinforcement_sensitivity          input                                                                                                   
+        automatic_habit_proneness          input                                                                                                   
+   depressive_anxiety_comorbidity          input                                                                                                   
+          self_regulation_support          input                                                                                                   
+                              ofc         region                                     Area Fo4 (OFC) left  receptors=no; genes=yes; connectivity=yes
+                            dlpfc         region                                    middle frontal gyrus   receptors=no; genes=yes; connectivity=no
+                              acc         region                                 frontal cingulate gyrus    receptors=no; genes=no; connectivity=no
+                          caudate         region FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  receptors=no; genes=yes; connectivity=yes
+                          putamen         region          FuP (Ventral Striatum, Fundus of Putamen) left  receptors=no; genes=yes; connectivity=yes
+           ventral_striatum_proxy         region          AcbM (Ventral Striatum, Medial Accumbens) left  receptors=no; genes=yes; connectivity=yes
+                         amygdala         region                                      LB (Amygdala) left  receptors=no; genes=yes; connectivity=yes
+                      hippocampus         region                                  CA1 (Hippocampus) left receptors=yes; genes=yes; connectivity=yes
+       serotonergic_dysregulation latent_biology                                                                                                   
+  dopaminergic_reward_relief_bias latent_biology                                                                                                   
+  glutamatergic_control_imbalance latent_biology                                                                                                   
+             affect_dysregulation latent_biology                                                                                                   
+    emotional_trigger_sensitivity latent_biology                                                                                                   
+         habit_loop_strengthening latent_biology                                                                                                   
+automaticity_awareness_decoupling latent_biology                                                                                                   
+   frontostriatal_dysconnectivity latent_biology                                                                                                   
+    frontolimbic_trigger_coupling latent_biology                                                                                                   
+        hippocampal_stress_burden latent_biology                                                                                                   
+          impulse_control_failure latent_biology                                                                                                   
+          pulling_urge_generation latent_biology                                                                                                   
+                hair_pulling_urge        symptom                                                                                                   
+                failed_resistance        symptom                                                                                                   
+                automatic_pulling        symptom                                                                                                   
+         affect_triggered_pulling        symptom                                                                                                   
+        relief_reinforced_pulling        symptom                                                                                                   
+          repetitive_hair_pulling        symptom                                                                                                   
+              distress_impairment        symptom                                                                                                   
+
+=== Edges (first 16) ===
+                           source                            target                                                                relation ttm_change  weight
+            genetic_vulnerability        serotonergic_dysregulation     raises inherited transmitter vulnerability affecting mood and urges  increased    0.25
+            genetic_vulnerability   dopaminergic_reward_relief_bias                    can increase sensitivity to reward and reinforcement  increased    0.15
+            genetic_vulnerability   glutamatergic_control_imbalance                        raises liability for executive-control imbalance  increased    0.20
+       ocrd_bfrb_shared_liability    frontostriatal_dysconnectivity               links TTM to grooming-spectrum control-loop vulnerability  increased    0.25
+       ocrd_bfrb_shared_liability          habit_loop_strengthening                   supports repetitive grooming-like habit consolidation  increased    0.20
+        environmental_stress_load              affect_dysregulation stress amplifies the maladaptive emotion-regulation function of pulling  increased    0.25
+        environmental_stress_load         hippocampal_stress_burden               chronic stress loads hippocampal emotional-memory systems  increased    0.25
+     negative_affect_trigger_load              affect_dysregulation             negative internal states drive pulling as short-term relief  increased    0.30
+     negative_affect_trigger_load     emotional_trigger_sensitivity                             directly loads the affective trigger system  increased    0.25
+    boredom_understimulation_load     emotional_trigger_sensitivity                                boredom can precipitate pulling episodes  increased    0.15
+    boredom_understimulation_load automaticity_awareness_decoupling            understimulation increases low-awareness repetitive behavior  increased    0.10
+sensory_reinforcement_sensitivity   dopaminergic_reward_relief_bias           sensory gratification and relief increase reinforcement value  increased    0.30
+sensory_reinforcement_sensitivity          habit_loop_strengthening                 repeated sensory reward strengthens the pulling routine  increased    0.20
+        automatic_habit_proneness automaticity_awareness_decoupling                         predisposes to automatic, low-awareness pulling  increased    0.30
+        automatic_habit_proneness          habit_loop_strengthening                                   supports stereotyped motor repetition  increased    0.20
+   depressive_anxiety_comorbidity        serotonergic_dysregulation               shared mood-anxiety biology increases serotonergic burden  increased    0.25
+
+=== Region suggestions for 'cingulate' ===
+                   name identifier                                parcellation
+frontal cingulate gyrus       None Julich-Brain Cytoarchitectonic Atlas (v3.1)
+
+=== Example receptor / gene / connectivity tables ===
+
+-- ofc receptor fingerprint --
+No receptor data found.
+
+-- ofc gene summary --
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.623275   1.783520            8     0.213975    0.107743
+  COMT    6.309525   3.411804           24    -0.136267    0.423556
+DLGAP3    8.640087   3.483884            8     0.052513    0.778111
+  DRD2    2.808050   1.854283           20    -0.616190    0.387672
+  DRD3    1.765404   1.176595           28    -0.151786    0.553500
+ FKBP5    4.413638   2.272289           16    -0.170106    0.250702
+  GAD1    8.635429   1.878978           72     0.180461    0.206737
+GRIN2B    6.439542   1.353832           12     0.621450    0.150785
+
+-- ofc connectivity profile --
+                                       connected_region    value
+                                    Area Fo3 (OFC) left 2218.500
+                                    Area Fo7 (OFC) left 1055.200
+         FuP (Ventral Striatum, Fundus of Putamen) left  812.060
+                                  Area Fp1 (FPole) left  600.190
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  495.015
+                    Frontal-to-Temporal-I (GapMap) left  400.550
+                                    Area Fo6 (OFC) left  296.095
+                                Area Id10 (Insula) left  291.760
+
+-- acc receptor fingerprint --
+No receptor data found.
+
+-- acc gene summary --
+No gene data found.
+
+-- acc connectivity profile --
+No connectivity data found.
+
+-- putamen receptor fingerprint --
+No receptor data found.
+
+-- putamen gene summary --
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.403875   2.959634            8    -0.990563    1.620974
+  COMT    6.455746   3.505011           24     0.071575    0.770932
+DLGAP3    8.937762   3.615268            8     0.428412    0.663455
+  DRD2    5.214320   2.586407           20     1.381145    0.928738
+  DRD3    3.598339   1.536965           28     2.239571    2.020663
+ FKBP5    5.052006   2.721419           16     0.415894    0.615600
+  GAD1    9.000999   1.970719           72     0.642828    0.536791
+GRIN2B    5.894133   2.256068           12     0.269267    0.749528
+
+-- putamen connectivity profile --
+                                       connected_region    value
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left 4462.355
+                                  Area Fp1 (FPole) left 2821.120
+        AcbL (Ventral Striatum, Lateral Accumbens) left 2434.255
+                                    Area Fo3 (OFC) left 2142.020
+                   Frontal-to-Temporal-II (GapMap) left 1590.675
+                    Frontal-to-Temporal-I (GapMap) left 1433.640
+                             VP (Ventral Pallidum) left 1315.390
+                                    Area Fo7 (OFC) left 1288.480
+
+-- ventral_striatum_proxy receptor fingerprint --
+No receptor data found.
+
+-- ventral_striatum_proxy gene summary --
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    3.301983   2.125536           12    -1.042192    1.018693
+  COMT    6.328539   3.669529           36    -0.155356    0.792483
+DLGAP3    8.385067   3.823817           12    -0.081800    0.551573
+  DRD2    4.651307   2.416133           30     0.912460    0.836231
+  DRD3    3.014340   1.512229           42     1.348486    1.864282
+ FKBP5    5.013658   2.833167           24     0.244575    0.557984
+  GAD1    8.901198   2.109900          108     0.542349    0.915477
+GRIN2B    4.904022   2.339611           18    -0.280294    0.679978
+
+-- ventral_striatum_proxy connectivity profile --
+                                       connected_region    value
+                             VP (Ventral Pallidum) left 1536.115
+         FuP (Ventral Striatum, Fundus of Putamen) left  596.560
+        AcbL (Ventral Striatum, Lateral Accumbens) left  527.470
+                BST (Basal Forebrain, Bed Nucleus) left  462.825
+                          Ch 123 (Basal Forebrain) left  455.785
+                                   Area s24 (sACC) left  381.805
+                   Frontal-to-Temporal-II (GapMap) left  343.730
+FuCd (Ventral Striatum, Fundus of Caudate Nucleus) left  211.460
+
+-- amygdala receptor fingerprint --
+No receptor data found.
+
+-- amygdala gene summary --
+  gene  level_mean  level_std  probe_count  zscore_mean  zscore_std
+  BDNF    5.968729   2.109068           14     0.500329    0.552838
+  COMT    6.458171   3.351996           42    -0.164479    1.545434
+DLGAP3    8.968071   3.202782           14     0.713007    0.841323
+  DRD2    3.894083   2.410057           35     0.371746    0.752121
+  DRD3    2.195912   0.927252           49     0.395627    0.817122
+ FKBP5    5.135946   2.684673           28     0.556286    1.064947
+  GAD1    8.101099   1.986020          126    -0.172393    0.543093
+GRIN2B    6.098033   2.347854           21     0.507624    0.762303
+
+-- amygdala connectivity profile --
+                                    connected_region    value
+                  Temporal-to-Parietal (GapMap) left 6605.220
+          Subc (Hippocampus, Subicular complex) left  525.285
+                Frontal-to-Temporal-II (GapMap) left  125.815
+                                  IF (Amygdala) left   66.800
+                              CA1 (Hippocampus) left   64.260
+Area EC (Hippocampal Region, Entorhinal Cortex) left   28.930
+                                Astr (Amygdala) left   23.670
+                             CGL (Metathalamus) left   11.185
+
+=== Circuit connectivity (top 20 rows) ===
+No circuit connectivity matrix available.
+
+=== Simulated TTM state ===
+
+[inputs]
+negative_affect_trigger_load         0.80
+environmental_stress_load            0.75
+genetic_vulnerability                0.70
+sensory_reinforcement_sensitivity    0.70
+automatic_habit_proneness            0.68
+ocrd_bfrb_shared_liability           0.65
+depressive_anxiety_comorbidity       0.62
+boredom_understimulation_load        0.55
+self_regulation_support              0.28
+
+[latents]
+glutamatergic_control_imbalance      0.5625
+dopaminergic_reward_relief_bias      0.5570
+affect_dysregulation                 0.5541
+habit_loop_strengthening             0.5402
+emotional_trigger_sensitivity        0.5280
+frontostriatal_dysconnectivity       0.4817
+serotonergic_dysregulation           0.4805
+pulling_urge_generation              0.4553
+hippocampal_stress_burden            0.4474
+automaticity_awareness_decoupling    0.4140
+impulse_control_failure              0.3772
+frontolimbic_trigger_coupling        0.3742
+
+[regional_state]
+ventral_striatum_proxy    0.4607
+hippocampus               0.4124
+putamen                   0.4121
+amygdala                  0.3760
+caudate                   0.3648
+acc                       0.3268
+dlpfc                     0.3098
+ofc                       0.3094
+
+[symptoms]
+relief_reinforced_pulling    0.3904
+hair_pulling_urge            0.3363
+automatic_pulling            0.3154
+affect_triggered_pulling     0.2898
+repetitive_hair_pulling      0.2306
+failed_resistance            0.2270
+distress_impairment          0.2250
+
+[phenotypes]
+reward_relief_profile              0.3664
+automatic_habit_profile            0.3384
+affect_regulation_profile          0.3354
+impulse_dyscontrol_profile         0.2699
+overall_trichotillomania_burden    0.2351

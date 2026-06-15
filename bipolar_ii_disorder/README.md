@@ -1,8 +1,13 @@
 # Bipolar II Disorder
 
 Candidate combination: agomelatine + perospirone
+Patent docket: MHMDCNS-008
+Patent application: 64/090,736
+Patent Center status: Application Undergoing Preexam Processing
+Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20609293
-Zenodo record: https://zenodo.org/records/20609293
+Zenodo paper: https://zenodo.org/records/20609293
+Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/bipolar_ii_disorder
 
 ## Source Files
 
@@ -18,3 +23,4 @@ Zenodo record: https://zenodo.org/records/20609293
 
 This directory is the public source packet for the corresponding translational discovery manuscript.
 Evidence labels in the manuscript distinguish established, repository-derived, modeled, prophetic, and data-needed claims.
+The candidate is a research hypothesis and is not a clinical-use recommendation.
