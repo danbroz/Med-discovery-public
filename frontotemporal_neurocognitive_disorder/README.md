@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-031
 Patent application: 64/076,333
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609343
-Zenodo paper: https://zenodo.org/records/20609343
+Research Paper: https://zenodo.org/records/20609343
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/frontotemporal_neurocognitive_disorder
 
 ## Source Files

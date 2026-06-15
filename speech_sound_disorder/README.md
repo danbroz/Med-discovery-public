@@ -6,7 +6,7 @@ Patent application: 64/090,985
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708307
-Zenodo paper: https://zenodo.org/records/20708307
+Research Paper: https://zenodo.org/records/20708307
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/speech_sound_disorder
 
 ## Source Files

@@ -6,7 +6,7 @@ Patent application: 64/090,809
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708214
-Zenodo paper: https://zenodo.org/records/20708214
+Research Paper: https://zenodo.org/records/20708214
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/sleep_related_hypoventilation
 
 ## Source Files

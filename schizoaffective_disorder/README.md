@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-023
 Patent application: 64/076,315
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609325
-Zenodo paper: https://zenodo.org/records/20609325
+Research Paper: https://zenodo.org/records/20609325
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/schizoaffective_disorder
 
 ## Source Files

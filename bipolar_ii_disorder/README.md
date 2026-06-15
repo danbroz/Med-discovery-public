@@ -6,7 +6,7 @@ Patent application: 64/090,736
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20609293
-Zenodo paper: https://zenodo.org/records/20609293
+Research Paper: https://zenodo.org/records/20609293
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/bipolar_ii_disorder
 
 ## Source Files

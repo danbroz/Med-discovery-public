@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-021
 Patent application: 64/076,311
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609321
-Zenodo paper: https://zenodo.org/records/20609321
+Research Paper: https://zenodo.org/records/20609321
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/vascular_neurocognitive_disorder
 
 ## Source Files

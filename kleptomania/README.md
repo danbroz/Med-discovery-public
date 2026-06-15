@@ -6,7 +6,7 @@ Patent application: 64/091,120
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708272
-Zenodo paper: https://zenodo.org/records/20708272
+Research Paper: https://zenodo.org/records/20708272
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/kleptomania
 
 ## Source Files

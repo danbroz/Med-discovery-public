@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-026
 Patent application: 64/076,322
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609331
-Zenodo paper: https://zenodo.org/records/20609331
+Research Paper: https://zenodo.org/records/20609331
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/opioid_withdrawal
 
 ## Source Files

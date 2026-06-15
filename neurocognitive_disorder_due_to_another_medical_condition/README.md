@@ -6,7 +6,7 @@ Patent application: 64/090,913
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708270
-Zenodo paper: https://zenodo.org/records/20708270
+Research Paper: https://zenodo.org/records/20708270
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/neurocognitive_disorder_due_to_another_medical_condition
 
 ## Source Files

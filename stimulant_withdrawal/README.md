@@ -6,7 +6,7 @@ Patent application: 64/090,868
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20708248
-Zenodo paper: https://zenodo.org/records/20708248
+Research Paper: https://zenodo.org/records/20708248
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/stimulant_withdrawal
 
 ## Source Files

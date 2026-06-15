@@ -6,7 +6,7 @@ Patent application: 64/090,731
 Patent Center status: Application Undergoing Preexam Processing
 Customer number: 234900
 DOI: https://doi.org/10.5281/zenodo.20609285
-Zenodo paper: https://zenodo.org/records/20609285
+Research Paper: https://zenodo.org/records/20609285
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/generalized_anxiety_disorder
 
 ## Source Files

@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-024
 Patent application: 64/076,319
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609327
-Zenodo paper: https://zenodo.org/records/20609327
+Research Paper: https://zenodo.org/records/20609327
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/premenstrual_dysphoric_disorder
 
 ## Source Files

@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-038
 Patent application: 64/076,969
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609361
-Zenodo paper: https://zenodo.org/records/20609361
+Research Paper: https://zenodo.org/records/20609361
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/conduct_disorder
 
 ## Source Files

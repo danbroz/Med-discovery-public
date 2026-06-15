@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-037
 Patent application: 64/076,941
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609359
-Zenodo paper: https://zenodo.org/records/20609359
+Research Paper: https://zenodo.org/records/20609359
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/circadian_rhythm_sleep_wake_disorder
 
 ## Source Files

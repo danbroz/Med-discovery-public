@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-035
 Patent application: 64/076,339
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609355
-Zenodo paper: https://zenodo.org/records/20609355
+Research Paper: https://zenodo.org/records/20609355
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/schizophreniform_disorder
 
 ## Source Files

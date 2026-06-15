@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-039
 Patent application: 64/076,974
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609363
-Zenodo paper: https://zenodo.org/records/20609363
+Research Paper: https://zenodo.org/records/20609363
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/oppositional_defiant_disorder
 
 ## Source Files

@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-013
 Patent application: 64/076,301
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609305
-Zenodo paper: https://zenodo.org/records/20609305
+Research Paper: https://zenodo.org/records/20609305
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/narcolepsy
 
 ## Source Files

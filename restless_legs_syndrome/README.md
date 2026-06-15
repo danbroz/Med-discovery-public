@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-019
 Patent application: 64/076,309
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609317
-Zenodo paper: https://zenodo.org/records/20609317
+Research Paper: https://zenodo.org/records/20609317
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/restless_legs_syndrome
 
 ## Source Files

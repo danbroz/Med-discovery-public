@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-036
 Patent application: 64/076,341
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609357
-Zenodo paper: https://zenodo.org/records/20609357
+Research Paper: https://zenodo.org/records/20609357
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/premature_ejaculation
 
 ## Source Files

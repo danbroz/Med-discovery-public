@@ -5,7 +5,7 @@ Patent docket: MHMDCNS-041
 Patent application: 64/076,981
 Patent Center status: Patent Center receipt confirmed
 DOI: https://doi.org/10.5281/zenodo.20609369
-Zenodo paper: https://zenodo.org/records/20609369
+Research Paper: https://zenodo.org/records/20609369
 Portfolio packet: https://github.com/danbroz/Med-discovery-public/tree/main/traumatic_brain_injury_neurocognitive_disorder
 
 ## Source Files
