@@ -5,7 +5,7 @@ Public source packets for Daniel Jerome Broz's AI CNS treatment-discovery portfo
 Each packet includes the patent draft, corrected draft, prior-art note, fixed-dose evidence, computational model output, Biological Basis chapter excerpt, master summary, and model source where available.
 
 - Portfolio site: https://danbroz.github.io/Med-discovery-public/
-- Domain forwarding source: https://neurodiscoveryip.com
+- Domain forwarding source: https://neurotreatmentsip.com
 - DOI manifest: [doi_manifest_all_112.csv](doi_manifest_all_112.csv)
 - Portfolio index: [portfolio_index.csv](portfolio_index.csv)
 
